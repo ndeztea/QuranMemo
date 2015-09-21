@@ -9,6 +9,10 @@ class Quran extends Model
 {
     //
 
+    /**
+    * get list page
+    *
+    */
     public function getPage(){
     	$pages = DB::table('quran_arabic')
     			->select('page')
@@ -19,6 +23,11 @@ class Quran extends Model
         return $pages;
     }
 
+    /**
+    * get ayat on the page
+    * 
+    * @param $page INT
+    */
     public function getAyat($page){
     	$pages = DB::table('quran_arabic as qar')
                 ->leftJoin('quran_indonesia as qid', 'qar.id', '=', 'qid.id')
@@ -28,5 +37,18 @@ class Quran extends Model
 
 
         return $pages;
+    }
+
+    /**
+    * get surah list
+    * 
+    */
+    public function getSurah(){
+        $surah = DB::table('quran_indonesia')
+                ->select('id','surah_name')
+                ->get();
+
+
+        return $surah;
     }
 }
