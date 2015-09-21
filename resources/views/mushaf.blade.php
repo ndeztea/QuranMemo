@@ -33,7 +33,7 @@ $prev_surah = '';
 	<?php if(!empty($ayats)):?>
 		<?php foreach($ayats as $ayat):?>
 		
-		<?php if($prev_surah!=$ayat->surah && $ayat->surah!=1):?>
+		<?php if($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!=''):?>
 			<div class="head_surah arabic" >
 			بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 			</div>
