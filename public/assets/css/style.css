@@ -1,0 +1,18 @@
+@font-face {
+    font-family: arabic;
+    src: url(arabtype.ttf);
+}
+div.arabic{
+	font-family: arabic;
+	font-size: 30px;
+	word-spacing: 0px;
+	float: right;
+}
+
+.ayat_section{
+	
+}
+
+.clearfix{
+	clear:both;
+}
