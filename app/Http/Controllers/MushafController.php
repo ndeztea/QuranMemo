@@ -23,7 +23,13 @@ class MushafController extends Controller
 
         // get mushaf per page
         $ayats = $QuranModel->getAyat($page);
-        
+
+        // get surah
+        $surahs = $QuranModel->getSurah();
+
+
+        // send to view 
+        $data['surahs'] = $surahs;
         $data['ayats'] = $ayats;
         $data['pages'] = $pages;
         $data['curr_page'] = $page;
@@ -31,6 +37,13 @@ class MushafController extends Controller
         //print_r($pages);
         // show view template
        return view('mushaf',$data);
+    }
+
+    public function changeSurah($surah){
+        $QuranModel = new Quran;
+        $page = $QuranModel->getSurahPage($surah);
+
+        return redirect('mushaf/'.$page);
     }
 
     

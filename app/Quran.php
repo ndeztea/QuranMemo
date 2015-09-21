@@ -45,10 +45,30 @@ class Quran extends Model
     */
     public function getSurah(){
         $surah = DB::table('quran_indonesia')
-                ->select('id','surah_name')
+                ->select('surah as id','surah_name')
+                ->groupBy('surah')
+                ->orderBy('id','asc')
                 ->get();
 
 
         return $surah;
     }
+
+    /**
+    * get surah page
+    * 
+    */
+    public function getSurahPage($surah){
+        $page = DB::table('quran_arabic')
+                ->select('page')
+                ->where('surah',$surah)
+                ->groupBy('surah')
+                ->orderBy('id','asc')
+                ->get();
+
+
+        return $page[0]->page;
+    }
+
+
 }

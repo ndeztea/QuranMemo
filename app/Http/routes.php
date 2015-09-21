@@ -20,3 +20,4 @@ Route::get('note/manage', ['middleware' => 'auth', function () {
 }]);
 
 Route::get('mushaf/{page}', 'MushafController@index');
+Route::get('mushaf/surah/{surah}', 'MushafController@changeSurah');
