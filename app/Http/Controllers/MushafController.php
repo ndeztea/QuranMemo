@@ -25,6 +25,8 @@ class MushafController extends Controller
         $ayats = $QuranModel->getAyat($page);
         
         $data['ayats'] = $ayats;
+        $data['pages'] = $pages;
+        $data['curr_page'] = $page;
 
         //print_r($pages);
         // show view template
