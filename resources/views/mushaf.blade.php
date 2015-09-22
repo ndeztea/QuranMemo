@@ -8,13 +8,15 @@
     <p>This is appended to the master sidebar.</p>
 @endsection
 
+@include('players')
+
 <?php 
 // predefined
 $prev_surah = ''; 
 ?>
 @section('content')
 	<div class="nav top">
-		<select name="surah" onchange="changeSurah(this)" >
+		<select name="surah" onchange="QuranJS.changeSurah(this)" >
 			<?php foreach($surahs as $surah):?>
 			<option  <?php echo $surah->id==$ayats[0]->surah?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?></option>
 			<?php endforeach?>
@@ -33,7 +35,7 @@ $prev_surah = '';
 	<?php if(!empty($ayats)):?>
 		<?php foreach($ayats as $ayat):?>
 		
-		<?php if($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!=''):?>
+		<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1) ):?>
 			<div class="head_surah arabic" >
 			بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 			</div>
@@ -50,32 +52,4 @@ $prev_surah = '';
 	<?php endif?>
 	</div>
 
-	<div class="nav bottom">
-		<a href="javascript:;" onclick="changePage(this)" data-value="<?php echo $curr_page-1?>">Prev</a>
-		<select name="page" onchange="changePage(this)" >
-			<?php foreach($pages as $page):?>
-			<option data-value="<?php echo $page->page ?>" <?php echo $page->page==$curr_page?'selected':''?> value="<?php echo $page->page ?>"><?php echo $page->page ?></option>
-			<?php endforeach?>
-		</select>
-		<a href="javascript:;" onclick="javascript:changePage(this)" data-value="<?php echo $curr_page+1?>">Next</a>
-	</div>
-
-<script>
-	function changePage(elm){
-		page = $(elm).data('value');
-		if(typeof page=='undefined'){
-			page = $(elm).val();
-		}
-
-		// @todo : use ajax
-		location.href="<?php echo url('mushaf')?>/"+page;
-		
-	}
-
-	function changeSurah(surah){
-		// @todo : use ajax
-		location.href="<?php echo url('mushaf/surah')?>/"+$(surah).val();;
-		
-	}
-</script>
 @endsection
