@@ -7,7 +7,7 @@ var QuranJS = {
 		}
 
 		// @todo : use ajax
-		location.href=this.siteUrl+'/mushaf/'+page;
+		location.href=this.siteUrl+'/mushaf/page/'+page;
 		
 	},
 

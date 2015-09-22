@@ -43,7 +43,7 @@ class MushafController extends Controller
         $QuranModel = new Quran;
         $page = $QuranModel->getSurahPage($surah);
 
-        return redirect('mushaf/'.$page);
+        return redirect('mushaf/page/'.$page);
     }
 
     
