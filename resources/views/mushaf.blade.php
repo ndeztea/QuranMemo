@@ -16,13 +16,13 @@ $prev_surah = '';
 			<?php endforeach?>
 		</select>
 
-		<a href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>">Prev</a>
+		<a href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"><?php echo trans('trans.prev')?></a>
 		<select name="page" onchange="changePage(this)" >
 			<?php foreach($pages as $page):?>
 			<option  <?php echo $page->page==$curr_page?'selected':''?> value="<?php echo $page->page ?>"><?php echo $page->page ?></option>
 			<?php endforeach?>
 		</select>
-		<a href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>">Next</a>
+		<a href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>"><?php echo trans('trans.next')?></a>
 	</div>
 
 	<div class="mushaf">

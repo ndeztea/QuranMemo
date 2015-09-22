@@ -28,9 +28,9 @@
         @show
         <div id="main-nav">
             <ul>
-                <li><a href="<?php echo url('mushaf')?>">Mushaf</a></li>
-                <li><a href="<?php echo url('note')?>">Notes</a></li>
-                <li><a href="<?php echo url('memo')?>">Memorization</a></li>
+                <li><a href="<?php echo url('mushaf')?>"><?php echo trans('trans.mushaf')?></a></li>
+                <li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li>
+                <li><a href="<?php echo url('memo')?>"><?php echo trans('trans.memo')?></a></li>
             <ul>
 
         </div>
