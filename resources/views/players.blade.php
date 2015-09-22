@@ -1,23 +1,44 @@
+<?php 
+// define surah
+// @todo define all surah
+$surahMuratal[1] = 'Al-Fatiha';
+$surahMuratal[2] = 'Al-Baqara';
+$surahMuratal[3] = 'Aal-E-Imran';
+$surahMuratal[4] = 'An-Nisa';
+?>
+
 <script type="text/javascript">
 $(document).ready(function(){
 
 	var muratalPlaylist = new jPlayerPlaylist({
-		jPlayer: "#jquery_jplayer_1",
-		cssSelectorAncestor: "#jp_container_1",
+		jPlayer: "#muratalPlaylist",
+		cssSelectorAncestor: "#muratalPlaylistContainer",
 	},
 	[
-	// file list
+		// file list
+		<?php foreach($ayats as $ayat):?>
+		{
+			
+			title:"section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>",
+			<?php 
+				$halMuratal = $ayat->page + 1;
+				$ayatMp3 = $surahMuratal[$ayat->surah].'.'.str_pad($ayat->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
+			?>
+			mp3: "<?php echo url('sound/hal_'.$halMuratal.'/'.$ayatMp3)?>"
+		},
+		<?php endforeach?>
 	],
 	{
 		play: function(event) { 
 		 	
               var ayat_selector = (event.jPlayer.status.media.title) 
               
-              $('*','#view-quran').css('background-color','');
-              $('.'+ayat_selector).css('background-color','#DDD'); 
+              $('*','.mushaf').css('background-color','');
+              $('div.'+ayat_selector).css('background','#DDD'); 
               var tmpcurrentPlay = muratalPlaylist.current;
               var currentPlay = parseInt(tmpcurrentPlay) + 1;
               console.log(muratalPlaylist.playlist.length+"="+ currentPlay);
+              console.log(ayat_selector);
               window.goNext = false;
               if(muratalPlaylist.playlist.length==currentPlay){
               	window.goNext = true;
@@ -40,12 +61,12 @@ $(document).ready(function(){
         	//console.log(muratalPlaylist.timeupdate);
         	//console.log(muratalPlaylist.playlist.length+"="+endPlaylist);
         	if(window.goNext==true){
-        		location.href='http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
+        		//location.href='http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
         	}
         	
         },
 		playlistOptions: { 
-			autoPlay: true 
+			//autoPlay: true 
 		},
           
 		swfPath: "http://jplayer.org/latest/js",
@@ -59,9 +80,9 @@ $(document).ready(function(){
 });
 </script>
 
-<div id="jp_container_N" class="jp-video jp-video-270p" role="application" aria-label="media player">
+<div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
 	<div class="jp-type-playlist">
-		<div id="jquery_jplayer_N" class="jp-jplayer"></div>
+		<div id="muratalPlaylist" class="jp-jplayer"></div>
 		<div class="jp-gui">
 			<div class="jp-video-play">
 				<button class="jp-video-play-icon" role="button" tabindex="0">play</button>

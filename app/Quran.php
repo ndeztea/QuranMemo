@@ -31,7 +31,7 @@ class Quran extends Model
     public function getAyat($page){
     	$pages = DB::table('quran_arabic as qar')
                 ->leftJoin('quran_indonesia as qid', 'qar.id', '=', 'qid.id')
-    			->select('qid.text as text_indo','qar.text','qar.ayat','qar.surah')
+    			->select('qid.text as text_indo','qar.text','qar.ayat','qar.surah','qar.page')
                 ->where('page',$page)
                 ->get();
 
