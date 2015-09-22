@@ -13,6 +13,7 @@ $(document).ready(function(){
 	var muratalPlaylist = new jPlayerPlaylist({
 		jPlayer: "#muratalPlaylist",
 		cssSelectorAncestor: "#muratalPlaylistContainer",
+
 	},
 	[
 		// file list
@@ -70,16 +71,16 @@ $(document).ready(function(){
 		},
           
 		swfPath: "http://jplayer.org/latest/js",
-		supplied: "mp3",
-		wmode: "window",
+		useStateClassSkin: true,
+		autoBlur: false,
 		smoothPlayBar: true,
-		keyEnabled: true
+		keyEnabled: true,
 	});
 
+	
 	//$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_1")});
 });
 </script>
-
 <div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
 	<div class="jp-type-playlist">
 		<div id="muratalPlaylist" class="jp-jplayer"></div>
@@ -99,7 +100,7 @@ $(document).ready(function(){
 					<div class="jp-controls">
 						<button class="jp-previous" role="button" tabindex="0">previous</button>
 						<button class="jp-play" role="button" tabindex="0">play</button>
-						<button class="jp-next" role="button" tabindex="0">next</button>
+						<button class="jp-next" id="playlist-pause" role="button" tabindex="0">next</button>
 						<button class="jp-stop" role="button" tabindex="0">stop</button>
 					</div>
 					<div class="jp-volume-controls">
@@ -112,7 +113,6 @@ $(document).ready(function(){
 					<div class="jp-toggles">
 						<button class="jp-repeat" role="button" tabindex="0">repeat</button>
 						<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
-						<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
 					</div>
 				</div>
 				<div class="jp-details">
