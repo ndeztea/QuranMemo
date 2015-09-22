@@ -2,12 +2,6 @@
 
 @section('title', 'Mushaf')
 
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@endsection
-
 <?php 
 // predefined
 $prev_surah = ''; 
@@ -23,7 +17,7 @@ $prev_surah = '';
 		</select>
 
 		<a href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>">Prev</a>
-		<select name="page" onchange="QuranJS.changePage(this)" >
+		<select name="page" onchange="changePage(this)" >
 			<?php foreach($pages as $page):?>
 			<option  <?php echo $page->page==$curr_page?'selected':''?> value="<?php echo $page->page ?>"><?php echo $page->page ?></option>
 			<?php endforeach?>
