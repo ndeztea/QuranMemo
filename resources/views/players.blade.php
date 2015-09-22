@@ -5,6 +5,8 @@ $surahMuratal[1] = 'Al-Fatiha';
 $surahMuratal[2] = 'Al-Baqara';
 $surahMuratal[3] = 'Aal-E-Imran';
 $surahMuratal[4] = 'An-Nisa';
+$surahMuratal[17] = 'Al-Isra';
+$surahMuratal[18] = 'Al-Kahf';
 ?>
 
 <script type="text/javascript">
@@ -18,6 +20,13 @@ $(document).ready(function(){
 	[
 		// file list
 		<?php foreach($ayats as $ayat):?>
+		<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
+		{
+			
+			title:"section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0",
+			mp3: "<?php echo url('sound/hal_2/Al-Fatiha.001.mp3')?>"
+		},
+		<?php endif?>
 		{
 			
 			title:"section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>",

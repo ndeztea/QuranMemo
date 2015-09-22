@@ -24,8 +24,16 @@
     </head>
     <body>
         @section('sidebar')
-            This is the master sidebar.
+           <!-- This is the master sidebar. -->
         @show
+        <div id="main-nav">
+            <ul>
+                <li><a href="<?php echo url('mushaf')?>">Mushaf</a></li>
+                <li><a href="<?php echo url('note')?>">Notes</a></li>
+                <li><a href="<?php echo url('memo')?>">Memorization</a></li>
+            <ul>
+
+        </div>
 
         <div class="container">
             @yield('content')
