@@ -1,12 +1,121 @@
 <?php 
 // define surah
 // @todo define all surah
-$surahMuratal[1] = 'Al-Fatiha';
-$surahMuratal[2] = 'Al-Baqara';
-$surahMuratal[3] = 'Aal-E-Imran';
-$surahMuratal[4] = 'An-Nisa';
-$surahMuratal[17] = 'Al-Isra';
-$surahMuratal[18] = 'Al-Kahf';
+$surahMuratal[1] = "Al-Fatiha";
+$surahMuratal[2] = "Al-Baqara";
+$surahMuratal[3] = "Aal-E-Imran";
+$surahMuratal[4] = "An-Nisa";
+$surahMuratal[5] = "Al-Maeda";
+$surahMuratal[6] = "Al-Anaam";
+$surahMuratal[7] = "Al-Araf";
+$surahMuratal[8] = "Al-Anfal";
+$surahMuratal[9] = "At-Tawba";
+$surahMuratal[10] = "Yunus";
+$surahMuratal[11] = "Hud";
+$surahMuratal[12] = "Yusuf";
+$surahMuratal[13] = "Ar-Rad";
+$surahMuratal[14] = "Ibrahim";
+$surahMuratal[15] = "Al-Hijr";
+$surahMuratal[16] = "An-Nahl";
+$surahMuratal[17] = "Al-Isra";
+$surahMuratal[18] = "Al-Kahf";
+$surahMuratal[19] = "Maryam";
+$surahMuratal[20] = "Ta-Ha";
+$surahMuratal[21] = "Al-Anbiya";
+$surahMuratal[22] = "Al-Hajj";
+$surahMuratal[23] = "Al-Mumenoon";
+$surahMuratal[24] = "An-Noor";
+$surahMuratal[25] = "Al-Furqan";
+$surahMuratal[26] = "Ash-Shuara";
+$surahMuratal[27] = "An-Naml";
+$surahMuratal[28] = "Al-Qasas";
+$surahMuratal[29] = "Al-Ankaboot";
+$surahMuratal[30] = "Ar-Room";
+$surahMuratal[31] = "Luqman";
+$surahMuratal[32] = "As-Sajda";
+$surahMuratal[33] = "Al-Ahzab";
+$surahMuratal[34] = "Saba";
+$surahMuratal[35] = "Fatir";
+$surahMuratal[36] = "Ya-Seen";
+$surahMuratal[37] = "As-Saaffat";
+$surahMuratal[38] = "Sad";
+$surahMuratal[39] = "Az-Zumar";
+$surahMuratal[40] = "Al-Ghafir";
+$surahMuratal[41] = "Fussilat";
+$surahMuratal[42] = "Ash-Shura";
+$surahMuratal[43] = "Az-Zukhruf";
+$surahMuratal[44] = "Ad-Dukhan";
+$surahMuratal[45] = "Al-Jathiya";
+$surahMuratal[46] = "Al-Ahqaf";
+$surahMuratal[47] = "Muhammad";
+$surahMuratal[48] = "Al-Fath";
+$surahMuratal[49] = "Al-Hujraat";
+$surahMuratal[50] = "Qaf";
+$surahMuratal[51] = "Adh-Dhariyat";
+$surahMuratal[52] = "At-Tur";
+$surahMuratal[53] = "An-Najm";
+$surahMuratal[54] = "Al-Qamar";
+$surahMuratal[55] = "Ar-Rahman";
+$surahMuratal[56] = "Al-Waqia";
+$surahMuratal[57] = "Al-Hadid";
+$surahMuratal[58] = "Al-Mujadila";
+$surahMuratal[59] = "Al-Hashr";
+$surahMuratal[60] = "Al-Mumtahina";
+$surahMuratal[61] = "As-Saff";
+$surahMuratal[62] = "Al-Jumua";
+$surahMuratal[63] = "Al-Munafiqoon";
+$surahMuratal[64] = "At-Taghabun";
+$surahMuratal[65] = "At-Talaq";
+$surahMuratal[66] = "At-Tahrim";
+$surahMuratal[67] = "Al-Mulk";
+$surahMuratal[68] = "Al-Qalam";
+$surahMuratal[69] = "Al-Haaqqa";
+$surahMuratal[70] = "Al-Maarij";
+$surahMuratal[71] = "Nooh";
+$surahMuratal[72] = "Al-Jinn";
+$surahMuratal[73] = "Al-Muzzammil";
+$surahMuratal[74] = "Al-Muddaththir";
+$surahMuratal[75] = "Al-Qiyama";
+$surahMuratal[76] = "Al-Insan";
+$surahMuratal[77] = "Al-Mursalat";
+$surahMuratal[78] = "An-Naba";
+$surahMuratal[79] = "An-Naziat";
+$surahMuratal[80] = "Abasa";
+$surahMuratal[81] = "At-Takwir";
+$surahMuratal[82] = "Al-Infitar";
+$surahMuratal[83] = "Al-Mutaffifin";
+$surahMuratal[84] = "Al-Inshiqaq";
+$surahMuratal[85] = "Al-Burooj";
+$surahMuratal[86] = "Al-Ala";
+$surahMuratal[87] = "At-Tariq";
+$surahMuratal[88] = "Al-Ghashiya";
+$surahMuratal[89] = "Al-Fajr";
+$surahMuratal[90] = "Al-Balad";
+$surahMuratal[91] = "Al-Lail";
+$surahMuratal[92] = "Ash-Shams";
+$surahMuratal[93] = "Ad-Dhuha";
+$surahMuratal[94] = "Al-Inshirah";
+$surahMuratal[95] = "Al-Alaq";
+$surahMuratal[96] = "At-Tin";
+$surahMuratal[97] = "Al-Bayyina";
+$surahMuratal[98] = "Al-Qadr";
+$surahMuratal[99] = "Al-Adiyat";
+$surahMuratal[100] = "Az-Zalzala";
+$surahMuratal[101] = "Al-Qaria";
+$surahMuratal[102] = "At-Takathur";
+$surahMuratal[103] = "Al-Asr";
+$surahMuratal[104] = "Al-Fil";
+$surahMuratal[105] = "Al-Humaza";
+$surahMuratal[106] = "Al-Kauther";
+$surahMuratal[107] = "Al-Maun";
+$surahMuratal[108] = "Quraish";
+$surahMuratal[109] = "Al-Kafiroon";
+$surahMuratal[110] = "Al-Masadd";
+$surahMuratal[111] = "An-Nasr";
+$surahMuratal[112] = "Al-Falaq";
+$surahMuratal[113] = "Al-Ikhlas";
+$surahMuratal[114] = "An-Nas";
+
 ?>
 
 <script type="text/javascript">
@@ -71,8 +180,12 @@ $(document).ready(function(){
         	//console.log(muratalPlaylist.timeupdate);
         	//console.log(muratalPlaylist.playlist.length+"="+endPlaylist);
         	if(window.goNext==true){
-        		//location.href='http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
-        	}
+        		if(jQuery('#automated_play').is(':checked')){
+	        		<?php if($curr_page<604): $next_page = $curr_page + 1?>
+		    		location.href = '<?php echo url('mushaf/page/'.$next_page)?>';//http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
+		    		<?php endif?>
+		    	}
+        	}	
         	
         },
 		playlistOptions: { 

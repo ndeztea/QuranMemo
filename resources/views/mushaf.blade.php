@@ -17,12 +17,14 @@ $prev_surah = '';
 		</select>
 
 		<a href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"><?php echo trans('trans.prev')?></a>
-		<select name="page" onchange="changePage(this)" >
+		<select name="page" onchange="QuranJS.changePage(this)" >
 			<?php foreach($pages as $page):?>
 			<option  <?php echo $page->page==$curr_page?'selected':''?> value="<?php echo $page->page ?>"><?php echo $page->page ?></option>
 			<?php endforeach?>
 		</select>
 		<a href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>"><?php echo trans('trans.next')?></a>
+
+		<span><input type="checkbox" id="automated_play" name="automated_play" checked ><?php echo trans('trans.play_otomatis')?></span>
 	</div>
 
 	<div class="mushaf">

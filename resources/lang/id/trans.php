@@ -5,5 +5,6 @@ return [
     'memo' => 'Hafalan',
     'note' => 'Catatan',
     'next'	=> 'Selanjutnya',
-    'prev'	=> 'Sebelumnnya'
+    'prev'	=> 'Sebelumnnya',
+    'play_otomatis' => 'Play Otomatis',
 ];
