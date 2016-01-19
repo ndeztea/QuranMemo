@@ -30,12 +30,20 @@
             <ul>
                 <li><a href="<?php echo url('mushaf')?>"><?php echo trans('trans.mushaf')?></a></li>
                 <li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li>
-                <li><a href="<?php echo url('memo')?>"><?php echo trans('trans.memo')?></a></li>
+                <li><a href="<?php echo url('memoz')?>"><?php echo trans('trans.memo')?></a></li>
             <ul>
 
         </div>
 
         <div class="container">
+            @if(!empty($messageErrors))
+                <ul class="message error">
+                @foreach ($messageErrors->all() as $messageError)
+                    <li>{{ $messageError }}</li>
+                @endforeach
+                <ul>
+            @endif
+
             @yield('content')
         </div>
     </body>

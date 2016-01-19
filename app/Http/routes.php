@@ -25,3 +25,13 @@ Route::get('mushaf/', 'MushafController@index');
 Route::get('mushaf/page', 'MushafController@index');
 Route::get('mushaf/page/{page}', 'MushafController@index');
 Route::get('mushaf/surah/{surah}', 'MushafController@changeSurah');
+
+Route::get('notes/', 'NotesController@index');
+Route::get('notes/create', 'NotesController@create');
+
+Route::get('memoz/', 'MemozController@index');
+Route::post('memoz/', 'MemozController@index');
+
+
+
+
