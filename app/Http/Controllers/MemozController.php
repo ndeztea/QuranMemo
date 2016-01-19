@@ -19,17 +19,20 @@ class MemozController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
+    {   
+        $messageErrors = $ayats = '';
         // get data hafalan
         $surah_start = $request->input('surah_start');
         $ayat_start = $request->input('ayat_start');
         $surah_end = $request->input('surah_end');
         $ayat_end = $request->input('ayat_end');
-
+        echo $surah_end;
         // validation
         $errorMessages = [
             'surah_start.required' => 'Surah awal harus di isi',
             'surah_end.required' => 'Surah akhir harus di isi',
+            'ayat_start.required' => 'Ayat pada surah awal harus di isi',
+            'ayat_end.required' => 'Ayat pada surah akhir harus di isi',
             'ayat_start.numeric'   => 'Ayat pada surah awal harus berupa angka',
             'ayat_end.numeric'   => 'Ayat pada surah awal harus berupa angka'
         ];
@@ -41,16 +44,22 @@ class MemozController extends Controller
             'ayat_end' => 'required|numeric'
         ],$errorMessages);
 
+        
+        $QuranModel = new Quran;
+
         if($validator->fails()){
             $messageErrors = $validator->errors();
+        }else{
+            // get list quran
+            $ayats = $QuranModel->getRangeAyat($surah_start,$ayat_start,$surah_end,$ayat_end);
         }
         // end validation
 
 
-         // get surah
-        $QuranModel = new Quran;
+        // get surah
         $surahs = $QuranModel->getSurah();
 
+        $data['ayats'] = $ayats;
         $data['surahs'] = $surahs;
         $data['surah_start'] = $surah_start;
         $data['ayat_start'] = $ayat_start;
