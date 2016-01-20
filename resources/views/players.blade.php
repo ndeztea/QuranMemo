@@ -163,9 +163,14 @@ $(document).ready(function(){
               	window.goNext = true;
               }
 
+            var config_repeat = jQuery('.repeat').val();
+        	var repeat_ayat = 1;
+        	var config_repeat_ayat = jQuery('.repeat_ayat').is(':checked');
+        	
+        	console.log(config_repeat_ayat+'-'+config_repeat);
+
         }, 
         end: function(event){
-        	console.log('a');
         	$('*','.view-quran').css('background-color','none');
         },
         ended: function(event){
@@ -179,6 +184,10 @@ $(document).ready(function(){
         	//endPlaylist = endPlaylist+1;
         	//console.log(muratalPlaylist.timeupdate);
         	//console.log(muratalPlaylist.playlist.length+"="+endPlaylist);
+
+        	var repeat_surah = 1;
+        	var config_repeat_surah = jQuery('.repeat_surah').is(':checked');
+
         	if(window.goNext==true){
         		if(jQuery('#automated_play').is(':checked')){
 	        		<?php if($curr_page<604): $next_page = $curr_page + 1?>

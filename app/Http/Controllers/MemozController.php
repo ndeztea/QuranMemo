@@ -26,7 +26,7 @@ class MemozController extends Controller
         $ayat_start = $request->input('ayat_start');
         $surah_end = $request->input('surah_end');
         $ayat_end = $request->input('ayat_end');
-        echo $surah_end;
+        
         // validation
         $errorMessages = [
             'surah_start.required' => 'Surah awal harus di isi',
@@ -66,6 +66,7 @@ class MemozController extends Controller
         $data['surah_end'] = $surah_end;
         $data['ayat_end'] = $ayat_end;
         $data['messageErrors'] = $messageErrors;
+        $data['curr_page'] = 0;
 
         return view('memoz',$data);
     }

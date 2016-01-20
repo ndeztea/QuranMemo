@@ -2,7 +2,7 @@
     font-family: arabic;
     src: url(arabtype.ttf);
 }
-div.arabic{
+div.arabic, .head_surah{
 	font-family: arabic;
 	font-size: 30px;
 	word-spacing: 0px;
@@ -17,3 +17,5 @@ div.arabic{
 .clearfix{
 	clear:both;
 }
+
+.mushaf_display a.selected {font-weight: bold;}
