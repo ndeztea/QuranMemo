@@ -149,27 +149,49 @@ $(document).ready(function(){
 	],
 	{
 		play: function(event) { 
-		 	
-              var ayat_selector = (event.jPlayer.status.media.title) 
-              
-              $('*','.mushaf').css('background-color','');
-              $('div.'+ayat_selector).css('background','#DDD'); 
-              var tmpcurrentPlay = muratalPlaylist.current;
-              var currentPlay = parseInt(tmpcurrentPlay) + 1;
-              console.log(muratalPlaylist.playlist.length+"="+ currentPlay);
-              console.log(ayat_selector);
-              window.goNext = false;
-              if(muratalPlaylist.playlist.length==currentPlay){
-              	window.goNext = true;
-              }
 
-            var config_repeat = jQuery('.repeat').val();
-        	var repeat_ayat = 1;
+			var ayat_selector = (event.jPlayer.status.media.title) 
+
+			$('*','.mushaf').css('background-color','');
+			$('div.'+ayat_selector).css('background','#DDD'); 
+			var tmpcurrentPlay = muratalPlaylist.current;
+			var currentPlay = parseInt(tmpcurrentPlay) + 1;
+			//console.log(muratalPlaylist.playlist.length+"="+ currentPlay);
+			//console.log(ayat_selector);
+			window.goNext = false;
+			if(muratalPlaylist.playlist.length==currentPlay){
+				window.goNext = true;
+			}
+
+
+			// repeat ayat
+			var config_repeat = jQuery('.repeat').val();
+        	var repeat_ayat = jQuery('.repeat_ayat').val();
         	var config_repeat_ayat = jQuery('.repeat_ayat').is(':checked');
+        	if(config_repeat_ayat==true){
+        		if(repeat_ayat<config_repeat){
+	        		jQuery('.jp-previous').click();
+	        		repeat_ayat++;
+	        		jQuery('.repeat_ayat').val(repeat_ayat);
+	        	}else{
+	        		jQuery('.repeat_ayat').val(1);
+	        	}
+        	}
+			
         	
-        	console.log(config_repeat_ayat+'-'+config_repeat);
+
+
 
         }, 
+        repeat: function(event) {
+		  if(event.jPlayer.options.loop) {
+		    $(this).unbind(".jPlayerRepeat").bind($.jPlayer.event.ended + ".jPlayer.jPlayerRepeat", function() {
+		      $(this).jPlayer("play");
+		    });
+		  } else {
+		    $(this).unbind(".jPlayerRepeat");
+		  }
+		},
         end: function(event){
         	$('*','.view-quran').css('background-color','none');
         },
@@ -206,60 +228,63 @@ $(document).ready(function(){
 		autoBlur: false,
 		smoothPlayBar: true,
 		keyEnabled: true,
+		loop:true
 	});
 
 	
 	//$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_1")});
 });
 </script>
-<div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
-	<div class="jp-type-playlist">
-		<div id="muratalPlaylist" class="jp-jplayer"></div>
-		<div class="jp-gui">
-			<div class="jp-video-play">
-				<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
-			</div>
-			<div class="jp-interface">
-				<div class="jp-progress">
-					<div class="jp-seek-bar">
-						<div class="jp-play-bar"></div>
-					</div>
+<div class="quran_player">
+	<div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
+		<div class="jp-type-playlist">
+			<div id="muratalPlaylist" class="jp-jplayer"></div>
+			<div class="jp-gui">
+				<div class="jp-video-play">
+					<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
 				</div>
-				<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
-				<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
-				<div class="jp-controls-holder">
-					<div class="jp-controls">
-						<button class="jp-previous" role="button" tabindex="0">previous</button>
-						<button class="jp-play" role="button" tabindex="0">play</button>
-						<button class="jp-next" id="playlist-pause" role="button" tabindex="0">next</button>
-						<button class="jp-stop" role="button" tabindex="0">stop</button>
-					</div>
-					<div class="jp-volume-controls">
-						<button class="jp-mute" role="button" tabindex="0">mute</button>
-						<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
-						<div class="jp-volume-bar">
-							<div class="jp-volume-bar-value"></div>
+				<div class="jp-interface">
+					<div class="jp-progress">
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
 						</div>
 					</div>
-					<div class="jp-toggles">
-						<button class="jp-repeat" role="button" tabindex="0">repeat</button>
-						<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+					<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+					<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+					<div class="jp-controls-holder">
+						<div class="jp-controls">
+							<button class="jp-previous" role="button" tabindex="0">previous</button>
+							<button class="jp-play" role="button" tabindex="0">play</button>
+							<button class="jp-next" id="playlist-pause" role="button" tabindex="0">next</button>
+							<button class="jp-stop" role="button" tabindex="0">stop</button>
+						</div>
+						<div class="jp-volume-controls">
+							<button class="jp-mute" role="button" tabindex="0">mute</button>
+							<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+							<div class="jp-volume-bar">
+								<div class="jp-volume-bar-value"></div>
+							</div>
+						</div>
+						<div class="jp-toggles">
+							<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+							<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+						</div>
+					</div>
+					<div class="jp-details">
+						<div class="jp-title" aria-label="title">&nbsp;</div>
 					</div>
 				</div>
-				<div class="jp-details">
-					<div class="jp-title" aria-label="title">&nbsp;</div>
-				</div>
 			</div>
-		</div>
-		<div class="jp-playlist" style="display:none">
-			<ul>
-				<!-- The method Playlist.displayPlaylist() uses this unordered list -->
-				<li>&nbsp;</li>
-			</ul>
-		</div>
-		<div class="jp-no-solution">
-			<span>Update Required</span>
-			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+			<div class="jp-playlist" style="display:none">
+				<ul>
+					<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+					<li>&nbsp;</li>
+				</ul>
+			</div>
+			<div class="jp-no-solution">
+				<span>Update Required</span>
+				To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+			</div>
 		</div>
 	</div>
 </div>

@@ -18,4 +18,4 @@ div.arabic, .head_surah{
 	clear:both;
 }
 
-.mushaf_display a.selected {font-weight: bold;}
+.mushaf_display a.selected,.steps a.selected {font-weight: bold;}

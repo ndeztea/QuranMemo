@@ -22,12 +22,14 @@
 			</select>
 			<input type="text" name="ayat_end" value="<?php echo $ayat_end?$ayat_end:''?>">
 			<input type="submit" value="Cari" name="btnSubmit"/>
+			<input type="text" name="repeat_ayat" class="repeat_ayat" value="1"/>
 		</div>
 	</form>
 
 	<?php if(!empty($ayats)):?>
-	
+	<div class="memoz_player">
 	@include('players')
+	</div>
 	Ulangi 
 	<select name="repeat" class="repeat">
 		<option value="1">1 kali</option>
@@ -36,15 +38,23 @@
 		<option value="4">4 kali</option>
 		<option value="5">5 kali</option>
 	</select> | 
-	<input type="checkbox" name="repeat_ayat" class="repeat_ayat" value="1"/> Ulangi Ayat | 
+	<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat | 
 	<input type="checkbox" name="repeat_surah" class="repeat_ayat"  value="1"/> Ulangi Surah
 
 	<div class="mushaf">
-	
-		<div class="mushaf_display">
-			<a href="javascript:void(0)" onclick="showMushaf('mushaf_arabic_trans')" class="mushaf_arabic_trans selected">Arabic &nbsp; Terjemahaan</a>
-			<a href="javascript:void(0)" onclick="showMushaf('mushaf_arabic')" class="mushaf_arabic">Arabic</a>
-			<a href="javascript:void(0)" onclick="showMushaf('mushaf_trans')" class="mushaf_trans">Terjemahaan</a>
+		<div class="steps">
+			<a href="javascript:void(0)" onclick="steps('1')" class="steps_1 selected">Langkah 1</a>
+			<a href="javascript:void(0)" onclick="steps('2')" class="steps_2">Langkah 2</a>
+			<a href="javascript:void(0)" onclick="steps('3')" class="steps_3">Langkah 3</a>
+			<a href="javascript:void(0)" onclick="steps('4')" class="steps_4">Langkah 4</a>
+			<a href="javascript:void(0)" onclick="steps('5')" class="steps_5">Langkah 5</a>
+		</div>
+		<div class="steps_desc"><p>Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti.</p></div>
+
+		<div class="actions">
+			<button class="btn">Simpan Hafalan</button>
+			<button class="btn btn-success">Sudah Hafal</button>
+
 		</div>
 		<?php foreach($ayats as $ayat):?>
 		
@@ -69,23 +79,41 @@
 	<?php else:?>
 		<p class="warning">Tentukan surah dan ayat yang Anda ingin hafal</p>
 	<?php endif?>
+	<script type="text/javascript">
+	function  steps(steps){
+		if(steps==1){
+			jQuery('.trans').show();
+			jQuery('.arabic').show();
+			jQuery('.steps_desc p').html('Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti.');
+			jQuery('.memoz_player').show();
+		}else if(steps==2){
+			jQuery('.trans').hide();
+			jQuery('.arabic').show();
+			jQuery('.steps_desc p').html('Hafalkan dengan teliti target hafalan arabic');
+			jQuery('.memoz_player').hide();
+			jQuery('.jp-stop').click();
+		}else if(steps==3){
+			jQuery('.trans').show();
+			jQuery('.arabic').show();
+			jQuery('.steps_desc p').html('Hafalkan dengan teliti target hafalan arabic dan terjemahannya');
+			jQuery('.memoz_player').hide();
+			jQuery('.jp-stop').click();
+		}else if(steps==4){
+			jQuery('.trans').show();
+			jQuery('.arabic').hide();
+			jQuery('.steps_desc p').html('Hafalkan dengan teliti target terjemahannya');
+			jQuery('.memoz_player').hide();
+			jQuery('.jp-stop').click();
+		}else if(steps==5){
+			jQuery('.trans').show();
+			jQuery('.arabic').show();
+			jQuery('.steps_desc p').html('Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti, ulangi sampai hafal');
+			jQuery('.memoz_player').show();
+		}
 
-<script>
-function showMushaf(mushaf){
-	if(mushaf=='mushaf_arabic_trans'){
-		jQuery('.trans').show();
-		jQuery('.arabic').show();
-	}else if(mushaf=='mushaf_arabic'){
-		jQuery('.trans').hide();
-		jQuery('.arabic').show();
-	}else if(mushaf=='mushaf_trans'){
-		jQuery('.trans').show();
-		jQuery('.arabic').hide();
+		jQuery('.steps a').removeClass('selected');
+		jQuery('.steps_'+steps).addClass('selected');
 	}
-	jQuery('.mushaf_display a').removeClass('selected');
-	jQuery('.'+mushaf).addClass('selected');
-}
-</script>
-	
+	</script>
 
 @endsection
