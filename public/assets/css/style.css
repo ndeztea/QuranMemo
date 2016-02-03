@@ -6,8 +6,6 @@ div.arabic, .head_surah{
 	font-family: arabic;
 	font-size: 30px;
 	word-spacing: 0px;
-	float: right;
-	margin: 10px 0px 20px 0px;
 }
 
 .ayat_section{
@@ -19,3 +17,70 @@ div.arabic, .head_surah{
 }
 
 .mushaf_display a.selected,.steps a.selected {font-weight: bold;}
+
+
+
+/* ------------ asep styles ------------- */
+
+#main-nav,
+.quran_player{
+	display: none;
+}
+
+.mushaf .mushaf_display{
+	margin:13px auto;
+	text-align: center;
+	position: relative;
+	display: block;
+}
+
+.mushaf .arabic{
+	text-align: right;
+}
+
+.mushaf .arabic,
+.mushaf .trans{
+	width: 50%;
+}
+
+.mushaf .ayat_section{
+	border-bottom: dashed 1px #ddd;
+	padding: 20px 10px 15px;
+}
+
+.mushaf .ayat_section:nth-child(2){
+	border-bottom: none;
+	text-align: center;
+}
+
+
+/* responsive */
+
+@media only screen and (max-width: 20em){
+
+	.navbar-toggle{
+		float: left;
+		margin-left: 15px;
+		margin-right: 0;
+	}
+
+	.navbar-brand{
+		float: right;
+	}
+
+	.mushaf .ayat_section{
+		margin-bottom: 15px;
+	}
+
+	.mushaf .arabic,
+	.mushaf .trans{
+		width: 100%;
+		float: none !important;
+		clear:both;
+	}
+
+	.mushaf .trans .no_ayat{
+		float: left;
+	}
+
+}
