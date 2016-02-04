@@ -230,8 +230,12 @@ $(document).ready(function(){
 		keyEnabled: true,
 		loop:true
 	});
-
 	
+	<?php $a=0;foreach($ayats as $ayat):?>
+	$('.play_<?php echo $a?>').click(function(){
+		muratalPlaylist.play(<?php echo $a?>);
+	});
+	<?php $a++;endforeach?>
 	//$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_1")});
 });
 </script>

@@ -53,6 +53,9 @@ div.arabic, .head_surah{
 	text-align: center;
 }
 
+.mushaf .ayat_section{
+	cursor: pointer;
+}
 
 /* responsive */
 

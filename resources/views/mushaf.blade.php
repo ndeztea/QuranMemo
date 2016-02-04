@@ -38,7 +38,7 @@ $prev_surah = '';
 		<span><input type="checkbox" id="automated_play" name="automated_play" checked ><?php echo trans('trans.play_otomatis')?></span>
 	</div>
 	<!-- /nav-top -->
-
+	<a id="playNow">play</a>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12">
@@ -54,24 +54,24 @@ $prev_surah = '';
 						</div>
 						<!-- /mushaf-display -->
 
-						<?php foreach($ayats as $ayat):?>
+						<?php  $a=0;foreach($ayats as $ayat): ?>
 						
 						<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
-						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0">
+						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0" >
 							<div class="head_surah" >
 							بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 							</div>
 							<div class="clearfix"></div>
 						</div>
 						<!-- /ayat-section -->
-						<?php endif?>
+						<?php $a++;endif?>
 						
-						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
+						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?> play_<?php echo $a?>">
 							<div class="pull-right arabic"> <span class="no_ayat">( <?php echo $ayat->ayat?> )</span> <?php echo $ayat->text?> </div>
 							<div class="pull-left trans"> <span class="no_ayat">( <?php echo $ayat->ayat?> )</span> <?php echo $ayat->text_indo?> </div>
 						</div>
 						<?php $prev_surah = $ayat->surah?>
-						<?php endforeach?>
+						<?php $a++; endforeach?>
 					<?php endif?>
 				</div>
 				<!-- /mushaf -->
