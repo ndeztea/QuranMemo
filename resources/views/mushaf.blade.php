@@ -83,6 +83,10 @@ $prev_surah = '';
 
 	<script>
 	function showMushaf(mushaf){
+		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
+		jQuery('.mushaf').removeClass('mushaf_arabic');
+		jQuery('.mushaf').removeClass('mushaf_trans');
+
 		if(mushaf=='mushaf_arabic_trans'){
 			jQuery('.trans').show();
 			jQuery('.arabic').show();
@@ -93,6 +97,9 @@ $prev_surah = '';
 			jQuery('.trans').show();
 			jQuery('.arabic').hide();
 		}
+
+
+		jQuery('.mushaf').addClass(mushaf);
 		jQuery('.mushaf_display a').removeClass('selected');
 		jQuery('.'+mushaf).addClass('selected');
 	}
