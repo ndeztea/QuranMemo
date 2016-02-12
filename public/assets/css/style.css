@@ -1,7 +1,17 @@
+
 @font-face {
     font-family: arabic;
     src: url(arabtype.ttf);
 }
+
+a,
+a:hover,
+a:focus{
+	text-decoration: none;
+	outline:0 none;
+	cursor: pointer;
+}
+
 div.arabic, .head_surah{
 	font-family: arabic;
 	font-size: 30px;
@@ -21,11 +31,72 @@ div.arabic, .head_surah{
 
 
 /* ------------ asep styles ------------- */
-/*
+
+
+.navbar{
+	margin-bottom: 0;
+}
+
+.navbar-default{
+	background-image:none;
+	background-color: #2EB0B2;
+	border-radius: 0;
+	border:none;
+}
+
+.navbar-default .navbar-brand{
+	color: #fff;
+	text-shadow:none;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a{
+	background-image:none;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover{
+	background-color: #3fe8eb;
+	color: #25888A;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color: #1b6263;
+}
+
 #main-nav,
 .quran_player{
 	display: none;
-}*/
+}
+
+.nav-top{
+	position: relative;
+	border-bottom: solid 1px #5A6885;
+	padding: 10px 20px;
+	background-color: #515E79;
+}
+
+.select-surah{
+
+}
+
+.surah-nav{
+	width: 290px;
+	margin:auto;
+}
+
+.surah-action{
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}
+
+.surah-action .auto-play{
+	margin-right: 10px;
+	color: #2EB0B2;
+}
+
+.surah-action #playnow{
+	color: #2EB0B2;
+}
 
 .mushaf .mushaf_display{
 	margin:13px auto;
@@ -48,13 +119,12 @@ div.arabic, .head_surah{
 	padding: 20px 10px 15px;
 }
 
-.mushaf .ayat_section:nth-child(2){
-	border-bottom: none;
-	text-align: center;
-}
-
 .mushaf .ayat_section{
 	cursor: pointer;
+}
+
+.ayat_section .trans{
+	text-align: left;
 }
 
 /* responsive */
