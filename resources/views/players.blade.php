@@ -91,16 +91,16 @@ $surahMuratal[87] = "At-Tariq";
 $surahMuratal[88] = "Al-Ghashiya";
 $surahMuratal[89] = "Al-Fajr";
 $surahMuratal[90] = "Al-Balad";
-$surahMuratal[91] = "Al-Lail";
-$surahMuratal[92] = "Ash-Shams";
+$surahMuratal[91] = "Ash-Shams";
+$surahMuratal[92] = "Al-Lail";
 $surahMuratal[93] = "Ad-Dhuha";
 $surahMuratal[94] = "Al-Inshirah";
-$surahMuratal[95] = "Al-Alaq";
-$surahMuratal[96] = "At-Tin";
-$surahMuratal[97] = "Al-Bayyina";
-$surahMuratal[98] = "Al-Qadr";
-$surahMuratal[99] = "Al-Adiyat";
-$surahMuratal[100] = "Az-Zalzala";
+$surahMuratal[95] = "At-Tin";
+$surahMuratal[96] = "Al-Alaq";
+$surahMuratal[97] = "Al-Qadr";
+$surahMuratal[98] = "Al-Bayyina";
+$surahMuratal[99] = "Az-Zalzala";
+$surahMuratal[100] = "Al-Adiyat";
 $surahMuratal[101] = "Al-Qaria";
 $surahMuratal[102] = "At-Takathur";
 $surahMuratal[103] = "Al-Asr";
@@ -110,10 +110,10 @@ $surahMuratal[106] = "Al-Kauther";
 $surahMuratal[107] = "Al-Maun";
 $surahMuratal[108] = "Quraish";
 $surahMuratal[109] = "Al-Kafiroon";
-$surahMuratal[110] = "Al-Masadd";
-$surahMuratal[111] = "An-Nasr";
-$surahMuratal[112] = "Al-Falaq";
-$surahMuratal[113] = "Al-Ikhlas";
+$surahMuratal[110] = "An-Nasr";
+$surahMuratal[111] = "Al-Masadd";
+$surahMuratal[112] = "Al-Ikhlas";
+$surahMuratal[113] = "Al-Falaq";
 $surahMuratal[114] = "An-Nas";
 
 ?>
@@ -232,7 +232,12 @@ $(document).ready(function(){
 	});
 	
 	<?php $a=0;foreach($ayats as $ayat):?>
-	$('.play_<?php echo $a?>').click(function(){
+
+	<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
+	//muratalPlaylist.play();
+	<?php $a++; endif?>
+	
+	jQuery('.play_<?php echo $a?>').click(function(){
 		muratalPlaylist.play(<?php echo $a?>);
 	});
 	<?php $a++;endforeach?>
