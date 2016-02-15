@@ -58,9 +58,9 @@ $prev_surah = '';
 						
 						<div class="mushaf_display">
 							<div class="btn-group" role="group" aria-label="mushaf-display">
-								<a class="btn active" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic_trans')" class="mushaf_arabic_trans selected">Arabic &amp; Terjemahaan</a>
-								<a class="btn" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic')" class="mushaf_arabic">Arabic</a>
-								<a class="btn" href="javascript:void(0)" onclick="showMushaf('mushaf_trans')" class="mushaf_trans">Terjemahaan</a>
+								<a class="btn mushaf_arabic_trans active" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic_trans')">Arabic &amp; Terjemahaan</a>
+								<a class="btn mushaf_arabic" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic')">Arabic</a>
+								<a class="btn mushaf_trans" href="javascript:void(0)" onclick="showMushaf('mushaf_trans')">Terjemahaan</a>
 							</div>
 						</div>
 						<!-- /mushaf-display -->
@@ -117,8 +117,8 @@ $prev_surah = '';
 
 
 		jQuery('.mushaf').addClass(mushaf);
-		jQuery('.mushaf_display a').removeClass('selected');
-		jQuery('.'+mushaf).addClass('selected');
+		jQuery('.mushaf_display a').removeClass('active');
+		jQuery('.'+mushaf).addClass('active');
 	}
 	</script>
 	

@@ -52,9 +52,9 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo url('mushaf')?>"><?php echo trans('trans.mushaf')?></a></li>
+                        <li class="<?php echo Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''?>"><a href="<?php echo url('mushaf')?>"><?php echo trans('trans.mushaf')?></a></li>
                         <li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li>
-                        <li><a href="<?php echo url('memoz')?>"><?php echo trans('trans.memo')?></a></li>
+                        <li class="<?php echo Request::segment(1)=='memoz'?'active':''?>"><a href="<?php echo url('memoz')?>"><?php echo trans('trans.memo')?></a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
