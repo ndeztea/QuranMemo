@@ -145,7 +145,7 @@ div.arabic, .head_surah{
 }
 
 .mushaf .ayat_section{
-	border-bottom: dashed 1px #ddd;
+	border-bottom: dashed 1px #D6C7A1;
 	padding: 20px 10px 15px;
 }
 
@@ -197,6 +197,48 @@ div.arabic, .head_surah{
 .quran_player .jp-video{
 	border:none;
 }
+
+/* jplayer skin */
+
+.jp-gui .jp-video .jp-interface{
+	border-top:1px solid #8aaf3a;
+}
+
+/*.jp-controls-holder .jp-previous{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -112px;
+}
+
+.jp-controls-holder .jp-play{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 0;
+}
+
+.jp-controls-holder .jp-next{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -141px;
+}
+
+.jp-controls-holder .jp-stop{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -83px;
+}
+
+.jp-controls-holder .jp-mute{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -170px;
+}
+
+.jp-controls-holder .jp-volume-max{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -186px;
+}
+
+.jp-controls-holder .jp-volume-bar{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") repeat-x scroll 0 -250px;
+}
+
+.jp-controls-holder .jp-volume-bar-value{
+	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") repeat-x scroll 0 -256px;
+}
+
+.jp-controls-holder .jp-state-playing .jp-play{
+	background: rgba(0, 0, 0, 0) url("../image/jplayer.blue.monday.png") no-repeat scroll 0 -42px;
+}*/
 
 /* start responsive */
 
@@ -429,6 +471,7 @@ div.arabic, .head_surah{
 
 	.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group{
 		margin-left: 0;
+		margin-top:-1px;
 	}
 
 }
