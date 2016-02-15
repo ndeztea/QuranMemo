@@ -28,6 +28,14 @@ class MushafController extends Controller
         // get surah
         $surahs = $QuranModel->getSurah();
 
+        // showing paging
+        if($page<=7){
+            $pages = array_slice($pages, 0, 8); 
+        }elseif($page>7 && $page<=592){
+            $pages = array_slice($pages, $page - 4,7);
+        }else{
+            $pages = array_slice($pages, $page-4 , 8);
+        }
 
         // send to view 
         $data['surahs'] = $surahs;

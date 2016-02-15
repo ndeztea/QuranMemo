@@ -22,19 +22,15 @@ $prev_surah = '';
 
 		<div class="surah-nav">
 			<div class="input-group" role="group" aria-label="Navigasi">
-				<a class="btn input-group-addon" href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>">
-					<span class="hidden-xs"><?php echo trans('trans.prev')?></span>
-					<span class="visible-xs"><i class="fa fa-angle-left"></i></span>
-				</a>
-				<select class="selectpicker form-control" name="page" onchange="QuranJS.changePage(this)" >
+				<ul class="pagination">
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"> < <?php //echo trans('trans.prev')?></a></li>
 					<?php foreach($pages as $page):?>
-					<option  <?php echo $page->page==$curr_page?'selected':''?> value="<?php echo $page->page ?>"><?php echo $page->page ?></option>
+					<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
 					<?php endforeach?>
-				</select>
-				<a class="btn input-group-addon" href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>">
-					<span class="hidden-xs"><?php echo trans('trans.next')?></span>
-					<span class="visible-xs"><i class="fa fa-angle-right"></i></span>
-				</a>
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
+				</ul>
 			</div>
 		</div>
 		<!-- /surah-nav -->
