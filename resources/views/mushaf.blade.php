@@ -22,7 +22,7 @@ $prev_surah = '';
 
 		<div class="surah-nav">
 			<div class="input-group" role="group" aria-label="Navigasi">
-				<a class="btn btn-default input-group-addon" href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>">
+				<a class="btn input-group-addon" href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>">
 					<span class="hidden-xs"><?php echo trans('trans.prev')?></span>
 					<span class="visible-xs"><i class="fa fa-angle-left"></i></span>
 				</a>
@@ -31,7 +31,7 @@ $prev_surah = '';
 					<option  <?php echo $page->page==$curr_page?'selected':''?> value="<?php echo $page->page ?>"><?php echo $page->page ?></option>
 					<?php endforeach?>
 				</select>
-				<a class="btn btn-default input-group-addon" href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>">
+				<a class="btn input-group-addon" href="javascript:;" onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>">
 					<span class="hidden-xs"><?php echo trans('trans.next')?></span>
 					<span class="visible-xs"><i class="fa fa-angle-right"></i></span>
 				</a>
@@ -58,9 +58,9 @@ $prev_surah = '';
 						
 						<div class="mushaf_display">
 							<div class="btn-group" role="group" aria-label="mushaf-display">
-								<a class="btn btn-default active" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic_trans')" class="mushaf_arabic_trans selected">Arabic &amp; Terjemahaan</a>
-								<a class="btn btn-default" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic')" class="mushaf_arabic">Arabic</a>
-								<a class="btn btn-default" href="javascript:void(0)" onclick="showMushaf('mushaf_trans')" class="mushaf_trans">Terjemahaan</a>
+								<a class="btn active" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic_trans')" class="mushaf_arabic_trans selected">Arabic &amp; Terjemahaan</a>
+								<a class="btn" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic')" class="mushaf_arabic">Arabic</a>
+								<a class="btn" href="javascript:void(0)" onclick="showMushaf('mushaf_trans')" class="mushaf_trans">Terjemahaan</a>
 							</div>
 						</div>
 						<!-- /mushaf-display -->
@@ -78,8 +78,14 @@ $prev_surah = '';
 						<?php $a++;endif?>
 						
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?> play_<?php echo $a?>">
-							<div class="pull-right arabic"> <span class="no_ayat">( <?php echo $ayat->ayat?> )</span> <?php echo $ayat->text?> </div>
-							<div class="pull-left trans"> <span class="no_ayat">( <?php echo $ayat->ayat?> )</span> <?php echo $ayat->text_indo?> </div>
+							<div class="pull-right arabic"> 
+								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
+								<span class="content_ayat"><?php echo $ayat->text?> </span>
+							</div>
+							<div class="pull-left trans"> 
+								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
+								<span class="trans_content"><?php echo $ayat->text_indo?></span>
+							</div>
 						</div>
 						<?php $prev_surah = $ayat->surah?>
 						<?php $a++; endforeach?>
