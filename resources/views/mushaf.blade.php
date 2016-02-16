@@ -103,12 +103,18 @@ $prev_surah = '';
 		if(mushaf=='mushaf_arabic_trans'){
 			jQuery('.trans').show();
 			jQuery('.arabic').show();
+			jQuery('.arabic').css('width','50%');
+			jQuery('.trans').css('width','50%');
 		}else if(mushaf=='mushaf_arabic'){
 			jQuery('.trans').hide();
 			jQuery('.arabic').show();
+			jQuery('.arabic').css('width','100%');
+			jQuery('.trans').css('width','100%');
 		}else if(mushaf=='mushaf_trans'){
 			jQuery('.trans').show();
 			jQuery('.arabic').hide();
+			jQuery('.arabic').css('width','100%');
+			jQuery('.trans').css('width','100%');
 		}
 
 
