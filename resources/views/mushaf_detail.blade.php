@@ -10,39 +10,7 @@ $prev_surah = '';
 	@include('players')
 
 	<div class="nav-top clearfix">
-		
-		<div class="pull-left select-surah">
-			<select class="selectpicker form-control" name="surah" onchange="QuranJS.changeSurah(this)" >
-				<?php foreach($surahs as $surah):?>
-				<option  <?php echo $surah->id==$ayats[0]->surah?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?></option>
-				<?php endforeach?>
-			</select>
-		</div>
-		<!-- /select-surah -->
-
-		<div class="surah-nav">
-			<div class="input-group" role="group" aria-label="Navigasi">
-				<ul class="pagination">
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"> < <?php //echo trans('trans.prev')?></a></li>
-					<?php foreach($pages as $page):?>
-					<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
-					<?php endforeach?>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
-				</ul>
-			</div>
-		</div>
-		<!-- /surah-nav -->
-
-		<div class="surah-action pull-right">
-			<span class="auto-play">
-				<input type="checkbox" id="automated_play" name="automated_play" checked >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
-			</span>
-			<a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a>
-		</div>
-		<!-- /surah-action -->
-
+		<h1><?php echo $surah?> ayat <?php echo $ayat?></h1>
 	</div>
 	<!-- /nav-top -->
 	
@@ -73,7 +41,7 @@ $prev_surah = '';
 						<!-- /ayat-section -->
 						<?php $a++;endif?>
 						
-						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
+						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?> play_<?php echo $a?>">
 							<div class="pull-right arabic"> 
 								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 								<span class="content_ayat"><?php echo $ayat->text?> </span>
@@ -81,11 +49,6 @@ $prev_surah = '';
 							<div class="pull-left trans"> 
 								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 								<span class="trans_content"><?php echo $ayat->text_indo?></span>
-							</div>
-							<div class="action-footer">
-								<a href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
-								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-								<a href="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a-->
 							</div>
 						</div>
 						<?php $prev_surah = $ayat->surah?>

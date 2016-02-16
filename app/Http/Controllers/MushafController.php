@@ -43,9 +43,36 @@ class MushafController extends Controller
         $data['pages'] = $pages;
         $data['curr_page'] = $page;
 
+        // data header
+        $data['header_title'] = 'Mushaf Page '. $page;
+
         //print_r($pages);
         // show view template
        return view('mushaf',$data);
+    }
+
+    public function surah($id_surah,$ayat){
+        if($id_surah=='' || $ayat==''){
+            return redirect('mushaf');
+        }
+
+        $QuranModel = new Quran;
+        $ayats = $QuranModel->getOneAyat($id_surah,$ayat);
+
+        // name surah
+        $surah = $QuranModel->getSurah($id_surah);
+
+        $data['surah'] = $surah[0]->surah_name;
+        $data['ayats'] = $ayats;
+        $data['id_surah'] = $id_surah;
+        $data['ayat'] = $ayat;
+        $data['curr_page'] = $ayats[0]->page;
+
+        // data header
+        $data['header_title'] = 'Surah '. $surah[0]->surah_name.' : '.$ayat;
+        $data['header_description'] = $ayats[0]->text_indo;
+
+        return view('mushaf_detail',$data);
     }
 
     public function changeSurah($surah){

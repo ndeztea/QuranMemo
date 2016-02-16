@@ -64,18 +64,36 @@ class Quran extends Model
     }
 
     /**
+    * get range surah for hafalan
+    *
+    */
+    public function getOneAyat($id_surah,$ayat){
+        $ayats = DB::table('quran_arabic as qar')
+                ->leftJoin('quran_indonesia as qid', 'qar.id', '=', 'qid.id')
+                ->select('qid.text as text_indo','qar.text','qar.ayat','qar.surah','qar.page');
+        
+        $ayats->where('qar.surah','=',$id_surah)
+                ->where('qar.ayat','=',$ayat);
+
+        return $ayats->get();
+    }
+
+    /**
     * get surah list
     * 
     */
-    public function getSurah(){
+    public function getSurah($id_surah=0){
         $surah = DB::table('quran_indonesia')
-                ->select('surah as id','surah_name')
-                ->groupBy('surah')
-                ->orderBy('id','asc')
-                ->get();
+                ->select('surah as id','surah_name');
 
+        if($id_surah!=0){
+            $surah->where('id','=',$id_surah);
+        }
+        $surah->groupBy('surah')
+                ->orderBy('id','asc');
+                
 
-        return $surah;
+        return $surah->get();
     }
 
     /**

@@ -1,6 +1,14 @@
 <html>
     <head>
-        <title>QuranNote - @yield('title')</title>
+        <title>QuranNote - <?php echo isset($header_title)?$header_title:''?></title>
+
+        <meta property="og:url" content="<?php echo Request::url()?>" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="QuranNote - <?php echo $header_title?$header_title:''?>" />
+        <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'QuranNote, mushaf, Al-Quran'?>" />
+        <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+
+
         <link rel="stylesheet" href="<?php echo url('assets/css/bootstrap.min.css')?>">
 
         <!-- Optional theme -->
