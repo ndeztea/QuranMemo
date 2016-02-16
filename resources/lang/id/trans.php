@@ -6,7 +6,7 @@ return [
     'note' => 'Catatan',
     'next'	=> 'Selanjutnya',
     'prev'	=> 'Sebelumnnya',
-    'play_otomatis' => 'Play Otomatis',
+    'play_otomatis' => 'Play ke halaman selanjutnya',
     'managenotes' => 'Manage Notes',
     'surah_awal'	=> 'Surah Awal',
     'surah_akhir'	=> 'Surah Akhir',

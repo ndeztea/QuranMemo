@@ -37,9 +37,9 @@ $prev_surah = '';
 
 		<div class="surah-action pull-right">
 			<span class="auto-play">
-				<input type="checkbox" id="automated_play" name="automated_play" checked >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
+				<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
 			</span>
-			<a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a>
+			<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
 		</div>
 		<!-- /surah-action -->
 
@@ -85,7 +85,7 @@ $prev_surah = '';
 							<div class="action-footer">
 								<a href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
 								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-								<a href="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a-->
+								<a href="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
 							</div>
 						</div>
 						<?php $prev_surah = $ayat->surah?>

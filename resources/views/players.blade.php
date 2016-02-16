@@ -211,16 +211,20 @@ $(document).ready(function(){
         	var config_repeat_surah = jQuery('.repeat_surah').is(':checked');
 
         	if(window.goNext==true){
+        		// stop play
+        		$(this).jPlayer("stop");
         		if(jQuery('#automated_play').is(':checked')){
 	        		<?php if($curr_page<604): $next_page = $curr_page + 1?>
-		    		location.href = '<?php echo url('mushaf/page/'.$next_page)?>';//http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
+		    		location.href = '<?php echo url('mushaf/page/'.$next_page)?>/autoplay';//http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
 		    		<?php endif?>
 		    	}
         	}	
         	
         },
 		playlistOptions: { 
-			//autoPlay: true 
+			<?php if(Request::segment(4)=='autoplay'):?>
+			autoPlay: true 
+			<?php endif?>
 		},
           
 		swfPath: "http://jplayer.org/latest/js",
