@@ -25,8 +25,11 @@ Route::get('mushaf/', 'MushafController@index');
 Route::get('mushaf/page', 'MushafController@index');
 Route::get('mushaf/page/{page}', 'MushafController@index');
 Route::get('mushaf/page/{page}/{autoplay}', 'MushafController@index');
+Route::get('mushaf/changeSurah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}/{idsurah}', 'MushafController@surah');
+Route::post('mushaf/search', 'MushafController@search');
+
 
 
 Route::get('notes/', 'NotesController@index');

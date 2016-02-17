@@ -52,12 +52,19 @@ class MushafController extends Controller
     }
 
     public function surah($id_surah,$ayat){
-        if($id_surah=='' || $ayat==''){
-            return redirect('mushaf');
-        }
-
         $QuranModel = new Quran;
-        $ayats = $QuranModel->getOneAyat($id_surah,$ayat);
+
+        if(strpos($ayat,'-')!==false){
+            $ayatArr = explode('-', $ayat);
+            $ayats = $QuranModel->getRangeAyat($id_surah,$ayatArr[0],$id_surah,$ayatArr[1]);
+        }else{
+            $ayats = $QuranModel->getOneAyat($id_surah,$ayat);
+        }
+        
+
+        if($id_surah=='' || $ayat=='' || empty($ayats)){
+            return redirect('mushaf')->with('messageError', 'Data tidak ada!');
+        }
 
         // name surah
         $surah = $QuranModel->getSurah($id_surah);
@@ -73,6 +80,23 @@ class MushafController extends Controller
         $data['header_description'] = $ayats[0]->text_indo;
 
         return view('mushaf_detail',$data);
+    }
+
+    public function search(Request $request){
+        $surah = $request->input('surah');
+        $ayat_start = $request->input('ayat_start');
+        $ayat_end = $request->input('ayat_end');
+        $fill_ayat_end = $request->input('fill_ayat_end');
+
+        if($surah && !empty($ayat_start) && !empty($ayat_end)){
+            return redirect('mushaf/surah/'.$surah.'/'.$ayat_start.'-'.$ayat_end);
+        }elseif($surah && !empty($ayat_start)){
+            return redirect('mushaf/surah/'.$surah.'/'.$ayat_start);
+        }elseif($surah){
+            return redirect('mushaf/changeSurah/'.$surah);
+        }else{
+            return redirect('mushaf');
+        }
     }
 
     public function changeSurah($surah){

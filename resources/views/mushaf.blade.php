@@ -12,11 +12,17 @@ $prev_surah = '';
 	<div class="nav-top clearfix">
 		
 		<div class="pull-left select-surah">
-			<select class="selectpicker form-control" name="surah" onchange="QuranJS.changeSurah(this)" >
-				<?php foreach($surahs as $surah):?>
-				<option  <?php echo $surah->id==$ayats[0]->surah?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?></option>
-				<?php endforeach?>
-			</select>
+			<form method="post" action="<?php echo url('mushaf/search')?>"> 
+				<select class="selectpicker form-control" name="surah">
+					<?php foreach($surahs as $surah):?>
+					<option  <?php echo $surah->id==$ayats[0]->surah?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?></option>
+					<?php endforeach?>
+				</select>
+				<input type="text" name="ayat_start" placeholder="Ayat"/>
+				<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" > Sampai ayat 
+				<input type="text" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
+				<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
+			</form>
 		</div>
 		<!-- /select-surah -->
 

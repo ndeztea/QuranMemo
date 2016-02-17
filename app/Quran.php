@@ -87,12 +87,11 @@ class Quran extends Model
                 ->select('surah as id','surah_name');
 
         if($id_surah!=0){
-            $surah->where('id','=',$id_surah);
+            $surah->where('surah','=',$id_surah);
         }
         $surah->groupBy('surah')
                 ->orderBy('id','asc');
-                
-
+        //dd($surah->toSql());
         return $surah->get();
     }
 

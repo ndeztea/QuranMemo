@@ -14,6 +14,15 @@ var QuranJS = {
 	changeSurah : function (surah){
 		// @todo : use ajax
 		location.href=this.siteUrl+'/mushaf/surah/'+$(surah).val();
+	},
+
+	fillAyatEnd : function(ayatEnd){
+		if(jQuery('#fill_ayat_end').is(':checked')){
+			$('#ayat_end').show();
+		}else{
+			$('#ayat_end').hide();
+		}
+		
 	}
 } 
 
