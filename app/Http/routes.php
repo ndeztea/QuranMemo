@@ -31,12 +31,14 @@ Route::get('mushaf/surah/{surah}/{idsurah}', 'MushafController@surah');
 Route::post('mushaf/search', 'MushafController@search');
 
 
-
 Route::get('notes/', 'NotesController@index');
 Route::get('notes/create', 'NotesController@create');
 
 Route::get('memoz/', 'MemozController@index');
 Route::post('memoz/', 'MemozController@index');
+
+Route::get('bookmarks/', 'BookmarksController@index');
+
 
 
 

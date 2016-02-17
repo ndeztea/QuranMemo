@@ -2,6 +2,10 @@
     <head>
         <title>QuranNote - <?php echo isset($header_title)?$header_title:''?></title>
 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <meta property="og:url" content="<?php echo Request::url()?>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="QuranNote - <?php echo $header_title?$header_title:''?>" />
@@ -83,5 +87,20 @@
 
             @yield('content')
         </div>
+
+        <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="QuranModal" tabindex="-1" role="dialog" aria-labelledby="QuranModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="QuranModalTitle"></h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer"> </div>
+        </div>
+      </div>
+    </div>
     </body>
 </html>

@@ -91,7 +91,7 @@ $prev_surah = '';
 							<div class="action-footer">
 								<a href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
 								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-								<a href="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
+								<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
 							</div>
 						</div>
 						<?php $prev_surah = $ayat->surah?>
