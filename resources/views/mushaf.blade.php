@@ -10,29 +10,49 @@ $prev_surah = '';
 	@include('players')
 
 	<div class="nav-top clearfix">
-		
-		<div class="pull-left select-surah">
-			<form method="post" action="<?php echo url('mushaf/search')?>"> 
-				<select class="selectpicker form-control" name="surah">
-					<?php foreach($surahs as $surah):?>
-					<option  <?php echo $surah->id==$ayats[0]->surah?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?></option>
-					<?php endforeach?>
-				</select>
-				<input type="text" name="ayat_start" placeholder="Ayat"/>
-				<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" > Sampai ayat 
-				<input type="text" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
-				<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
-			</form>
-		</div>
-		<!-- /select-surah -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-7 -col-md-7">
 
-		<div class="surah-action pull-right">
-			<span class="auto-play">
-				<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
-			</span>
-			<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
+					<div class="select-surah">
+
+						<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
+							<div class="form-group">
+								<select class="selectpicker form-control" name="surah">
+									<?php foreach($surahs as $surah):?>
+									<option  <?php echo $surah->id==$ayats[0]->surah?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?></option>
+									<?php endforeach?>
+								</select>
+							</div>
+							<div class="form-group display-inline-block-xs">
+								<input class="form-control search_ayat" type="text" name="ayat_start" placeholder="Ayat"/>
+							</div>
+							<div class="checkbox display-inline-block-xs">
+								<label>
+									<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" >  <span>Sampai ayat </span>
+									<input class="form-control search_ayat" type="text" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
+								</label>
+							</div>
+							<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
+						</form>
+
+					</div>
+					<!-- /select-surah -->
+
+				</div>
+				<div class="col-xs-12 col-sm-5 -col-md-5">
+
+					<div class="surah-action">
+						<span class="auto-play">
+							<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
+						</span>
+						<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
+					</div>
+					<!-- /surah-action -->
+
+				</div>
+			</div>
 		</div>
-		<!-- /surah-action -->
 
 	</div>
 	<!-- /nav-top -->
@@ -74,9 +94,9 @@ $prev_surah = '';
 								<span class="trans_content"><?php echo $ayat->text_indo?></span>
 							</div>
 							<div class="action-footer">
-								<a href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
+								<a class="btn btn-play-ayat" href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
 								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-								<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
+								<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
 							</div>
 						</div>
 						<?php $prev_surah = $ayat->surah?>

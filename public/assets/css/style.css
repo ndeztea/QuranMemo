@@ -44,11 +44,11 @@ div.arabic, .head_surah{
 .navbar-default{
 	background-image:none;
 	/*background-color: #2EB0B2;*/
-	background: #8aaf3a;
-	background: -moz-linear-gradient(top,  #8aaf3a 0%, #20771a 100%);
-	background: -webkit-linear-gradient(top,  #8aaf3a 0%,#20771a 100%);
-	background: linear-gradient(to bottom,  #8aaf3a 0%,#20771a 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8aaf3a', endColorstr='#20771a',GradientType=0 );
+	background: #7A9D46;
+	background: -moz-linear-gradient(top,  #7A9D46 0%, #20771a 100%);
+	background: -webkit-linear-gradient(top,  #7A9D46 0%,#20771a 100%);
+	background: linear-gradient(to bottom,  #7A9D46 0%,#20771a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7A9D46', endColorstr='#20771a',GradientType=0 );
 	border-radius: 0;
 	border:none;
 }
@@ -61,7 +61,7 @@ div.arabic, .head_surah{
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus{
-	color: #37D9DB;
+	color: #8aaf3a;
 }
 
 .navbar-default .navbar-nav > .active > a, 
@@ -92,13 +92,42 @@ div.arabic, .head_surah{
 	background-color: #385747;
 }
 
-.select-surah{
+.select-surah .form-inline{
+	margin-bottom: 0;
+}
 
+.select-surah  .form-inline .form-group{
+	margin: 0 5px 0 0;
+}
+
+.select-surah .checkbox{
+	color: #fff;
+}
+
+.select-surah .search_ayat{
+	width:55px;
+}
+
+.select-surah .form-inline .btn{
+	background-color: #8aaf3a;
+	color: #fff;
+	font-size: 20px;
+	margin-left: 3px;
+}
+
+.select-surah .form-inline .btn:hover,
+.select-surah .form-inline .btn:focus{
+	background-color: #A5D147;
 }
 
 .surah-nav{
-	width: 290px;
+	width: 100%;
 	margin:auto;
+	padding-bottom: 80px;
+}
+
+.surah-nav .input-group{
+	margin: auto;
 }
 
 .surah-nav .input-group .btn{
@@ -108,10 +137,28 @@ div.arabic, .head_surah{
     text-shadow:none;
 }
 
+.wrap .alert{
+	margin-bottom: 0;
+}
+
+.pagination > .active > a, 
+.pagination > .active > a:focus, 
+.pagination > .active > a:hover, 
+.pagination > .active > span, 
+.pagination > .active > span:focus, 
+.pagination > .active > span:hover{
+	background-color: #8aaf3a;
+	border-color:#8aaf3a;
+}
+
+.pagination > li > a, 
+.pagination > li > span{
+	color: #8aaf3a;
+}
+
 .surah-action{
-	position: absolute;
-	top: 15px;
-	right: 20px;
+	text-align: right;
+	margin: 7px 0 0;
 }
 
 .surah-action .auto-play{
@@ -124,7 +171,8 @@ div.arabic, .head_surah{
 }
 
 .mushaf{
-	padding-bottom: 80px;
+	padding-bottom: 40px;
+	position: relative;
 }
 
 .mushaf .mushaf_display{
@@ -156,6 +204,43 @@ div.arabic, .head_surah{
 .ayat_section .trans{
 	text-align: left;
 	color: rgba(43, 69, 56, 0.5);
+}
+
+.mushaf .ayat_section{
+	position: relative;
+}
+
+.mushaf .ayat_section{
+	padding-bottom: 35px;
+}
+
+.mushaf .ayat_section .action-footer{
+	position: absolute;
+	bottom: 14px;
+    left: 10px;
+}
+
+.mushaf_trans .ayat_section .action-footer{
+	position: absolute;
+	bottom: 4px;
+    left: 10px;
+}
+
+.mushaf_arabic .ayat_section .action-footer{
+	position: absolute;
+	bottom: 14px;
+    left: 10px;
+}
+
+.action-footer .btn{
+	margin: 0 5px 0 0;
+	background-color: #8aaf3a;
+	color: #fff;
+}
+
+.action-footer .btn:hover,
+.action-footer .btn:focus{
+	background-color: #A5D147;
 }
 
 .mushaf_display .btn-group .btn{
@@ -373,7 +458,7 @@ div.arabic, .head_surah{
 
 	.navbar-default .navbar-toggle:hover,
 	.navbar-default .navbar-toggle:focus{
-		background-color: #37D9DB;
+		background-color: #8aaf3a;
 	}	
 
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
@@ -457,6 +542,63 @@ div.arabic, .head_surah{
 		float: left;
 		width: 90%;
 	}	
+
+	.selectpicker{
+		margin-bottom: 10px;
+	}
+
+	.display-inline-block-xs{
+		display: inline-block !important;
+	}
+
+	.select-surah .form-inline .checkbox{
+		vertical-align: top;
+		margin:0 !important;
+	}
+
+	input[type=checkbox] + label {
+	 
+	} 
+	input[type=checkbox]:checked + label {
+	  
+	} 
+
+	.select-surah{
+		margin-top:12px;
+	}
+
+	.select-surah .search_ayat{
+		width: 67px;
+	}
+
+	.select-surah .form-inline .checkbox input[type="checkbox"], 
+	.select-surah .form-inline .checkbox-inline input[type="checkbox"]{
+		margin-top: 10px;
+	}
+
+	#ayat_end{
+		display: inline-block;
+	}
+
+	.select-surah .form-inline .btn{
+		display: block;
+		width: 98%;
+		margin-left: 0;
+		margin-top:5px;
+	}
+
+	.surah-action{
+		margin: 17px 0 7px;
+	}
+
+	.surah-action .auto-play{
+		display: block;
+		text-align: center;
+	}
+
+	.mushaf .ayat_section{
+		padding-bottom: 40px;
+	}
 
 }
 
