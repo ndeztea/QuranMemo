@@ -26,21 +26,6 @@ $prev_surah = '';
 		</div>
 		<!-- /select-surah -->
 
-		<div class="surah-nav">
-			<div class="input-group" role="group" aria-label="Navigasi">
-				<ul class="pagination">
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"> < <?php //echo trans('trans.prev')?></a></li>
-					<?php foreach($pages as $page):?>
-					<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
-					<?php endforeach?>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
-				</ul>
-			</div>
-		</div>
-		<!-- /surah-nav -->
-
 		<div class="surah-action pull-right">
 			<span class="auto-play">
 				<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
@@ -91,7 +76,7 @@ $prev_surah = '';
 							<div class="action-footer">
 								<a href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
 								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-								<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
+								<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
 							</div>
 						</div>
 						<?php $prev_surah = $ayat->surah?>
@@ -101,9 +86,22 @@ $prev_surah = '';
 				<!-- /mushaf -->
 			</div>
 		</div>
+		<div class="surah-nav">
+			<div class="input-group" role="group" aria-label="Navigasi">
+				<ul class="pagination">
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"> < <?php //echo trans('trans.prev')?></a></li>
+					<?php foreach($pages as $page):?>
+					<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
+					<?php endforeach?>
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
+					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /surah-nav -->
 	</div>
 
-	
 
 	<script>
 	function showMushaf(mushaf){
