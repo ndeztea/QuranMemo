@@ -56,6 +56,7 @@ $prev_surah = '';
 
 	</div>
 	<!-- /nav-top -->
+	@include('errors.errors_message');
 	
 	<div class="container-fluid">
 		<div class="row">
