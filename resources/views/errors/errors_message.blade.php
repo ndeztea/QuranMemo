@@ -1,5 +1,8 @@
 @if(!empty(session('messageError')))
-    <div class="alert alert-danger">{{ session('messageError') }}</div>
+    <div class="alert alert-danger">
+    	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	{{ session('messageError') }}
+    </div>
 @endif
 
 @if(!empty($messageErrors))
