@@ -152,8 +152,8 @@ $(document).ready(function(){
 
 			var ayat_selector = (event.jPlayer.status.media.title) 
 
-			$('*','.mushaf').css('background-color','');
-			$('div.'+ayat_selector).css('background','#DDD'); 
+			$('*','.mushaf').removeClass('playing');
+			$('div.'+ayat_selector).addClass('playing');
 			var tmpcurrentPlay = muratalPlaylist.current;
 			var currentPlay = parseInt(tmpcurrentPlay) + 1;
 			//console.log(muratalPlaylist.playlist.length+"="+ currentPlay);
@@ -193,7 +193,7 @@ $(document).ready(function(){
 		  }
 		},
         end: function(event){
-        	$('*','.view-quran').css('background-color','none');
+        	$('*','.view-quran').removeClass('playing');
         },
         ended: function(event){
         							        	//alert(muratalPlaylist.current);

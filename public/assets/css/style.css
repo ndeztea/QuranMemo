@@ -645,3 +645,7 @@ div.arabic, .head_surah{
 .fa-3{
 	font-size: 4em;
 }
+
+.playing{
+	background-color: #DDD;
+}

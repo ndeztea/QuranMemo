@@ -57,7 +57,7 @@ $prev_surah = '';
 	</div>
 	<!-- /nav-top -->
 	@include('errors.errors_message');
-	
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12">
@@ -95,7 +95,7 @@ $prev_surah = '';
 								<span class="trans_content"><?php echo $ayat->text_indo?></span>
 							</div>
 							<div class="action-footer">
-								<a class="btn btn-play-ayat" href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
+								<a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i></a>
 								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
 								<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
 							</div>
