@@ -1,343 +1,269 @@
-
 @font-face {
-    font-family: arabic;
-    src: url(arabtype.ttf);
+font-family:arabic
 }
 
-body{
-	background: #FFEDBF;
+body {
+background:#FFEDBF
 }
 
-a,
-a:hover,
-a:focus{
-	text-decoration: none;
-	outline:0 none;
-	cursor: pointer;
+a,a:hover,a:focus {
+text-decoration:none;
+outline:0 none;
+cursor:pointer
 }
 
-div.arabic, .head_surah{
-	font-family: arabic;
-	font-size: 30px;
-	word-spacing: 0px;
+.arabic,.head_surah {
+font-family:arabic;
+font-size:30px;
+word-spacing:0
 }
 
-.ayat_section{
-
+.clearfix {
+clear:both
 }
 
-.clearfix{
-	clear:both;
+.mushaf_display a.selected,.steps a.selected {
+font-weight:700
 }
 
-.mushaf_display a.selected,.steps a.selected {font-weight: bold;}
-
-
-
-/* ------------ asep styles ------------- */
-
-
-.navbar{
-	margin-bottom: 0;
+.navbar {
+margin-bottom:0
 }
 
-.navbar-default{
-	background-image:none;
-	/*background-color: #2EB0B2;*/
-	background: #7A9D46;
-	background: -moz-linear-gradient(top,  #7A9D46 0%, #20771a 100%);
-	background: -webkit-linear-gradient(top,  #7A9D46 0%,#20771a 100%);
-	background: linear-gradient(to bottom,  #7A9D46 0%,#20771a 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7A9D46', endColorstr='#20771a',GradientType=0 );
-	border-radius: 0;
-	border:none;
+.navbar-default {
+background-image:none;
+background:#7A9D46;
+background:-moz-linear-gradient(top,#7A9D46 0%,#20771a 100%);
+background:-webkit-linear-gradient(top,#7A9D46 0%,#20771a 100%);
+background:linear-gradient(to bottom,#7A9D46 0%,#20771a 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7A9D46',endColorstr='#20771a',GradientType=0);
+border-radius:0;
+border:none
 }
 
-.navbar-default .navbar-brand{
-	color: #fff;
-	text-shadow:none;
-	font-weight: 700;
+.navbar-default .navbar-brand {
+color:#fff;
+text-shadow:none;
+font-weight:700
 }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus{
-	color: #8aaf3a;
+.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus {
+color:#8aaf3a
 }
 
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .open > a{
-	background-image:none;
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .open > a {
+background-image:none
 }
 
-.navbar-default .navbar-nav > li > a{
-	color: #ddd;
-	text-shadow:none;
+.navbar-default .navbar-nav > li > a {
+color:#ddd;
+text-shadow:none
 }
 
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:focus, 
-.navbar-default .navbar-nav > .active > a:hover{
-	background-color: #20771A;
-	color: #fff;
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-default .navbar-nav > .active > a:focus,.navbar-default .navbar-default .navbar-nav > .active > a:hover {
+background-color:#20771A;
+color:#fff
 }
 
-#main-nav{
-	display: none;
+#main-nav {
+display:none
 }
 
-.nav-top{
-	position: relative;
-	border-bottom: solid 1px #385747;
-	padding: 10px 20px;
-	background-color: #385747;
+.nav-top {
+position:relative;
+border-bottom:solid 1px #385747;
+padding:10px 20px;
+background-color:#385747
 }
 
-.select-surah .form-inline{
-	margin-bottom: 0;
+.select-surah .form-inline {
+margin-bottom:0
 }
 
-.select-surah  .form-inline .form-group{
-	margin: 0 5px 0 0;
+.select-surah .form-inline .form-group {
+margin:0 5px 0 0
 }
 
-.select-surah .checkbox{
-	color: #fff;
+.select-surah .form-inline .btn {
+background-color:#8aaf3a;
+color:#fff;
+font-size:20px;
+margin-left:3px
 }
 
-.select-surah .search_ayat{
-	width:55px;
+.select-surah .form-inline .btn:hover,.select-surah .form-inline .btn:focus {
+background-color:#A5D147
 }
 
-.select-surah .form-inline .btn{
-	background-color: #8aaf3a;
-	color: #fff;
-	font-size: 20px;
-	margin-left: 3px;
+.select-surah .checkbox {
+color:#fff
 }
 
-.select-surah .form-inline .btn:hover,
-.select-surah .form-inline .btn:focus{
-	background-color: #A5D147;
+.select-surah .search_ayat {
+width:55px
 }
 
-.surah-nav{
-	width: 100%;
-	margin:auto;
-	padding-bottom: 80px;
+.surah-nav {
+width:100%;
+margin:auto;
+padding-bottom:80px
 }
 
-.surah-nav .input-group{
-	margin: auto;
+.surah-nav .input-group {
+margin:auto
 }
 
-.surah-nav .input-group .btn{
-	background-color: #8AAF3A;
-    border-color: #8AAF3A;
-    color: #fff;
-    text-shadow:none;
+.surah-nav .input-group .btn {
+background-color:#8aaf3a;
+border-color:#8aaf3a;
+color:#fff;
+text-shadow:none
 }
 
-.wrap .alert{
-	margin-bottom: 0;
+.wrap .alert {
+margin-bottom:0
 }
 
-.pagination > .active > a, 
-.pagination > .active > a:focus, 
-.pagination > .active > a:hover, 
-.pagination > .active > span, 
-.pagination > .active > span:focus, 
-.pagination > .active > span:hover{
-	background-color: #8aaf3a;
-	border-color:#8aaf3a;
+.pagination > .active > a,.pagination > .active > a:focus,.pagination > .active > a:hover,.pagination > .active > span,.pagination > .active > span:focus,.pagination > .active > span:hover {
+background-color:#8aaf3a;
+border-color:#8aaf3a
 }
 
-.pagination > li > a, 
-.pagination > li > span{
-	color: #8aaf3a;
+.pagination > li > a,.pagination > li > span {
+color:#8aaf3a
 }
 
-.surah-action{
-	text-align: right;
-	margin: 7px 0 0;
+.surah-action {
+text-align:right;
+margin:7px 0 0
 }
 
-.surah-action .auto-play{
-	margin-right: 10px;
-	color: #fff;
+.surah-action .auto-play {
+margin-right:10px;
+color:#fff
 }
 
-.surah-action #playnow{
-	color: #fff;
+.surah-action #playnow {
+color:#fff
 }
 
-.mushaf{
-	padding-bottom: 40px;
-	position: relative;
+.mushaf {
+padding-bottom:40px;
+position:relative
 }
 
-.mushaf .mushaf_display{
-	margin:13px auto;
-	text-align: center;
-	position: relative;
-	display: block;
+.mushaf .mushaf_display {
+margin:13px auto;
+text-align:center;
+position:relative;
+display:block
 }
 
-.mushaf .arabic{
-	text-align: right;
-	color: #2B4538;
+.mushaf .arabic {
+text-align:right;
+color:#2B4538;
+width:50%
 }
 
-.mushaf .arabic,
-.mushaf .trans{
-	width: 50%;
+.mushaf .trans {
+width:50%
 }
 
-.mushaf .ayat_section{
-	border-bottom: dashed 1px #D6C7A1;
-	padding: 20px 10px 15px;
+.mushaf .ayat_section {
+border-bottom:dashed 1px #D6C7A1;
+padding:20px 10px 35px;
+cursor:pointer;
+position:relative
 }
 
-.mushaf .ayat_section{
-	cursor: pointer;
+.mushaf .ayat_section .trans {
+text-align:left;
+color:rgba(43,69,56,0.5)
 }
 
-.ayat_section .trans{
-	text-align: left;
-	color: rgba(43, 69, 56, 0.5);
+.mushaf .ayat_section .action-footer {
+position:absolute;
+bottom:14px;
+left:10px
 }
 
-.mushaf .ayat_section{
-	position: relative;
+.mushaf .ayat_section .action-footer .btn {
+margin:0 5px 0 0;
+background-color:#8aaf3a;
+color:#fff
 }
 
-.mushaf .ayat_section{
-	padding-bottom: 35px;
+.mushaf .ayat_section .action-footer .btn:hover,.mushaf .ayat_section .action-footer .btn:focus {
+background-color:#A5D147
 }
 
-.mushaf .ayat_section .action-footer{
-	position: absolute;
-	bottom: 14px;
-    left: 10px;
+.mushaf_trans .ayat_section .action-footer {
+position:absolute;
+bottom:4px;
+left:10px
 }
 
-.mushaf_trans .ayat_section .action-footer{
-	position: absolute;
-	bottom: 4px;
-    left: 10px;
+.mushaf_arabic .ayat_section .action-footer {
+position:absolute;
+bottom:14px;
+left:10px
 }
 
-.mushaf_arabic .ayat_section .action-footer{
-	position: absolute;
-	bottom: 14px;
-    left: 10px;
+.mushaf_display .btn-group .btn {
+border-color:#8aaf3a;
+color:#8aaf3a
 }
 
-.action-footer .btn{
-	margin: 0 5px 0 0;
-	background-color: #8aaf3a;
-	color: #fff;
+.mushaf_display .btn-group .btn.active,.mushaf_display .btn-group .btn:active {
+background-color:#8aaf3a;
+border-color:#8aaf3a;
+color:#fff;
+text-shadow:none;
+background-image:none
 }
 
-.action-footer .btn:hover,
-.action-footer .btn:focus{
-	background-color: #A5D147;
+.mushaf_display .btn-group .btn:hover,.mushaf_display .btn-group .btn:focus {
+background-color:#8aaf3a;
+color:#fff
 }
 
-.mushaf_display .btn-group .btn{
-	border-color: #8AAF3A;
-	color: #8AAF3A;
+.nav-top-collapse {
+display:block;
+height:auto!important;
+overflow:visible!important;
+padding-bottom:0
 }
 
-.mushaf_display .btn-group .btn.active, 
-.mushaf_display .btn-group .btn:active{
-	background-color: #8AAF3A;
-    border-color: #8AAF3A;
-    color: #fff;
-    text-shadow: none;
-    background-image: none;
+.quran_player {
+width:100%;
+position:fixed;
+bottom:0;
+left:0;
+background:#385747;
+z-index:99
 }
 
-.mushaf_display .btn-group .btn:hover,
-.mushaf_display .btn-group .btn:focus{
-	background-color: #8AAF3A;
-	color: #fff;
+.quran_player .jp-video {
+width:100%;
+background:transparent
 }
 
-.nav-top-collapse{
-	display: block;
-    height: auto !important;
-    overflow: visible !important;
-    padding-bottom: 0;
+.quran_player .jp-audio,.quran_player .jp-audio-stream,.quran_player .jp-video {
+border:none
 }
 
-.quran_player{
-	width: 100%;
-	position: fixed;
-	bottom:0;
-	left: 0;
-	background: #385747;
-	z-index:99;
+.jp-gui .jp-video .jp-interface {
+border-top:1px solid #8aaf3a
 }
 
-.quran_player .jp-video{
-	width: 100%;
-	background:transparent;
+.fa-3 {
+font-size:4em
 }
 
-.quran_player .jp-audio, 
-.quran_player .jp-audio-stream, 
-.quran_player .jp-video{
-	border:none;
+.playing {
+background-color:#DDD
 }
-
-/* jplayer skin */
-
-.jp-gui .jp-video .jp-interface{
-	border-top:1px solid #8aaf3a;
-}
-
-/*.jp-controls-holder .jp-previous{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -112px;
-}
-
-.jp-controls-holder .jp-play{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 0;
-}
-
-.jp-controls-holder .jp-next{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -141px;
-}
-
-.jp-controls-holder .jp-stop{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -83px;
-}
-
-.jp-controls-holder .jp-mute{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -170px;
-}
-
-.jp-controls-holder .jp-volume-max{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") no-repeat scroll 0 -186px;
-}
-
-.jp-controls-holder .jp-volume-bar{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") repeat-x scroll 0 -250px;
-}
-
-.jp-controls-holder .jp-volume-bar-value{
-	background: rgba(0, 0, 0, 0) url("../images/jplayer.blue.monday.png") repeat-x scroll 0 -256px;
-}
-
-.jp-controls-holder .jp-state-playing .jp-play{
-	background: rgba(0, 0, 0, 0) url("../image/jplayer.blue.monday.png") no-repeat scroll 0 -42px;
-}*/
-
-/* start responsive */
-
-
-/* 1440px and lower */
-
-@media(max-width:90em){
+@media #(max-width:90em){
 
 
 
@@ -408,7 +334,7 @@ div.arabic, .head_surah{
 
 @media(max-width:60em){
 
-	
+  
 
 }
 
@@ -416,7 +342,7 @@ div.arabic, .head_surah{
 
 @media(max-width:56.25em){
 
-	
+  
 
 }
 
@@ -424,7 +350,7 @@ div.arabic, .head_surah{
 
 @media(max-width:53.750em){
 
-	
+  
 
 }
 
@@ -432,7 +358,7 @@ div.arabic, .head_surah{
 
 @media(max-width:50em){
 
-	
+  
 
 }
 
@@ -440,7 +366,7 @@ div.arabic, .head_surah{
 
 @media(max-width:48em){
 
-	
+  
 
 
 }
@@ -449,37 +375,37 @@ div.arabic, .head_surah{
 
 @media(max-width:47.938em){
 
-	.navbar-toggle{
-		float: left;
-		margin-left: 15px;
-		margin-right: 0;
-	}
+  .navbar-toggle{
+    float: left;
+    margin-left: 15px;
+    margin-right: 0;
+  }
 
-	.navbar-default .navbar-toggle{
-		border-color: #fff;
-	}
+  .navbar-default .navbar-toggle{
+    border-color: #fff;
+  }
 
-	.navbar-default .navbar-toggle .icon-bar{
-		background-color: #fff;
-	}
+  .navbar-default .navbar-toggle .icon-bar{
+    background-color: #fff;
+  }
 
-	.navbar-default .navbar-toggle:hover,
-	.navbar-default .navbar-toggle:focus{
-		background-color: #8aaf3a;
-	}	
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle:focus{
+    background-color: $main-color;
+  } 
 
-	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
-		box-shadow: none;
-		border-color: transparent;
-	}
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    box-shadow: none;
+    border-color: transparent;
+  }
 
-	.navbar-brand{
-		float: right;
-	}
+  .navbar-brand{
+    float: right;
+  }
 
-	.mushaf .ayat_section{
-		margin-bottom: 15px;
-	}
+  .mushaf .ayat_section{
+    margin-bottom: 15px;
+  }
 
 }
 
@@ -487,7 +413,7 @@ div.arabic, .head_surah{
 
 @media(max-width:43.750em){
 
-	
+  
 
 }
 
@@ -497,7 +423,7 @@ div.arabic, .head_surah{
 
 @media(max-width:42.500em){
 
-	
+  
 
 }
 
@@ -505,7 +431,7 @@ div.arabic, .head_surah{
 
 @media(max-width:41.250em){
 
-	
+  
 
 }
 
@@ -513,7 +439,7 @@ div.arabic, .head_surah{
 
 @media(max-width:40em){
 
-	
+  
 
 }
 
@@ -521,13 +447,13 @@ div.arabic, .head_surah{
 
 @media(max-width:37.5em){
 
-	/*#surah-collapse.collapse{
-		display: none;
-	}
+  /*#surah-collapse.collapse{
+    display: none;
+  }
 
-	#surah-collapse.collapse.in{
-		display: block;
-	}*/
+  #surah-collapse.collapse.in{
+    display: block;
+  }*/
 
 }
 
@@ -536,82 +462,82 @@ div.arabic, .head_surah{
 
 @media(max-width:30em){
 
-	.mushaf .arabic,
-	.mushaf .trans{
-		width: 100%;
-		float: none !important;
-		clear:both;
-	}
+  .mushaf .arabic,
+  .mushaf .trans{
+    width: 100%;
+    float: none !important;
+    clear:both;
+  }
 
-	.mushaf .arabic{
-		margin-bottom: 10px;
-	}
+  .mushaf .arabic{
+    margin-bottom: 10px;
+  }
 
-	.mushaf .trans .no_ayat{
-		float: left;
-		width: 10%;
-	}
-	.mushaf .trans .trans_content{
-		float: left;
-		width: 90%;
-	}	
+  .mushaf .trans .no_ayat{
+    float: left;
+    width: 10%;
+  }
+  .mushaf .trans .trans_content{
+    float: left;
+    width: 90%;
+  } 
 
-	.selectpicker{
-		margin-bottom: 10px;
-	}
+  .selectpicker{
+    margin-bottom: 10px;
+  }
 
-	.display-inline-block-xs{
-		display: inline-block !important;
-	}
+  .display-inline-block-xs{
+    display: inline-block !important;
+  }
 
-	.select-surah .form-inline .checkbox{
-		vertical-align: top;
-		margin:0 !important;
-	}
+  .select-surah .form-inline .checkbox{
+    vertical-align: top;
+    margin:0 !important;
+  }
 
-	input[type=checkbox] + label {
-	 
-	} 
-	input[type=checkbox]:checked + label {
-	  
-	} 
+  input[type=checkbox] + label {
+   
+  } 
+  input[type=checkbox]:checked + label {
+    
+  } 
 
-	.select-surah{
-		margin-top:12px;
-	}
+  .select-surah{
+    margin-top:12px;
+  }
 
-	.select-surah .search_ayat{
-		width: 67px;
-	}
+  .select-surah .search_ayat{
+    width: 67px;
+  }
 
-	.select-surah .form-inline .checkbox input[type="checkbox"], 
-	.select-surah .form-inline .checkbox-inline input[type="checkbox"]{
-		margin-top: 10px;
-	}
+  .select-surah .form-inline .checkbox input[type="checkbox"], 
+  .select-surah .form-inline .checkbox-inline input[type="checkbox"]{
+    margin-top: 10px;
+  }
 
-	#ayat_end{
-		display: inline-block;
-	}
+  #ayat_end{
+    display: inline-block;
+  }
 
-	.select-surah .form-inline .btn{
-		display: block;
-		width: 98%;
-		margin-left: 0;
-		margin-top:5px;
-	}
+  .select-surah .form-inline .btn{
+    display: block;
+    width: 98%;
+    margin-left: 0;
+    margin-top:5px;
+  }
 
-	.surah-action{
-		margin: 17px 0 7px;
-	}
+  .surah-action{
+    margin: 17px 0 7px;
+  }
 
-	.surah-action .auto-play{
-		display: block;
-		text-align: center;
-	}
+  .surah-action .auto-play{
+    display: block;
+    text-align: center;
+  }
 
-	.mushaf .ayat_section{
-		padding-bottom: 40px;
-	}
+  .mushaf .ayat_section{
+    padding-bottom: 40px;
+  }
 
 }
 
@@ -619,15 +545,15 @@ div.arabic, .head_surah{
 
 @media(max-width:24em){
 
-	.mushaf_display .btn-group .btn{
-		width: 100%;
-		border-radius:0 !important;
-	}
+  .mushaf_display .btn-group .btn{
+    width: 100%;
+    border-radius:0 !important;
+  }
 
-	.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group{
-		margin-left: 0;
-		margin-top:-1px;
-	}
+  .btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group{
+    margin-left: 0;
+    margin-top:-1px;
+  }
 
 }
 
@@ -636,7 +562,7 @@ div.arabic, .head_surah{
 @media(max-width:22.500em){
 
 
-		
+    
 
 }
 
@@ -644,21 +570,13 @@ div.arabic, .head_surah{
 
 @media(max-width:21.250em){
 
-	
+  
 
 }
 
 /* 320px and lower */
 
-@media(max-width:20em){
+@media #($width-name : $target-width-mobile) {
 
 
-}
-
-.fa-3{
-	font-size: 4em;
-}
-
-.playing{
-	background-color: #DDD;
 }

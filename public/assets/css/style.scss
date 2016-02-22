@@ -1,0 +1,320 @@
+$main-color: #8aaf3a;
+$arab-font: arabic;
+
+$breakpoints: (
+  'small'  : ( min-width:  767px ),
+  'medium' : ( min-width:  992px ),
+  'large'  : ( min-width: 1200px )
+);
+
+@font-face {
+    font-family: $arab-font;
+}
+
+body{
+	background: #FFEDBF;
+}
+
+a,
+a:hover,
+a:focus{
+	text-decoration: none;
+	outline:0 none;
+	cursor: pointer;
+}
+
+.arabic, 
+.head_surah{
+	font-family: $arab-font;
+	font-size: 30px;
+	word-spacing: 0px;
+}
+
+.clearfix{
+	clear:both;
+}
+
+.mushaf_display a.selected,
+.steps a.selected {font-weight: bold;}
+
+
+.navbar{
+	margin-bottom: 0;
+}
+
+.navbar-default{
+	background-image:none;
+	background: #7A9D46;
+	background: -moz-linear-gradient(top,  #7A9D46 0%, #20771a 100%);
+	background: -webkit-linear-gradient(top,  #7A9D46 0%,#20771a 100%);
+	background: linear-gradient(to bottom,  #7A9D46 0%,#20771a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7A9D46', endColorstr='#20771a',GradientType=0 );
+	border-radius: 0;
+	border:none;
+
+	.navbar-brand{
+		color: #fff;
+		text-shadow:none;
+		font-weight: 700;
+
+		&:hover,
+		&:focus{
+			color: $main-color;
+		}
+	}
+
+	.navbar-nav > .active > a, 
+	.navbar-nav > .open > a{
+		background-image:none;
+	}
+
+	.navbar-nav > li > a{
+		color: #ddd;
+		text-shadow:none;
+	}
+
+	.navbar-nav > .active > a, 
+	.navbar-default .navbar-nav > .active > a:focus, 
+	.navbar-default .navbar-nav > .active > a:hover{
+		background-color: #20771A;
+		color: #fff;
+	}
+
+}
+
+
+#main-nav{
+	display: none;
+}
+
+.nav-top{
+	position: relative;
+	border-bottom: solid 1px #385747;
+	padding: 10px 20px;
+	background-color: #385747;
+}
+
+.select-surah{
+
+	.form-inline{
+		margin-bottom: 0;
+
+		.form-group{
+			margin: 0 5px 0 0;
+		}
+
+		.btn{
+			background-color: $main-color;
+			color: #fff;
+			font-size: 20px;
+			margin-left: 3px;
+
+			&:hover,
+			&:focus{
+				background-color: #A5D147;
+			}
+		}
+
+
+	}
+
+	.checkbox{
+		color: #fff;
+	}
+
+	.search_ayat{
+		width:55px;
+	}
+
+}
+
+.surah-nav{
+	width: 100%;
+	margin:auto;
+	padding-bottom: 80px;
+
+	.input-group{
+		margin: auto;
+
+		.btn{
+			background-color: $main-color;
+		    border-color: $main-color;
+		    color: #fff;
+		    text-shadow:none;
+		}
+	}
+
+}
+
+.wrap .alert{
+	margin-bottom: 0;
+}
+
+.pagination > .active > a, 
+.pagination > .active > a:focus, 
+.pagination > .active > a:hover, 
+.pagination > .active > span, 
+.pagination > .active > span:focus, 
+.pagination > .active > span:hover{
+	background-color: $main-color;
+	border-color: $main-color;
+}
+
+.pagination > li > a, 
+.pagination > li > span{
+	color: $main-color;
+}
+
+.surah-action{
+	text-align: right;
+	margin: 7px 0 0;
+
+	.auto-play{
+		margin-right: 10px;
+		color: #fff;
+	}
+
+	#playnow{
+		color: #fff;
+	}
+}
+
+.mushaf{
+	padding-bottom: 40px;
+	position: relative;
+
+	.mushaf_display{
+		margin:13px auto;
+		text-align: center;
+		position: relative;
+		display: block;
+	}
+
+	.arabic{
+		text-align: right;
+		color: #2B4538;
+		width: 50%;
+	}
+
+	.trans{
+		width: 50%;
+	}
+
+	.ayat_section{
+		border-bottom: dashed 1px #D6C7A1;
+		padding: 20px 10px 35px;
+		cursor: pointer;
+		position: relative;
+
+		.trans{
+			text-align: left;
+			color: rgba(43, 69, 56, 0.5);
+		}
+
+		.action-footer{
+			position: absolute;
+			bottom: 14px;
+		    left: 10px;
+
+		    .btn{
+				margin: 0 5px 0 0;
+				background-color: $main-color;
+				color: #fff;
+
+				&:hover,
+				&:focus{
+					background-color: #A5D147;
+				}
+			}
+		}
+
+	}
+
+}
+
+.mushaf_trans .ayat_section .action-footer{
+	position: absolute;
+	bottom: 4px;
+    left: 10px;
+}
+
+.mushaf_arabic .ayat_section .action-footer{
+	position: absolute;
+	bottom: 14px;
+    left: 10px;
+}
+
+.mushaf_display .btn-group .btn{
+	border-color: $main-color;
+	color: $main-color;
+}
+
+.mushaf_display .btn-group .btn.active, 
+.mushaf_display .btn-group .btn:active{
+	background-color: $main-color;
+    border-color: $main-color;
+    color: #fff;
+    text-shadow: none;
+    background-image: none;
+}
+
+.mushaf_display .btn-group .btn:hover,
+.mushaf_display .btn-group .btn:focus{
+	background-color: $main-color;
+	color: #fff;
+}
+
+.nav-top-collapse{
+	display: block;
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 0;
+}
+
+.quran_player{
+	width: 100%;
+	position: fixed;
+	bottom:0;
+	left: 0;
+	background: #385747;
+	z-index:99;
+}
+
+.quran_player .jp-video{
+	width: 100%;
+	background:transparent;
+}
+
+.quran_player .jp-audio, 
+.quran_player .jp-audio-stream, 
+.quran_player .jp-video{
+	border:none;
+}
+
+.jp-gui .jp-video .jp-interface{
+	border-top:1px solid $main-color;
+}
+
+.fa-3{
+	font-size: 4em;
+}
+
+.playing{
+	background-color: #DDD;
+}
+
+@mixin respond-to($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
