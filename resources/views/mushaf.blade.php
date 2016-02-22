@@ -20,7 +20,15 @@ $prev_surah = '';
 							<div class="form-group">
 								<select class="selectpicker form-control" name="surah">
 									<?php foreach($surahs as $surah):?>
-									<option  <?php echo $surah->id==$ayats[0]->surah?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?></option>
+										<?php 
+											$selectedSurah = '';
+											if(session('searchSurah')==$surah->id){
+												$selectedSurah = 'selected';
+											}elseif($surah->id==$ayats[0]->surah){
+												$selectedSurah = 'selected';
+											}
+										?>
+									<option  <?php echo $selectedSurah?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?> (<?php echo $surah->type ?>)</option>
 									<?php endforeach?>
 								</select>
 							</div>
@@ -76,7 +84,12 @@ $prev_surah = '';
 						<?php  $a=0;foreach($ayats as $ayat): ?>
 						
 						<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
-						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0" >
+						<a name="head_surah_<?php echo $ayat->surah?>"></a>
+						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 head_surah_<?php echo $ayat->surah?>"  >
+							<div class="surah_name">
+							<strong><?php echo $ayat->surah_name?></strong><br/>
+							<small><?php echo $ayat->count_ayat?> ayat, Turun di <?php echo $ayat->type?>, turun ke <?php echo $ayat->order?></small>
+							</div>
 							<div class="head_surah" >
 							بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 							</div>
