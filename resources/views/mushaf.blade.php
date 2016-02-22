@@ -11,7 +11,11 @@ $prev_surah = '';
 
 	<div class="nav-top clearfix">
 		<div class="container-fluid">
-			<div class="row">
+			<button class="btn btn-success btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
+			  Pencarian
+			</button>
+			<div class="collapse in" id="surah-collapse">
+			  <div class="row">
 				<div class="col-xs-12 col-sm-7 -col-md-7">
 
 					<div class="select-surah">
@@ -52,11 +56,14 @@ $prev_surah = '';
 
 				</div>
 			</div>
+			</div>
+
+			
 		</div>
 
 	</div>
 	<!-- /nav-top -->
-	@include('errors.errors_message');
+	@include('errors.errors_message')
 
 	<div class="container-fluid">
 		<div class="row">
@@ -126,6 +133,7 @@ $prev_surah = '';
 
 	<script>
 	function showMushaf(mushaf){
+
 		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
 		jQuery('.mushaf').removeClass('mushaf_arabic');
 		jQuery('.mushaf').removeClass('mushaf_trans');
@@ -151,7 +159,33 @@ $prev_surah = '';
 		jQuery('.mushaf').addClass(mushaf);
 		jQuery('.mushaf_display a').removeClass('active');
 		jQuery('.'+mushaf).addClass('active');
+
+		
 	}
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var jQuerywindow = jQuery(window);
+				
+				
+				function checkWidth() {
+					var windowsize = jQuerywindow.width();
+
+					if (windowsize < 1024) {
+						jQuery('#surah-collapse').removeClass('in');
+						console.log("removed");
+						
+					}
+					else {
+						jQuery('#surah-collapse').addClass('in');
+						console.log("added");
+					}
+				}
+				// Execute on load
+				checkWidth();
+				// Bind event listener
+				jQuery(window).resize(checkWidth);
+		});
 	</script>
 	
 

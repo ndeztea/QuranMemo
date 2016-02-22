@@ -263,6 +263,13 @@ div.arabic, .head_surah{
 	color: #fff;
 }
 
+.nav-top-collapse{
+	display: block;
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 0;
+}
+
 .quran_player{
 	width: 100%;
 	position: fixed;
@@ -514,7 +521,13 @@ div.arabic, .head_surah{
 
 @media(max-width:37.5em){
 
-	
+	/*#surah-collapse.collapse{
+		display: none;
+	}
+
+	#surah-collapse.collapse.in{
+		display: block;
+	}*/
 
 }
 

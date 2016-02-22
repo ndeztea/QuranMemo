@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>QuranNote - <?php echo isset($header_title)?$header_title:''?></title>
+        <title>QuranMemo - <?php echo isset($header_title)?$header_title:''?></title>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
         <meta property="og:url" content="<?php echo Request::url()?>" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="QuranNote - <?php echo $header_title?$header_title:''?>" />
-        <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'QuranNote, mushaf, Al-Quran'?>" />
+        <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'QuranMote, mushaf, Al-Quran'?>" />
         <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 
 
@@ -58,7 +58,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">QuranNote</a>
+                    <a class="navbar-brand" href="#">QuranMemo</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
