@@ -23,11 +23,23 @@
         
         <!-- Latest compiled and minified JavaScript -->
         <script src="<?php echo url('assets/js/jquery-1.11.3.min.js')?>"></script>
+        <script src="<?php echo url('assets/js/jquery-ui.js')?>"></script>
         <script src="<?php echo url('assets/js/bootstrap.min.js')?>"></script>
         <script src="<?php echo url('assets/js/script.js')?>"></script>
         <script type="text/javascript">
             QuranJS.siteUrl = '<?php echo url()?>';
         </script>
+
+        @if(session('searchSurah'))
+        <script>
+            $(document).ready(function(){
+                location.href='#head_surah_{{ session('searchSurah') }}';
+                //$('.head_surah_{{ session('searchSurah') }}').css('background-color','#8DB34F');
+                //$('.head_surah_{{ session('searchSurah') }}').animate({backgroundColor: "#ff0000" });
+                //$('.head_surah_{{ session('searchSurah') }}').animate({backgroundColor: '#FF0000'});
+            });
+        </script>
+        @endif
 
         <!-- JPlayer-->
         <link href="<?php echo url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')?>" rel="stylesheet" type="text/css" />

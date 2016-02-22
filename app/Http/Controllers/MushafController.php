@@ -103,7 +103,8 @@ class MushafController extends Controller
         $QuranModel = new Quran;
         $page = $QuranModel->getSurahPage($surah);
 
-        return redirect('mushaf/page/'.$page);
+
+        return redirect('mushaf/page/'.$page)->with('searchSurah', $surah);
     }
 
     function int($s){return(int)preg_replace('/[^\-\d]*(\-?\d*).*/','$1',$s);}
