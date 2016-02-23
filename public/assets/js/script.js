@@ -20,9 +20,9 @@ var QuranJS = {
 
 	fillAyatEnd : function(ayatEnd){
 		if(jQuery('#fill_ayat_end').is(':checked')){
-			$('#ayat_end').show();
+			$('.ayat_end').show();
 		}else{
-			$('#ayat_end').hide();
+			$('.ayat_end').hide();
 		}
 		
 	},

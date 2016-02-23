@@ -26,6 +26,7 @@ class MemozController extends Controller
         $ayat_start = $request->input('ayat_start');
         $surah_end = $request->input('surah_end');
         $ayat_end = $request->input('ayat_end');
+        $fill_ayat_end = $request->input('fill_ayat_end');
         
         // validation
         $errorMessages = [
@@ -51,6 +52,10 @@ class MemozController extends Controller
             $messageErrors = $validator->errors();
         }else{
             // get list quran
+            if(empty($fill_ayat_end)){
+                $surah_end = $surah_start;
+                $ayat_end = $ayat_start;
+            }
             $ayats = $QuranModel->getRangeAyat($surah_start,$ayat_start,$surah_end,$ayat_end);
         }
         // end validation
@@ -62,6 +67,7 @@ class MemozController extends Controller
         // data header
         $data['header_title'] = 'Menghafal';
 
+        $data['fill_ayat_end'] = $fill_ayat_end;
         $data['ayats'] = $ayats;
         $data['surahs'] = $surahs;
         $data['surah_start'] = $surah_start;
