@@ -70,7 +70,7 @@
 		<div class="steps_desc"><p>Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti.</p></div>
 
 		<div class="actions">
-			<button class="btn">Simpan Hafalan</button>
+			<button class="btn"  data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.createMemoz('memoz/create')">Simpan Hafalan</button>
 			<button class="btn btn-success">Sudah Hafal</button>
 
 		</div>

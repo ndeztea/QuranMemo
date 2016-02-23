@@ -33,6 +33,15 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
+    public function login(){
+        $data[''] = '';
+        $dataHTML['modal_title'] = 'Masuk dahulu';
+        $dataHTML['modal_body'] = view('auth_login',$data)->render();
+        $dataHTML['modal_footer'] = 'Lupa Password ?';
+
+        return response()->json($dataHTML);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *

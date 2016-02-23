@@ -31,18 +31,18 @@ class MemozController extends Controller
         // validation
         $errorMessages = [
             'surah_start.required' => 'Surah awal harus di isi',
-            'surah_end.required' => 'Surah akhir harus di isi',
+            //'surah_end.required' => 'Surah akhir harus di isi',
             'ayat_start.required' => 'Ayat pada surah awal harus di isi',
-            'ayat_end.required' => 'Ayat pada surah akhir harus di isi',
+            //'ayat_end.required' => 'Ayat pada surah akhir harus di isi',
             'ayat_start.numeric'   => 'Ayat pada surah awal harus berupa angka',
-            'ayat_end.numeric'   => 'Ayat pada surah awal harus berupa angka'
+            //'ayat_end.numeric'   => 'Ayat pada surah awal harus berupa angka'
         ];
 
         $validator = Validator::make($request->all(), [
             'surah_start' => 'required',
             'ayat_start' => 'required|numeric',
-            'surah_end' => 'required',
-            'ayat_end' => 'required|numeric'
+            //'surah_end' => 'required',
+           // 'ayat_end' => 'required|numeric'
         ],$errorMessages);
 
         
@@ -56,6 +56,7 @@ class MemozController extends Controller
                 $surah_end = $surah_start;
                 $ayat_end = $ayat_start;
             }
+            
             $ayats = $QuranModel->getRangeAyat($surah_start,$ayat_start,$surah_end,$ayat_end);
         }
         // end validation
@@ -81,18 +82,12 @@ class MemozController extends Controller
     }
 
     public function create(){
-        // get surah
-        $QuranModel = new Quran;
-        $surahs = $QuranModel->getSurah();
+        $data[''] = '';
+        $dataHTML['modal_title'] = 'Simpan Hafalan';
+        $dataHTML['modal_body'] = view('memoz_create',$data)->render();
+        $dataHTML['modal_footer'] = '';
 
-        $NotesModel = new Notes;
-
-
-        // send to view 
-        $data['surahs'] = $surahs;
-        $data['notesDetail'] = $NotesModel->get();
-
-        return view('notes_form',$data);
+        return response()->json($dataHTML);
     }
 
 

@@ -32,12 +32,23 @@ Route::post('mushaf/search', 'MushafController@search');
 
 
 Route::get('notes/', 'NotesController@index');
-Route::get('notes/create', 'NotesController@create');
 
 Route::get('memoz/', 'MemozController@index');
 Route::post('memoz/', 'MemozController@index');
+//Route::get('memoz/create', ['middleware' => 'auth'],'MemozController@create');
 
 Route::get('bookmarks/', 'BookmarksController@index');
+
+Route::get('auth/login', 'Auth\AuthController@login');
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('memoz/create', 'MemozController@create');
+    Route::get('notes/create', 'NotesController@create');
+
+});
+
+
 
 
 
