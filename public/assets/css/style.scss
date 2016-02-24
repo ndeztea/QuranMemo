@@ -163,6 +163,8 @@ a:focus{
 .pagination > li > a, 
 .pagination > li > span{
 	color: $main-color;
+	border:solid 1px $main-color;
+	background: transparent;
 }
 
 .surah-action{
@@ -193,33 +195,41 @@ a:focus{
 	.arabic{
 		text-align: right;
 		color: #2B4538;
-		width: 50%;
+		width: 45%;
 	}
 
 	.trans{
-		width: 50%;
+		width: 45%;
 	}
 
 	.ayat_section{
 		border-bottom: dashed 1px #D6C7A1;
-		padding: 20px 10px 35px;
+		padding: 15px 10px;
 		cursor: pointer;
 		position: relative;
 
+		&.playing{
+			background-color: rgba(255,255,255,0.8);
+		}
+
 		.trans{
 			text-align: left;
-			color: rgba(43, 69, 56, 0.5);
+			color: rgba(43, 69, 56, 0.7);
 		}
 
 		.action-footer{
-			position: absolute;
-			bottom: 14px;
-		    left: 10px;
+			position: relative;
+			width: 10%;
 
 		    .btn{
-				margin: 0 5px 0 0;
+				margin: 0;
 				background-color: $main-color;
 				color: #fff;
+				border-left:solid 1px #80a000;
+
+				&:first-child{
+					border-left: none;
+				}
 
 				&:hover,
 				&:focus{
@@ -276,13 +286,14 @@ a:focus{
 	position: fixed;
 	bottom:0;
 	left: 0;
-	background: #385747;
+	background: transparent;
 	z-index:99;
 }
 
 .quran_player .jp-video{
-	width: 100%;
+	width: 480px;
 	background:transparent;
+	margin: 0 auto;
 }
 
 .quran_player .jp-audio, 
@@ -291,30 +302,34 @@ a:focus{
 	border:none;
 }
 
-.jp-gui .jp-video .jp-interface{
-	border-top:1px solid $main-color;
+#quran_player .jp-interface{
+	border-top:1px solid $main-color !important;
+	border-left:1px solid $main-color !important;
+	border-right:1px solid $main-color !important;
 }
 
 .fa-3{
 	font-size: 4em;
 }
 
-.playing{
-	background-color: #DDD;
-}
+.toggle-player{
+	position: fixed;
+	bottom: -10px;
+    left: 856px;
+    z-index: 999;
+    padding: 10px 15px;
 
-@mixin respond-to($name) {
-  // If the key exists in the map
-  @if map-has-key($breakpoints, $name) {
-    // Prints a media query based on the value
-    @media #{inspect(map-get($breakpoints, $name))} {
-      @content;
+    .btn-toggle-player{
+    	border:solid 1px $main-color;
+    	color: $main-color;
+    	text-align: center;
+    	background: #fff;
+    	border-radius: 0;
+
+    	&:hover,
+    	&:focus{
+    		background-color: $main-color;
+    		color: #333;
+    	}
     }
-  }
-
-  // If the key doesn't exist in the map
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
-  }
 }

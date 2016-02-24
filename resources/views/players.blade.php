@@ -248,7 +248,7 @@ $(document).ready(function(){
 	//$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_1")});
 });
 </script>
-<div class="quran_player">
+<div class="quran_player animated fadeInUp">
 	<div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
 		<div class="jp-type-playlist">
 			<div id="muratalPlaylist" class="jp-jplayer"></div>

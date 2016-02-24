@@ -130,7 +130,9 @@ border-color:#8aaf3a
 }
 
 .pagination > li > a,.pagination > li > span {
-color:#8aaf3a
+color:#8aaf3a;
+border:solid 1px #8aaf3a;
+background:transparent
 }
 
 .surah-action {
@@ -162,35 +164,43 @@ display:block
 .mushaf .arabic {
 text-align:right;
 color:#2B4538;
-width:50%
+width:45%
 }
 
 .mushaf .trans {
-width:50%
+width:45%
 }
 
 .mushaf .ayat_section {
 border-bottom:dashed 1px #D6C7A1;
-padding:20px 10px 35px;
+padding:15px 10px;
 cursor:pointer;
 position:relative
 }
 
+.mushaf .ayat_section.playing {
+background-color:rgba(255,255,255,0.8)
+}
+
 .mushaf .ayat_section .trans {
 text-align:left;
-color:rgba(43,69,56,0.5)
+color:rgba(43,69,56,0.7)
 }
 
 .mushaf .ayat_section .action-footer {
-position:absolute;
-bottom:14px;
-left:10px
+position:relative;
+width:10%
 }
 
 .mushaf .ayat_section .action-footer .btn {
-margin:0 5px 0 0;
+margin:0;
 background-color:#8aaf3a;
-color:#fff
+color:#fff;
+border-left:solid 1px #80a000
+}
+
+.mushaf .ayat_section .action-footer .btn:first-child {
+border-left:none
 }
 
 .mushaf .ayat_section .action-footer .btn:hover,.mushaf .ayat_section .action-footer .btn:focus {
@@ -239,29 +249,49 @@ width:100%;
 position:fixed;
 bottom:0;
 left:0;
-background:#385747;
+background:transparent;
 z-index:99
 }
 
 .quran_player .jp-video {
-width:100%;
-background:transparent
+width:480px;
+background:transparent;
+margin:0 auto
 }
 
 .quran_player .jp-audio,.quran_player .jp-audio-stream,.quran_player .jp-video {
 border:none
 }
 
-.jp-gui .jp-video .jp-interface {
-border-top:1px solid #8aaf3a
+#quran_player .jp-interface {
+border-top:1px solid #8aaf3a!important;
+border-left:1px solid #8aaf3a!important;
+border-right:1px solid #8aaf3a!important
 }
 
 .fa-3 {
 font-size:4em
 }
 
-.playing {
-background-color:#DDD
+.toggle-player {
+position:fixed;
+bottom:-10px;
+left:856px;
+z-index:999;
+padding:10px 15px
+}
+
+.toggle-player .btn-toggle-player {
+border:solid 1px #8aaf3a;
+color:#8aaf3a;
+text-align:center;
+background:#fff;
+border-radius:0
+}
+
+.toggle-player .btn-toggle-player:hover,.toggle-player .btn-toggle-player:focus {
+background-color:#8aaf3a;
+color:#333
 }
 @media #(max-width:90em){
 

@@ -9,6 +9,11 @@ $prev_surah = '';
 @section('content')
 	@include('players')
 
+	<div class="toggle-player">
+		<a href="#" class="btn btn-toggle-player btn-show-player" id="btn-show-player">Show Player</a>
+		<a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-hide-player">&times; Hide Player</a>
+	</div>
+
 	<div class="nav-top clearfix">
 		<div class="container-fluid">
 			<button class="btn btn-success btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
@@ -106,6 +111,13 @@ $prev_surah = '';
 						<?php $a++;endif?>
 						
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
+							<div class="pull-left action-footer">
+								<div class="btn-group">
+									<a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i></a>
+									<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
+									<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
+								</div>
+								</div>
 							<div class="pull-right arabic"> 
 								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 								<span class="content_ayat"><?php echo $ayat->text?> </span>
@@ -114,11 +126,7 @@ $prev_surah = '';
 								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 								<span class="trans_content"><?php echo $ayat->text_indo?></span>
 							</div>
-							<div class="action-footer">
-								<a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i></a>
-								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-								<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
-							</div>
+							
 						</div>
 						<?php $prev_surah = $ayat->surah?>
 						<?php $a++; endforeach?>
@@ -177,6 +185,7 @@ $prev_surah = '';
 	}
 	</script>
 	<script type="text/javascript">
+
 		$(document).ready(function () {
 			var jQuerywindow = jQuery(window);
 				
@@ -198,6 +207,32 @@ $prev_surah = '';
 				checkWidth();
 				// Bind event listener
 				jQuery(window).resize(checkWidth);
+
+				//show & hide search setting
+
+
+			jQuery("#btn-show-player").hide();
+
+			jQuery('#btn-show-player').on('click', function() {
+
+				jQuery("#btn-hide-player").show();
+				jQuery("#btn-show-player").hide();
+				jQuery('.quran_player').show("slow");
+
+
+			});
+
+			jQuery('#btn-hide-player').on('click', function() {
+
+				jQuery("#btn-hide-player").hide();
+				jQuery("#btn-show-player").show();
+				jQuery('.quran_player').hide("slow");
+
+			});
+
+			// show & hide player
+
+
 		});
 	</script>
 	
