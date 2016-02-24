@@ -26,22 +26,23 @@ class MemozController extends Controller
         $ayat_start = $request->input('ayat_start');
         $surah_end = $request->input('surah_end');
         $ayat_end = $request->input('ayat_end');
+        $fill_ayat_end = $request->input('fill_ayat_end');
         
         // validation
         $errorMessages = [
             'surah_start.required' => 'Surah awal harus di isi',
-            'surah_end.required' => 'Surah akhir harus di isi',
+            //'surah_end.required' => 'Surah akhir harus di isi',
             'ayat_start.required' => 'Ayat pada surah awal harus di isi',
-            'ayat_end.required' => 'Ayat pada surah akhir harus di isi',
+            //'ayat_end.required' => 'Ayat pada surah akhir harus di isi',
             'ayat_start.numeric'   => 'Ayat pada surah awal harus berupa angka',
-            'ayat_end.numeric'   => 'Ayat pada surah awal harus berupa angka'
+            //'ayat_end.numeric'   => 'Ayat pada surah awal harus berupa angka'
         ];
 
         $validator = Validator::make($request->all(), [
             'surah_start' => 'required',
             'ayat_start' => 'required|numeric',
-            'surah_end' => 'required',
-            'ayat_end' => 'required|numeric'
+            //'surah_end' => 'required',
+           // 'ayat_end' => 'required|numeric'
         ],$errorMessages);
 
         
@@ -51,6 +52,11 @@ class MemozController extends Controller
             $messageErrors = $validator->errors();
         }else{
             // get list quran
+            if(empty($fill_ayat_end)){
+                $surah_end = $surah_start;
+                $ayat_end = $ayat_start;
+            }
+            
             $ayats = $QuranModel->getRangeAyat($surah_start,$ayat_start,$surah_end,$ayat_end);
         }
         // end validation
@@ -62,6 +68,7 @@ class MemozController extends Controller
         // data header
         $data['header_title'] = 'Menghafal';
 
+        $data['fill_ayat_end'] = $fill_ayat_end;
         $data['ayats'] = $ayats;
         $data['surahs'] = $surahs;
         $data['surah_start'] = $surah_start;
@@ -75,18 +82,12 @@ class MemozController extends Controller
     }
 
     public function create(){
-        // get surah
-        $QuranModel = new Quran;
-        $surahs = $QuranModel->getSurah();
+        $data[''] = '';
+        $dataHTML['modal_title'] = 'Simpan Hafalan';
+        $dataHTML['modal_body'] = view('memoz_create',$data)->render();
+        $dataHTML['modal_footer'] = '';
 
-        $NotesModel = new Notes;
-
-
-        // send to view 
-        $data['surahs'] = $surahs;
-        $data['notesDetail'] = $NotesModel->get();
-
-        return view('notes_form',$data);
+        return response()->json($dataHTML);
     }
 
 
