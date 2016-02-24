@@ -10,7 +10,7 @@ $prev_surah = '';
 	@include('players')
 
 	<div class="toggle-player">
-		<a href="#" class="btn btn-toggle-player btn-show-player" id="btn-show-player">Show Player</a>
+		<a href="#" class="btn btn-toggle-player btn-show-player" id="btn-show-player"><i class="fa fa-play-circle"></i> Show Player</a>
 		<a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-hide-player">&times; Hide Player</a>
 	</div>
 
@@ -167,13 +167,13 @@ $prev_surah = '';
 		}else if(mushaf=='mushaf_arabic'){
 			jQuery('.trans').hide();
 			jQuery('.arabic').show();
-			jQuery('.arabic').css('width','100%');
-			jQuery('.trans').css('width','100%');
+			jQuery('.arabic').css('width','90%');
+			jQuery('.trans').css('width','90%');
 		}else if(mushaf=='mushaf_trans'){
 			jQuery('.trans').show();
 			jQuery('.arabic').hide();
-			jQuery('.arabic').css('width','100%');
-			jQuery('.trans').css('width','100%');
+			jQuery('.arabic').css('width','90%');
+			jQuery('.trans').css('width','90%');
 		}
 
 
@@ -211,14 +211,14 @@ $prev_surah = '';
 				//show & hide search setting
 
 
-			jQuery("#btn-show-player").hide();
+			jQuery("#btn-hide-player").hide();
+			jQuery('.quran_player').hide();
 
 			jQuery('#btn-show-player').on('click', function() {
 
 				jQuery("#btn-hide-player").show();
 				jQuery("#btn-show-player").hide();
-				jQuery('.quran_player').show("slow");
-
+				jQuery('.quran_player').slideUp("slow");
 
 			});
 
@@ -226,7 +226,7 @@ $prev_surah = '';
 
 				jQuery("#btn-hide-player").hide();
 				jQuery("#btn-show-player").show();
-				jQuery('.quran_player').hide("slow");
+				jQuery('.quran_player').slideDown("slow");
 
 			});
 

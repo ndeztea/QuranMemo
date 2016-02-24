@@ -3,7 +3,7 @@ font-family:arabic
 }
 
 body {
-background:#FFEDBF
+background:#FFF7E3
 }
 
 a,a:hover,a:focus {
@@ -135,6 +135,12 @@ border:solid 1px #8aaf3a;
 background:transparent
 }
 
+.pagination > li > a:focus,.pagination > li > a:hover,.pagination > li > span:focus,.pagination > li > span:hover {
+background-color:#8aaf3a;
+border-color:#8aaf3a;
+color:#fff
+}
+
 .surah-action {
 text-align:right;
 margin:7px 0 0
@@ -159,6 +165,24 @@ margin:13px auto;
 text-align:center;
 position:relative;
 display:block
+}
+
+.mushaf .mushaf_display .btn-group .btn {
+border-color:#8aaf3a;
+color:#8aaf3a
+}
+
+.mushaf .mushaf_display .btn-group .btn.active,.mushaf .mushaf_display .btn-group .btn:active {
+background-color:#8aaf3a;
+border-color:#8aaf3a;
+color:#fff;
+text-shadow:none;
+background-image:none
+}
+
+.mushaf .mushaf_display .btn-group .btn:hover,.mushaf .mushaf_display .btn-group .btn:focus {
+background-color:#8aaf3a;
+color:#fff
 }
 
 .mushaf .arabic {
@@ -207,36 +231,6 @@ border-left:none
 background-color:#A5D147
 }
 
-.mushaf_trans .ayat_section .action-footer {
-position:absolute;
-bottom:4px;
-left:10px
-}
-
-.mushaf_arabic .ayat_section .action-footer {
-position:absolute;
-bottom:14px;
-left:10px
-}
-
-.mushaf_display .btn-group .btn {
-border-color:#8aaf3a;
-color:#8aaf3a
-}
-
-.mushaf_display .btn-group .btn.active,.mushaf_display .btn-group .btn:active {
-background-color:#8aaf3a;
-border-color:#8aaf3a;
-color:#fff;
-text-shadow:none;
-background-image:none
-}
-
-.mushaf_display .btn-group .btn:hover,.mushaf_display .btn-group .btn:focus {
-background-color:#8aaf3a;
-color:#fff
-}
-
 .nav-top-collapse {
 display:block;
 height:auto!important;
@@ -263,7 +257,7 @@ margin:0 auto
 border:none
 }
 
-#quran_player .jp-interface {
+.quran_player .jp-interface {
 border-top:1px solid #8aaf3a!important;
 border-left:1px solid #8aaf3a!important;
 border-right:1px solid #8aaf3a!important
@@ -292,6 +286,50 @@ border-radius:0
 .toggle-player .btn-toggle-player:hover,.toggle-player .btn-toggle-player:focus {
 background-color:#8aaf3a;
 color:#333
+}
+
+.memoz_player {
+padding:5px 20px;
+margin:15px 0
+}
+
+.steps_desc {
+color:#999;
+font-size:12px;
+padding:0 10px
+}
+
+.mushaf-hafalan .step-wrap {
+margin:7px 0
+}
+
+.mushaf-hafalan .step-wrap .steps {
+padding:0 10px;
+margin-bottom:5px
+}
+
+.mushaf-hafalan .step-wrap .steps .btn {
+border-width:1px;
+border-color:#8aaf3a;
+border-style:solid;
+background-color:transparent;
+color:#8aaf3a;
+background-image:none;
+text-shadow:none
+}
+
+.mushaf-hafalan .step-wrap .steps .btn:hover,.mushaf-hafalan .step-wrap .steps .btn:focus,.mushaf-hafalan .step-wrap .steps .btn.selected {
+border-width:1px;
+border-color:#8aaf3a;
+border-style:solid;
+background-color:#8aaf3a;
+color:#fff;
+background-image:none;
+text-shadow:none
+}
+
+.hafalan-actions {
+margin:7px 0
 }
 @media #(max-width:90em){
 
