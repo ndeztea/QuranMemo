@@ -9,11 +9,6 @@ $prev_surah = '';
 @section('content')
 	@include('players')
 
-	<div class="toggle-player">
-		<a href="#" class="btn btn-toggle-player btn-show-player" id="btn-show-player"><i class="fa fa-play-circle"></i> Show Player</a>
-		<a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-hide-player">&times; Hide Player</a>
-	</div>
-
 	<div class="nav-top clearfix">
 		<div class="container-fluid">
 			<button class="btn btn-success btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
@@ -195,12 +190,11 @@ $prev_surah = '';
 
 					if (windowsize < 1024) {
 						jQuery('#surah-collapse').removeClass('in');
-						console.log("removed");
+						
 						
 					}
 					else {
 						jQuery('#surah-collapse').addClass('in');
-						console.log("added");
 					}
 				}
 				// Execute on load
@@ -210,23 +204,21 @@ $prev_surah = '';
 
 				//show & hide search setting
 
+			$("#btn-show-player").hide();
 
-			jQuery("#btn-hide-player").hide();
-			jQuery('.quran_player').hide();
+			$('#btn-show-player').on('click', function() {
 
-			jQuery('#btn-show-player').on('click', function() {
-
-				jQuery("#btn-hide-player").show();
-				jQuery("#btn-show-player").hide();
-				jQuery('.quran_player').slideUp("slow");
+				$("#btn-hide-player").show();
+				$("#btn-show-player").hide();
+				$('.quran_player').slideUp("slow");
 
 			});
 
-			jQuery('#btn-hide-player').on('click', function() {
+			$('#btn-hide-player').on('click', function() {
 
-				jQuery("#btn-hide-player").hide();
-				jQuery("#btn-show-player").show();
-				jQuery('.quran_player').slideDown("slow");
+				$("#btn-hide-player").hide();
+				$("#btn-show-player").show();
+				$('.quran_player').slideDown("slow");
 
 			});
 

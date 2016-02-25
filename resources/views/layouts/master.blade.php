@@ -52,6 +52,13 @@
         @section('sidebar')
            <!-- This is the master sidebar. -->
         @show
+
+        <div class="toggle-player">
+            <a href="#" class="btn btn-toggle-player btn-show-player" id="btn-show-player"><i class="fa fa-play-circle"></i> Show Player</a>
+            <a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-hide-player">&times; Hide Player</a>
+        </div>
+        <!-- /toggle-player -->
+        
         <div id="main-nav">
             <ul>
                 <li><a href="<?php echo url('mushaf')?>"><?php echo trans('trans.mushaf')?></a></li>

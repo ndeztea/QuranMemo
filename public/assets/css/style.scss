@@ -1,4 +1,4 @@
-$main-color: #8aaf3a;
+$main-color: #1fa67a;
 $arab-font: arabic;
 $txtColor: #fff;
 
@@ -26,7 +26,7 @@ $breakpoints: (
 }
 
 body{
-	background: #FFF7E3;
+	background: #fff;
 }
 
 a,
@@ -58,11 +58,7 @@ a:focus{
 
 .navbar-default{
 	background-image:none;
-	background: #7A9D46;
-	background: -moz-linear-gradient(top,  #7A9D46 0%, #20771a 100%);
-	background: -webkit-linear-gradient(top,  #7A9D46 0%,#20771a 100%);
-	background: linear-gradient(to bottom,  #7A9D46 0%,#20771a 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7A9D46', endColorstr='#20771a',GradientType=0 );
+	background: #1fa67a;
 	border-radius: 0;
 	border:none;
 
@@ -83,14 +79,14 @@ a:focus{
 	}
 
 	.navbar-nav > li > a{
-		color: #ddd;
+		color: #fff;
 		text-shadow:none;
 	}
 
 	.navbar-nav > .active > a, 
 	.navbar-default .navbar-nav > .active > a:focus, 
 	.navbar-default .navbar-nav > .active > a:hover{
-		background-color: #20771A;
+		background-color: #1b926c;
 		color: #fff;
 	}
 
@@ -103,9 +99,9 @@ a:focus{
 
 .nav-top{
 	position: relative;
-	border-bottom: solid 1px #385747;
+	border-bottom: solid 1px #ddd;
 	padding: 10px 20px;
-	background-color: #385747;
+	background-color: #f6f6f6;
 }
 
 .select-surah{
@@ -133,7 +129,7 @@ a:focus{
 	}
 
 	.checkbox{
-		color: #fff;
+		color: #999;
 	}
 
 	.search_ayat{
@@ -196,11 +192,11 @@ a:focus{
 
 	.auto-play{
 		margin-right: 10px;
-		color: #fff;
+		color: #999;
 	}
 
 	#playnow{
-		color: #fff;
+		color: #999;
 	}
 }
 
