@@ -95,7 +95,7 @@ $prev_surah = '';
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 head_surah_<?php echo $ayat->surah?>"  >
 							<div class="surah_name">
 							<strong><?php echo $ayat->surah_name?></strong><br/>
-							<small><?php echo $ayat->count_ayat?> ayat, Turun di <?php echo $ayat->type?>, turun ke <?php echo $ayat->order?></small>
+							<small><?php echo $ayat->type?> ( turun  #<?php echo $ayat->order?> ) | <?php echo $ayat->count_ayat?> ayat </small>
 							</div>
 							<div class="head_surah" >
 							بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
