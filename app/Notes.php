@@ -21,7 +21,7 @@ class Notes extends Model
     *
     */
     public function getMyNotes(){
-    	$pages = DB::table('quran_arabic')
+    	$pages = DB::table('quran')
     			->select('page')
                 ->groupBy('page')
                 ->get();
