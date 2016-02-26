@@ -56,7 +56,7 @@ color:#fff;
 text-shadow:none
 }
 
-.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-default .navbar-nav > .active > a:focus,.navbar-default .navbar-default .navbar-nav > .active > a:hover {
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:focus,.navbar-default .navbar-nav > .active > a:hover {
 background-color:#1b926c;
 color:#fff
 }
@@ -192,7 +192,7 @@ width:45%
 }
 
 .mushaf .ayat_section {
-border-bottom:dashed 1px #D6C7A1;
+border-bottom:dashed 1px #ddd;
 padding:15px 10px;
 cursor:pointer;
 position:relative
@@ -216,7 +216,7 @@ width:10%
 margin:0;
 background-color:#1fa67a;
 color:#fff;
-border-left:solid 1px #80a000
+border-left:solid 1px #1b926c
 }
 
 .mushaf .ayat_section .action-footer .btn:first-child {
@@ -327,7 +327,9 @@ text-shadow:none
 .hafalan-actions {
 margin:7px 0
 }
-@media #(max-width:90em){
+
+
+@media (max-width:90em){
 
 
 
@@ -471,6 +473,31 @@ margin:7px 0
     margin-bottom: 15px;
   }
 
+  .navbar-default .navbar-toggle .icon-bar{
+    background-color:#fff;
+  }
+
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle:focus{
+    background-color: #1b926c;
+  }
+
+  .navbar-default .navbar-toggle{
+    border-color: #fff;
+  }
+
+  .mushaf .ayat_section .action-footer{
+    width: 15%;
+  }
+
+  .mushaf .arabic{
+    width: 43%;
+  }
+
+  .mushaf .trans {
+      width: 42%;
+  }
+
 }
 
 /* 700px and lower */
@@ -518,6 +545,17 @@ margin:7px 0
   #surah-collapse.collapse.in{
     display: block;
   }*/
+
+  .mushaf .ayat_section .action-footer {
+      margin-bottom: 10px;
+      position: relative;
+      width: 100%;
+  }
+
+  .mushaf .arabic,
+  .mushaf .trans{
+    width: 50%;
+  }
 
 }
 
@@ -625,7 +663,19 @@ margin:7px 0
 
 @media(max-width:22.500em){
 
+  .mushaf .mushaf_display .btn-group .btn {
+      border-radius: 0 !important;
+      float: none;
+      margin-top: -1px;
+      width: 100%;
+  }
 
+  .mushaf .arabic,
+  .mushaf .trans{
+    width: 100%;
+    float:none;
+    margin-bottom: 15px;
+  }
     
 
 }

@@ -73,22 +73,28 @@ a:focus{
 		}
 	}
 
-	.navbar-nav > .active > a, 
-	.navbar-nav > .open > a{
-		background-image:none;
+	.navbar-nav{
+
+		& > .active > a, 
+		& > .open > a{
+			background-image:none;
+		}
+
+		& > li > a{
+			color: #fff;
+			text-shadow:none;
+		}
+
+		& > .active > a, 
+		& > .active > a:focus, 
+		& > .active > a:hover{
+			background-color: #1b926c;
+			color: #fff;
+		}
+
 	}
 
-	.navbar-nav > li > a{
-		color: #fff;
-		text-shadow:none;
-	}
-
-	.navbar-nav > .active > a, 
-	.navbar-default .navbar-nav > .active > a:focus, 
-	.navbar-default .navbar-nav > .active > a:hover{
-		background-color: #1b926c;
-		color: #fff;
-	}
+	
 
 }
 
@@ -246,7 +252,7 @@ a:focus{
 	}
 
 	.ayat_section{
-		border-bottom: dashed 1px #D6C7A1;
+		border-bottom: dashed 1px #ddd;
 		padding: 15px 10px;
 		cursor: pointer;
 		position: relative;
@@ -268,7 +274,7 @@ a:focus{
 				margin: 0;
 				background-color: $main-color;
 				color: #fff;
-				border-left:solid 1px #80a000;
+				border-left:solid 1px #1b926c;
 
 				&:first-child{
 					border-left: none;
