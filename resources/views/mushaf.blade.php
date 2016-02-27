@@ -182,6 +182,8 @@ $prev_surah = '';
 	<script type="text/javascript">
 
 		$(document).ready(function () {
+
+
 			var jQuerywindow = jQuery(window);
 				
 				
@@ -204,21 +206,18 @@ $prev_surah = '';
 
 				//show & hide search setting
 
-			$("#btn-show-player").hide();
+			$('.openThis').hide();
 
-			$('#btn-show-player').on('click', function() {
+			$('.btn-toggle-player').click(function() {
 
-				$("#btn-hide-player").show();
-				$("#btn-show-player").hide();
-				$('.quran_player').slideUp("slow");
+			    $('.quran_player').slideToggle( function() {
 
-			});
+			    	$('.openThis').show();
+						
 
-			$('#btn-hide-player').on('click', function() {
+				});
 
-				$("#btn-hide-player").hide();
-				$("#btn-show-player").show();
-				$('.quran_player').slideDown("slow");
+			    return false;
 
 			});
 

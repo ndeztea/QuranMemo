@@ -52,7 +52,7 @@
 					@include('players')
 					
 					<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat | 
-					<input type="checkbox" name="repeat_surah" class="repeat_ayat"  value="1"/> Ulangi Surah
+					<input type="checkbox" name="repeat_surah" class="repeat_ayat"  value="1"/> Ulangi Surah |
 
 					<span>Ulangi</span> 
 					<select name="repeat" class="repeat">
@@ -61,7 +61,7 @@
 						<option value="3">3 kali</option>
 						<option value="4">4 kali</option>
 						<option value="5">5 kali</option>
-					</select> | 
+					</select>  
 
 				</div>
 				<!-- /memoz-player -->

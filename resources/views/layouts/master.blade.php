@@ -54,8 +54,7 @@
         @show
 
         <div class="toggle-player">
-            <a href="#" class="btn btn-toggle-player btn-show-player" id="btn-show-player"><i class="fa fa-play-circle"></i> Show Player</a>
-            <a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-hide-player">&times; Hide Player</a>
+            <a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-toggle-player" data-toggle="tooltip" data-placement="top" title="Show / Hide Player"><i class="fa fa-play-circle"></i></a>
         </div>
         <!-- /toggle-player -->
         
