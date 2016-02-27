@@ -72,6 +72,16 @@ padding:10px 20px;
 background-color:#f6f6f6
 }
 
+.nav-top .btn-surah-trigger {
+width:100%;
+background-color:#1fa67a;
+color:#fff
+}
+
+.nav-top .btn-surah-trigger:hover,.nav-top .btn-surah-trigger:focus {
+background-color:#1b926c
+}
+
 .select-surah .form-inline {
 margin-bottom:0
 }
@@ -327,7 +337,6 @@ text-shadow:none
 .hafalan-actions {
 margin:7px 0
 }
-
 
 @media (max-width:90em){
 

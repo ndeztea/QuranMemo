@@ -1,4 +1,5 @@
 $main-color: #1fa67a;
+$main-color-hover: #1b926c;
 $arab-font: arabic;
 $txtColor: #fff;
 
@@ -88,7 +89,7 @@ a:focus{
 		& > .active > a, 
 		& > .active > a:focus, 
 		& > .active > a:hover{
-			background-color: #1b926c;
+			background-color: $main-color-hover;
 			color: #fff;
 		}
 
@@ -108,6 +109,17 @@ a:focus{
 	border-bottom: solid 1px #ddd;
 	padding: 10px 20px;
 	background-color: #f6f6f6;
+
+	.btn-surah-trigger{
+		width: 100%;
+		background-color: $main-color;
+		color: #fff;
+
+		&:hover,
+		&:focus{
+			background-color: $main-color-hover;
+		}
+	}
 }
 
 .select-surah{
@@ -274,7 +286,7 @@ a:focus{
 				margin: 0;
 				background-color: $main-color;
 				color: #fff;
-				border-left:solid 1px #1b926c;
+				border-left:solid 1px $main-color-hover;
 
 				&:first-child{
 					border-left: none;

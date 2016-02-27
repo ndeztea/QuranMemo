@@ -11,7 +11,7 @@ $prev_surah = '';
 
 	<div class="nav-top clearfix">
 		<div class="container-fluid">
-			<button class="btn btn-success btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
+			<button class="btn btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
 			  Pencarian
 			</button>
 			<div class="collapse in" id="surah-collapse">
