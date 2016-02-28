@@ -139,7 +139,7 @@ a:focus{
 
 			&:hover,
 			&:focus{
-				background-color: #A5D147;
+				background-color: $main-color-hover;
 			}
 		}
 
@@ -257,10 +257,12 @@ a:focus{
 		text-align: right;
 		color: #2B4538;
 		width: 45%;
+		line-height: 65px;
 	}
 
 	.trans{
 		width: 45%;
+		line-height: 24px;
 	}
 
 	.ayat_section{
@@ -294,7 +296,7 @@ a:focus{
 
 				&:hover,
 				&:focus{
-					background-color: #A5D147;
+					background-color: $main-color-hover;
 				}
 			}
 		}
