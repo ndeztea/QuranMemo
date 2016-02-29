@@ -138,8 +138,18 @@ $prev_surah = '';
 					<?php foreach($pages as $page):?>
 					<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
 					<?php endforeach?>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
+					<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
 					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
+					<li class="page_free_input"><a href="javascript:;">
+						<form class="form-inline" id="paggingForm" onsubmit="return false">
+						  <div class="form-group">
+						    <div class="input-group">
+						      <input type="text" class="form-control col-xs-1 pagging" placeholder="page">
+						      <div class="input-group-addon"><button name="btnPage" onclick="QuranJS.changePage('pagging')"><i class="fa fa-search"></i></button> </div>
+						    </div>
+						  </div>
+						</form>
+					</a></li>
 				</ul>
 			</div>
 		</div>

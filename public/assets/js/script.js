@@ -14,7 +14,7 @@ var QuranJS = {
 	changePage : function (elm){
 		page = $(elm).data('value');
 		if(typeof page=='undefined'){
-			page = $(elm).val();
+			page = $('.'+elm).val();
 		}
 
 		// @todo : use ajax
