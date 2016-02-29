@@ -126,86 +126,88 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			QuranJS.fillAyatEnd();
+					QuranJS.fillAyatEnd();
 
-			$(document).ready(function () {
-			var jQuerywindow = jQuery(window);
-				
-				
-				function checkWidth() {
-					var windowsize = jQuerywindow.width();
-
-					if (windowsize < 1024) {
-						jQuery('#surah-collapse').removeClass('in');
+					$(document).ready(function () {
+					var jQuerywindow = jQuery(window);
 						
 						
-					}
-					else {
-						jQuery('#surah-collapse').addClass('in');
-					}
+						function checkWidth() {
+							var windowsize = jQuerywindow.width();
+
+							if (windowsize < 1024) {
+								jQuery('#surah-collapse').removeClass('in');
+								
+								
+							}
+							else {
+								jQuery('#surah-collapse').addClass('in');
+							}
+						}
+						// Execute on load
+						checkWidth();
+						// Bind event listener
+						jQuery(window).resize(checkWidth);
+
+						//show & hide search setting
+
+					$("#btn-show-player").hide();
+
+					$('#btn-show-player').on('click', function() {
+
+						$("#btn-hide-player").show();
+						$("#btn-show-player").hide();
+						$('.quran_player').slideUp("slow");
+
+					});
+
+					$('#btn-hide-player').on('click', function() {
+
+						$("#btn-hide-player").hide();
+						$("#btn-show-player").show();
+						$('.quran_player').slideDown("slow");
+
+					});
+
+					// show & hide player
+
+				});
+			});
+			function  steps(steps){
+				if(steps==1){
+					jQuery('.trans').show();
+					jQuery('.arabic').show();
+					jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti.');
+					jQuery('.memoz_player').show();
+				}else if(steps==2){
+					jQuery('.trans').hide();
+					jQuery('.arabic').show();
+					jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic');
+					jQuery('.memoz_player').hide();
+					jQuery('.jp-stop').click();
+				}else if(steps==3){
+					jQuery('.trans').show();
+					jQuery('.arabic').show();
+					jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya');
+					jQuery('.memoz_player').hide();
+					jQuery('.jp-stop').click();
+				}else if(steps==4){
+					jQuery('.trans').show();
+					jQuery('.arabic').hide();
+					jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target terjemahannya');
+					jQuery('.memoz_player').hide();
+					jQuery('.jp-stop').click();
+				}else if(steps==5){
+					jQuery('.trans').show();
+					jQuery('.arabic').show();
+					jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti, ulangi sampai hafal');
+					jQuery('.memoz_player').show();
 				}
-				// Execute on load
-				checkWidth();
-				// Bind event listener
-				jQuery(window).resize(checkWidth);
 
-				//show & hide search setting
-
-			$("#btn-show-player").hide();
-
-			$('#btn-show-player').on('click', function() {
-
-				$("#btn-hide-player").show();
-				$("#btn-show-player").hide();
-				$('.quran_player').slideUp("slow");
-
-			});
-
-			$('#btn-hide-player').on('click', function() {
-
-				$("#btn-hide-player").hide();
-				$("#btn-show-player").show();
-				$('.quran_player').slideDown("slow");
-
-			});
-
-			// show & hide player
-
-		});
-		function  steps(steps){
-			if(steps==1){
-				jQuery('.trans').show();
-				jQuery('.arabic').show();
-				jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti.');
-				jQuery('.memoz_player').show();
-			}else if(steps==2){
-				jQuery('.trans').hide();
-				jQuery('.arabic').show();
-				jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic');
-				jQuery('.memoz_player').hide();
-				jQuery('.jp-stop').click();
-			}else if(steps==3){
-				jQuery('.trans').show();
-				jQuery('.arabic').show();
-				jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya');
-				jQuery('.memoz_player').hide();
-				jQuery('.jp-stop').click();
-			}else if(steps==4){
-				jQuery('.trans').show();
-				jQuery('.arabic').hide();
-				jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target terjemahannya');
-				jQuery('.memoz_player').hide();
-				jQuery('.jp-stop').click();
-			}else if(steps==5){
-				jQuery('.trans').show();
-				jQuery('.arabic').show();
-				jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti, ulangi sampai hafal');
-				jQuery('.memoz_player').show();
+				jQuery('.steps a').removeClass('selected');
+				jQuery('.steps_'+steps).addClass('selected');
 			}
 
-			jQuery('.steps a').removeClass('selected');
-			jQuery('.steps_'+steps).addClass('selected');
-		}
 		</script>
 
 @endsection
