@@ -69,7 +69,11 @@ class MushafController extends Controller
         // name surah
         $surah = $QuranModel->getSurah($id_surah);
 
-        $data['surah'] = $surah[0]->surah_name;
+        // get surah
+        $surahs = $QuranModel->getSurah();
+        
+        $data['surahs'] = $surahs;
+        $data['selected_surah'] = $surah[0]->surah_name;
         $data['ayats'] = $ayats;
         $data['id_surah'] = $id_surah;
         $data['ayat'] = $ayat;
@@ -79,7 +83,7 @@ class MushafController extends Controller
         $data['header_title'] = 'Surah '. $surah[0]->surah_name.' : '.$ayat;
         $data['header_description'] = $ayats[0]->text_indo;
 
-        return view('mushaf_detail',$data);
+        return view('mushaf',$data);
     }
 
     public function search(Request $request){

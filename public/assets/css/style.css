@@ -224,7 +224,7 @@ position:relative;
 width:10%
 }
 
-.mushaf .ayat_section .action-footer .btn {
+.mushaf .ayat_section .action-footer .btn, .btn-share-ayat {
 margin:0;
 background-color:#1fa67a;
 color:#fff;
@@ -235,9 +235,11 @@ border-left:solid 1px #1b926c
 border-left:none
 }
 
-.mushaf .ayat_section .action-footer .btn:hover,.mushaf .ayat_section .action-footer .btn:focus {
+.mushaf .ayat_section .action-footer .btn:hover,.mushaf .ayat_section .action-footer .btn:focus, {
 background-color:#1b926c
 }
+
+.detail_top{text-align: center;color: #1C9A71 !important;background-color: #dff0d8}
 
 .nav-top-collapse {
 display:block;

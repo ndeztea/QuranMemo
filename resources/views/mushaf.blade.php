@@ -8,7 +8,6 @@ $prev_surah = '';
 ?>
 @section('content')
 	@include('players')
-
 	<div class="nav-top clearfix">
 		<div class="container-fluid">
 			<button class="btn btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
@@ -71,6 +70,13 @@ $prev_surah = '';
 
 	</div>
 	<!-- /nav-top -->
+	<?php if(isset($selected_surah)):?>
+	<div class="nav-top clearfix detail_top">
+		<h4><?php echo $selected_surah?> ayat <?php echo $ayat?></h4>
+		<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url=<?php echo  Request::url() ?>')"><i class="fa fa-share-alt"></i></a>
+	</div>
+<?php endif?>
+
 	@include('errors.errors_message')
 
 	<div class="container-fluid">
@@ -130,6 +136,7 @@ $prev_surah = '';
 				<!-- /mushaf -->
 			</div>
 		</div>
+		<?php if(isset($pages)):?>
 		<div class="surah-nav">
 			<div class="input-group" role="group" aria-label="Navigasi">
 				<ul class="pagination">
@@ -154,6 +161,7 @@ $prev_surah = '';
 			</div>
 		</div>
 		<!-- /surah-nav -->
+	<?php endif?>
 	</div>
 
 
