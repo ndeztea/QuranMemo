@@ -30,6 +30,10 @@ class Notes extends Model
         return $pages;
     }
 
+    public function create(){
+        // form create
+    }
+
     public function stored(){
         if($this->id){
             // update

@@ -74,6 +74,7 @@ $prev_surah = '';
 	<div class="nav-top clearfix detail_top">
 		<h4><?php echo $selected_surah?> ayat <?php echo $ayat?></h4>
 		<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url=<?php echo  Request::url() ?>')"><i class="fa fa-share-alt"></i></a>
+		<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a>
 	</div>
 <?php endif?>
 

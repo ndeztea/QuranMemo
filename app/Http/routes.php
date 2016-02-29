@@ -45,6 +45,9 @@ Route::get('auth/login', 'Auth\AuthController@login');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');
+    Route::get('notes/create/{surah}/{idsurah}', 'NotesController@create');
+
+    Route::post('notes/save', 'NotesController@save');
 
 });
 
