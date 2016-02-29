@@ -211,7 +211,7 @@ position:relative
 }
 
 .mushaf .ayat_section.playing {
-background-color:rgba(255,255,255,0.8)
+background-color:#fcf8e3;
 }
 
 .mushaf .ayat_section .trans {
@@ -239,7 +239,6 @@ border-left:none
 background-color:#1b926c
 }
 
-.detail_top{text-align: center;color: #1C9A71 !important;background-color: #dff0d8}
 
 .nav-top-collapse {
 display:block;
@@ -336,34 +335,6 @@ background-color:#1fa67a;
 color:#fff;
 background-image:none;
 text-shadow:none
-}
-
-.hafalan-actions {
-margin:7px 0
-}
-
-.page_free_input form{
-  margin:0px;
-}
-
-.page_free_input a{
-  padding:0px !important;
-}
-
-.page_free_input input{
-  border: 0px;
-  width: 60px !important;
-  text-align: center;
-  height: 30px;
-}
-.page_free_input button{
-  height: 30px;
-  padding: 0px;
-  height: 0px;
-}
-
-.page_free_input .form-group{
-  height: 32px
 }
 
 @media (max-width:90em){

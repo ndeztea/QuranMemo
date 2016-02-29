@@ -1,0 +1,39 @@
+
+.hafalan-actions {
+margin:7px 0
+}
+
+.page_free_input form{
+  margin:0px;
+}
+
+.page_free_input a{
+  padding:0px !important;
+}
+
+.page_free_input input{
+  border: 0px;
+  width: 60px !important;
+  text-align: center;
+  height: 30px;
+}
+.page_free_input button{
+  height: 30px;
+  padding: 0px;
+  height: 0px;
+}
+
+.page_free_input .form-group{
+  height: 32px
+}
+
+.arabic .content_ayat{
+  line-height: 50px;
+}
+
+.mushaf .ayat_section.playing {
+background-color:#fcf8e3;
+}
+
+.detail_top{text-align: center;color: #1C9A71 !important;background-color: #dff0d8}
+.no_ayat_arabic{font-size: 20px}

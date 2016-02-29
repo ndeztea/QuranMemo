@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="<?php echo url('assets/css/bootstrap-theme.min.css')?>">
         <link rel="stylesheet" href="<?php echo url('assets/css/animate.min.css')?>">
         <link rel="stylesheet" href="<?php echo url('assets/css/style.css')?>">
+        <link rel="stylesheet" href="<?php echo url('assets/css/custom.css')?>">
 
         
         <!-- Latest compiled and minified JavaScript -->
