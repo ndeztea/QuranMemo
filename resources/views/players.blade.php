@@ -116,6 +116,9 @@ $surahMuratal[112] = "Al-Ikhlas";
 $surahMuratal[113] = "Al-Falaq";
 $surahMuratal[114] = "An-Nas";
 
+// set number arabic
+$numberArabic[1] = '1';
+
 ?>
 
 <script type="text/javascript">

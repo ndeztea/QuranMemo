@@ -97,7 +97,7 @@ $prev_surah = '';
 
 						<?php  $a=0;foreach($ayats as $ayat): ?>
 						
-						<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
+						<?php  if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
 						<a name="head_surah_<?php echo $ayat->surah?>"></a>
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 head_surah_<?php echo $ayat->surah?>"  >
 							<div class="surah_name">
@@ -121,8 +121,8 @@ $prev_surah = '';
 								</div>
 								</div>
 							<div class="pull-right arabic"> 
-								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 								<span class="content_ayat"><?php echo $ayat->text?> </span>
+								<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?>  </span> 
 							</div>
 							<div class="pull-left trans"> 
 								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
