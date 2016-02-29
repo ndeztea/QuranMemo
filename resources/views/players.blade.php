@@ -278,10 +278,10 @@ $(document).ready(function(){
 								<div class="jp-volume-bar-value"></div>
 							</div>
 						</div>
-						<div class="jp-toggles">
+						<!--div class="jp-toggles">
 							<button class="jp-repeat" role="button" tabindex="0">repeat</button>
 							<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
-						</div>
+						</div-->
 					</div>
 					<div class="jp-details">
 						<div class="jp-title" aria-label="title">&nbsp;</div>
