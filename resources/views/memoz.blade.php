@@ -102,7 +102,7 @@
 					<div class="ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
 						<div class="pull-right arabic"> 
 							<span class="content_ayat"><?php echo $ayat->text?></span> 
-							<span class="no_ayat_arabic"> <?php echo arabicNum($ayat->ayat)?> </span> 
+							<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
 						</div>
 						<div class="pull-left trans"> 
 							<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
