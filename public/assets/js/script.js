@@ -76,5 +76,22 @@ var QuranJS = {
 		$('.register_form').hide();
 	},
 
+	// show & hide player
+	togglePlayer : function (){
+
+		$('.openThis').hide();
+
+			$('.btn-toggle-player').click(function() {
+
+			    $('.quran_player').slideToggle( function() {
+
+			    	$('.openThis').show();
+						
+				});
+
+			});
+
+	},
+
 } 
 

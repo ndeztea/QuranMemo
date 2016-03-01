@@ -16,8 +16,8 @@
 		
 		<div class="form-group">
 			<div class="btn-group" role="group" aria-label="...">
-			  	<button type="button" class="btn btn-default" onclick="QuranJS.authProcess()">Masuk</button>
-				<button type="button" class="btn btn-default" onclick="QuranJS.showRegister();">Daftar Gratis</button>
+			  	<button type="button" class="btn btn-default btn-masuk" onclick="QuranJS.authProcess()">Masuk</button>
+				<button type="button" class="btn btn-default btn-daftar" onclick="QuranJS.showRegister();">Daftar Gratis <i class="fa fa-angle-right"></i></button>
 			</div>
 		</div>
 	</form>
@@ -49,8 +49,8 @@
 
 		<div class="form-group">
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default" onclick="QuranJS.registerProcess()">Daftar</button>
-				<button type="button" class="btn btn-default" onclick="QuranJS.showLogin()">Login Sekarang</button>
+				<button type="button" class="btn btn-default btn-masuk" onclick="QuranJS.showLogin()"><i class="fa fa-angle-left"></i> Login Sekarang</button>
+				<button type="button" class="btn btn-default btn-daftar" onclick="QuranJS.registerProcess()">Daftar</button>
 			</div>
 		</div>
 		

@@ -408,3 +408,72 @@ a:focus{
 .hafalan-actions{
 	margin:7px 0;
 }
+
+.login_form{
+
+	.btn-masuk{
+		@include boxy($btn-normal...);
+
+		&:hover,
+		&:focus,
+		&.selected{
+
+			@include boxy($btn-hover...);
+
+		}
+
+	}
+
+	.btn-daftar{
+		@include boxy($btn-hover...);
+
+		&:hover,
+		&:focus,
+		&.selected{
+
+			@include boxy($btn-normal...);
+
+		}
+		
+	}
+
+}
+
+.register_form{
+
+	.btn-masuk{
+		@include boxy($btn-normal...);
+
+		&:hover,
+		&:focus,
+		&.selected{
+
+			@include boxy($btn-hover...);
+
+		}
+
+	}
+
+	.btn-daftar{
+		@include boxy($btn-hover...);
+
+		&:hover,
+		&:focus,
+		&.selected{
+
+			@include boxy($btn-normal...);
+
+		}
+		
+	}
+
+}
+
+.input-group { 
+	width: 100%; 
+
+	.input-group-addon { 
+		width: 60px; 
+		text-align:right;
+	} 
+}

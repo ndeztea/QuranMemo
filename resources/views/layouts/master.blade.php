@@ -42,7 +42,6 @@
             });
         </script>
         @endif
-
         <!-- JPlayer-->
         <link href="<?php echo url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')?>" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="<?php echo url('assets/jplayer/lib/jquery.min.js')?>"></script>

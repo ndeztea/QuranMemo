@@ -126,53 +126,57 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-					QuranJS.fillAyatEnd();
+			QuranJS.fillAyatEnd();
 
-					$(document).ready(function () {
-					var jQuerywindow = jQuery(window);
+			$(document).ready(function () {
+			var jQuerywindow = jQuery(window);
+				
+				
+				function checkWidth() {
+					var windowsize = jQuerywindow.width();
+
+					if (windowsize < 1024) {
+						jQuery('#surah-collapse').removeClass('in');
 						
 						
-						function checkWidth() {
-							var windowsize = jQuerywindow.width();
+					}
+					else {
+						jQuery('#surah-collapse').addClass('in');
+					}
+				}
+				// Execute on load
+				checkWidth();
+				// Bind event listener
+				jQuery(window).resize(checkWidth);
 
-							if (windowsize < 1024) {
-								jQuery('#surah-collapse').removeClass('in');
-								
-								
-							}
-							else {
-								jQuery('#surah-collapse').addClass('in');
-							}
-						}
-						// Execute on load
-						checkWidth();
-						// Bind event listener
-						jQuery(window).resize(checkWidth);
+				//show & hide search setting
 
-						//show & hide search setting
+				$('.openThis').hide();
 
-					$("#btn-show-player").hide();
+				$('.btn-toggle-player').click(function() {
 
-					$('#btn-show-player').on('click', function() {
+				    $('.quran_player').slideToggle( function() {
 
-						$("#btn-hide-player").show();
-						$("#btn-show-player").hide();
-						$('.quran_player').slideUp("slow");
-
+				    	$('.openThis').show();
+							
 					});
 
-					$('#btn-hide-player').on('click', function() {
-
-						$("#btn-hide-player").hide();
-						$("#btn-show-player").show();
-						$('.quran_player').slideDown("slow");
-
-					});
-
-					// show & hide player
+				    return false;
 
 				});
-			});
+
+				// show & hide player
+
+				if($('#QuranModal .modal-dialog .modal-content .modal-body').hasClass('login_form')){
+					$('#QuranModal').addClass('login-mode');
+					console.log('found');
+				}else{
+					console.log('notfound');
+				}
+
+		});
+
+	});
 			function  steps(steps){
 				if(steps==1){
 					jQuery('.trans').show();

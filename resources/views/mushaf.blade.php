@@ -233,7 +233,6 @@ $prev_surah = '';
 
 			    	$('.openThis').show();
 						
-
 				});
 
 			    return false;
