@@ -21,6 +21,8 @@ class NotesController extends Controller
     {
         die('asd');
 
+        $data['body_class'] = 'body-note';
+
         $data[] = '';
         return view('notes',$data);
     }

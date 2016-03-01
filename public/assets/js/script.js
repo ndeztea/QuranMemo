@@ -11,6 +11,12 @@ var QuranJS = {
 
 	},
 
+	removeModalClass : function(){
+		$('#QuranModal').removeClass('login-mode');
+		$('#QuranModal').removeClass('register-mode');
+		$('#QuranModal').removeClass('share-mode');
+	},
+
 	changePage : function (elm){
 		page = $(elm).data('value');
 		if(typeof page=='undefined'){
@@ -38,12 +44,14 @@ var QuranJS = {
 
 	callModal : function(url){
 		this.modalLoading();
+		this.removeModalClass();
 
 		$.getJSON(this.siteUrl+'/'+url,{},function(response){
 			$('.modal-title').html(response.modal_title);
 			$('.modal-body').html(response.modal_body);
 			$('.modal-footer').html(response.modal_footer);
 
+			$('#QuranModal').addClass(response.modal_class);
 			$('.modal-header button').show();
 		})
 
@@ -70,10 +78,12 @@ var QuranJS = {
 	showRegister  : function(){
 		$('.login_form').hide();
 		$('.register_form').show();
+		$('#QuranModal').addClass('register-mode');
 	},
 	showLogin  : function(){
 		$('.login_form').show();
 		$('.register_form').hide();
+		$('#QuranModal').addClass('login-mode');
 	},
 
 	// show & hide player

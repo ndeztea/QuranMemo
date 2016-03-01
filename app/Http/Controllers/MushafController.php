@@ -45,6 +45,7 @@ class MushafController extends Controller
 
         // data header
         $data['header_title'] = 'Mushaf Page '. $page;
+        $data['body_class'] = 'body-mushaf';
 
         //print_r($pages);
         // show view template
@@ -71,6 +72,8 @@ class MushafController extends Controller
 
         // get surah
         $surahs = $QuranModel->getSurah();
+
+        $data['body_class'] = 'body-mushaf';
         
         $data['surahs'] = $surahs;
         $data['selected_surah'] = $surah[0]->surah_name;

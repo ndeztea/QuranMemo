@@ -22,6 +22,7 @@ class BookmarksController extends Controller
         $url = $request->input('url');
         $data['url'] = $url;
 
+        $dataHTML['modal_class'] = 'share-mode';
         $dataHTML['modal_title'] = 'Mari berbagi';
         $dataHTML['modal_body'] = view('bookmarks',$data)->render();
         $dataHTML['modal_footer'] = '';

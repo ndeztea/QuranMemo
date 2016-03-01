@@ -48,7 +48,7 @@
         <script type="text/javascript" src="<?php echo url('assets/jplayer/dist/jplayer/jquery.jplayer.min.js')?>"></script>
         <script type="text/javascript" src="<?php echo url('assets/jplayer/dist/add-on/jplayer.playlist.min.js')?>"></script>
     </head>
-    <body>
+    <body @if($body_class) {{$body_class}} @endif>
         @section('sidebar')
            <!-- This is the master sidebar. -->
         @show

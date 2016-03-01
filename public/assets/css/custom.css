@@ -37,3 +37,14 @@ background-color:#fcf8e3;
 
 .detail_top{text-align: center;color: #1C9A71 !important;background-color: #dff0d8}
 .no_ayat_arabic{font-size: 20px}
+
+.btn {
+    margin: 0;
+    background-color: #1fa67a;
+    color: #fff;
+    border-left: solid 1px #1b926c;
+}
+.btn:hover, .btn:focus {
+background-color:#1b926c;
+color:#fff
+}
