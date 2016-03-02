@@ -85,7 +85,7 @@ class MemozController extends Controller
     public function create(){
         $data[''] = '';
         $dataHTML['modal_title'] = 'Simpan Hafalan';
-        $dataHTML['modal_body'] = view('memoz_create',$data)->render();
+        $dataHTML['modal_body'] = view('memoz_form',$data)->render();
         $dataHTML['modal_footer'] = '';
 
         return response()->json($dataHTML);

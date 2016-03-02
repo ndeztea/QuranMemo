@@ -38,8 +38,13 @@ class NotesController extends Controller
         // send to view 
         $data['surahs'] = $surahs;
         $data['notesDetail'] = $NotesModel->get();
+        $data[''] = '';
 
-        return view('notes_form',$data);
+        $dataHTML['modal_title'] = 'Simpan Note';
+        $dataHTML['modal_body'] = view('notes_form',$data)->render();
+        $dataHTML['modal_footer'] = '';
+
+        return response()->json($dataHTML);
     }
 
 

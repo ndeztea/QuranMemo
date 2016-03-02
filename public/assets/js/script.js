@@ -50,7 +50,7 @@ var QuranJS = {
 			$('.modal-title').html(response.modal_title);
 			$('.modal-body').html(response.modal_body);
 			$('.modal-footer').html(response.modal_footer);
-
+			
 			$('#QuranModal').addClass(response.modal_class);
 			$('.modal-header button').show();
 		})
@@ -76,11 +76,13 @@ var QuranJS = {
 
 	/** AUTH code**/
 	showRegister  : function(){
+		this.removeModalClass();
 		$('.login_form').hide();
 		$('.register_form').show();
 		$('#QuranModal').addClass('register-mode');
 	},
 	showLogin  : function(){
+		this.removeModalClass();
 		$('.login_form').show();
 		$('.register_form').hide();
 		$('#QuranModal').addClass('login-mode');

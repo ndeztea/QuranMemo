@@ -78,7 +78,7 @@
 					</div>
 					<!-- /step-wrap -->
 					<div class="pull-right hafalan-actions">
-						<button class="btn"  data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.createMemoz('memoz/create')">Simpan Hafalan</button>
+						<button class="btn"  data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/create')">Simpan Hafalan</button>
 						<button class="btn btn-success">Sudah Hafal</button>
 					</div>
 					<!-- /hafalan-actions -->
