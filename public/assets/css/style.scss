@@ -409,7 +409,80 @@ a:focus{
 	margin:7px 0;
 }
 
+.modal{
+
+	.modal-dialog{
+		width: 500px;
+		margin-top:11%;
+
+		.modal-content{
+			border-radius: 0;
+		}
+	}
+
+	.modal-header{
+		border-bottom: none;
+		text-transform: capitalize;
+		text-align: center;
+	}
+
+	.modal-footer{
+		border-top:none;
+	}
+
+}
+
+.modal.login-mode{
+
+	.modal-dialog{
+
+		background: url("../images/cal1.png") no-repeat center center / cover ;
+		.modal-content{
+			background-color: rgba(255, 255, 255, 0.9);
+		}
+
+	}
+
+	.modal-footer{
+		background: lighten($main-color, 10%);
+		color: #fff;
+	}
+	
+}
+
+.modal.register-mode{
+
+	.modal-dialog{
+
+		background: url("../images/cal1.png") no-repeat center center / cover ;
+		.modal-content{
+			background-color: rgba(255, 255, 255, 0.9);
+		}
+
+	}
+
+	.modal-footer{
+		background: lighten($main-color, 10%);
+		color: #fff;
+	}
+	
+}
+
+.login_form .btn-group,
+.register_form .btn-group{
+	width: 100%;
+}
+
+.login_form .btn-group .btn,
+.register_form .btn-group .btn{
+	width: 50%;
+	border-radius: 0;
+}
+
 .login_form{
+
+	width: 80%;
+	margin:0 auto;
 
 	.btn-masuk{
 		@include boxy($btn-normal...);
@@ -441,6 +514,9 @@ a:focus{
 
 .register_form{
 
+	width: 80%;
+	margin:0 auto;
+
 	.btn-masuk{
 		@include boxy($btn-normal...);
 
@@ -469,11 +545,19 @@ a:focus{
 
 }
 
+.form-horizontal{
+
+	.form-group{
+		margin: -16px -15px 15px;
+
+		.form-control{
+			border-radius: 0;
+			height:auto;
+			padding: 12px;
+		}
+	}	
+}
+
 .input-group { 
 	width: 100%; 
-
-	.input-group-addon { 
-		width: 60px; 
-		text-align:right;
-	} 
 }
