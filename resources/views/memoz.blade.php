@@ -52,8 +52,7 @@
 					@include('players')
 					
 					<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat | 
-					<input type="checkbox" name="repeat_surah" class="repeat_ayat"  value="1"/> Ulangi Surah |
-
+					
 					<span>Ulangi</span> 
 					<select name="repeat" class="repeat">
 						<option value="1">1 kali</option>
@@ -62,7 +61,6 @@
 						<option value="4">4 kali</option>
 						<option value="5">5 kali</option>
 					</select>  
-
 				</div>
 				<!-- /memoz-player -->
 
@@ -88,7 +86,7 @@
 							<p>Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti.</p>
 						</div>
 					</div>
-					<?php foreach($ayats as $ayat):?>
+					<?php  $a=0;foreach($ayats as $ayat):?>
 					
 					<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
 					<div class="ayat_section  section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0">
@@ -100,6 +98,13 @@
 					<?php endif?>
 					
 					<div class="ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
+						<div class="pull-left action-footer">
+							<div class="btn-group">
+								<a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i></a>
+								<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
+								<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
+							</div>
+						</div>
 						<div class="pull-right arabic"> 
 							<span class="content_ayat"><?php echo $ayat->text?></span> 
 							<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
@@ -111,7 +116,7 @@
 						<div class="clearfix"></div>
 					</div>
 					<?php $prev_surah = $ayat->surah?>
-					<?php endforeach?>
+					<?php  $a++; endforeach?>
 				
 				</div>
 				<!-- /mushaf -->

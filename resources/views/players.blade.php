@@ -169,15 +169,22 @@ $(document).ready(function(){
 
 			// repeat ayat
 			var config_repeat = jQuery('.repeat').val();
-        	var repeat_ayat = jQuery('.repeat_ayat').val();
         	var config_repeat_ayat = jQuery('.repeat_ayat').is(':checked');
+        	if(config_repeat>1 && typeof repeat_ayat_counter=='undefined'){
+        		repeat_ayat_counter = 1;
+        	}
+
         	if(config_repeat_ayat==true){
-        		if(repeat_ayat<config_repeat){
+        		if(repeat_ayat_counter<config_repeat){
+        			console.log('repeat');
 	        		jQuery('.jp-previous').click();
-	        		repeat_ayat++;
-	        		jQuery('.repeat_ayat').val(repeat_ayat);
+	        		repeat_ayat_counter++;
+	        		console.log(repeat_ayat_counter);
+	        		//jQuery('.repeat_ayat_counter').val(repeat_ayat);
 	        	}else{
-	        		jQuery('.repeat_ayat').val(1);
+	        		//jQuery('.repeat_ayat_counter').val(1);
+	        		repeat_ayat_counter = 0;
+	        		console.log('next');
 	        	}
         	}
 			
@@ -213,6 +220,7 @@ $(document).ready(function(){
         	var repeat_surah = 1;
         	var config_repeat_surah = jQuery('.repeat_surah').is(':checked');
 
+        	<?php if(!isset($on_memo)):?>
         	if(window.goNext==true){
         		// stop play
         		$(this).jPlayer("stop");
@@ -222,6 +230,7 @@ $(document).ready(function(){
 		    		<?php endif?>
 		    	}
         	}	
+        	<?php endif?>
         	
         },
 		playlistOptions: { 
@@ -281,10 +290,14 @@ $(document).ready(function(){
 								<div class="jp-volume-bar-value"></div>
 							</div>
 						</div>
-						<!--div class="jp-toggles">
+						
+						<div class="jp-toggles">
 							<button class="jp-repeat" role="button" tabindex="0">repeat</button>
-							<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
-						</div-->
+							<!--button class="jp-shuffle" role="button" tabindex="0">shuffle</button-->
+						</div>
+						<div>
+						ulangi
+						</div>
 					</div>
 					<div class="jp-details">
 						<div class="jp-title" aria-label="title">&nbsp;</div>

@@ -51,6 +51,7 @@ $prev_surah = '';
 					<!-- /select-surah -->
 
 				</div>
+				<?php if(empty($selected_surah)):?>
 				<div class="col-xs-12 col-sm-5 -col-md-5">
 
 					<div class="surah-action">
@@ -62,6 +63,7 @@ $prev_surah = '';
 					<!-- /surah-action -->
 
 				</div>
+			<?php endif?>
 			</div>
 			</div>
 

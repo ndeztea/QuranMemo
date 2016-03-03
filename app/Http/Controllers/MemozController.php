@@ -68,6 +68,7 @@ class MemozController extends Controller
         // data header
         $data['header_title'] = 'Menghafal';
         $data['body_class'] = 'body-memo';
+        $data['on_memo'] = true;
 
         $data['fill_ayat_end'] = $fill_ayat_end;
         $data['ayats'] = $ayats;
