@@ -2,7 +2,7 @@
 	<form class="form-horizontal" action="" onsubmit="return false" method="post">
 		<div class="form-group">
 			<label for="email" class="control-label sr-only">Email</label>
-			<input type="text" class="form-control" name="email" id="email" aria-label="email" placeholder="Email" />
+			<input type="email" class="form-control" name="email" id="email" aria-label="email" placeholder="Email" />
 		</div>
 		<div class="form-group">
 			<label for="password" class="control-label sr-only">Password</label>
@@ -25,7 +25,7 @@
 		</div>
 		<div class="form-group">
 			<label for="email" class="control-label sr-only">Email</label>
-			<input type="text" class="form-control" name="email" id="register_email" aria-label="email" placeholder="Email" />
+			<input type="email" class="form-control" name="email" id="register_email" aria-label="email" placeholder="Email" />
 
 		</div>
 		<div class="form-group">

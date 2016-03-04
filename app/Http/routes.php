@@ -40,6 +40,8 @@ Route::post('memoz/', 'MemozController@index');
 Route::get('bookmarks/', 'BookmarksController@index');
 
 Route::get('auth/login', 'Auth\AuthController@login');
+Route::post('auth/registerProcess', 'Auth\AuthController@registerProcess');
+
 
 
 Route::group(['middleware' => 'auth'], function () {

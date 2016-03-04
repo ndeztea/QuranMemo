@@ -6,8 +6,12 @@ var QuranJS = {
 		randomInt = Math.floor(Math.random() * (3 - 1)) + 1;
 
 		$('.modal-title').html('<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>');
+		
 		$('.modal-body').html(this.loadingText[randomInt]);
 		$('.modal-header button').hide();
+	},
+
+	modalLoadingBlock : function(){
 
 	},
 
@@ -77,12 +81,31 @@ var QuranJS = {
 	/** AUTH code**/
 	showRegister  : function(){
 		this.removeModalClass();
+		$('.modal-title').html('Daftar');
 		$('.login_form').hide();
 		$('.register_form').show();
 		$('#QuranModal').addClass('register-mode');
 	},
+	registerProcess : function(){
+		this.modalLoadingBlock());
+
+		name = $('#name').val();
+		email = $('#email').val();
+		password = $('#password').val();
+
+		$.post(this.siteUrl+'/auth/registerProcess',{
+					name : name,
+					email : email,
+					password : password
+				}, function (reponse){
+					console.log(reponse);
+				}
+			);
+	},
+
 	showLogin  : function(){
 		this.removeModalClass();
+		$('.modal-title').html('Masuk Dahulu');
 		$('.login_form').show();
 		$('.register_form').hide();
 		$('#QuranModal').addClass('login-mode');

@@ -43,6 +43,31 @@ class AuthController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function registerProcess(Request $request){
+        $validator = $this->validator($request->all());
+
+        // validation
+        if ($validator->fails()) {
+            $messageErrors = $validator->errors();
+            $errorHtml = '<ul>';
+            foreach($messageErrors as $error){
+                $errorHtml .= '<li>'.$error.'</li>';
+            }
+            $errorHtml .= '</ul>';
+
+            $dataHTML['modal_error'] = $errorHtml;
+            $dataHTML['success'] = false;
+
+            return response()->json($dataHTML);
+        }
+
+        // save now
+        Auth::login($this->create($request->all()));
+        $dataHTML['success'] = true;
+
+        return response()->json($dataHTML);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,12 +75,19 @@ class AuthController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {   
+        $errorMessages = [
+            'name.required' => 'Nama harus di isi',
+            'name.required' => 'Email harus di isi',
+            'email.unique' => 'Email sudah di pakai, gunakan email yang lain',
+            'password.required' => 'Email harus di isi'
+        ];
+        
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'name' => 'required',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-        ]);
+            'password' => 'required|confirmed',
+        ],$errorMessages);
     }
 
     /**
