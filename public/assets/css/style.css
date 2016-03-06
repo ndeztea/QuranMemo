@@ -28,7 +28,7 @@ a:focus {
 
 .navbar-default {
   background-image: none;
-  background: #1fa67a;
+  background: #4db578;
   border-radius: 0;
   border: none; }
   .navbar-default .navbar-brand {
@@ -36,14 +36,14 @@ a:focus {
     text-shadow: none;
     font-weight: 700; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-      color: #1fa67a; }
+      color: #4db578; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
     background-image: none; }
   .navbar-default .navbar-nav > li > a {
     color: #fff;
     text-shadow: none; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    background-color: #1b926c;
+    background-color: #409965;
     color: #fff; }
 
 #main-nav {
@@ -56,22 +56,22 @@ a:focus {
   background-color: #f6f6f6; }
   .nav-top .btn-surah-trigger {
     width: 100%;
-    background-color: #1fa67a;
+    background-color: #4db578;
     color: #fff; }
     .nav-top .btn-surah-trigger:hover, .nav-top .btn-surah-trigger:focus {
-      background-color: #1b926c; }
+      background-color: #409965; }
 
 .select-surah .form-inline {
   margin-bottom: 0; }
   .select-surah .form-inline .form-group {
     margin: 0 5px 0 0; }
   .select-surah .form-inline .btn {
-    background-color: #1fa67a;
+    background-color: #4db578;
     color: #fff;
     font-size: 20px;
     margin-left: 3px; }
     .select-surah .form-inline .btn:hover, .select-surah .form-inline .btn:focus {
-      background-color: #1b926c; }
+      background-color: #409965; }
 .select-surah .checkbox {
   color: #999; }
 .select-surah .search_ayat {
@@ -84,8 +84,8 @@ a:focus {
   .surah-nav .input-group {
     margin: auto; }
     .surah-nav .input-group .btn {
-      background-color: #1fa67a;
-      border-color: #1fa67a;
+      background-color: #4db578;
+      border-color: #4db578;
       color: #fff;
       text-shadow: none; }
 
@@ -98,21 +98,21 @@ a:focus {
 .pagination > .active > span,
 .pagination > .active > span:focus,
 .pagination > .active > span:hover {
-  background-color: #1fa67a;
-  border-color: #1fa67a; }
+  background-color: #4db578;
+  border-color: #4db578; }
 
 .pagination > li > a,
 .pagination > li > span {
-  color: #1fa67a;
-  border: solid 1px #1fa67a;
+  color: #4db578;
+  border: solid 1px #4db578;
   background: transparent; }
 
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > span:focus,
 .pagination > li > span:hover {
-  background-color: #1fa67a;
-  border-color: #1fa67a;
+  background-color: #4db578;
+  border-color: #4db578;
   color: #fff; }
 
 .surah-action {
@@ -133,47 +133,75 @@ a:focus {
     position: relative;
     display: block; }
     .mushaf .mushaf_display .btn-group .btn {
-      border-color: #1fa67a;
-      color: #1fa67a; }
+      border-color: #4db578;
+      color: #4db578; }
       .mushaf .mushaf_display .btn-group .btn.active, .mushaf .mushaf_display .btn-group .btn:active {
-        background-color: #1fa67a;
-        border-color: #1fa67a;
+        background-color: #4db578;
+        border-color: #4db578;
         color: #fff;
         text-shadow: none;
         background-image: none; }
       .mushaf .mushaf_display .btn-group .btn:hover, .mushaf .mushaf_display .btn-group .btn:focus {
-        background-color: #1fa67a;
+        background-color: #4db578;
         color: #fff; }
-  .mushaf .arabic {
-    text-align: right;
-    color: #2B4538;
-    width: 45%;
-    line-height: 65px; }
-  .mushaf .trans {
-    width: 45%;
-    line-height: 24px; }
   .mushaf .ayat_section {
     border-bottom: dashed 1px #ddd;
-    padding: 15px 10px;
     cursor: pointer;
-    position: relative; }
+    position: relative;
+    overflow: hidden;
+    transition: height 1s ease; }
+    .mushaf .ayat_section .head_surah {
+      text-align: right; }
     .mushaf .ayat_section.playing {
       background-color: rgba(255, 255, 255, 0.8); }
     .mushaf .ayat_section .trans {
       text-align: left;
-      color: rgba(43, 69, 56, 0.7); }
+      color: rgba(43, 69, 56, 0.7);
+      width: 100%;
+      line-height: 24px;
+      -moz-animation-duration: 2s;
+      -webkit-animation-duration: 2s;
+      transition: height .8s ease;
+      background-color: #fff;
+      transition: all 1s ease-in; }
+      .mushaf .ayat_section .trans.puff {
+        transform: translate(0, 200px);
+        z-index: 1;
+        height: 0;
+        padding: 0; }
+      .mushaf .ayat_section .trans .go {
+        transform: translate(0, 0);
+        z-index: 2; }
+    .mushaf .ayat_section .arabic {
+      text-align: right;
+      color: #2B4538;
+      width: 100%;
+      line-height: 65px;
+      -moz-animation-duration: 2s;
+      -webkit-animation-duration: 2s;
+      transform: translate(0, 0);
+      background-color: #f6f6f6;
+      transition: all 1s ease-in; }
+      .mushaf .ayat_section .arabic.puff {
+        transform: translate(0, -100px);
+        z-index: 1;
+        height: 0;
+        padding: 0; }
+      .mushaf .ayat_section .arabic .go {
+        transform: translate(0, 0);
+        z-index: 2; }
     .mushaf .ayat_section .action-footer {
       position: relative;
       width: 10%; }
       .mushaf .ayat_section .action-footer .btn {
         margin: 0;
-        background-color: #1fa67a;
+        background-color: #4db578;
         color: #fff;
-        border-left: solid 1px #1b926c; }
+        border-left: solid 1px #409965; }
         .mushaf .ayat_section .action-footer .btn:first-child {
           border-left: none; }
         .mushaf .ayat_section .action-footer .btn:hover, .mushaf .ayat_section .action-footer .btn:focus {
-          background-color: #1b926c; }
+          background-color: #409965; }
 
 .nav-top-collapse {
   display: block;
@@ -197,9 +225,9 @@ a:focus {
   .quran_player .jp-video {
     border: none; }
   .quran_player .jp-interface {
-    border-top: 1px solid #1fa67a !important;
-    border-left: 1px solid #1fa67a !important;
-    border-right: 1px solid #1fa67a !important; }
+    border-top: 1px solid #4db578 !important;
+    border-left: 1px solid #4db578 !important;
+    border-right: 1px solid #4db578 !important; }
 
 .fa-3 {
   font-size: 4em; }
@@ -211,13 +239,13 @@ a:focus {
   z-index: 999;
   padding: 10px 0; }
   .toggle-player .btn-toggle-player {
-    border: solid 1px #1fa67a;
-    color: #1fa67a;
+    border: solid 1px #4db578;
+    color: #4db578;
     text-align: center;
     background: #fff;
     border-radius: 0; }
     .toggle-player .btn-toggle-player:hover, .toggle-player .btn-toggle-player:focus {
-      background-color: #1fa67a;
+      background-color: #4db578;
       color: #333; }
 
 .memoz_player {
@@ -236,17 +264,17 @@ a:focus {
     margin-bottom: 5px; }
     .mushaf-hafalan .step-wrap .steps .btn {
       border-width: 1px;
-      border-color: #1fa67a;
+      border-color: #4db578;
       border-style: solid;
       background-color: transparent;
-      color: #1fa67a;
+      color: #4db578;
       background-image: none;
       text-shadow: none; }
       .mushaf-hafalan .step-wrap .steps .btn:hover, .mushaf-hafalan .step-wrap .steps .btn:focus, .mushaf-hafalan .step-wrap .steps .btn.selected {
         border-width: 1px;
-        border-color: #1fa67a;
+        border-color: #4db578;
         border-style: solid;
-        background-color: #1fa67a;
+        background-color: #4db578;
         color: #fff;
         background-image: none;
         text-shadow: none; }
@@ -271,7 +299,7 @@ a:focus {
   .modal.login-mode .modal-dialog .modal-content {
     background-color: rgba(255, 255, 255, 0.9); }
 .modal.login-mode .modal-footer {
-  background: #27d19a;
+  background: #71c493;
   color: #fff; }
 
 .modal.register-mode .modal-dialog {
@@ -279,7 +307,7 @@ a:focus {
   .modal.register-mode .modal-dialog .modal-content {
     background-color: rgba(255, 255, 255, 0.9); }
 .modal.register-mode .modal-footer {
-  background: #27d19a;
+  background: #71c493;
   color: #fff; }
 
 .login_form .btn-group,
@@ -296,34 +324,34 @@ a:focus {
   margin: 0 auto; }
   .login_form .btn-masuk {
     border-width: 1px;
-    border-color: #1fa67a;
+    border-color: #4db578;
     border-style: solid;
     background-color: transparent;
-    color: #1fa67a;
+    color: #4db578;
     background-image: none;
     text-shadow: none; }
     .login_form .btn-masuk:hover, .login_form .btn-masuk:focus, .login_form .btn-masuk.selected {
       border-width: 1px;
-      border-color: #1fa67a;
+      border-color: #4db578;
       border-style: solid;
-      background-color: #1fa67a;
+      background-color: #4db578;
       color: #fff;
       background-image: none;
       text-shadow: none; }
   .login_form .btn-daftar {
     border-width: 1px;
-    border-color: #1fa67a;
+    border-color: #4db578;
     border-style: solid;
-    background-color: #1fa67a;
+    background-color: #4db578;
     color: #fff;
     background-image: none;
     text-shadow: none; }
     .login_form .btn-daftar:hover, .login_form .btn-daftar:focus, .login_form .btn-daftar.selected {
       border-width: 1px;
-      border-color: #1fa67a;
+      border-color: #4db578;
       border-style: solid;
       background-color: transparent;
-      color: #1fa67a;
+      color: #4db578;
       background-image: none;
       text-shadow: none; }
 
@@ -332,34 +360,34 @@ a:focus {
   margin: 0 auto; }
   .register_form .btn-masuk {
     border-width: 1px;
-    border-color: #1fa67a;
+    border-color: #4db578;
     border-style: solid;
     background-color: transparent;
-    color: #1fa67a;
+    color: #4db578;
     background-image: none;
     text-shadow: none; }
     .register_form .btn-masuk:hover, .register_form .btn-masuk:focus, .register_form .btn-masuk.selected {
       border-width: 1px;
-      border-color: #1fa67a;
+      border-color: #4db578;
       border-style: solid;
-      background-color: #1fa67a;
+      background-color: #4db578;
       color: #fff;
       background-image: none;
       text-shadow: none; }
   .register_form .btn-daftar {
     border-width: 1px;
-    border-color: #1fa67a;
+    border-color: #4db578;
     border-style: solid;
-    background-color: #1fa67a;
+    background-color: #4db578;
     color: #fff;
     background-image: none;
     text-shadow: none; }
     .register_form .btn-daftar:hover, .register_form .btn-daftar:focus, .register_form .btn-daftar.selected {
       border-width: 1px;
-      border-color: #1fa67a;
+      border-color: #4db578;
       border-style: solid;
       background-color: transparent;
-      color: #1fa67a;
+      color: #4db578;
       background-image: none;
       text-shadow: none; }
 

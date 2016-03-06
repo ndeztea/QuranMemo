@@ -87,7 +87,7 @@ var QuranJS = {
 		$('#QuranModal').addClass('register-mode');
 	},
 	registerProcess : function(){
-		this.modalLoadingBlock());
+		this.modalLoadingBlock();
 
 		name = $('#name').val();
 		email = $('#email').val();

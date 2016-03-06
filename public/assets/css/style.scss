@@ -1,5 +1,5 @@
-$main-color: #1fa67a;
-$main-color-hover: #1b926c;
+$main-color: rgba(77,181,120,1);
+$main-color-hover: darken($main-color, 8%);
 $arab-font: arabic;
 $txtColor: #fff;
 
@@ -15,12 +15,6 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
   background-image: none;
   text-shadow:none;
 }
-
-$breakpoints: (
-  'small'  : ( min-width:  767px ),
-  'medium' : ( min-width:  992px ),
-  'large'  : ( min-width: 1200px )
-);
 
 @font-face {
     font-family: $arab-font;
@@ -59,7 +53,7 @@ a:focus{
 
 .navbar-default{
 	background-image:none;
-	background: #1fa67a;
+	background: $main-color;
 	border-radius: 0;
 	border:none;
 
@@ -253,23 +247,17 @@ a:focus{
 		}
 	}
 
-	.arabic{
-		text-align: right;
-		color: #2B4538;
-		width: 45%;
-		line-height: 65px;
-	}
-
-	.trans{
-		width: 45%;
-		line-height: 24px;
-	}
-
 	.ayat_section{
 		border-bottom: dashed 1px #ddd;
-		padding: 15px 10px;
+		// padding: 15px 10px;
 		cursor: pointer;
 		position: relative;
+		overflow: hidden;
+		transition: height 1s ease;
+
+		.head_surah{
+			text-align: right;
+		}
 
 		&.playing{
 			background-color: rgba(255,255,255,0.8);
@@ -278,6 +266,50 @@ a:focus{
 		.trans{
 			text-align: left;
 			color: rgba(43, 69, 56, 0.7);
+			width: 100%;
+			line-height: 24px;
+			-moz-animation-duration: 2s;
+	        -webkit-animation-duration: 2s;
+	        transition:height .8s ease;
+	        background-color: #fff;
+	        transition: all 1s ease-in;
+
+	        &.puff{
+	        	transform: translate(0,200px);
+	        	z-index: 1;
+	        	height: 0;
+	        	padding: 0;
+	        }
+
+	        .go{
+				transform: translate(0,0);
+				z-index: 2;
+				
+			}
+		}
+
+		.arabic{
+			text-align: right;
+			color: #2B4538;
+			width: 100%;
+			line-height: 65px;
+			-moz-animation-duration: 2s;
+	        -webkit-animation-duration: 2s;
+	        transform: translate(0,0);
+	        background-color: #f6f6f6;
+	        transition: all 1s ease-in;
+
+	        &.puff{
+				transform: translate(0,-100px);
+				z-index: 1;
+				height: 0;
+				padding: 0;
+			}
+
+			.go{
+				transform: translate(0,0);
+				z-index: 2;
+			}
 		}
 
 		.action-footer{

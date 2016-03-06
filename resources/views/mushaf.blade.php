@@ -82,9 +82,7 @@ $prev_surah = '';
 
 	@include('errors.errors_message')
 
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
+
 				<div class="mushaf">
 					<?php if(!empty($ayats)):?>
 						
@@ -115,18 +113,12 @@ $prev_surah = '';
 						<?php $a++;endif?>
 						
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
-							<div class="pull-left action-footer">
-								<div class="btn-group">
-									<a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i></a>
-									<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-									<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
-								</div>
-								</div>
-							<div class="pull-right arabic"> 
+							
+							<div class="arabic"> 
 								<span class="content_ayat"><?php echo $ayat->text?> </span>
 								<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?>  </span> 
 							</div>
-							<div class="pull-left trans"> 
+							<div class="trans"> 
 								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 								<span class="trans_content"><?php echo $ayat->text_indo?></span>
 							</div>
@@ -137,8 +129,10 @@ $prev_surah = '';
 					<?php endif?>
 				</div>
 				<!-- /mushaf -->
-			</div>
-		</div>
+
+		
+
+
 		<?php if(isset($pages)):?>
 		<div class="surah-nav">
 			<div class="input-group" role="group" aria-label="Navigasi">
@@ -165,45 +159,22 @@ $prev_surah = '';
 		</div>
 		<!-- /surah-nav -->
 	<?php endif?>
-	</div>
 
 
-	<script>
-	function showMushaf(mushaf){
 
-		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
-		jQuery('.mushaf').removeClass('mushaf_arabic');
-		jQuery('.mushaf').removeClass('mushaf_trans');
-
-		if(mushaf=='mushaf_arabic_trans'){
-			jQuery('.trans').show();
-			jQuery('.arabic').show();
-			jQuery('.arabic').css('width','50%');
-			jQuery('.trans').css('width','50%');
-		}else if(mushaf=='mushaf_arabic'){
-			jQuery('.trans').hide();
-			jQuery('.arabic').show();
-			jQuery('.arabic').css('width','90%');
-			jQuery('.trans').css('width','90%');
-		}else if(mushaf=='mushaf_trans'){
-			jQuery('.trans').show();
-			jQuery('.arabic').hide();
-			jQuery('.arabic').css('width','90%');
-			jQuery('.trans').css('width','90%');
-		}
-
-
-		jQuery('.mushaf').addClass(mushaf);
-		jQuery('.mushaf_display a').removeClass('active');
-		jQuery('.'+mushaf).addClass('active');
-
-		
-	}
-	</script>
 	<script type="text/javascript">
 
 		$(document).ready(function () {
 
+			var asct = $('.ayat_section').outerHeight();
+			var aHeight = $('.arabic').outerHeight();
+			var tHeight = $('.trans').outerHeight();
+
+			console.log('initial',asct);
+
+			// $('.ayat_section').css('height',asct);
+			// $('.arabic').css('height',aHeight);
+			// $('.trans').css('height',tHeight);
 
 			var jQuerywindow = jQuery(window);
 				
@@ -246,6 +217,52 @@ $prev_surah = '';
 
 		});
 	</script>
+
+	<script>
+	function updateAyatSectionHeight() {
+
+		var asct = $('.ayat_section').outerHeight();
+		var aHeight = $('.arabic').outerHeight();
+		var tHeight = $('.trans').outerHeight();
+	    
+	    $('.ayat_section').css({
+	        height : aHeight + tHeight + 'px'
+	    });
+	}
+
+	function showMushaf(mushaf){
+
+		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
+		jQuery('.mushaf').removeClass('mushaf_arabic');
+		jQuery('.mushaf').removeClass('mushaf_trans');
+
+		if(mushaf=='mushaf_arabic_trans'){
+			jQuery('.trans').removeClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').removeClass('go');
+			updateAyatSectionHeight();
+
+			
+		}else if(mushaf=='mushaf_arabic'){
+			jQuery('.trans').addClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').addClass('go');
+			updateAyatSectionHeight();
+			
+		}else if(mushaf=='mushaf_trans'){
+			jQuery('.arabic').addClass('puff').removeClass('go');
+			jQuery('.trans').removeClass('puff').addClass('go');
+			updateAyatSectionHeight();
+			
+		}
+
+
+		jQuery('.mushaf').addClass(mushaf);
+		jQuery('.mushaf_display a').removeClass('active');
+		jQuery('.'+mushaf).addClass('active');
+
+	}
+
+	</script>
+	
 	
 
 @endsection
