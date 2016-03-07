@@ -172,9 +172,9 @@ $prev_surah = '';
 
 			console.log('initial',asct);
 
-			// $('.ayat_section').css('height',asct);
-			// $('.arabic').css('height',aHeight);
-			// $('.trans').css('height',tHeight);
+			$('.ayat_section').css('height',asct);
+			$('.arabic').css('height',aHeight);
+			$('.trans').css('height',tHeight);
 
 			var jQuerywindow = jQuery(window);
 				
@@ -219,17 +219,7 @@ $prev_surah = '';
 	</script>
 
 	<script>
-	function updateAyatSectionHeight() {
-
-		var asct = $('.ayat_section').outerHeight();
-		var aHeight = $('.arabic').outerHeight();
-		var tHeight = $('.trans').outerHeight();
-	    
-	    $('.ayat_section').css({
-	        height : aHeight + tHeight + 'px'
-	    });
-	}
-
+	
 	function showMushaf(mushaf){
 
 		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
@@ -239,18 +229,16 @@ $prev_surah = '';
 		if(mushaf=='mushaf_arabic_trans'){
 			jQuery('.trans').removeClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').removeClass('go');
-			updateAyatSectionHeight();
 
 			
 		}else if(mushaf=='mushaf_arabic'){
+			
 			jQuery('.trans').addClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').addClass('go');
-			updateAyatSectionHeight();
 			
 		}else if(mushaf=='mushaf_trans'){
-			jQuery('.arabic').addClass('puff').removeClass('go');
 			jQuery('.trans').removeClass('puff').addClass('go');
-			updateAyatSectionHeight();
+			jQuery('.arabic').removeClass('go').addClass('puff');
 			
 		}
 

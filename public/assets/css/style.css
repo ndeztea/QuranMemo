@@ -154,42 +154,45 @@ a:focus {
       text-align: right; }
     .mushaf .ayat_section.playing {
       background-color: rgba(255, 255, 255, 0.8); }
-    .mushaf .ayat_section .trans {
-      text-align: left;
-      color: rgba(43, 69, 56, 0.7);
-      width: 100%;
-      line-height: 24px;
-      -moz-animation-duration: 2s;
-      -webkit-animation-duration: 2s;
-      transition: height .8s ease;
-      background-color: #fff;
-      transition: all 1s ease-in; }
-      .mushaf .ayat_section .trans.puff {
-        transform: translate(0, 200px);
-        z-index: 1;
-        height: 0;
-        padding: 0; }
-      .mushaf .ayat_section .trans .go {
-        transform: translate(0, 0);
-        z-index: 2; }
     .mushaf .ayat_section .arabic {
       text-align: right;
       color: #2B4538;
       width: 100%;
       line-height: 65px;
-      -moz-animation-duration: 2s;
-      -webkit-animation-duration: 2s;
-      transform: translate(0, 0);
+      -moz-animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      transition: all 1s ease;
       background-color: #f6f6f6;
-      transition: all 1s ease-in; }
-      .mushaf .ayat_section .arabic.puff {
-        transform: translate(0, -100px);
-        z-index: 1;
-        height: 0;
-        padding: 0; }
-      .mushaf .ayat_section .arabic .go {
-        transform: translate(0, 0);
-        z-index: 2; }
+      padding: 15px 0;
+      position: relative; }
+      .mushaf .ayat_section .arabic .content_ayat {
+        padding: 0 15px; }
+      .mushaf .ayat_section .arabic .no_ayat_arabic {
+        padding: 0 15px 0 0; }
+    .mushaf .ayat_section .trans {
+      text-align: left;
+      color: rgba(43, 69, 56, 0.7);
+      font-size: 16px;
+      width: 100%;
+      line-height: 24px;
+      -moz-animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      transition: all 1s ease;
+      background-color: #fefefe;
+      padding: 15px 0;
+      position: relative; }
+      .mushaf .ayat_section .trans .trans_content {
+        padding: 0 15px; }
+      .mushaf .ayat_section .trans .no_ayat {
+        padding: 0 0 0 15px; }
+    .mushaf .ayat_section .puff {
+      z-index: 1;
+      height: 0 !important;
+      padding: 0; }
+    .mushaf .ayat_section .go {
+      height: 100% !important;
+      z-index: 2;
+      padding: 20px 0; }
     .mushaf .ayat_section .action-footer {
       position: relative;
       width: 10%; }
