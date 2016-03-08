@@ -72,6 +72,7 @@ $prev_surah = '';
 
 	</div>
 	<!-- /nav-top -->
+
 	<?php if(isset($selected_surah)):?>
 	<div class="nav-top clearfix detail_top">
 		<h4><?php echo $selected_surah?> ayat <?php echo $ayat?></h4>
@@ -82,7 +83,12 @@ $prev_surah = '';
 
 	@include('errors.errors_message')
 
-
+		<div class="main-content-wrap">
+			<div class="main-content">
+				<div class="single-column">
+				<div class="page-title">
+					<h2>Mushaf</h2>
+				</div>
 				<div class="mushaf">
 					<?php if(!empty($ayats)):?>
 						
@@ -122,43 +128,61 @@ $prev_surah = '';
 								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 								<span class="trans_content"><?php echo $ayat->text_indo?></span>
 							</div>
+
+							<div class="action-footer">
+				                <div class="btn-group">
+				                  <a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i></a>
+				                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
+				                  <a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
+				                </div>
+				            </div>
 							
 						</div>
 						<?php $prev_surah = $ayat->surah?>
 						<?php $a++; endforeach?>
 					<?php endif?>
+
+					<?php if(isset($pages)):?>
+						<div class="surah-nav">
+							<div class="input-group" role="group" aria-label="Navigasi">
+								<ul class="pagination">
+									<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
+									<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"> < <?php //echo trans('trans.prev')?></a></li>
+									<?php foreach($pages as $page):?>
+									<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
+									<?php endforeach?>
+									<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
+									<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
+									<li class="page_free_input"><a href="javascript:;">
+										<form class="form-inline" id="paggingForm" onsubmit="return false">
+										  <div class="form-group">
+										    <div class="input-group">
+										      <input type="text" class="form-control col-xs-1 pagging" placeholder="page">
+										      <div class="input-group-addon"><button name="btnPage" onclick="QuranJS.changePage('pagging')"><i class="fa fa-search"></i></button> </div>
+										    </div>
+										  </div>
+										</form>
+									</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /surah-nav -->
+					<?php endif?>
+
 				</div>
 				<!-- /mushaf -->
+
+				</div>
+				<!-- /single-column -->
+			</div>
+			<!-- /main-content -->
+		</div>
+		<!-- /main-content-wrap -->
 
 		
 
 
-		<?php if(isset($pages)):?>
-		<div class="surah-nav">
-			<div class="input-group" role="group" aria-label="Navigasi">
-				<ul class="pagination">
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"> < <?php //echo trans('trans.prev')?></a></li>
-					<?php foreach($pages as $page):?>
-					<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
-					<?php endforeach?>
-					<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
-					<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
-					<li class="page_free_input"><a href="javascript:;">
-						<form class="form-inline" id="paggingForm" onsubmit="return false">
-						  <div class="form-group">
-						    <div class="input-group">
-						      <input type="text" class="form-control col-xs-1 pagging" placeholder="page">
-						      <div class="input-group-addon"><button name="btnPage" onclick="QuranJS.changePage('pagging')"><i class="fa fa-search"></i></button> </div>
-						    </div>
-						  </div>
-						</form>
-					</a></li>
-				</ul>
-			</div>
-		</div>
-		<!-- /surah-nav -->
-	<?php endif?>
+		
 
 
 
