@@ -274,6 +274,7 @@ a:focus{
 	        background-color: #f6f6f6;
 	        padding: 15px 0;
 	        position:relative;
+	        opacity: 1;
 
 	        .content_ayat{
 	        	padding: 0 15px;
@@ -296,6 +297,7 @@ a:focus{
 	        background-color: #fefefe;
 	        padding: 15px 0;
 	        position:relative;
+	        opacity: 1;
 
 	        .trans_content{
 	        	padding: 0 15px;
@@ -313,6 +315,7 @@ a:focus{
         	z-index: 1;
         	height: 0 !important;
         	padding: 0;
+        	opacity: 0;
         }
 
 		.go{
