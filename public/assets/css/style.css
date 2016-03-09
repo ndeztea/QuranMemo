@@ -140,7 +140,7 @@ a:focus {
       margin: 0 auto;
       position: relative; }
       .main-content-wrap .main-content .single-column .page-title h2 {
-        margin: 0;
+        margin: 0 0 20px;
         color: #fff; }
 
 .mushaf {
@@ -150,7 +150,7 @@ a:focus {
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   position: absolute;
-  top: 50px;
+  top: 108px;
   left: 0;
   right: 0; }
   .mushaf .mushaf_display {
@@ -182,7 +182,6 @@ a:focus {
           color: #fff; }
   .mushaf .ayat_section {
     border-bottom: dashed 1px #ddd;
-    cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: height 1s ease; }
@@ -218,7 +217,8 @@ a:focus {
       background-color: #fefefe;
       padding: 15px 0;
       position: relative;
-      opacity: 1; }
+      opacity: 1;
+      margin-bottom: 20px; }
       .mushaf .ayat_section .trans .trans_content {
         padding: 0 15px; }
       .mushaf .ayat_section .trans .no_ayat {
@@ -233,20 +233,23 @@ a:focus {
       z-index: 2;
       padding: 20px 0; }
     .mushaf .ayat_section .action-footer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100px;
-      z-index: 5; }
+      position: relative;
+      width: 100%;
+      height: 35px;
+      z-index: 5;
+      background-color: #eee; }
       .mushaf .ayat_section .action-footer .btn {
         margin: 0;
-        background-color: #4db578;
-        color: #fff;
-        border-left: solid 1px #409965; }
+        background-color: #eee;
+        color: #aaa;
+        border-left: solid 1px #ddd;
+        border-radius: 0;
+        padding: 7px 20px; }
         .mushaf .ayat_section .action-footer .btn:first-child {
           border-left: none; }
         .mushaf .ayat_section .action-footer .btn:hover, .mushaf .ayat_section .action-footer .btn:focus {
-          background-color: #409965; }
+          background-color: #4db578;
+          color: #fff; }
 
 .nav-top-collapse {
   display: block;
