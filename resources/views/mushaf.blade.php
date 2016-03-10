@@ -121,14 +121,14 @@ $prev_surah = '';
 						
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
 							
-							<div class="arabic"> 
-								<span class="content_ayat"><?php echo $ayat->text?> </span>
-								<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?>  </span> 
-							</div>
-							<div class="trans"> 
-								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
-								<span class="trans_content"><?php echo $ayat->text_indo?></span>
-							</div>
+							<div class="arabic arabic_<?php echo $a;?>"> 
+									<span class="content_ayat"><?php echo $ayat->text?></span> 
+									<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
+								</div>
+								<div class="trans trans_<?php echo $a;?>"> 
+									<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
+									<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
+								</div>
 
 							<div class="action-footer">
 				                <div class="btn-group">
@@ -191,57 +191,72 @@ $prev_surah = '';
 
 		$(document).ready(function () {
 
-			var asct = $('.ayat_section').outerHeight();
+			/*var asct = $('.ayat_section').outerHeight();
 			var aHeight = $('.arabic').outerHeight();
 			var tHeight = $('.trans').outerHeight();
 
 			$('.ayat_section').css('height',asct);
 			$('.arabic').css('height',aHeight);
-			$('.trans').css('height',tHeight);
+			$('.trans').css('height',tHeight);*/
+
+			$( ".ayat_section" ).each(function( index,element ) {
+				className = '.'+$(element).attr('class').split(' ').join('.');
+				// element ayat_section
+				height = $(className).outerHeight();
+				$(className).css('height',height);   
+				//$(className).css('height','100%');     
+			});
 
 			var jQuerywindow = jQuery(window);
 				
-				
-				function checkWidth() {
-					var windowsize = jQuerywindow.width();
-
-					if (windowsize < 1024) {
-						jQuery('#surah-collapse').removeClass('in');
-						
-						
-					}
-					else {
-						jQuery('#surah-collapse').addClass('in');
-					}
+			function checkWidth() {
+				var windowsize = jQuerywindow.width();
+				if (windowsize < 1024) {
+					jQuery('#surah-collapse').removeClass('in');
 				}
-				// Execute on load
-				checkWidth();
-				// Bind event listener
-				jQuery(window).resize(checkWidth);
-
-				//show & hide search setting
+				else {
+					jQuery('#surah-collapse').addClass('in');
+				}
+			}
+			// Execute on load
+			checkWidth();
+			// Bind event listener
+			jQuery(window).resize(checkWidth);
+			//show & hide search setting
 
 			$('.openThis').hide();
-
 			$('.btn-toggle-player').click(function() {
-
 			    $('.quran_player').slideToggle( function() {
-
 			    	$('.openThis').show();
 						
 				});
-
 			    return false;
-
 			});
-
-			// show & hide player
-
-
 		});
 	</script>
 
 	<script>
+
+	function generateTransHeight(importantTag){
+		$( ".trans").each(function( index,element ) {
+				className = '.'+$(element).attr('class').split(' ').join('.');
+				height = $(className).outerHeight();
+				//$(className).attr('style', 'height:'+height+'px '+importantTag+';');
+				$(className).css('height','100%');     
+			});
+	}
+
+	function generateArHeight(importantTag){
+			$( ".arabic" ).each(function( index,element ) {
+				className = '.'+$(element).attr('class').split(' ').join('.');
+				height = $(className).outerHeight();
+				//$(className).attr('style', 'height:'+height+'px '+importantTag+';');
+				$(className).css('height','100%');     
+			});
+	}
+
+	//generateArHeight('!important');
+	//generateTransHeight('!important');
 	
 	function showMushaf(mushaf){
 
@@ -252,17 +267,16 @@ $prev_surah = '';
 		if(mushaf=='mushaf_arabic_trans'){
 			jQuery('.trans').removeClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').removeClass('go');
-
 			
 		}else if(mushaf=='mushaf_arabic'){
-			
 			jQuery('.trans').addClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').addClass('go');
+			//generateTransHeight(' ');
 			
 		}else if(mushaf=='mushaf_trans'){
 			jQuery('.trans').removeClass('puff').addClass('go');
 			jQuery('.arabic').removeClass('go').addClass('puff');
-			
+			//generateArHeight(' ');
 		}
 
 

@@ -64,7 +64,7 @@
 				</div>
 				<!-- /memoz-player -->
 				<?php endif?>
-				
+
 			</div>
 			<!-- /nav-top -->
 			
@@ -114,11 +114,11 @@
 										<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
 									</div>
 								</div>
-								<div class="pull-right arabic"> 
+								<div class="pull-right arabic arabic_<?php echo $a;?>"> 
 									<span class="content_ayat"><?php echo $ayat->text?></span> 
 									<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
 								</div>
-								<div class="pull-left trans"> 
+								<div class="pull-left trans trans_<?php echo $a;?>"> 
 									<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 									<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
 								</div>
