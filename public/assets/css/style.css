@@ -77,6 +77,9 @@ a:focus {
 .select-surah .search_ayat {
   width: 55px; }
 
+.body-memo .nav-top .select-surah {
+  width: 55%; }
+
 .surah-nav {
   width: 100%;
   margin: auto;
@@ -90,7 +93,7 @@ a:focus {
       text-shadow: none; }
 
 .wrap .alert {
-  margin-bottom: 0; }
+  margin-bottom: 15px; }
 
 .pagination > .active > a,
 .pagination > .active > a:focus,
@@ -187,6 +190,8 @@ a:focus {
     transition: height 1s ease; }
     .mushaf .ayat_section .head_surah {
       text-align: right; }
+    .mushaf .ayat_section .surah_name {
+      padding: 5px; }
     .mushaf .ayat_section.playing {
       background-color: rgba(255, 255, 255, 0.8); }
     .mushaf .ayat_section .arabic {
@@ -306,10 +311,12 @@ a:focus {
   padding: 0 10px; }
 
 .mushaf-hafalan .step-wrap {
+  width: 100%;
   margin: 7px 0; }
   .mushaf-hafalan .step-wrap .steps {
     padding: 0 10px;
-    margin-bottom: 5px; }
+    margin: 10px 0;
+    display: block; }
     .mushaf-hafalan .step-wrap .steps .btn {
       border-width: 1px;
       border-color: #4db578;
@@ -317,7 +324,8 @@ a:focus {
       background-color: transparent;
       color: #4db578;
       background-image: none;
-      text-shadow: none; }
+      text-shadow: none;
+      width: 20%; }
       .mushaf-hafalan .step-wrap .steps .btn:hover, .mushaf-hafalan .step-wrap .steps .btn:focus, .mushaf-hafalan .step-wrap .steps .btn.selected {
         border-width: 1px;
         border-color: #4db578;

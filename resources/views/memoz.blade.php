@@ -11,44 +11,42 @@
 				<h2>Menghafal</h2>
 			</div>
 			<div class="nav-top clearfix">
-				<div class="row">
-					<div class="select-surah">
-						<form class="form-inline" action="" method="post">
-								Surah
-								<div class="form-group">
-									<select name="surah_start" class="form-control">
-										<?php foreach($surahs as $surah):?>
-										<option <?php echo $surah->id==$surah_start?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?> (<?php echo $surah->type?>)</option>
-										<?php endforeach?>
-									</select>
-								</div>
-								<div class="form-group display-inline-block-xs">
-									<input class="form-control search_ayat" type="text" name="ayat_start" value="<?php echo $ayat_start?$ayat_start:''?>">
-								</div>
-								<div class="checkbox display-inline-block-xs">
-									<label>
-										<input type="checkbox" value="1" id="fill_ayat_end" <?php echo !empty($fill_ayat_end)?'checked':''?> name="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)">  <span>Sampai surah </span>
-									</label>
-								</div>
+				<div class="select-surah pull-left">
+					<form class="form-inline" action="" method="post">
+							Surah
+							<div class="form-group">
+								<select name="surah_start" class="form-control">
+									<?php foreach($surahs as $surah):?>
+									<option <?php echo $surah->id==$surah_start?'selected':''?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?> (<?php echo $surah->type?>)</option>
+									<?php endforeach?>
+								</select>
+							</div>
+							<div class="form-group display-inline-block-xs">
+								<input class="form-control search_ayat" type="text" name="ayat_start" value="<?php echo $ayat_start?$ayat_start:''?>">
+							</div>
+							<div class="checkbox display-inline-block-xs">
+								<label>
+									<input type="checkbox" value="1" id="fill_ayat_end" <?php echo !empty($fill_ayat_end)?'checked':''?> name="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)">  <span>Sampai surah </span>
+								</label>
+							</div>
 
-								<div  class="form-group ayat_end" style="display:none">
-									<select name="surah_end" class="form-control">
-										<?php foreach($surahs as $surah):?>
-										<option <?php echo $surah->id==$surah_end?'selected':''?>  value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?>  (<?php echo $surah->type?>)</option>
-										<?php endforeach?>
-									</select>
-								</div>
-								<div class="checkbox display-inline-block-xs  ayat_end"  style="display:none">
-									<input type="text" name="ayat_end" class="form-control" value="<?php echo $ayat_end?$ayat_end:''?>">
-								</div>
-								<input class="btn btn-cari-ayat" type="submit" value="Cari" name="btnSubmit"/>
-						</form>
-					</div>
-					<!-- /select-surah -->
+							<div  class="form-group ayat_end" style="display:none">
+								<select name="surah_end" class="form-control">
+									<?php foreach($surahs as $surah):?>
+									<option <?php echo $surah->id==$surah_end?'selected':''?>  value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?>  (<?php echo $surah->type?>)</option>
+									<?php endforeach?>
+								</select>
+							</div>
+							<div class="checkbox display-inline-block-xs  ayat_end"  style="display:none">
+								<input type="text" name="ayat_end" class="form-control" value="<?php echo $ayat_end?$ayat_end:''?>">
+							</div>
+							<input class="btn btn-cari-ayat" type="submit" value="Cari" name="btnSubmit"/>
+					</form>
 				</div>
+				<!-- /select-surah -->
 
 				<?php if(!empty($ayats)):?>
-				<div class="memoz_options">
+				<div class="memoz_options pull-right">
 					@include('players')
 					
 					<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat | 
@@ -65,6 +63,7 @@
 				<!-- /memoz-player -->
 				<?php endif?>
 
+
 			</div>
 			<!-- /nav-top -->
 			
@@ -74,8 +73,8 @@
 					<div class="">
 
 						<div class="mushaf mushaf-hafalan">
-							<div class="pull-left step-wrap">
-								<div class="steps btn-group" role="group" aria-label="steps">
+							<div class="step-wrap">
+								<div class="steps clearfix btn-group" role="group" aria-label="steps">
 									<a href="javascript:void(0)" onclick="steps('1')" class="btn btn-default steps_1 selected">Langkah 1</a>
 									<a href="javascript:void(0)" onclick="steps('2')" class="btn btn-default steps_2">Langkah 2</a>
 									<a href="javascript:void(0)" onclick="steps('3')" class="btn btn-default steps_3">Langkah 3</a>
@@ -107,20 +106,21 @@
 							<?php endif?>
 							
 							<div class="ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
-								<div class="pull-left action-footer">
+								
+								<div class="arabic arabic_<?php echo $a;?>"> 
+									<span class="content_ayat"><?php echo $ayat->text?></span> 
+									<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
+								</div>
+								<div class="trans trans_<?php echo $a;?>"> 
+									<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
+									<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
+								</div>
+								<div class="action-footer">
 									<div class="btn-group">
 										<a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i></a>
 										<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
 										<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
 									</div>
-								</div>
-								<div class="pull-right arabic arabic_<?php echo $a;?>"> 
-									<span class="content_ayat"><?php echo $ayat->text?></span> 
-									<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
-								</div>
-								<div class="pull-left trans trans_<?php echo $a;?>"> 
-									<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
-									<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
 								</div>
 								<div class="clearfix"></div>
 							</div>

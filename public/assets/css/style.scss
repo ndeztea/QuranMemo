@@ -150,6 +150,10 @@ a:focus{
 
 }
 
+.body-memo .nav-top .select-surah{
+	width: 55%;
+}
+
 .surah-nav{
 	width: 100%;
 	margin:auto;
@@ -169,7 +173,7 @@ a:focus{
 }
 
 .wrap .alert{
-	margin-bottom: 0;
+	margin-bottom: 15px;
 }
 
 .pagination > .active > a, 
@@ -298,6 +302,10 @@ a:focus{
 
 		.head_surah{
 			text-align: right;
+		}
+
+		.surah_name{
+			padding: 5px;
 		}
 
 		&.playing{
@@ -472,16 +480,18 @@ a:focus{
 .mushaf-hafalan{
 
 	.step-wrap{
-
+		width: 100%;
 		margin:7px 0;
 
 		.steps{
 			padding:0 10px;
-			margin-bottom: 5px;
+			margin: 10px 0;
+			display: block;
 
 			.btn{
 
 				@include boxy($btn-normal...);
+				width: 20%;
 
 				&:hover,
 				&:focus,
