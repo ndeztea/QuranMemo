@@ -75,10 +75,10 @@
 						</div>
 					</div>
 					<!-- /step-wrap -->
-					<div class="pull-right hafalan-actions">
+					<!--div class="pull-right hafalan-actions">
 						<button class="btn"  data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/create')">Simpan Hafalan</button>
 						<button class="btn btn-success">Sudah Hafal</button>
-					</div>
+					</div-->
 					<!-- /hafalan-actions -->
 					<div class="clearfix"></div>
 					<div class="steps_desc">
