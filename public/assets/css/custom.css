@@ -31,8 +31,8 @@ margin:7px 0
   line-height: 50px;
 }
 
-.mushaf .ayat_section.playing {
-background-color:#fcf8e3;
+.mushaf .ayat_section.playing, .mushaf .ayat_section.playing .arabic, .mushaf .ayat_section.playing .trans  {
+  background-color:#fcf8e3 !important;
 }
 
 .detail_top{text-align: center;color: #1C9A71 !important;background-color: #dff0d8}
@@ -47,4 +47,19 @@ background-color:#fcf8e3;
 .detail_top .btn:hover, .btn:focus {
 background-color:#1b926c;
 color:#fff
+}
+
+.surah_title {
+   background-color: hsla(103, 44%, 89%, 0.82);
+    color: #3C763D;
+}
+.surah_title > .surah_name, .surah_title > .head_surah{
+  text-align: center !important;
+ 
+}
+.surah_title > .surah_name  {
+  margin-bottom: 10px;
+}
+.surah_title > .surah_name  strong {
+  font-size: 16px;
 }
