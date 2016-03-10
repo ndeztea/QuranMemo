@@ -241,8 +241,8 @@ $prev_surah = '';
 		$( ".trans").each(function( index,element ) {
 				className = '.'+$(element).attr('class').split(' ').join('.');
 				height = $(className).outerHeight();
-				//$(className).attr('style', 'height:'+height+'px '+importantTag+';');
-				$(className).css('height','100%');     
+				$(className).attr('style', 'height:'+height+'px');
+				//$(className).css('height','100%');     
 			});
 	}
 
@@ -250,13 +250,13 @@ $prev_surah = '';
 			$( ".arabic" ).each(function( index,element ) {
 				className = '.'+$(element).attr('class').split(' ').join('.');
 				height = $(className).outerHeight();
-				//$(className).attr('style', 'height:'+height+'px '+importantTag+';');
-				$(className).css('height','100%');     
+				$(className).attr('style', 'height:'+height+'px');
+				//$(className).css('height','100%');     
 			});
 	}
 
-	//generateArHeight('!important');
-	//generateTransHeight('!important');
+	generateArHeight('!important');
+	generateTransHeight('!important');
 	
 	function showMushaf(mushaf){
 
