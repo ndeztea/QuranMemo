@@ -104,11 +104,11 @@ $prev_surah = '';
 
 						<?php  $a=0;foreach($ayats as $ayat): ?>
 						
-						<?php  if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
+						<?php  if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1)):?>
 						<a name="head_surah_<?php echo $ayat->surah?>"></a>
-						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 head_surah_<?php echo $ayat->surah?>"  >
+						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 surah_title head_surah_<?php echo $ayat->surah?>"  >
 							<div class="surah_name">
-								<strong><?php echo $ayat->surah_name?></strong><br/>
+								<strong>Surah <?php echo $ayat->surah_name?></strong><br/>
 								<small><?php echo $ayat->type?> ( turun  #<?php echo $ayat->order?> ) | <?php echo $ayat->count_ayat?> ayat </small>
 							</div>
 							<div class="head_surah" >
