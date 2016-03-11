@@ -63,3 +63,8 @@ color:#fff
 .surah_title > .surah_name  strong {
   font-size: 16px;
 }
+
+.mushaf .ayat_section .trans{
+  margin:0px;
+}
+.ayat_section {height: 100%}

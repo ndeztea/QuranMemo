@@ -128,5 +128,23 @@ var QuranJS = {
 
 	},
 
+	generateTransHeight : function (importantTag){
+		$( ".trans").each(function( index,element ) {
+				className = '.'+$(element).attr('class').split(' ').join('.');
+				height = $(className).outerHeight();
+				$(className).attr('style', 'height:'+height+'px');
+				//$(className).css('height','100%');     
+			});
+	},
+
+	generateArHeight : function  (importantTag){
+			$( ".arabic" ).each(function( index,element ) {
+				className = '.'+$(element).attr('class').split(' ').join('.');
+				height = $(className).outerHeight();
+				$(className).attr('style', 'height:'+height+'px');
+				//$(className).css('height','100%');     
+			});
+	},
+
 } 
 

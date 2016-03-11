@@ -190,23 +190,6 @@ $prev_surah = '';
 	<script type="text/javascript">
 
 		$(document).ready(function () {
-
-			/*var asct = $('.ayat_section').outerHeight();
-			var aHeight = $('.arabic').outerHeight();
-			var tHeight = $('.trans').outerHeight();
-
-			$('.ayat_section').css('height',asct);
-			$('.arabic').css('height',aHeight);
-			$('.trans').css('height',tHeight);*/
-
-			$( ".ayat_section" ).each(function( index,element ) {
-				className = '.'+$(element).attr('class').split(' ').join('.');
-				// element ayat_section
-				height = $(className).outerHeight();
-				$(className).css('height',height);   
-				//$(className).css('height','100%');     
-			});
-
 			var jQuerywindow = jQuery(window);
 				
 			function checkWidth() {
@@ -233,30 +216,9 @@ $prev_surah = '';
 			    return false;
 			});
 		});
-	</script>
-
-	<script>
-
-	function generateTransHeight(importantTag){
-		$( ".trans").each(function( index,element ) {
-				className = '.'+$(element).attr('class').split(' ').join('.');
-				height = $(className).outerHeight();
-				$(className).attr('style', 'height:'+height+'px');
-				//$(className).css('height','100%');     
-			});
-	}
-
-	function generateArHeight(importantTag){
-			$( ".arabic" ).each(function( index,element ) {
-				className = '.'+$(element).attr('class').split(' ').join('.');
-				height = $(className).outerHeight();
-				$(className).attr('style', 'height:'+height+'px');
-				//$(className).css('height','100%');     
-			});
-	}
-
-	generateArHeight('!important');
-	generateTransHeight('!important');
+	
+	QuranJS.generateArHeight('!important');
+	QuranJS.generateTransHeight('!important');
 	
 	function showMushaf(mushaf){
 
@@ -267,16 +229,13 @@ $prev_surah = '';
 		if(mushaf=='mushaf_arabic_trans'){
 			jQuery('.trans').removeClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').removeClass('go');
-			
 		}else if(mushaf=='mushaf_arabic'){
 			jQuery('.trans').addClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').addClass('go');
-			//generateTransHeight(' ');
 			
 		}else if(mushaf=='mushaf_trans'){
 			jQuery('.trans').removeClass('puff').addClass('go');
 			jQuery('.arabic').removeClass('go').addClass('puff');
-			//generateArHeight(' ');
 		}
 
 
