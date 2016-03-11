@@ -12,6 +12,7 @@
         <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'QuranMote, mushaf, Al-Quran'?>" />
         <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 
+        <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="<?php echo url('assets/css/bootstrap.min.css')?>">
 

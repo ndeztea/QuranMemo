@@ -215,10 +215,11 @@ $prev_surah = '';
 				});
 			    return false;
 			});
+
+			QuranJS.generateArHeight('!important');
+			QuranJS.generateTransHeight('!important');
 		});
 	
-	QuranJS.generateArHeight('!important');
-	QuranJS.generateTransHeight('!important');
 	
 	function showMushaf(mushaf){
 

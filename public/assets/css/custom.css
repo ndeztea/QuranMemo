@@ -1,4 +1,8 @@
 
+body{
+  font-family: 'Fira Sans', sans-serif;
+}
+
 .hafalan-actions {
 margin:7px 0
 }
@@ -52,6 +56,7 @@ color:#fff
 .surah_title {
    background-color: hsla(103, 44%, 89%, 0.82);
     color: #3C763D;
+    padding-bottom: 10px;
 }
 .surah_title > .surah_name, .surah_title > .head_surah{
   text-align: center !important;
@@ -68,3 +73,32 @@ color:#fff
   margin:0px;
 }
 .ayat_section {height: 100%}
+.mushaf{
+  padding-bottom : 60px;
+}
+.mushaf .ayat_section .trans .no_ayat{
+  padding: 0px;
+}
+
+.mushaf .ayat_section .trans{
+  padding-left: 10px;
+}
+
+@media (min-width: 200px) and (max-width: 800px) {
+    .head_surah{
+      font-size: 20px;
+      padding:0px;
+    }
+   .mushaf .ayat_section .arabic{
+    font-size: 20px;
+    padding:0px;
+   }
+   .mushaf .ayat_section .trans{
+    font-size: 12px;
+    padding: 0px 0px 0px 10px;
+
+   }
+   .main-content-wrap .main-content .single-column{
+    width:98%;
+   }
+}
