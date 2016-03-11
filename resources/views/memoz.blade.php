@@ -40,25 +40,38 @@
 							<div class="checkbox display-inline-block-xs  ayat_end"  style="display:none">
 								<input type="text" name="ayat_end" class="form-control" value="<?php echo $ayat_end?$ayat_end:''?>">
 							</div>
-							<input class="btn btn-cari-ayat" type="submit" value="Cari" name="btnSubmit"/>
+							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
 					</form>
 				</div>
 				<!-- /select-surah -->
 
 				<?php if(!empty($ayats)):?>
-				<div class="memoz_options pull-right">
+
+				<div class="memoz_options">
 					@include('players')
+
+					<div class="btn-group">
+					  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <i class="fa fa-cog"></i> <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu">
+					    <li>
+					    	<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat
+					    </li>
+					    <li class="divider"></li>
+					    <li>
+					    	<span>Ulangi</span> 
+							<select name="repeat" class="repeat">
+								<option value="1">1 kali</option>
+								<option value="2">2 kali</option>
+								<option value="3">3 kali</option>
+								<option value="4">4 kali</option>
+								<option value="5">5 kali</option>
+							</select>
+						</li>
+					  </ul>
+					</div>
 					
-					<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat | 
-					
-					<span>Ulangi</span> 
-					<select name="repeat" class="repeat">
-						<option value="1">1 kali</option>
-						<option value="2">2 kali</option>
-						<option value="3">3 kali</option>
-						<option value="4">4 kali</option>
-						<option value="5">5 kali</option>
-					</select>  
 				</div>
 				<!-- /memoz-player -->
 				<?php endif?>
@@ -74,7 +87,7 @@
 
 						<div class="mushaf mushaf-hafalan">
 							<div class="step-wrap">
-								<div class="steps clearfix btn-group" role="group" aria-label="steps">
+								<div class="steps clearfix btn-group btn-breadcrumb" role="group" aria-label="steps">
 									<a href="javascript:void(0)" onclick="steps('1')" class="btn btn-default steps_1 selected">Langkah 1</a>
 									<a href="javascript:void(0)" onclick="steps('2')" class="btn btn-default steps_2">Langkah 2</a>
 									<a href="javascript:void(0)" onclick="steps('3')" class="btn btn-default steps_3">Langkah 3</a>
@@ -169,6 +182,10 @@ $(document).ready(function(){
 			}else{
 				console.log('notfound');
 			}
+
+			$('.dropdown-menu').on('click', function(event) {
+			    event.stopPropagation();
+			});
 
 		});
 
