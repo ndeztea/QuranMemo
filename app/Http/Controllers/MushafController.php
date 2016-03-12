@@ -44,7 +44,7 @@ class MushafController extends Controller
         $data['curr_page'] = $page;
 
         // data header
-        $data['header_title'] = 'Mushaf Page '. $page;
+        $data['header_title'] = 'Mushaf Halaman '. $page;
         $data['body_class'] = 'body-mushaf';
 
         //print_r($pages);

@@ -295,9 +295,7 @@ $(document).ready(function(){
 							<button class="jp-repeat" role="button" tabindex="0">repeat</button>
 							<!--button class="jp-shuffle" role="button" tabindex="0">shuffle</button-->
 						</div>
-						<div>
-						ulangi
-						</div>
+						
 					</div>
 					<div class="jp-details">
 						<div class="jp-title" aria-label="title">&nbsp;</div>

@@ -53,6 +53,10 @@ background-color:#1b926c;
 color:#fff
 }
 
+.nav-top{
+  z-index: 999;
+}
+
 .surah_title {
    background-color: hsla(103, 44%, 89%, 0.82);
     color: #3C763D;
@@ -100,5 +104,11 @@ color:#fff
    }
    .main-content-wrap .main-content .single-column{
     width:98%;
+   }
+   .input-group{
+    width: auto;
+   }
+   .form-group{
+    margin-bottom: 0px;
    }
 }

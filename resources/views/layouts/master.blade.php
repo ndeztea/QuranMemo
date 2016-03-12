@@ -8,9 +8,10 @@
 
         <meta property="og:url" content="<?php echo Request::url()?>" />
         <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="QuranNote - <?php echo $header_title?$header_title:''?>" />
-        <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'QuranMote, mushaf, Al-Quran'?>" />
-        <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+        <meta property="og:title"         content="QuranMemo - <?php echo $header_title?$header_title:''?>" />
+        <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'?>" />
+        <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
 
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
 

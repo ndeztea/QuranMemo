@@ -1,1 +1,1 @@
-<?php header('location:www.quranmemo.id/public') ?>
+<?php header('location:http://www.quranmemo.id/public') ?>
