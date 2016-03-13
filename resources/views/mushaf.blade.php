@@ -192,19 +192,19 @@ $prev_surah = '';
 		$(document).ready(function () {
 			var jQuerywindow = jQuery(window);
 				
-			function checkWidth() {
-				var windowsize = jQuerywindow.width();
-				if (windowsize < 1024) {
-					jQuery('#surah-collapse').removeClass('in');
-				}
-				else {
-					jQuery('#surah-collapse').addClass('in');
-				}
-			}
+			// function checkWidth() {
+			// 	var windowsize = jQuerywindow.width();
+			// 	if (windowsize < 1024) {
+			// 		jQuery('#surah-collapse').removeClass('in');
+			// 	}
+			// 	else {
+			// 		jQuery('#surah-collapse').addClass('in');
+			// 	}
+			// }
 			// Execute on load
-			checkWidth();
+			// checkWidth();
 			// Bind event listener
-			jQuery(window).resize(checkWidth);
+			// jQuery(window).resize(checkWidth);
 			//show & hide search setting
 
 			$('.openThis').hide();

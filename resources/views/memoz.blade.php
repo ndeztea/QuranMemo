@@ -13,7 +13,7 @@
 			<div class="nav-top clearfix">
 				<div class="select-surah pull-left">
 					<form class="form-inline" action="" method="post">
-							Surah
+							<span>Surah</span>
 							<div class="form-group">
 								<select name="surah_start" class="form-control">
 									<?php foreach($surahs as $surah):?>
@@ -38,7 +38,7 @@
 								</select>
 							</div>
 							<div class="checkbox display-inline-block-xs  ayat_end"  style="display:none">
-								<input type="text" name="ayat_end" class="form-control" value="<?php echo $ayat_end?$ayat_end:''?>">
+								<input type="text" name="ayat_end" class="form-control search_ayat" value="<?php echo $ayat_end?$ayat_end:''?>">
 							</div>
 							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
 					</form>
