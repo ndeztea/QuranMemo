@@ -411,6 +411,9 @@ a:focus {
 .hafalan-actions {
   margin: 7px 0; }
 
+.modal.content-mode .modal-dialog {
+  width: 90%;
+  margin-top: 3%; }
 .modal .modal-dialog {
   width: 500px;
   margin-top: 11%; }

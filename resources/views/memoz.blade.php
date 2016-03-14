@@ -147,8 +147,20 @@
 							<div class="alert alert-warning"><p>Tentukan surah dan ayat yang Anda ingin hafal, tentukan target hafalan jangan terlalu panjang, perkirakan sesuai kemampuan hafalan Anda.</p></div>
 						<?php endif?>
 
+						<div class="footer">
+						    <ul>
+						        <li><span>Copyright &copy; 2016</span></li>
+						        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
+						        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
+						    </ul>
+						</div>
+						<!-- /footer -->
+
 					</div>
 				</div>
+
+
+
 			</div>
 		<!-- end single-column-->
 		</div>
@@ -156,6 +168,8 @@
 	</div>
 <!-- end main main-content-wrap -->	
 </div>
+
+
 
 <script type="text/javascript">
 $(document).ready(function(){

@@ -630,6 +630,12 @@ a:focus{
 
 .modal{
 
+	&.content-mode{
+		.modal-dialog{
+			width: 90%;
+			margin-top:3%;
+		}
+	}
 	.modal-dialog{
 		width: 500px;
 		margin-top:11%;
