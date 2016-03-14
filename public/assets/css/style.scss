@@ -236,6 +236,7 @@ a:focus{
 .wrap .alert{
 	margin-bottom: 15px;
 	transition: all 1s ease;
+	text-align: center;
 }
 
 .pagination > .active > a, 
@@ -924,5 +925,30 @@ a:focus{
 
 	@include media("<tablet",">=phone") {
 		margin-bottom: 0px;
+	}
+}
+
+.footer{
+	text-align: center;
+	width: 100%;
+	position: relative;
+
+	ul{
+		list-style: none;
+		li{
+			display: inline-block;
+			margin-right: 10px;
+			
+			span{
+				color: darken($main-color,10%);
+			}
+			a{
+				color: $main-color;
+				&:hover,
+				&:focus{
+					color: lighten($main-color,10%);
+				}
+			}
+		}
 	}
 }
