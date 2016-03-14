@@ -98,6 +98,10 @@
             @yield('content')
         </div>
 
+        <div class="footer">
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a><br>
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a>
+        </div>
         <!-- Button trigger modal -->
     <!-- Modal -->
     <div class="modal fade" id="QuranModal" tabindex="-1" role="dialog" aria-labelledby="QuranModalLabel">
