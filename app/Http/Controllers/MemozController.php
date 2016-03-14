@@ -56,7 +56,7 @@ class MemozController extends Controller
                 $surah_end = $surah_start;
                 $ayat_end = $ayat_start;
             }
-            
+            $surah_end = $surah_start;
             $ayats = $QuranModel->getRangeAyat($surah_start,$ayat_start,$surah_end,$ayat_end);
         }
         // end validation

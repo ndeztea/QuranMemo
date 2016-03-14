@@ -30,13 +30,13 @@
 								</label>
 							</div>
 
-							<div  class="form-group ayat_end" style="display:none">
+							<!--div  class="form-group ayat_end" style="display:none">
 								<select name="surah_end" class="form-control">
 									<?php foreach($surahs as $surah):?>
 									<option <?php echo $surah->id==$surah_end?'selected':''?>  value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?>  (<?php echo $surah->type?>)</option>
 									<?php endforeach?>
 								</select>
-							</div>
+							</div-->
 							<div class="checkbox display-inline-block-xs  ayat_end"  style="display:none">
 								<input type="text" name="ayat_end" class="form-control search_ayat" value="<?php echo $ayat_end?$ayat_end:''?>">
 							</div>
@@ -144,7 +144,7 @@
 						<!-- /mushaf -->
 
 						<?php else:?>
-							<div class="alert alert-warning"><p>Tentukan surah dan ayat yang Anda ingin hafal</p></div>
+							<div class="alert alert-warning"><p>Tentukan surah dan ayat yang Anda ingin hafal, tentukan target hafalan jangan terlalu panjang, perkirakan sesuai kemampuan hafalan Anda.</p></div>
 						<?php endif?>
 
 					</div>
