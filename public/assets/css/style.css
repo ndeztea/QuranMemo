@@ -306,7 +306,6 @@ a:focus {
       padding: 0;
       opacity: 0; }
     .mushaf .ayat_section .go {
-      height: 100% !important;
       z-index: 2;
       padding: 20px 0; }
     .mushaf .ayat_section .action-footer {
