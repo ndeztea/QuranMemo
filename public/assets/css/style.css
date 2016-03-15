@@ -26,12 +26,18 @@ a:focus {
 
 .navbar {
   margin-bottom: 0; }
+  .navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; }
 
 .navbar-default {
   background-image: none;
   background: #4db578;
   border-radius: 0;
-  border: none; }
+  border: none;
+  z-index: 3; }
   .navbar-default .navbar-toggle {
     border-color: transparent; }
     .navbar-default .navbar-toggle .icon-bar {
@@ -166,19 +172,28 @@ a:focus {
 
 .main-content-wrap {
   width: 100%;
-  height: 400px;
   margin: 0;
   display: block;
-  position: relative;
-  background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center/cover; }
+  position: relative; }
   .main-content-wrap .main-content {
-    background-color: rgba(31, 142, 97, 0.85);
-    padding: 20px 0;
-    height: 100%; }
+    padding: 20px 0; }
+    .main-content-wrap .main-content .backdrop {
+      background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center/cover;
+      width: 100%;
+      height: 400px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+      .main-content-wrap .main-content .backdrop .backdrop-inner {
+        background-color: rgba(31, 142, 97, 0.85);
+        width: 100%;
+        height: 100%; }
     .main-content-wrap .main-content .single-column {
       width: 80%;
       margin: 0 auto;
-      position: relative; }
+      position: relative;
+      z-index: 2; }
       @media (min-width: 1200px) {
         .main-content-wrap .main-content .single-column {
           width: 80%; } }
@@ -201,15 +216,15 @@ a:focus {
           .main-content-wrap .main-content .single-column .page-title h2 {
             text-align: center; } }
 
+body.body-memo .mushaf {
+  padding-top: 1px; }
+
 .mushaf {
   padding-bottom: 60px;
   position: relative;
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  position: absolute;
-  top: 108px;
-  left: 0;
   right: 0; }
   .mushaf .mushaf_display {
     margin: 0 auto;
@@ -242,8 +257,7 @@ a:focus {
     border-bottom: dashed 1px #ddd;
     position: relative;
     overflow: hidden;
-    transition: height 1s ease;
-    height: 100%; }
+    transition: height 1s ease; }
     .mushaf .ayat_section.playing, .mushaf .ayat_section.playing .arabic, .mushaf .ayat_section.playing .trans {
       background-color: #fcf8e3 !important; }
     .mushaf .ayat_section .head_surah {
@@ -633,7 +647,8 @@ a:focus {
 .footer {
   text-align: center;
   width: 100%;
-  position: relative; }
+  position: relative;
+  margin-bottom: 30px; }
   .footer ul {
     list-style: none; }
     .footer ul li {

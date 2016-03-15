@@ -70,7 +70,7 @@
 
         </div>
 
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default qm-navbar">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -98,6 +98,14 @@
             @yield('content')
         </div>
 
+        <div class="footer">
+            <ul>
+                <li><span>Copyright &copy; 2016</span></li>
+                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
+                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
+            </ul>
+        </div>
+        <!-- /footer -->
         
         <!-- Button trigger modal -->
     <!-- Modal -->

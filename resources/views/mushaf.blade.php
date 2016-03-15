@@ -22,74 +22,72 @@ $prev_surah = '';
 
 		<div class="main-content-wrap">
 			<div class="main-content">
+				<div class="backdrop">
+					<div class="backdrop-inner"></div>
+				</div>
+				<!-- /backdrop -->
 				<div class="single-column">
-				<div class="page-title">
-					<h2>Mushaf</h2>
-				</div>
-				<div class="nav-top clearfix">
-					<div class="container-fluid">
-						<button class="btn btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
-						  Pencarian
-						</button>
-						<div class="collapse in" id="surah-collapse">
-						  <div class="row">
-							<div class="col-xs-12 col-sm-7 -col-md-7">
-
-								<div class="select-surah">
-
-									<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
-										<div class="form-group">
-											<select class="selectpicker form-control" name="surah">
-												<?php foreach($surahs as $surah):?>
-													<?php 
-														$selectedSurah = '';
-														if(session('searchSurah')==$surah->id){
-															$selectedSurah = 'selected';
-														}elseif($surah->id==$ayats[0]->surah){
-															$selectedSurah = 'selected';
-														}
-													?>
-												<option  <?php echo $selectedSurah?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?> (<?php echo $surah->type ?>)</option>
-												<?php endforeach?>
-											</select>
-										</div>
-										<div class="form-group display-inline-block-xs">
-											<input class="form-control search_ayat" type="text" name="ayat_start" placeholder="Ayat"/>
-										</div>
-										<div class="checkbox display-inline-block-xs">
-											<label>
-												<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" >  <span>Sampai ayat </span>
-												<input class="form-control search_ayat ayat_end" type="text" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
-											</label>
-										</div>
-										<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
-									</form>
-
-								</div>
-								<!-- /select-surah -->
-
-							</div>
-							<?php if(empty($selected_surah)):?>
-							<div class="col-xs-12 col-sm-5 -col-md-5">
-
-								<div class="surah-action">
-									<span class="auto-play">
-										<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
-									</span>
-									<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
-								</div>
-								<!-- /surah-action -->
-
-							</div>
-						<?php endif?>
-						</div>
-						</div>
-
-						
+					<div class="page-title">
+						<h2>Mushaf</h2>
 					</div>
+					<div class="nav-top clearfix">
+						<div class="container-fluid">
+							<button class="btn btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
+							  Pencarian
+							</button>
+							<div class="collapse in" id="surah-collapse">
+								<div class="row">
+									<div class="col-xs-12 col-sm-7 -col-md-7">
+										<div class="select-surah">
+											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
+												<div class="form-group">
+													<select class="selectpicker form-control" name="surah">
+														<?php foreach($surahs as $surah):?>
+															<?php 
+																$selectedSurah = '';
+																if(session('searchSurah')==$surah->id){
+																	$selectedSurah = 'selected';
+																}elseif($surah->id==$ayats[0]->surah){
+																	$selectedSurah = 'selected';
+																}
+															?>
+														<option  <?php echo $selectedSurah?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?> (<?php echo $surah->type ?>)</option>
+														<?php endforeach?>
+													</select>
+												</div>
+												<div class="form-group display-inline-block-xs">
+													<input class="form-control search_ayat" type="text" name="ayat_start" placeholder="Ayat"/>
+												</div>
+												<div class="checkbox display-inline-block-xs">
+													<label>
+														<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" >  <span>Sampai ayat </span>
+														<input class="form-control search_ayat ayat_end" type="text" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
+													</label>
+												</div>
+												<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
+											</form>
 
-				</div>
-				<!-- /nav-top -->
+										</div>
+										<!-- /select-surah -->
+
+									</div>
+									<?php if(empty($selected_surah)):?>
+									<div class="col-xs-12 col-sm-5 -col-md-5">
+
+										<div class="surah-action">
+											<span class="auto-play">
+												<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
+											</span>
+											<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
+										</div>
+										<!-- /surah-action -->
+									</div>
+								<?php endif?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /nav-top -->
 					<div class="mushaf">
 						<?php if(!empty($ayats)):?>
 							
@@ -170,15 +168,6 @@ $prev_surah = '';
 							<!-- /surah-nav -->
 						<?php endif?>
 
-						<div class="footer">
-				            <ul>
-				                <li><span>Copyright &copy; 2016</span></li>
-				                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
-				                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
-				            </ul>
-				        </div>
-				        <!-- /footer -->
-
 					</div>
 					<!-- /mushaf -->
 
@@ -188,14 +177,6 @@ $prev_surah = '';
 			<!-- /main-content -->
 		</div>
 		<!-- /main-content-wrap -->
-
-
-		
-
-
-		
-
-
 
 	<script type="text/javascript">
 
@@ -216,6 +197,23 @@ $prev_surah = '';
 			// Bind event listener
 			// jQuery(window).resize(checkWidth);
 			//show & hide search setting
+
+			var stickyOffset = $('.qm-navbar').offset().top;
+			var scrollTrigger = 100;
+
+			$(window).scroll(function(){
+				var sticky = $('.qm-navbar'),
+				scroll = $(window).scrollTop();
+
+				if (scroll > stickyOffset) {
+						$(sticky).addClass('fixed'); 
+					}	
+				else 
+					{
+						$(sticky).removeClass('fixed');
+						$('.navbar-nav li.active').removeClass('active');
+					}
+			});
 
 			$('.openThis').hide();
 			$('.btn-toggle-player').click(function() {

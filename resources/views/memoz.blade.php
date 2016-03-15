@@ -6,6 +6,10 @@
 @section('content')
 <div class="main-content-wrap">
 	<div class="main-content">
+		<div class="backdrop">
+			<div class="backdrop-inner"></div>
+		</div>
+		<!-- /backdrop -->
 		<div class="single-column">
 			<div class="page-title">
 				<h2>Menghafal</h2>
@@ -147,14 +151,7 @@
 							<div class="alert alert-warning"><p>Tentukan surah dan ayat yang Anda ingin hafal, tentukan target hafalan jangan terlalu panjang, perkirakan sesuai kemampuan hafalan Anda.</p></div>
 						<?php endif?>
 
-						<div class="footer">
-						    <ul>
-						        <li><span>Copyright &copy; 2016</span></li>
-						        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
-						        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
-						    </ul>
-						</div>
-						<!-- /footer -->
+						
 
 					</div>
 				</div>
@@ -201,6 +198,23 @@ $(document).ready(function(){
 			    event.stopPropagation();
 			});
 
+		});
+
+		var stickyOffset = $('.qm-navbar').offset().top;
+		var scrollTrigger = 100;
+
+		$(window).scroll(function(){
+			var sticky = $('.qm-navbar'),
+			scroll = $(window).scrollTop();
+
+			if (scroll > stickyOffset) {
+					$(sticky).addClass('fixed'); 
+				}	
+			else 
+				{
+					$(sticky).removeClass('fixed');
+					$('.navbar-nav li.active').removeClass('active');
+				}
 		});
 
 	});

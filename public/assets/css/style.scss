@@ -54,6 +54,13 @@ a:focus{
 
 .navbar{
 	margin-bottom: 0;
+
+	&.fixed {
+	  position: fixed;
+	  top:0; 
+	  left:0;
+	  width: 100%; 
+	}
 }
 
 .navbar-default{
@@ -61,6 +68,7 @@ a:focus{
 	background: $main-color;
 	border-radius: 0;
 	border:none;
+	z-index: 3;
 
 	.navbar-toggle{
 	    border-color: transparent;
@@ -281,21 +289,35 @@ a:focus{
 
 .main-content-wrap{
 	width: 100%;
-	height: 400px;
 	margin: 0;
 	display: block;
 	position: relative;
-	background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center / cover;
+	
 
 	.main-content{
-		background-color: rgba(31,142,97,0.85);
 		padding: 20px 0;
-		height: 100%;
+
+		.backdrop{
+			background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center / cover;
+			width: 100%;
+			height: 400px;
+			position: fixed;
+			top:0;
+			left: 0;
+			z-index: 1;
+
+			.backdrop-inner{
+				background-color: rgba(31,142,97,0.85);
+				width: 100%;
+				height: 100%;
+			}
+		}
 
 		.single-column{
 			width: 80%;
 			margin:0 auto;
 			position: relative;
+			z-index: 2;
 
 			@include media(">=1200px") {
 	          	width: 80%;
@@ -330,15 +352,19 @@ a:focus{
 	}
 }
 
+body.body-memo{
+	
+	.mushaf{
+		padding-top:1px;
+	}
+}
+
 .mushaf{
 	padding-bottom: 60px;
 	position: relative;
 	margin: 0 auto;
 	background-color: #fff;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-	position: absolute;
-	top:108px;
-	left: 0;
 	right: 0;
 
 	.mushaf_display{
@@ -387,7 +413,6 @@ a:focus{
 		position: relative;
 		overflow: hidden;
 		transition: height 1s ease;
-		height: 100%;
 
 		
 
@@ -936,6 +961,7 @@ a:focus{
 	text-align: center;
 	width: 100%;
 	position: relative;
+	margin-bottom: 30px;
 
 	ul{
 		list-style: none;
