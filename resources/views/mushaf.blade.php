@@ -152,7 +152,8 @@ $prev_surah = '';
 										<?php endforeach?>
 										<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
 										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
-										<li class="page_free_input"><a href="javascript:;">
+										<li class="page_free_input">
+											<a href="javascript:;">
 											<form class="form-inline" id="paggingForm" onsubmit="return false">
 											  <div class="form-group">
 											    <div class="input-group">

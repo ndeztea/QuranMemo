@@ -161,6 +161,36 @@ a:focus {
   border-color: #4db578;
   color: #fff; }
 
+.pagination .page_free_input form {
+  margin: 0px; }
+.pagination .page_free_input a {
+  padding: 0px !important; }
+  .pagination .page_free_input a:hover, .pagination .page_free_input a:focus {
+    background-color: transparent; }
+.pagination .page_free_input .form-group {
+  height: 32px; }
+  .pagination .page_free_input .form-group .input-group-addon {
+    background-color: transparent;
+    border: none;
+    border-left: solid 1px #4db578;
+    height: 32px;
+    transition: background .5s ease; }
+    .pagination .page_free_input .form-group .input-group-addon:hover {
+      background: #4db578;
+      color: #fff; }
+  .pagination .page_free_input .form-group input {
+    border: 0px;
+    width: 60px !important;
+    text-align: center;
+    height: 30px;
+    border-radius: 0; }
+  .pagination .page_free_input .form-group button {
+    height: 0;
+    padding: 0px;
+    margin: -7px 0;
+    background-color: transparent;
+    border: none; }
+
 .surah-action {
   text-align: right;
   margin: 7px 0 0; }
@@ -220,7 +250,7 @@ body.body-memo .mushaf {
   padding-top: 1px; }
 
 .mushaf {
-  padding-bottom: 60px;
+  padding-bottom: 15px;
   position: relative;
   margin: 0 auto;
   background-color: #fff;
@@ -591,22 +621,6 @@ body.body-memo .mushaf {
     border-left: 10px solid #4db578; }
   .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
     border-left: 10px solid #fff; }
-
-.page_free_input form {
-  margin: 0px; }
-.page_free_input a {
-  padding: 0px !important; }
-.page_free_input input {
-  border: 0px;
-  width: 60px !important;
-  text-align: center;
-  height: 30px; }
-.page_free_input button {
-  height: 30px;
-  padding: 0px;
-  height: 0px; }
-.page_free_input .form-group {
-  height: 32px; }
 
 .detail_top {
   text-align: center;

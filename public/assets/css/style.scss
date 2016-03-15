@@ -273,6 +273,55 @@ a:focus{
 	color: #fff;
 }
 
+.pagination .page_free_input{
+	form{
+	  margin:0px;
+	}
+
+	a{
+	  padding:0px !important;
+	  &:hover,
+	  &:focus{
+	  	background-color: transparent;
+	  }
+	}
+
+	.form-group{
+		height: 32px;
+
+		.input-group-addon{
+			background-color: transparent;
+			border:none;
+			border-left:solid 1px $main-color;
+			height: 32px;
+			transition: background .5s ease;
+
+			&:hover{
+		 		background: $main-color;
+		 		color: #fff;
+		 	}
+		}
+
+		input{
+			border: 0px;
+			width: 60px !important;
+			text-align: center;
+			height: 30px;
+			border-radius: 0;
+		}
+
+		button{
+			height: 0;
+			padding: 0px;
+		 	margin: -7px 0;
+		 	background-color: transparent;
+		 	border:none;
+
+
+		}
+	}
+}
+
 .surah-action{
 	text-align: right;
 	margin: 7px 0 0;
@@ -353,14 +402,14 @@ a:focus{
 }
 
 body.body-memo{
-	
+
 	.mushaf{
 		padding-top:1px;
 	}
 }
 
 .mushaf{
-	padding-bottom: 60px;
+	padding-bottom: 15px;
 	position: relative;
 	margin: 0 auto;
 	background-color: #fff;
@@ -873,33 +922,6 @@ body.body-memo{
 	  border-left: 10px solid #fff;
 	}
 
-}
-
-.page_free_input{
-	form{
-	  margin:0px;
-	}
-
-	a{
-	  padding:0px !important;
-	}
-
-	input{
-	  border: 0px;
-	  width: 60px !important;
-	  text-align: center;
-	  height: 30px;
-	}
-
-	button{
-	  height: 30px;
-	  padding: 0px;
-	  height: 0px;
-	}
-
-	.form-group{
-	  height: 32px
-	}
 }
 
 .detail_top{
