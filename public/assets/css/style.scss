@@ -389,9 +389,7 @@ a:focus{
 		transition: height 1s ease;
 		height: 100%;
 
-		 @include media("<tablet", ">=phone") {
-			margin-bottom: 15px;
-		}
+		
 
 		&.playing, 
 		&.playing .arabic, 
@@ -433,7 +431,7 @@ a:focus{
 
 	        @include media("<tablet", ">=phone") {
 				font-size: 20px;
-    			padding:0px;
+    			padding:20px 10px 20px 0;
 			}
 
 	        .content_ayat{
@@ -461,8 +459,8 @@ a:focus{
 	        opacity: 1;
 
 	        @include media("<tablet", ">=phone") {
-				 font-size: 12px;
-    			padding: 0px 0px 0px 10px;
+				font-size: 12px;
+    			padding: 20px 0px 20px 10px;
 			}
 
 	        .trans_content{

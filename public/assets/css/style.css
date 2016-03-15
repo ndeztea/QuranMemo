@@ -244,9 +244,6 @@ a:focus {
     overflow: hidden;
     transition: height 1s ease;
     height: 100%; }
-    @media (max-width: 767px) and (min-width: 320px) {
-      .mushaf .ayat_section {
-        margin-bottom: 15px; } }
     .mushaf .ayat_section.playing, .mushaf .ayat_section.playing .arabic, .mushaf .ayat_section.playing .trans {
       background-color: #fcf8e3 !important; }
     .mushaf .ayat_section .head_surah {
@@ -274,7 +271,7 @@ a:focus {
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .arabic {
           font-size: 20px;
-          padding: 0px; } }
+          padding: 20px 10px 20px 0; } }
       .mushaf .ayat_section .arabic .content_ayat {
         padding: 0 15px;
         line-height: 50px; }
@@ -296,7 +293,7 @@ a:focus {
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .trans {
           font-size: 12px;
-          padding: 0px 0px 0px 10px; } }
+          padding: 20px 0px 20px 10px; } }
       .mushaf .ayat_section .trans .trans_content {
         padding: 0 15px; }
       .mushaf .ayat_section .trans .no_ayat {
