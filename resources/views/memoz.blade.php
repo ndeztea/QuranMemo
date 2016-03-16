@@ -59,12 +59,12 @@
 					    <i class="fa fa-cog"></i> <span class="caret"></span>
 					  </button>
 					  <ul class="dropdown-menu">
-					    <li>
+					    <!--li>
 					    	<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat
-					    </li>
+					    </li-->
 					    <li class="divider"></li>
 					    <li>
-					    	<span>Ulangi</span> 
+					    	<span>Ulangi per-ayat</span> 
 							<select name="repeat" class="repeat">
 								<option value="1">1 kali</option>
 								<option value="2">2 kali</option>
@@ -111,38 +111,45 @@
 									<p>Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti.</p>
 								</div>
 							</div>
-							<?php  $a=0;foreach($ayats as $ayat):?>
+							<?php  $a=0;foreach($ayats as $ayat): ?>
 							
-							<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
-							<div class="ayat_section  section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0">
+							<?php  if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1)):?>
+							<a name="head_surah_<?php echo $ayat->surah?>"></a>
+							<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 surah_title head_surah_<?php echo $ayat->surah?>"  >
+								<div class="surah_name">
+									<strong>Surah <?php echo $ayat->surah_name?></strong><br/>
+									<small><?php echo $ayat->type?> ( turun  #<?php echo $ayat->order?> ) | <?php echo $ayat->count_ayat?> ayat </small>
+								</div>
 								<div class="head_surah" >
 								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 								</div>
 								<div class="clearfix"></div>
 							</div>
-							<?php endif?>
+							<!-- /ayat-section -->
+							<?php $a++;endif?>
 							
-							<div class="ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
+							<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
 								
 								<div class="arabic arabic_<?php echo $a;?>"> 
-									<span class="content_ayat"><?php echo $ayat->text?></span> 
-									<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
-								</div>
-								<div class="trans trans_<?php echo $a;?>"> 
-									<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
-									<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
-								</div>
-								<div class="action-footer">
-									<div class="btn-group">
-										<a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i> Play</a>
-										<!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-										<a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i> Share</a>
+										<span class="content_ayat"><?php echo $ayat->text?></span> 
+										<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
 									</div>
-								</div>
-								<div class="clearfix"></div>
+									<div class="trans trans_<?php echo $a;?>"> 
+										<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
+										<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
+									</div>
+
+								<div class="action-footer">
+					                <div class="btn-group">
+					                  <a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i> Play</a>
+					                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
+					                  <a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i> Share</a>
+					                </div>
+					            </div>
+								
 							</div>
 							<?php $prev_surah = $ayat->surah?>
-							<?php  $a++; endforeach?>
+							<?php $a++; endforeach?>
 						
 						</div>
 						<!-- /mushaf -->

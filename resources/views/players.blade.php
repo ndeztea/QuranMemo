@@ -165,47 +165,30 @@ $(document).ready(function(){
 			if(muratalPlaylist.playlist.length==currentPlay){
 				window.goNext = true;
 			}
-
-
-			// repeat ayat
-			var config_repeat = jQuery('.repeat').val();
-        	var config_repeat_ayat = jQuery('.repeat_ayat').is(':checked');
-        	if(config_repeat>1 && typeof repeat_ayat_counter=='undefined'){
-        		repeat_ayat_counter = 1;
-        	}
-
-        	if(config_repeat_ayat==true){
-        		if(repeat_ayat_counter<config_repeat){
-        			console.log('repeat');
-	        		jQuery('.jp-previous').click();
-	        		repeat_ayat_counter++;
-	        		console.log(repeat_ayat_counter);
-	        		//jQuery('.repeat_ayat_counter').val(repeat_ayat);
-	        	}else{
-	        		//jQuery('.repeat_ayat_counter').val(1);
-	        		repeat_ayat_counter = 0;
-	        		console.log('next');
-	        	}
-        	}
-			
-        	
-
-
-
         }, 
-        repeat: function(event) {
-		  if(event.jPlayer.options.loop) {
-		    $(this).unbind(".jPlayerRepeat").bind($.jPlayer.event.ended + ".jPlayer.jPlayerRepeat", function() {
-		      $(this).jPlayer("play");
-		    });
-		  } else {
-		    $(this).unbind(".jPlayerRepeat");
-		  }
-		},
         end: function(event){
         	$('*','.view-quran').removeClass('playing');
         },
         ended: function(event){
+        	console.log('backto 0');
+        	// repeat ayat
+			var config_repeat = jQuery('.repeat').val();
+			if(typeof repeat_ayat_counter == 'undefined'){
+        		repeat_ayat_counter = 1;
+        	}
+
+        	console.log(repeat_ayat_counter+'<'+config_repeat);
+    		if(repeat_ayat_counter<config_repeat){
+
+    			$(this).jPlayer("stop");
+    			$('.jp-previous').click();
+    			repeat_ayat_counter++;
+        		console.log('prev');
+        	}else{
+        		repeat_ayat_counter = 1;
+        		console.log('next');
+        	}
+
         							        	//alert(muratalPlaylist.current);
         	//var endPlaylist = muratalPlaylist.current;
         	//alert(endPlaylist+'==23');
@@ -244,7 +227,8 @@ $(document).ready(function(){
 		autoBlur: false,
 		smoothPlayBar: true,
 		keyEnabled: true,
-		loop:true
+		loop:true,
+		preload : 'auto'
 	});
 	
 	<?php $a=0;foreach($ayats as $ayat):?>
