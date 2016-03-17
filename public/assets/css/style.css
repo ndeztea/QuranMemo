@@ -185,7 +185,7 @@ a:focus {
       color: #fff; }
   .pagination .page_free_input .form-group input {
     border: 0px;
-    width: 60px !important;
+    width: 40px !important;
     text-align: center;
     height: 30px;
     border-radius: 0; }
@@ -396,7 +396,7 @@ body.body-memo .mushaf {
   background: transparent;
   z-index: 99; }
   .quran_player .jp-video {
-    width: 480px;
+    width: 320px;
     background: transparent;
     margin: 0 auto; }
   .quran_player .jp-audio,

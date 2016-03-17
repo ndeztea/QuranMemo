@@ -158,7 +158,7 @@ $prev_surah = '';
 											<form class="form-inline" id="paggingForm" onsubmit="return false">
 											  <div class="form-group">
 											    <div class="input-group">
-											      <input type="text" class="form-control col-xs-1 pagging" placeholder="page">
+											      <input type="number" class="form-control col-xs-1 pagging" placeholder="">
 											      <div class="input-group-addon"><button name="btnPage" onclick="QuranJS.changePage('pagging')"><i class="fa fa-search"></i></button> </div>
 											    </div>
 											  </div>

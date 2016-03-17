@@ -270,10 +270,9 @@ $(document).ready(function(){
 							</div>
 						</div>
 						
-						<div class="jp-toggles">
+						<!--div class="jp-toggles">
 							<button class="jp-repeat" role="button" tabindex="0">repeat</button>
-							<!--button class="jp-shuffle" role="button" tabindex="0">shuffle</button-->
-						</div>
+						</div-->
 						
 					</div>
 					<div class="jp-details">

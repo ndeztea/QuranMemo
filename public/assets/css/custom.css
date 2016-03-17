@@ -6,8 +6,12 @@
 	.mushaf .ayat_section .arabic {
 		padding:  0px !important;
 	}
+	.jp-video .jp-type-playlist .jp-controls{
+		margin-left: 100px !important;
+	}
 }
 .mushaf .ayat_section .trans{padding:0 10px  !important;}
 .mushaf .ayat_section .arabic{
 	padding: 10px
 }
+.jp-controls-holder{width:320px !important;}
