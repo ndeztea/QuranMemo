@@ -148,6 +148,10 @@ a:focus{
 		}
 	}
 
+	#surah-collapse{
+		margin-top:15px;
+	}
+
 	.memoz_options{
 		position: absolute;
 		top:11px;
@@ -190,6 +194,10 @@ a:focus{
 
 		.form-group{
 			margin: 0 5px 0 0;
+
+			@include media("<=480px", ">=phone") {
+	          	margin-bottom: 10px;
+	      	}
 		}
 
 		.btn{
@@ -322,9 +330,17 @@ a:focus{
 	}
 }
 
+.display-inline-block-xs{
+	margin: 10px 5px 10px 0;
+}
+
 .surah-action{
 	text-align: right;
 	margin: 7px 0 0;
+
+	@include media("<=480px", ">=phone") {
+      	text-align: center;
+  	}
 
 	.auto-play{
 		margin-right: 10px;
@@ -341,6 +357,7 @@ a:focus{
 	margin: 0;
 	display: block;
 	position: relative;
+	min-height: 500px;
 	
 
 	.main-content{
@@ -473,6 +490,7 @@ body.body-memo{
 
 		.head_surah{
 			text-align: right;
+			padding-bottom: 10px;
 
 			@include media("<tablet", ">=phone") {
 				font-size: 20px;
@@ -483,7 +501,7 @@ body.body-memo{
 		}
 
 		.surah_name{
-			padding: 5px;
+			padding: 10px;
 		}
 
 		&.playing{

@@ -79,6 +79,8 @@ a:focus {
     color: #fff; }
     .nav-top .btn-surah-trigger:hover, .nav-top .btn-surah-trigger:focus {
       background-color: #409965; }
+  .nav-top #surah-collapse {
+    margin-top: 15px; }
   .nav-top .memoz_options {
     position: absolute;
     top: 11px;
@@ -104,6 +106,9 @@ a:focus {
   margin-bottom: 0; }
   .select-surah .form-inline .form-group {
     margin: 0 5px 0 0; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .select-surah .form-inline .form-group {
+        margin-bottom: 10px; } }
   .select-surah .form-inline .btn {
     background-color: #4db578;
     color: #fff;
@@ -191,9 +196,15 @@ a:focus {
     background-color: transparent;
     border: none; }
 
+.display-inline-block-xs {
+  margin: 10px 5px 10px 0; }
+
 .surah-action {
   text-align: right;
   margin: 7px 0 0; }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .surah-action {
+      text-align: center; } }
   .surah-action .auto-play {
     margin-right: 10px;
     color: #999; }
@@ -204,7 +215,8 @@ a:focus {
   width: 100%;
   margin: 0;
   display: block;
-  position: relative; }
+  position: relative;
+  min-height: 500px; }
   .main-content-wrap .main-content {
     padding: 20px 0; }
     .main-content-wrap .main-content .backdrop {
@@ -291,13 +303,14 @@ body.body-memo .mushaf {
     .mushaf .ayat_section.playing, .mushaf .ayat_section.playing .arabic, .mushaf .ayat_section.playing .trans {
       background-color: #fcf8e3 !important; }
     .mushaf .ayat_section .head_surah {
-      text-align: right; }
+      text-align: right;
+      padding-bottom: 10px; }
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .head_surah {
           font-size: 20px;
           padding: 0px; } }
     .mushaf .ayat_section .surah_name {
-      padding: 5px; }
+      padding: 10px; }
     .mushaf .ayat_section.playing {
       background-color: rgba(255, 255, 255, 0.8); }
     .mushaf .ayat_section .arabic {
