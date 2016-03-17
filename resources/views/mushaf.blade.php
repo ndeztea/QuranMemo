@@ -33,6 +33,7 @@ $prev_surah = '';
 								<div class="row">
 									<div class="col-xs-12 col-sm-7 -col-md-7">
 										<div class="select-surah">
+
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
 												<div class="form-group">
 													<select class="selectpicker form-control" name="surah">
@@ -50,14 +51,18 @@ $prev_surah = '';
 													</select>
 												</div>
 												<div class="form-group display-inline-block-xs">
-													<input class="form-control search_ayat" type="number" name="ayat_start" placeholder="Ayat"/>
+													<div class="input-group">
+													  <input class="form-control search_ayat" type="number" name="ayat_start" placeholder="Ayat" aria-label="Ayat">
+													  <span class="input-group-addon">Sampai Ayat</span>
+													  <input class="form-control search_ayat" type="number" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat">
+													</div>
 												</div>
-												<div class="checkbox display-inline-block-xs">
+												<!-- <div class="checkbox display-inline-block-xs">
 													<label>
 														<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" >  <span>Sampai ayat </span>
-														<input class="form-control search_ayat ayat_end" type="number" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
+														<input class="form-control search_ayat ayat_end"  style="display:none" placeholder="Ayat"/>
 													</label>
-												</div>
+												</div> -->
 												<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
 											</form>
 
@@ -184,21 +189,26 @@ $prev_surah = '';
 
 		$(document).ready(function () {
 			var jQuerywindow = jQuery(window);
-				
-			// function checkWidth() {
-			// 	var windowsize = jQuerywindow.width();
-			// 	if (windowsize < 1024) {
-			// 		jQuery('#surah-collapse').removeClass('in');
-			// 	}
-			// 	else {
-			// 		jQuery('#surah-collapse').addClass('in');
-			// 	}
-			// }
-			// Execute on load
-			// checkWidth();
-			// Bind event listener
-			// jQuery(window).resize(checkWidth);
+			resizeDiv();
+
+			window.onresize = function(event) {
+				resizeDiv();
+			}
+
+			function resizeDiv() {
+				vpw = $(window).width();
+				vph = $(window).height();
+
+				if (vpw < 767) {
+						$('#surah-collapse').removeClass('in');
+						
+					}
+					else {
+						$('#surah-collapse').addClass('in');
+					}
+			}
 			//show & hide search setting
+			//Cache reference to window and animation items
 
 			var stickyOffset = $('.qm-navbar').offset().top;
 			var scrollTrigger = 100;

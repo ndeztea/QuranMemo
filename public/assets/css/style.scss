@@ -149,7 +149,11 @@ a:focus{
 	}
 
 	#surah-collapse{
-		margin-top:15px;
+
+		@include media("<=480px", ">=phone") {
+          	margin-top:15px;
+      	}
+		
 	}
 
 	.memoz_options{
@@ -195,6 +199,15 @@ a:focus{
 		.form-group{
 			margin: 0 5px 0 0;
 
+			.form-control.search_ayat{
+				width: 70px;
+			}
+
+			.input-group-addon{
+				border-left: none;
+				border-right: none;
+			}
+
 			@include media("<=480px", ">=phone") {
 	          	margin-bottom: 10px;
 	      	}
@@ -205,6 +218,12 @@ a:focus{
 			color: #fff;
 			font-size: 20px;
 			margin-left: 3px;
+
+			@include media("<=480px", ">=phone") {
+	          	width: 100%;
+	          	display: block;
+	          	margin-left: 0;
+	      	}
 
 			&:hover,
 			&:focus{
@@ -223,6 +242,7 @@ a:focus{
 
 	.search_ayat{
 		width:67px;
+		text-align: center;
 	}
 
 }
@@ -312,7 +332,7 @@ a:focus{
 
 		input{
 			border: 0px;
-			width: 40px !important;
+			width: 60px;
 			text-align: center;
 			height: 30px;
 			border-radius: 0;
@@ -426,7 +446,7 @@ body.body-memo{
 }
 
 .mushaf{
-	padding-bottom: 15px;
+	// padding-bottom: 15px;
 	position: relative;
 	margin: 0 auto;
 	background-color: #fff;
@@ -480,6 +500,9 @@ body.body-memo{
 		overflow: hidden;
 		transition: height 1s ease;
 
+		&:last-child{
+			border-bottom: none;
+		}
 		
 
 		&.playing, 
@@ -489,7 +512,7 @@ body.body-memo{
 		}
 
 		.head_surah{
-			text-align: right;
+			text-align: center;
 			padding-bottom: 10px;
 
 			@include media("<tablet", ">=phone") {
@@ -517,7 +540,7 @@ body.body-memo{
 	        -webkit-animation-duration: 1s;
 	        transition: all 1s ease;
 	        background-color: #f6f6f6;
-	        padding: 15px 0;
+	        padding: 10px;
 	        position:relative;
 	        opacity: 1;
 
@@ -546,7 +569,7 @@ body.body-memo{
 	        -webkit-animation-duration: 1s;
 	        transition: all 1s ease;
 	        background-color: #fefefe;
-	        padding: 15px 0;
+	        padding: 10px;
 	        position:relative;
 	        opacity: 1;
 
@@ -559,8 +582,6 @@ body.body-memo{
 	        	padding: 0 15px;
 	        
 	        }
-
-	        
 
 		}
 
@@ -575,7 +596,7 @@ body.body-memo{
 		.go{
 			height:100%;
 			z-index: 2;
-			padding: 20px 0;
+			padding: 20px 10px 40px;
 
 		}
 
@@ -630,6 +651,8 @@ body.body-memo{
 		background:transparent;
 		margin: 0 auto;
 	}
+
+	.jp-controls-holder{width:320px !important;}
 
 	.jp-audio, 
 	.jp-audio-stream, 

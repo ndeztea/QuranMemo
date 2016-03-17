@@ -205,6 +205,26 @@ $(document).ready(function(){
 			    event.stopPropagation();
 			});
 
+			resizeDiv();
+
+			window.onresize = function(event) {
+				resizeDiv();
+			}
+
+			function resizeDiv() {
+				vpw = $(window).width();
+				vph = $(window).height();
+
+				if (vpw < 767) {
+						$('#surah-collapse').removeClass('in');
+						
+					}
+					else {
+						$('#surah-collapse').addClass('in');
+					}
+			}
+			//show & hide search setting
+
 		});
 
 		var stickyOffset = $('.qm-navbar').offset().top;
