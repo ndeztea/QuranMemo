@@ -50,12 +50,12 @@ $prev_surah = '';
 													</select>
 												</div>
 												<div class="form-group display-inline-block-xs">
-													<input class="form-control search_ayat" type="text" name="ayat_start" placeholder="Ayat"/>
+													<input class="form-control search_ayat" type="number" name="ayat_start" placeholder="Ayat"/>
 												</div>
 												<div class="checkbox display-inline-block-xs">
 													<label>
 														<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" >  <span>Sampai ayat </span>
-														<input class="form-control search_ayat ayat_end" type="text" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
+														<input class="form-control search_ayat ayat_end" type="number" name="ayat_end" id="ayat_end" style="display:none" placeholder="Ayat"/>
 													</label>
 												</div>
 												<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>

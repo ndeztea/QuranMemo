@@ -1,3 +1,13 @@
 .mushaf .ayat_section .head_surah{
 	text-align: center;
 }
+.select-surah .search_ayat{text-align: center}
+@media (max-width: 767px) and (min-width: 300px){
+	.mushaf .ayat_section .arabic {
+		padding:  0px !important;
+	}
+}
+.mushaf .ayat_section .trans{padding:0 10px  !important;}
+.mushaf .ayat_section .arabic{
+	padding: 10px
+}

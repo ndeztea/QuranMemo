@@ -26,7 +26,7 @@
 								</select>
 							</div>
 							<div class="form-group display-inline-block-xs">
-								<input class="form-control search_ayat" type="text" name="ayat_start" value="<?php echo $ayat_start?$ayat_start:''?>">
+								<input class="form-control search_ayat" type="number" name="ayat_start" value="<?php echo $ayat_start?$ayat_start:''?>">
 							</div>
 							<div class="checkbox display-inline-block-xs">
 								<label>
@@ -42,7 +42,7 @@
 								</select>
 							</div-->
 							<div class="checkbox display-inline-block-xs  ayat_end"  style="display:none">
-								<input type="text" name="ayat_end" class="form-control search_ayat" value="<?php echo $ayat_end?$ayat_end:''?>">
+								<input type="number" name="ayat_end" class="form-control search_ayat" value="<?php echo $ayat_end?$ayat_end:''?>">
 							</div>
 							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
 					</form>

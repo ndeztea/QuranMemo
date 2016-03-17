@@ -121,7 +121,7 @@ a:focus {
 .select-surah span {
   color: #999; }
 .select-surah .search_ayat {
-  width: 55px; }
+  width: 67px; }
 
 .body-memo .nav-top .select-surah {
   width: 100%; }
@@ -353,8 +353,7 @@ body.body-memo .mushaf {
           padding: 20px 0px 20px 10px; } }
       .mushaf .ayat_section .trans .trans_content {
         padding: 0 15px; }
-      .mushaf .ayat_section .trans .no_ayat {
-        padding: 0 0 0 15px; }
+     
     .mushaf .ayat_section .puff {
       z-index: 1;
       height: 0 !important;
