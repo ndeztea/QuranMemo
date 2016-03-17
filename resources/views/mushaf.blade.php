@@ -10,14 +10,7 @@ $prev_surah = '';
 	@include('players')
 	
 
-	<?php if(isset($selected_surah)):?>
-	<div class="nav-top clearfix detail_top">
-		<h4><?php echo $selected_surah?> ayat <?php echo $ayat?></h4>
-		<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url=<?php echo  Request::url() ?>')"><i class="fa fa-share-alt"></i></a>
-		<!--a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
-	</div>
-<?php endif?>
-
+	
 	@include('errors.errors_message')
 
 		<div class="main-content-wrap">
@@ -30,6 +23,7 @@ $prev_surah = '';
 					<div class="page-title">
 						<h2>Mushaf</h2>
 					</div>
+
 					<div class="nav-top clearfix">
 						<div class="container-fluid">
 							<button class="btn btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
@@ -87,6 +81,13 @@ $prev_surah = '';
 							</div>
 						</div>
 					</div>
+					<?php if(isset($selected_surah)):?>
+						<div class="nav-top clearfix detail_top">
+							<h4><?php echo $selected_surah?> ayat <?php echo $ayat?></h4>
+							<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url=<?php echo  Request::url() ?>')"><i class="fa fa-share-alt"></i></a>
+							<!--a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
+						</div>
+					<?php endif?>
 					<!-- /nav-top -->
 					<div class="mushaf">
 						<?php if(!empty($ayats)):?>
