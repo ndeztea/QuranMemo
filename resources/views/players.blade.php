@@ -170,35 +170,31 @@ $(document).ready(function(){
         	$('*','.view-quran').removeClass('playing');
         },
         ended: function(event){
-        	console.log('backto 0');
         	// repeat ayat
 			var config_repeat = jQuery('.repeat').val();
 			if(typeof repeat_ayat_counter == 'undefined'){
         		repeat_ayat_counter = 1;
         	}
 
-        	console.log(repeat_ayat_counter+'<'+config_repeat);
-    		if(repeat_ayat_counter<config_repeat){
-
+        	if(repeat_ayat_counter<config_repeat){
     			$(this).jPlayer("stop");
-    			$('.jp-previous').click();
-    			repeat_ayat_counter++;
-        		console.log('prev');
+    			
+    			var tmpcurrentPlay = muratalPlaylist.current;
+				var currentPlay = parseInt(tmpcurrentPlay) + 1;
+				// this is for end ayat
+        		if(currentPlay==1){
+        			console.log(muratalPlaylist.playlist.length - 1);
+        			muratalPlaylist.play(muratalPlaylist.playlist.length - 1);
+        		}else{
+        			// ayat in the middle
+        			$('.jp-previous').click();
+        		}
+
+        		repeat_ayat_counter++;
+
         	}else{
         		repeat_ayat_counter = 1;
-        		console.log('next');
         	}
-
-        							        	//alert(muratalPlaylist.current);
-        	//var endPlaylist = muratalPlaylist.current;
-        	//alert(endPlaylist+'==23');
-        	//var totalAyat = $('.flag-ayat').length;
-
-        	// jqplayer cant check thelatest playlist, the result always -1
-        	// use this code to fix this
-        	//endPlaylist = endPlaylist+1;
-        	//console.log(muratalPlaylist.timeupdate);
-        	//console.log(muratalPlaylist.playlist.length+"="+endPlaylist);
 
         	var repeat_surah = 1;
         	var config_repeat_surah = jQuery('.repeat_surah').is(':checked');
@@ -241,7 +237,6 @@ $(document).ready(function(){
 		muratalPlaylist.play(<?php echo $a?>);
 	});
 	<?php $a++;endforeach?>
-	//$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_1")});
 });
 </script>
 <div class="quran_player animated fadeInUp">
