@@ -18,49 +18,22 @@ class MemozController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($surah_start='',$ayat_range='')
     {   
         $messageErrors = $ayats = '';
         // get data hafalan
-        $surah_start = $request->input('surah_start');
-        $ayat_start = $request->input('ayat_start');
-        $surah_end = $request->input('surah_end');
-        $ayat_end = $request->input('ayat_end');
-        $fill_ayat_end = $request->input('fill_ayat_end');
-        
-        // validation
-        $errorMessages = [
-            'surah_start.required' => 'Surah awal harus di isi',
-            //'surah_end.required' => 'Surah akhir harus di isi',
-            'ayat_start.required' => 'Ayat pada surah awal harus di isi',
-            //'ayat_end.required' => 'Ayat pada surah akhir harus di isi',
-            'ayat_start.numeric'   => 'Ayat pada surah awal harus berupa angka',
-            //'ayat_end.numeric'   => 'Ayat pada surah awal harus berupa angka'
-        ];
-
-        $validator = Validator::make($request->all(), [
-            'surah_start' => 'required',
-            'ayat_start' => 'required|numeric',
-            //'surah_end' => 'required',
-           // 'ayat_end' => 'required|numeric'
-        ],$errorMessages);
-
-        
         $QuranModel = new Quran;
-
-        if($validator->fails()){
-            $messageErrors = $validator->errors();
+        $ayat_start = '';
+        $ayat_end = '';
+        if(strpos($ayat_range,'-')!==false){
+            $ayatArr = explode('-', $ayat_range);
+            $ayats = $QuranModel->getRangeAyat($surah_start,$ayatArr[0],$surah_start,$ayatArr[1]);
+            $ayat_start = $ayatArr[0];
+            $ayat_end = $ayatArr[1];
         }else{
-            // get list quran
-            if(empty($fill_ayat_end)){
-                $surah_end = $surah_start;
-                $ayat_end = $ayat_start;
-            }
-            $surah_end = $surah_start;
-            $ayats = $QuranModel->getRangeAyat($surah_start,$ayat_start,$surah_end,$ayat_end);
+            $ayats = $QuranModel->getOneAyat($surah_start,$ayat_range);
+            $ayat_start = $ayat_range;
         }
-        // end validation
-
 
         // get surah
         $surahs = $QuranModel->getSurah();
@@ -70,17 +43,32 @@ class MemozController extends Controller
         $data['body_class'] = 'body-memo';
         $data['on_memo'] = true;
 
-        $data['fill_ayat_end'] = $fill_ayat_end;
+        //$data['fill_ayat_end'] = $fill_ayat_end;
         $data['ayats'] = $ayats;
         $data['surahs'] = $surahs;
         $data['surah_start'] = $surah_start;
         $data['ayat_start'] = $ayat_start;
-        $data['surah_end'] = $surah_end;
+        //$data['surah_end'] = $surah_end;
         $data['ayat_end'] = $ayat_end;
-        $data['messageErrors'] = $messageErrors;
         $data['curr_page'] = 0;
 
         return view('memoz',$data);
+    }
+
+
+    public function search(Request $request){
+        $surah_start = $request->input('surah_start');
+        $ayat_start = $request->input('ayat_start');
+        $ayat_end = $request->input('ayat_end');
+        $fill_ayat_end = $request->input('fill_ayat_end');
+
+        if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
+        }elseif($surah_start && !empty($ayat_start)){
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
+        }else{
+            return redirect('memoz');
+        }
     }
 
     public function create(){

@@ -16,7 +16,7 @@
 			</div>
 			<div class="nav-top clearfix">
 				<div class="select-surah pull-left">
-					<form class="form-inline" action="" method="post">
+					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<span>Surah</span>
 							<div class="form-group">
 								<select name="surah_start" class="form-control">
@@ -25,25 +25,24 @@
 									<?php endforeach?>
 								</select>
 							</div>
-							<div class="form-group display-inline-block-xs">
+							<!--div class="form-group display-inline-block-xs">
 								<input class="form-control search_ayat" type="number" name="ayat_start" value="<?php echo $ayat_start?$ayat_start:''?>">
 							</div>
-							<div class="checkbox display-inline-block-xs">
+							<!--div class="checkbox display-inline-block-xs">
 								<label>
-									<input type="checkbox" value="1" id="fill_ayat_end" <?php echo !empty($fill_ayat_end)?'checked':''?> name="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)">  <span>Sampai surah </span>
+									<input type="checkbox" value="1" id="fill_ayat_end" <?php echo !empty($fill_ayat_end)?'checked':''?> name="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)">  <span>Sampai ayat </span>
 								</label>
 							</div>
 
-							<!--div  class="form-group ayat_end" style="display:none">
-								<select name="surah_end" class="form-control">
-									<?php foreach($surahs as $surah):?>
-									<option <?php echo $surah->id==$surah_end?'selected':''?>  value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?>  (<?php echo $surah->type?>)</option>
-									<?php endforeach?>
-								</select>
-							</div-->
-							<div class="checkbox display-inline-block-xs  ayat_end"  style="display:none">
-								<input type="number" name="ayat_end" class="form-control search_ayat" value="<?php echo $ayat_end?$ayat_end:''?>">
+							-->
+							<div class="form-group display-inline-block-xs">
+								<div class="input-group">
+								  <input class="form-control search_ayat" type="number" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="<?php echo $ayat_start?$ayat_start:''?>">
+								  <span class="input-group-addon">Sampai Ayat</span>
+								  <input class="form-control search_ayat" type="number" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="<?php echo $ayat_end?$ayat_end:''?>">
+								</div>
 							</div>
+							
 							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
 					</form>
 				</div>
