@@ -32,6 +32,8 @@
         <script src="<?php echo url('assets/js/jquery-ui.js')?>"></script>
         <script src="<?php echo url('assets/js/bootstrap.min.js')?>"></script>
         <script src="<?php echo url('assets/js/script.js')?>"></script>
+       
+
         <script type="text/javascript">
             QuranJS.siteUrl = '<?php echo url()?>';
         </script>
