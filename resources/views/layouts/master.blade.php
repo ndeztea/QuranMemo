@@ -14,6 +14,7 @@
         <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
 
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="<?php echo url('assets/css/bootstrap.min.css')?>">
 
