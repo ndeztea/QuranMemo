@@ -91,11 +91,11 @@
 						<div class="mushaf mushaf-hafalan">
 							<div class="step-wrap">
 								<div class="steps clearfix btn-group btn-breadcrumb" role="group" aria-label="steps">
-									<a href="javascript:void(0)" onclick="steps('1')" class="btn btn-default steps_1 selected">Langkah 1</a>
-									<a href="javascript:void(0)" onclick="steps('2')" class="btn btn-default steps_2">Langkah 2</a>
-									<a href="javascript:void(0)" onclick="steps('3')" class="btn btn-default steps_3">Langkah 3</a>
-									<a href="javascript:void(0)" onclick="steps('4')" class="btn btn-default steps_4">Langkah 4</a>
-									<a href="javascript:void(0)" onclick="steps('5')" class="btn btn-default steps_5">Langkah 5</a>
+									<a href="javascript:void(0)" onclick="steps('1')" class="btn btn-default steps_1 selected"># 1</a>
+									<a href="javascript:void(0)" onclick="steps('2')" class="btn btn-default steps_2"># 2</a>
+									<a href="javascript:void(0)" onclick="steps('3')" class="btn btn-default steps_3"># 3</a>
+									<a href="javascript:void(0)" onclick="steps('4')" class="btn btn-default steps_4"># 4</a>
+									<a href="javascript:void(0)" onclick="steps('5')" class="btn btn-default steps_5"># 5</a>
 								</div>
 							</div>
 							<!-- /step-wrap -->
