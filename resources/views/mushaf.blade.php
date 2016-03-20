@@ -31,7 +31,7 @@ $prev_surah = '';
 							</button>
 							<div class="collapse in" id="surah-collapse">
 								<div class="row">
-									<div class="col-xs-12 col-sm-7 -col-md-7">
+									<div class="col-xs-12 col-sm-8 -col-md-8">
 										<div class="select-surah">
 
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
@@ -71,7 +71,7 @@ $prev_surah = '';
 
 									</div>
 									<?php if(empty($selected_surah)):?>
-									<div class="col-xs-12 col-sm-5 -col-md-5">
+									<div class="col-xs-12 col-sm-4 -col-md-4">
 
 										<div class="surah-action">
 											<span class="auto-play">

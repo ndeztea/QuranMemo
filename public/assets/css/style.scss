@@ -4,8 +4,12 @@ $main-color: rgba(77,181,120,1);
 $main-color-hover: darken($main-color, 8%);
 $arab-font: arabic;
 $txtColor: #fff;
+$gray: #bbb;
 $nav-top-color: #999;
 $font-stack: 'Fira Sans', sans-serif;
+$fb-color: #3b5998;
+$tw-color: #55acee;
+$gp-color: #d34836;
 
 $btn-normal: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: transparent, txtColor: $main-color);
 $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-color, txtColor: #fff);
@@ -287,8 +291,8 @@ a:focus{
 
 .pagination > li > a, 
 .pagination > li > span{
-	color: $main-color;
-	border:solid 1px $main-color;
+	color: $gray;
+	border:solid 1px $gray;
 	background: transparent;
 }
 
@@ -320,7 +324,7 @@ a:focus{
 		.input-group-addon{
 			background-color: transparent;
 			border:none;
-			border-left:solid 1px $main-color;
+			border-left:solid 1px $gray;
 			height: 32px;
 			transition: background .5s ease;
 
@@ -740,6 +744,106 @@ body.body-memo{
 }
 
 .modal{
+
+	&.share-mode{
+
+		.modal-header{
+			
+			background-color: rgba(77,181,120,.8);
+			
+			h4{
+				color: #fff;
+				font-size: 20px;
+				text-transform: uppercase;
+			}
+
+			.close{
+				color:#fff;
+				opacity: .6;
+
+				&:hover,
+				&:focus{
+					opacity: 1;
+				}
+			}
+		}
+
+		.modal-body{
+
+			a{
+				width: 33.3%;
+				position: relative;
+				display: block;
+				float: left;
+				padding: 10px;
+				color: #fff;
+
+				&:before,
+				&:after{
+					position: absolute;
+				}
+
+				&:before{
+					top: 11px;
+					left: 65px;
+				}
+
+				&:after{
+					bottom: 15px;
+					left: 65px;
+					padding: 5px 8px;
+					border-radius: 7px;
+				}
+
+				&:hover,
+				&:focus{
+					opacity: .85;
+				}
+			}
+
+			a:nth-child(1){
+
+				background-color: $fb-color;
+
+				&:before{
+					content:"Facebook";
+				}
+
+				&:after{
+					content: "Share";
+					background-color: darken($fb-color,10%);
+				}
+			}
+
+			a:nth-child(2){
+
+				background-color: $tw-color;
+
+				&:before{
+					content:"Twitter";
+				}
+
+				&:after{
+					content: "Share";
+					background-color: darken($tw-color,10%);
+				}
+			}
+
+			a:nth-child(3){
+
+				background-color: $gp-color;
+
+				&:before{
+					content:"Google Plus";
+				}
+
+				&:after{
+					content: "Share";
+					background-color: darken($gp-color,10%);
+				}
+			}
+		}
+	}
 
 	&.content-mode{
 		.modal-dialog{

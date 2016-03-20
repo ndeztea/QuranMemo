@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Lateef',arabic; }
+  font-family: arabic; }
 body {
   background: #fff;
   font-family: "Fira Sans", sans-serif; }
@@ -12,10 +12,9 @@ a:focus {
   cursor: pointer; }
 
 .arabic,
-.head_surah,
-.no_ayat_arabic  {
-  font-family: 'Lateef',arabic;
-  font-size: 36px;
+.head_surah {
+  font-family: arabic;
+  font-size: 30px;
   word-spacing: 0px; }
 
 .clearfix {
@@ -167,8 +166,8 @@ a:focus {
 
 .pagination > li > a,
 .pagination > li > span {
-  color: #4db578;
-  border: solid 1px #4db578;
+  color: #bbb;
+  border: solid 1px #bbb;
   background: transparent; }
 
 .pagination > li > a:focus,
@@ -190,7 +189,7 @@ a:focus {
   .pagination .page_free_input .form-group .input-group-addon {
     background-color: transparent;
     border: none;
-    border-left: solid 1px #4db578;
+    border-left: solid 1px #bbb;
     height: 32px;
     transition: background .5s ease; }
     .pagination .page_free_input .form-group .input-group-addon:hover {
@@ -341,7 +340,7 @@ body.body-memo .mushaf {
       opacity: 1; }
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .arabic {
-          font-size: 30px;
+          font-size: 20px;
           padding: 20px 10px 20px 0; } }
       .mushaf .ayat_section .arabic .content_ayat {
         padding: 0 15px;
@@ -479,6 +478,57 @@ body.body-memo .mushaf {
 .hafalan-actions {
   margin: 7px 0; }
 
+.modal.share-mode .modal-header {
+  background-color: rgba(77, 181, 120, 0.8); }
+  .modal.share-mode .modal-header h4 {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase; }
+  .modal.share-mode .modal-header .close {
+    color: #fff;
+    opacity: .6; }
+    .modal.share-mode .modal-header .close:hover, .modal.share-mode .modal-header .close:focus {
+      opacity: 1; }
+.modal.share-mode .modal-body a {
+  width: 33.3%;
+  position: relative;
+  display: block;
+  float: left;
+  padding: 10px;
+  color: #fff; }
+  .modal.share-mode .modal-body a:before, .modal.share-mode .modal-body a:after {
+    position: absolute; }
+  .modal.share-mode .modal-body a:before {
+    top: 11px;
+    left: 65px; }
+  .modal.share-mode .modal-body a:after {
+    bottom: 15px;
+    left: 65px;
+    padding: 5px 8px;
+    border-radius: 7px; }
+  .modal.share-mode .modal-body a:hover, .modal.share-mode .modal-body a:focus {
+    opacity: .85; }
+.modal.share-mode .modal-body a:nth-child(1) {
+  background-color: #3b5998; }
+  .modal.share-mode .modal-body a:nth-child(1):before {
+    content: "Facebook"; }
+  .modal.share-mode .modal-body a:nth-child(1):after {
+    content: "Share";
+    background-color: #2d4373; }
+.modal.share-mode .modal-body a:nth-child(2) {
+  background-color: #55acee; }
+  .modal.share-mode .modal-body a:nth-child(2):before {
+    content: "Twitter"; }
+  .modal.share-mode .modal-body a:nth-child(2):after {
+    content: "Share";
+    background-color: #2795e9; }
+.modal.share-mode .modal-body a:nth-child(3) {
+  background-color: #d34836; }
+  .modal.share-mode .modal-body a:nth-child(3):before {
+    content: "Google Plus"; }
+  .modal.share-mode .modal-body a:nth-child(3):after {
+    content: "Share";
+    background-color: #b03626; }
 .modal.content-mode .modal-dialog {
   width: 90%;
   margin-top: 3%; }
