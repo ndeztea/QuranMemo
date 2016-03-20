@@ -166,6 +166,10 @@ a:focus{
 		right: 9px;
 		z-index: 5;
 
+		@include media(">=phone", "<=767px") {
+          	top: 6px;
+      	}
+
 		.btn{
 			background: transparent;
 			border:none;
@@ -183,6 +187,11 @@ a:focus{
 		.dropdown-menu{
 			padding: 10px 15px;
 
+			@include media(">=phone", "<=767px") {
+	          	left: auto;
+	          	right: 0;
+	      	}
+
 			li{
 				padding: 10px 0;
 				&.divider{
@@ -197,6 +206,10 @@ a:focus{
 
 .select-surah{
 
+	@include media(">=phone", "<=767px") {
+      	padding-top: 10px;
+  	}
+
 	.form-inline{
 		margin-bottom: 0;
 
@@ -205,6 +218,12 @@ a:focus{
 
 			.form-control.search_ayat{
 				width: 106px;
+
+				@include media(">=phone", "<=767px") {
+		          	width: 100%;
+		      	}
+
+		      	
 			}
 
 			.input-group-addon{
@@ -212,7 +231,7 @@ a:focus{
 				border-right: none;
 			}
 
-			@include media("<=480px", ">=phone") {
+			@include media("<=767px", ">=phone") {
 	          	margin-bottom: 10px;
 	      	}
 		}
@@ -244,6 +263,15 @@ a:focus{
 		color: $nav-top-color;
 	}
 
+	.search-title{
+
+		@include media(">=phone", "<=767px") {
+          	margin-bottom:10px;
+          	display: block;
+      	}
+
+	}
+
 	.search_ayat{
 		width:67px;
 		text-align: center;
@@ -252,6 +280,7 @@ a:focus{
 }
 
 .body-memo .nav-top .select-surah{
+
 	width: 100%;
 }
 
@@ -559,7 +588,11 @@ body.body-memo{
 	        }
 
 	        .no_ayat_arabic{
-	        	padding: 0 15px 0 0;
+	        	padding: 20px;
+	        	background: url(../images/number.png) no-repeat center center;
+			    width: 60px;
+			    height: 59px;
+			    font-size: 16px;
 	        }
 		}
 

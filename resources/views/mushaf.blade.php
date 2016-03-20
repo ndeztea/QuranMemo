@@ -128,7 +128,7 @@ $prev_surah = '';
 								<?php endif?>
 								<div class="arabic arabic_<?php echo $a;?>"> 
 										<span class="content_ayat"><?php echo $ayat->text?></span> 
-										<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
+										<span class="no_ayat_arabic"><?php echo arabicNum($ayat->ayat)?> </span> 
 									</div>
 									<div class="trans trans_<?php echo $a;?>"> 
 										<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
@@ -201,7 +201,7 @@ $prev_surah = '';
 			vpw = $(window).width();
 			vph = $(window).height();
 
-			if (vpw < 767) {
+			if (vpw <= 767) {
 					$('#surah-collapse').removeClass('in');
 					
 				}

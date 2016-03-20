@@ -17,7 +17,7 @@
 			<div class="nav-top clearfix">
 				<div class="select-surah pull-left">
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
-							<span>Surah</span>
+							<span class="search-title">Surah</span>
 							<div class="form-group">
 								<select name="surah_start" class="form-control">
 									<?php foreach($surahs as $surah):?>
@@ -61,7 +61,7 @@
 					    <!--li>
 					    	<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat
 					    </li-->
-					    <li class="divider"></li>
+					    <!-- <li class="divider"></li> -->
 					    <li>
 					    	<span>Ulangi per-ayat</span> 
 							<select name="repeat" class="repeat">
@@ -133,7 +133,7 @@
 								<?php endif?>
 								<div class="arabic arabic_<?php echo $a;?>"> 
 									<span class="content_ayat"><?php echo $ayat->text?></span> 
-									<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
+									<span class="no_ayat_arabic"> <?php echo arabicNum($ayat->ayat)?> </span> 
 								</div>
 								<div class="trans trans_<?php echo $a;?>"> 
 									<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
@@ -216,7 +216,7 @@ $(document).ready(function(){
 				vpw = $(window).width();
 				vph = $(window).height();
 
-				if (vpw < 767) {
+				if (vpw <= 767) {
 						$('#surah-collapse').removeClass('in');
 						
 					}

@@ -87,6 +87,9 @@ a:focus {
     top: 11px;
     right: 9px;
     z-index: 5; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .nav-top .memoz_options {
+        top: 6px; } }
     .nav-top .memoz_options .btn {
       background: transparent;
       border: none;
@@ -98,21 +101,31 @@ a:focus {
         color: #4db578; }
     .nav-top .memoz_options .dropdown-menu {
       padding: 10px 15px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .nav-top .memoz_options .dropdown-menu {
+          left: auto;
+          right: 0; } }
       .nav-top .memoz_options .dropdown-menu li {
         padding: 10px 0; }
         .nav-top .memoz_options .dropdown-menu li.divider {
           padding: 0; }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .select-surah {
+    padding-top: 10px; } }
 .select-surah .form-inline {
   margin-bottom: 0; }
   .select-surah .form-inline .form-group {
     margin: 0 5px 0 0; }
     .select-surah .form-inline .form-group .form-control.search_ayat {
       width: 106px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .select-surah .form-inline .form-group .form-control.search_ayat {
+          width: 100%; } }
     .select-surah .form-inline .form-group .input-group-addon {
       border-left: none;
       border-right: none; }
-    @media (max-width: 480px) and (min-width: 320px) {
+    @media (max-width: 767px) and (min-width: 320px) {
       .select-surah .form-inline .form-group {
         margin-bottom: 10px; } }
   .select-surah .form-inline .btn {
@@ -131,6 +144,10 @@ a:focus {
 .select-surah .form-control,
 .select-surah span {
   color: #999; }
+@media (min-width: 320px) and (max-width: 767px) {
+  .select-surah .search-title {
+    margin-bottom: 10px;
+    display: block; } }
 .select-surah .search_ayat {
   width: 67px;
   text-align: center; }
@@ -320,7 +337,7 @@ body.body-memo .mushaf {
       padding-bottom: 10px; }
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .head_surah {
-          font-size: 30px;
+          font-size: 20px;
           padding: 0px; } }
     .mushaf .ayat_section .surah_name {
       padding: 10px; }
@@ -346,7 +363,11 @@ body.body-memo .mushaf {
         padding: 0 15px;
         line-height: 50px; }
       .mushaf .ayat_section .arabic .no_ayat_arabic {
-        padding: 0 15px 0 0; }
+        padding: 20px;
+        background: url(../images/number.png) no-repeat center center;
+        width: 60px;
+        height: 59px;
+        font-size: 16px; }
     .mushaf .ayat_section .trans {
       text-align: left;
       color: rgba(43, 69, 56, 0.7);
@@ -362,7 +383,7 @@ body.body-memo .mushaf {
       opacity: 1; }
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .trans {
-          font-size: 14px;
+          font-size: 12px;
           padding: 20px 0px 20px 10px; } }
       .mushaf .ayat_section .trans .trans_content {
         padding: 0 15px; }
