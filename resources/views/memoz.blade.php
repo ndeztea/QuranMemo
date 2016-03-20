@@ -128,16 +128,18 @@
 							<?php $a++;endif?>
 							
 							<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
-								
+								<?php if($a!=0):?>
+								<div id="play_<?php echo $a + 1?>"></div>
+								<?php endif?>
 								<div class="arabic arabic_<?php echo $a;?>"> 
-										<span class="content_ayat"><?php echo $ayat->text?></span> 
-										<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
-									</div>
-									<div class="trans trans_<?php echo $a;?>"> 
-										<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
-										<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
-									</div>
-
+									<span class="content_ayat"><?php echo $ayat->text?></span> 
+									<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
+								</div>
+								<div class="trans trans_<?php echo $a;?>"> 
+									<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
+									<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
+								</div>
+								
 								<div class="action-footer">
 					                <div class="btn-group">
 					                  <a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i> Play</a>

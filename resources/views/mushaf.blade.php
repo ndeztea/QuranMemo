@@ -96,7 +96,7 @@ $prev_surah = '';
 					<!-- /nav-top -->
 					<div class="mushaf">
 						<?php if(!empty($ayats)):?>
-							
+							<div id="play_0"></div>
 							<div class="mushaf_display">
 								<div class="btn-group" role="group" aria-label="mushaf-display">
 									<a class="btn mushaf_arabic_trans active" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic_trans')"><span class="hidden-xs">Arabic &amp; Terjemahaan</span><span class="visible-xs">A &amp; T</span></a>
@@ -122,9 +122,10 @@ $prev_surah = '';
 							</div>
 							<!-- /ayat-section -->
 							<?php $a++;endif?>
-							
-							<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
-								
+							<div    class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
+								<?php if($a!=0):?>
+								<div id="play_<?php echo $a + 1?>"></div>
+								<?php endif?>
 								<div class="arabic arabic_<?php echo $a;?>"> 
 										<span class="content_ayat"><?php echo $ayat->text?></span> 
 										<span class="no_ayat_arabic"> ( <?php echo arabicNum($ayat->ayat)?> </span> 
@@ -133,7 +134,7 @@ $prev_surah = '';
 										<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
 										<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
 									</div>
-
+								
 								<div class="action-footer">
 					                <div class="btn-group">
 					                  <a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i> Play</a>
@@ -141,6 +142,7 @@ $prev_surah = '';
 					                  <a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i> Share</a>
 					                </div>
 					            </div>
+
 								
 							</div>
 							<?php $prev_surah = $ayat->surah?>
@@ -187,59 +189,60 @@ $prev_surah = '';
 
 	<script type="text/javascript">
 
-		$(document).ready(function () {
-			var jQuerywindow = jQuery(window);
+	$(document).ready(function () {
+		var jQuerywindow = jQuery(window);
+		resizeDiv();
+
+		window.onresize = function(event) {
 			resizeDiv();
+		}
 
-			window.onresize = function(event) {
-				resizeDiv();
-			}
+		function resizeDiv() {
+			vpw = $(window).width();
+			vph = $(window).height();
 
-			function resizeDiv() {
-				vpw = $(window).width();
-				vph = $(window).height();
+			if (vpw < 767) {
+					$('#surah-collapse').removeClass('in');
+					
+				}
+				else {
+					$('#surah-collapse').addClass('in');
+				}
+		}
+		//show & hide search setting
+		//Cache reference to window and animation items
 
-				if (vpw < 767) {
-						$('#surah-collapse').removeClass('in');
-						
-					}
-					else {
-						$('#surah-collapse').addClass('in');
-					}
-			}
-			//show & hide search setting
-			//Cache reference to window and animation items
+		var stickyOffset = $('.qm-navbar').offset().top;
+		var scrollTrigger = 100;
 
-			var stickyOffset = $('.qm-navbar').offset().top;
-			var scrollTrigger = 100;
+		$(window).scroll(function(){
+			var sticky = $('.qm-navbar'),
+			scroll = $(window).scrollTop();
 
-			$(window).scroll(function(){
-				var sticky = $('.qm-navbar'),
-				scroll = $(window).scrollTop();
-
-				if (scroll > stickyOffset) {
-						$(sticky).addClass('fixed'); 
-					}	
-				else 
-					{
-						$(sticky).removeClass('fixed');
-						$('.navbar-nav li.active').removeClass('active');
-					}
-			});
-
-			$('.openThis').hide();
-			$('.btn-toggle-player').click(function() {
-			    $('.quran_player').slideToggle( function() {
-			    	$('.openThis').show();
-						
-				});
-			    return false;
-			});
-
-			QuranJS.generateArHeight('!important');
-			QuranJS.generateTransHeight('!important');
+			if (scroll > stickyOffset) {
+					$(sticky).addClass('fixed'); 
+				}	
+			else 
+				{
+					$(sticky).removeClass('fixed');
+					$('.navbar-nav li.active').removeClass('active');
+				}
 		});
-	
+
+		$('.openThis').hide();
+		$('.btn-toggle-player').click(function() {
+		    $('.quran_player').slideToggle( function() {
+		    	$('.openThis').show();
+					
+			});
+		    return false;
+		});
+
+		QuranJS.generateArHeight('!important');
+		QuranJS.generateTransHeight('!important');
+
+	});
+
 	
 	function showMushaf(mushaf){
 

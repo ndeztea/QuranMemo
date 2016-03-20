@@ -162,6 +162,11 @@ $(document).ready(function(){
 			//console.log(muratalPlaylist.playlist.length+"="+ currentPlay);
 			//console.log(ayat_selector);
 			window.goNext = false;
+
+			focusPlay = currentPlay - 1;
+			location.href='#play_'+focusPlay;
+
+
 			if(muratalPlaylist.playlist.length==currentPlay){
 				window.goNext = true;
 			}
