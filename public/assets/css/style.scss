@@ -811,6 +811,11 @@ body.body-memo{
 				padding: 10px;
 				color: #fff;
 
+				@include media("<=439px",">=phone") {
+					float:none;
+					width: 100%;
+				}
+
 				&:before,
 				&:after{
 					position: absolute;
@@ -887,6 +892,10 @@ body.body-memo{
 	.modal-dialog{
 		width: 500px;
 		margin-top:11%;
+
+		@include media("<=767px",">=phone") {
+			width: auto;
+		}
 
 		.modal-content{
 			border-radius: 0;
