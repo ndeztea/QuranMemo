@@ -9,8 +9,6 @@ $prev_surah = '';
 @section('content')
 	@include('players')
 	
-
-	
 	@include('errors.errors_message')
 
 		<div class="main-content-wrap">
@@ -21,7 +19,16 @@ $prev_surah = '';
 				<!-- /backdrop -->
 				<div class="single-column">
 					<div class="page-title">
-						<h2>Mushaf</h2>
+						<h2 class="pull-left">Mushaf</h2>
+						<?php if(empty($selected_surah)):?>
+							<div class="surah-action pull-right">
+								<span class="auto-play">
+									<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
+								</span>
+								<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
+							</div>
+							<!-- /surah-action -->
+						<?php endif?>
 					</div>
 
 					<div class="nav-top clearfix">
@@ -31,7 +38,7 @@ $prev_surah = '';
 							</button>
 							<div class="collapse in" id="surah-collapse">
 								<div class="row">
-									<div class="col-xs-12 col-sm-8 -col-md-8">
+									<div class="col-xs-12">
 										<div class="select-surah">
 
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
@@ -70,18 +77,6 @@ $prev_surah = '';
 										<!-- /select-surah -->
 
 									</div>
-									<?php if(empty($selected_surah)):?>
-									<div class="col-xs-12 col-sm-4 -col-md-4">
-
-										<div class="surah-action">
-											<span class="auto-play">
-												<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
-											</span>
-											<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
-										</div>
-										<!-- /surah-action -->
-									</div>
-								<?php endif?>
 								</div>
 							</div>
 						</div>
