@@ -206,6 +206,10 @@ $(document).ready(function(){
 			    event.stopPropagation();
 			});
 
+			$('.collapse').on('click', function(event) {
+			    event.stopPropagation();
+			});
+
 			resizeDiv();
 
 			window.onresize = function(event) {

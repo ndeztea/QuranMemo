@@ -193,6 +193,14 @@ $prev_surah = '';
 		var jQuerywindow = jQuery(window);
 		resizeDiv();
 
+		$('.dropdown-menu').on('click', function(event) {
+		    event.stopPropagation();
+		});
+
+		$('.collapse').on('click', function(event) {
+		    event.stopPropagation();
+		});
+
 		window.onresize = function(event) {
 			resizeDiv();
 		}
