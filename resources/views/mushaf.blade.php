@@ -201,8 +201,10 @@ $prev_surah = '';
 		    event.stopPropagation();
 		});
 
+
+
 		window.onresize = function(event) {
-			resizeDiv();
+			//resizeDiv();
 		}
 
 		function resizeDiv() {
