@@ -26,9 +26,13 @@ var QuranJS = {
 		if(typeof page=='undefined'){
 			page = $('.'+elm).val();
 		}
+		if(page!=''){
+			// @todo : use ajax
+			$('#preloader').show();
+			location.href=this.siteUrl+'/mushaf/page/'+page;
+		}
 
-		// @todo : use ajax
-		location.href=this.siteUrl+'/mushaf/page/'+page;
+		
 		
 	},
 

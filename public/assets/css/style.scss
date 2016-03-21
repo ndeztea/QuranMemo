@@ -354,7 +354,7 @@ a:focus{
 			background-color: transparent;
 			border:none;
 			border-left:solid 1px $gray;
-			height: 32px;
+			height: 28px;
 			transition: background .5s ease;
 
 			&:hover{
@@ -365,9 +365,9 @@ a:focus{
 
 		input{
 			border: 0px;
-			width: 60px;
+			width: 50px;
 			text-align: center;
-			height: 30px;
+			height: 26px;
 			border-radius: 0;
 		}
 

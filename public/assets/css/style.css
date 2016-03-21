@@ -196,7 +196,8 @@ a:focus {
   color: #fff; }
 
 .pagination .page_free_input form {
-  margin: 0px; }
+  margin: 0px; 
+height: 28px}
 .pagination .page_free_input a {
   padding: 0px !important; }
   .pagination .page_free_input a:hover, .pagination .page_free_input a:focus {
@@ -207,16 +208,16 @@ a:focus {
     background-color: transparent;
     border: none;
     border-left: solid 1px #bbb;
-    height: 32px;
+    height: 28px;
     transition: background .5s ease; }
     .pagination .page_free_input .form-group .input-group-addon:hover {
       background: #4db578;
       color: #fff; }
   .pagination .page_free_input .form-group input {
     border: 0px;
-    width: 60px;
+    width: 50px;
     text-align: center;
-    height: 30px;
+    height: 26px;
     border-radius: 0; }
   .pagination .page_free_input .form-group button {
     height: 0;

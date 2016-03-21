@@ -25,6 +25,10 @@ class MushafController extends Controller
         // get mushaf per page
         $ayats = $QuranModel->getAyat($page);
 
+        if(empty($ayats)){
+            return redirect('mushaf');
+        }
+
         // get surah
         $surahs = $QuranModel->getSurah();
 
