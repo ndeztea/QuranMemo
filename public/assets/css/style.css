@@ -773,4 +773,7 @@ body.body-memo .mushaf {
         .footer ul li a:hover, .footer ul li a:focus {
           color: #71c493; }
 
+.dropdown-backdrop {
+  position: static; }
+
 /*# sourceMappingURL=style.css.map */
