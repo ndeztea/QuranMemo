@@ -34,11 +34,8 @@
         
         <!-- Latest compiled and minified JavaScript -->
         <script src="<?php echo url('assets/js/jquery-1.11.3.min.js')?>"></script>
-        <script src="<?php echo url('assets/js/jquery-ui.js')?>"></script>
-        <script src="<?php echo url('assets/js/bootstrap.min.js')?>"></script>
         <script src="<?php echo url('assets/js/script.js')?>"></script>
-       
-
+        
         <script type="text/javascript">
             QuranJS.siteUrl = '<?php echo url()?>';
         </script>
@@ -136,6 +133,9 @@
       </div>
     </div>
 
+    <script src="<?php echo url('assets/js/jquery-ui.js')?>"></script>
+    <script src="<?php echo url('assets/js/bootstrap.min.js')?>"></script>
+       
     <script>
         $(document).ready(function(){
             $('#preloader').hide();

@@ -37,6 +37,7 @@ Route::get('memoz/', 'MemozController@index');
 Route::post('memoz/', 'MemozController@index');
 Route::get('memoz/surah/{surah}', 'MemozController@index');
 Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');
+Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
 Route::post('memoz/search', 'MemozController@search');
 //Route::get('memoz/create', ['middleware' => 'auth'],'MemozController@create');
 

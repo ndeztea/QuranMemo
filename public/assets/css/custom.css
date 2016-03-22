@@ -15,3 +15,11 @@
 .surah-nav .pagination>li>a,.surah-nav .pagination>li>span{
 	padding: 4px 9px;
 }
+
+.memoz-message.alert-warning{
+	text-align: left;
+}
+
+.center{
+	text-align: center;
+}

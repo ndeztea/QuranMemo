@@ -18,8 +18,9 @@ class MemozController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($surah_start='',$ayat_range='')
+    public function index($surah_start='',$ayat_range='',$message='')
     {   
+
         $messageErrors = $ayats = '';
         // get data hafalan
         $QuranModel = new Quran;
@@ -33,6 +34,10 @@ class MemozController extends Controller
         }else{
             $ayats = $QuranModel->getOneAyat($surah_start,$ayat_range);
             $ayat_start = $ayat_range;
+        }
+
+        if(!empty($ayats) && $message==''){
+            $data['show_message'] = true;
         }
 
         // get surah
@@ -63,9 +68,9 @@ class MemozController extends Controller
         $fill_ayat_end = $request->input('fill_ayat_end');
 
         if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end.'/noMessage');
         }elseif($surah_start && !empty($ayat_start)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'/noMessage');
         }else{
             return redirect('memoz');
         }
