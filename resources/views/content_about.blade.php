@@ -1,7 +1,8 @@
 <p>
-Assalamualaikum, wr,wb. <br><br>
+Assalamualaikum warahmatullahi wabarakatuh, <br><br>
 
-<p>Salam kepada junjunan kita Rosulullah Muhammad SAW, semoga Allah melimpahkan rahmat untuk beliau dan keluarganya, dan sampai ke kita umat akhir jaman yang sangat cinta dan menjungjung tinggi dan cinta akan sunnah beliau.<p>
+<p>Subhanallahi wa bihamdihi subhanallahil adzim.</p>
+<p>Salam kepada junjunan kita Rosulullah Muhammad shallallahu alaihi wasallam, semoga Allah Ta'ala melimpahkan rahmat untuk beliau dan keluarganya, dan sampai ke kita umat akhir jaman yang sangat cinta dan menjungjung tinggi dan cinta akan sunnah beliau.<p>
 
 <p>Bismillah,</p>
 
@@ -24,9 +25,9 @@ Fitur-fitur yang akan kami siapkan untuk kedepannya adalah :
 	<li>Hadist-hadist pilihan seperti Hadist Arbain dan hadist-hadist shohih ringan yang mudah dipahami dan diamalkan</li>
 </ul>
 <p>
-Mohon do'anya dari antum supaya niat kami ini bisa di berkahi, dilancarkan dan di ridho oleh Allah SAW. Mudah-mudahan kita semua berada dalam ridho Allah sampai kita wafat, kita dibangkitakan dan kita berkumpul di surgaNya. Aamiin.
+Mohon do'anya dari antum supaya niat kami ini bisa di berkahi, dilancarkan dan di ridho oleh Allah Ta'ala. Mudah-mudahan kita semua berada dalam ridho Allah Ta'ala sampai kita wafat, kita dibangkitakan dan kita berkumpul di surgaNya. Aamiin.
 </p>
 <p>
-Wassalam,wr,wb<br>
+Wassalam warahmatullahi wabarakatuh, <br>
 Team QuranMemo.id
 </p>
