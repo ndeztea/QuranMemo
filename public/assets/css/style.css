@@ -128,18 +128,19 @@ a:focus {
     @media (max-width: 767px) and (min-width: 320px) {
       .select-surah .form-inline .form-group {
         margin-bottom: 10px; } }
-  .select-surah .form-inline .btn {
+  .select-surah .form-inline .btn, .btn-green {
     background-color: #4db578;
     color: #fff;
     font-size: 20px;
     margin-left: 3px; }
     @media (max-width: 480px) and (min-width: 320px) {
-      .select-surah .form-inline .btn {
+      .select-surah .form-inline .btn{
         width: 100%;
         display: block;
         margin-left: 0; } }
-    .select-surah .form-inline .btn:hover, .select-surah .form-inline .btn:focus {
-      background-color: #409965; }
+    .select-surah .form-inline .btn:hover, .select-surah .form-inline .btn:focus, .btn-green:hover {
+      background-color: #409965;
+      color:#FFF; }
 .select-surah .checkbox,
 .select-surah .form-control,
 .select-surah span {
@@ -503,13 +504,13 @@ body.body-memo .mushaf {
 .hafalan-actions {
   margin: 7px 0; }
 
-.modal.share-mode .modal-header {
+.modal .modal-header {
   background-color: rgba(77, 181, 120, 0.8); }
-  .modal.share-mode .modal-header h4 {
+  .modal .modal-header h4 {
     color: #fff;
     font-size: 20px;
     text-transform: uppercase; }
-  .modal.share-mode .modal-header .close {
+  .modal .modal-header .close {
     color: #fff;
     opacity: .6; }
     .modal.share-mode .modal-header .close:hover, .modal.share-mode .modal-header .close:focus {
