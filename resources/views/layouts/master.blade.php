@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="google-site-verification" content="hXTmvIk3V_yZywNDwJlIFWrS1DQOcNV7UDLCBQUEUv0" />
         <title>QuranMemo - <?php echo isset($header_title)?$header_title:''?></title>
 
         <meta charset="utf-8">
@@ -10,8 +11,12 @@
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="QuranMemo - <?php echo $header_title?$header_title:''?>" />
         <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'?>" />
-        <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
+
+        <meta property="description"   content="<?php echo isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'?>" />
+        <meta property="tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        
 
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
@@ -57,10 +62,10 @@
     <body class="@if($body_class) {{$body_class}} @endif">
 
         <!-- pre loader-->
-        <!--div id="preloader">
+        <div id="preloader">
             <img src="<?php echo url('assets/images/loading.gif')?>">
             <div class="loading">Mohon tunggu...</div>
-        </div-->
+        </div>
         @section('sidebar')
            <!-- This is the master sidebar. -->
         @show
@@ -132,12 +137,12 @@
     </div>
 
     <script>
-        /*$(document).ready(function(){
+        $(document).ready(function(){
             $('#preloader').hide();
         });
         $(window).bind('beforeunload', function(){
           $('#preloader').show();
-        });*/
+        });
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
