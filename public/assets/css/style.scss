@@ -531,17 +531,23 @@ body.body-memo{
 		// padding: 15px 10px;
 		position: relative;
 		overflow: hidden;
-		transition: height 1s ease;
+		transition: all 1s ease;
 
 		&:last-child{
 			border-bottom: none;
 		}
 		
 
-		&.playing, 
-		&.playing .arabic, 
-		&.playing .trans  {
-		  background-color:#fcf8e3 !important;
+		&.playing{
+			&.playing .arabic{
+				background-color: darken(hsla(103, 44%, 89%, 0.82),10%) !important;
+				color: darken($main-color,20%);
+			} 
+			&.playing .trans{
+				background-color: hsla(103, 44%, 89%, 0.82) !important;
+				color: darken($main-color,20%);
+			} 
+		  
 		}
 
 		.head_surah{

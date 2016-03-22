@@ -128,7 +128,7 @@ a:focus {
     @media (max-width: 767px) and (min-width: 320px) {
       .select-surah .form-inline .form-group {
         margin-bottom: 10px; } }
-  .select-surah .form-inline .btn, .btn-green {
+  .select-surah .form-inline .btn {
     background-color: #4db578;
     color: #fff;
     font-size: 20px;
@@ -138,9 +138,8 @@ a:focus {
         width: 100%;
         display: block;
         margin-left: 0; } }
-    .select-surah .form-inline .btn:hover, .select-surah .form-inline .btn:focus, .btn-green:hover {
-      background-color: #409965; 
-      color:#FFF;}
+    .select-surah .form-inline .btn:hover, .select-surah .form-inline .btn:focus {
+      background-color: #409965; }
 .select-surah .checkbox,
 .select-surah .form-control,
 .select-surah span {
@@ -328,11 +327,15 @@ body.body-memo .mushaf {
     border-bottom: dashed 1px #ddd;
     position: relative;
     overflow: hidden;
-    transition: height 1s ease; }
+    transition: all 1s ease; }
     .mushaf .ayat_section:last-child {
       border-bottom: none; }
-    .mushaf .ayat_section.playing, .mushaf .ayat_section.playing .arabic, .mushaf .ayat_section.playing .trans {
-      background-color: #fcf8e3 !important; }
+    .mushaf .ayat_section.playing.playing .arabic {
+      background-color: rgba(191, 225, 178, 0.82) !important;
+      color: #2e6e48; }
+    .mushaf .ayat_section.playing.playing .trans {
+      background-color: rgba(222, 239, 215, 0.82) !important;
+      color: #2e6e48; }
     .mushaf .ayat_section .head_surah {
       text-align: center;
       padding-bottom: 10px; }
@@ -500,16 +503,16 @@ body.body-memo .mushaf {
 .hafalan-actions {
   margin: 7px 0; }
 
-.modal .modal-header {
+.modal.share-mode .modal-header {
   background-color: rgba(77, 181, 120, 0.8); }
-  .modal .modal-header h4 {
+  .modal.share-mode .modal-header h4 {
     color: #fff;
     font-size: 20px;
     text-transform: uppercase; }
-  .modal .modal-header .close {
+  .modal.share-mode .modal-header .close {
     color: #fff;
     opacity: .6; }
-    .modal  .modal-header .close:hover, .modal.share-mode .modal-header .close:focus {
+    .modal.share-mode .modal-header .close:hover, .modal.share-mode .modal-header .close:focus {
       opacity: 1; }
 .modal.share-mode .modal-body a {
   width: 33.3%;
