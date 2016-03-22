@@ -236,7 +236,8 @@ a:focus{
 	      	}
 		}
 
-		.btn{
+		.btn,
+		.btn-green{
 			background-color: $main-color;
 			color: #fff;
 			font-size: 20px;
@@ -783,6 +784,43 @@ body.body-memo{
 }
 
 .modal{
+
+	&.content-mode{
+
+		.modal-header{
+			
+			background-color: rgba(77,181,120,.8);
+			
+			h4{
+				color: #fff;
+				font-size: 20px;
+				text-transform: uppercase;
+			}
+
+			.close{
+				color:#fff;
+				opacity: .6;
+
+				&:hover,
+				&:focus{
+					opacity: 1;
+				}
+			}
+		}
+
+		.modal-body{
+
+			a{
+				color: $main-color;
+
+				&:hover,
+				&:focus{
+					color: $main-color-hover;
+				}
+			}
+
+		}
+	}
 
 	&.share-mode{
 
