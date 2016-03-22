@@ -44,6 +44,13 @@ class MemozController extends Controller
         $data['body_class'] = 'body-memo';
         $data['on_memo'] = true;
 
+        // data header
+        if(!empty($ayats)){
+            $data['header_title'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
+            $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+        }
+        
+
         //$data['fill_ayat_end'] = $fill_ayat_end;
         $data['ayats'] = $ayats;
         $data['surahs'] = $surahs;
