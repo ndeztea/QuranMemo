@@ -110,9 +110,11 @@ $prev_surah = '';
 									<strong>Surah <?php echo $ayat->surah_name?></strong><br/>
 									<small><?php echo $ayat->type?> ( turun  #<?php echo $ayat->order?> ) | <?php echo $ayat->count_ayat?> ayat </small>
 								</div>
+								<?php if($ayat->surah!=1 || $ayat->ayat!=1):?>
 								<div class="head_surah" >
 								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 								</div>
+								<?php endif?>
 								<div class="clearfix"></div>
 							</div>
 							<!-- /ayat-section -->

@@ -36,10 +36,6 @@ class MemozController extends Controller
             $ayat_start = $ayat_range;
         }
 
-        if(!empty($ayats) && $message==''){
-            $data['show_message'] = true;
-        }
-
         // get surah
         $surahs = $QuranModel->getSurah();
 
@@ -68,9 +64,9 @@ class MemozController extends Controller
         $fill_ayat_end = $request->input('fill_ayat_end');
 
         if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end.'/noMessage');
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
         }elseif($surah_start && !empty($ayat_start)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'/noMessage');
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
         }else{
             return redirect('memoz');
         }

@@ -60,7 +60,7 @@
 
         <!-- pre loader-->
         <div id="preloader">
-            <img src="<?php echo url('assets/images/loading.gif')?>">
+            <!--img src="<?php echo url('assets/images/loading.gif')?>"-->
             <div class="loading">Mohon tunggu...</div>
         </div>
         @section('sidebar')
