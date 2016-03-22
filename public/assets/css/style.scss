@@ -236,8 +236,7 @@ a:focus{
 	      	}
 		}
 
-		.btn,
-		.btn-green{
+		.btn{
 			background-color: $main-color;
 			color: #fff;
 			font-size: 20px;
@@ -785,6 +784,27 @@ body.body-memo{
 
 .modal{
 
+	.modal-header{
+			
+			background-color: rgba(77,181,120,.8);
+			
+			h4{
+				color: #fff;
+				font-size: 20px;
+				text-transform: uppercase;
+			}
+
+			.close{
+				color:#fff;
+				opacity: .6;
+
+				&:hover,
+				&:focus{
+					opacity: 1;
+				}
+			}
+		}
+
 	&.content-mode{
 
 		.modal-header{
@@ -1246,4 +1266,22 @@ body.body-memo{
     overflow: overlay;
     background-color: rgba(77,181,120,.87);
     text-align: center;
+}
+
+.btn-green{
+	background-color: $main-color;
+	color: #fff;
+	font-size: 20px;
+	margin-left: 3px;
+
+	@include media("<=480px", ">=phone") {
+      	width: 100%;
+      	display: block;
+      	margin-left: 0;
+  	}
+
+	&:hover,
+	&:focus{
+		background-color: $main-color-hover;
+	}
 }
