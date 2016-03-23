@@ -2,7 +2,7 @@
 
 $main-color: rgba(77,181,120,1);
 $main-color-hover: darken($main-color, 8%);
-$arab-font: arabic;
+$arab-font: "Lateef", arabic;
 $txtColor: #fff;
 $gray: #bbb;
 $nav-top-color: #999;
@@ -555,7 +555,7 @@ body.body-memo{
 			padding-bottom: 10px;
 
 			@include media("<tablet", ">=phone") {
-				font-size: 20px;
+				font-size: 30px;
 	      		padding:0px;
 			}
 
@@ -584,7 +584,7 @@ body.body-memo{
 	        opacity: 1;
 
 	        @include media("<tablet", ">=phone") {
-				font-size: 20px;
+				font-size: 30px;
     			padding:20px 10px 20px 0;
 			}
 

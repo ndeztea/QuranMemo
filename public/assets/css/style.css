@@ -1,5 +1,5 @@
 @font-face {
-  font-family: arabic; }
+  font-family: "Lateef",arabic; }
 body {
   background: #fff;
   font-family: "Fira Sans", sans-serif; }
@@ -13,8 +13,8 @@ a:focus {
 
 .arabic,
 .head_surah {
-  font-family: arabic;
-  font-size: 30px;
+  font-family: "Lateef",arabic;
+  font-size: 40px;
   word-spacing: 0px; }
 
 .clearfix {
@@ -341,7 +341,7 @@ body.body-memo .mushaf {
       padding-bottom: 10px; }
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .head_surah {
-          font-size: 20px;
+          font-size: 30px;
           padding: 0px; } }
     .mushaf .ayat_section .surah_name {
       padding: 10px; }
@@ -361,7 +361,7 @@ body.body-memo .mushaf {
       opacity: 1; }
       @media (max-width: 767px) and (min-width: 320px) {
         .mushaf .ayat_section .arabic {
-          font-size: 20px;
+          font-size: 30px;
           padding: 20px 10px 20px 0; } }
       .mushaf .ayat_section .arabic .content_ayat {
         padding: 0 15px;
