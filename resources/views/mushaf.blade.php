@@ -114,6 +114,7 @@ $prev_surah = '';
 								<div class="head_surah" >
 								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 								</div>
+								<?php else : $a--;?>
 								<?php endif?>
 								<div class="clearfix"></div>
 							</div>
