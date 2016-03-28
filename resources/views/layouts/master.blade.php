@@ -105,7 +105,7 @@
                     <div class="col-sm-3 col-md-3">
                         <form class="navbar-form" role="search" method="get" action="<?php echo url('mushaf/searchKeyword')?>">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Cari kata" name="q">
+                            <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
                             <div class="input-group-btn">
                                 <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
                             </div>

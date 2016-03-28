@@ -119,6 +119,8 @@ class MushafController extends Controller
     }
 
     public function searchKeyword(){
+        $keyword = isset($_GET['keyword'])?$_GET['keyword']:'';
+        echo $keyword;
         $data['header_title'] = 'Cari Kata';
         $data['header_description'] = '';
 
