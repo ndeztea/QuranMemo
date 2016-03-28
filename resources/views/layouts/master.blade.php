@@ -9,7 +9,7 @@
 
         <meta property="og:url" content="<?php echo Request::url()?>" />
         <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="QuranMemo - <?php echo $header_title?$header_title:''?>" />
+        <meta property="og:title"         content="QuranMemo - <?php echo isset($header_title)?$header_title:''?>" />
         <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'?>" />
         <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
@@ -56,7 +56,7 @@
         <script type="text/javascript" src="<?php echo url('assets/jplayer/dist/jplayer/jquery.jplayer.min.js')?>"></script>
         <script type="text/javascript" src="<?php echo url('assets/jplayer/dist/add-on/jplayer.playlist.min.js')?>"></script>
     </head>
-    <body class="@if($body_class) {{$body_class}} @endif">
+    <body class="@if(isset($body_class)) {{$body_class}} @endif">
 
         <!-- pre loader-->
         <div id="preloader">
@@ -79,6 +79,7 @@
                 <li><a href="<?php echo url('memoz')?>"><?php echo trans('trans.memo')?></a></li>
             </ul>
 
+            
         </div>
 
         <nav class="navbar navbar-default qm-navbar">
@@ -101,6 +102,17 @@
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="<?php echo Request::segment(1)=='memoz'?'active':''?>"><a href="<?php echo url('memoz')?>"><?php echo trans('trans.memo')?></a></li>
                     </ul>
+                    <div class="col-sm-3 col-md-3">
+                        <form class="navbar-form" role="search" method="get" action="<?php echo url('mushaf/searchKeyword')?>">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cari kata" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>

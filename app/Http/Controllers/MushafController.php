@@ -118,6 +118,13 @@ class MushafController extends Controller
         return redirect('mushaf/page/'.$page)->with('searchSurah', $surah);
     }
 
+    public function searchKeyword(){
+        $data['header_title'] = 'Cari Kata';
+        $data['header_description'] = '';
+
+        return view('mushaf_search',$data);
+    }
+
     function int($s){return(int)preg_replace('/[^\-\d]*(\-?\d*).*/','$1',$s);}
 
 
