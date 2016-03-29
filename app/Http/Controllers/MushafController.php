@@ -132,24 +132,28 @@ class MushafController extends Controller
     */
     public function searchKeyword(){
         $keyword = isset($_GET['keyword'])?$_GET['keyword']:'';
+        $surah = isset($_GET['surah'])?$_GET['surah']:'';
         $page = isset($_GET['page'])?$_GET['page']:1;
         
         if(!empty($keyword)){
             $QuranModel = new Quran;
-            $search_result = $QuranModel->searchKeyword($keyword,$page);
+            $search_result = $QuranModel->searchKeyword($keyword,$surah,$page);
             $data['search_result'] = $search_result;
 
-            $count_search = $QuranModel->countSearchKeyword($keyword);
+            $count_search = $QuranModel->countSearchKeyword($keyword,$surah);
             $data['count_search'] = $count_search;
 
             // devide the search page
-            $pages = floor($count_search / 10);
-            $data['pages'] = $pages;
-            $data['page'] = $page;
+            if(is_int($count_search)){
+                $pages = round($count_search / 10);
+                $data['pages'] = $pages;
+                $data['page'] = $page;
+            }
 
             // list surah
-            $surahs = $QuranModel->surahSearchKeyword($keyword);
+            $surahs = $QuranModel->surahSearchKeyword($keyword,$surah);
             $data['surahs'] = $surahs;
+            $data['selected_surah'] = $surah;
         }
         $data['keyword'] = $keyword;
         

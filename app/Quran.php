@@ -99,11 +99,15 @@ class Quran extends Model
     * get list search depend the keyword
     *
     */
-    public function searchKeyword($keyword,$page=1){
+    public function searchKeyword($keyword,$surah='',$page=1){
         $skip = $page==1?0:($page - 1) *10;
         
         $ayats = DB::table('quran')->select('surah','surah_name','text_indo','text_arabic','ayat','page')
-                ->where('text_indo','LIKE','%'.$keyword.'%')->skip($skip)->take(10);
+                ->where('text_indo','LIKE','%'.$keyword.'%');
+        if(!empty($surah)){
+            $ayats->where('surah','=',$surah);
+        }
+        $ayats->skip($skip)->take(10);
 
         return $ayats->get();
     } 
@@ -112,11 +116,16 @@ class Quran extends Model
     * count keyword
     *
     */
-    public function countSearchKeyword($keyword){
+    public function countSearchKeyword($keyword,$surah=''){
         $ayats = DB::table('quran')->select('surah','surah_name','text_indo','text_arabic','ayat','page')
-                ->where('text_indo','LIKE','%'.$keyword.'%')->count();
+                ->where('text_indo','LIKE','%'.$keyword.'%');
 
-        return $ayats;
+        if(!empty($surah)){
+            $ayats->where('surah','=',$surah);
+        }
+        
+
+        return $ayats->count();
     }  
 
     /**
@@ -124,8 +133,9 @@ class Quran extends Model
     *
     */
     public function surahSearchKeyword($keyword){
-        $surahs = DB::table('quran')->select('surah','surah_name')
-                ->where('text_indo','LIKE','%'.$keyword.'%')->orderBy('surah','asc')->groupBy('surah');
+        $surahs = DB::table('quran')->select('surah','surah_name',DB::raw('count(*) as count'))
+                ->where('text_indo','LIKE','%'.$keyword.'%');
+        $surahs->orderBy('surah','asc')->groupBy('surah');
 
         return $surahs->get();
     }  
