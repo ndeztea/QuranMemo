@@ -96,6 +96,41 @@ class Quran extends Model
     }
 
     /**
+    * get list search depend the keyword
+    *
+    */
+    public function searchKeyword($keyword,$page=1){
+        $skip = $page==1?0:($page - 1) *10;
+        
+        $ayats = DB::table('quran')->select('surah','surah_name','text_indo','text_arabic','ayat','page')
+                ->where('text_indo','LIKE','%'.$keyword.'%')->skip($skip)->take(10);
+
+        return $ayats->get();
+    } 
+
+    /**
+    * count keyword
+    *
+    */
+    public function countSearchKeyword($keyword){
+        $ayats = DB::table('quran')->select('surah','surah_name','text_indo','text_arabic','ayat','page')
+                ->where('text_indo','LIKE','%'.$keyword.'%')->count();
+
+        return $ayats;
+    }  
+
+    /**
+    * list surah depend the keyword
+    *
+    */
+    public function surahSearchKeyword($keyword){
+        $surahs = DB::table('quran')->select('surah','surah_name')
+                ->where('text_indo','LIKE','%'.$keyword.'%')->orderBy('surah','asc')->groupBy('surah');
+
+        return $surahs->get();
+    }  
+
+    /**
     * get surah page
     * 
     */

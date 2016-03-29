@@ -93,6 +93,10 @@ class MushafController extends Controller
         return view('mushaf',$data);
     }
 
+    /**
+    * search surah 
+    *
+    */
     public function search(Request $request){
         $surah = $request->input('surah');
         $ayat_start = $request->input('ayat_start');
@@ -110,6 +114,10 @@ class MushafController extends Controller
         }
     }
 
+    /**
+    * detect page when change surah
+    *
+    */
     public function changeSurah($surah){
         $QuranModel = new Quran;
         $page = $QuranModel->getSurahPage($surah);
@@ -118,9 +126,34 @@ class MushafController extends Controller
         return redirect('mushaf/page/'.$page)->with('searchSurah', $surah);
     }
 
+    /**
+    * search surah depend the keyword
+    *
+    */
     public function searchKeyword(){
         $keyword = isset($_GET['keyword'])?$_GET['keyword']:'';
-        echo $keyword;
+        $page = isset($_GET['page'])?$_GET['page']:1;
+        
+        if(!empty($keyword)){
+            $QuranModel = new Quran;
+            $search_result = $QuranModel->searchKeyword($keyword,$page);
+            $data['search_result'] = $search_result;
+
+            $count_search = $QuranModel->countSearchKeyword($keyword);
+            $data['count_search'] = $count_search;
+
+            // devide the search page
+            $pages = floor($count_search / 10);
+            $data['pages'] = $pages;
+            $data['page'] = $page;
+
+            // list surah
+            $surahs = $QuranModel->surahSearchKeyword($keyword);
+            $data['surahs'] = $surahs;
+        }
+        $data['keyword'] = $keyword;
+        
+
         $data['header_title'] = 'Cari Kata';
         $data['header_description'] = '';
 

@@ -123,6 +123,7 @@ $prev_surah = '';
 							<div    class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
 								<?php if($a!=0):?>
 								<div id="play_<?php echo $a + 1?>"></div>
+								<div id="surah_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>"></div>
 								<?php endif?>
 								<div class="arabic arabic_<?php echo $a;?>"> 
 										<span class="content_ayat"><?php echo $ayat->text?></span> 
