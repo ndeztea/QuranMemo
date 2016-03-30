@@ -1,43 +1,43 @@
 <html>
     <head>
         <meta name="google-site-verification" content="hXTmvIk3V_yZywNDwJlIFWrS1DQOcNV7UDLCBQUEUv0" />
-        <title>QuranMemo - <?php echo isset($header_title)?$header_title:''?></title>
+        <title>QuranMemo - {{ isset($header_title)?$header_title:''}}</title>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <meta property="og:url" content="<?php echo Request::url()?>" />
+        <meta property="og:url" content="{{Request::url()}}" />
         <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="QuranMemo - <?php echo isset($header_title)?$header_title:''?>" />
-        <meta property="og:description"   content="<?php echo isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'?>" />
+        <meta property="og:title"         content="QuranMemo - {{isset($header_title)?$header_title:''}}" />
+        <meta property="og:description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'}}" />
         <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
 
-        <meta property="description"   content="<?php echo isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'?>" />
+        <meta property="description"   content="{{isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'}}" />
         <meta property="tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         
 
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="<?php echo url('assets/css/bootstrap.min.css')?>">
+        <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
 
         <!-- Optional theme -->
-        <link rel="stylesheet" href="<?php echo url('assets/css/font-awesome.min.css')?>">
-        <link rel="stylesheet" href="<?php echo url('assets/css/bootstrap-theme.min.css')?>">
-        <link rel="stylesheet" href="<?php echo url('assets/css/animate.css')?>">
-        <link rel="stylesheet" href="<?php echo url('assets/css/style.css')?>">
-        <link rel="stylesheet" href="<?php echo url('assets/css/responsive-media.css')?>">
-        <link rel="stylesheet" href="<?php echo url('assets/css/custom.css')?>">
+        <link rel="stylesheet" href="{{url('assets/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/bootstrap-theme.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/animate.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom.css')}}">
 
         
         <!-- Latest compiled and minified JavaScript -->
-        <script src="<?php echo url('assets/js/jquery-1.11.3.min.js')?>"></script>
-        <script src="<?php echo url('assets/js/script.js')?>"></script>
+        <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
+        <script src="{{url('assets/js/script.js')}}"></script>
         
         <script type="text/javascript">
-            QuranJS.siteUrl = '<?php echo url()?>';
+            QuranJS.siteUrl = '{{url()}}';
         </script>
 
         @if(session('searchSurah'))
@@ -51,16 +51,16 @@
         </script>
         @endif
         <!-- JPlayer-->
-        <link href="<?php echo url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')?>" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="<?php echo url('assets/jplayer/lib/jquery.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo url('assets/jplayer/dist/jplayer/jquery.jplayer.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo url('assets/jplayer/dist/add-on/jplayer.playlist.min.js')?>"></script>
+        <link href="{{url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="{{url('assets/jplayer/lib/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{url('assets/jplayer/dist/jplayer/jquery.jplayer.min.js')}}"></script>
+        <script type="text/javascript" src="{{url('assets/jplayer/dist/add-on/jplayer.playlist.min.js')}}"></script>
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif">
 
         <!-- pre loader-->
         <div id="preloader">
-            <!--img src="<?php echo url('assets/images/loading.gif')?>"-->
+            <!--img src="{{url('assets/images/loading.gif')}}"-->
             <div class="loading">Mohon tunggu...</div>
         </div>
         @section('sidebar')
@@ -74,9 +74,9 @@
         
         <div id="main-nav">
             <ul>
-                <li><a href="<?php echo url('mushaf')?>"><?php echo trans('trans.mushaf')?></a></li>
-                <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
-                <li><a href="<?php echo url('memoz')?>"><?php echo trans('trans.memo')?></a></li>
+                <li><a href="<?php echo url('mushaf')?>">{{trans('trans.mushaf')}}</a></li>
+                <!--li><a href="<?php echo url('note')?>">{{trans('trans.note')}}</a></li-->
+                <li><a href="<?php echo url('memoz')?>">{{trans('trans.memo')}}</a></li>
             </ul>
 
             
@@ -98,12 +98,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="<?php echo Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''?>"><a href="<?php echo url('mushaf')?>"><?php echo trans('trans.mushaf')?></a></li>
+                        <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}"><a href="{{url('mushaf')}}">{{trans('trans.mushaf')}}</a></li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
-                        <li class="<?php echo Request::segment(1)=='memoz'?'active':''?>"><a href="<?php echo url('memoz')?>"><?php echo trans('trans.memo')?></a></li>
+                        <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                     </ul>
                     <div class="col-sm-3 col-md-3">
-                        <form class="navbar-form" role="search" method="get" action="<?php echo url('mushaf/searchKeyword')?>">
+                        <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
                             <div class="input-group-btn">
@@ -145,8 +145,8 @@
       </div>
     </div>
 
-    <script src="<?php echo url('assets/js/jquery-ui.js')?>"></script>
-    <script src="<?php echo url('assets/js/bootstrap.min.js')?>"></script>
+    <script src="{{url('assets/js/jquery-ui.js')}}"></script>
+    <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
        
     <script>
         $(document).ready(function(){
