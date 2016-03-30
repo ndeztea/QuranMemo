@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Lateef",arabic; }
+  font-family: "Lateef", arabic; }
 body {
   background: #fff;
   font-family: "Fira Sans", sans-serif; }
@@ -13,8 +13,8 @@ a:focus {
 
 .arabic,
 .head_surah {
-  font-family: "Lateef",arabic;
-  font-size: 40px;
+  font-family: "Lateef", arabic;
+  font-size: 30px;
   word-spacing: 0px; }
 
 .clearfix {
@@ -834,5 +834,16 @@ body.body-memo .mushaf {
       margin-left: 0; } }
   .btn-green:hover, .btn-green:focus {
     background-color: #409965; }
+
+.search-result .search-item p {
+  padding: 10px 20px;
+  margin: 0;
+  color: #a2a2a2; }
+.search-result .search-item .search-footer {
+  padding: 5px 20px;
+  background-color: #eee; }
+  .search-result .search-item .search-footer .fa,
+  .search-result .search-item .search-footer a {
+    color: #4db578; }
 
 /*# sourceMappingURL=style.css.map */

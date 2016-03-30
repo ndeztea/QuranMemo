@@ -5,6 +5,7 @@ $main-color-hover: darken($main-color, 8%);
 $arab-font: "Lateef", arabic;
 $txtColor: #fff;
 $gray: #bbb;
+$light-gray: #eee;
 $nav-top-color: #999;
 $font-stack: 'Fira Sans', sans-serif;
 $fb-color: #3b5998;
@@ -1283,5 +1284,26 @@ body.body-memo{
 	&:hover,
 	&:focus{
 		background-color: $main-color-hover;
+	}
+}
+
+.search-result{
+
+	.search-item{
+		p{
+			padding: 10px 20px;
+			margin: 0;
+			color: darken($gray,10%);
+
+		}
+		.search-footer{
+			padding: 5px 20px;
+			background-color: $light-gray;
+			
+			.fa,
+			a{
+				color: $main-color;;
+			}
+		}
 	}
 }

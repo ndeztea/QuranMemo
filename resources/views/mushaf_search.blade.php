@@ -24,7 +24,6 @@ $prev_surah = '';
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="select-surah">
-
 											<form class="form-inline" method="post" action="{{url('mushaf/search')}}">
 												<div class="form-group">
 													<select class="selectpicker form-control" name="surah"  onchange="location.href='{{url('mushaf/searchKeyword?keyword='.$keyword.'&surah=')}}'+this.value">
@@ -33,43 +32,36 @@ $prev_surah = '';
 														<option  {{ $selected_surah==$surah->surah?'selected':'' }} value="{{$surah->surah}}">{{ $surah->surah_name }} ( {{ $surah->count }} ayat )</option>
 														@endforeach
 													</select>
+													<span class="count-search">Pencarian dengan kata <span class="highlight">{{$keyword}}</span> ada di <span class="badge">{{$count_search}}</span> ayat</span>
+													<!-- /count-search -->
 												</div>
 											</form>
-
 										</div>
 										<!-- /select-surah -->
-
 									</div>
 								</div>
 							</div>
-							Pencarian dengan kata <strong>{{$keyword}}</strong> ada di <strong>{{$count_search}}</strong> ayat
+							
 						</div>
 					</div>
 					<!-- /nav-top -->
 					<div class="mushaf">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-xs-12">
-									<div class="mushaf">
-										<div class="search-result">
-										@foreach($search_result as $search)
-											<div class="search-item">
-												<p>{{$search->text_indo}}</p>
-												<div class="search-footer">
-													<a href="{{url('mushaf/page/'.$search->page.'#surah_'.$search->surah.'_'.$search->ayat)}}">Surah {{$search->surah_name}} : {{$search->ayat}}</a>
-												</div>
-												<hr>
-											</div>
-										@endforeach
-										</div>
-									@endif
+
+						
+						<div class="mushaf-inner">
+							<div class="search-result">
+							@foreach($search_result as $search)
+								<div class="search-item">
+									<p>{{$search->text_indo}}</p>
+									<div class="search-footer">
+										<i class="fa fa-arrow-circle-o-right"></i> <a href="{{url('mushaf/page/'.$search->page.'#surah_'.$search->surah.'_'.$search->ayat)}}">Surah {{$search->surah_name}} : {{$search->ayat}}</a>
 									</div>
 								</div>
+							@endforeach
 							</div>
+						@endif
 						</div>
-					</div>
-					<!-- /mushaf -->
-					@if($pages>0)
+						@if($pages>0)
 							<div class="surah-nav">
 								<div class="input-group" role="group" aria-label="Navigasi">
 									<ul class="pagination">
@@ -85,6 +77,9 @@ $prev_surah = '';
 							</div>
 							<!-- /surah-nav -->
 						@endif
+
+					</div>
+					<!-- /mushaf -->
 
 				</div>
 				<!-- /single-column -->
