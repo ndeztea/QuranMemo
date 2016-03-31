@@ -30,6 +30,9 @@
 #preloader .loading{
 	font-size: 24px;
 	color: #FFF;
+	position: fixed;
+	text-align: center;
+	width: 100%;
 }
 .btn-search{
 	background-color: #25835B;

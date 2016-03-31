@@ -134,7 +134,7 @@ class MushafController extends Controller
         $keyword = isset($_GET['keyword'])?$_GET['keyword']:'';
         $surah = isset($_GET['surah'])?$_GET['surah']:'';
         $page = isset($_GET['page'])?$_GET['page']:1;
-        
+        $header_description_add = $pages = '';
         if(!empty($keyword)){
             $QuranModel = new Quran;
             $search_result = $QuranModel->searchKeyword($keyword,$surah,$page);
@@ -148,18 +148,23 @@ class MushafController extends Controller
                 $pages = round($count_search / 10);
                 $data['pages'] = $pages;
                 $data['page'] = $page;
-            }
+            }  
 
             // list surah
             $surahs = $QuranModel->surahSearchKeyword($keyword,$surah);
             $data['surahs'] = $surahs;
             $data['selected_surah'] = $surah;
+            $header_description_add = '\''.$keyword.'\' ditemukan dalam '.$count_search.' ayat. ';
+        }
+
+        if(empty($surahs)){
+            return redirect('mushaf')->with('messageError', 'Data tidak ditemukan!');
         }
         $data['keyword'] = $keyword;
         
-
-        $data['header_title'] = 'Cari Kata';
-        $data['header_description'] = '';
+        $data['pages'] = $pages;
+        $data['header_title'] = 'Cari Kata \''.$keyword.'\'';
+        $data['header_description'] = $header_description_add.'Cari kata dalam Al-Quran dan Tafsir Al-Quran';
 
         return view('mushaf_search',$data);
     }

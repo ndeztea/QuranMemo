@@ -28,6 +28,7 @@ var QuranJS = {
 		}
 		if(page!=''){
 			// @todo : use ajax
+			$('#preloader').css('height','2000px');
 			$('#preloader').show();
 			location.href=this.siteUrl+'/mushaf/page/'+page;
 		}

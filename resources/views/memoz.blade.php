@@ -21,7 +21,7 @@
 							<div class="form-group">
 								<select name="surah_start" class="form-control">
 									@foreach($surahs as $surah)
-									<option {{$surah->id==$surah_start?'selected':''}}value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
+									<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
 									@endforeach
 								</select>
 							</div>
@@ -143,7 +143,7 @@
 								</div>
 								<div class="trans trans_{{$a}}"> 
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
-									<span class="content_ayat">{{$ayat->text_indo}}></span> 
+									<span class="content_ayat">{{$ayat->text_indo}}</span> 
 								</div>
 								
 								<div class="action-footer">
@@ -202,7 +202,7 @@ $(document).ready(function(){
 	<?php if(!empty($ayats)):?>
 	$('#QuranModal').modal('show');
 	$('.modal-title').html('Panduan menghafal');
-	$('.modal-body').html('<p>Dalam proses hafalan terdapat 5 tahapan, yaitu : </p><br><ul><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti. Proses ini jangan terlalu lama dan lanjut ke tahap selanjutnya</li><li>Menghafal target hafalan arabic nya saja, perhatikan tajwid nya dan tata letak hurufnya, dan bayangkan setiap gambaran hurufnya</li><li>Menghafal target hafalan arabic dan terjemahanya, perhatikan terjemahan dari setiap kata arabic-nya</li><li>Menghafal target hafalan terjemahanya, dalam tahap ini antum harus setidaknya hafal banyak arabic-nya, dan kuat kan hafalan dengan terjemahannya</li><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti, ulangi sampai berulang-ulang sampai hafal, dan yang perhatikan makhrajul huruf-nya</li></ul><br><p>Jangan lupa untuk berdo\'a kepada Allah Ta\'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><div class="center"><button  data-dismiss="modal" class="btn btn-green">Bismillah mulai menghafal</button></div>');
+	$('.modal-body').html('<p>Dalam proses hafalan terdapat 5 tahapan, yaitu: </p><br><ul><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti. Proses ini jangan terlalu lama dan lanjut ke tahap selanjutnya</li><li>Menghafal target hafalan arabic nya saja, perhatikan tajwid nya dan tata letak hurufnya, dan bayangkan setiap gambaran hurufnya</li><li>Menghafal target hafalan arabic dan terjemahanya, perhatikan terjemahan dari setiap kata arabic-nya</li><li>Menghafal target hafalan terjemahanya, dalam tahap ini antum harus setidaknya hafal banyak arabic-nya, dan kuat kan hafalan dengan terjemahannya</li><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti, ulangi sampai berulang-ulang sampai hafal, dan yang perhatikan makhrajul huruf-nya</li></ul><br><p>Jangan lupa untuk berdo\'a kepada Allah Ta\'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><div class="center"><button  data-dismiss="modal" class="btn btn-green">Bismillah mulai menghafal</button></div>');
 	<?php endif?>
 
 	$(document).ready(function () {

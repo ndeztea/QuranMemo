@@ -59,7 +59,9 @@ $prev_surah = '';
 								</div>
 							@endforeach
 							</div>
+						
 						@endif
+
 						</div>
 						@if($pages>0)
 							<div class="surah-nav">
