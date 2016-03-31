@@ -131,24 +131,24 @@ $(document).ready(function(){
 	},
 	[
 		// file list
-		<?php foreach($ayats as $ayat):?>
-		<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
+		@foreach($ayats as $ayat)
+		@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) )
 		{
 			
-			title:"section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0",
-			mp3: "<?php echo url('sound/hal_2/Al-Fatiha.001.mp3')?>"
+			title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
+			mp3: "{{url('sound/hal_2/Al-Fatiha.001.mp3')}}"
 		},
 		<?php endif?>
 		{
 			
-			title:"section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>",
+			title:"section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}",
 			<?php 
 				$halMuratal = $ayat->page + 1;
 				$ayatMp3 = $surahMuratal[$ayat->surah].'.'.str_pad($ayat->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
 			?>
-			mp3: "<?php echo url('sound/hal_'.$halMuratal.'/'.$ayatMp3)?>"
+			mp3: "{{url('sound/hal_'.$halMuratal.'/'.$ayatMp3)}}"
 		},
-		<?php endforeach?>
+		@endforeach
 	],
 	{
 		play: function(event) { 
@@ -209,18 +209,19 @@ $(document).ready(function(){
         		// stop play
         		$(this).jPlayer("stop");
         		if(jQuery('#automated_play').is(':checked')){
-	        		<?php if($curr_page<604): $next_page = $curr_page + 1?>
-		    		location.href = '<?php echo url('mushaf/page/'.$next_page)?>/autoplay';//http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
-		    		<?php endif?>
+	        		@if($curr_page<604)
+	        		<?php $next_page = $curr_page + 1?>
+		    		location.href = '{{url('mushaf/page/'.$next_page)}}/autoplay';//http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
+		    		@endif
 		    	}
         	}	
         	<?php endif?>
         	
         },
 		playlistOptions: { 
-			<?php if(Request::segment(4)=='autoplay'):?>
+			@if(Request::segment(4)=='autoplay')
 			autoPlay: true 
-			<?php endif?>
+			@endif
 		},
           
 		swfPath: "http://jplayer.org/latest/js",
@@ -232,13 +233,15 @@ $(document).ready(function(){
 		preload : 'auto'
 	});
 	
-	<?php $a=0;foreach($ayats as $ayat):?>
+	<?php $a=0;?>
+	@foreach($ayats as $ayat)
 
-	<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
+	@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) )
 	//muratalPlaylist.play();
-	<?php $a++; endif?>
+	<?php $a++;?>
+	@endif
 	
-	jQuery('.play_<?php echo $a?>').click(function(){
+	jQuery('.play_{{$a}}').click(function(){
 		muratalPlaylist.play(<?php echo $a?>);
 	});
 	<?php $a++;endforeach?>
