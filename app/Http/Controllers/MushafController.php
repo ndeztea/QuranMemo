@@ -158,6 +158,9 @@ class MushafController extends Controller
         }
 
         if(empty($surahs)){
+            if(empty($keyword)){
+                return redirect('mushaf')->with('messageError', 'Masukan kata yang ingin dicari!');
+            }
             return redirect('mushaf')->with('messageError', 'Data tidak ditemukan!');
         }
         $data['keyword'] = $keyword;
