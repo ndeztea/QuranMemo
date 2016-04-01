@@ -23,7 +23,7 @@ $prev_surah = '';
 						<?php if(empty($selected_surah)):?>
 							<div class="surah-action pull-right">
 								<span class="auto-play">
-									<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay'?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
+									<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay' || empty(Request::segment(4))?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
 								</span>
 								<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
 							</div>
