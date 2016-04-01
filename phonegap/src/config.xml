@@ -1,6 +1,6 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ndeztea.quranmemo" version="1.0.0">
   <name>QuranMemo</name>
-  <description>Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan</description>
+  <description>Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan</description>
   <author href="http://quranmemo.id" email="quranmemo.id@gmail.com">Team QuranMemo.id</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>

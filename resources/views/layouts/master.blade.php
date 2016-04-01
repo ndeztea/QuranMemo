@@ -10,7 +10,7 @@
         <meta property="og:url" content="{{Request::url()}}" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="QuranMemo - {{isset($header_title)?$header_title:''}}" />
-        <meta property="og:description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'}}" />
+        <meta property="og:description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan'}}" />
         <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
 
