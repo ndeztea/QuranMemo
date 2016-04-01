@@ -242,6 +242,9 @@ $(document).ready(function(){
 	@endif
 	
 	jQuery('.play_{{$a}}').click(function(){
+		if($(".quran_player").css('display') == 'none'){
+			$('.btn-toggle-player').click();
+		}
 		muratalPlaylist.play(<?php echo $a?>);
 	});
 	<?php $a++;endforeach?>
