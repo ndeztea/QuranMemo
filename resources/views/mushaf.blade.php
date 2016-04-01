@@ -238,6 +238,8 @@ $prev_surah = '';
 				}
 		});
 
+		$('.quran_player').hide();
+
 		$('.openThis').hide();
 		$('.btn-toggle-player').click(function() {
 		    $('.quran_player').slideToggle( function() {

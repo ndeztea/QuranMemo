@@ -210,6 +210,8 @@ $(document).ready(function(){
 			QuranJS.generateArHeight('!important');
 			QuranJS.generateTransHeight('!important');
 
+			$('.quran_player').hide();
+
 			//show & hide search setting
 			$('.openThis').hide();
 			$('.btn-toggle-player').click(function() {
