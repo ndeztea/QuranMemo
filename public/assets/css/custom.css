@@ -33,6 +33,7 @@
 	position: fixed;
 	text-align: center;
 	width: 100%;
+	top:50%;
 }
 .btn-search{
 	background-color: #25835B;
