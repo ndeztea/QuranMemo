@@ -65,7 +65,8 @@
         <!-- pre loader-->
         <div id="preloader">
             <!--img src="{{url('assets/images/loading.gif')}}"-->
-            <div class="loading">Mohon tunggu...</div>
+            <div class="loading">Mohon tunggu...<br>
+            <img src="{{url('assets/images/loading.svg')}}?>" /></div>
         </div>
         @section('sidebar')
            <!-- This is the master sidebar. -->
