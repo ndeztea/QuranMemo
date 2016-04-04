@@ -34,8 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        // app.browser = cordova.InAppBrowser.open('http://www.quranmemo.id/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
-        app.browser = cordova.InAppBrowser.open('http://192.168.8.100/github/QuranNote/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
+        app.browser = cordova.InAppBrowser.open('http://www.quranmemo.id/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
+        //app.browser = cordova.InAppBrowser.open('http://192.168.8.100/github/QuranNote/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
         app.browser.addEventListener('loadstop', function() {
             app.browser.show();
         });
