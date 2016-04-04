@@ -304,11 +304,12 @@ a:focus{
 }
 
 .wrap .alert{
-	margin-bottom: 15px;
+	width: 80.6%;
+	margin: 20px auto 5px; 
 	transition: all 1s ease;
 	text-align: center;
 	position: relative;
-	z-index: 9;
+	z-index: 2;
 }
 
 .pagination > .active > a, 
