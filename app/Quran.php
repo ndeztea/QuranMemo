@@ -103,7 +103,7 @@ class Quran extends Model
         $skip = $page==1?0:($page - 1) *10;
         
         $ayats = DB::table('quran')->select('surah','surah_name','text_indo','text_arabic','ayat','page')
-                ->where('text_indo','LIKE','%'.$keyword.'%');
+                ->where('text_indo','LIKE','% '.$keyword.' %');
         if(!empty($surah)){
             $ayats->where('surah','=',$surah);
         }

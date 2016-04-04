@@ -92,7 +92,7 @@ $prev_surah = '';
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.mushaf').highlight('<?php echo $keyword?>','highlight');
+		$('.search-item > p').highlight('<?php echo $keyword?>','highlight',{ wordsOnly: true });
 	});
 </script>
 

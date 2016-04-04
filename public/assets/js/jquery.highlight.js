@@ -14,8 +14,8 @@ Johann Burkard
 
 */
 
-jQuery.fn.highlight = function(pat, cssClass) {
- function innerHighlight(node, pat, cssClass) {
+jQuery.fn.highlight = function(pat,cssClass) {
+ function innerHighlight(node, cssClass, pat) {
   var skip = 0;
   if (node.nodeType == 3) {
    var pos = node.data.toUpperCase().indexOf(pat);
@@ -23,7 +23,6 @@ jQuery.fn.highlight = function(pat, cssClass) {
    if (pos >= 0) {
     var spannode = document.createElement('span');
     cssClass = cssClass==''?'highlight':cssClass;
-    console.log(cssClass);
     spannode.className = cssClass;//'highlight';
     var middlebit = node.splitText(pos);
     var endbit = middlebit.splitText(pat.length);
@@ -35,13 +34,13 @@ jQuery.fn.highlight = function(pat, cssClass) {
   }
   else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
    for (var i = 0; i < node.childNodes.length; ++i) {
-    i += innerHighlight(node.childNodes[i], pat,cssClass);
+    i += innerHighlight(node.childNodes[i], cssClass, pat);
    }
   }
   return skip;
  }
  return this.length && pat && pat.length ? this.each(function() {
-  innerHighlight(this, pat.toUpperCase(),cssClass);
+  innerHighlight(this, cssClass, pat.toUpperCase());
  }) : this;
 };
 
