@@ -16,7 +16,11 @@
 
         <meta property="description"   content="{{isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'}}" />
         <meta property="tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
-        
+        <meta name="theme-color" content="#4DB578" />
+        <meta name="msapplication-navbutton-color" content="#4DB578">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#4DB578">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
@@ -147,13 +151,22 @@
 
     <script src="{{url('assets/js/jquery-ui.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('assets/js/jquery.highlight.js')}}"></script>
+
     <script type="text/javascript">
           $(document).ready(function(){
                 $('#preloader').hide();
+                $('.trans').highlight('Allah','highlight-red');
+                $('.arabic').highlight('للَّهِ','highlight-red');
+                $('.arabic').highlight('ٱللَّهُ','highlight-red');
+                
+                
             });
             $(window).bind('beforeunload', function(){
               $('#preloader').show();
             });
+
+        </script>
          
     </script>
     @include('layouts.analytics')  

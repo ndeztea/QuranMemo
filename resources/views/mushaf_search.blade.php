@@ -90,13 +90,10 @@ $prev_surah = '';
 		</div>
 		<!-- /main-content-wrap -->
 
-<script src="{{url('assets/js/jquery.highlight.js')}}"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.mushaf').highlight('<?php echo $keyword?>');
+		$('.mushaf').highlight('<?php echo $keyword?>','highlight');
 	});
-	
-
 </script>
 
 @endsection
