@@ -366,6 +366,7 @@ body.body-memo .mushaf {
           font-size: 33px;
           padding: 20px 10px 20px 0; } }
       .mushaf .ayat_section .arabic .content_ayat {
+        display: inline-block;
         padding: 0 15px;
         line-height: 50px; }
       .mushaf .ayat_section .arabic .no_ayat_arabic {

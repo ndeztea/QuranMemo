@@ -138,8 +138,8 @@
 								<div id="play_{{$a + 1}}"></div>
 								@endif
 								<div class="arabic arabic_{{$a}}"> 
-									<span class="content_ayat">{{$ayat->text}}</span> 
 									<span class="no_ayat_arabic"> {{ arabicNum($ayat->ayat) }}</span> 
+									<span class="content_ayat">{{$ayat->text}}</span> 
 								</div>
 								<div class="trans trans_{{$a}}"> 
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
