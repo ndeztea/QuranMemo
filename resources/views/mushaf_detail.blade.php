@@ -10,8 +10,8 @@ $prev_surah = '';
 	@include('players')
 
 	<div class="nav-top clearfix">
-		<h1><?php echo $surah?> ayat <?php echo $ayat?></h1>
-		<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  Request::url() ?>')"><i class="fa fa-share-alt"></i></a>
+		<h1>{{$surah}} ayat {{$ayat}}</h1>
+		<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url={{Request::url()}}')"><i class="fa fa-share-alt"></i></a>
 	</div>
 	<!-- /nav-top -->
 	
@@ -19,7 +19,7 @@ $prev_surah = '';
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="mushaf">
-					<?php if(!empty($ayats)):?>
+					@if(!empty($ayats))
 						
 						<div class="mushaf_display">
 							<div class="btn-group" role="group" aria-label="mushaf-display">
@@ -30,9 +30,10 @@ $prev_surah = '';
 						</div>
 						<!-- /mushaf-display -->
 
-						<?php  $a=0;foreach($ayats as $ayat): ?>
+						<?php  $a=0;?>
+						@foreach($ayats as $ayat)
 						
-						<?php if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) ):?>
+						@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) )
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0" >
 							<div class="head_surah" >
 							بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
@@ -40,26 +41,28 @@ $prev_surah = '';
 							<div class="clearfix"></div>
 						</div>
 						<!-- /ayat-section -->
-						<?php $a++;endif?>
+						<?php $a++;?>
+						@endif
 						
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
 							<div class="pull-right arabic"> 
-								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
-								<span class="content_ayat"><?php echo $ayat->text?> </span>
+								<span class="no_ayat">( {{$ayat->ayat}} )</span> 
+								<span class="content_ayat">{{$ayat->text}} </span>
 							</div>
 							<div class="pull-left trans"> 
-								<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
-								<span class="trans_content"><?php echo $ayat->text_indo?></span>
+								<span class="no_ayat">( {{$ayat->ayat}} )</span> 
+								<span class="trans_content">{{$ayat->text_indo}}</span>
 							</div>
 							<div class="action-footer">
-								<a href="javascript:;" class="play_<?php echo $a?>"><i class="fa fa-play"></i></a>
-								<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i></a>
+								<a href="javascript:;" class="play_{{$a}}"><i class="fa fa-play"></i></a>
+								<a href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')" data-url="{{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}"><i class="fa fa-share-alt"></i></a>
 							</div>
 						</div>
 
 						<?php $prev_surah = $ayat->surah?>
-						<?php $a++; endforeach?>
-					<?php endif?>
+						<?php $a++; ?>
+						@endforeach
+					@endif
 				</div>
 				<!-- /mushaf -->
 			</div>

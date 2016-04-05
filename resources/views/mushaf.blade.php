@@ -20,15 +20,15 @@ $prev_surah = '';
 				<div class="single-column">
 					<div class="page-title">
 						<h2 class="pull-left">Mushaf</h2>
-						<?php if(empty($selected_surah)):?>
+						@if(empty($selected_surah))
 							<div class="surah-action pull-right">
 								<span class="auto-play">
-									<input type="checkbox" id="automated_play" name="automated_play" <?php echo Request::segment(4)=='autoplay' || empty(Request::segment(4))?'checked':'';?> >&nbsp;<i class="fa fa-play-circle-o"></i>  <?php echo trans('trans.play_otomatis')?>
+									<input type="checkbox" id="automated_play" name="automated_play" {{Request::segment(4)=='autoplay' || empty(Request::segment(4))?'checked':''}} >&nbsp;<i class="fa fa-play-circle-o"></i>  {{trans('trans.play_otomatis')}}
 								</span>
 								<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
 							</div>
 							<!-- /surah-action -->
-						<?php endif?>
+						@endif
 					</div>
 
 					<div class="nav-top clearfix">
@@ -44,7 +44,7 @@ $prev_surah = '';
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
 												<div class="form-group">
 													<select class="selectpicker form-control" name="surah">
-														<?php foreach($surahs as $surah):?>
+														@foreach($surahs as $surah)
 															<?php 
 																$selectedSurah = '';
 																if(session('searchSurah')==$surah->id){
@@ -53,8 +53,8 @@ $prev_surah = '';
 																	$selectedSurah = 'selected';
 																}
 															?>
-														<option  <?php echo $selectedSurah?> value="<?php echo $surah->id ?>"><?php echo $surah->id ?>. <?php echo $surah->surah_name ?> (<?php echo $surah->type ?>)</option>
-														<?php endforeach?>
+														<option  {{$selectedSurah}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
+														@endforeach
 													</select>
 												</div>
 												<div class="form-group display-inline-block-xs">
@@ -81,16 +81,16 @@ $prev_surah = '';
 							</div>
 						</div>
 					</div>
-					<?php if(isset($selected_surah)):?>
+					@if(isset($selected_surah))
 						<div class="nav-top clearfix detail_top">
-							<h4><?php echo $selected_surah?> ayat <?php echo $ayat?></h4>
-							<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url=<?php echo  Request::url() ?>')"><i class="fa fa-share-alt"></i></a>
+							<h4>{{$selected_surah}} ayat {{$ayat}}</h4>
+							<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url={{Request::url()}}')"><i class="fa fa-share-alt"></i></a>
 							<!--a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
 						</div>
-					<?php endif?>
+					@endif
 					<!-- /nav-top -->
 					<div class="mushaf">
-						<?php if(!empty($ayats)):?>
+						@if(!empty($ayats))
 							<div id="play_0"></div>
 							<div class="mushaf_display">
 								<div class="btn-group" role="group" aria-label="mushaf-display">
@@ -101,64 +101,68 @@ $prev_surah = '';
 							</div>
 							<!-- /mushaf-display -->
 
-							<?php  $a=0;foreach($ayats as $ayat): ?>
+							<?php  $a=0; ?>
+							@foreach($ayats as $ayat)
 							
-							<?php  if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1)):?>
-							<a name="head_surah_<?php echo $ayat->surah?>"></a>
-							<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 surah_title head_surah_<?php echo $ayat->surah?>"  >
+							@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
+							<a name="head_surah_{{$ayat->surah}}"></a>
+							<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_0 play_0 surah_title head_surah_{{$ayat->surah}}"  >
 								<div class="surah_name">
-									<strong>Surah <?php echo $ayat->surah_name?></strong><br/>
-									<small><?php echo $ayat->type?> ( turun  #<?php echo $ayat->order?> ) | <?php echo $ayat->count_ayat?> ayat </small>
+									<strong>Surah {{$ayat->surah_name}}</strong><br/>
+									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small>
 								</div>
-								<?php if($ayat->surah!=1 || $ayat->ayat!=1):?>
+								@if($ayat->surah!=1 || $ayat->ayat!=1)
 								<div class="head_surah" >
 								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 								</div>
-								<?php else : $a--;?>
-								<?php endif?>
+								@else
+								<?php $a--;?>
+								@endif
 								<div class="clearfix"></div>
 							</div>
 							<!-- /ayat-section -->
-							<?php $a++;endif?>
-							<div    class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>">
-								<?php if($a!=0):?>
-								<div id="play_<?php echo $a + 1?>"></div>
-								<div id="surah_<?php echo $ayat->surah?>_<?php echo $ayat->ayat?>"></div>
-								<?php endif?>
-								<div class="arabic arabic_<?php echo $a;?>"> 
-										<span class="no_ayat_arabic"><span><?php echo arabicNum($ayat->ayat)?></span> </span> 
-										<span class="content_ayat"><?php echo $ayat->text?></span> 
+							<?php $a++?>
+							@endif
+							<div    class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
+								@if($a!=0)
+								<div id="play_{{$a + 1}}"></div>
+								<div id="surah_{{$ayat->surah}}_{{$ayat->ayat}}"></div>
+								@endif
+								<div class="arabic arabic_{{$a}}"> 
+										<span class="no_ayat_arabic"><span>{{arabicNum($ayat->ayat)}}</span> </span> 
+										<span class="content_ayat">{{$ayat->text}}</span> 
 										
 									</div>
-									<div class="trans trans_<?php echo $a;?>"> 
-										<span class="no_ayat">( <?php echo $ayat->ayat?> )</span> 
-										<span class="content_ayat"><?php echo $ayat->text_indo?></span> 
+									<div class="trans trans_{{$a}}"> 
+										<span class="no_ayat">( {{$ayat->ayat}} )</span> 
+										<span class="content_ayat">{{$ayat->text_indo}}</span> 
 									</div>
 								
 								<div class="action-footer">
 					                <div class="btn-group">
-					                  <a class="btn btn-play-ayat play_<?php echo $a?>" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
+					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
 					                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-					                  <a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url=<?php echo  url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) ?>')" data-url="<?php echo url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)?>"><i class="fa fa-share-alt"></i> Berbagi</a>
+					                  <a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
 					                </div>
 					            </div>
 
 								
 							</div>
 							<?php $prev_surah = $ayat->surah?>
-							<?php $a++; endforeach?>
+							<?php $a++?>
+							@endforeach
 						<?php endif?>
 
-						<?php if(isset($pages)):?>
+						@if(isset($pages))
 							<div class="surah-nav">
 								<div class="input-group" role="group" aria-label="Navigasi">
 									<ul class="pagination">
 										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
-										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="<?php echo $curr_page-1?>"> < <?php //echo trans('trans.prev')?></a></li>
-										<?php foreach($pages as $page):?>
-										<li  class="<?php echo $page->page==$curr_page?'active':''?>"><a  onclick="QuranJS.changePage(this)" href="#" data-value="<?php echo $page->page?>"><?php echo $page->page ?></a></li>
-										<?php endforeach?>
-										<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="<?php echo $curr_page+1?>"> > <?php //echo trans('trans.next')?></a></li>
+										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"> < <?php //echo trans('trans.prev')?></a></li>
+										@foreach($pages as $page)
+										<li  class="{{$page->page==$curr_page?'active':''}}"><a  onclick="QuranJS.changePage(this)" href="#" data-value="{{$page->page}}">{{$page->page}}</a></li>
+										@endforeach
+										<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="{{$curr_page+1}}"> > <?php //echo trans('trans.next')?></a></li>
 										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
 										<li class="page_free_input">
 											<a href="javascript:;">
