@@ -108,14 +108,14 @@
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                     </ul>
-                    <div class="col-sm-3 col-md-3">
+                    <div class="navbar-nav navbar-right">
                         <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
-                            <div class="input-group-btn">
-                                <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
                             </div>
-                        </div>
                         </form>
                     </div>
 
