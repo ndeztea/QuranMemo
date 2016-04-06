@@ -156,6 +156,8 @@ var QuranJS = {
         $('.arabic').highlight('للَّهِ','highlight-red');
         $('.arabic').highlight('ٱللَّهُ','highlight-red');
         $('.arabic').highlight('ٱللَّهَ','highlight-red');
+        $('.arabic').highlight('لِلَّهِ','highlight-red');
+        
 	}
 
 } 
