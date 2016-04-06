@@ -151,5 +151,12 @@ var QuranJS = {
 			});
 	},
 
+	redHightlight:function (){
+		$('.trans').highlight('Allah','highlight-red', { wordsOnly: true });
+        $('.arabic').highlight('للَّهِ','highlight-red');
+        $('.arabic').highlight('ٱللَّهُ','highlight-red');
+        $('.arabic').highlight('ٱللَّهَ','highlight-red');
+	}
+
 } 
 

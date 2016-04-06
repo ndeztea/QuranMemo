@@ -158,11 +158,7 @@
     <script type="text/javascript">
           $(document).ready(function(){
                 $('#preloader').hide();
-                $('.trans').highlight('Allah','highlight-red', { wordsOnly: true });
-                $('.arabic').highlight('للَّهِ','highlight-red');
-                $('.arabic').highlight('ٱللَّهُ','highlight-red');
-                
-                
+                QuranJS.redHightlight()
             });
             $(window).bind('beforeunload', function(){
               $('#preloader').show();
