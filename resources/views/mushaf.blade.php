@@ -107,13 +107,8 @@ $prev_surah = '';
 							<a name="head_surah_<?php echo $ayat->surah?>"></a>
 							<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0 surah_title head_surah_<?php echo $ayat->surah?>"  >
 								<div class="surah_name">
-<<<<<<< HEAD
-									<strong>Surah <?php echo $ayat->surah_name?></strong><br/>
-									<small><?php echo $ayat->type?> ( turun  #<?php echo $ayat->order?> ) | <?php echo $ayat->count_ayat?> ayat </small>
-=======
 									<strong>{{$ayat->surah}}. Surah {{$ayat->surah_name}}</strong><br/>
 									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small>
->>>>>>> origin/master
 								</div>
 								<?php if($ayat->surah!=1 || $ayat->ayat!=1):?>
 								<div class="head_surah" >

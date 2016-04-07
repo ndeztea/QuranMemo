@@ -1,0 +1,55 @@
+$opacityValue: 0.9;
+
+@import 'variables';
+
+html, body {
+    height: 100%;
+}
+
+body {
+	background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center / cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #fff;
+    display: table;
+    font-weight: 100;
+    font-family: 'Lato';
+}
+
+.container {
+	background: $main-color;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+
+    .content {
+	    text-align: center;
+	    display: inline-block;
+	    background-color: darken($main-color,10%);
+	    padding: 40px;
+	    border:dashed 3px #fff;
+
+	    .title {
+		    font-size: 72px;
+		    margin-bottom: 40px;
+		}
+
+	    a{
+	    	color: #000;
+	    	font-size: 18px;
+			font-family: 'helvetica', 'arial', sans-serif;
+	    	background-color: lighten($main-color,4%);
+			border-radius: 10px;
+			padding: 5px 15px;
+	    	text-decoration: none;
+	    	transition: all 1s ease;
+
+	    	&:hover,
+	    	&:focus{
+	    		background-color: darken($main-color,15%);
+	    		color: #fff;
+	    	}
+	    }
+	}
+}

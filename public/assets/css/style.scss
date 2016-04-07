@@ -1,16 +1,8 @@
 @import 'responsive-media';
+	
+$opacityValue: 1;
 
-$main-color: rgba(77,181,120,1);
-$main-color-hover: darken($main-color, 8%);
-$arab-font: "Lateef", arabic;
-$txtColor: #fff;
-$gray: #bbb;
-$light-gray: #eee;
-$nav-top-color: #999;
-$font-stack: 'Fira Sans', sans-serif;
-$fb-color: #3b5998;
-$tw-color: #55acee;
-$gp-color: #d34836;
+@import 'variables';
 
 $btn-normal: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: transparent, txtColor: $main-color);
 $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-color, txtColor: #fff);
@@ -605,7 +597,7 @@ body.body-memo{
 			    width: 60px;
 			    height: 59px;
 			    font-size: 16px;
-			    
+
 			    &.visible-xs{
 			    	display: inline-block;
 			    }
