@@ -108,7 +108,7 @@ $prev_surah = '';
 							<a name="head_surah_{{$ayat->surah}}"></a>
 							<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_0 play_0 surah_title head_surah_{{$ayat->surah}}"  >
 								<div class="surah_name">
-									<strong>Surah {{$ayat->surah_name}}</strong><br/>
+									<strong>{{$ayat->surah}}. Surah {{$ayat->surah_name}}</strong><br/>
 									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small>
 								</div>
 								@if($ayat->surah!=1 || $ayat->ayat!=1)

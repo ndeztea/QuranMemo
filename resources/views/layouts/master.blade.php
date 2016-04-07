@@ -36,7 +36,8 @@
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.css')}}">
 
-        
+        <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
+
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.js')}}"></script>
@@ -158,7 +159,24 @@
     <script type="text/javascript">
           $(document).ready(function(){
                 $('#preloader').hide();
-                QuranJS.redHightlight()
+                QuranJS.redHightlight();
+
+                /*var promise = Kinvey.init({
+                    appKey    : 'af86c6c58e514a45acfa7b0a56ff642b',
+                    appSecret : '2786e39b23f444e6b42506925d78a098'
+                });
+                promise.then(function(activeUser) {
+                    console.log('ok');
+                }, function(error) {
+                    console.log('error');
+                });
+
+                var promise = Kinvey.ping();
+                promise.then(function(response) {
+                    console.log('Kinvey Ping Success. Kinvey Service is alive, version: ' + response.version + ', response: ' + response.kinvey);
+                }, function(error) {
+                    console.log('Kinvey Ping Failed. Response: ' + error.description);
+                });*/
             });
             $(window).bind('beforeunload', function(){
               $('#preloader').show();
