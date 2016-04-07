@@ -371,11 +371,14 @@ body.body-memo .mushaf {
         padding: 0 15px;
         line-height: 50px; }
       .mushaf .ayat_section .arabic .no_ayat_arabic {
-        padding: 20px;
+        display: inline-block;
+        text-align: center;
         background: url(../images/number.png) no-repeat center center;
         width: 60px;
         height: 59px;
         font-size: 16px; }
+        .mushaf .ayat_section .arabic .no_ayat_arabic.visible-xs {
+          display: inline-block; }
     .mushaf .ayat_section .trans {
       text-align: left;
       color: rgba(43, 69, 56, 0.7);
