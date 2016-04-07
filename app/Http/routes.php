@@ -29,6 +29,7 @@ Route::get('mushaf/changeSurah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}/{idsurah}', 'MushafController@surah');
 Route::post('mushaf/search', 'MushafController@search');
+Route::get('mushaf/search', 'MushafController@search');
 Route::get('mushaf/searchKeyword', 'MushafController@searchKeyword');
 
 
@@ -40,6 +41,8 @@ Route::get('memoz/surah/{surah}', 'MemozController@index');
 Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');
 Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
 Route::post('memoz/search', 'MemozController@search');
+Route::get('memoz/search', 'MemozController@search');
+
 //Route::get('memoz/create', ['middleware' => 'auth'],'MemozController@create');
 
 Route::get('bookmarks/', 'BookmarksController@index');

@@ -70,6 +70,17 @@ class MemozController extends Controller
         $ayat_end = $request->input('ayat_end');
         $fill_ayat_end = $request->input('fill_ayat_end');
 
+        $QuranModel = new Quran;
+        $surah_detail = $QuranModel->getSurah($surah_start);
+        // ayat checking
+        if(isset($ayat_start) || isset($ayat_end)){
+            if($surah_detail[0]->ayat < $ayat_start){
+                return redirect('memoz')->with('messageError', 'Surah '.$surah_detail[0]->surah_name.' ada '.$surah_detail[0]->ayat.' ayat, ayat '.$ayat_start.' tidak ada!');
+            }elseif($surah_detail[0]->ayat < $ayat_end){
+                return redirect('memoz')->with('messageError', 'Surah '.$surah_detail[0]->surah_name.' ada '.$surah_detail[0]->ayat.' ayat, ayat '.$ayat_end.' tidak ada!');
+            }
+        }
+
         if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
             return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
         }elseif($surah_start && !empty($ayat_start)){

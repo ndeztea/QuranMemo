@@ -27,6 +27,17 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        /*document.addEventListener('deviceready', function() {
+        var promise = Kinvey.init({
+                appKey    : 'af86c6c58e514a45acfa7b0a56ff642b',
+                appSecret : '2786e39b23f444e6b42506925d78a098'
+            });
+            promise.then(function(activeUser) {
+               alert('ok');
+            }, function(error) {
+                alert('error');
+            });
+        }, false);*/
     },
     // deviceready Event Handler
     //
@@ -35,9 +46,16 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         app.browser = cordova.InAppBrowser.open('http://www.quranmemo.id/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
-        //app.browser = cordova.InAppBrowser.open('http://192.168.8.100/github/QuranNote/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
+        
         app.browser.addEventListener('loadstop', function() {
             app.browser.show();
+            /*var promise = Kinvey.ping();
+            promise.then(function(response) {
+                console.log('Kinvey Ping Success. Kinvey Service is alive, version: ' + response.version + ', response: ' + response.kinvey);
+            }, function(error) {
+                console.log('Kinvey Ping Failed. Response: ' + error.description);
+            });
+            console.log('here');*/
         });
     },
     // Update DOM on a Received Event
