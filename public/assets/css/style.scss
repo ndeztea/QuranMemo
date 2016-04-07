@@ -529,6 +529,10 @@ body.body-memo{
 		overflow: hidden;
 		transition: all 1s ease;
 
+		@include media("<tablet", ">=phone") {
+			transition:none;
+		}
+
 		&:last-child{
 			border-bottom: none;
 		}
@@ -582,6 +586,7 @@ body.body-memo{
 	        @include media("<tablet", ">=phone") {
 				font-size: 33px;
     			padding:20px 10px 20px 0;
+    			transition: none;
 			}
 
 	        .content_ayat{
@@ -621,6 +626,7 @@ body.body-memo{
 	        @include media("<tablet", ">=phone") {
 				font-size: 15px;
     			padding: 20px 0px 20px 10px;
+    			transition:none;
 			}
 
 	        .trans_content{
