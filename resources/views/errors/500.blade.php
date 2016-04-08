@@ -10,6 +10,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Error 500!</div>
+                <a href="{{ url() }}">Kembali ke Mushaf</a>
             </div>
         </div>
     </body>
