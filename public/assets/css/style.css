@@ -333,7 +333,7 @@ body.body-memo .mushaf {
     transition: all 1s ease; }
     @media (max-width: 767px) and (min-width: 320px) {
       .mushaf .ayat_section {
-        transition: none; } }
+        transition: height .35s ease; } }
     .mushaf .ayat_section:last-child {
       border-bottom: none; }
     .mushaf .ayat_section.playing.playing .arabic {
@@ -369,7 +369,7 @@ body.body-memo .mushaf {
         .mushaf .ayat_section .arabic {
           font-size: 33px;
           padding: 20px 10px 20px 0;
-          transition: none; } }
+          transition: height .35s ease; } }
       .mushaf .ayat_section .arabic .content_ayat {
         display: inline-block;
         padding: 0 15px;
@@ -400,7 +400,7 @@ body.body-memo .mushaf {
         .mushaf .ayat_section .trans {
           font-size: 15px;
           padding: 20px 0px 20px 10px;
-          transition: none; } }
+          transition: height .35s ease; } }
       .mushaf .ayat_section .trans .trans_content {
         padding: 0 15px; }
     .mushaf .ayat_section .puff {

@@ -530,7 +530,7 @@ body.body-memo{
 		transition: all 1s ease;
 
 		@include media("<tablet", ">=phone") {
-			transition:none;
+			transition:height .35s ease;
 		}
 
 		&:last-child{
@@ -586,7 +586,7 @@ body.body-memo{
 	        @include media("<tablet", ">=phone") {
 				font-size: 33px;
     			padding:20px 10px 20px 0;
-    			transition: none;
+    			transition:height .35s ease;
 			}
 
 	        .content_ayat{
@@ -626,7 +626,7 @@ body.body-memo{
 	        @include media("<tablet", ">=phone") {
 				font-size: 15px;
     			padding: 20px 0px 20px 10px;
-    			transition:none;
+    			transition:height .35s ease;
 			}
 
 	        .trans_content{
