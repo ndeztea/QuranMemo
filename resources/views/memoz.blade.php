@@ -55,31 +55,16 @@
 					@include('players')
 
 					<div class="btn-group">
-					  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-default">
 					    <i class="fa fa-cog"></i> <span class="caret"></span>
 					  </button>
-					  <ul class="dropdown-menu">
-					    <!--li>
-					    	<input type="checkbox" name="repeat_ayat" class="repeat_ayat selected" value="1"/> Ulangi Ayat
-					    </li-->
-					    <!-- <li class="divider"></li> -->
-					    <li>
-					    	<span>Ulangi per-ayat</span> 
-							<select name="repeat" class="repeat">
-								<option value="1">1 kali</option>
-								<option value="2">2 kali</option>
-								<option value="3">3 kali</option>
-								<option value="4">4 kali</option>
-								<option value="5">5 kali</option>
-							</select>
-						</li>
-					  </ul>
+					  
 					</div>
 					
 				</div>
 				<!-- /memoz-player -->
 				@endif
-
+				<input type="text" name="repeat" class="repeat" value="1" />
 
 			</div>
 			<!-- /nav-top -->
