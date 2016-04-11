@@ -304,6 +304,15 @@ a:focus{
 	z-index: 2;
 }
 
+.wrap{
+	.steps_desc{
+		.alert{
+			width: 100%;
+			margin: 0 0 10px;
+		}
+	}
+}
+
 .pagination > .active > a, 
 .pagination > .active > a:focus, 
 .pagination > .active > a:hover, 
