@@ -64,7 +64,7 @@
 				</div>
 				<!-- /memoz-player -->
 				@endif
-				<input type="text" name="repeat" class="repeat" value="1" />
+				<input type="hidden" name="repeat" class="repeat" value="1" />
 
 			</div>
 			<!-- /nav-top -->
