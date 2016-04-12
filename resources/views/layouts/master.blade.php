@@ -99,7 +99,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">QuranMemo</a>
+                    <a class="navbar-brand" href="#"><img src="{{url('assets/images/logo2.png')}}"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

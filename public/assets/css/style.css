@@ -52,7 +52,8 @@ a:focus {
     color: #fff;
     text-shadow: none;
     font-weight: 700;
-    transition: color 1s ease; }
+    transition: color 1s ease;
+    padding: 6px 20px; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       color: #388759; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
