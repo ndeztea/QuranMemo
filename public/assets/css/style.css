@@ -1,5 +1,62 @@
 @font-face {
   font-family: "Lateef", arabic; }
+html, body {
+  height: 100%; }
+
+.splash-body {
+  position: relative;
+  z-index: 1001;
+  background: #000;
+  transition: all 2s ease;
+  display: block;
+  width: 100%; }
+  .splash-body .splash-inner {
+    background: url("../images/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    animation-delay: .5s;
+    display: block; }
+  .splash-body .splash {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 181, 120, 0.9);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
+    .splash-body .splash .holder {
+      position: relative;
+      top: 45%;
+      transform: translateY(-45%);
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      padding: 0; }
+  .splash-body .splash-text {
+    animation-delay: 4s; }
+    .splash-body .splash-text span {
+      display: block;
+      text-align: center;
+      padding: 40px;
+      vertical-align: middle; }
+    .splash-body .splash-text img {
+      padding-top: 60px;
+      display: inline-block; }
+  .splash-body .start {
+    width: 125px;
+    margin: 20px auto;
+    text-align: center;
+    animation-delay: 5s;
+    display: block;
+    padding: 13px 0;
+    background-color: #409965;
+    border: none;
+    color: #fff; }
+    .splash-body .start:hover, .splash-body .start:focus, .splash-body .start.selected {
+      color: #000;
+      background-color: #71c493; }
+
 body {
   background: #fff;
   font-family: "Fira Sans", sans-serif; }
@@ -55,7 +112,7 @@ a:focus {
     transition: color 1s ease;
     padding: 6px 20px; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-      color: #388759; }
+      opacity: .7; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
     background-image: none; }
   .navbar-default .navbar-nav > li > a {

@@ -64,6 +64,20 @@
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif">
 
+        <div id='splash-body' class='splash-body'>
+            <div id='splash' class='splash-inner'>
+               <div class='splash'>
+                 <div class='holder'>
+                    <span class='splash-text animated fadeIn'><img src="{{url('assets/images/logo2.png')}}"></span>
+                    <button class='start animated fadeIn'>
+                        Get Started
+                    </button>
+                </div>
+               </div>
+            </div>
+        </div>
+        <!-- /splash-body -->
+
         <!-- pre loader-->
         <div id="preloader">
             <!--img src="{{url('assets/images/loading.gif')}}"-->
@@ -178,9 +192,37 @@
                     console.log('Kinvey Ping Failed. Response: ' + error.description);
                 });*/
             });
-            $(window).bind('beforeunload', function(){
-              $('#preloader').show();
+            var vph = $(window).height();
+            $('body').css('height',vph/2).css('overflow','hidden');
+            $('.splash-body').css('height',vph);
+
+            function changeBg(){
+                var mainColor = 'rgba(77,181,120,1)';
+                $('.splash-body').css('background',mainColor);
+                $('.splash-inner').css('opacity','1').css('animation-delay','2s');
+
+            }
+
+            function removeMe(){
+                $('.splash-body').css('display','none');
+            }
+
+            setTimeout(changeBg,1500);
+
+            $('.start').click(function () {
+                $('.splash-text').removeClass('fadeIn').addClass('fadeOutUp').css('animation-delay','.1s');
+                $('.start').removeClass('fadeIn').addClass('fadeOutUp').css('animation-delay','.1s');
+                $('.splash-body').css('height','0').css('animation-delay','.2s');
+                $('body').css('height','100%').css('overflow','auto');
+                setTimeout(removeMe,2000);
             });
+
+
+            // $(window).bind('beforeunload', function(){
+            //   $('#preloader').show();
+            // });
+
+
 
         </script>
          
