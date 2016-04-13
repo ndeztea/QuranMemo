@@ -259,3 +259,7 @@ a:hover {
   text-decoration: underline;
 }
 
+ol, ul{
+  padding-left: 20px;
+}
+
