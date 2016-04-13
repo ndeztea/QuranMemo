@@ -113,3 +113,79 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.splash-body{
+    position: relative;
+    z-index: 1001;
+    background:#000;
+    transition: all 2s ease;
+    display:block;
+    width:100%;
+}
+
+.splash-inner{
+    background: url("../img/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center / cover ;
+    width: 100%;
+    height:100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    animation-delay:.5s;
+    display: block;
+}
+
+.splash{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77,181,120, 0.9);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.holder{
+    position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+    width: 100%;
+    margin:auto;
+    text-align:center;
+    padding:0;
+}
+
+.splash-text{
+    animation-delay:4s;
+    display: block;
+    text-align: center;
+    padding:40px;
+    vertical-align: middle;
+}
+
+.splash-text img{
+    display: inline-block;
+    
+}
+
+.splash-text p{
+    color: #fff;
+    font-weight: 700;
+    animation-delay:.5s;
+}
+
+.start{
+    width:125px;
+    margin:0 auto;
+    text-align:center;
+    animation-delay:5s;
+    display:block;
+    padding: 13px 0;
+    background-color: #409965;
+    border:none;
+    color: #fff;
+}
+.start:hover,
+.start:focus,
+.start.selected{
+    color: #000;
+    background-color: rgba(77,181,120,1);
+    cursor: pointer;
+}
