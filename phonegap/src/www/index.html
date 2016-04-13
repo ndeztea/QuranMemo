@@ -38,15 +38,22 @@
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
-        <div class="splash">
-            <div class="splash-inner">
-                <div class="spinner">
-                    <h1>QuranMemo</h1>
-                    <p>Membaca, Menghafal dan Berbagi Al-Quran</p>
-                    <img src="img/loading.svg"/>
+        <div id='splash-body' class='splash-body'>
+            <div id='splash' class='splash-inner'>
+               <div class='splash'>
+                 <div class='holder'>
+                    <span class='splash-text animated fadeIn'>
+                        <img src="{{url('assets/images/logo2.png')}}">
+                        <p>Membaca, Menghafal dan Berbagi Al-Quran</p>
+                    </span>
+                    <button class='start animated fadeIn'>
+                        Get Started
+                    </button>
                 </div>
+               </div>
             </div>
         </div>
+        <!-- /splash-body -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js?t=111"></script>
         <script type="text/javascript">
