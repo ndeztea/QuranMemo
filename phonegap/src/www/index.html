@@ -66,19 +66,15 @@
              var vph = $(window).height();
             $('body').css('height',vph/2).css('overflow','hidden');
             $('.splash-body').css('height',vph);
+            var mainColor = 'rgba(77,181,120,1)';
+            $('.splash-body').css('background',mainColor);
+            $('.splash-inner').css('opacity','1');
 
-            function changeBg(){
-                var mainColor = 'rgba(77,181,120,1)';
-                $('.splash-body').css('background',mainColor);
-                $('.splash-inner').css('opacity','1');
-
-            }
-
+          
             function removeMe(){
                 $('.splash-body').css('display','none');
             }
 
-            setTimeout(changeBg,1500);
 
             $('.start').click(function () {
                 $('.splash-text').removeClass('fadeIn').addClass('fadeOutUp').css('animation-delay','.1s');

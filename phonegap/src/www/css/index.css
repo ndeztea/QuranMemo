@@ -117,7 +117,6 @@ h1 {
 .splash-body{
     position: relative;
     z-index: 1001;
-    background:#000;
     transition: all 2s ease;
     display:block;
     width:100%;
