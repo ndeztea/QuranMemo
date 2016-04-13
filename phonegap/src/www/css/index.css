@@ -144,8 +144,8 @@ h1 {
 
 .holder{
     position: relative;
-    top: 45%;
-    transform: translateY(-45%);
+    top: 42%;
+    transform: translateY(-42%);
     width: 100%;
     margin:auto;
     text-align:center;
