@@ -90,6 +90,17 @@ class MemozController extends Controller
         }
     }
 
+    public function config(){
+        $repeat = $_GET['repeat'];
+
+        $data['repeat'] = $repeat;
+        $dataHTML['modal_title'] = 'Setting Memoz';
+        $dataHTML['modal_body'] = view('memoz_config',$data)->render();
+        $dataHTML['modal_footer'] = '';
+
+        return response()->json($dataHTML);
+    }
+
     public function create(){
         $data[''] = '';
         $dataHTML['modal_title'] = 'Simpan Hafalan';
