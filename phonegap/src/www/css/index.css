@@ -117,7 +117,8 @@ h1 {
 .splash-body{
     position: relative;
     z-index: 1001;
-    transition: all 2s ease;
+    /*transition: all 2s ease;*/
+    background: rgba(77,181,120,1);
     display:block;
     width:100%;
 }
@@ -127,8 +128,8 @@ h1 {
     width: 100%;
     height:100%;
     opacity: 0;
-    transition: opacity 1s ease;
-    animation-delay:.5s;
+    /*transition: opacity 1s ease;
+    animation-delay:.5s;*/
     display: block;
 }
 
