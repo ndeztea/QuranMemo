@@ -153,7 +153,7 @@ h1 {
 }
 
 .splash-text{
-    animation-delay:4s;
+    /*animation-delay:4s;*/
     display: block;
     text-align: center;
     padding:40px;
@@ -168,14 +168,14 @@ h1 {
 .splash-text p{
     color: #fff;
     font-weight: 700;
-    animation-delay:.5s;
+    /*animation-delay:.5s;*/
 }
 
 .start{
     width:125px;
     margin:0 auto;
     text-align:center;
-    animation-delay:5s;
+    /*animation-delay:5s;*/
     display:block;
     padding: 13px 0;
     background-color: #409965;
