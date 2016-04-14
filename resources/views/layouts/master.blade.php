@@ -113,7 +113,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="{{url('assets/images/logo2.png')}}"></a>
+                    <a class="navbar-brand" href="#"><img class='hires' src="{{url('assets/images/logo2.png')}}"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -216,6 +216,27 @@
                 $('body').css('height','100%').css('overflow','auto');
                 setTimeout(removeMe,2000);
             });
+
+            $(function () {
+
+            if (window.devicePixelRatio == 2) {
+
+                  var images = $("img.hires");
+
+                  // loop through the images and make them hi-res
+                  for(var i = 0; i < images.length; i++) {
+
+                    // create new image name
+                    var imageType = images[i].src.substr(-4);
+                    var imageName = images[i].src.substr(0, images[i].src.length - 4);
+                    imageName += "@2x" + imageType;
+
+                    //rename image
+                    images[i].src = imageName;
+                  }
+             }
+
+        });
 
 
             // $(window).bind('beforeunload', function(){
