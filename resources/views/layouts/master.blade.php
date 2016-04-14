@@ -10,13 +10,30 @@
         <meta property="og:url" content="{{Request::url()}}" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="QuranMemo - {{isset($header_title)?$header_title:''}}" />
-        <meta property="og:description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan'}}" />
-        <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        <meta property="og:description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
+        <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
-        <link rel="icon" type="image/png" href="{{url('assets/images/favicon.ico')}}">
+        
+        <link rel="apple-touch-icon" sizes="57x57" href="{{url('assets/images/ico/apple-icon-60x60.png')}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{url('assets/images/ico/apple-icon-60x60.png')}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{url('assets/images/ico/apple-icon-72x72.png')}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{url('assets/images/ico/apple-icon-76x76.png')}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{url('assets/images/ico/apple-icon-114x114.png')}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{url('assets/images/ico/apple-icon-120x120.png')}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{url('assets/images/ico/apple-icon-144x144.png')}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{url('assets/images/ico/apple-icon-152x152.png')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/images/ico/apple-icon-180x180.png')}}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{url('assets/images/ico/android-icon-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/images/ico/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{url('assets/images/ico/favicon-96x96.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/ico/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{url('assets/images/ico/manifest.json')}}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{url('assets/images/ico/ms-icon-144x144.png')}}">
+        <meta name="theme-color" content="#ffffff">
 
-        <meta property="description"   content="{{isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbargi Mencatat Al-Quran dan Hadist-Hadist pilihan'}}" />
-        <meta property="tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        <meta property="description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
+        <meta property="tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta name="theme-color" content="#4DB578" />
         <meta name="msapplication-navbutton-color" content="#4DB578">
         <meta name="apple-mobile-web-app-status-bar-style" content="#4DB578">
@@ -64,7 +81,7 @@
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif">
 
-        <div id='splash-body' class='splash-body'>
+        <!--div id='splash-body' class='splash-body'>
             <div id='splash' class='splash-inner'>
                <div class='splash'>
                  <div class='holder'>
@@ -75,7 +92,7 @@
                 </div>
                </div>
             </div>
-        </div>
+        </div-->
         <!-- /splash-body -->
 
         <!-- pre loader-->
@@ -192,9 +209,9 @@
                     console.log('Kinvey Ping Failed. Response: ' + error.description);
                 });*/
             });
-            var vph = $(window).height();
-            $('body').css('height',vph/2).css('overflow','hidden');
-            $('.splash-body').css('height',vph);
+            //var vph = $(window).height();
+            //$('body').css('height',vph/2).css('overflow','hidden');
+            //$('.splash-body').css('height',vph);
 
             function changeBg(){
                 var mainColor = 'rgba(77,181,120,1)';

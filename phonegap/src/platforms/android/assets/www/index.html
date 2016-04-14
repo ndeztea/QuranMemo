@@ -26,6 +26,7 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/animate.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/qurannote.css" />
         <title>QuranMemo</title>
@@ -38,22 +39,50 @@
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
-        <div class="splash">
-            <div class="splash-inner">
-                <div class="spinner">
-                    <h1>QuranMemo</h1>
-                    <p>Membaca, Menghafal dan Berbagi Al-Quran</p>
-                    <img src="img/loading.svg"/>
+        <div id='splash-body' class='splash-body'>
+            <div id='splash' class='splash-inner'>
+               <div class='splash'>
+                 <div class='holder'>
+                    <span class='splash-text'>
+                        <img src="img/logo2.png">
+                        <p>Membaca, Menghafal dan Berbagi Al-Quran</p>
+                    </span>
+                    <!--button class='start animated fadeIn'>
+                        Get Started
+                    </button-->
                 </div>
+               </div>
             </div>
         </div>
+        <!-- /splash-body -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js?t=111"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
         <script type="text/javascript">
             /*window.setTimeout(function() {
                 url = 'http://quranmemo.id';
                 var ref=window.open(encodeURI(url), '_blank', 'location=no,closebuttoncaption=Main');
             }, 5000);*/
+             var vph = $(window).height();
+            $('body').css('height',vph/2).css('overflow','hidden');
+            $('.splash-body').css('height',vph);
+            var mainColor = 'rgba(77,181,120,1)';
+            $('.splash-body').css('background',mainColor);
+            $('.splash-inner').css('opacity','1');
+
+          
+            function removeMe(){
+                $('.splash-body').css('display','none');
+            }
+
+
+            $('.start').click(function () {
+                $('.splash-text').removeClass('fadeIn').addClass('fadeOutUp').css('animation-delay','.1s');
+                $('.start').removeClass('fadeIn').addClass('fadeOutUp').css('animation-delay','.1s');
+                $('.splash-body').css('height','0').css('animation-delay','.2s');
+                $('body').css('height','100%').css('overflow','auto');
+                setTimeout(removeMe,2000);
+            });
             app.initialize();
         </script>
     </body>
