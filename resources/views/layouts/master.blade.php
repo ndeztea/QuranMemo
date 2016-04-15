@@ -130,7 +130,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img class='hires' src="{{url('assets/images/logo2.png')}}"></a>
+                    <a class="navbar-brand" href="#"><img class='hires' src="{{url('assets/images/logo2@2x.png')}}"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
