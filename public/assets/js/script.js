@@ -158,6 +158,11 @@ var QuranJS = {
         $('.arabic').highlight('ٱللَّهَ','highlight-red');
         $('.arabic').highlight('لِلَّهِ','highlight-red');
         
+	},
+
+	memorized:function(ayat) {
+		$('.'+ayat).addClass('memorized');
+		$('.'+ayat+' .action-footer').remove();
 	}
 
 } 

@@ -263,3 +263,6 @@ ol, ul{
   padding-left: 20px;
 }
 
+.memorized{
+  opacity: 0.15;
+}
