@@ -39,6 +39,11 @@
 	background-color: #25835B;
 }
 
+.btn-green-small{
+    background-color: #4DB578;
+    color: #FFF;
+  }
+
 .highlight { background-color: #B0FF33 }
 .highlight-red{
 	color: #FF0037;

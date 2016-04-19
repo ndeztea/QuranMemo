@@ -16,6 +16,7 @@
 				<h2>Menghafal</h2>
 			</div>
 			<div class="nav-top clearfix">
+				@if(empty($ayats))
 				<div class="select-surah pull-left">
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<span class="search-title">Surah</span>
@@ -48,6 +49,12 @@
 					</form>
 				</div>
 				<!-- /select-surah -->
+				@else
+				<div class="select-surah pull-left">
+					<a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa-plus"></i> Hafalan baru</a>
+					<a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a>
+				</div>
+				@endif
 
 				@if(!empty($ayats))
 
