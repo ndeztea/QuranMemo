@@ -76,6 +76,15 @@ $prev_surah = '';
 										</div>
 										<!-- /select-surah -->
 
+										
+
+									</div>
+									<div class="memoz_options">
+										<div class="btn-group">
+										  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config')" class="btn btn-default">
+										    <i class="fa fa-cog"></i> <span class="caret"></span>
+										  </button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -89,6 +98,7 @@ $prev_surah = '';
 						</div>
 					<?php endif?>
 					<!-- /nav-top -->
+
 					<div class="mushaf">
 						<?php if(!empty($ayats)):?>
 							<div id="play_0"></div>

@@ -31,6 +31,8 @@ Route::get('mushaf/surah/{surah}/{idsurah}', 'MushafController@surah');
 Route::post('mushaf/search', 'MushafController@search');
 Route::get('mushaf/search', 'MushafController@search');
 Route::get('mushaf/searchKeyword', 'MushafController@searchKeyword');
+Route::get('mushaf/config', 'MushafController@config');
+
 
 
 Route::get('notes/', 'NotesController@index');

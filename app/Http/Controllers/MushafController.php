@@ -230,5 +230,14 @@ class MushafController extends Controller
         
     }
 
+    public function config(){
+        $data[''] = '';
+        $dataHTML['modal_title'] = 'Setting Mushaf';
+        $dataHTML['modal_body'] = 'asd';
+        $dataHTML['modal_footer'] = '';
+
+        return response()->json($dataHTML);
+    }
+
     
 }
