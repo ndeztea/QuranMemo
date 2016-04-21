@@ -1,6 +1,6 @@
 <div class="container-segmented">
   <h4>Ulangi muratal per-ayat</h4>
-  <div class="segmented-control" style="width: 100%; color: #5FBAAC">
+  <div class="segmented-control" style="width: 100%; color: #4DB578">
     <input type="radio" name="sc-1-1" id="sc-1-1-1" {{$repeat==1?'checked':''}}>
     <input type="radio" name="sc-1-1" id="sc-1-1-2" {{$repeat==2?'checked':''}}>
     <input type="radio" name="sc-1-1" id="sc-1-1-3" {{$repeat==3?'checked':''}}>

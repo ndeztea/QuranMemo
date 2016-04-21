@@ -20,6 +20,10 @@ $prev_surah = '';
 				<div class="single-column">
 					<div class="page-title">
 						<h2 class="pull-left">Mushaf</h2>
+						<button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val())" class="btn btn-default">
+										    <i class="fa fa-cog"></i> <span class="caret"></span>
+										  </button>
+				
 						@if(empty($selected_surah))
 							<div class="surah-action pull-right">
 								<span class="auto-play">
@@ -81,16 +85,17 @@ $prev_surah = '';
 									</div>
 									<div class="memoz_options">
 										<div class="btn-group">
-										  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config')" class="btn btn-default">
+										  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val())" class="btn btn-default">
 										    <i class="fa fa-cog"></i> <span class="caret"></span>
 										  </button>
+										  <input type="hidden" name="mushaf_layout" class="mushaf_layout" value="mushaf_arabic_trans"/>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					@if(isset($selected_surah))
+						@if(isset($selected_surah))
 						<div class="nav-top clearfix detail_top">
 							<h4>{{$selected_surah}} ayat {{$ayat}}</h4>
 							<a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url={{Request::url()}}')"><i class="fa fa-share-alt"></i></a>
@@ -102,13 +107,13 @@ $prev_surah = '';
 					<div class="mushaf">
 						@if(!empty($ayats))
 							<div id="play_0"></div>
-							<div class="mushaf_display">
+							<!--div class="mushaf_display">
 								<div class="btn-group" role="group" aria-label="mushaf-display">
 									<a class="btn mushaf_arabic_trans active" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic_trans')"><span class="hidden-xs">Arabic &amp; Terjemahaan</span><span class="visible-xs">A &amp; T</span></a>
 									<a class="btn mushaf_arabic" href="javascript:void(0)" onclick="showMushaf('mushaf_arabic')">Arabic</a>
 									<a class="btn mushaf_trans" href="javascript:void(0)" onclick="showMushaf('mushaf_trans')">Terjemahaan</a>
 								</div>
-							</div>
+							</div-->
 							<!-- /mushaf-display -->
 
 							<?php  $a=0;?>
@@ -289,7 +294,7 @@ $prev_surah = '';
 			jQuery('.arabic').removeClass('go').addClass('puff');
 		}
 
-
+		jQuery('.mushaf_layout').val(mushaf);
 		jQuery('.mushaf').addClass(mushaf);
 		jQuery('.mushaf_display a').removeClass('active');
 		jQuery('.'+mushaf).addClass('active');

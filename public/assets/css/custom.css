@@ -271,3 +271,8 @@ ol, ul{
 .memorized{
   opacity: 0.15;
 }
+
+.container-segmented h4{
+  margin: 0px;
+  font-size: 14px;
+}

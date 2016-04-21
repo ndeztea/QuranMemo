@@ -231,9 +231,11 @@ class MushafController extends Controller
     }
 
     public function config(){
-        $data[''] = '';
+        $mushaf_layout = $_GET['mushaf_layout'];
+
+        $data['mushaf_layout'] = $mushaf_layout;
         $dataHTML['modal_title'] = 'Setting Mushaf';
-        $dataHTML['modal_body'] = 'asd';
+        $dataHTML['modal_body'] = view('mushaf_config',$data)->render();
         $dataHTML['modal_footer'] = '';
 
         return response()->json($dataHTML);
