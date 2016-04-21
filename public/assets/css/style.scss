@@ -689,10 +689,11 @@ body.body-memo{
 	        .no_ayat_arabic{
 	        	display: inline-block;
 	        	text-align: center;
-	        	background: url(../images/number.png) no-repeat center center;
-			    width: 60px;
-			    height: 59px;
-			    font-size: 16px;
+	        	background: url(../images/frame-ayat.png) no-repeat center center;
+		        width: 37px;
+		        height: 46px;
+		        font-size: 14px; 
+		        letter-spacing:-2;
 
 			    &.visible-xs{
 			    	display: inline-block;
