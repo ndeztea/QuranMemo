@@ -298,10 +298,17 @@ a:focus {
   margin: 7px 0 0; }
   @media (max-width: 480px) and (min-width: 320px) {
     .surah-action {
-      text-align: center; } }
+      text-align: center;
+      float: none !important;
+      width: 100%; } }
   .surah-action .auto-play {
     margin-right: 10px;
     color: #fff; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .surah-action .auto-play {
+        text-align: center;
+        margin: 20px 0;
+        display: block; } }
   .surah-action #playnow {
     color: #999; }
 
@@ -350,7 +357,10 @@ a:focus {
         color: #fff; }
         @media (max-width: 767px) and (min-width: 320px) {
           .main-content-wrap .main-content .single-column .page-title h2 {
-            text-align: center; } }
+            text-align: center;
+            float: none !important;
+            width: 100%;
+            margin: 0 !important; } }
 
 body.body-memo .mushaf {
   padding-top: 1px; }
@@ -439,12 +449,11 @@ body.body-memo .mushaf {
       .mushaf .ayat_section .arabic .no_ayat_arabic {
         display: inline-block;
         text-align: center;
-        /*background: url(../images/number.png) no-repeat center center;*/
         background: url(../images/frame-ayat.png) no-repeat center center;
         width: 37px;
         height: 46px;
-        font-size: 14px; 
-        letter-spacing:-2;}
+        font-size: 14px;
+        letter-spacing: -2; }
         .mushaf .ayat_section .arabic .no_ayat_arabic.visible-xs {
           display: inline-block; }
     .mushaf .ayat_section .trans {
@@ -921,5 +930,24 @@ body.body-memo .mushaf {
   .search-result .search-item .search-footer .fa,
   .search-result .search-item .search-footer a {
     color: #4db578; }
+
+.btn-setting {
+  margin-left: 10px;
+  border-width: 1px;
+  border-color: #4db578;
+  border-style: solid;
+  background-color: #4db578;
+  color: #fff;
+  background-image: none;
+  text-shadow: none; }
+  .btn-setting:hover, .btn-setting:focus, .btn-setting.selected {
+    background-color: #409965;
+    border: solid 1px #409965;
+    color: #fff; }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .btn-setting {
+      position: absolute;
+      top: 0;
+      right: 0; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -480,11 +480,19 @@ a:focus{
 
 	@include media("<=480px", ">=phone") {
       	text-align: center;
+      	float: none !important;
+      	width: 100%;
   	}
 
 	.auto-play{
 		margin-right: 10px;
 		color: #fff;
+
+		@include media("<=480px", ">=phone") {
+	      	text-align: center;
+	      	margin: 20px 0;
+	      	display: block;
+	  	}
 	}
 
 	#playnow{
@@ -551,6 +559,9 @@ a:focus{
 
 				@include media("<tablet",">=phone") {
 		          	text-align: center;
+		          	float: none !important;
+		          	width: 100%;
+		          	margin: 0 !important;
 		      	}
 
 			}
@@ -1405,4 +1416,25 @@ body.body-memo{
 			}
 		}
 	}
+}
+
+.btn-setting{
+	margin-left: 10px;
+	@include boxy($btn-hover...);
+
+	&:hover,
+	&:focus,
+	&.selected{
+
+		background-color: $main-color-hover;
+		border: solid 1px $main-color-hover;
+		color: #fff;
+
+	}
+
+	@include media("<tablet",">=phone") {
+      	position: absolute;
+      	top:0;
+      	right: 0;
+  	}
 }

@@ -20,9 +20,9 @@ $prev_surah = '';
 				<div class="single-column">
 					<div class="page-title">
 						<h2 class="pull-left">Mushaf</h2>
-						<button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val())" class="btn btn-default">
-										    <i class="fa fa-cog"></i> <span class="caret"></span>
-										  </button>
+						<button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val())" class="btn btn-default btn-setting">
+							<i class="fa fa-cog"></i> 
+						</button>
 				
 						@if(empty($selected_surah))
 							<div class="surah-action pull-right">
@@ -85,9 +85,7 @@ $prev_surah = '';
 									</div>
 									<div class="memoz_options">
 										<div class="btn-group">
-										  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val())" class="btn btn-default">
-										    <i class="fa fa-cog"></i> <span class="caret"></span>
-										  </button>
+										  
 										  <input type="hidden" name="mushaf_layout" class="mushaf_layout" value="mushaf_arabic_trans"/>
 										</div>
 									</div>
