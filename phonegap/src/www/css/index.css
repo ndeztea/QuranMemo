@@ -24,17 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+    background-color:rgb(77, 181, 120);
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -43,6 +33,7 @@ body {
     padding:0px;
     text-transform:capitalize;
     width:100%;
+    overflow-x: hidden !important;
 }
 
 /* Portrait layout (default) */
@@ -164,6 +155,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dff72', end
     text-align: center;
     padding:40px;
     vertical-align: middle;
+    top: -150px;
+    position: relative;
 }
 
 .splash-text img{

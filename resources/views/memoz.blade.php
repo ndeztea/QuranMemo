@@ -62,7 +62,7 @@
 					@include('players')
 
 					<div class="btn-group">
-					  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-default">
+					  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-green-small-darker">
 					    <i class="fa fa-cog"></i> <span class="caret"></span>
 					  </button>
 					  

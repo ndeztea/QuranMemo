@@ -7,7 +7,15 @@
 	}
 	.main-content-wrap .main-content .single-column .page-title h2{
 		margin-left: 20px;
+    margin-bottom: 12px !important;
 	}
+  .nav-top .memoz_options .btn{
+    position: relative;
+    top:5px;
+  }
+  .select-surah{
+    padding-top:0px;
+  }
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
@@ -40,8 +48,12 @@
 }
 
 .btn-green-small{
-    background-color: #4DB578;
-    color: #FFF;
+    background-color: #4DB578 !important;
+    color: #FFF !important;
+  }
+.btn-green-small-darker{
+    background-color: #25835B !important;
+    color: #FFF !important;
   }
 
 .highlight { background-color: #B0FF33 }
