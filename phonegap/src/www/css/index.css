@@ -168,8 +168,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dff72', end
 
 .splash-text img{
     display: block;
-    margin: 0 auto 20px
-    
+    margin: 0 auto 20px;
+    max-width:250px;
 }
 
 .splash-text p{
