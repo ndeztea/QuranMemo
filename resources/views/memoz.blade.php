@@ -105,7 +105,6 @@
 							</div>
 							<?php  $a=0; ?>
 							@foreach($ayats as $ayat)
-							
 							@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
 							<a name="head_surah_{{$ayat->surah}}"></a>
 							<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_0 play_0 surah_title head_surah_{{$ayat->surah}}"  >
@@ -132,7 +131,13 @@
 								@endif
 								<div class="arabic arabic_{{$a}}"> 
 									<span class="no_ayat_arabic"> {{ arabicNum($ayat->ayat) }}</span> 
-									<span class="content_ayat">{{$ayat->text}}</span> 
+									<span class="content_ayat">
+									<?php $arr_ayats = (explode(' ', $ayat->text));$per=0?>
+									@foreach($arr_ayats as $per_ayat)
+										<?php $per++;?>
+										<span class="per_words_<?php echo $per?>">{{$per_ayat}}</span>
+									@endforeach
+									</span> 
 								</div>
 								<div class="trans trans_{{$a}}"> 
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
