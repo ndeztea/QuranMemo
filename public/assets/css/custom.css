@@ -276,3 +276,7 @@ ol, ul{
   margin: 0px;
   font-size: 14px;
 }
+
+.mushaf-hafalan.mushaf .ayat_section .arabic .no_ayat_arabic{
+  height: 59px !important;
+}

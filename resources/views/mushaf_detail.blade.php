@@ -32,7 +32,6 @@ $prev_surah = '';
 
 						<?php  $a=0;?>
 						@foreach($ayats as $ayat)
-						
 						@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) )
 						<div class="clearfix ayat_section section_<?php echo $ayat->page?>_<?php echo $ayat->surah?>_0 play_0" >
 							<div class="head_surah" >
