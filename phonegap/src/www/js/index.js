@@ -58,6 +58,9 @@ var app = {
             console.log('here');*/
         });
     },
+    onOffline: function(){
+        alert('asd');
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
