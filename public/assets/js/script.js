@@ -163,6 +163,15 @@ var QuranJS = {
 	memorized:function(ayat) {
 		$('.'+ayat).addClass('memorized');
 		$('.'+ayat+' .action-footer').remove();
+	},
+
+	showMushafAction : function(show) {
+		$('.footer_action').val(show);
+		if(show==true){
+			$('.action-footer').show();
+		}else{
+			$('.action-footer').hide();
+		}
 	}
 
 } 
