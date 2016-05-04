@@ -232,8 +232,12 @@ class MushafController extends Controller
 
     public function config(){
         $mushaf_layout = $_GET['mushaf_layout'];
+        $automated_play = $_GET['automated_play'];
+        $footer_action = $_GET['footer_action'];
 
         $data['mushaf_layout'] = $mushaf_layout;
+        $data['automated_play'] = $automated_play;
+        $data['footer_action'] = $footer_action;
         $dataHTML['modal_title'] = 'Setting Mushaf';
         $dataHTML['modal_body'] = view('mushaf_config',$data)->render();
         $dataHTML['modal_footer'] = '';

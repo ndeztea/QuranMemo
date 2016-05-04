@@ -20,16 +20,15 @@ $prev_surah = '';
 				<div class="single-column">
 					<div class="page-title">
 						<h2 class="pull-left">Mushaf</h2>
-						<button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val())" class="btn btn-default btn-setting">
+						<button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting">
 							<i class="fa fa-cog"></i> 
 						</button>
 				
 						@if(empty($selected_surah))
-							<div class="surah-action pull-right">
+							<!--div class="surah-action pull-right">
 								<span class="auto-play">
 									<input type="checkbox" id="automated_play" name="automated_play" {{Request::segment(4)=='autoplay' || empty(Request::segment(4))?'checked':''}} >&nbsp;<i class="fa fa-play-circle-o"></i>  {{trans('trans.play_otomatis')}}
 								</span>
-								<!--a id="playNow" class="playnow"><i class="fa fa-play"></i> Play</a-->
 							</div>
 							<!-- /surah-action -->
 						@endif
@@ -87,6 +86,8 @@ $prev_surah = '';
 										<div class="btn-group">
 										  
 										  <input type="hidden" name="mushaf_layout" class="mushaf_layout" value="mushaf_arabic_trans"/>
+										  <input type="hidden" name="automated_play" class="automated_play" value="true"/>
+										  <input type="hidden" name="footer_action" class="footer_action" value="true"/>
 										</div>
 									</div>
 								</div>

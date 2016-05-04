@@ -16,6 +16,10 @@
   .select-surah{
     padding-top:0px;
   }
+
+  .qm-navbar .navbar-nav form{
+    padding: 10px 26px;
+  }
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
