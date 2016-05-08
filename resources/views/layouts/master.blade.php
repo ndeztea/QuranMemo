@@ -256,9 +256,9 @@
         });
 
 
-            // $(window).bind('beforeunload', function(){
-            //   $('#preloader').show();
-            // });
+             $(window).bind('beforeunload', function(){
+               $('#preloader').show();
+             });
 
 
 

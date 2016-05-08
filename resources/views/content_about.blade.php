@@ -17,7 +17,7 @@ Pada saat ini QuranMemo mempunyai fitur yang terbatas dan jauh dari baik, tapi k
 Fitur-fitur yang akan kami siapkan untuk kedepannya adalah :
 <ul>
 	<li>Akan di mudahkan untuk mencari isi dan tafsir Al-Quran</li>
-	<li>QuranMemo native app untuk android</li>
+	<li><strike>QuranMemo native app untuk android</strike></li>
 	<li>Menyimpan dan mengelola target hafalan Al-Quran</li>
 	<li>Menyetorkan hafalan Al-Quran kepada Hafidz/Hafidzah yang akan kami tentukan</li>
 	<li>Mencatat dan mengelola catatan hasil mengaji Al-Quran antum sekalian dan berbagi bersama para sahabat yang lain</li>

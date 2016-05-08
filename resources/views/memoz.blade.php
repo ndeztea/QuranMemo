@@ -52,7 +52,7 @@
 				@else
 				<div class="select-surah pull-left">
 					<a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa-plus"></i> Hafalan baru</a>
-					<a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a>
+					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
 				</div>
 				@endif
 
@@ -201,7 +201,7 @@ $(document).ready(function(){
 	<?php if(!empty($ayats)):?>
 	$('#QuranModal').modal('show');
 	$('.modal-title').html('Panduan menghafal');
-	$('.modal-body').html('<p>Dalam proses hafalan terdapat 5 tahapan, yaitu: </p><br><ul><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti. Proses ini jangan terlalu lama dan lanjut ke tahap selanjutnya</li><li>Menghafal target hafalan arabic dan terjemahanya, perhatikan terjemahan dari setiap kata arabic-nya</li><li>Menghafal target hafalan arabic nya saja, perhatikan tajwid nya dan tata letak hurufnya, dan bayangkan setiap gambaran hurufnya</li><li>Menghafal target hafalan terjemahanya, dalam tahap ini antum harus setidaknya hafal banyak arabic-nya, dan kuat kan hafalan dengan terjemahannya</li><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti, ulangi sampai berulang-ulang sampai hafal, dan yang perhatikan makhrajul huruf-nya</li></ul><br><p>Jangan lupa untuk berdo\'a kepada Allah Ta\'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><div class="center"><button  data-dismiss="modal" class="btn btn-green">Bismillah mulai menghafal</button></div>');
+	$('.modal-body').html('<p>Dalam proses hafalan terdapat 5 tahapan, yaitu: </p><br><ul><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti. Proses ini jangan terlalu lama dan lanjut ke tahap selanjutnya</li><li>Menghafal target hafalan arabic dan terjemahanya, perhatikan terjemahan dari setiap kata arabic-nya</li><li>Menghafal target hafalan arabic nya saja, perhatikan tajwid nya dan tata letak hurufnya, dan bayangkan setiap gambaran hurufnya</li><li>Menghafal target hafalan terjemahanya, dalam tahap ini antum harus setidaknya hafal banyak arabic-nya, dan kuat kan hafalan dengan terjemahannya</li><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti, ulangi sampai berulang-ulang sampai hafal, dan yang perhatikan makhrajul huruf-nya</li></ul><br><p>Jangan lupa untuk berdo\'a kepada Allah Ta\'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><p>Kunci untuk mengafal adalah <strong>ulangi dan terus ulangi</strong> membaca dan mendengarkan muratal. <div class="center"><button  data-dismiss="modal" class="btn btn-green">Bismillah mulai menghafal</button></div>');
 	<?php endif?>
 
 	$(document).ready(function () {

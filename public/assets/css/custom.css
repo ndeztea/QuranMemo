@@ -12,6 +12,7 @@
   .nav-top .memoz_options .btn{
     position: relative;
     top:5px;
+    left: -5px;
   }
   .select-surah{
     padding-top:0px;
@@ -37,6 +38,10 @@
 
 .center{
 	text-align: center;
+}
+
+#preloader{
+  overflow: none;
 }
 
 #preloader .loading{

@@ -128,7 +128,7 @@ a:focus {
 .nav-top {
   position: relative;
   border-bottom: solid 1px #ddd;
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: #f6f6f6;
   z-index: 999; }
   .nav-top .btn-surah-trigger {

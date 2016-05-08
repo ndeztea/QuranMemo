@@ -32,8 +32,6 @@ var QuranJS = {
 			$('#preloader').show();
 			location.href=this.siteUrl+'/mushaf/page/'+page;
 		}
-
-		
 		
 	},
 
