@@ -146,7 +146,15 @@ $prev_surah = '';
 								<?php endif?>
 								<div class="arabic arabic_{{$a}}"> 
 									
-									<span class="content_ayat"><span class="no_ayat_arabic"><span>{{arabicNum($ayat->ayat)}}</span> </span> {{$ayat->text}}</span> 
+									<span class="content_ayat"> 
+										<span class="ayat_arabic">
+											{{$ayat->text}}
+										</span>
+										<span class="no_ayat_arabic">
+											<img src="{{url('assets/images/frame-ayat.png')}}">
+											<span>{{arabicNum($ayat->ayat)}}</span> 
+										</span>
+									</span> 
 								</div>
 								<div class="trans trans_{{$a}}"> 
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 

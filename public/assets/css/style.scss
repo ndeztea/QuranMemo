@@ -695,20 +695,32 @@ body.body-memo{
 	        	display: inline-block;
 	        	padding: 0 15px;
 	        	line-height: 50px;
+	        	direction: rtl;
 	        }
 
 	        .no_ayat_arabic{
-	        	display: inline-block;
+	        	display: inline;
 	        	text-align: center;
-	        	background: url(../images/frame-ayat.png) no-repeat center center;
+	        	// background: url(../images/frame-ayat.png) no-repeat center center;
 		        width: 37px;
 		        height: 46px;
 		        font-size: 14px; 
 		        letter-spacing:-2;
+		        position: relative;
+
+		        img{
+		        	position: absolute;
+		        	top:-9px;
+		        	left:-12px;
+		        }
 
 			    &.visible-xs{
-			    	display: inline-block;
+			    	display: inline;
 			    }
+	        }
+
+	        .ayat_arabic{
+	        	padding-left:20px;
 	        }
 		}
 

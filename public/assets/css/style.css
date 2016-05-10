@@ -445,17 +445,24 @@ body.body-memo .mushaf {
       .mushaf .ayat_section .arabic .content_ayat {
         display: inline-block;
         padding: 0 15px;
-        line-height: 50px; }
+        line-height: 50px;
+        direction: rtl; }
       .mushaf .ayat_section .arabic .no_ayat_arabic {
-        display: inline-block;
+        display: inline;
         text-align: center;
-        background: url(../images/frame-ayat.png) no-repeat center center;
         width: 37px;
         height: 46px;
         font-size: 14px;
-        letter-spacing: -2; }
+        letter-spacing: -2;
+        position: relative; }
+        .mushaf .ayat_section .arabic .no_ayat_arabic img {
+          position: absolute;
+          top: -9px;
+          left: -12px; }
         .mushaf .ayat_section .arabic .no_ayat_arabic.visible-xs {
-          display: inline-block; }
+          display: inline; }
+      .mushaf .ayat_section .arabic .ayat_arabic {
+        padding-left: 20px; }
     .mushaf .ayat_section .trans {
       text-align: left;
       color: rgba(43, 69, 56, 0.7);
@@ -490,7 +497,6 @@ body.body-memo .mushaf {
       width: 100%;
       height: 35px;
       z-index: 5;
-      transition: height .35s ease;
       background-color: #eee; }
       .mushaf .ayat_section .action-footer .btn {
         margin: 0;
