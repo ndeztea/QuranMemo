@@ -19,6 +19,9 @@ Route::get('note/manage', ['middleware' => 'auth', function () {
     //
 }]);
 
+Route::get('home', 'HomeController@index');
+
+
 Route::get('mushaf/generate', 'MushafController@generate');
 
 Route::get('mushaf/', 'MushafController@index');
