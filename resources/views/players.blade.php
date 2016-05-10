@@ -208,7 +208,8 @@ $(document).ready(function(){
         	if(window.goNext==true){
         		// stop play
         		$(this).jPlayer("stop");
-        		if(jQuery('#automated_play').is(':checked')){
+        		automated_play = jQuery('.automated_play').val();
+        		if(automated_play=='true'){
 	        		@if($curr_page<604)
 	        		<?php $next_page = $curr_page + 1?>
 		    		location.href = '{{url('mushaf/page/'.$next_page)}}/autoplay';//http://semutmedia.com/qmt_class/alquran/mushaf_normal/295/autoplay';
