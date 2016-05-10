@@ -48,16 +48,16 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="{{url('assets/css/font-awesome.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/bootstrap-theme.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/animate.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/animate.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/custom.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
-        <script src="{{url('assets/js/script.js')}}"></script>
+        <script src="{{url('assets/js/script.min.js')}}"></script>
         
         <script type="text/javascript">
             QuranJS.siteUrl = '{{url()}}';
