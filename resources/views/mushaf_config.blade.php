@@ -23,7 +23,7 @@
 </div>
 
 <div class="container-segmented">
-	<h4>Mainkan muratal otomatis</h4>
+	<h4>Pindah hafalan otomatis ketika muratal berjalan</h4>
 	<div class="segmented-control" style="width: 100%; color: #4DB578">
 		<input type="radio" name="sc-1-2" id="sc-1-1-4" {{$automated_play=='true'?'checked':''}}>
 		<input type="radio" name="sc-1-2" id="sc-1-1-5" {{$automated_play=='false'?'checked':''}}>

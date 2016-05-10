@@ -56,7 +56,11 @@ var QuranJS = {
 		$.getJSON(this.siteUrl+'/'+url,{},function(response){
 			$('.modal-title').html(response.modal_title);
 			$('.modal-body').html(response.modal_body);
-			$('.modal-footer').html(response.modal_footer);
+			if(response.modal_footer!=''){
+				$('.modal-footer').show();
+				$('.modal-footer').html(response.modal_footer);
+			}
+			
 			
 			$('#QuranModal').addClass(response.modal_class);
 			$('.modal-header button').show();

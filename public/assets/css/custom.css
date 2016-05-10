@@ -301,3 +301,9 @@ ol, ul{
 .mushaf-hafalan.mushaf .ayat_section .arabic .no_ayat_arabic{
   height: 59px !important;
 }
+
+.modal-footer{
+  background-color: rgba(223, 240, 216, 0.39);
+  padding:7px;
+  border-top: 1px solid #dff0d8 !important;
+}

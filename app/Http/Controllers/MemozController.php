@@ -96,7 +96,7 @@ class MemozController extends Controller
         $data['repeat'] = $repeat;
         $dataHTML['modal_title'] = 'Setting Memoz';
         $dataHTML['modal_body'] = view('memoz_config',$data)->render();
-        $dataHTML['modal_footer'] = '';
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
     }

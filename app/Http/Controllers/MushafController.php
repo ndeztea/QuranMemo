@@ -240,7 +240,7 @@ class MushafController extends Controller
         $data['footer_action'] = $footer_action;
         $dataHTML['modal_title'] = 'Setting Mushaf';
         $dataHTML['modal_body'] = view('mushaf_config',$data)->render();
-        $dataHTML['modal_footer'] = '';
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
     }
