@@ -39,9 +39,9 @@
 							-->
 							<div class="form-group display-inline-block-xs">
 								<div class="input-group">
-								  <input class="form-control search_ayat" type="number" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
+								  <input class="form-control search_ayat" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
 								  <span class="input-group-addon">Sampai Ayat</span>
-								  <input class="form-control search_ayat" type="number" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
+								  <input class="form-control search_ayat" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 								</div>
 							</div>
 							
@@ -63,7 +63,7 @@
 					@include('players')
 
 					<div class="btn-group">
-					  <button type="button" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-green-small-darker">
+					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-green-small-darker">
 					    <i class="fa fa-cog"></i> <span class="caret"></span>
 					  </button>
 					  

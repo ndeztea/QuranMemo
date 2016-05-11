@@ -50,9 +50,9 @@ var QuranJS = {
 	},
 
 	callModal : function(url){
+		$('#QuranModal').modal('show');
 		this.modalLoading();
 		this.removeModalClass();
-
 		$.getJSON(this.siteUrl+'/'+url,{},function(response){
 			$('.modal-title').html(response.modal_title);
 			$('.modal-body').html(response.modal_body);

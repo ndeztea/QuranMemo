@@ -162,8 +162,8 @@
         <div class="footer">
             <ul>
                 <li><span>Copyright &copy; 2016</span></li>
-                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
-                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
+                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
+                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
             </ul>
             @if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
             <a target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
