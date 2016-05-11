@@ -1450,3 +1450,31 @@ body.body-memo{
       	right: 17px;
   	}
 }
+
+.juz-list{
+	li{
+		float: left;
+		width: 33.3%;
+		margin-bottom: 10px;
+		a{
+			display: block;
+
+			.juz-arabic{
+				font-weight: bold;
+			}
+
+			.juz-indo{
+				display: block;
+				color: #aaa;
+			}
+
+			&:hover,
+			&:focus,
+			&:hover .juz-indo,
+			&:focus .juz-indo{
+				color: $main-color;
+				text-decoration: none;
+			}
+		}
+	}
+}
