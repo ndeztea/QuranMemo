@@ -31,7 +31,7 @@ class Quran extends Model
     public function getAyat($page){
     	$ayats = DB::table('quran as qar')
                 ->join('surah as s', 's.id', '=', 'qar.surah')
-    			->select('qar.surah','qar.surah_name','qar.text_english','qar.text_indo','qar.text_arabic as text','qar.ayat','qar.surah','qar.page','s.ayat as count_ayat','s.type','s.order')
+    			->select('qar.surah','qar.surah_name','qar.text_english','qar.text_indo','qar.text_arabic as text','qar.ayat','qar.surah','qar.page','s.ayat as count_ayat','s.type','s.order','qar.juz')
                 ->where('page',$page);
                 //dd($ayats->toSql());
 
@@ -70,7 +70,7 @@ class Quran extends Model
     public function getOneAyat($id_surah,$ayat){
         $ayats = DB::table('quran as qar')
                 ->join('surah as s', 's.id', '=', 'qar.surah')
-                ->select('qar.surah','qar.surah_name','qar.text_english','qar.text_indo','qar.text_arabic as text','qar.ayat','qar.surah','qar.page','s.ayat as count_ayat','s.type','s.order');
+                ->select('qar.surah','qar.surah_name','qar.text_english','qar.text_indo','qar.text_arabic as text','qar.ayat','qar.surah','qar.page','s.ayat as count_ayat','s.type','s.order','qar.juz');
         
         $ayats->where('qar.surah','=',$id_surah)
                 ->where('qar.ayat','=',$ayat);

@@ -147,7 +147,7 @@ class MushafController extends Controller
         $juzs = $QuranModel->getJuz();
 
         $data['juzs'] = $juzs;
-        $dataHTML['modal_title'] = 'Filter Juz';
+        $dataHTML['modal_title'] = 'Juz';
         $dataHTML['modal_body'] = view('mushaf_juz',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
