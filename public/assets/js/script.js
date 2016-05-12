@@ -19,6 +19,7 @@ var QuranJS = {
 		$('#QuranModal').removeClass('login-mode');
 		$('#QuranModal').removeClass('register-mode');
 		$('#QuranModal').removeClass('share-mode');
+		$('#QuranModal').removeClass('content-mode');
 	},
 
 	changePage : function (elm){
