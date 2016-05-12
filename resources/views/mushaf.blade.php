@@ -20,9 +20,7 @@ $prev_surah = '';
 				<div class="single-column">
 					<div class="page-title">
 						<h2 class="pull-left">Mushaf</h2>
-						<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting">
-							<i class="fa fa-cog"></i> 
-						</button>
+						
 				
 						@if(empty($selected_surah))
 							<!--div class="surah-action pull-right">
@@ -45,36 +43,50 @@ $prev_surah = '';
 										<div class="select-surah">
 
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
-												<div class="form-group">
-													<select class="selectpicker form-control" name="surah">
-														@foreach($surahs as $surah)
-															<?php 
-																$selectedSurah = '';
-																if(session('searchSurah')==$surah->id){
-																	$selectedSurah = 'selected';
-																}elseif($surah->id==$ayats[0]->surah){
-																	$selectedSurah = 'selected';
-																}
-															?>
-														<option  {{$selectedSurah}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
-														@endforeach
-													</select>
-												</div>
-												<div class="form-group display-inline-block-xs">
-													<div class="input-group">
-													  <input class="form-control search_ayat" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat">
-													  <span class="input-group-addon">Sampai Ayat</span>
-													  <input class="form-control search_ayat" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat">
+												
+												<button class="btn" type="button" data-toggle="collapse" data-target="#colSearch" aria-expanded="false" aria-controls="colSearch">
+												  <i class="fa fa-search"></i>
+												  <span class="hidden-xs">Pencarian</span>
+												</button>
+												<a href="javascript:;" data-toggle="modal" data-target="#QuranModal"  class="btn" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs">Juz</span></a>
+
+												<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
+													<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
+												</button>
+												<div class="clearfix"></div>
+												<div class="collapse" id="colSearch">
+													<div class="form-group">
+														<select class="selectpicker form-control" name="surah">
+															@foreach($surahs as $surah)
+																<?php 
+																	$selectedSurah = '';
+																	if(session('searchSurah')==$surah->id){
+																		$selectedSurah = 'selected';
+																	}elseif($surah->id==$ayats[0]->surah){
+																		$selectedSurah = 'selected';
+																	}
+																?>
+															<option  {{$selectedSurah}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
+															@endforeach
+														</select>
 													</div>
+													<div class="form-group display-inline-block-xs">
+														<div class="input-group">
+														  <input class="form-control search_ayat" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat">
+														  <span class="input-group-addon">Sampai Ayat</span>
+														  <input class="form-control search_ayat" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat">
+														</div>
+													</div>
+													<!-- <div class="checkbox display-inline-block-xs">
+														<label>
+															<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" >  <span>Sampai ayat </span>
+															<input class="form-control search_ayat ayat_end"  style="display:none" placeholder="Ayat"/>
+														</label>
+													</div> -->
+													<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
 												</div>
-												<!-- <div class="checkbox display-inline-block-xs">
-													<label>
-														<input type="checkbox" value="1" id="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)" >  <span>Sampai ayat </span>
-														<input class="form-control search_ayat ayat_end"  style="display:none" placeholder="Ayat"/>
-													</label>
-												</div> -->
-												<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
-												<a href="javascript:;" data-toggle="modal" data-target="#QuranModal"  class="btn" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i></a>
+												
+												
 											</form>
 
 										</div>

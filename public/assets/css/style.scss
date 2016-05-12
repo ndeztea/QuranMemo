@@ -317,6 +317,11 @@ a:focus{
 			font-size: 20px;
 			margin-left: 3px;
 
+			span{
+				color: #fff;
+				padding-left: 10px;
+			}
+
 			@include media("<=480px", ">=phone") {
 	          	width: 100%;
 	          	display: block;
