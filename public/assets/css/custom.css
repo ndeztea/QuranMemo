@@ -1,14 +1,14 @@
 @media (max-width: 767px) and (min-width: 300px){
-	.mushaf .ayat_section .arabic {
-		padding:  0px !important;
-	}
-	.jp-video .jp-type-playlist .jp-controls{
-		margin-left: 100px !important;
-	}
-	.main-content-wrap .main-content .single-column .page-title h2{
-		margin-left: 20px;
+  .mushaf .ayat_section .arabic {
+    padding:  0px !important;
+  }
+  .jp-video .jp-type-playlist .jp-controls{
+    margin-left: 100px !important;
+  }
+  .main-content-wrap .main-content .single-column .page-title h2{
+    margin-left: 20px;
     margin-bottom: 12px !important;
-	}
+  }
   .nav-top .memoz_options .btn{
     position: relative;
     top:5px;
@@ -21,23 +21,27 @@
   .qm-navbar .navbar-nav form{
     padding: 10px 26px;
   }
+  .juz-list li {
+      float: left;
+      width: 47.4% !important;
+  }
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
-	padding: 10px
+  padding: 10px
 }
 */
 
 .surah-nav .pagination>li>a,.surah-nav .pagination>li>span{
-	padding: 4px 6px;
+  padding: 4px 6px;
 }
 
 .memoz-message.alert-warning{
-	text-align: left;
+  text-align: left;
 }
 
 .center{
-	text-align: center;
+  text-align: center;
 }
 
 #preloader{
@@ -45,15 +49,15 @@
 }
 
 #preloader .loading{
-	font-size: 24px;
-	color: #FFF;
-	position: fixed;
-	text-align: center;
-	width: 100%;
-	top:50%;
+  font-size: 24px;
+  color: #FFF;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  top:50%;
 }
 .btn-search{
-	background-color: #25835B;
+  background-color: #25835B;
 }
 
 .btn-green-small{
@@ -67,7 +71,7 @@
 
 .highlight { background-color: #B0FF33 }
 .highlight-red{
-	color: #FF0037;
+  color: #FF0037;
 }
 .count-search .badge{ color:#FFF;}
 
@@ -307,3 +311,23 @@ ol, ul{
   padding:7px;
   border-top: 1px solid #dff0d8 !important;
 }
+
+ul.juz-list{
+  list-style: none;
+}
+.juz-list li {
+    float: left;
+    width: 31.3%;
+    margin-bottom: 10px;
+    background-color: rgba(112, 195, 147, 0.14);
+    padding: 5px;
+    margin-right: 7px;
+    text-align: center;
+}
+.juz-list li strong{
+  font-size: 24px;
+}
+.juz-list li a .juz-indo{
+  font-size: 12px;
+}
+
