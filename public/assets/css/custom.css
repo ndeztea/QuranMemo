@@ -330,4 +330,6 @@ ul.juz-list{
 .juz-list li a .juz-indo{
   font-size: 12px;
 }
-
+.modal-dialog{
+  margin: 1px auto !important;
+}
