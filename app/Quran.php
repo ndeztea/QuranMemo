@@ -45,7 +45,7 @@ class Quran extends Model
     public function getRangeAyat($surah_start,$ayat_start,$surah_end,$ayat_end){
         $ayats = DB::table('quran as qar')
                 ->join('surah as s', 's.id', '=', 'qar.surah')
-                ->select('qar.surah','qar.surah_name','qar.text_english','qar.text_indo','qar.text_arabic as text','qar.ayat','qar.surah','qar.page','s.ayat as count_ayat','s.type','s.order');
+                ->select('qar.surah','qar.surah_name','qar.text_english','qar.text_indo','qar.text_arabic as text','qar.ayat','qar.surah','qar.page','s.ayat as count_ayat','s.type','s.order','qar.juz');
         if($surah_start==$surah_end){
             $ayats->where('qar.surah','=',$surah_start)
                     ->where('qar.ayat','>=',$ayat_start)

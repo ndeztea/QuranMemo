@@ -337,3 +337,11 @@ ul.juz-list{
 	background-color:rgba(77, 181, 120, 0.28) !important;
 	border-bottom: 2px dashed rgba(57, 144, 94, 0.31);
 }
+
+.juz-indo-head{
+	color: #aaa;
+}
+.juz_head{
+	text-align: center;
+    background-color: #9FCFB3;
+}

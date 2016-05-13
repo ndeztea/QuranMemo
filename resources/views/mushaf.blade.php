@@ -157,8 +157,11 @@ $prev_surah = '';
 								<div id="play_{{$a + 1}}"></div>
 								<div id="surah_{{$ayat->surah}}_{{$ayat->ayat}}"></div>
 								<?php endif?>
+								@if($ayat->juz!=0)
+									<div class="juz_head">Juz {{$ayat->juz}}</div>
+								@endif
+								
 								<div class="{{$ayat->juz!=0?'juz_head ':''}}arabic arabic_{{$a}}"> 
-									
 									<span class="content_ayat" > 
 										<span class="ayat_arabic">
 											{{$ayat->text}}
