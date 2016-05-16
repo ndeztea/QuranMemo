@@ -570,6 +570,15 @@ a:focus{
 		      	}
 
 			}
+
+			.nav-top{
+				.collapse{
+					@include media(">=880px") {
+			          	width: 80%;
+			          	float: left;
+			      	}
+				}
+			}
 		}
 	}
 }
@@ -1450,9 +1459,16 @@ body.body-memo{
 	}
 
 	@include media("<tablet",">=phone") {
-      	position: absolute;
-      	top:0;
-      	right: 17px;
+      	float: right !important;
+      	width: 49%;
+      	margin: 10px 0;
+  	}
+
+  	&.btn-juz{
+  		@include media("<tablet",">=phone") {
+	      	margin-right: 6px;
+	  	}
+  		
   	}
 }
 

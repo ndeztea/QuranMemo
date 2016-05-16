@@ -37,6 +37,7 @@ $prev_surah = '';
 							<button class="btn btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
 							  Pencarian
 							</button>
+
 							<div class="collapse in" id="surah-collapse">
 								<div class="row">
 									<div class="col-xs-12">
@@ -44,17 +45,10 @@ $prev_surah = '';
 
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
 												
-												<button class="btn" type="button" data-toggle="collapse" data-target="#colSearch" aria-expanded="false" aria-controls="colSearch">
-												  <i class="fa fa-search"></i>
-												  <span class="hidden-xs">Pencarian</span>
-												</button>
-												<a href="javascript:;" data-toggle="modal" data-target="#QuranModal"  class="btn" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs">Juz</span></a>
+												
+												
 
-												<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
-													<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
-												</button>
-												<div class="clearfix"></div>
-												<div class="collapse" id="colSearch">
+												
 													<div class="form-group">
 														<select class="selectpicker form-control" name="surah">
 															@foreach($surahs as $surah)
@@ -84,7 +78,7 @@ $prev_surah = '';
 														</label>
 													</div> -->
 													<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
-												</div>
+												
 												
 												
 											</form>
@@ -105,6 +99,12 @@ $prev_surah = '';
 									</div>
 								</div>
 							</div>
+							
+							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
+								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
+							</button>
+							<a href="javascript:;" data-toggle="modal" data-target="#QuranModal"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs">Juz</span></a>
+							<div class="clearfix"></div>
 						</div>
 					</div>
 						@if(isset($selected_surah))
@@ -157,11 +157,8 @@ $prev_surah = '';
 								<div id="play_{{$a + 1}}"></div>
 								<div id="surah_{{$ayat->surah}}_{{$ayat->ayat}}"></div>
 								<?php endif?>
-								@if($ayat->juz!=0)
-									<div class="juz_head">Juz {{$ayat->juz}}</div>
-								@endif
-								
 								<div class="{{$ayat->juz!=0?'juz_head ':''}}arabic arabic_{{$a}}"> 
+									
 									<span class="content_ayat" > 
 										<span class="ayat_arabic">
 											{{$ayat->text}}
