@@ -166,6 +166,16 @@ class Quran extends Model
         return $juz;
     }
 
+    public function getCurrentJuz($page){
+         $juz = DB::table('juz')
+                ->select('*')
+                ->where('page','>=',$page)
+                ->where('page','<',$page);
+                //->get();
+                dd($juz->toSql());
+        return $juz[0]->id;
+    }
+
 
 
 

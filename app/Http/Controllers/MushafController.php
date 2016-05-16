@@ -51,6 +51,9 @@ class MushafController extends Controller
         $data['header_title'] = 'Mushaf Halaman '. $page;
         $data['body_class'] = 'body-mushaf';
 
+        // select juz
+        //$data['current_juz'] = $QuranModel->getCurrentJuz($page);
+
         //print_r($pages);
         // show view template
        return view('mushaf',$data);

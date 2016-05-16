@@ -131,6 +131,16 @@ $prev_surah = '';
 							<!-- /mushaf-display -->
 
 							<?php  $a=0;?>
+							<div class="mushaf_header">
+							@if(!isset($selected_surah))
+								<div class="nav_left"> <a  onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"><i class="fa fa-angle-left"></i> prev </a> </div>
+								@if($ayats[0]->juz!=0)
+									<div class="header_juz">Juz {{$ayats[0]->juz}}</div>
+								@endif
+								<div class="header_page">{{$curr_page}}</div>
+								<div class="nav_right"><a  onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"></i> prev </a> </div>
+							@endif
+							</div>
 
 							@foreach($ayats as $ayat)
 							@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
@@ -157,10 +167,6 @@ $prev_surah = '';
 								<div id="play_{{$a + 1}}"></div>
 								<div id="surah_{{$ayat->surah}}_{{$ayat->ayat}}"></div>
 								<?php endif?>
-								@if($ayat->juz!=0)
-									<div class="juz_head">Juz {{$ayat->juz}}</div>
-								@endif
-								
 								<div class="{{$ayat->juz!=0?'juz_head ':''}}arabic arabic_{{$a}}"> 
 									<span class="content_ayat" > 
 										<span class="ayat_arabic">
@@ -198,13 +204,13 @@ $prev_surah = '';
 							<div class="surah-nav">
 								<div class="input-group" role="group" aria-label="Navigasi">
 									<ul class="pagination">
-										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"> << <?php //echo trans('trans.prev')?></a></li>
-										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"> < <?php //echo trans('trans.prev')?></a></li>
+										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"><i class="fa fa-angle-double-left"> </i></a></li>
+										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"><i class="fa fa-angle-left"> </i> </a></li>
 										@foreach($pages as $page)
 										<li  class="{{$page->page==$curr_page?'active':''}}"><a  onclick="QuranJS.changePage(this)" href="#" data-value="{{$page->page}}">{{$page->page}}</a></li>
 										<?php endforeach?>
-										<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="{{$curr_page+1}}"> > <?php //echo trans('trans.next')?></a></li>
-										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> >> <?php //echo trans('trans.next')?></a></li>
+										<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"> </i></a></li>
+										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> <i class="fa fa-angle-double-right"> </i></a></li>
 										<li class="page_free_input">
 											<a href="javascript:;">
 											<form class="form-inline" id="paggingForm" onsubmit="return false">
