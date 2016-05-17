@@ -130,15 +130,20 @@
 								@if($a!=0)
 								<div id="play_{{$a + 1}}"></div>
 								@endif
-								<div class="arabic arabic_{{$a}}"> 
-									<span class="no_ayat_arabic"> {{ arabicNum($ayat->ayat) }}</span> 
+								<div class="arabic arabic_{{$a}}">
+									
 									<span class="content_ayat">
-									<?php $arr_ayats = (explode(' ', $ayat->text));$per=0?>
-									@foreach($arr_ayats as $per_ayat)
-										<?php $per++;?>
-										<span class="per_words_<?php echo $per?>">{{$per_ayat}}</span>
-									@endforeach
+										<?php $arr_ayats = (explode(' ', $ayat->text));$per=0?>
+										@foreach($arr_ayats as $per_ayat)
+											<?php $per++;?>
+											<span class="ayat_arabic per_words_<?php echo $per?>">{{$per_ayat}}</span>
+										@endforeach
+										<span class="no_ayat_arabic">
+											<img src="{{url('assets/images/frame-ayat.png')}}">
+											<span>{{arabicNum($ayat->ayat)}}</span> 
+										</span>
 									</span> 
+
 								</div>
 								<div class="trans trans_{{$a}}"> 
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
