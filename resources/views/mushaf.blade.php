@@ -103,7 +103,7 @@ $prev_surah = '';
 							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
 								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
 							</button>
-							<a href="javascript:;" data-toggle="modal" data-target="#QuranModal"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs">Juz</span></a>
+							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs">Juz</span></a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
