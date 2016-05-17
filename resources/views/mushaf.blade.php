@@ -103,7 +103,7 @@ $prev_surah = '';
 							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
 								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
 							</button>
-							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs">Juz</span></a>
+							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -245,6 +245,7 @@ $prev_surah = '';
 		var jQuerywindow = jQuery(window);
 		resizeDiv();
 
+
 		$('.dropdown-menu').on('click', function(event) {
 		    event.stopPropagation();
 		});
@@ -306,35 +307,5 @@ $prev_surah = '';
 		QuranJS.generateTransHeight('!important');
 
 	});
-
-	
-	function showMushaf(mushaf){
-
-		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
-		jQuery('.mushaf').removeClass('mushaf_arabic');
-		jQuery('.mushaf').removeClass('mushaf_trans');
-
-		if(mushaf=='mushaf_arabic_trans'){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
-		}else if(mushaf=='mushaf_arabic'){
-			jQuery('.trans').addClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').addClass('go');
-			
-		}else if(mushaf=='mushaf_trans'){
-			jQuery('.trans').removeClass('puff').addClass('go');
-			jQuery('.arabic').removeClass('go').addClass('puff');
-		}
-
-		jQuery('.mushaf_layout').val(mushaf);
-		jQuery('.mushaf').addClass(mushaf);
-		jQuery('.mushaf_display a').removeClass('active');
-		jQuery('.'+mushaf).addClass('active');
-
-	}
-
 	</script>
-	
-	
-
 @endsection
