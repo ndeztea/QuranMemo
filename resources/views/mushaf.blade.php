@@ -243,6 +243,20 @@ $prev_surah = '';
 
 	$(document).ready(function () {
 		var jQuerywindow = jQuery(window);
+		
+		// apply setting mushaf
+		@if(isset($cookies['coo_mushaf_layout']))
+			QuranJS.showMushaf('{{$cookies['coo_mushaf_layout']}}');
+		@endif
+
+		@if(isset($cookies['coo_footer_action']))
+			QuranJS.showMushafAction('{{$cookies['coo_footer_action']}}');
+		@endif
+
+		@if(isset($cookies['coo_automated_play']))
+			QuranJS.autoPlay('{{$cookies['coo_automated_play']}}');
+		@endif
+
 		resizeDiv();
 
 
@@ -265,12 +279,12 @@ $prev_surah = '';
 			vph = $(window).height();
 
 			if (vpw <= 767) {
-					$('#surah-collapse').removeClass('in');
-					
-				}
-				else {
-					$('#surah-collapse').addClass('in');
-				}
+				$('#surah-collapse').removeClass('in');
+				
+			}
+			else {
+				$('#surah-collapse').addClass('in');
+			}
 		}
 		//show & hide search setting
 		//Cache reference to window and animation items

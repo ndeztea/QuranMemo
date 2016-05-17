@@ -170,7 +170,7 @@ var QuranJS = {
 
 	showMushafAction : function(show) {
 		$('.footer_action').val(show);
-		if(show==true){
+		if(show=='true'){
 			$('.action-footer').show();
 		}else{
 			$('.action-footer').hide();
@@ -205,7 +205,7 @@ var QuranJS = {
 	autoPlay : function (val){
 		$('.automated_play').val(val);
 		document.cookie = 'coo_automated_play='+val+';';
-	}
+	},
 
 } 
 
