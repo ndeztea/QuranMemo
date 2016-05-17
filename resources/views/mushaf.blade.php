@@ -138,7 +138,7 @@ $prev_surah = '';
 									<div class="header_juz">Juz {{$ayats[0]->juz}}</div>
 								@endif
 								<div class="header_page">{{$curr_page}}</div>
-								<div class="nav_right"><a  onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"></i> prev </a> </div>
+								<div class="nav_right"><a  onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"></i> next </a> </div>
 							@endif
 							</div>
 
@@ -167,7 +167,7 @@ $prev_surah = '';
 								<div id="play_{{$a + 1}}"></div>
 								<div id="surah_{{$ayat->surah}}_{{$ayat->ayat}}"></div>
 								<?php endif?>
-								<div class="{{$ayat->juz!=0?'juz_head ':''}}arabic arabic_{{$a}}"> 
+								<div class="{{$ayat->juz_header!=0?'juz_head ':''}}arabic arabic_{{$a}}"> 
 									
 									<span class="content_ayat" > 
 										<span class="ayat_arabic">
