@@ -170,12 +170,42 @@ var QuranJS = {
 
 	showMushafAction : function(show) {
 		$('.footer_action').val(show);
-		if(show==true){
+		if(show=='true'){
 			$('.action-footer').show();
 		}else{
 			$('.action-footer').hide();
 		}
-	}
+		document.cookie = 'coo_footer_action='+show+';';
+	},
+	showMushaf : function (mushaf){
+
+		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
+		jQuery('.mushaf').removeClass('mushaf_arabic');
+		jQuery('.mushaf').removeClass('mushaf_trans');
+
+		if(mushaf=='mushaf_arabic_trans'){
+			jQuery('.trans').removeClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').removeClass('go');
+		}else if(mushaf=='mushaf_arabic'){
+			jQuery('.trans').addClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').addClass('go');
+			
+		}else if(mushaf=='mushaf_trans'){
+			jQuery('.trans').removeClass('puff').addClass('go');
+			jQuery('.arabic').removeClass('go').addClass('puff');
+		}
+
+		jQuery('.mushaf_layout').val(mushaf);
+		jQuery('.mushaf').addClass(mushaf);
+		jQuery('.mushaf_display a').removeClass('active');
+		jQuery('.'+mushaf).addClass('active');
+		document.cookie = 'coo_mushaf_layout='+mushaf+';';
+	},
+
+	autoPlay : function (val){
+		$('.automated_play').val(val);
+		document.cookie = 'coo_automated_play='+val+';';
+	},
 
 } 
 

@@ -5,9 +5,9 @@
 		<input type="radio" name="sc-1-1" id="sc-1-1-2" {{$mushaf_layout=='mushaf_arabic'?'checked':''}}>
 		<input type="radio" name="sc-1-1" id="sc-1-1-3" {{$mushaf_layout=='mushaf_trans'?'checked':''}}>
 
-		<label for="sc-1-1-1" data-value="AT" onclick="showMushaf('mushaf_arabic_trans')">AT</label>
-		<label for="sc-1-1-2" data-value="Arabic" onclick="showMushaf('mushaf_arabic')">Arabic</label>
-		<label for="sc-1-1-3" data-value="Terjemahan" onclick="showMushaf('mushaf_trans')">Terjemahan</label>
+		<label for="sc-1-1-1" data-value="AT" onclick="QuranJS.showMushaf('mushaf_arabic_trans')">AT</label>
+		<label for="sc-1-1-2" data-value="Arabic" onclick="QuranJS.showMushaf('mushaf_arabic')">Arabic</label>
+		<label for="sc-1-1-3" data-value="Terjemahan" onclick="QuranJS.showMushaf('mushaf_trans')">Terjemahan</label>
 	</div>
  </div>
 
@@ -28,7 +28,7 @@
 		<input type="radio" name="sc-1-2" id="sc-1-1-4" {{$automated_play=='true'?'checked':''}}>
 		<input type="radio" name="sc-1-2" id="sc-1-1-5" {{$automated_play=='false'?'checked':''}}>
 
-		<label for="sc-1-1-4" data-value="Ya" onclick="$('.automated_play').val('true')">Ya</label>
-		<label for="sc-1-1-5" data-value="Tidak" onclick="$('.automated_play').val('false')">Tidak</label>
+		<label for="sc-1-1-4" data-value="Ya" onclick="QuranJS.autoPlay('true')">Ya</label>
+		<label for="sc-1-1-5" data-value="Tidak" onclick="QuranJS.autoPlay('false')">Tidak</label>
 	</div>
 </div>

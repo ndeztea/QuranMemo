@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Quran;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use File;
@@ -51,10 +52,8 @@ class MushafController extends Controller
         $data['header_title'] = 'Mushaf Halaman '. $page;
         $data['body_class'] = 'body-mushaf';
 
-        // select juz
-        //$data['current_juz'] = $QuranModel->getCurrentJuz($page);
+        $data['cookies'] = getCookie();
 
-        //print_r($pages);
         // show view template
        return view('mushaf',$data);
     }
@@ -88,6 +87,8 @@ class MushafController extends Controller
         $data['id_surah'] = $id_surah;
         $data['ayat'] = $ayat;
         $data['curr_page'] = $ayats[0]->page;
+
+        $data['cookies'] = getCookie();
 
         // data header
         $data['header_title'] = 'Surah '. $surah[0]->surah_name.' : '.$ayat;

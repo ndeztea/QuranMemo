@@ -96,7 +96,7 @@ $prev_surah = '';
 							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
 								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
 							</button>
-							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs">Juz</span></a>
+							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -238,6 +238,7 @@ $prev_surah = '';
 
 	$(document).ready(function () {
 		var jQuerywindow = jQuery(window);
+		
 		resizeDiv();
 
 		$('.dropdown-menu').on('click', function(event) {
@@ -259,12 +260,12 @@ $prev_surah = '';
 			vph = $(window).height();
 
 			if (vpw <= 767) {
-					$('#surah-collapse').removeClass('in');
-					
-				}
-				else {
-					$('#surah-collapse').addClass('in');
-				}
+				$('#surah-collapse').removeClass('in');
+				
+			}
+			else {
+				$('#surah-collapse').addClass('in');
+			}
 		}
 		//show & hide search setting
 		//Cache reference to window and animation items
@@ -300,36 +301,19 @@ $prev_surah = '';
 		QuranJS.generateArHeight('!important');
 		QuranJS.generateTransHeight('!important');
 
+		// apply setting mushaf
+		@if(isset($cookies['coo_mushaf_layout']))
+			QuranJS.showMushaf('{{$cookies['coo_mushaf_layout']}}');
+		@endif
+
+		@if(isset($cookies['coo_footer_action']))
+			QuranJS.showMushafAction('{{$cookies['coo_footer_action']}}');
+		@endif
+
+		@if(isset($cookies['coo_automated_play']))
+			QuranJS.autoPlay('{{$cookies['coo_automated_play']}}');
+		@endif
+
 	});
-
-	
-	function showMushaf(mushaf){
-
-		jQuery('.mushaf').removeClass('mushaf_arabic_trans');
-		jQuery('.mushaf').removeClass('mushaf_arabic');
-		jQuery('.mushaf').removeClass('mushaf_trans');
-
-		if(mushaf=='mushaf_arabic_trans'){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
-		}else if(mushaf=='mushaf_arabic'){
-			jQuery('.trans').addClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').addClass('go');
-			
-		}else if(mushaf=='mushaf_trans'){
-			jQuery('.trans').removeClass('puff').addClass('go');
-			jQuery('.arabic').removeClass('go').addClass('puff');
-		}
-
-		jQuery('.mushaf_layout').val(mushaf);
-		jQuery('.mushaf').addClass(mushaf);
-		jQuery('.mushaf_display a').removeClass('active');
-		jQuery('.'+mushaf).addClass('active');
-
-	}
-
 	</script>
-	
-	
-
 @endsection

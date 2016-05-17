@@ -7,3 +7,11 @@ function arabicNum($str){
 
 	return $str;
 }
+
+function getCookie(){
+	$return['coo_footer_action'] = @$_COOKIE['coo_footer_action'];
+	$return['coo_mushaf_layout'] = @$_COOKIE['coo_mushaf_layout'];
+	$return['coo_automated_play'] = @$_COOKIE['coo_automated_play'];
+
+	return $return;
+}
