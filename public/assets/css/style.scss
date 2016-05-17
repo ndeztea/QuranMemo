@@ -292,7 +292,7 @@ a:focus{
 			margin: 0 5px 0 0;
 
 			.form-control.search_ayat{
-				width: 106px;
+				width: 75px;
 
 				@include media(">=phone", "<=767px") {
 		          	width: 100%;
@@ -558,23 +558,47 @@ a:focus{
 	          	width: 100%;
 	      	}
 
-			.page-title h2{
-				margin: 0 0 20px;
-				color: #fff;
+			.page-title {
+				position: relative;
+				
+				h2{
+					margin: 0 0 20px;
+					color: #fff;
 
-				@include media("<tablet",">=phone") {
-		          	text-align: center;
-		          	float: none !important;
-		          	width: 100%;
-		          	margin: 0 !important;
-		      	}
+					@include media("<tablet",">=480") {
+			          	text-align: center;
+			          	float: none !important;
+			          	width: 100%;
+			          	margin: 0 !important;
+			      	}
+
+			      	@include media("<479",">=phone") {
+			          	text-align: left;
+			      	}
+				}
+
+				.gp-link{
+					margin-top:-7px;
+
+					@include media("<tablet",">=phone") {
+			          	position: absolute;
+			          	top:-5px;
+			          	right: 5px;
+			          	float: none !important;
+			          	width: auto;
+			      	}
+
+
+				}	
+
+				
 
 			}
 
 			.nav-top{
 				.collapse{
 					@include media(">=880px") {
-			          	width: 80%;
+			          	width: 60%;
 			          	float: left;
 			      	}
 				}
@@ -819,10 +843,11 @@ body.body-memo{
 }
 
 .quran_player{
-	width: 100%;
-	position: fixed;
-	bottom:0;
-	left: 0;
+	width: 315px;
+	height: 50px;
+	// position: fixed;
+	// bottom:0;
+	// left: 0;
 	background: transparent;
 	z-index:99;
 
@@ -830,9 +855,18 @@ body.body-memo{
 		width: 320px;
 		background:transparent;
 		margin: 0 auto;
+
+		.jp-progress{
+			height: 3px;
+			background-color: rgba(191,225,178,0.82) !important;
+		}
 	}
 
-	.jp-controls-holder{width:320px !important;}
+	.jp-controls-holder{
+		width:320px !important;
+		top: -12px;
+    	left: -45px;
+    }
 
 	.jp-audio, 
 	.jp-audio-stream, 
@@ -841,9 +875,15 @@ body.body-memo{
 	}
 
 	.jp-interface{
-		border-top:1px solid $main-color !important;
-		border-left:1px solid $main-color !important;
-		border-right:1px solid $main-color !important;
+		// border-top:1px solid $main-color !important;
+		// border-left:1px solid $main-color !important;
+		// border-right:1px solid $main-color !important;
+		border:none !important;
+		background-color: transparent;
+	}
+
+	.jp-play-bar{
+		background: #fff !important;
 	}
 }
 

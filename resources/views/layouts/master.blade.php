@@ -139,6 +139,8 @@
                         <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}"><a href="{{url('mushaf')}}">{{trans('trans.mushaf')}}</a></li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
+                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
                     </ul>
                     <div class="navbar-nav navbar-right">
                         <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
@@ -149,6 +151,9 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    <div class="navbar-nav navbar-right">
+                        @include('players')
                     </div>
 
                 </div><!-- /.navbar-collapse -->
@@ -162,11 +167,9 @@
         <div class="footer">
             <ul>
                 <li><span>Copyright &copy; 2016</span></li>
-                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang QuranMemo</a></li>
-                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
             </ul>
             @if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-            <a target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+            
             @endif
             <br><br>
         </div>

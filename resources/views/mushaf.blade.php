@@ -7,7 +7,7 @@
 $prev_surah = ''; 
 ?>
 @section('content')
-	@include('players')
+	
 	
 	@include('errors.errors_message')
 
@@ -20,7 +20,7 @@ $prev_surah = '';
 				<div class="single-column">
 					<div class="page-title">
 						<h2 class="pull-left">Mushaf</h2>
-						
+						<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
 				
 						@if(empty($selected_surah))
 							<!--div class="surah-action pull-right">
@@ -44,10 +44,6 @@ $prev_surah = '';
 										<div class="select-surah">
 
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
-												
-												
-												
-
 												
 													<div class="form-group">
 														<select class="selectpicker form-control" name="surah">
@@ -79,8 +75,6 @@ $prev_surah = '';
 													</div> -->
 													<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
 												
-												
-												
 											</form>
 
 										</div>
@@ -91,7 +85,6 @@ $prev_surah = '';
 									</div>
 									<div class="memoz_options">
 										<div class="btn-group">
-										  
 										  <input type="hidden" name="mushaf_layout" class="mushaf_layout" value="mushaf_arabic_trans"/>
 										  <input type="hidden" name="automated_play" class="automated_play" value="true"/>
 										  <input type="hidden" name="footer_action" class="footer_action" value="true"/>
@@ -133,12 +126,14 @@ $prev_surah = '';
 							<?php  $a=0;?>
 							<div class="mushaf_header">
 							@if(!isset($selected_surah))
-								<div class="nav_left"> <a  onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"><i class="fa fa-angle-left"></i> prev </a> </div>
-								@if($ayats[0]->juz!=0)
-									<div class="header_juz">Juz {{$ayats[0]->juz}}</div>
-								@endif
-								<div class="header_page">{{$curr_page}}</div>
-								<div class="nav_right"><a  onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"></i> next </a> </div>
+								<div class="input-group" role="group" aria-label="...">
+									<a class="btn btn-default input-group" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"><i class="fa fa-angle-left"></i> prev </a>
+								  	@if($ayats[0]->juz!=0)
+										<span class="input-group-addon" class="header_juz">Juz {{$ayats[0]->juz}}</span>
+									@endif
+									<span class="input-group-addon" class="header_page">{{$curr_page}}</span>
+									<a class="btn btn-default input-group" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"> next <i class="fa fa-angle-right"></i></a>
+								</div>
 							@endif
 							</div>
 
