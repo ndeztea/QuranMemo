@@ -60,7 +60,6 @@
 				@if(!empty($ayats))
 
 				<div class="memoz_options">
-					@include('players')
 
 					<div class="btn-group">
 					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-green-small-darker">
@@ -142,9 +141,9 @@
 										<?php $arr_ayats = (explode(' ', $ayat->text));$per=0?>
 										@foreach($arr_ayats as $per_ayat)
 											<?php $per++;?>
-											<span class="ayat_arabic per_words_<?php echo $per?>">{{$per_ayat}}</span>
+											<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>">{{$per_ayat}}</span>
 										@endforeach
-										<span class="no_ayat_arabic">
+										<span class="no_ayat_arabic_memoz">
 											<img src="{{url('assets/images/frame-ayat.png')}}">
 											<span>{{arabicNum($ayat->ayat)}}</span> 
 										</span>

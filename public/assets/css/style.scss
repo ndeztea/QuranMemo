@@ -757,8 +757,36 @@ body.body-memo{
 			    }
 	        }
 
+	        .no_ayat_arabic_memoz{
+	        	display: inline-block !important;
+	        	text-align: center;
+	        	// background: url(../images/frame-ayat.png) no-repeat center center;
+		        width: 37px;
+		        height: 46px;
+		        font-size: 14px; 
+		        letter-spacing:-2;
+		        position: relative;
+		        margin-right: 10px;
+
+		        img{
+		        	position: absolute;
+		        	top:5px;
+		        	left:2px;
+		        }
+
+			    &.visible-xs{
+			    	display: inline-block;
+			    }
+	        }
+
 	        .ayat_arabic{
 	        	padding-left:20px;
+	        }
+	        .ayat_arabic_memoz{
+	        	padding-left: 0;
+	        }
+	        .ayat_arabic_memoz:last-child{
+	        	padding-left: 10px;
 	        }
 		}
 
