@@ -334,16 +334,22 @@ ul.juz-list{
   margin: 1px auto !important;
 }
 .arabic.juz_head{
-	background-color:rgba(77, 181, 120, 0.28) !important;
-	border-bottom: 2px dashed rgba(57, 144, 94, 0.31);
+  background-color:rgba(77, 181, 120, 0.28) !important;
+  border-bottom: 2px dashed rgba(57, 144, 94, 0.31);
 }
 
 .juz-indo-head{
-	color: #aaa;
+  color: #aaa;
 }
 .juz_head{
-	text-align: center;
+  text-align: center;
     background-color: #9FCFB3;
 }
 
 .pagination .fa{padding: 3px;}
+
+.blur-ayat,.blur-ayat .highlight-red {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+

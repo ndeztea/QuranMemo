@@ -53,7 +53,7 @@
 				<div class="select-surah pull-left">
 					<a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa-plus"></i> Hafalan baru</a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
-					<a class="btn btn-green-small" href="javascript:;" onclick="showInfo();$('.info').html('Lanjutkan menghafal')"><i class="fa fa-info"></i> Info</a>
+					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal')"><i class="fa fa-info"></i> Info</a>
 				</div>
 				@endif
 
@@ -84,11 +84,11 @@
 						<div class="mushaf mushaf-hafalan">
 							<div class="step-wrap">
 								<div class="steps clearfix btn-group btn-breadcrumb" role="group" aria-label="steps">
-									<a href="javascript:void(0)" onclick="steps('1')" class="btn btn-default steps_1 selected"># 1</a>
-									<a href="javascript:void(0)" onclick="steps('2')" class="btn btn-default steps_2"># 2</a>
-									<a href="javascript:void(0)" onclick="steps('3')" class="btn btn-default steps_3"># 3</a>
-									<a href="javascript:void(0)" onclick="steps('4')" class="btn btn-default steps_4"># 4</a>
-									<a href="javascript:void(0)" onclick="steps('5')" class="btn btn-default steps_5"># TEST</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('1')" class="btn btn-default steps_1 selected"># 1</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('2')" class="btn btn-default steps_2"># 2</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('3')" class="btn btn-default steps_3"># 3</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4')" class="btn btn-default steps_4"># 4</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5')" class="btn btn-default steps_5"># TEST</a>
 								</div>
 							</div>
 							<!-- /step-wrap -->
@@ -104,6 +104,13 @@
 								</div>
 							</div>
 							<?php  $a=0; ?>
+							<div class="memoz_nav" style="display: none">
+								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('start')">Awal</a>
+								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('middle')">Tengah</a>
+								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('end')">Akhir</a>
+								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('random')">Acak</a>
+							</div>
+
 							@foreach($ayats as $ayat)
 							@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
 							<a name="head_surah_{{$ayat->surah}}"></a>
@@ -124,14 +131,7 @@
 							<!-- /ayat-section -->
 							<?php $a++; ?>
 							@endif
-							<div class="memoz_nav" style="display: none">
-								<a href="javascript:;" class="btn" onclick="hiddenAyat('start')">Awal</a>
-								<a href="javascript:;" class="btn" onclick="hiddenAyat('middle')">Tengah</a>
-								<a href="javascript:;" class="btn" onclick="hiddenAyat('end')">Akhir</a>
-								<a href="javascript:;" class="btn" onclick="hiddenAyat('random')">Acak</a>
-							</div>
-
-							<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
+														<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
 								@if($a!=0)
 								<div id="play_{{$a + 1}}"></div>
 								@endif
@@ -210,7 +210,7 @@ $(document).ready(function(){
 	QuranJS.fillAyatEnd();
 
 	<?php if(!empty($ayats)):?>
-	showInfo();
+	QuranJS.showInfoMemoz();
 	<?php endif?>
 
 	$(document).ready(function () {
@@ -286,60 +286,8 @@ $(document).ready(function(){
 
 		jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
 
+		QuranJS.totalAyatSpaces = {{$per}};
 	});
-
-
-	function showInfo(){
-		$('#QuranModal').modal('show');
-		$('.modal-title').html('Panduan menghafal');
-		$('.modal-body').html('<p>Dalam proses hafalan terdapat 5 tahapan, yaitu: </p><br><ul><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti. Proses ini jangan terlalu lama dan lanjut ke tahap selanjutnya</li><li>Menghafal target hafalan arabic dan terjemahanya, perhatikan terjemahan dari setiap kata arabic-nya</li><li>Menghafal target hafalan arabic nya saja, perhatikan tajwid nya dan tata letak hurufnya, dan bayangkan setiap gambaran hurufnya</li><li>Menghafal target hafalan terjemahanya, dalam tahap ini antum harus setidaknya hafal banyak arabic-nya, dan kuat kan hafalan dengan terjemahannya</li><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti, ulangi sampai berulang-ulang sampai hafal, dan yang perhatikan makhrajul huruf-nya</li></ul><br><p>Jangan lupa untuk berdo\'a kepada Allah Ta\'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><p>Kunci untuk mengafal adalah <strong>ulangi dan terus ulangi</strong> membaca dan mendengarkan muratal. <div class="center"><button  data-dismiss="modal" class="btn btn-green info">Bismillah mulai menghafal</button></div>');
-		$('.modal-footer').hide();
-	}
-
-	function  steps(steps){
-		if(steps==1){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya (sekilas dan  cepat)');
-			jQuery('.jp-stop').click();
-			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed,.memoz_nav').hide();
-			jQuery('*','.mushaf').removeClass('playing');
-		}else if(steps==2){
-			jQuery('.trans').addClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').addClass('go');
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic');
-			jQuery('.jp-stop').click();
-			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed,.memoz_nav').hide();
-			jQuery('*','.mushaf').removeClass('playing');
-		}else if(steps==3){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti, ulangi sampai hafal');
-			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player').show();
-			jQuery('.memoz_nav').hide();
-			jQuery('.memozed').show();
-			jQuery('*','.mushaf').removeClass('playing');
-		}else if(steps==4){
-			jQuery('.trans').removeClass('puff').addClass('go');
-			jQuery('.arabic').removeClass('go').addClass('puff');
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Fokuskan hafalan terjemahannya saja');
-			jQuery('.jp-stop').click();
-			jQuery('.memoz_nav').hide();
-			//jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
-		}else if(steps==5){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> TEST...!! Bacakan setiap kata yang di hilangkan.');
-			jQuery('.jp-stop').click();
-			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').show();
-			jQuery('.memoz_nav').show();
-			jQuery('*','.mushaf').removeClass('playing');
-
-		}
-
-		jQuery('.steps a').removeClass('selected');
-		jQuery('.steps_'+steps).addClass('selected');
-	}
 
 </script>
 

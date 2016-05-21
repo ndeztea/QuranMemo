@@ -207,5 +207,57 @@ var QuranJS = {
 		document.cookie = 'coo_automated_play='+val+';';
 	},
 
+	showInfoMemoz : function (){
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Panduan menghafal');
+		$('.modal-body').html('<p>Dalam proses hafalan terdapat 5 tahapan, yaitu: </p><br><ul><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti. Proses ini jangan terlalu lama dan lanjut ke tahap selanjutnya</li><li>Menghafal target hafalan arabic dan terjemahanya, perhatikan terjemahan dari setiap kata arabic-nya</li><li>Menghafal target hafalan arabic nya saja, perhatikan tajwid nya dan tata letak hurufnya, dan bayangkan setiap gambaran hurufnya</li><li>Menghafal target hafalan terjemahanya, dalam tahap ini antum harus setidaknya hafal banyak arabic-nya, dan kuat kan hafalan dengan terjemahannya</li><li>Menghafal target hafalan arabic dan terjemahannya, jalankan dan dengarkan qori dengan teliti, ulangi sampai berulang-ulang sampai hafal, dan yang perhatikan makhrajul huruf-nya</li></ul><br><p>Jangan lupa untuk berdo\'a kepada Allah Ta\'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><p>Kunci untuk mengafal adalah <strong>ulangi dan terus ulangi</strong> membaca dan mendengarkan muratal. <div class="center"><button  data-dismiss="modal" class="btn btn-green info">Bismillah mulai menghafal</button></div>');
+		$('.modal-footer').hide();
+	},
+
+	stepMemoz : function(steps){
+		if(steps==1){
+			jQuery('.trans').removeClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').removeClass('go');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya (sekilas dan  cepat)');
+			jQuery('.jp-stop').click();
+			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed,.memoz_nav').hide();
+			jQuery('*','.mushaf').removeClass('playing');
+		}else if(steps==2){
+			jQuery('.trans').addClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').addClass('go');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic');
+			jQuery('.jp-stop').click();
+			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed,.memoz_nav').hide();
+			jQuery('*','.mushaf').removeClass('playing');
+		}else if(steps==3){
+			jQuery('.trans').removeClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').removeClass('go');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya,  jalankan dan dengarkan qori dengan teliti, ulangi sampai hafal');
+			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player').show();
+			jQuery('.memoz_nav').hide();
+			jQuery('.memozed').show();
+			jQuery('*','.mushaf').removeClass('playing');
+		}else if(steps==4){
+			jQuery('.trans').removeClass('puff').addClass('go');
+			jQuery('.arabic').removeClass('go').addClass('puff');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Fokuskan hafalan terjemahannya saja');
+			jQuery('.jp-stop').click();
+			jQuery('.memoz_nav').hide();
+			//jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
+		}else if(steps==5){
+			jQuery('.trans').removeClass('puff').removeClass('go');
+			jQuery('.arabic').removeClass('puff').removeClass('go');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> TEST...!! Bacakan setiap kata yang di hilangkan.');
+			jQuery('.jp-stop').click();
+			jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').show();
+			jQuery('.memoz_nav').show();
+			jQuery('*','.mushaf').removeClass('playing');
+
+		}
+
+		jQuery('.steps a').removeClass('selected');
+		jQuery('.steps_'+steps).addClass('selected');
+	}
+
 } 
 

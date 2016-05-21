@@ -347,3 +347,8 @@ ul.juz-list{
 }
 
 .pagination .fa{padding: 3px;}
+
+.blur-ayat {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
