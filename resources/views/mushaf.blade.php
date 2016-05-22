@@ -287,16 +287,16 @@ $prev_surah = '';
 				}
 		});
 
-		$('.quran_player').hide();
+		// $('.quran_player').hide();
 
-		$('.openThis').hide();
-		$('.btn-toggle-player').click(function() {
-		    $('.quran_player').slideToggle( function() {
-		    	$('.openThis').show();
+		// $('.openThis').hide();
+		// $('.btn-toggle-player').click(function() {
+		//     $('.quran_player').slideToggle( function() {
+		//     	$('.openThis').show();
 					
-			});
-		    return false;
-		});
+		// 	});
+		//     return false;
+		// });
 
 		QuranJS.generateArHeight('!important');
 		QuranJS.generateTransHeight('!important');

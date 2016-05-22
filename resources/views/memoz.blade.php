@@ -221,21 +221,13 @@ $(document).ready(function(){
 			$('.quran_player').hide();
 
 			//show & hide search setting
-			$('.openThis').hide();
-			$('.btn-toggle-player').click(function() {
-			    $('.quran_player').slideToggle( function() {
-			    	$('.openThis').show();						
-				});
-			    return false;
-			});
-
-			// show & hide player
-			if($('#QuranModal .modal-dialog .modal-content .modal-body').hasClass('login_form')){
-				$('#QuranModal').addClass('login-mode');
-				console.log('found');
-			}else{
-				console.log('notfound');
-			}
+			// $('.openThis').hide();
+			// $('.btn-toggle-player').click(function() {
+			//     $('.quran_player').slideToggle( function() {
+			//     	$('.openThis').show();						
+			// 	});
+			//     return false;
+			// });
 
 			$('.dropdown-menu').on('click', function(event) {
 			    event.stopPropagation();

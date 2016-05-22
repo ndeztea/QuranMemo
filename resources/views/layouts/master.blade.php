@@ -105,9 +105,9 @@
            <!-- This is the master sidebar. -->
         @show
 
-        <div class="toggle-player">
+       <!--  <div class="toggle-player">
             <a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-toggle-player" data-toggle="tooltip" data-placement="top" title="Show / Hide Player"><i class="fa fa-play-circle"></i></a>
-        </div>
+        </div> -->
         <!-- /toggle-player -->
         
         <div id="main-nav">
@@ -124,7 +124,7 @@
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#qm-navbar-collapse" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -134,7 +134,7 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse" id="qm-navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}"><a href="{{url('mushaf')}}">{{trans('trans.mushaf')}}</a></li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->

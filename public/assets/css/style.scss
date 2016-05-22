@@ -565,14 +565,14 @@ a:focus{
 					margin: 0 0 20px;
 					color: #fff;
 
-					@include media("<tablet",">=480") {
+					@include media("<tablet",">=480px") {
 			          	text-align: center;
 			          	float: none !important;
 			          	width: 100%;
 			          	margin: 0 !important;
 			      	}
 
-			      	@include media("<479",">=phone") {
+			      	@include media("<479px",">=phone") {
 			          	text-align: left;
 			      	}
 				}
@@ -879,6 +879,14 @@ body.body-memo{
 	background: transparent;
 	z-index:99;
 
+	@include media("<=380px", ">=phone") {
+		width: 285px;
+	}
+
+	@include media("<tablet", ">=381px") {
+		width: 100%;
+	}
+
 	.jp-video{
 		width: 320px;
 		background:transparent;
@@ -894,6 +902,12 @@ body.body-memo{
 		width:320px !important;
 		top: -12px;
     	left: -45px;
+
+    	@include media("<=380px", ">=phone") {
+			width: 285px !important;
+			top:-12px;
+			left: 0;
+		}
     }
 
 	.jp-audio, 

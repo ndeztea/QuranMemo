@@ -251,7 +251,7 @@ $(document).ready(function(){
 	<?php $a++;endforeach?>
 });
 </script>
-<div class="quran_player animated fadeInUp">
+<div class="quran_player">
 	<div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
 		<div class="jp-type-playlist">
 			<div id="muratalPlaylist" class="jp-jplayer"></div>
