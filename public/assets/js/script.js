@@ -1,5 +1,6 @@
 var QuranJS = {
 	siteUrl : '',
+	totalAyatSpaces : [''],
 	loadingText : ['"Hai orang-orang yang beriman. Bersabarlah kamu, dan kuatkanlah kesabaranmu dan tetaplah bersiaga-siaga (diperbatasan negrimu) dan bertaqwalah kepada Allah supaya kamu beruntung." (Ali-Imran 200).','"Tetapi orang yang bersabar dan memaafkan sesungguhnya (perbuatan) yang demikian itu termasuk hal-hal yang diutamakan" (Asy-Syuura 43)','"Sesengguhnya kesabaran itu hanyalah pada pukulan yang pertama dari bala" (Hadist Muttafaq\'alaih)'],
 
 	modalLoading : function(){
@@ -257,6 +258,80 @@ var QuranJS = {
 
 		jQuery('.steps a').removeClass('selected');
 		jQuery('.steps_'+steps).addClass('selected');
+	},
+
+	showAyat : function (show){
+		jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
+
+		a=1;
+		for(o=0;o<=this.totalAyatSpaces.length;o++){
+			if(show=='start'){
+				min = this.totalAyatSpaces[o]>=10?3:2;
+				for(b=min;b<=this.totalAyatSpaces[o];b++){
+					jQuery('.arabic_'+o+' .per_words_'+b).addClass('blur-ayat');
+				}
+			}else if(show=='end'){
+				max = this.totalAyatSpaces[o]>=10?this.totalAyatSpaces[o] - 1:this.totalAyatSpaces[o];
+				console.log(max);
+				for(b=1;b<=this.totalAyatSpaces[o];b++){
+					if(b<max){
+						jQuery('.arabic_'+o+' .per_words_'+b).addClass('blur-ayat');
+					}
+				}
+			}else if(show=='mix'){
+				min = this.totalAyatSpaces[o]>=10?3:2;
+				max = this.totalAyatSpaces[o]>=10?this.totalAyatSpaces[o] - 1:this.totalAyatSpaces[o];
+				for(b=min;b<=this.totalAyatSpaces[o];b++){
+					if(b<max){
+						jQuery('.arabic_'+o+' .per_words_'+b).addClass('blur-ayat');
+					}
+				}
+			}else if(show=='middle'){
+				min = this.totalAyatSpaces[o]>=10?4:2;
+				max = this.totalAyatSpaces[o]>=10?this.totalAyatSpaces[o] - 3:this.totalAyatSpaces[o];
+				for(b=1;b<=this.totalAyatSpaces[o];b++){
+					if(b<=min){
+						jQuery('.arabic_'+o+' .per_words_'+b).addClass('blur-ayat');
+					}
+					if(b>=max){
+						jQuery('.arabic_'+o+' .per_words_'+b).addClass('blur-ayat');
+					}
+				}
+			}else if(show=='random'){
+				for(b=1;b<=this.totalAyatSpaces[o];b++){
+					if(b%2==0){
+						jQuery('.arabic_'+o+' .per_words_'+b).addClass('blur-ayat');
+					}
+				}
+			}
+			
+
+		}
+
+		/*if(show=='start'){
+			for(a=2;a<=this.totalAyatSpaces;a++){
+				jQuery('.per_words_'+a).addClass('blur-ayat');
+			}
+		}
+		else if(show=='end'){
+			for(a=1;a<=this.totalAyatSpaces;a++){
+				if(a!=this.totalAyatSpaces)
+					jQuery('.per_words_'+a).addClass('blur-ayat');
+			}
+		}else if(show=='middle'){
+			for(a=1;a<=this.totalAyatSpaces;a++){
+				if(a==this.totalAyatSpaces || a==1)
+					jQuery('.per_words_'+a).addClass('blur-ayat');
+
+			}
+		}
+		else if(show=='mix'){
+			for(a=1;a<=this.totalAyatSpaces;a++){
+				if(a!=this.totalAyatSpaces || a!=1)
+					jQuery('.per_words_'+a).addClass('blur-ayat');
+
+			}
+		}*/
 	}
 
 } 

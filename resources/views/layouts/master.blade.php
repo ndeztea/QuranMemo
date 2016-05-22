@@ -152,9 +152,11 @@
                             </div>
                         </form>
                     </div>
+                    @if(!empty($ayats))
                     <div class="navbar-nav navbar-right">
                         @include('players')
                     </div>
+                    @endif
 
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

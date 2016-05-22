@@ -2,7 +2,7 @@
 
 @section('title', 'Menghafal Al-Quran')
 
-<?php $prev_surah = '';  ?>
+<?php $prev_surah = $tempCountSpaces = $countSpaces = '';  ?>
 @section('content')
 @include('errors.errors_message')
 <div class="main-content-wrap">
@@ -108,6 +108,7 @@
 								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('start')">Awal</a>
 								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('middle')">Tengah</a>
 								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('end')">Akhir</a>
+								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('mix')">Awal+Akhir</a>
 								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('random')">Acak</a>
 							</div>
 
@@ -124,12 +125,11 @@
 								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 								</div>
 								@else 
-								<?php $a--; ?>
+								<?php $a++; ?>
 								@endif
 								<div class="clearfix"></div>
 							</div>
 							<!-- /ayat-section -->
-							<?php $a++; ?>
 							@endif
 														<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
 								@if($a!=0)
@@ -138,7 +138,12 @@
 								<div class="arabic arabic_{{$a}}">
 									
 									<span class="content_ayat">
-										<?php $arr_ayats = (explode(' ', $ayat->text));$per=0?>
+										<?php $arr_ayats = (explode(' ', trim($ayat->text)));$per=0;
+										$countSpaces = count($arr_ayats); 
+										?>
+										<script>
+											QuranJS.totalAyatSpaces[{{$a}}] = {{$countSpaces}}
+										</script>
 										@foreach($arr_ayats as $per_ayat)
 											<?php $per++;?>
 											<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>">{{$per_ayat}}</span>
@@ -164,7 +169,7 @@
 					            </div>
 							</div>
 
-							<?php $prev_surah = $ayat->surah;?>
+							<?php $prev_surah = $ayat->surah; $tempCountSpaces = $countSpaces?>
 							<?php $a++;?>
 							@endforeach
 						
@@ -278,7 +283,7 @@ $(document).ready(function(){
 
 		jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
 
-		QuranJS.totalAyatSpaces = {{$per}};
+		
 	});
 
 </script>
