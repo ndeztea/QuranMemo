@@ -88,7 +88,7 @@
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('2')" class="btn btn-default steps_2"># 2</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('3')" class="btn btn-default steps_3"># 3</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4')" class="btn btn-default steps_4"># 4</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5')" class="btn btn-default steps_5"># TEST</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');QuranJS.showAyat('start')" class="btn btn-default steps_5"># TEST</a>
 								</div>
 							</div>
 							<!-- /step-wrap -->

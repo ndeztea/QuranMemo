@@ -121,21 +121,21 @@ var QuranJS = {
 	},
 
 	// show & hide player
-	togglePlayer : function (){
+	// togglePlayer : function (){
 
-		$('.openThis').hide();
+	// 	$('.openThis').hide();
 
-			$('.btn-toggle-player').click(function() {
+	// 		$('.btn-toggle-player').click(function() {
 
-			    $('.quran_player').slideToggle( function() {
+	// 		    $('.quran_player').slideToggle( function() {
 
-			    	$('.openThis').show();
+	// 		    	$('.openThis').show();
 						
-				});
+	// 			});
 
-			});
+	// 		});
 
-	},
+	// },
 
 	generateTransHeight : function (importantTag){
 		$( ".trans").each(function( index,element ) {
@@ -216,6 +216,7 @@ var QuranJS = {
 	},
 
 	stepMemoz : function(steps){
+		jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
 		if(steps==1){
 			jQuery('.trans').removeClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').removeClass('go');
@@ -307,32 +308,15 @@ var QuranJS = {
 			
 
 		}
+	},
 
-		/*if(show=='start'){
-			for(a=2;a<=this.totalAyatSpaces;a++){
-				jQuery('.per_words_'+a).addClass('blur-ayat');
-			}
-		}
-		else if(show=='end'){
-			for(a=1;a<=this.totalAyatSpaces;a++){
-				if(a!=this.totalAyatSpaces)
-					jQuery('.per_words_'+a).addClass('blur-ayat');
-			}
-		}else if(show=='middle'){
-			for(a=1;a<=this.totalAyatSpaces;a++){
-				if(a==this.totalAyatSpaces || a==1)
-					jQuery('.per_words_'+a).addClass('blur-ayat');
-
-			}
-		}
-		else if(show=='mix'){
-			for(a=1;a<=this.totalAyatSpaces;a++){
-				if(a!=this.totalAyatSpaces || a!=1)
-					jQuery('.per_words_'+a).addClass('blur-ayat');
-
-			}
-		}*/
-	}
+	showSearch : function(){
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Pencarian');
+		htmlSearchSurah = jQuery('.select-surah').html();
+		$('.modal-body').html(htmlSearchSurah);
+		$('.modal-footer').hide();
+	},
 
 } 
 

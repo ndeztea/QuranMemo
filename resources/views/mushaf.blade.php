@@ -34,8 +34,8 @@ $prev_surah = '';
 
 					<div class="nav-top clearfix">
 						<div class="container-fluid">
-							<button class="btn btn-surah-trigger visible-xs" type="button" data-toggle="collapse" data-target="#surah-collapse" aria-expanded="false" aria-controls="surah-collapse">
-							  Pencarian
+							<button class="btn  visible-xs" onclick="QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse">
+							  <i class="fa fa-search"></i>
 							</button>
 
 							<div class="collapse in" id="surah-collapse">
@@ -74,7 +74,7 @@ $prev_surah = '';
 														</label>
 													</div> -->
 													<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
-												
+													
 											</form>
 
 										</div>
