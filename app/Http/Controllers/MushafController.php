@@ -52,6 +52,9 @@ class MushafController extends Controller
         $data['header_title'] = 'Mushaf Halaman '. $page;
         $data['body_class'] = 'body-mushaf';
 
+        $data['ayat_start'] = '';
+        $data['ayat_end'] = '';
+
         $data['cookies'] = getCookie();
 
         // show view template
@@ -87,6 +90,10 @@ class MushafController extends Controller
         $data['id_surah'] = $id_surah;
         $data['ayat'] = $ayat;
         $data['curr_page'] = $ayats[0]->page;
+
+        $arrAyat = explode('-', $ayat);
+        $data['ayat_start'] = !empty($arrAyat[0])?$arrAyat[0]:'';
+        $data['ayat_end'] = !empty($arrAyat[1])?$arrAyat[1]:'';
 
         $data['cookies'] = getCookie();
 

@@ -318,5 +318,13 @@ var QuranJS = {
 		$('.modal-footer').hide();
 	},
 
+	createMemoModal : function(){
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Hafalan Baru');
+		htmlSearchSurah = jQuery('.select-surah').html();
+		$('.modal-body').html(htmlSearchSurah);
+		$('.modal-footer').hide();
+	},
+
 } 
 

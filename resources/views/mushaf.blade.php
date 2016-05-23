@@ -62,9 +62,9 @@ $prev_surah = '';
 													</div>
 													<div class="form-group display-inline-block-xs">
 														<div class="input-group">
-														  <input class="form-control search_ayat" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat">
+														  <input class="form-control search_ayat" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat" value="{{$ayat_start}}">
 														  <span class="input-group-addon">Sampai Ayat</span>
-														  <input class="form-control search_ayat" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat">
+														  <input class="form-control search_ayat" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat" value="{{$ayat_end}}">
 														</div>
 													</div>
 													<!-- <div class="checkbox display-inline-block-xs">

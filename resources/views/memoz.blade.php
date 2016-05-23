@@ -16,7 +16,7 @@
 				<h2>Menghafal</h2>
 			</div>
 			<div class="nav-top clearfix">
-				@if(empty($ayats))
+			<div style="display:{{!empty($ayats)?'none':''}}">
 				<div class="select-surah pull-left">
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<span class="search-title">Surah</span>
@@ -48,15 +48,15 @@
 							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
 					</form>
 				</div>
-				<!-- /select-surah -->
-				@else
+			</div>
+			@if(!empty($ayats))
 				<div class="select-surah pull-left">
-					<a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa-plus"></i> Hafalan baru</a>
+					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal')"><i class="fa fa-info"></i> Info</a>
 				</div>
-				@endif
-
+			@endif
+			
 				@if(!empty($ayats))
 
 				<div class="memoz_options">
