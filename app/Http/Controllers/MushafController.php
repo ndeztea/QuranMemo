@@ -166,6 +166,55 @@ class MushafController extends Controller
     }
 
     /**
+    * select juz
+    *
+    */
+    public function juzPage($juz){
+        $QuranModel = new Quran;
+        $pages = $QuranModel->getJuzPage($juz);
+        $page = $pages[0]->page;
+        // get pages mushaf quran
+        $pages = $QuranModel->getPage();
+
+        // get mushaf per page
+        $ayats = $QuranModel->getAyat($page);
+
+        if(empty($ayats)){
+            return redirect('mushaf');
+        }
+
+        // get surah
+        $surahs = $QuranModel->getSurah();
+
+        // showing paging
+        if($page<=4){
+            $pages = array_slice($pages, 0, 4); 
+        }elseif($page>4 && $page<=592){
+            $pages = array_slice($pages, $page - 3,5);
+        }else{
+            $pages = array_slice($pages, $page-3 , 5);
+        }
+
+        // send to view 
+        $data['surahs'] = $surahs;
+        $data['ayats'] = $ayats;
+        $data['pages'] = $pages;
+        $data['curr_page'] = $page;
+
+        // data header
+        $data['header_title'] = 'Mushaf Halaman '. $page;
+        $data['body_class'] = 'body-mushaf';
+
+        $data['ayat_start'] = '';
+        $data['ayat_end'] = '';
+
+        $data['cookies'] = getCookie();
+
+        // show view template
+       return view('mushaf',$data);
+    }
+
+    /**
     * search surah depend the keyword
     *
     */
