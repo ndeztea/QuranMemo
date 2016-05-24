@@ -34,11 +34,11 @@ $prev_surah = '';
 
 					<div class="nav-top clearfix">
 						<div class="container-fluid">
-							<button class="btn  visible-xs" onclick="QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse">
+							<button class="btn btn-search-surah pull-left visible-xs" onclick="QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse">
 							  <i class="fa fa-search"></i>
 							</button>
 
-							<div class="collapse in" id="surah-collapse">
+							<div class="hidden-xs" id="surah-collapse">
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="select-surah">

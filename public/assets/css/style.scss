@@ -216,6 +216,10 @@ a:focus{
 	background-color: #f6f6f6;
 	z-index: 999;
 
+	@include media("<=tablet", ">=phone") {
+      	padding: 5px 10px;
+  	}
+
 	.btn-surah-trigger{
 		width: 100%;
 		background-color: $main-color;
@@ -332,6 +336,12 @@ a:focus{
 			&:focus{
 				background-color: $main-color-hover;
 			}
+		}
+
+		select{
+			@include media(">=tablet", "<=931px") {
+	          	width: 150px;
+	      	}
 		}
 
 
@@ -589,16 +599,24 @@ a:focus{
 			      	}
 
 
-				}	
-
+				}
 				
 
 			}
 
 			.nav-top{
-				.collapse{
-					@include media(">=880px") {
+				#surah-collapse{
+					
+			      	@include media(">=1059px") {
 			          	width: 60%;
+			          	float: left;
+			      	}
+			      	@include media(">=932px","<=1058px") {
+			          	width: 65%;
+			          	float: left;
+			      	}
+			      	@include media(">=768px","<=931px") {
+			          	width: 70%;
 			          	float: left;
 			      	}
 				}
@@ -1526,6 +1544,27 @@ body.body-memo{
 	}
 }
 
+.btn-search-surah{
+	margin-left: 10px;
+	@include boxy($btn-hover...);
+
+	&:hover,
+	&:focus,
+	&.selected{
+
+		background-color: $main-color-hover;
+		border: solid 1px $main-color-hover;
+		color: #fff;
+
+	}
+
+	@include media("<tablet",">=phone") {
+      	width: 40px;
+      	margin: 5px 0;
+  	}
+
+}
+
 .btn-setting{
 	margin-left: 10px;
 	@include boxy($btn-hover...);
@@ -1542,8 +1581,8 @@ body.body-memo{
 
 	@include media("<tablet",">=phone") {
       	float: right !important;
-      	width: 49%;
-      	margin: 10px 0;
+      	width: 40px;
+      	margin: 5px 0;
   	}
 
   	&.btn-juz{
@@ -1580,4 +1619,25 @@ body.body-memo{
 			}
 		}
 	}
+}
+
+.mushaf_header{
+
+	width: 215px;
+	margin: 0 auto;
+	padding: 5px 0;
+
+	    .btn:first-child{
+	    	border-top-right-radius: 0;
+    		border-bottom-right-radius: 0;
+    		border-right: none;
+	    }
+	    .btn:last-child{
+	    	border-top-left-radius: 0;
+    		border-bottom-left-radius: 0;
+	    }
+
+	   	.input-group-addon{
+	   		border-right:none;
+	   	}
 }
