@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Crypt;
 use File;
 
 class MemozController extends Controller
@@ -56,6 +57,7 @@ class MemozController extends Controller
         $data['surahs'] = $surahs;
         $data['surah_start'] = $surah_start;
         $data['ayat_start'] = $ayat_start;
+        $data['ayat_range'] = $ayat_range;
         //$data['surah_end'] = $surah_end;
         $data['ayat_end'] = $ayat_end;
         $data['curr_page'] = 0;
@@ -82,9 +84,9 @@ class MemozController extends Controller
         }
 
         if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end)->withCookie(cookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end)));
         }elseif($surah_start && !empty($ayat_start)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start)->withCookie(cookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end)));
         }else{
             return redirect('memoz');
         }

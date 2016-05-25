@@ -18,10 +18,10 @@
 			<div class="nav-top clearfix">
 			<div style="display:{{!empty($ayats)?'none':''}}">
 				<div class="select-surah pull-left">
-					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
+					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post" onsubmit="cookieLastMemo()">
 							<span class="search-title">Surah</span>
 							<div class="form-group">
-								<select name="surah_start" class="form-control">
+								<select name="surah_start"  id="surah_start" class="form-control">
 									@foreach($surahs as $surah)
 									<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
 									@endforeach
@@ -39,13 +39,17 @@
 							-->
 							<div class="form-group display-inline-block-xs">
 								<div class="input-group">
-								  <input class="form-control search_ayat" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
+								  <input class="form-control search_ayat" id="ayat_start" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
 								  <span class="input-group-addon">Sampai Ayat</span>
-								  <input class="form-control search_ayat" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
+								  <input class="form-control search_ayat" id="ayat_end" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 								</div>
 							</div>
 							
 							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
+							
+							@if(isset($_COOKIE['coo_last_memoz']))
+							<a class="btn btn-cari-ayat" href="{{$_COOKIE['coo_last_memoz']}}"><i class="fa fa-sign-in"></i> Hafalan Terakhir</a>
+							@endif
 					</form>
 				</div>
 			</div>
@@ -283,7 +287,6 @@ $(document).ready(function(){
 
 		jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
 
-		
 	});
 
 </script>
