@@ -1453,9 +1453,24 @@ body.body-memo{
 }
 
 .input-group{
+
   
-	@include media("<tablet",">=phone") {
-		width: auto;
+	@include media("<=767px",">=585px") {
+		width: 90%;
+		float: left;
+		margin-right: 20px;
+	}
+
+	@include media("<=584px",">=481px") {
+		width: 85%;
+		float: left;
+		margin-right: 20px;
+	}
+
+	@include media("<=480px",">=phone") {
+		width: 80%;
+		float: left;
+		margin-right: 20px;
 	}
 }
 .form-group{
@@ -1587,7 +1602,8 @@ body.body-memo{
 
   	&.btn-juz{
   		@include media("<tablet",">=phone") {
-	      	margin-right: 6px;
+	      	margin-left: 6px;
+	      	float: left !important;
 	  	}
   		
   	}
