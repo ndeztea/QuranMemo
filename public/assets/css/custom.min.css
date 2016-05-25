@@ -353,3 +353,5 @@ ul.juz-list{
     text-shadow: 0 0 17px rgba(0,0,0,0.5);
 }
 
+.modal-body > form > a.btn-last-memoz{display: none}
+

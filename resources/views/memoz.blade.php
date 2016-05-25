@@ -48,7 +48,7 @@
 							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
 							
 							@if(isset($_COOKIE['coo_last_memoz']))
-							<a class="btn btn-cari-ayat" href="{{$_COOKIE['coo_last_memoz']}}"><i class="fa fa-sign-in"></i> Hafalan Terakhir</a>
+							<a class="btn btn-cari-ayat btn-last-memoz" href="{{$_COOKIE['coo_last_memoz']}}"><i class="fa fa-sign-in"></i> Hafalan Terakhir</a>
 							@endif
 					</form>
 				</div>
@@ -57,7 +57,7 @@
 				<div class="select-surah pull-left">
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
-					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal')"><i class="fa fa-info"></i> Info</a>
+					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i> Info</a>
 				</div>
 			@endif
 			
@@ -218,7 +218,7 @@
 $(document).ready(function(){
 	QuranJS.fillAyatEnd();
 
-	<?php if(!empty($ayats)):?>
+	<?php if(!empty($ayats) && empty($_COOKIE['coo_hide_info'])):?>
 	QuranJS.showInfoMemoz();
 	<?php endif?>
 
@@ -286,8 +286,15 @@ $(document).ready(function(){
 		});
 
 		jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
-
 	});
+
+	function hideInfo(){
+		if($('input[name="hide_memoz_info"]:checked').val()){
+			document.cookie = 'coo_hide_info="true";';
+		}else{
+			document.cookie = 'coo_hide_info="false;expires=Thu, 01 Jan 1970 00:00:01 GMT"';
+		}
+	}
 
 </script>
 

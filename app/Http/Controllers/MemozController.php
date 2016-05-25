@@ -84,9 +84,11 @@ class MemozController extends Controller
         }
 
         if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end)->withCookie(cookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end)));
+            setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
         }elseif($surah_start && !empty($ayat_start)){
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start)->withCookie(cookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end)));
+            setcookie('coo_last_memoz','coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
+            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
         }else{
             return redirect('memoz');
         }
@@ -98,7 +100,7 @@ class MemozController extends Controller
         $data['repeat'] = $repeat;
         $dataHTML['modal_title'] = 'Setting Memoz';
         $dataHTML['modal_body'] = view('memoz_config',$data)->render();
-        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
     }
