@@ -355,3 +355,11 @@ ul.juz-list{
 
 .modal-body > form > a.btn-last-memoz{display: none}
 
+.form-inline a.btn-setting, .btn-last-memoz{
+  font-size: 14px !important;
+}
+.form-inline .btn.btn-setting span.hidden-xs, .btn-last-memoz{
+  padding-left:0px !important;
+}
+.btn-last-memoz{padding-left: 5px !important}
+

@@ -91,8 +91,7 @@
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('1')" class="btn btn-default steps_1 selected"># 1</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('2')" class="btn btn-default steps_2"># 2</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('3')" class="btn btn-default steps_3"># 3</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4')" class="btn btn-default steps_4"># 4</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');QuranJS.showAyat('start')" class="btn btn-default steps_5"># TEST</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" class="btn btn-default steps_4"># TEST</a>
 								</div>
 							</div>
 							<!-- /step-wrap -->
@@ -104,7 +103,7 @@
 							<div class="clearfix"></div>
 							<div class="steps_desc">
 								<div class="alert alert-success">
-									<p> Hafalkan dengan teliti target hafalan arabic dan terjemahannya (sekilas dan cepat)</p>
+									<p> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal</p>
 								</div>
 							</div>
 							<?php  $a=0; ?>
@@ -285,14 +284,14 @@ $(document).ready(function(){
 				}
 		});
 
-		jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
+		jQuery('.memozed').hide();
 	});
 
 	function hideInfo(){
 		if($('input[name="hide_memoz_info"]:checked').val()){
-			document.cookie = 'coo_hide_info="true";';
+			document.cookie = 'coo_hide_info="true";path=/';
 		}else{
-			document.cookie = 'coo_hide_info="false;expires=Thu, 01 Jan 1970 00:00:01 GMT"';
+			document.cookie = 'coo_hide_info="false;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/"';
 		}
 	}
 

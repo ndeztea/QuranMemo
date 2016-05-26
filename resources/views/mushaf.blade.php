@@ -37,7 +37,7 @@ $prev_surah = '';
 							<button class="btn btn-search-surah pull-left visible-xs" onclick="QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse">
 							  <i class="fa fa-search"></i>
 							</button>
-
+							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz visible-xs" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
 							<div class="hidden-xs" id="surah-collapse">
 								<div class="row">
 									<div class="col-xs-12">
@@ -74,7 +74,8 @@ $prev_surah = '';
 														</label>
 													</div> -->
 													<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
-													
+													<a href="javascript:;"  class="btn btn-setting btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
+							
 											</form>
 
 										</div>
@@ -96,7 +97,6 @@ $prev_surah = '';
 							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
 								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
 							</button>
-							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
