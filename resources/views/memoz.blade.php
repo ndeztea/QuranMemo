@@ -91,7 +91,8 @@
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('1')" class="btn btn-default steps_1 selected"># 1</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('2')" class="btn btn-default steps_2"># 2</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('3')" class="btn btn-default steps_3"># 3</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" class="btn btn-default steps_4"># TEST</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" class="btn btn-default steps_4"># 5</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');" class="btn btn-default steps_5"># 6</a>
 								</div>
 							</div>
 							<!-- /step-wrap -->
@@ -149,8 +150,11 @@
 										</script>
 										@foreach($arr_ayats as $per_ayat)
 											<?php $per++;?>
-											<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>">{{$per_ayat}}</span>
+											<span class="puzzle_border puzzle_no_border">
+												<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>">{{$per_ayat}}</span>
+											</span>
 										@endforeach
+
 										<span class="no_ayat_arabic_memoz">
 											<img src="{{url('assets/images/frame-ayat.png')}}">
 											<span>{{arabicNum($ayat->ayat)}}</span> 
@@ -158,6 +162,14 @@
 									</span> 
 
 								</div>
+								<!-- PUZZLE -->
+								<div class="puzzle puzzle_{{$a+1}}" style="display:none">
+								@foreach($arr_ayats as $per_ayat)
+									<?php $per++;?>
+										<span class="arabic"><a onclick="QuranJS.puzzleAnswer(this)" href="javascript:;" data-css="per_words_<?php echo $per?>">{{$per_ayat}}</a></span>
+								@endforeach
+								</div>
+								<!-- END -->
 								<div class="trans trans_{{$a}}"> 
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
 									<span class="content_ayat">{{$ayat->text_indo}}</span> 
