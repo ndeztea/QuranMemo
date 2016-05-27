@@ -4,7 +4,7 @@ Error: Undefined variable: "$opacityValue".
 
 1: $main-color: rgba(77,181,120,$opacityValue);
 2: $main-color-hover: darken($main-color, 8%);
-3: $arab-font: "Lateef", arabic;
+3: $arab-font: "Scheherazade", "Traditional Arabic";
 4: $txtColor: #fff;
 5: $gray: #bbb;
 6: $light-gray: #eee;

@@ -25,6 +25,10 @@
       float: left;
       width: 47.4% !important;
   }
+  .arabic,
+  .head_surah {
+    font-family: "Lateef", "Traditional Arabic";
+  }
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
