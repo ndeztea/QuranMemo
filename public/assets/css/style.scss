@@ -117,7 +117,7 @@ a:focus{
 .arabic, 
 .head_surah{
 	font-family: $arab-font;
-	font-size: 30px;
+	font-size: 33px;
 	word-spacing: 0px;
 }
 
@@ -804,7 +804,7 @@ body.body-memo{
 	        	padding-left: 0;
 	        }
 	        .ayat_arabic_memoz:last-child{
-	        	padding-left: 10px;
+	        	padding-left: 0px;
 	        }
 		}
 

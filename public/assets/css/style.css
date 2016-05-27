@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Lateef", arabic; }
+  font-family: "Scheherazade", "Traditional Arabic"; }
 html, body {
   height: 100%; }
 
@@ -70,7 +70,7 @@ a:focus {
 
 .arabic,
 .head_surah {
-  font-family: "Lateef", arabic;
+  font-family: "Scheherazade", "Traditional Arabic";
   font-size: 30px;
   word-spacing: 0px; }
 

@@ -25,6 +25,10 @@
       float: left;
       width: 47.4% !important;
   }
+  .arabic,
+  .head_surah {
+    font-family: "Lateef", "Traditional Arabic";
+  }
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
@@ -354,4 +358,12 @@ ul.juz-list{
 }
 
 .modal-body > form > a.btn-last-memoz{display: none}
+
+.form-inline a.btn-setting, .btn-last-memoz{
+  font-size: 14px !important;
+}
+.form-inline .btn.btn-setting span.hidden-xs, .btn-last-memoz{
+  padding-left:0px !important;
+}
+.btn-last-memoz{padding-left: 5px !important}
 
