@@ -79,7 +79,7 @@
 
 			</div>
 			<!-- /nav-top -->
-			
+			<input type="text" name="puzzle_active" id="puzzle_active" value="">
 			@if(!empty($ayats))
 			<div class="container-fluid">
 				<div class="row">
@@ -151,7 +151,7 @@
 										@foreach($arr_ayats as $per_ayat)
 											<?php $per++;?>
 											<span class="puzzle_border puzzle_no_border">
-												<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>">{{$per_ayat}}</span>
+												<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>"  data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</span>
 											</span>
 										@endforeach
 
@@ -164,12 +164,14 @@
 								</div>
 								<!-- PUZZLE -->
 								<div class="puzzle puzzle_{{$a+1}}" style="display:none">
+								<?php $per = 0?>
 								@foreach($arr_ayats as $per_ayat)
 									<?php $per++;?>
-										<span class="arabic"><a onclick="QuranJS.puzzleAnswer(this)" href="javascript:;" data-css="per_words_<?php echo $per?>">{{$per_ayat}}</a></span>
+										<span class="arabic"><a onclick="QuranJS.puzzleAnswer(this)" href="javascript:;" data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</a></span>
 								@endforeach
 								</div>
 								<!-- END -->
+
 								<div class="trans trans_{{$a}}"> 
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
 									<span class="content_ayat">{{$ayat->text_indo}}</span> 
