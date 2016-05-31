@@ -79,8 +79,8 @@
 
 			</div>
 			<!-- /nav-top -->
-			<input type="text" name="puzzle_ayat" id="puzzle_ayat" value="">
-			<input type="text" name="puzzle_word" id="puzzle_word" value="">
+			<input type="hidden" name="puzzle_ayat" id="puzzle_ayat" value="">
+			<input type="hidden" name="puzzle_word" id="puzzle_word" value="">
 			@if(!empty($ayats))
 			<div class="container-fluid">
 				<div class="row">
