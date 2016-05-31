@@ -79,7 +79,8 @@
 
 			</div>
 			<!-- /nav-top -->
-			<input type="text" name="puzzle_active" id="puzzle_active" value="">
+			<input type="text" name="puzzle_ayat" id="puzzle_ayat" value="">
+			<input type="text" name="puzzle_word" id="puzzle_word" value="">
 			@if(!empty($ayats))
 			<div class="container-fluid">
 				<div class="row">
@@ -163,7 +164,7 @@
 
 								</div>
 								<!-- PUZZLE -->
-								<div class="puzzle puzzle_{{$a+1}}" style="display:none">
+								<div class="puzzle puzzle_{{$a}}" style="display:none">
 								<?php $per = 0?>
 								@foreach($arr_ayats as $per_ayat)
 									<?php $per++;?>
@@ -180,7 +181,7 @@
 								<div class="action-footer">
 					                <div class="btn-group">
 					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
-					                  <a class="btn btn-share-ayat" href="#" data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
+					                  <a class="btn btn-share-ayat" href="#"  onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
 					                  <a class="memozed btn-share-ayat btn" style="display:none" href="javascript:void(0)" onclick="QuranJS.memorized('section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}')"><i class="fa fa-thumbs-up"></i> Hafal</a>
 					                </div>
 					            </div>

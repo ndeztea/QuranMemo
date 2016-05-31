@@ -282,10 +282,11 @@ var QuranJS = {
 
 			// first element
 			// @todo : check if already answerd questions
-			jQuery('.arabic_0 .content_ayat .puzzle_border').first().removeClass('puzzle_no_border');
-			var puzzle_active = jQuery('#puzzle_active').val();
-			if(puzzle_active==''){
-				jQuery('#puzzle_active').val('.arabic_0 .per_words_1');
+			var puzzle_word = jQuery('#puzzle_word').val();
+			if(puzzle_word==''){
+				jQuery('#puzzle_ayat').val('0');
+				jQuery('#puzzle_word').val('1');
+				jQuery('.arabic_0 .content_ayat .puzzle_border').first().removeClass('puzzle_no_border');
 			}
 		}
 
@@ -294,9 +295,14 @@ var QuranJS = {
 	},
 
 	puzzleAnswer : function(elm){
-		var puzzle_active = jQuery('#puzzle_active').val();
+		var puzzle_ayat = jQuery('#puzzle_ayat').val();
+		var puzzle_word = jQuery('#puzzle_word').val();
+		var puzzle_active = '.arabic_'+puzzle_ayat+' .per_words_'+puzzle_word;
+
 		var puzzle_a = jQuery(elm).data('css');
-		console.log(puzzle_a);
+		puzzle_ayat = parseInt(puzzle_ayat);
+		puzzle_word = parseInt(puzzle_word);
+
 		if(puzzle_active==puzzle_a){
 			jQuery(puzzle_active).css('visibility','visible');
 			jQuery(puzzle_active).parent().addClass('puzzle_no_border');
@@ -307,7 +313,19 @@ var QuranJS = {
 
 			jQuery('#puzzle_active').val(puzzle_active);
 			
-			jQuery(elm).hide();
+			jQuery(elm).remove();
+
+			// go to next word
+			puzzle_word +=1;
+			jQuery('#puzzle_word').val(puzzle_word);
+
+			// check if ayat already finish
+			console.log(jQuery( '.puzzle_'+puzzle_ayat+' .arabic a' ).length);
+			if(jQuery( '.puzzle_'+puzzle_ayat+' .arabic a' ).length==0){
+				jQuery('.puzzle_'+puzzle_ayat).remove();
+				jQuery('#puzzle_ayat').val(puzzle_ayat + 1);
+				jQuery('#puzzle_word').val('1');
+			}
 		}else{
 			alert('salah');
 		}
