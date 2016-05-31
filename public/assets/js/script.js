@@ -1,6 +1,7 @@
 var QuranJS = {
 	siteUrl : '',
 	totalAyatSpaces : [''],
+	totalAyat : 0,
 	loadingText : ['"Hai orang-orang yang beriman. Bersabarlah kamu, dan kuatkanlah kesabaranmu dan tetaplah bersiaga-siaga (diperbatasan negrimu) dan bertaqwalah kepada Allah supaya kamu beruntung." (Ali-Imran 200).','"Tetapi orang yang bersabar dan memaafkan sesungguhnya (perbuatan) yang demikian itu termasuk hal-hal yang diutamakan" (Asy-Syuura 43)','"Sesengguhnya kesabaran itu hanyalah pada pukulan yang pertama dari bala" (Hadist Muttafaq\'alaih)'],
 
 	modalLoading : function(){
@@ -274,20 +275,30 @@ var QuranJS = {
 			jQuery('.jp-stop').click();
 			jQuery('.memoz_player,.memozed,.puzzle').show();
 			jQuery('.memoz_nav').hide();
-
 			// puzzle logic
 			jQuery('.ayat_arabic_memoz').addClass('puzzle_q');
 			jQuery('*','.mushaf').removeClass('playing');
 			$('.puzzle' + Math.ceil(Math.random() * 2)).show();
 
+			// suffle element 
+			for(a=0;a<=this.totalAyat;a++){
+				var parent = jQuery(".puzzle.puzzle_"+a);
+			    var divs = parent.children();
+			    while (divs.length) {
+			        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+			    }
+			}
+			
+
 			// first element
-			// @todo : check if already answerd questions
 			var puzzle_word = jQuery('#puzzle_word').val();
 			if(puzzle_word==''){
 				jQuery('#puzzle_ayat').val('0');
 				jQuery('#puzzle_word').val('1');
 				jQuery('.arabic_0 .content_ayat .puzzle_border').first().removeClass('puzzle_no_border');
 			}
+
+
 		}
 
 		jQuery('.steps a').removeClass('selected');
@@ -323,8 +334,11 @@ var QuranJS = {
 			console.log(jQuery( '.puzzle_'+puzzle_ayat+' .arabic a' ).length);
 			if(jQuery( '.puzzle_'+puzzle_ayat+' .arabic a' ).length==0){
 				jQuery('.puzzle_'+puzzle_ayat).remove();
-				jQuery('#puzzle_ayat').val(puzzle_ayat + 1);
+				puzzle_ayat+=1;
+				jQuery('#puzzle_ayat').val(puzzle_ayat);
 				jQuery('#puzzle_word').val('1');
+				console.log('.arabic_'+puzzle_ayat+' .per_words_1');
+				jQuery('.arabic_'+puzzle_ayat+' .per_words_1').parent().removeClass('puzzle_no_border');
 			}
 		}else{
 			alert('salah');

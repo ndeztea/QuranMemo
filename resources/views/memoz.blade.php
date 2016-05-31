@@ -116,7 +116,10 @@
 								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('mix')">Awal+Akhir</a>
 								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('random')">Acak</a>
 							</div>
-
+							<script>
+								QuranJS.totalAyat = {{count($ayats)}}
+							</script>
+							
 							@foreach($ayats as $ayat)
 							@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
 							<a name="head_surah_{{$ayat->surah}}"></a>
@@ -168,7 +171,7 @@
 								<?php $per = 0?>
 								@foreach($arr_ayats as $per_ayat)
 									<?php $per++;?>
-										<span class="arabic"><a onclick="QuranJS.puzzleAnswer(this)" href="javascript:;" data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</a></span>
+										<span class="arabic"><a onclick="QuranJS.puzzleAnswer(this)" href="javascript:;" data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</a>  -  </span>
 								@endforeach
 								</div>
 								<!-- END -->
