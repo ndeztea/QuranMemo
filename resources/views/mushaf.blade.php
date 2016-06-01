@@ -73,7 +73,7 @@ $prev_surah = '';
 															<input class="form-control search_ayat ayat_end"  style="display:none" placeholder="Ayat"/>
 														</label>
 													</div> -->
-													<button class="btn"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
+													<button class="btn btn-search"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
 													<a href="javascript:;"  class="btn btn-setting btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
 							
 											</form>

@@ -14,6 +14,8 @@
 		<div class="single-column">
 			<div class="page-title">
 				<h2>Menghafal</h2>
+				<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+				
 			</div>
 			<div class="nav-top clearfix">
 			<div style="display:{{!empty($ayats)?'none':''}}">
