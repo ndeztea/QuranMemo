@@ -177,7 +177,7 @@ var QuranJS = {
 		}else{
 			$('.action-footer').hide();
 		}
-		document.cookie = 'coo_footer_action='+show+';path=/';
+		document.cookie = 'coo_footer_action='+show+';';
 	},
 	showMushaf : function (mushaf){
 
@@ -201,12 +201,12 @@ var QuranJS = {
 		jQuery('.mushaf').addClass(mushaf);
 		jQuery('.mushaf_display a').removeClass('active');
 		jQuery('.'+mushaf).addClass('active');
-		document.cookie = 'coo_mushaf_layout='+mushaf+';path=/';
+		document.cookie = 'coo_mushaf_layout='+mushaf+';';
 	},
 
 	autoPlay : function (val){
 		$('.automated_play').val(val);
-		document.cookie = 'coo_automated_play='+val+';path=/';
+		document.cookie = 'coo_automated_play='+val+';';
 	},
 
 	showInfoMemoz : function (){

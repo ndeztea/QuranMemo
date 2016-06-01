@@ -131,6 +131,7 @@ $prev_surah = '';
 								  	@if($ayats[0]->juz!=0)
 										<span class="input-group-addon" class="header_juz">Juz {{$ayats[0]->juz}}</span>
 									@endif
+									<span class="input-group-addon" class="header_juz">Surah {{$ayats[0]->surah_name}}</span>
 									<span class="input-group-addon" class="header_page">Hal {{$curr_page}}</span>
 									<a class="btn btn-default input-group" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"> next <i class="fa fa-angle-right"></i></a>
 								</div>
