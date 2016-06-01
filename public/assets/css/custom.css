@@ -11,7 +11,7 @@
   }
   .nav-top .memoz_options .btn{
     position: relative;
-    top:5px;
+    
     left: -5px;
   }
   .select-surah{
@@ -28,6 +28,67 @@
   .arabic,
   .head_surah {
     font-family: "Lateef", "Traditional Arabic";
+    padding-bottom:0px;
+  }
+  .mushaf .ayat_section .trans{
+    padding-bottom:4px;
+    padding-top:4px;
+  }
+  .container-fluid{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .modal-body .btn-juz,.modal-body .btn-last-memoz{
+    display: none;
+  }
+  .modal-body .input-group{
+    float:none;
+    width:101%;
+  }
+  .modal-body .btn-search, .modal-body .btn-cari-ayat{
+    border-width: 1px;
+    border-color: #4db578;
+    border-style: solid;
+    background-color: #4db578;
+    color: #fff;
+    background-image: none;
+    text-shadow: none;
+    width : 100%;
+    margin-top: 10px;
+    font-size: 21px;
+  }
+  .container-fluid .btn{
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    height: 30px;
+  }
+  .main-content-wrap .main-content .single-column .page-title h2{
+    margin-left: 9px;
+  }
+  ul.navbar-nav li {
+    margin-left: 15px;
+  }
+  .navbar-nav .navbar-form .input-group{
+    float: none;
+    width: 91%;
+    margin: 0 19px;
+  }
+  .navbar-collapse{
+    background-color: rgb(86, 189, 128);
+  }
+  .memoz-form{
+    width: 100%;
+  }
+  .select-surah .search-title{
+    margin-bottom: 0px;
+    font-size: 14pt;
+  }
+  .btn-cari-ayat,.btn-last-memoz{
+    margin-top: 7px;
+    display: inline-block !important;
+  }
+  .navbar-default .navbar-nav>li>a{
+    border-bottom: 1px solid #43A76B;
   }
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
