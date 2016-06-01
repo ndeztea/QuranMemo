@@ -21,7 +21,7 @@
 			<div style="display:{{!empty($ayats)?'none':''}}">
 				<div class="select-surah pull-left">
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post" onsubmit="cookieLastMemo()">
-							<span class="search-title">Surah</span>
+							<!--span class="search-title">Surah</span-->
 							<div class="form-group">
 								<select name="surah_start"  id="surah_start" class="form-control">
 									@foreach($surahs as $surah)
@@ -40,7 +40,7 @@
 
 							-->
 							<div class="form-group display-inline-block-xs">
-								<div class="input-group">
+								<div class="input-group memoz-form">
 								  <input class="form-control search_ayat" id="ayat_start" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
 								  <span class="input-group-addon">Sampai Ayat</span>
 								  <input class="form-control search_ayat" id="ayat_end" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
@@ -68,8 +68,8 @@
 				<div class="memoz_options">
 
 					<div class="btn-group">
-					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-green-small-darker">
-					    <i class="fa fa-cog"></i> <span class="caret"></span>
+					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-green-small">
+					    &nbsp;<i class="fa fa-cog"></i>&nbsp;
 					  </button>
 					  
 					</div>
