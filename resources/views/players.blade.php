@@ -233,6 +233,13 @@ $(document).ready(function(){
 		loop:true,
 		preload : 'auto'
 	});
+
+	 $("#vol").slider({
+       orientation: 'vertical',
+       slide: function(event, ui) {
+          $("#muratalPlaylistContainer").jPlayer("volume", ui.value/100);
+       }
+    });
 	
 	<?php $a=0;?>
 	@foreach($ayats as $ayat)
@@ -281,6 +288,7 @@ $(document).ready(function(){
 								<div class="jp-volume-bar-value"></div>
 							</div>
 						</div>
+						<div id="vol"></div>
 						
 						<!--div class="jp-toggles">
 							<button class="jp-repeat" role="button" tabindex="0">repeat</button>

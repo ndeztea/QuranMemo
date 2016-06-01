@@ -888,71 +888,6 @@ body.body-memo{
     padding-bottom: 0;
 }
 
-.quran_player{
-	width: 315px;
-	height: 50px;
-	// position: fixed;
-	// bottom:0;
-	// left: 0;
-	background: transparent;
-	z-index:99;
-
-	@include media("<=380px", ">=phone") {
-		width: 285px;
-	}
-
-	@include media("<tablet", ">=381px") {
-		width: 100%;
-	}
-
-	.jp-video{
-		width: 320px;
-		background:transparent;
-		margin: 0 auto;
-
-		.jp-progress{
-			height: 3px;
-			background-color: rgba(191,225,178,0.82) !important;
-		}
-		.jp-current-time{
-			margin-left: 0;
-		}
-		.jp-duration{
-			margin-right: 0;
-		}
-	}
-
-	.jp-controls-holder{
-		width:320px !important;
-		top: -12px;
-    	left: -45px;
-
-    	@include media("<=380px", ">=phone") {
-			width: 285px !important;
-			top:-12px;
-			left: 0;
-		}
-    }
-
-	.jp-audio, 
-	.jp-audio-stream, 
-	.jp-video{
-		border:none;
-	}
-
-	.jp-interface{
-		// border-top:1px solid $main-color !important;
-		// border-left:1px solid $main-color !important;
-		// border-right:1px solid $main-color !important;
-		border:none !important;
-		background-color: transparent;
-	}
-
-	.jp-play-bar{
-		background: #fff !important;
-	}
-}
-
 .fa-3{
 	font-size: 4em;
 }
@@ -1662,4 +1597,171 @@ body.body-memo{
 	   	.input-group-addon{
 	   		border-right:none;
 	   	}
+}
+
+.quran-player{
+	margin: auto;
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+    z-index:99;
+
+    @include media(">=1200px") {
+      	width: 80%;
+  	}
+
+	@include media(">=desktop", "<1200px") {
+      	width: 90%;
+  	}
+
+	@include media("<desktop", ">=801px") {
+      	width: 95%;
+  	}
+
+  	@include media(">=tablet","<=800px") {
+      	width: 100%;
+  	}
+
+  	@include media("<tablet",">=phone") {
+      	width: 100%;
+  	}
+}
+
+.quran_player{
+	height: 50px;
+	// position: fixed;
+	// bottom:0;
+	// left: 0;
+	background: transparent;
+	z-index:99;
+
+	@include media(">=1200px") {
+      	width: 100%;
+  	}
+
+  	@include media(">=desktop", "<=1200px") {
+      	width: 90%;
+  	}
+
+	@include media("<=380px", ">=phone") {
+		width: 320px;
+	}
+
+	@include media("<desktop", ">=801px") {
+      	width: 95%;
+  	}
+
+  	@include media(">=tablet","<=800px") {
+      	width: 100%;
+  	}
+
+	@include media("<tablet", ">=381px") {
+		width: 100%;
+	}
+
+	.jp-video{
+
+		@include media(">=1200px") {
+	      	width: 100%;
+	  	}
+
+	  	@include media(">=desktop", "<=1200px") {
+	      	width: 90%;
+	  	}
+
+	  	@include media("<desktop", ">=801px") {
+      		width: 95%;
+	  	}
+
+	  	@include media(">=tablet","<=800px") {
+	      	width: 100%;
+	  	}
+
+		@include media("<=380px", ">=phone") {
+			width: 320px;
+		}
+
+		@include media("<tablet", ">=381px") {
+			width: 100%;
+		}
+
+		background:transparent;
+		margin: 0 auto;
+
+		.jp-progress{
+			height: 3px;
+			background-color: rgba(191,225,178,0.82) !important;
+		}
+		.jp-current-time{
+			margin-left: 0;
+		}
+		.jp-duration{
+			margin-right: 0;
+		}
+	}
+
+	.jp-controls-holder{
+		top: -12px;
+    	left: -45px;
+
+		@include media(">=1200px") {
+	      	width: 100% !important;
+	  	}
+
+	  	@include media(">=desktop", "<=1200px") {
+	      	width: 90% !important;
+	  	}
+
+	  	@include media("<desktop", ">=801px") {
+	      	width: 95% !important;
+	  	}
+
+	  	@include media(">=tablet","<=800px") {
+	      	width: 100% !important;
+	  	}
+
+		@include media("<=380px", ">=phone") {
+			width: 320px !important;
+			top: -12px;
+			left: 0;
+		}
+
+		@include media("<tablet", ">=381px") {
+			width: 100% !important;
+		}
+
+    }
+
+	.jp-audio, 
+	.jp-audio-stream, 
+	.jp-video{
+		border:none;
+	}
+
+	.jp-video{
+		.jp-type-playlist{
+			.jp-controls{
+				margin: auto;
+				float: none;
+
+				@include media("<=400px", ">=phone") {
+					margin-left: 185px ;
+				}
+			}
+		}
+	}
+
+	.jp-interface{
+		// border-top:1px solid $main-color !important;
+		// border-left:1px solid $main-color !important;
+		// border-right:1px solid $main-color !important;
+		border:none !important;
+		background-color: transparent;
+	}
+
+	.jp-play-bar{
+		background: #2e6e48 !important;
+	}
 }

@@ -153,11 +153,7 @@
                             </div>
                         </form>
                     </div>
-                    @if(!empty($ayats))
-                    <div class="navbar-nav navbar-right">
-                        @include('players')
-                    </div>
-                    @endif
+                    
 
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -177,6 +173,12 @@
             <br><br>
         </div>
         <!-- /footer -->
+
+        @if(!empty($ayats))
+        <div class="quran-player">
+            @include('players')
+        </div>
+        @endif
         
         <!-- Button trigger modal -->
     <!-- Modal -->
