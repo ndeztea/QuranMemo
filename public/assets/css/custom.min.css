@@ -39,7 +39,7 @@
     padding-left: 0px;
   }
   .modal-body .btn-juz,.modal-body .btn-last-memoz{
-    display: none;
+    display: none !important;
   }
   .modal-body .input-group{
     float:none;

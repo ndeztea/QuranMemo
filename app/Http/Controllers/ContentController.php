@@ -19,20 +19,20 @@ class ContentController extends Controller
      */
     public function contact()
     {
-        $dataHTML['modal_class'] = 'content-mode';
+        $dataHTML['modal_class'] = '';
         $dataHTML['modal_title'] = 'Hubungi Kami';
         $dataHTML['modal_body'] = view('content_contact')->render();
-        $dataHTML['modal_footer'] = '';
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
     }
 
     public function about()
     {
-        $dataHTML['modal_class'] = 'content-mode';
+        $dataHTML['modal_class'] = '';
         $dataHTML['modal_title'] = 'Tentang QuranMemo';
         $dataHTML['modal_body'] = view('content_about')->render();
-        $dataHTML['modal_footer'] = '';
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
     }
