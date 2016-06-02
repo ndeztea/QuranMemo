@@ -236,6 +236,9 @@ var QuranJS = {
 			jQuery('.ayat_arabic_memoz').removeClass('puzzle_q');
 			jQuery('.ayat_arabic_memoz').removeClass('active');
 			jQuery('.content_ayat .puzzle_border').addClass('puzzle_no_border');
+
+			jQuery('.trans').show();
+			jQuery('.arabic').show();
 		}else if(steps==2){
 			jQuery('.trans').addClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').addClass('go');
@@ -248,6 +251,9 @@ var QuranJS = {
 			jQuery('.ayat_arabic_memoz').removeClass('puzzle_q');
 			jQuery('.ayat_arabic_memoz').removeClass('active');
 			jQuery('.content_ayat .puzzle_border').addClass('puzzle_no_border');
+
+			jQuery('.trans').hide();
+			jQuery('.arabic').show();
 		}else if(steps==3){
 			jQuery('.trans').removeClass('puff').addClass('go');
 			jQuery('.arabic').removeClass('go').addClass('puff');
@@ -260,6 +266,9 @@ var QuranJS = {
 			jQuery('.ayat_arabic_memoz').removeClass('active');
 			jQuery('.content_ayat .puzzle_border').addClass('puzzle_no_border');
 			//jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
+
+			jQuery('.trans').show();
+			jQuery('.arabic').hide();
 		}else if(steps==4){
 			jQuery('.trans').removeClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').removeClass('go');
@@ -273,6 +282,9 @@ var QuranJS = {
 			jQuery('.ayat_arabic_memoz').removeClass('puzzle_q');
 			jQuery('.ayat_arabic_memoz').removeClass('active');
 			jQuery('.content_ayat .puzzle_border').addClass('puzzle_no_border');
+
+			jQuery('.trans').show();
+			jQuery('.arabic').show();
 
 		}else if(steps==5){
 			jQuery('.trans').addClass('puff').removeClass('go');

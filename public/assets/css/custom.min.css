@@ -101,17 +101,37 @@
     width: 13px;
   }
 
+  .mushaf-hafalan.mushaf .ayat_section .trans{
+    padding: 4px 10px 5px 22px
+  }
+  .mushaf-hafalan.mushaf .ayat_section .arabic{
+    padding: 2px 10px 0px 22px !important;
+  }
+  .memoz_nav{
+    padding: 0px 25px;
+  }
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
   padding: 10px
 }
 */
-
+.puzzle{
+  padding: 0 25px;
+}
+.mushaf-hafalan.mushaf .puzzle .arabic{
+  padding: 0px 2px 2px 2px !important;
+}
+.mushaf-hafalan.mushaf .puzzle .arabic:end-child {
+  padding: 0px 2px 2px 22px !important;
+}
+.puzzle  .arabic a{
+  background-color: #DDDDDD;
+}
 .pagination .page_free_input .form-group button{
     margin: -11px 0px !important;
   }
-  
+
 .surah-nav .pagination>li>a,.surah-nav .pagination>li>span{
   padding: 4px 6px;
 }
