@@ -198,7 +198,7 @@ $prev_surah = '';
 						@endif
 
 						@if(isset($pages))
-							<div class="surah-nav">
+							<div class="surah-nav paging-footer">
 								<div class="input-group" role="group" aria-label="Navigasi">
 									<ul class="pagination">
 										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"><i class="fa fa-angle-double-left"> </i></a></li>

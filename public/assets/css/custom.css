@@ -90,6 +90,17 @@
   .navbar-default .navbar-nav>li>a{
     border-bottom: 1px solid #43A76B;
   }
+
+  .paging-footer .input-group{
+    width: 100%;
+  }
+  .paging-footer .input-group{
+    display: inline;
+  }
+  .paging-footer .input-group-addon{
+    width: 13px;
+  }
+
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
@@ -97,6 +108,10 @@
 }
 */
 
+.pagination .page_free_input .form-group button{
+    margin: -11px 0px !important;
+  }
+  
 .surah-nav .pagination>li>a,.surah-nav .pagination>li>span{
   padding: 4px 6px;
 }
