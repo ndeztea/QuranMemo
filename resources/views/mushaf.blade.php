@@ -124,17 +124,22 @@ $prev_surah = '';
 							<!-- /mushaf-display -->
 
 							<?php  $a=0;?>
-							<div class="mushaf_header">
+							<div class="mushaf_header clearfix">
 							@if(!isset($selected_surah))
-								<div class="input-group" role="group" aria-label="...">
-									<a class="btn btn-default input-group" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"><i class="fa fa-angle-left"></i> prev </a>
-								  	@if($ayats[0]->juz!=0)
-										<span class="input-group-addon" class="header_juz">Juz {{$ayats[0]->juz}}</span>
+								
+								<a class="btn btn-default pull-left" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}">
+									<i class="fa fa-angle-left"></i> <span class="hidden-xs">Sebelumnya</span>
+								</a>
+								<div class="mids">
+									@if($ayats[0]->juz!=0)
+										<span class="header_juz">Juz {{$ayats[0]->juz}}</span>
 									@endif
-									<span class="input-group-addon" class="header_juz">Surah {{$ayats[0]->surah_name}}</span>
-									<span class="input-group-addon" class="header_page">Hal {{$curr_page}}</span>
-									<a class="btn btn-default input-group" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"> next <i class="fa fa-angle-right"></i></a>
+									<span class="header_juz">Surah {{$ayats[0]->surah_name}}</span>
+									<span class="header_page">Hal {{$curr_page}}</span>
 								</div>
+								<a class="btn btn-default pull-right" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"> <span class="hidden-xs">Berikutnya</span> <i class="fa fa-angle-right"></i>
+								</a>
+
 							@endif
 							</div>
 

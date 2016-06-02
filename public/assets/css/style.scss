@@ -606,13 +606,20 @@ a:focus{
 
 			.nav-top{
 				#surah-collapse{
-					
-			      	@include media(">=1059px") {
+					@include media(">=1234px") {
 			          	width: 65%;
 			          	float: left;
 			      	}
-			      	@include media(">=932px","<=1058px") {
+					@include media(">=1201px","<=1233px") {
+			          	width: 70%;
+			          	float: left;
+			      	}
+			      	@include media(">=1098px","<=1200px") {
 			          	width: 65%;
+			          	float: left;
+			      	}
+			      	@include media(">=932px","<=1097px") {
+			          	width: 75%;
 			          	float: left;
 			      	}
 			      	@include media(">=768px","<=931px") {
@@ -1579,24 +1586,58 @@ body.body-memo{
 }
 
 .mushaf_header{
-
-	width: 215px;
+	background-color: #efefef;
+	width: 100%;
 	margin: 0 auto;
-	padding: 5px 0;
+	padding: 6px 0;
+	position: relative;
+	border-bottom: solid 1px #ddd;
+
+		.btn{
+			position: absolute;
+			top:5px;
+			background:transparent;
+			color: #999;
+			text-shadow: none;
+			box-shadow: none;
+			border: solid 1px #ccc;
+			border-radius: 0;
+
+			@include media("<=767px",">=phone") {
+		      	top: 8px;
+		  	}
+		}
 
 	    .btn:first-child{
-	    	border-top-right-radius: 0;
-    		border-bottom-right-radius: 0;
-    		border-right: none;
+	    	left: 0;
+	    	border-left:none;
 	    }
 	    .btn:last-child{
-	    	border-top-left-radius: 0;
-    		border-bottom-left-radius: 0;
+	    	right: 0;
+	    	border-right:none;
 	    }
 
-	   	.input-group-addon{
-	   		border-right:none;
-	   	}
+	    .mids{
+	    	width: 50%;
+	    	margin: 0 auto;
+	    	text-align: center;
+
+	    	@include media("<=767px",">=phone") {
+		      	width: 100%;
+		  	}
+
+	    	span{
+	    		border:solid 1px #ccc;
+	    		padding: 5px 25px;
+	    		display: inline-block;
+	    		color: #999;
+	    		margin: 0 -2px;
+
+	    		@include media("<=767px",">=phone") {
+			      	padding: 5px 10px;
+			  	}
+	    	}
+	    }
 }
 
 .quran-player{
