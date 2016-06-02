@@ -188,13 +188,19 @@ var QuranJS = {
 		if(mushaf=='mushaf_arabic_trans'){
 			jQuery('.trans').removeClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').removeClass('go');
+			jQuery('.trans').show();
+			jQuery('.arabic').show();
 		}else if(mushaf=='mushaf_arabic'){
 			jQuery('.trans').addClass('puff').removeClass('go');
 			jQuery('.arabic').removeClass('puff').addClass('go');
+			jQuery('.arabic').show();
+			jQuery('.trans').hide();
 			
 		}else if(mushaf=='mushaf_trans'){
 			jQuery('.trans').removeClass('puff').addClass('go');
 			jQuery('.arabic').removeClass('go').addClass('puff');
+			jQuery('.trans').show();
+			jQuery('.arabic').hide();
 		}
 
 		jQuery('.mushaf_layout').val(mushaf);
