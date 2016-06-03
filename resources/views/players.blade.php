@@ -132,12 +132,14 @@ $(document).ready(function(){
 	[
 		// file list
 		@foreach($ayats as $ayat)
-		@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
-		{
-			
-			title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
-			mp3: "{{url('sound/hal_2/Al-Fatiha.001.mp3')}}"
-		},
+			@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
+			@if($ayat->ayat==1 && $ayat->surah!=1 )
+			{
+				
+				title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
+				mp3: "{{url('sound/hal_2/Al-Fatiha.001.mp3')}}"
+			},
+			@endif
 		<?php endif?>
 		{
 			

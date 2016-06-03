@@ -144,7 +144,12 @@
 							<!-- /ayat-section -->
 							<?php $a++;?>
 							@endif
-														<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
+							
+							@if($ayat->surah==1 && $ayat->ayat==1)
+							<?php $a--;?>
+							@endif
+
+							<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
 								@if($a!=0)
 								<div id="play_{{$a + 1}}"></div>
 								@endif
