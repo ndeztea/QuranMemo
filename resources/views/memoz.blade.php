@@ -130,10 +130,12 @@
 									<strong>{{$ayat->surah}}. Surah {{$ayat->surah_name}}</strong><br/>
 									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small>
 								</div>
-								@if($ayat->surah!=1 || $ayat->ayat!=1)
-								<div class="head_surah" >
-								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-								</div>
+								@if(($ayat->surah!=1 || $ayat->ayat!=1))
+									@if($ayat->surah!=9):?>
+									<div class="head_surah" >
+									بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+									</div>
+									<?php endif?>
 								@else 
 								<?php $a++; ?>
 								@endif
