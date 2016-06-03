@@ -126,10 +126,11 @@ $prev_surah = '';
 							<?php  $a=0;?>
 							<div class="mushaf_header clearfix">
 							@if(!isset($selected_surah))
-								
+								@if($curr_page!=1)
 								<a class="btn btn-default pull-left" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}">
 									<i class="fa fa-angle-left"></i> <span class="hidden-xs">Sebelumnya</span>
 								</a>
+								@endif
 								<div class="mids">
 									@if($ayats[0]->juz!=0)
 										<span class="header_juz">Juz {{$ayats[0]->juz}}</span>
@@ -137,8 +138,10 @@ $prev_surah = '';
 									<span class="header_juz">Surah {{$ayats[0]->surah_name}}</span>
 									<span class="header_page">Hal {{$curr_page}}</span>
 								</div>
+								@if($curr_page!=604)
 								<a class="btn btn-default pull-right" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"> <span class="hidden-xs">Berikutnya</span> <i class="fa fa-angle-right"></i>
 								</a>
+								@endif
 
 							@endif
 							</div>
@@ -152,9 +155,11 @@ $prev_surah = '';
 									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small>
 								</div>
 								@if($ayat->surah!=1 || $ayat->ayat!=1)
-								<div class="head_surah" >
-								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-								</div>
+									@if($ayat->surah!=9)
+									<div class="head_surah" >
+									بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+									</div>
+									<?php endif?>
 								@else
 								<?php $a++;?>
 								@endif
