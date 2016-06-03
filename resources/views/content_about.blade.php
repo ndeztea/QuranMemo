@@ -10,10 +10,10 @@ Assalamualaikum warahmatullahi wabarakatuh, <br><br>
 </p>
 
 <p>
-Pada saat ini QuranMemo mempunyai fitur yang terbatas dan jauh dari baik, tapi kami mempunyai rencana mudah-mudahan (Qodarullah)  akan terlaksana di tahun InsyaAllah 
+Pada saat ini QuranMemo mempunyai fitur yang terbatas dan jauh dari baik, tapi kami mempunyai rencana untuk menambahkan beberapa fitur khusus yang berhubungan dengan Al-Quran, baik itu memudahkan mencari daftar isi, daftar kisah-kisah, tafsir, setoran online, video tata cara menghafal Al-Quran, video ceramah-ceramah untuk mencintai Al-Quran dll. Mudah-mudahan (Qodarullah)  akan terlaksana di tahun ini InsyaAllah.
 </p>
 
-<p>
+<!--p>
 Fitur-fitur yang akan kami siapkan untuk kedepannya adalah :
 <ul>
 	<li>Akan di mudahkan untuk mencari isi dan tafsir Al-Quran</li>
@@ -23,7 +23,7 @@ Fitur-fitur yang akan kami siapkan untuk kedepannya adalah :
 	<li>Mencatat dan mengelola catatan hasil mengaji Al-Quran antum sekalian dan berbagi bersama para sahabat yang lain</li>
 	<li>Tafsir Ibnu Katsir</li>
 	<li>Hadist-hadist pilihan seperti Hadist Arbain dan hadist-hadist shohih ringan yang mudah dipahami dan diamalkan</li>
-</ul>
+</ul-->
 <p>
 Mohon do'anya dari antum supaya niat kami ini bisa di berkahi, dilancarkan dan di ridho oleh Allah Ta'ala. Mudah-mudahan kita semua berada dalam ridho Allah Ta'ala sampai kita wafat, kita dibangkitakan dan kita berkumpul di surgaNya. Aamiin.
 </p>
