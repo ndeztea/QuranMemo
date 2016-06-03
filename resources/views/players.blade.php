@@ -256,7 +256,12 @@ $(document).ready(function(){
 		if($(".quran_player").css('display') == 'none'){
 			$('.btn-toggle-player').click();
 		}
-		muratalPlaylist.play(<?php echo $a?>);
+		@if($ayat->surah==1) 
+			muratalPlaylist.play(<?php echo $a-1?>);
+		@else
+			muratalPlaylist.play(<?php echo $a?>);
+		@endif
+		
 	});
 	<?php $prev_surah = $ayat->surah?>
 	<?php $a++;endforeach?>
