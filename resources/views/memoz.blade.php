@@ -140,6 +140,7 @@
 								<div class="clearfix"></div>
 							</div>
 							<!-- /ayat-section -->
+							<?php $a++;?>
 							@endif
 														<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
 								@if($a!=0)

@@ -156,7 +156,7 @@ $prev_surah = '';
 								بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 								</div>
 								@else
-								<?php $a--;?>
+								<?php $a++;?>
 								@endif
 								<div class="clearfix"></div>
 							</div>

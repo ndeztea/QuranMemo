@@ -118,7 +118,7 @@ $surahMuratal[114] = "An-Nas";
 
 // set number arabic
 $numberArabic[1] = '1';
-
+$prev_surah = '';
 ?>
 
 <script type="text/javascript">
@@ -132,7 +132,7 @@ $(document).ready(function(){
 	[
 		// file list
 		@foreach($ayats as $ayat)
-		@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) )
+		@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
 		{
 			
 			title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
@@ -148,6 +148,7 @@ $(document).ready(function(){
 			?>
 			mp3: "{{url('sound/hal_'.$halMuratal.'/'.$ayatMp3)}}"
 		},
+		<?php $prev_surah = $ayat->surah?>
 		@endforeach
 	],
 	{
@@ -241,10 +242,10 @@ $(document).ready(function(){
        }
     });
 	
-	<?php $a=0;?>
+	<?php $a=0;$prev_surah='';?>
 	@foreach($ayats as $ayat)
 
-	@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) )
+	@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
 	//muratalPlaylist.play();
 	<?php $a++;?>
 	@endif
@@ -255,6 +256,7 @@ $(document).ready(function(){
 		}
 		muratalPlaylist.play(<?php echo $a?>);
 	});
+	<?php $prev_surah = $ayat->surah?>
 	<?php $a++;endforeach?>
 });
 </script>

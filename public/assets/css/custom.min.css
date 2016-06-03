@@ -38,25 +38,7 @@
     padding-right: 0px;
     padding-left: 0px;
   }
-  .modal-body .btn-juz,.modal-body .btn-last-memoz{
-    display: none !important;
-  }
-  .modal-body .input-group{
-    float:none;
-    width:101%;
-  }
-  .modal-body .btn-search, .modal-body .btn-cari-ayat{
-    border-width: 1px;
-    border-color: #4db578;
-    border-style: solid;
-    background-color: #4db578;
-    color: #fff;
-    background-image: none;
-    text-shadow: none;
-    width : 100%;
-    margin-top: 10px;
-    font-size: 21px;
-  }
+  
   .container-fluid .btn{
     margin-bottom: 0px !important;
     margin-top: 0px !important;
@@ -110,6 +92,31 @@
   .memoz_nav{
     padding: 0px 25px;
   }
+}
+.modal-body .btn-juz,.modal-body .btn-last-memoz{
+  display: none !important;
+}
+.modal-body .input-group{
+  float:none;
+  width:101%;
+}
+.modal-body .btn-search, .modal-body .btn-cari-ayat{
+  border-width: 1px;
+  border-color: #4db578;
+  border-style: solid;
+  background-color: #4db578;
+  color: #fff;
+  background-image: none;
+  text-shadow: none;
+  width : 100%;
+  margin-top: 10px;
+  font-size: 21px;
+}
+.modal-body .form-inline .form-group, .modal-body .form-inline .form-control{
+  width: 100%;
+}
+input[type="number"]{
+  text-align: center;
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
