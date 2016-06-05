@@ -199,6 +199,10 @@ a:focus{
 			color: #fff;
 		}
 
+		@include media("<tablet", ">=phone") {
+      		margin: 7.5px 0;
+  		}
+
 	}
 	
 
@@ -1603,6 +1607,13 @@ body.body-memo{
 			border: solid 1px #ccc;
 			border-radius: 0;
 
+			&:hover,
+			&:focus{
+				background-color: $main-color;
+				color: #fff;
+				border: 1px solid transparent;
+			}
+
 			@include media("<=767px",">=phone") {
 		      	top: 8px;
 		  	}
@@ -1699,7 +1710,7 @@ body.body-memo{
   	}
 
 	@include media("<tablet", ">=381px") {
-		width: 100%;
+		
 	}
 
 	.jp-video{
