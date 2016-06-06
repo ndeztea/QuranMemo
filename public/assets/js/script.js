@@ -2,6 +2,7 @@ var QuranJS = {
 	siteUrl : '',
 	totalAyatSpaces : [''],
 	totalAyat : 0,
+	headSurah : 0,
 	loadingText : ['"Hai orang-orang yang beriman. Bersabarlah kamu, dan kuatkanlah kesabaranmu dan tetaplah bersiaga-siaga (diperbatasan negrimu) dan bertaqwalah kepada Allah supaya kamu beruntung." (Ali-Imran 200).','"Tetapi orang yang bersabar dan memaafkan sesungguhnya (perbuatan) yang demikian itu termasuk hal-hal yang diutamakan" (Asy-Syuura 43)','"Sesengguhnya kesabaran itu hanyalah pada pukulan yang pertama dari bala" (Hadist Muttafaq\'alaih)'],
 
 	modalLoading : function(){
@@ -298,6 +299,9 @@ var QuranJS = {
 			jQuery('*','.mushaf').removeClass('playing');
 			$('.puzzle' + Math.ceil(Math.random() * 2)).show();
 
+			jQuery('.trans').hide();
+			jQuery('.arabic').show();
+
 			// suffle element 
 			for(a=0;a<=this.totalAyat;a++){
 				var parent = jQuery(".puzzle.puzzle_"+a);
@@ -311,10 +315,11 @@ var QuranJS = {
 			// first element
 			var puzzle_word = jQuery('#puzzle_word').val();
 			if(puzzle_word==''){
-				jQuery('#puzzle_ayat').val('0');
+				jQuery('#puzzle_ayat').val(this.headSurah);
 				jQuery('#puzzle_word').val('1');
-				jQuery('.arabic_0 .content_ayat .puzzle_border').first().removeClass('puzzle_no_border');
+				jQuery('.arabic_'+this.headSurah+' .content_ayat .puzzle_border').first().removeClass('puzzle_no_border');
 			}
+
 
 
 		}
@@ -418,7 +423,7 @@ var QuranJS = {
 		$('.modal-title').html('Pencarian');
 		htmlSearchSurah = jQuery('.select-surah').html();
 		$('.modal-body').html(htmlSearchSurah);
-		$('.modal-footer').hide();
+		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 	},
 
 	createMemoModal : function(){
@@ -426,7 +431,7 @@ var QuranJS = {
 		$('.modal-title').html('Hafalan Baru');
 		htmlSearchSurah = jQuery('.select-surah').html();
 		$('.modal-body').html(htmlSearchSurah);
-		$('.modal-footer').hide();
+		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 	},
 
 	

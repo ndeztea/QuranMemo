@@ -131,10 +131,11 @@
 									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small>
 								</div>
 								@if(($ayat->surah!=1 || $ayat->ayat!=1))
-									@if($ayat->surah!=9):?>
+									@if($ayat->surah!=9)
 									<div class="head_surah" >
 									بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 									</div>
+									<script>QuranJS.headSurah=1;</script>
 									<?php endif?>
 								@else 
 								<?php $a++; ?>
@@ -322,7 +323,9 @@ $(document).ready(function(){
 			document.cookie = 'coo_hide_info="false;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/"';
 		}
 	}
-
+	@if(($ayat->surah==1))
+	QuranJS.headSurah = 1;
+	@endif
 </script>
 
 @endsection
