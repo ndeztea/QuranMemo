@@ -87,8 +87,9 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="">
-
 						<div class="mushaf mushaf-hafalan">
+							<div class="clearfix surah_title head_surah_1 center">{{$header_title}}</div>
+					
 							<div class="step-wrap">
 								<div class="steps clearfix btn-group btn-breadcrumb" role="group" aria-label="steps">
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('1')" class="btn btn-default steps_1 selected"># 1</a>
