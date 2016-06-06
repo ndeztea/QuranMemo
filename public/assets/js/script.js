@@ -434,6 +434,43 @@ var QuranJS = {
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 	},
 
+	setBookmark : function(title, url){
+		var hasClass = jQuery('#bookmark').hasClass('fa-bookmark-o');
+		if(hasClass==true){
+			document.cookie = 'coo_mushaf_bookmark_title='+title+';visited=true;path=/;';
+			document.cookie = 'coo_mushaf_bookmark_url='+url+';visited=true;path=/;';
+			jQuery('#bookmark').removeClass('fa-bookmark-o');
+			jQuery('#bookmark').addClass('fa-bookmark');
+		}else{
+			document.cookie = 'coo_mushaf_bookmark_title=;visited=true;path=/;';
+			document.cookie = 'coo_mushaf_bookmark_url=;visited=true;path=/;';
+			jQuery('#bookmark').removeClass('fa-bookmark');
+			jQuery('#bookmark').addClass('fa-bookmark-o');
+		}
+		
+	},
+
+	bookmarkModal : function (title,url){
+		var mushafUrl = this.siteUrl+'/mushaf';
+		if(title==''){
+			location.href=mushafUrl;
+			return false;
+		}
+		var body = '<div class="center">';
+		body += '<h4>Lanjut baca '+title+'<h4>';
+		body += '<button class="btn btn-green-small" onclick="location.href=\''+url+'\'">Ya</button> ';
+		body += '<button class="btn btn-green-small"  onclick="location.href=\''+mushafUrl+'\'">Tidak</button>';
+		//body += '<br><br><button class="btn btn-red">Hapus bookmark</button>';
+		body += '</div>';
+
+		$('.modal-title').html('Halaman terakhir dibaca');
+		$('.modal-body').html(body);
+		$('.modal-footer').show();
+		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
+		$('.modal-header button').show();
+		$('#QuranModal').modal('show');
+	}
+
 	
 
 } 

@@ -96,7 +96,11 @@ $prev_surah = '';
 							
 							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val())" class="btn btn-default btn-setting pull-right">
 								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
+							</button> 
+							<button type="button" href="#"  onclick="QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="btn btn-default btn-setting pull-right btn-bookmark">
+								<i class="fa {{$bookmarked}}" id="bookmark"></i> <span class="hidden-xs">Terakhir baca</span>
 							</button>
+							
 							<div class="clearfix"></div>
 						</div>
 					</div>

@@ -54,8 +54,10 @@ class MushafController extends Controller
 
         $data['ayat_start'] = '';
         $data['ayat_end'] = '';
-
+        //echo $_COOKIE['coo_mushaf_bookmark_url'].'=='.$_SERVER['REQUEST_URI'];
+        //die();
         $data['cookies'] = getCookie();
+        $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
         // show view template
        return view('mushaf',$data);
@@ -209,6 +211,7 @@ class MushafController extends Controller
         $data['ayat_end'] = '';
 
         $data['cookies'] = getCookie();
+        $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
         // show view template
        return view('mushaf',$data);

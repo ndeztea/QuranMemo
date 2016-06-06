@@ -38,25 +38,7 @@
     padding-right: 0px;
     padding-left: 0px;
   }
-  .modal-body .btn-juz,.modal-body .btn-last-memoz{
-    display: none;
-  }
-  .modal-body .input-group{
-    float:none;
-    width:101%;
-  }
-  .modal-body .btn-search, .modal-body .btn-cari-ayat{
-    border-width: 1px;
-    border-color: #4db578;
-    border-style: solid;
-    background-color: #4db578;
-    color: #fff;
-    background-image: none;
-    text-shadow: none;
-    width : 100%;
-    margin-top: 10px;
-    font-size: 21px;
-  }
+  
   .container-fluid .btn{
     margin-bottom: 0px !important;
     margin-top: 0px !important;
@@ -87,6 +69,9 @@
     margin-top: 7px;
     display: inline-block !important;
   }
+  #qm-navbar-collapse{
+    margin: 7.5px -15px !important;
+  }
   .navbar-default .navbar-nav>li>a{
     border-bottom: 1px solid #43A76B;
   }
@@ -101,17 +86,63 @@
     width: 13px;
   }
 
+  .mushaf-hafalan.mushaf .ayat_section .trans{
+    padding: 4px 10px 5px 22px
+  }
+  .mushaf-hafalan.mushaf .ayat_section .arabic{
+    padding: 2px 10px 0px 22px !important;
+  }
+  .memoz_nav{
+    padding: 0px 25px;
+  }
+
+}
+.modal-body .btn-juz,.modal-body .btn-last-memoz{
+  display: none !important;
+}
+.modal-body .input-group{
+  float:none;
+  width:101%;
+}
+.modal-body .btn-search, .modal-body .btn-cari-ayat{
+  border-width: 1px;
+  border-color: #4db578;
+  border-style: solid;
+  background-color: #4db578;
+  color: #fff;
+  background-image: none;
+  text-shadow: none;
+  width : 100%;
+  margin-top: 10px;
+  font-size: 21px;
+}
+.modal-body .form-inline .form-group, .modal-body .form-inline .form-control{
+  width: 100%;
+}
+input[type="number"]{
+  text-align: center;
 }
 /*.mushaf .ayat_section .trans{padding:10px 10px  !important;}
 .mushaf .ayat_section .arabic{
   padding: 10px
 }
 */
-
+.puzzle{
+  padding: 0 25px;
+}
+.mushaf-hafalan.mushaf .puzzle .arabic{
+  padding: 0px 2px 2px 2px !important;
+}
+.mushaf-hafalan.mushaf .puzzle .arabic:end-child {
+  padding: 0px 2px 2px 22px !important;
+}
+.puzzle  .arabic a{
+  background-color: #DDDDDD;
+}
 .pagination .page_free_input .form-group button{
     margin: -11px 0px !important;
   }
-  
+
 .surah-nav .pagination>li>a,.surah-nav .pagination>li>span{
   padding: 4px 6px;
 }
@@ -463,4 +494,7 @@ ul.juz-list{
 .arabic a{
   text-decoration: none;
   padding: 0px 3px;
+}
+.btn-bookmark{
+  margin-right : 5px;
 }

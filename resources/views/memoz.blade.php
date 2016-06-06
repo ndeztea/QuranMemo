@@ -323,7 +323,7 @@ $(document).ready(function(){
 			document.cookie = 'coo_hide_info="false;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/"';
 		}
 	}
-	@if(($ayat->surah==1))
+	@if((@$ayat->surah==1))
 	QuranJS.headSurah = 1;
 	@endif
 </script>

@@ -69,6 +69,9 @@
     margin-top: 7px;
     display: inline-block !important;
   }
+  #qm-navbar-collapse{
+    margin: 7.5px -15px !important;
+  }
   .navbar-default .navbar-nav>li>a{
     border-bottom: 1px solid #43A76B;
   }
@@ -92,6 +95,7 @@
   .memoz_nav{
     padding: 0px 25px;
   }
+
 }
 .modal-body .btn-juz,.modal-body .btn-last-memoz{
   display: none !important;
@@ -490,4 +494,7 @@ ul.juz-list{
 .arabic a{
   text-decoration: none;
   padding: 0px 3px;
+}
+.btn-bookmark{
+  margin-right : 5px;
 }

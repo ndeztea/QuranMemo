@@ -137,7 +137,9 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="qm-navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}"><a href="{{url('mushaf')}}">{{trans('trans.mushaf')}}</a></li>
+                        <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
+                        <a href="javascript:;" onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{$_COOKIE['coo_mushaf_bookmark_url']}}')">{{trans('trans.mushaf')}}</a>
+                        </li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang</a></li>
