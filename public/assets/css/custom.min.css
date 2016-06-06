@@ -95,6 +95,9 @@
   .memoz_nav{
     padding: 0px 25px;
   }
+  .quran_player .jp-controls-holder{
+    left:0px !important;
+  }
 
 }
 .modal-body .btn-juz,.modal-body .btn-last-memoz{
