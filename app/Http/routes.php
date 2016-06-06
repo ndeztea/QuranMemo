@@ -24,6 +24,7 @@ Route::get('home', 'HomeController@index');
 
 Route::get('mushaf/generate', 'MushafController@generate');
 Route::get('mushaf/juz', 'MushafController@juz');
+Route::get('mushaf/start', 'MushafController@index');
 Route::get('mushaf/juz/{juz}', 'MushafController@juzPage');
 Route::get('mushaf/', 'MushafController@index');
 Route::get('mushaf/page', 'MushafController@index');

@@ -273,7 +273,11 @@
              $(window).bind('beforeunload', function(){
                $('#preloader').show();
              });
-
+             if('{{Request::segment(2)}}'=='start'){
+                if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!=''){
+                    QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
+                }
+             }
 
 
         </script>
