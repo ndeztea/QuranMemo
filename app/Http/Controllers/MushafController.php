@@ -102,6 +102,7 @@ class MushafController extends Controller
         // data header
         $data['header_title'] = 'Surah '. $surah[0]->surah_name.' : '.$ayat;
         $data['header_description'] = $ayats[0]->text_indo;
+        $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
         return view('mushaf',$data);
     }

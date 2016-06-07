@@ -309,7 +309,7 @@ $(document).ready(function(){
 					</div>
 				</div>
 			</div>
-			<div class="jp-playlist" style="display:none">
+			<div class="jp-playlist">
 				<ul>
 					<!-- The method Playlist.displayPlaylist() uses this unordered list -->
 					<li>&nbsp;</li>

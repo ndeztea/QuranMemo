@@ -14,7 +14,9 @@
 		<div class="single-column">
 			<div class="page-title">
 				<h2>Menghafal</h2>
-				<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+				@if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
+    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+    			@endif
 				
 			</div>
 			<div class="nav-top clearfix">
@@ -85,7 +87,7 @@
 			<input type="hidden" name="puzzle_word" id="puzzle_word" value="">
 			@if(!empty($ayats))
 			<div class="container-fluid">
-				<div class="row">
+				<div class="">
 					<div class="">
 						<div class="mushaf mushaf-hafalan">
 							<div class="clearfix surah_title head_surah_1 center">{{$header_title}}</div>
@@ -256,7 +258,7 @@ $(document).ready(function(){
 			QuranJS.generateArHeight('!important');
 			QuranJS.generateTransHeight('!important');
 
-			$('.quran_player').hide();
+			//$('.quran_player').hide();
 
 			//show & hide search setting
 			// $('.openThis').hide();

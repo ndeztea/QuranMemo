@@ -20,8 +20,9 @@ $prev_surah = '';
 				<div class="single-column">
 					<div class="page-title">
 						<h2 class="pull-left">Mushaf</h2>
-						<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
-				
+						 @if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
+            			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+            			@endif
 						@if(empty($selected_surah))
 							<!--div class="surah-action pull-right">
 								<span class="auto-play">

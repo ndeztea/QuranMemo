@@ -138,7 +138,7 @@
                 <div class="collapse navbar-collapse" id="qm-navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
-                        <a href="javascript:;" onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{$_COOKIE['coo_mushaf_bookmark_url']}}')">{{trans('trans.mushaf')}}</a>
+                        <a href="javascript:;" onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')">{{trans('trans.mushaf')}}</a>
                         </li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
@@ -169,10 +169,7 @@
             <ul>
                 <li><span>Copyright &copy; 2016</span></li>
             </ul>
-            @if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-            
-            @endif
-            <br><br>
+          <br><br>
         </div>
         <!-- /footer -->
 

@@ -1,4 +1,4 @@
-@media (max-width: 767px) and (min-width: 300px){
+@media (max-width: 767px) and (min-width: 270px){
   .mushaf .ayat_section .arabic {
     padding:  0px !important;
   }
@@ -42,7 +42,6 @@
   .container-fluid .btn{
     margin-bottom: 0px !important;
     margin-top: 0px !important;
-    height: 30px;
   }
   .main-content-wrap .main-content .single-column .page-title h2{
     margin-left: 9px;
@@ -86,19 +85,32 @@
     width: 13px;
   }
 
-  .mushaf-hafalan.mushaf .ayat_section .trans{
-    padding: 4px 10px 5px 22px
-  }
-  .mushaf-hafalan.mushaf .ayat_section .arabic{
-    padding: 2px 10px 0px 22px !important;
+  
+  .mushaf-hafalan .surah_title{
+    padding-top:10px;
   }
   .memoz_nav{
     padding: 0px 25px;
   }
   .quran_player .jp-controls-holder{
     left:0px !important;
+    width: 100% !important;
   }
 
+  .jp-volume-controls{
+    display: none;
+  }
+
+  .quran_player {
+    width: 100% !important;
+  }
+  .quran_player .jp-video{
+    margin: 0px;
+    width: 100%;
+  }
+  .quran_player .jp-video .jp-type-playlist .jp-controls{
+    margin: 0 auto;
+  }
 }
 .modal-body .btn-juz,.modal-body .btn-last-memoz{
   display: none !important;

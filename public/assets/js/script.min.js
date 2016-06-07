@@ -441,11 +441,13 @@ var QuranJS = {
 			document.cookie = 'coo_mushaf_bookmark_url='+url+';visited=true;path=/;';
 			jQuery('#bookmark').removeClass('fa-bookmark-o');
 			jQuery('#bookmark').addClass('fa-bookmark');
+			alert(title+' - telah di tandai halaman terakhir dibaca');
 		}else{
 			document.cookie = 'coo_mushaf_bookmark_title=;visited=true;path=/;';
 			document.cookie = 'coo_mushaf_bookmark_url=;visited=true;path=/;';
 			jQuery('#bookmark').removeClass('fa-bookmark');
 			jQuery('#bookmark').addClass('fa-bookmark-o');
+			alert('Halaman terakhir dibaca dihapus');
 		}
 		
 	},
