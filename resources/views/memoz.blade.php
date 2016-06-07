@@ -13,7 +13,7 @@
 		<!-- /backdrop -->
 		<div class="single-column">
 			<div class="page-title">
-				<h2>Menghafal</h2>
+				<h2 class="pull-left">Menghafal</h2>
 				@if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
     			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
     			@endif
@@ -86,7 +86,7 @@
 			<input type="hidden" name="puzzle_ayat" id="puzzle_ayat" value="">
 			<input type="hidden" name="puzzle_word" id="puzzle_word" value="">
 			@if(!empty($ayats))
-			<div class="container-fluid">
+			<div class="">
 				<div class="">
 					<div class="">
 						<div class="mushaf mushaf-hafalan">
@@ -227,14 +227,10 @@
 								<p>Jangan lupa untuk berdo'a kepada Allah Ta'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p-->
 
 							</div>
-						<?php endif?>
-
-						
+						<?php endif?>		
 
 					</div>
 				</div>
-
-
 
 			</div>
 		<!-- end single-column-->

@@ -1816,4 +1816,32 @@ body.body-memo{
 	.jp-play-bar{
 		background: #2e6e48 !important;
 	}
+
+}
+
+.memoz_nav{
+	width: 98%;
+	margin: 0 auto 10px;
+
+	@include media("<=480px", ">=phone") {
+		width: 88%;
+	}
+
+	.btn{
+		color: $main-color;
+		border: solid 1px $main-color;
+		display: inline-block;
+		width: 19.7%;
+
+		&:hover,
+		&:focus{
+			color: #fff;
+			background: $main-color-hover;
+		}
+
+		@include media("<=480px", ">=phone") {
+			width: auto;
+			padding: 4px 5px;
+		}
+	}
 }
