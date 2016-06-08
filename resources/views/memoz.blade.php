@@ -115,11 +115,11 @@
 							</div>
 							<?php  $a=0; ?>
 							<div class="memoz_nav" style="display: none">
-								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('start')">Awal</a>
-								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('middle')">Tengah</a>
-								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('end')">Akhir</a>
-								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('mix')">Awal+Akhir</a>
-								<a href="javascript:;" class="btn" onclick="QuranJS.showAyat('random')">Acak</a>
+								<a href="javascript:;" class="btn btn-start" onclick="QuranJS.showAyat('start')">Awal</a>
+								<a href="javascript:;" class="btn btn-middle" onclick="QuranJS.showAyat('middle')">Tengah</a>
+								<a href="javascript:;" class="btn btn-end" onclick="QuranJS.showAyat('end')">Akhir</a>
+								<a href="javascript:;" class="btn btn-mix" onclick="QuranJS.showAyat('mix')">Awal+Akhir</a>
+								<a href="javascript:;" class="btn btn-random" onclick="QuranJS.showAyat('random')">Acak</a>
 							</div>
 							<script>
 								QuranJS.totalAyat = {{count($ayats)}}

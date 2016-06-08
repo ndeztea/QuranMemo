@@ -510,3 +510,7 @@ ul.juz-list{
 .btn-bookmark{
   margin-right : 5px;
 }
+.memoz_nav .btn.active{
+  color: #fff;
+  background: #409965;
+}

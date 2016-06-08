@@ -371,8 +371,9 @@ var QuranJS = {
 
 	showAyat : function (show){
 		jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
-
+		jQuery('.memoz_nav .btn').removeClass('active');
 		a=1;
+		jQuery('.btn-'+show).addClass('active');
 		for(o=0;o<=this.totalAyatSpaces.length;o++){
 			if(show=='start'){
 				min = this.totalAyatSpaces[o]>=10?3:2;
