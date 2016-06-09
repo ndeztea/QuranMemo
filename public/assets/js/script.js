@@ -187,19 +187,19 @@ var QuranJS = {
 		jQuery('.mushaf').removeClass('mushaf_trans');
 
 		if(mushaf=='mushaf_arabic_trans'){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
+			//jQuery('.trans').removeClass('puff').removeClass('go');
+			//jQuery('.arabic').removeClass('puff').removeClass('go');
 			jQuery('.trans').show();
 			jQuery('.arabic').show();
 		}else if(mushaf=='mushaf_arabic'){
-			jQuery('.trans').addClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').addClass('go');
+			//jQuery('.trans').addClass('puff').removeClass('go');
+			//jQuery('.arabic').removeClass('puff').addClass('go');
 			jQuery('.arabic').show();
 			jQuery('.trans').hide();
 			
 		}else if(mushaf=='mushaf_trans'){
-			jQuery('.trans').removeClass('puff').addClass('go');
-			jQuery('.arabic').removeClass('go').addClass('puff');
+			//jQuery('.trans').removeClass('puff').addClass('go');
+			//jQuery('.arabic').removeClass('go').addClass('puff');
 			jQuery('.trans').show();
 			jQuery('.arabic').hide();
 		}
@@ -226,8 +226,8 @@ var QuranJS = {
 	stepMemoz : function(steps){
 		jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
 		if(steps==1){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
+			//jQuery('.trans').removeClass('puff').removeClass('go');
+			//jQuery('.arabic').removeClass('puff').removeClass('go');
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal');
 			jQuery('.jp-stop').click();
 			jQuery('.memozed,.memoz_nav').hide();
@@ -241,8 +241,8 @@ var QuranJS = {
 			jQuery('.trans').show();
 			jQuery('.arabic').show();
 		}else if(steps==2){
-			jQuery('.trans').addClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').addClass('go');
+			//jQuery('.trans').addClass('puff').removeClass('go');
+			//jQuery('.arabic').removeClass('puff').addClass('go');
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic');
 			jQuery('.jp-stop').click();
 			jQuery('.memozed,.memoz_nav').hide();
@@ -256,8 +256,8 @@ var QuranJS = {
 			jQuery('.trans').hide();
 			jQuery('.arabic').show();
 		}else if(steps==3){
-			jQuery('.trans').removeClass('puff').addClass('go');
-			jQuery('.arabic').removeClass('go').addClass('puff');
+			//jQuery('.trans').removeClass('puff').addClass('go');
+			//jQuery('.arabic').removeClass('go').addClass('puff');
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Fokuskan hafalan terjemahannya saja');
 			jQuery('.jp-stop').click();
 			jQuery('.memoz_nav').hide();
@@ -271,8 +271,8 @@ var QuranJS = {
 			jQuery('.trans').show();
 			jQuery('.arabic').hide();
 		}else if(steps==4){
-			jQuery('.trans').removeClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
+			//jQuery('.trans').removeClass('puff').removeClass('go');
+			//jQuery('.arabic').removeClass('puff').removeClass('go');
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> TEST...!! Bacakan setiap kata yang di hilangkan.');
 			jQuery('.jp-stop').click();
 			jQuery('.memoz_player,.memozed').show();
@@ -288,8 +288,8 @@ var QuranJS = {
 			jQuery('.arabic').show();
 
 		}else if(steps==5){
-			jQuery('.trans').addClass('puff').removeClass('go');
-			jQuery('.arabic').removeClass('puff').removeClass('go');
+			//jQuery('.trans').addClass('puff').removeClass('go');
+			//jQuery('.arabic').removeClass('puff').removeClass('go');
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> PUZZLE...!! Cocokan kata yang hilang secara berurutan');
 			jQuery('.jp-stop').click();
 			jQuery('.memoz_player,.memozed,.puzzle').show();
@@ -354,8 +354,8 @@ var QuranJS = {
 			jQuery('#puzzle_word').val(puzzle_word);
 
 			// check if ayat already finish
-			console.log(jQuery( '.puzzle_'+puzzle_ayat+' .arabic a' ).length);
-			if(jQuery( '.puzzle_'+puzzle_ayat+' .arabic a' ).length==0){
+			console.log(jQuery( '.puzzle_'+puzzle_ayat+' .arabic-puzzle a' ).length);
+			if(jQuery( '.puzzle_'+puzzle_ayat+' .arabic-puzzle a' ).length==0){
 				jQuery('.puzzle_'+puzzle_ayat).remove();
 				puzzle_ayat+=1;
 				jQuery('#puzzle_ayat').val(puzzle_ayat);

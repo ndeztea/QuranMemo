@@ -259,7 +259,7 @@ $prev_surah = '';
 	$(document).ready(function () {
 		var jQuerywindow = jQuery(window);
 		
-		resizeDiv();
+		//resizeDiv();
 
 		$('.dropdown-menu').on('click', function(event) {
 		    event.stopPropagation();
