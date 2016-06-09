@@ -182,11 +182,13 @@
 								</div>
 								<!-- PUZZLE -->
 								<div class="puzzle puzzle_{{$a}}" style="display:none">
+								<span class="content_ayat">
 								<?php $per = 0?>
 								@foreach($arr_ayats as $per_ayat)
 									<?php $per++;?>
-										<span class="arabic-puzzle"><a onclick="QuranJS.puzzleAnswer(this)" href="javascript:;" data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</a></span>
+										<span class="arabic-puzzle" style="padding:0 10px"><a onclick="QuranJS.puzzleAnswer(this)" href="javascript:;" data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</a></span>
 								@endforeach
+								</span>
 								</div>
 								<!-- END -->
 
