@@ -87,7 +87,7 @@ class MemozController extends Controller
             setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
             return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
         }elseif($surah_start && !empty($ayat_start)){
-            setcookie('coo_last_memoz','coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
+            setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
             return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
         }else{
             return redirect('memoz');

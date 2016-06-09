@@ -69,7 +69,7 @@
     display: inline-block !important;
   }
   #qm-navbar-collapse{
-    margin: 7.5px -30px !important;
+    margin: 7.5px -15px !important;
   }
   .navbar-default .navbar-nav>li>a{
     border-bottom: 1px solid #43A76B;
@@ -142,14 +142,17 @@ input[type="number"]{
 .puzzle{
   padding: 0 25px;
 }
-.mushaf-hafalan.mushaf .puzzle .arabic{
+.mushaf-hafalan.mushaf .puzzle .arabic-puzzle{
+  font-family: "Lateef", "Traditional Arabic";
   padding: 0px 2px 2px 2px !important;
+
 }
-.mushaf-hafalan.mushaf .puzzle .arabic:end-child {
+.mushaf-hafalan.mushaf .puzzle .arabic-puzzle:end-child {
   padding: 0px 2px 2px 22px !important;
 }
-.puzzle  .arabic a{
+.puzzle  .arabic-puzzle a{
   background-color: #DDDDDD;
+  text-decoration: none;
 }
 .pagination .page_free_input .form-group button{
     margin: -11px 0px !important;
