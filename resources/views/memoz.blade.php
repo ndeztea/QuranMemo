@@ -273,10 +273,10 @@ $(document).ready(function(){
 			    event.stopPropagation();
 			});
 
-			resizeDiv();
+			//resizeDiv();
 
 			window.onresize = function(event) {
-				resizeDiv();
+				//resizeDiv();
 			}
 
 			function resizeDiv() {
