@@ -159,7 +159,7 @@
 								@endif
 								<div class="arabic arabic_{{$a}}">
 									
-									<span class="content_ayat">
+									<span class="content_ayat clearfix">
 										<?php $arr_ayats = (explode(' ', trim($ayat->text)));$per=0;
 										$countSpaces = count($arr_ayats); 
 										?>
@@ -182,7 +182,7 @@
 								</div>
 								<!-- PUZZLE -->
 								<div class="puzzle puzzle_{{$a}}" style="display:none">
-								<span class="content_ayat">
+								<span class="content_ayat clearfix">
 								<?php $per = 0?>
 								@foreach($arr_ayats as $per_ayat)
 									<?php $per++;?>
