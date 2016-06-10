@@ -107,6 +107,18 @@ class MushafController extends Controller
         return view('mushaf',$data);
     }
 
+    public function filter_surah(){
+        $QuranModel = new Quran;
+        $surahs = $QuranModel->getSurah();
+
+        $data['surahs'] = $surahs;
+        $dataHTML['modal_title'] = 'Surah';
+        $dataHTML['modal_body'] = view('mushaf_filter_surah',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
     /**
     * search surah 
     *
@@ -150,6 +162,18 @@ class MushafController extends Controller
 
 
         return redirect('mushaf/page/'.$page)->with('searchSurah', $surah);
+    }
+
+    /**
+    * detect page when change surah
+    *
+    */
+    public function jump_page(){
+        $dataHTML['modal_title'] = 'Pindah Halaman';
+        $dataHTML['modal_body'] = view('mushaf_jump_page')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
     }
 
     /**

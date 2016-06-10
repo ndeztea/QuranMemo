@@ -24,6 +24,8 @@ Route::get('home', 'HomeController@index');
 
 Route::get('mushaf/generate', 'MushafController@generate');
 Route::get('mushaf/juz', 'MushafController@juz');
+Route::get('mushaf/filter_surah', 'MushafController@filter_surah');
+Route::get('mushaf/jump_page', 'MushafController@jump_page');
 Route::get('mushaf/start', 'MushafController@index');
 Route::get('mushaf/juz/{juz}', 'MushafController@juzPage');
 Route::get('mushaf/', 'MushafController@index');

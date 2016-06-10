@@ -138,10 +138,10 @@ $prev_surah = '';
 								@endif
 								<div class="mids">
 									@if($ayats[0]->juz!=0)
-										<span class="header_juz">Juz {{$ayats[0]->juz}}</span>
+										<span class="header_juz" onclick="QuranJS.callModal('mushaf/juz')">Juz {{$ayats[0]->juz}}</span>
 									@endif
-									<span class="header_juz">Surah {{$ayats[0]->surah_name}}</span>
-									<span class="header_page">Hal {{$curr_page}}</span>
+									<span class="header_juz" onclick="QuranJS.callModal('mushaf/filter_surah')">Surah {{$ayats[0]->surah_name}}</span>
+									<span class="header_page" onclick="QuranJS.callModal('mushaf/jump_page')">Hal {{$curr_page}}</span>
 								</div>
 								@if($curr_page!=604)
 								<a class="btn btn-default pull-right" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page+1}}"> <span class="hidden-xs">Berikutnya</span> <i class="fa fa-angle-right"></i>
@@ -227,7 +227,7 @@ $prev_surah = '';
 										<?php endforeach?>
 										<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"> </i></a></li>
 										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> <i class="fa fa-angle-double-right"> </i></a></li>
-										<li class="page_free_input">
+										<!--li class="page_free_input">
 											<a href="javascript:;">
 											<form class="form-inline" id="paggingForm" onsubmit="return false">
 											  <div class="form-group">
@@ -237,7 +237,7 @@ $prev_surah = '';
 											    </div>
 											  </div>
 											</form>
-										</a></li>
+										</a></li-->
 									</ul>
 								</div>
 							</div>

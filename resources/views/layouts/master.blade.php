@@ -59,6 +59,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
+        <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         
         <script type="text/javascript">
             QuranJS.siteUrl = '{{url()}}';
@@ -74,6 +75,7 @@
             });
         </script>
         @endif
+
         <!-- JPlayer-->
         <link href="{{url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="{{url('assets/jplayer/lib/jquery.min.js')}}"></script>
