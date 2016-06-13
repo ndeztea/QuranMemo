@@ -1,11 +1,13 @@
 <html>
     <head>
         <meta name="google-site-verification" content="hXTmvIk3V_yZywNDwJlIFWrS1DQOcNV7UDLCBQUEUv0" />
-        <title>QuranMemo - {{ isset($header_title)?$header_title:''}}</title>
+        <title>{{ isset($header_title)?$header_title:''}} - QuranMemo</title>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta property="description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
+        <meta property="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
 
         <meta property="og:url" content="{{Request::url()}}" />
         <meta property="og:type"          content="website" />
@@ -168,6 +170,8 @@
         </div>
 
         <div class="footer">
+            <div class="ads"><a href="javascript:;" onclick="window.open('http://www.nhl.com', '_system', 'location=yes');" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}"></a></div>
+            <br>
             <ul>
                 <li><span>Copyright &copy; 2016</span></li>
             </ul>
@@ -272,7 +276,7 @@
              $(window).bind('beforeunload', function(){
                $('#preloader').show();
              });
-             if('{{Request::segment(2)}}'=='start'){
+             if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
                 if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!=''){
                     QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
                 }

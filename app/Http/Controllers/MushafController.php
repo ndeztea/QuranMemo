@@ -49,7 +49,7 @@ class MushafController extends Controller
         $data['curr_page'] = $page;
 
         // data header
-        $data['header_title'] = 'Mushaf Halaman '. $page;
+        $data['header_title'] = 'Mushaf Hal '. $page.', Juz '.$ayats[0]->juz.', Surah '.$ayats[0]->surah_name;
         $data['body_class'] = 'body-mushaf';
 
         $data['ayat_start'] = '';
@@ -229,7 +229,7 @@ class MushafController extends Controller
         $data['curr_page'] = $page;
 
         // data header
-        $data['header_title'] = 'Mushaf Halaman '. $page;
+        $data['header_title'] = 'Mushaf Hal '. $page.', Juz '.$ayats[0]->juz.', Surah '.$ayats[0]->surah_name;
         $data['body_class'] = 'body-mushaf';
 
         $data['ayat_start'] = '';
