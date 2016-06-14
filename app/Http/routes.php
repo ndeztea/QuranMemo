@@ -61,6 +61,8 @@ Route::get('bookmarks/', 'BookmarksController@index');
 
 Route::get('contact', 'ContentController@contact');
 Route::get('about', 'ContentController@about');
+Route::get('donasi', 'ContentController@donasi');
+
 
 Route::get('auth/login', 'Auth\AuthController@login');
 Route::post('auth/registerProcess', 'Auth\AuthController@registerProcess');

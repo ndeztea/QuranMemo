@@ -146,8 +146,8 @@
                         </li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
-                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang</a></li>
-                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Kontak</a></li>
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
+                        
                     </ul>
                     <div class="navbar-nav navbar-right">
                         <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
@@ -170,10 +170,14 @@
         </div>
 
         <div class="footer">
-            <div class="ads"><a href="javascript:;" onclick="window.open('http://www.nhl.com', '_system', 'location=yes');" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}"></a></div>
+            <div class="ads"><a href="javascript:;" onclick="alert('Untuk melihat informasi pasantren UBK Plus, buka halaman www.ubkplus.com')" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}"></a></div>
             <br>
             <ul>
                 <li><span>Copyright &copy; 2016</span></li>
+            </ul>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang Quran Memo</a></li>
+                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
             </ul>
           <br><br>
         </div>
