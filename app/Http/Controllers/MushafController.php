@@ -180,6 +180,22 @@ class MushafController extends Controller
     * select juz
     *
     */
+    public function muqodimah($surah){
+        $QuranModel = new Quran;
+        $surahs = $QuranModel->getSurah($surah);
+        
+        $data['muqodimah'] = $surahs[0]->muqodimah;
+        $dataHTML['modal_title'] = 'Muqodimah Surah '.$surahs[0]->surah_name;
+        $dataHTML['modal_body'] = view('mushaf_muqodimah',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
+    /**
+    * select juz
+    *
+    */
     public function juz(){
         $QuranModel = new Quran;
         $juzs = $QuranModel->getJuz();

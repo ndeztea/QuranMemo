@@ -84,7 +84,7 @@ class Quran extends Model
     */
     public function getSurah($id_surah=0){
         $surah = DB::table('surah')
-                ->select('id','name_indonesia as surah_name','type','ayat');
+                ->select('id','name_indonesia as surah_name','type','ayat','muqodimah');
 
         if($id_surah!=0){
             $surah->where('id','=',$id_surah);

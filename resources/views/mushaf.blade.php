@@ -19,9 +19,9 @@ $prev_surah = '';
 				<!-- /backdrop -->
 				<div class="single-column">
 					<div class="page-title">
-						<h2 class="pull-left">Mushaf</h2>
+						<h1 class="pull-left">Mushaf</h1>
 						 @if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-            			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+            			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" alt="Download di Google Play" width="150"></a>
             			@endif
 						@if(empty($selected_surah))
 							<!--div class="surah-action pull-right">
@@ -157,7 +157,8 @@ $prev_surah = '';
 							<div class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_0 play_0 surah_title head_surah_{{$ayat->surah}}"  >
 								<div class="surah_name">
 									<strong>{{$ayat->surah}}. Surah {{$ayat->surah_name}}</strong><br/>
-									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small>
+									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small><br><br>
+									<button class="btn btn-green-small" onclick="QuranJS.callModal('mushaf/muqodimah/{{$ayat->surah}}')"><i class="fa fa-info-circle"></i> Muqodimah</button>
 								</div>
 								@if($ayat->surah!=1 || $ayat->ayat!=1)
 									@if($ayat->surah!=9)
@@ -189,7 +190,7 @@ $prev_surah = '';
 											{{$ayat->text}}
 										</span>
 										<span class="no_ayat_arabic">
-											<img src="{{url('assets/images/frame-ayat.png')}}">
+											<img src="{{url('assets/images/frame-ayat.png')}}" alt="ayat">
 											<span>{{arabicNum($ayat->ayat)}}</span> 
 										</span>
 									</span> 

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="google-site-verification" content="hXTmvIk3V_yZywNDwJlIFWrS1DQOcNV7UDLCBQUEUv0" />
@@ -7,7 +8,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta property="description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
+        <meta name="description" content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}">
         <meta property="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        <meta name="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
 
         <meta property="og:url" content="{{Request::url()}}" />
         <meta property="og:type"          content="website" />
@@ -104,7 +107,7 @@
         <div id="preloader">
             <!--img src="{{url('assets/images/loading.gif')}}"-->
             <div class="loading">Mohon tunggu...<br>
-            <img src="{{url('assets/images/loading.svg')}}?>" /></div>
+            <img src="{{url('assets/images/loading.svg')}}" /></div>
         </div>
         @section('sidebar')
            <!-- This is the master sidebar. -->
@@ -135,7 +138,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{url()}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}"></a>
+                    <a class="navbar-brand" href="{{url()}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -170,7 +173,7 @@
         </div>
 
         <div class="footer">
-            <div class="ads"><a href="javascript:;" onclick="alert('Untuk melihat informasi pasantren UBK Plus, buka halaman www.ubkplus.com')" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}"></a></div>
+            <div class="ads"><a href="javascript:;" onclick="alert('Untuk melihat informasi pasantren UBK Plus, buka halaman www.ubkplus.com')" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}" alt="Pasantren UBK Plus"></a></div>
             <br>
             <ul>
                 <li><span>Copyright &copy; 2016</span></li>
