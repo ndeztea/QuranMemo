@@ -252,7 +252,7 @@ $(document).ready(function(){
 	<?php $a++;?>
 	@endif
 	
-	jQuery('.play_{{$a}}').click(function(){
+	jQuery('.action-footer .play_{{$a}}').click(function(){
 		if($(".quran_player").css('display') == 'none'){
 			$('.btn-toggle-player').click();
 		}

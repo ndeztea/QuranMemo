@@ -207,9 +207,9 @@
       </div>
     </div>
 
-    <script src="{{url('assets/js/jquery-ui.js')}}"></script>
+    <script src="{{url('assets/js/jquery-ui.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{url('assets/js/jquery.highlight.js')}}"></script>
+    <script src="{{url('assets/js/jquery.highlight.min.js')}}"></script>
 
     <script type="text/javascript">
           $(document).ready(function(){

@@ -158,7 +158,7 @@ $prev_surah = '';
 								<div class="surah_name">
 									<strong>{{$ayat->surah}}. Surah {{$ayat->surah_name}}</strong><br/>
 									<small>{{$ayat->type}} ( turun  #{{$ayat->order}} ) | {{$ayat->count_ayat}} ayat </small><br><br>
-									<button class="btn btn-green-small" onclick="QuranJS.callModal('mushaf/muqodimah/{{$ayat->surah}}')"><i class="fa fa-info-circle"></i> Muqodimah</button>
+									<a class="btn btn-green-small" onclick="QuranJS.callModal('mushaf/muqodimah/{{$ayat->surah}}')"><i class="fa fa-info-circle"></i> Muqodimah</a>
 								</div>
 								@if($ayat->surah!=1 || $ayat->ayat!=1)
 									@if($ayat->surah!=9)
