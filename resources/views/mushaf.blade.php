@@ -112,6 +112,8 @@ $prev_surah = '';
 
 							<a href="{{url('memoz/surah/'.$id_surah.'/'.$ayat)}}" class="btn btn-share-ayat"><i class="fa fa-plus"></i> Hafalkan</a>
 							<!--a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
+							
+							<a href="{{url('mushaf/page/'.$ayats[0]->page)}}" class="btn btn-share-ayat"><i class="fa fa-arrow-right"></i> Halaman penuh</a>
 						</div>
 					@endif
 					<!-- /nav-top -->

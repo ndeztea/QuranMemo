@@ -98,6 +98,7 @@ class MushafController extends Controller
         $data['ayat_end'] = !empty($arrAyat[1])?$arrAyat[1]:'';
 
         $data['cookies'] = getCookie();
+        $data['on_memo'] = true;
 
         // data header
         $data['header_title'] = 'Surah '. $surah[0]->surah_name.' : '.$ayat;
