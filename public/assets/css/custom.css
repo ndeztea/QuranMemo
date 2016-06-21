@@ -64,7 +64,7 @@
         display: inline-block!important
     }
     #qm-navbar-collapse {
-        margin: 7.5px -30px!important
+        margin: 7.5px -15px!important
     }
     .navbar-default .navbar-nav>li>a {
         border-bottom: 1px solid #43A76B
@@ -147,7 +147,7 @@ input[type="number"] {
 .puzzle .arabic-puzzle a {
     background-color: #DDD;
     text-decoration: none;
-    padding: 0px 7px
+    padding: 0 7px
 }
 
 .pagination .page_free_input .form-group button {
@@ -638,4 +638,22 @@ ul.juz-list {
 .memoz_nav .btn.active {
     color: #fff;
     background: #409965
+}
+
+.header_juz:hover,
+.header_page:hover {
+    background-color: #4DB578;
+    cursor: pointer;
+    color: #FFFFFF !important;
+    border : 1px solid #4DB578;
+}
+.muqodimah b{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.main-content-wrap .main-content .single-column .page-title h1{
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 30px;
 }

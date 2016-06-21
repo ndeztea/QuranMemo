@@ -36,4 +36,14 @@ class ContentController extends Controller
 
         return response()->json($dataHTML);
     }
+
+    public function donasi()
+    {
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Donasi, Infaq dan Sedekah';
+        $dataHTML['modal_body'] = view('content_donasi')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
 }

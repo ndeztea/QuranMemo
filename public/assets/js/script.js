@@ -454,7 +454,7 @@ var QuranJS = {
 	},
 
 	bookmarkModal : function (title,url){
-		var mushafUrl = this.siteUrl+'/mushaf';
+		var mushafUrl = this.siteUrl+'/mushaf/page/1';
 		if(title==''){
 			location.href=mushafUrl;
 			return false;

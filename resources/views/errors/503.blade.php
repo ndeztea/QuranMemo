@@ -13,7 +13,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Be right back.</div>
-                <a href="{{ url() }}">Kembali ke Mushaf</a>
+                <a href="{{ url('mushaf/page/1') }}">Kembali ke Mushaf</a>
             </div>
         </div>
     </body>

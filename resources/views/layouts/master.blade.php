@@ -1,11 +1,16 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="google-site-verification" content="hXTmvIk3V_yZywNDwJlIFWrS1DQOcNV7UDLCBQUEUv0" />
-        <title>QuranMemo - {{ isset($header_title)?$header_title:''}}</title>
+        <title>{{ isset($header_title)?$header_title:''}} - QuranMemo</title>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta property="description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
+        <meta name="description" content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}">
+        <meta property="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        <meta name="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
 
         <meta property="og:url" content="{{Request::url()}}" />
         <meta property="og:type"          content="website" />
@@ -59,6 +64,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
+        <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         
         <script type="text/javascript">
             QuranJS.siteUrl = '{{url()}}';
@@ -74,6 +80,7 @@
             });
         </script>
         @endif
+
         <!-- JPlayer-->
         <link href="{{url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="{{url('assets/jplayer/lib/jquery.min.js')}}"></script>
@@ -100,7 +107,7 @@
         <div id="preloader">
             <!--img src="{{url('assets/images/loading.gif')}}"-->
             <div class="loading">Mohon tunggu...<br>
-            <img src="{{url('assets/images/loading.svg')}}?>" /></div>
+            <img src="{{url('assets/images/loading.svg')}}" /></div>
         </div>
         @section('sidebar')
            <!-- This is the master sidebar. -->
@@ -131,7 +138,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{url()}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}"></a>
+                    <a class="navbar-brand" href="{{url()}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -142,8 +149,8 @@
                         </li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
-                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang</a></li>
-                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Kontak</a></li>
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
+                        
                     </ul>
                     <div class="navbar-nav navbar-right">
                         <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
@@ -166,8 +173,14 @@
         </div>
 
         <div class="footer">
+            <div class="ads"><a href="javascript:;" onclick="alert('Untuk melihat informasi pasantren UBK Plus, buka halaman www.ubkplus.com')" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}" alt="Pasantren UBK Plus"></a></div>
+            <br>
             <ul>
                 <li><span>Copyright &copy; 2016</span></li>
+            </ul>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang Quran Memo</a></li>
+                <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
             </ul>
           <br><br>
         </div>
@@ -194,9 +207,9 @@
       </div>
     </div>
 
-    <script src="{{url('assets/js/jquery-ui.js')}}"></script>
+    <script src="{{url('assets/js/jquery-ui.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{url('assets/js/jquery.highlight.js')}}"></script>
+    <script src="{{url('assets/js/jquery.highlight.min.js')}}"></script>
 
     <script type="text/javascript">
           $(document).ready(function(){
@@ -270,7 +283,7 @@
              $(window).bind('beforeunload', function(){
                $('#preloader').show();
              });
-             if('{{Request::segment(2)}}'=='start'){
+             if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
                 if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!=''){
                     QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
                 }

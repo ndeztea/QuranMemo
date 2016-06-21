@@ -24,6 +24,8 @@ Route::get('home', 'HomeController@index');
 
 Route::get('mushaf/generate', 'MushafController@generate');
 Route::get('mushaf/juz', 'MushafController@juz');
+Route::get('mushaf/filter_surah', 'MushafController@filter_surah');
+Route::get('mushaf/jump_page', 'MushafController@jump_page');
 Route::get('mushaf/start', 'MushafController@index');
 Route::get('mushaf/juz/{juz}', 'MushafController@juzPage');
 Route::get('mushaf/', 'MushafController@index');
@@ -37,8 +39,8 @@ Route::post('mushaf/search', 'MushafController@search');
 Route::get('mushaf/search', 'MushafController@search');
 Route::get('mushaf/searchKeyword', 'MushafController@searchKeyword');
 Route::get('mushaf/config', 'MushafController@config');
-
-
+Route::get('mushaf/muqodimah', 'MushafController@muqodimah');
+Route::get('mushaf/muqodimah/{idsurah}', 'MushafController@muqodimah');
 
 Route::get('notes/', 'NotesController@index');
 
@@ -59,6 +61,8 @@ Route::get('bookmarks/', 'BookmarksController@index');
 
 Route::get('contact', 'ContentController@contact');
 Route::get('about', 'ContentController@about');
+Route::get('donasi', 'ContentController@donasi');
+
 
 Route::get('auth/login', 'Auth\AuthController@login');
 Route::post('auth/registerProcess', 'Auth\AuthController@registerProcess');

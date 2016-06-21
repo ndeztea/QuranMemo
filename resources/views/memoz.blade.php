@@ -13,9 +13,9 @@
 		<!-- /backdrop -->
 		<div class="single-column">
 			<div class="page-title">
-				<h2 class="pull-left">Menghafal</h2>
+				<h1 class="pull-left">Menghafal</h1>
 				@if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}"  alt="Download di Google Play" width="150"></a>
     			@endif
 				
 			</div>
@@ -174,7 +174,7 @@
 										@endforeach
 
 										<span class="no_ayat_arabic_memoz">
-											<img src="{{url('assets/images/frame-ayat.png')}}">
+											<img src="{{url('assets/images/frame-ayat.png')}}"  alt="ayat">
 											<span>{{arabicNum($ayat->ayat)}}</span> 
 										</span>
 									</span> 
