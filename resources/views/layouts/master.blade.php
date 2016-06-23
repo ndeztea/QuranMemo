@@ -11,7 +11,7 @@
         <meta name="description" content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}">
         <meta property="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta name="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
-
+        <meta property="title"         content="QuranMemo - {{isset($header_title)?$header_title:''}}" />
         <meta property="og:url" content="{{Request::url()}}" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="QuranMemo - {{isset($header_title)?$header_title:''}}" />
@@ -107,7 +107,7 @@
         <div id="preloader">
             <!--img src="{{url('assets/images/loading.gif')}}"-->
             <div class="loading">Mohon tunggu...<br>
-            <img src="{{url('assets/images/loading.svg')}}" /></div>
+            <img src="{{url('assets/images/loading.svg')}}" alt="loading"/></div>
         </div>
         @section('sidebar')
            <!-- This is the master sidebar. -->
@@ -283,9 +283,13 @@
              $(window).bind('beforeunload', function(){
                $('#preloader').show();
              });
+            /* if('{{Request::segment(3)}}'=='593'){
+                 QuranJS.callModal('buku');
+                }*/
              if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
+                QuranJS.callModal('buku');
                 if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!=''){
-                    QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
+                   // QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
                 }
              }
 

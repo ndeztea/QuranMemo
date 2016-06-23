@@ -46,4 +46,22 @@ class ContentController extends Controller
 
         return response()->json($dataHTML);
     }
+
+    public function buku(Request $request)
+    {   
+        $email = $request->input('email');
+        $clientId = $request->input('clientId');
+        if(!empty($email)){
+            mail('quranmemo.id@gmail.com, ndeztea@gmail.com', 'Email buku', $email.' - '.$clientId);
+
+            return redirect('mushaf/page/1')->with('messageSuccess', 'Terima kasih, kami akan memproses email antum :)');
+        }
+
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Berbagi Buku';
+        $dataHTML['modal_body'] = view('content_buku')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
 }

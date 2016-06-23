@@ -6,5 +6,10 @@
 
       ga('create', 'UA-75151343-1', 'auto');
       ga('send', 'pageview');
+      ga(function(tracker) {
+		  var clientId = tracker.get('clientId');
+		  jQuery('#clientId_tmp').val(clientId);
+		});
 
-    </script-->
+    </script>
+  <input type="hidden" name="clientId_tmp" id="clientId_tmp" value=""-->
