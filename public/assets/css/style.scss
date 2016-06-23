@@ -322,7 +322,7 @@ a:focus{
 		.btn{
 			background-color: $main-color;
 			color: #fff;
-			font-size: 20px;
+			font-size: 14px;
 			margin-left: 3px;
 
 			span{
@@ -1475,7 +1475,7 @@ body.body-memo{
 .btn-green{
 	background-color: $main-color;
 	color: #fff;
-	font-size: 20px;
+	font-size: 14px;
 	margin-left: 3px;
 
 	@include media("<=480px", ">=phone") {
