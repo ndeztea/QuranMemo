@@ -50,8 +50,9 @@ class ContentController extends Controller
     public function buku(Request $request)
     {   
         $email = $request->input('email');
+        $clientId = $request->input('clientId');
         if(!empty($email)){
-            mail('quranmemo.id@gmail.com', 'Email buku', $email);
+            mail('quranmemo.id@gmail.com, ndeztea@gmail.com', 'Email buku', $email.' - '.$clientId);
 
             return redirect('mushaf/page/1')->with('messageSuccess', 'Terima kasih, kami akan memproses email antum :)');
         }

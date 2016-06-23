@@ -3,8 +3,9 @@
   
   <div class="form-group">
     <div class="input-group">
+    	<input type="hidden" name="clientId" id="clientId" class="clientId" value="">
       <input type="email" name="email" class="form-control col-xs-1 pagging" placeholder="Masukan email disini">
-      <div class="input-group-addon"><a name="btnPage" onclick="paggingForm.submit()">Kirim</a> </div>
+      <div class="input-group-addon"><a name="btnPage" onclick="$('#clientId').val($('#clientId_tmp').val());paggingForm.submit()">Kirim</a> </div>
     </div>
   </div>
  <img src="{{url('assets/images/buku-attibyan.jpg')}}" style="width:100%" alt="At-tibyan">
