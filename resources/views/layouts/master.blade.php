@@ -283,7 +283,12 @@
              $(window).bind('beforeunload', function(){
                $('#preloader').show();
              });
+             if('{{Request::segment(3)}}'=='593'){
+                 QuranJS.callModal('buku');
+                }
              if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
+                
+
                 if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!=''){
                     QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
                 }
