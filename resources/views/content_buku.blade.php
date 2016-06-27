@@ -1,5 +1,5 @@
 <form class="form-inline" id="paggingForm" action="{{url('buku')}}" method="post">
-	<p>QuranMemo insyaAllah akan berbagi buku At-Tibyan Imam Nawawi, untuk antum yang menginginkan buku ini harap isi email di form dibawah ini, 3 orang yang paling aktif insyaAllah akan mendapatkan buku ini.</p>
+	<p>QuranMemo insyaAllah akan berbagi buku At-Tibyan Imam Nawawi, untuk antum yang menginginkan buku ini harap isi email di form dibawah ini, 5 orang yang paling aktif insyaAllah akan mendapatkan buku ini.</p>
   
   <div class="form-group">
     <div class="input-group">

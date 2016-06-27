@@ -53,8 +53,6 @@ Route::post('memoz/search', 'MemozController@search');
 Route::get('memoz/search', 'MemozController@search');
 Route::get('memoz/config', 'MemozController@config');
 
-
-
 //Route::get('memoz/create', ['middleware' => 'auth'],'MemozController@create');
 
 Route::get('bookmarks/', 'BookmarksController@index');
@@ -68,7 +66,6 @@ Route::post('buku', 'ContentController@buku');
 
 Route::get('auth/login', 'Auth\AuthController@login');
 Route::post('auth/registerProcess', 'Auth\AuthController@registerProcess');
-
 
 
 Route::group(['middleware' => 'auth'], function () {

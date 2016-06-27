@@ -150,6 +150,7 @@
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
+                        <li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Register</a></li>
                         
                     </ul>
                     <div class="navbar-nav navbar-right">
@@ -287,9 +288,9 @@
                  QuranJS.callModal('buku');
                 }*/
              if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-                QuranJS.callModal('buku');
+                //QuranJS.callModal('buku');
                 if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!=''){
-                   // QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
+                   QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
                 }
              }
 
