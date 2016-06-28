@@ -8,4 +8,4 @@ update surah set muqadimah= "
 <p>Kewajiban untuk tetap berda'wah dan anjuran melakukan zikir dan tasbih pada waktu siang dan malam.</p>
 <b>3.Dan lain-lain:</b>
 <p>Orang-orang zalim pasti mendapat siksaan Allah didunia dan diakhirat; Allah tetap akan menjaga dan melindungi Nabi Muhammad s.a.w.</p>"
-WHERE id= 51;
+WHERE id= 52;
