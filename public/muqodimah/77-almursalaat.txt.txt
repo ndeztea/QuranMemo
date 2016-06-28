@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Mursalaat terdiri atas 50 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Humazah.</p>
+<p>Dinamai 'Al Mursalaat' (malaikat-malaikat yang diutus), diambil dari perkataan 'Al Mursalaat' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Penegasan Allah bahwa semua yang diancamkan-Nya pasti terjadi; peristiwa-peristiwa yang terjadi sebelum hari berbangkit; peringatan Allah akan kehancuran umat-umat yang dahulu yang mendustakan nabi-nabi dan asal kejadian dari air yang hina; keadaan orang-orang kafir dan orang mu'min di hari kiamat.</p>"
+WHERE id= 77;

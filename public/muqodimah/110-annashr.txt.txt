@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat An Nashr terdiri atas 3 ayat, termasuk golongan surat-surat Madaniyyah yang diturunkan di Mekah sesudah surat At Taubah.</p>
+<p>Dinamai 'An Nashr' (pertolongan) diambil dari perkataan 'Nashr' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Janji bahwa pertolongan Allah akan datang dan Islam akan mendapat kemenangan; perintah dari Tuhan agar bertasbih memuji-Nya, dan minta ampun kepada-Nya di kala terjadi peristiwa yang menggembirakan.</p>"
+WHERE id= 110;

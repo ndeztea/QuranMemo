@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 28 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesduah surat An Nahl.</p>
+<p>Dinamakan dengan surat 'Nnuh' karena surat ini seleruhnya menjelaskan da'wah dan do'a Nabi Nuh a.s.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Ajakan Nabi Nuh a.s. kepada kaumnya untuk beriman kepada Allah s.w.t. serta bertobat kepada-Nya; perintah memperhatikan kejadian alam semesta, dan kejadian manusia yang merupakan manifestasi kebesaran Allah; siksaan Allah di dunia dan akhirat bagi kaum Nuh yang tetap kafir; do'a Nabi Nuh a.s.</p>"
+WHERE id= 71;

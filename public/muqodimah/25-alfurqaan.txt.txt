@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 77 ayat, termasuk golongan surat-surat Makkiyyah. Dinamai 'Al Furqaan' yang artinya 'pembeda', diambil dari kata 'Al Furqaan' yang terdapat pada ayat pertama surat ini. Yang dimaksud dengan Al Furqaan dalam ayat ini ialah Al Qur'an.</p>
+<p>Al Qur'an dinamakan Al Furqaan karena dia membedakan antara kebenaran ke-esaan Allah s.w.t. dengan kebatilan kepercayaan syirik.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Allah Maha Besar berkah dan kebaikan-Nya; hanya Allah saja yang menguasai langit dan bumi; Allah tidak punya anak dan sekutu; Al Qur'an benar-benar diturunkan dari Allah; ilmu Allah meliputi segala sesuatu; Allah bersemayam di atas 'Arsy; Nabi Muhammad s.a.w. adalah hamba Allah yang diutus ke seluruh alam; rasul-rasul itu adlah manusia biasa yang mendapat wahyu dari Allah; pada hari kiamat akan terjadi peristiwa-peristiwa luar biasa seperti belahnya langit; turunnya malaika ke bumi, orang-orang berdosa dihalau ke neraka dengan berjalan atas muka mereka.</p>
+<b>2.Hukum-hukum:</b>
+<p>Tidak boleh mengabaikan Al Qur'an; larangan menafkahkan harta secara boros atau kikir; larangan membunuh atauberzina; kebwajiban memberantas kekafiran dengan mempergunakan alasan Al Qur'an; larangan memberikan persaksian palsu.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kisah-kisah Musa a.s. Nuh a.s., kaum Tsamud dan kaum Syu'aib.</p>
+<b>4.Dan lain-lain:</b>
+<p>Celaan-celaan orang-orang kafir terhadap Al Qur'an; kejadian-kejadian alamiyah sebagai bukti ke-esaan dan kekuasaan Allah; hikmah Al Qur'an diturunkan secara berangsur-angsur; sifat-sifat orang musyrik antara lain mempertuhankan hawa nafsu, tidak mempergunakan akal; sifat-sifat hamba Allah yang sebenarnya.</p>"
+WHERE id= 25;

@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri dari11 ayat, termasuk golongan surat-surat Makkiyyah dan diturunkan sesudah surat Al Fajr. Nama 'Adh Dhuhaa' diambil dari kata 'Adh Dhuhaa' yang terdapat pada ayat pertama, artinya: waktu matahari sepenggalahan naik.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Allah s.w.t. sekali-kali tidak akan meninggalakn Nabi Muhammad s.a.w. Isyarat dari Allah s.w.t. bahwa kehidupan Nabi Muhammad s.a.w. dan da'wahnya akan bertambah baik dan berkembang; larangan menghina anak yatim dan menghardik orang-orang yang minta-minta dan perintah menyebut-nyebut ni'mat yang diberikan Allah sebagai tanda bersyukur.</p>"
+WHERE id= 93;

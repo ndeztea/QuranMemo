@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri ats 11 ayat, termasuk golongan surat-surat Madaniyyah, ditrunkan sesudah surat Al Hajj. Surat ini dinamai Al Munaafiquun yang artinya orang-orang munafik, karena surat ini mengungkapkan sifat-sifat orang-orang munafik.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Keterangan tentang orang-orang munafiq dan sifat-sifat mereka yang buruk di antaranya ialah pendusta, suka bersumpah palsu, sombong, kikir dan tidak menepati janji, peringatan kepada orang-orang mu'min supaya harta benda dan anak-anaknya tidak melalaikan mereka, insyaf kepada Allah dan anjuran supaya menafkahkan sebagian dari rezki yang diperoleh.</p>"
+WHERE id= 63;

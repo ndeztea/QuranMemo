@@ -1,0 +1,10 @@
+update surah set muqodimah= "
+<p>Surat 'Abasa terdiri atas 42 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat An Najm.</p>
+<p>Dinamai 'Abasa' (ia bermuka masam) diambil dari perkataan 'Abasa yang terdapat pada ayat pertama surat ini.</p>
+<p>Menurut riwayat, pada suatu ketika Rasulallah s.a.w. menerima dan berbicara dengan pemuka-pemuka Quraisy yang beliau harapkan agar mereka masuk Islam. Dalam pada itu datanglah Ibnu Ummi Makrum, seorang sahabt yang buta yang mengharap agar Rasulallah s.a.w. membacakan kepadanya ayat-ayat Al Qur'an yang telah diturunkan Allah. Tetapi Rasulallah s.a.w. bermuka masam dan memalingkan muka dari Ibnu Ummi Maktum yang buta itu, lalu Allah menurunkan surat ini sebagai teguran atas sikap Rasulallah terhadap Ibnu Ummi Makrum itu.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Dalil-dalil keesaan Allah; keadaan manusia pada hari kiamat.</p>
+<b>2.Dan lain-lain:</b>
+<p>Dalam berda'wah hendaknya memberikan penghargaan yang sama kepada orang yang diberi da'wah; cercaan Allah kepada manusia yang tidak mensyukuri ni'mat-Nya.</p>"
+WHERE id= 80;

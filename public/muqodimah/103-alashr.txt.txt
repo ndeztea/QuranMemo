@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Ashr terdiri atas 3 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Alam Nasyrah.</p>
+<p>Dinamai 'Al Ashrr' (masa) diambil dari perkataan Al Ashr yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Semua manusia berada dalam keadaan merugi apabila dia tidak mengisi waktunya dengan perbuatan-perbuatan baik.</p>"
+WHERE id= 103;

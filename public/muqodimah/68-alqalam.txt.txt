@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 52 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al'Alaq.</p>
+<p>Nama 'Al Qalam' diambil dari kata Al Qalam yang terdapat pada ayat pertama surat ini yang artinya 'pena'. Surat ini dinamai pula dengan surat 'Nun' (huruf 'nun').</p>
+<p>Pokok-pokok isinya:</p>
+<p>Nabi Muhammad s.a.w. bukanlah orang yang gila melainkan manusia yang berbudi pekerti yang agung; laragan bertoleransi di bidang kepercayan; larangan mengikuti orang-orang yang empunyai sifat-sifat yang dicela Allah; nasib yang dialami pemilik-pemilik kebun sebagai contoh orang-orang yang tidak bersyukur terhadap ni'mat Allah; kecaman-kecaman Allah kepada mereka yang ingakr dan azab yang akan menimpa mereka; Al Qur'an adalah peringatan bagi seluruh umat.</p>"
+WHERE id= 68;

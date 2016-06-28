@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini  terdiri atas 19 ayat, termasuk golongan surat-surat Makkiyyah dan diturunkan sesudah surat An Naazi'aat. Al Infithaar yang dijadikan nama untuk surat ini adalah kata asal dari kata 'Infatharaat' (terbelah) yang terdapat pada ayat pertama.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Peristiwa-peristiwa yang terjadi pada hari kiamat; peringatan kepada manusia agar tidak terpedaya sehingga durhaka kepada Allah; adanya malaikat yang selalu menjaga dan mencatat segala amal perbuatan manusia; pada hari kiamat manusia tak dapat menolong orang lain; hanya kekuasaan Allah-lah yang berlaku pada waktu itu.</p>"
+WHERE id= 82;

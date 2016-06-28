@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat Al Mu'min terdiri atas 85 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Az Zumar.</p>
+<p>Dinamai 'Al Mu'min' (orang yang beriman) berhubung dengan perkataan 'mu'min' yang terdapat pada ayat 28 surat ini. Pada ayat 28 diterangkan bahwa salah seorang dari kaum Fir'aun telah beriman kepada Nabi Musa a.s. dengan menyembunyikan iamnnya kepada kaumnya, setelah mendengar keterangan dan melihat mu'jizat yang dikemukakan oleh Nabi Musa a.s. hati kecil orang ini mencela Fir'aun dan kaumnya yang tidak mmau beriman kepada Nabi Musa a.s., sekalipun telah dikemukakan keterangan dan mu'jizat yang diminta mereka.</p>
+<p>Dinamakan pula 'Ghafir' (yang mengampuni), karena ada hubungannya dengan kalimat 'Ghafir' yang terdpat pada ayat 3 surat ini. Ayat ini mengingatkan bahwa 'Maha Pengampun' dan 'Maha Penerima Taubat' adalah sebagian dari sifat-sifat Allah, karena itu hamba-hamba Allah tidak usah khawatir terhadap perbuatan-perbuatan dosa yang telah terlanjur merka lakukan, semuanya itu akan diampuni Allah asal benar-benar memohon ampun dan bertaubat kepada-Nya dan berjanji tidak akan diampuni Allah asal benar-benar memohon ampun dan bertaubat kepada-Nya dan berjanji tidak akan mengerjakan perbuatan-perbuatan dosa itu lagi. Dan surat ini dinamai 'Dzit Thaul' (yang mempunyai kurnia) karena perkataan terseut terdapat pada ayat 3.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Sifat-sifat malaikat yangmemikul 'Arsy dan yang berada disekitarnya; dalil-dalil yang menunjukkan kekuasaan Allah, sifat-sifat Allah yang menunjukkan kebesaran dan keagungan-Nya; ilmu Allah meliputi segala sesuatu; bukti-bukti yang menunjukkan adanya hari berbangkit.</p>
+<b>2.Kisah:</b>
+<p>Kisah Musa a.s. dengan Fir'aun.</p>
+<b>3.Dan lain-lain:</b>
+<p>Al Qur'an ulkarim dan sikap orang-orang mu'min dan orang-orang kafir terhadap-Nya; permohonan orang-orang kafir supaya dikeluarkan dari neraka; peringatan kepada orang-orang musyrik tentang kedahsyatan hari kiamat, anjuran bersabar dalam menghadapi kaum musyrikin; ni'mt-ni'mat Allah yang terdapat di daratan dan lautan; janji Rasulallah s.a.w. bahwa orang-orang mu'min akan menang terhadap musuhnya.</p>"
+WHERE id= 40;

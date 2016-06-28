@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Balad terdiri atas 20 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Qaaf.</p>
+<p>Dinamai 'Al Balad, diambil dari perkataan 'Al Balad' yang terdapat pada ayat pertama surat ini. Yang dimaksud dengan negeri disini ialah kota Mekah (Tanah Haram).</p>
+<p>Pokok-pokok isinya:</p>
+<p>Manuisa diciptakan Allah untuk berjuang menghadapi kesulitan; jangan lah manusia terpedaya oleh kekuasaan dan harta benda yang banyak yang telah dibelanjakan nya; beberapa peringatan kepada manusia atas beberapa ni'mat yang telah diberikan Allah kepadanya dan bahwa Allag telah menunjukkan jalan-jalan yang akan menyampaikannya kepada kebahagiaan dan yang akan membawanya kepada kecelakaan.</p>"
+WHERE id= 90;

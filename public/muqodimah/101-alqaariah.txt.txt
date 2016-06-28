@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 11 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Quraisy. Nama 'Al Qaari'ah', diambil dari kata 'Al Qaari'ah', yang terdapat pada ayat pertama, artinya yang mengetok dengan keras, kemudian kata ini dipakai untuk nama hari kiamat.</p>
+<p>pokok-pokok isinya:</p>
+<p>kejadian-kejadian pada ahri kiamat, yaitu manusia bertebaran, gunung berhamburan, amal pebuatan manusia ditimbang dan dibalasi.</p>"
+WHERE id= 101;

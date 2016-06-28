@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Muzzammil terdiri atas 28 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Qalam.</p>
+<p>Dinamai 'Al Muzzammil' (orang yang berselimut) diambil dari perkataan 'Al Muzzammil' yang terdapat pada ayat pertama surat ini. Yang dimaksud dengan 'orang yang berkemul' ialah Nabi Muhammad s.a.w.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Petunjuk-petunjuk yang harus dilakukan oleh Rasulallah s.a.w. untuk menguatkan rohani guna persiapan menerima wahyu, yaitu dengan bangun di malam hari untuk bersembahyang tahajjud, membaca Al Qur'an dengan tartil; bertasbih dan bertahmid; perintah bersabar terhadap celaan orang-orang yang mendustakan Rasul. Akhirnya kepada umat Islam diperintahkan untuk bersembahyang tahajjud, berjihad di jalan Allah, membaca Al Qur'an, mendirikan sembahyang. Menunaikan zakat, membelanjakan harta di jalan Allah dan memohon ampunan kepada Allah s.w.t.</p>"
+WHERE id= 73;

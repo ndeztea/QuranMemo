@@ -1,0 +1,15 @@
+update surah set muqodimah= "
+<p>Surat Al Jaatsiyah terdiri atas 37 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Ad Dukhaan.</p>
+<p>Dinamai 'Al Jaastiyah' (yang berlutut) diambil dari perkataan 'Jaatsiyah' yang terdpat pada ayat 28 surat ini.</p>
+<p>Ayat tersebut menerangkan tentang keadaan manusia pada hari kiamat, yaitu semua manusia dikumpulkan ke hadapan mahkamah Allah Yang Maha Tinggi yang memberikan keputusan terhadap perbuatan yang telah merka lakukan di dunia. Pada hari itu semua manusia berlutut di hadapan Allah.</p>
+<p>Dinamai juga dengan 'Asy Syari'ah' diambil dari perkataan 'Syari'ah' (syari'at) yang terdapat pada ayat 18 surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Keterangan-keterangan dan dalil-dalil atas adanya Allah pencipta dan bumi; buruk dan baik yang dikerjakan oleh manusia akibatnya bagi dirinya sendiri; Allah Pelindung orang-orang yang bertakwa; kebesaran dan keagungan hanya hak Allah semata; kepastian bahwa Allah-lah yang menghidupkan, mematikan dan menghimpunkan manusia pada hari kiamat; keterangan-keterangan mengenal huru-hara hari kiamat dan bagaimana tiap-tiap orang menerima perhitungan pekerjaannya di akhirat; pada hari kiamat jelaslah bagi orang-orang musyrikin keburukan perbuatan-perbuatan yang mereka kerjakan di dunia, dan mereka tidak lepas dari azab yang waktu di dunia mereka perolok-olokan.</p>
+<b>2.Hukum-hukum:</b>
+<p>Perintah kepada Rasulallah s.a.w. supaya jangan mengikuti orang-orang yang tidak mempergunakan akalnya dan jangan menuruti kemauan mereka.</p>
+<b>3.Kisah:</b>
+<p>Kisah Bani Israil yang telah diberi ni'mat oleh Allah, tetapi mereka berpaling dan menyeleweng dariajaran agama, sehingga timbul perselisihan yang hebat antara sesama mereka.</p>
+<b>4.Dan lain-lain:</b>
+<p>Ancaman kepada orang-orang musyrik yang mendustakan ayat Allah serta berlaku sombong terhadapnya; kebatalan pendapat kaum Dahriyah (atheisme, sceptisme dan vrij denker), keingkaran mereka terhadap hari kiamat.</p>"
+WHERE id= 45;

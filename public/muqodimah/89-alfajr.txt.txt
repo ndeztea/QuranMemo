@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 30 ayat, termasuk golongan surat-surat Makkiyah, diturunkan sesudah surat Al Lail. Nama 'Al Fajr' diambil dari kata Al Fajr yang terdapat pada ayat pertama surat ini yang artinya 'fajar'.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Alah bersumpah bahwa azab terhadap orang-orang kafir tidak akan dapat dielakkan; beberapa contoh dari umat-umat yang sudah di binasakan; keni'matan hidup atau bencana yang di alami oleh seseorang, bukanlah tanda penghormatan atau penghinaan Allah kepadanya, melainkan cobaan belaka; celaan terhadap orang-orang yang tidak mau memelihara anak yatim dan tidak emmberi makan orang miskin; kecaman terhadap orang yang memkaan harta warisan dengan campur aduk dan orang yang amat mencintai harta; malapetaka yang dihadapi orang-orang kafir di hari kiamat; orang-orang yang berjiwa muthmainnah (tenang) mendapat kemuliaan di sisi Allah.</p>"
+WHERE id= 89;

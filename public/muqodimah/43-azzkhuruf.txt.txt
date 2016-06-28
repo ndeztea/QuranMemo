@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat Az Zukhruf terdiri atas 89 ayat, termasuk golongan surat-surat Makkiyyah, dituruunkan sesudah surat Asy Syuura.</p>
+<p>Dinamai 'Az Zukhruf' (perhiasan) diambil dari perkataan 'Az Zukhruf' yang erdapat pada ayat 35 ayat ini. Orang-orang musyrik mengukur tinggi rendahnya derajat seseorang tergantung kepada perhiasan dan harta benda yang ia punyai, karena Muhammad s.a.w. adalah seorang anak yatim lagi miskin, ia tidak pantas diangkat Allah sebagai seorang rasul dan nabi. Pangkat rasul dan nabi itu harus diberikan kepada orang kaya. Ayat ini menegaskan bahwa harta tidak dapat dijadikan dasar untuk mengukur tinggi rendahnya derajat seseorang, karena harta itu merupakan hiasan kehidupan duniawi, bukan berarti kesenangan akhirat.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Al Qur'an berasal dari Lauh Mahfuzh; Nabi Isa a.s. itu tidak lain hanyalah seorang hamba Allah; pengakuan Nabi Isa a.s. bahwa Allah-lah Tuhan yang sebarnya; mensifatkan bagaimana kesenangan di dalam syurga dan hebatnya penderitaan orang kafir di dalam neraka sehingga mereka ingin mati saja agar terlepas dari siksa itu; Tuhan tidak mempunyai anak.</p>
+<b>2.Hukum-hukum:</b>
+<p>Perintah Tuhan kepada Nabi Muhammad s.a.w. supaya menjauhi orang-orang yang tidak beriman.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kisah Nabi Ibrahim a.s., Musa a.s. dan Isa a.s. sebagai perbandingan bagi Nabi dan sebagai penawar sewaktu menghadapi kesulitan dalam melakukan da'wah.</p>
+<b>4.Dan lain-lain:</b>
+<p>Pengakuan orang musyrik Mekah bahwa Allah-lah Yang Menciptakan langit dan bumi, tetapi mereka tetap menyembah berhala; kepercayan mereka bahwa malaikat adalah anak Allah dan penolakan atas kepercayaan yang salah itu; Muhammad s.a.w. sebagai rasul mendapat ejekan dan celaan-celaan dari kaumnya dan hal ini adaah biasa, karena rasul-rasul yang dahulu pun demikian pula halnya; orang-orang musyrik sangat kuat berpegang kepada tradisi dan adat istiadat nenek moyang mereka dalam beragama, sehingga terutup hati mereka menerima kebenaran.</p>"
+WHERE id= 43;

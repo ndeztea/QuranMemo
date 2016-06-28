@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat At Takaatsur terdiri atas 8 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Kautsar.</p>
+<p>Dinamai 'At Takaatsur' (bermegah-megahan) diambil dari perkataan At Takaatsur' yang terdapat pada ayat pertama surat ini.</p>
+<p>pokok-pokok isinya:</p>
+<p>keinginan mereka untuk bermegah-megahan dalam soal duniawi, sering melalaikan manusia dari tujuan hidupnya. Dia baru menyadari kesalahannya ini setelah maut mendatanginya; manusia akan ditanya di akhirat tentang ni'mat yang dibangga-banggakannya itu.</p>"
+WHERE id= 102;

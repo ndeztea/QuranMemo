@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Qadr terdiri atas 5 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat 'Abasa.</p>
+<p>Surat ini dinamai 'Al Qadr' (kemuliaan), diambil dari perkataan 'Al Qadr' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Al Qur'an mulai diturunkan pada malam Lailatul Qadr, yang nilainya lebih dari seribu bulan; para malaikat dan Jibri turun ke Dunia pada malam Lailatul Qadr utnuk mengatur segala urusan.</p>"
+WHERE id= 97;

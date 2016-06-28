@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 11 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Ashr. Nama 'Al 'Aadiyaat' diambil dari kata 'Al Aadiyaat' yang erdapat pada ayat pertama surat ini, artinya yang berlari kencang.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Ancaman Allah s.w.t. kepada manusia yang ingkar dan yang sangat mencintai harta benda bahwa mereka akan mendapat balasan yang setimpal di kala mereka dibangkitkan dari kibur dan di kala isi dada mereka ditampakkan.</p>"
+WHERE id= 100;

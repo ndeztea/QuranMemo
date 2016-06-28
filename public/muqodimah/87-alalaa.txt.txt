@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 19 ayat, termasuk golongan surat-surat Makkiyyah, dan diturunkan sesudah surat At Takwiir. Nama Al A'laa diambil dari kata 'Al A'laa' yang terdapat pada ayat pertama, berarti 'Yang Paling Tinggi'. Muslim meriwayatkan dalam kitab Al Jumu'ah dan di riwayat kan pula oleh Ashhaabus Sunan, dari Nu'man ibnu basyir bahwa Rasulallah s.a.w. pada shalat dua hari raya (fitri dan adha) dan shalat jum'at membaca surat Al Alaa pada rakaa'at pertama dan surat Al Ghaasyiyah pada rakaat kedua.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Perintah Allah untuk bertasbih dengan menyebut nama-Nya. Nabi Muhammad s.a.w. sekali-kali tidak lupa pada ayat-ayat yang dibacakan kepadanya. Jalan-jalan yang mengjadikan orang sukses hidup dunia dan akhirat. Allah menciptakan, menyempurnakan ciptaan-Nya menentukan kadar-kadar, memberi petunjuk dan melengkapi keperluan-keperluannya sehingga tercapai tujuannya.</p>"
+WHERE id= 87;

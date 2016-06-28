@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat Al Hasyr terdiri atas 24 ayat, termasuk golongan surat Madaniyyah, diturunkan sesudah surat Al Bayyinah.</p>
+<p>Dinamai surat ini 'Al Hasyr' (pengusiran) diambil dari perkataan 'Al Hasyr' yang terdapat pada ayat 2 surat ini. Di dalam surat ini disebutkan kisah pengusiran suatu suku Yahudi yang bersama bani Nadhir yang berdiam di sekitar kota Madinah.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Apa yang berada di langit dan di bumi semuanya bertasbih menuji Allah; Allah pasti mengalahkan musuh-Nya dan musuh-musuh Rasul-Nya; Allah mempunyai Al Asmau-ul Husna; keagungan Al Qur'an dan ketinggian martabatnya.</p>
+<b>2.Hukum-hukum:</b>
+<p>Cara pembahagian harta fa'i; perintah bertakwa dan menyiapkan diri untuk kehidupan ukhrawi.</p>
+<b>3.Dan lain-lain:</b>
+<p>Beberapa sifat orang-orang munafik dan orang-orang ahli kitab yang tercela; perngatan-peringatan untuk kaum muslimin.</p>"
+WHERE id= 59;

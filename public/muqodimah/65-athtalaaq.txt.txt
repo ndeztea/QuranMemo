@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 12 ayat, termasuk golongan surat-surat Madaniyyah, diturunkan sesudah surat Al Insaan.</p>
+<p>Dinamai surat Ath-Thalaaq karena kebanyakan ayat-ayatnya mengenai masalah talak dan yang berhubungan dengan masalah itu.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Dalam surat ini diterangkan hukum-hukum mengenai thalaq; iddah dan kewajiban masing-masing suami dan isteri dalam masa-masa talaq dan iddah, agar tak ada pihak yang dirugikan dan keadilan dapat dilaksanakan dengan sebaik-baiknya. Kemudian disebutkan perintah kepada orang-orang mu'min supaya bertakwa kepada Allah yang telah mengutus seorang Rasul yang memberikan petunjuk kepada mereka. Maka siapa yang beriman akan dimasukkan ke dalam syurga dan kepada yang ingkar diberikan peringatan bagaimana nasibnya orang-orang kafir ingkar di masa dahulu.</p>"
+WHERE id= 65;

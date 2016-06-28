@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat Al Hadiid terdiri atas 29 ayat, termasuk golongan surat-surat Madaniyyah, diturunkan sesudah surat Az Zalzalah.</p>
+<p>Dinamai 'Al Hadiid' (besi), diambil dari perkataan 'Al Hadiid' yang terdapat pada ayat 25 surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Hanya kepada Allah kembali semua urusan; beberapa sifat Allah dan beberapa As-maa-ul Husna serta pernyataan kekuasaan Allah dilangit dan di bumi.</p>
+<b>2.Hukum-hukum:</b>
+<p>Perintah menafkahkan harta.</p>
+<b>3.Dan lain-lain:</b>
+<p>Keadaan orang-orang munafik di hari kiamat; hakikat kehidupan dunia dan kehidupan akhirat; tujuan penciptaan besi; tujuan diutusnya para rasul; kehidupan kerahiban dalam agama Nasrani bukan berasal dari ajaran Nabi Isa a.s.; celaan kepada orang-orang bakhil dan orang yang menyuruh orang-orang lain berbuat bukhil.</p>"
+WHERE id= 57;

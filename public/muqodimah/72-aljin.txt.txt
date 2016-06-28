@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Jin terdiri atas 28 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al A'raaf.</p>
+<p>Dinamai 'Al Jin' (jin) diambil dari perkataan 'Al jin' yang terdapat pada ayat pertama surat ini. Pada ayat tersebut dan ayat-ayat berikutnya diterangkan bahwa jin sebagai makhluk halus telah mendengar pembacaan Al Qur'an dan mereka mengikuti ajaran Al Qur'an tersebut.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Pengetahuan tentang jin diperoleh Nabi Muhammad s.a.w. dengan jalan wahyu, pernyataan iman segolongan jin kepada Allah; jin ada yang mu'min ada pula yang kafir; janji Allah kepada jin dan manusia untuk melimpahkan rezki-Nya kalau mereka mengikuti jalan yang lurus; janji perlindungan Allah terhadap Nabi Muhammad s.a.w. dan wahyu yang dibawanya.</p>"
+WHERE id= 72;

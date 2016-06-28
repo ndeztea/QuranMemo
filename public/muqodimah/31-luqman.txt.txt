@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat Luqman terdiri atas 34 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Ash Shaaffaat.</p>
+<p>Dinamai 'Luqman" karena pada ayat 12 disebutkan bahwa 'Luqman' telah diberi oleh Allah ni'mat dan ilmu pengetahuan, oleh sebab itu dia bersyukur kepada-Nya atas ni'mat yang diberikan itu. Dan pada ayat 13 sampai 19 terdapat nasihat-nasihat Luqman kepada anaknya.</p>
+<p>Ini adalah sebagai Isyarat dari Allah supaya setiap ibu bapak melaksanakan pula terhadap anak-anak mereka sebagai yang telah dilakukan oleh Luqman.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Al Qur'an merupakan petunjuk dan rahmat yang dirasakan benar-benar oleh orang-orang mu'min; keadaan di langit dan bumi serta keajaiban-keajaiban yang terdapat pada keduanya adalah bukti-bukti atas ke-Esaan dan kekuasaan Allah; manusia tidak akan selamat kecuali dengan taat kepada perintah-perintah Tuhan dan berbuat amal-amal yang saleh; lima hal yang ghaib yang hanya dikehtahui oleh Allah sendiri; ilmu Allah meliputi segala-galanya baik yang lahir maupun yang batin.</p>
+<b>2.Hukum-hukum:</b>
+<p>Kewajiban patuh dan berbakti kepada ibu dan bapa selama tidak bertentangan dengan perintah-perintah Allah; perintah supaya memperhatikan alam dan keajaibannnya untuk memperkuat keimanan dan kepercayaan akan ke-Esaan Tuhan; perintah supaya selalu bertakwa dan takut akan pembalasan Tuhan pada hari kiamat di waktu seseorang tidak dapat ditolong baik oleh anak atau bapaknya sekalipun.</p>
+<b>3.Kisah-kisah:</b>
+<p>Orang-orang yang sesat dari jalan Allah dan selalu memperolok-olokkan ayat-ayat Allah; celaan terhadap orang-orang musyrik karena tidak menghiraukan seruan untuk memperhatikan alam dan tidak menyembah Penciptanya; menghibur hati Rasulallah s.a.w. terhadap orang-orang musyrik, karena hal ini bukanlah merupakan kelalaiannya; ni'mat dan karunia Allah tidak dapat dihitung.</p>"
+WHERE id= 31;      

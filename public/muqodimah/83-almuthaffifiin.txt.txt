@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 36 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al 'Ankabuut dan merupakan surat yang terakhir diturunkan di Mekah sebelum hijrah.</p>
+<p>'Al Muthaffifiin' yang dijadikan nama bagi surat ini diambil dari kata 'Al Muthaffifiin' yang terdapat pada pada ayat pertama.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Ancaman Allah s.w.t. terhadap orang-orang yang mengurangi hak orang lain dalam timbangan , ukuran dan takaran; catatan kejahatan manusia dicantumkan dalam sijjiin sedang catatan kebaikan manusia dicantumkan dalam 'Illyyiin; bahasan dan macam-macam keni'matan bagi orang yang berbuat kebaikan; sikap dan pandangan orang-orang  kafir di dunia terhadap orang yang beriman; sikap orang-orang yang beriman di akhirat terhadap orang-orang kafir.</p>"
+WHERE id= 83;

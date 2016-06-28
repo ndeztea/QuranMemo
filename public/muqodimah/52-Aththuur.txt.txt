@@ -1,0 +1,11 @@
+update surah set muqadimah= "
+<p>Surat Ath Thuur terdiri atas 49 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat As Sajdah.</p>
+<p>dinaai 'Ath Thuur' (bukit) diambil dari perkataan 'Ath Thuur' yang terdapatpada ayat pertama surat ini. Yang dimaksud dengan 'bukit' di sini ialah bukit Thursina yang terletak di semenanjung Sinai, tempat Nabi Musa a.s. menerima wahyu dari Tuhannya.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.keimanan:</b>
+<p>Keadaan orang-orang kafir didalam neraka dan keadaan orang-orang beriman di dalam syurga; bukti kekuasaan dan keesaan Allah; setiap orang bertanggung jawab terhadap perbuatannya masing-masing, sekalipun demikian bapak dan anak akan dikumpulkan Allah dalam syurga apabila kedua-keduanya sama-sama beriman.</p>
+<b>2.Hukum-hukum:</b>
+<p>Kewajiban untuk tetap berda'wah dan anjuran melakukan zikir dan tasbih pada waktu siang dan malam.</p>
+<b>3.Dan lain-lain:</b>
+<p>Orang-orang zalim pasti mendapat siksaan Allah didunia dan diakhirat; Allah tetap akan menjaga dan melindungi Nabi Muhammad s.a.w.</p>"
+WHERE id= 51;

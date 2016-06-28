@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 26 ayat, termasuk surat-surat Makkiyyah, diturunkan sesudah surat Adz Dzaariat. Nama 'Ghaasyiyah' diambil dari kata 'Al Ghaasyiyah' yang terdapat pada ayat pertama surat ini yang artinya peristiwa yang dahsyat, tapi yang dimaksud adalah hari kiamat, Surat ini adalah surat yang kerap kali dibaca Nabi pada raka'at kedua pada shalat hari-hari raya dan shalat Jum'at.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Keterangan tentang orang-orang kafir pada hari kiamat dan azab yang dijatuhkan atas mereka; keterangan tentang orang-orang yang beriman serta keadaan surga yang diberikan kepada mereka sebagai balasan; perintah untuk memperhatikan keajaiban ciptaan-ciptaan Allah; perintah kepada Rasulallah s.a.w. untuk memperingatkan kaumnya kepada ayat-ayat Allah karena beliau adalah seorang pemberi peringatan, dan bukanlah seorang yang berkuasa atas keimanan mereka.</p>"
+WHERE id= 88;

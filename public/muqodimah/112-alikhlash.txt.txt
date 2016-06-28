@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 4 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat An Naas. Dinamakan 'Al Ikhlas' karena surat ini sepenuhnya menegaskan kemurnian ke esaan Allah s.w.t.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Penegasan tetang kemurnian ke esaan Allah s.w.t. dan menolak segala macam kemusyrikan dan menerangkan bahwa tidak ada sesuatu yang menyamai-Nya.</p>"
+WHERE id= 112;

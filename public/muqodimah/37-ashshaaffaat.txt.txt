@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat Ash Shaaffaat terdiri atas 182 ayat termasuk golongan surat Makkiyyah diturunkan sesudah surat Al An'aam.</p>
+<p>Dinamai dengan 'Ash Shaaffaat' (yang bershaf-shaf) ada hubungannya dengan perkataan 'Ash Shaaffaat' yang terletak pada ayat permulaan susrat ini yang mengemukakan bagaimana para malaikat yang berbaris dihadapan Tuhannya yang bersih jiwanya, tidak dapat digoda oleh syaitan.</p>
+<p>Hal ini hendaklah menjadi i'tibar bagi manusia dalam menghambatkan dirinya kepada Allah.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Dalil-dalil tentang ke-Esaan Allah; adanya hari berbangkit; adanya padang mashyar dan adanya hari kiamat; malaikat-malaikat selalu bertasbih kepada Allah.</p>
+<b>2.Kisah-kisah:</b>
+<p>Kisah Nuh a.s.; kisah Ibrahim a.s. dan Ismail a.s.; kisah Musa a.s. dan Harun a.s.; kisah Ilyas a.s.; kisah Luth a.s.; kisah Yunus a.s.</p>
+<b>3.Dan lain-lain:</b>
+<p>Sikap orang-orang kafir terhadap Al Qur'an; tuduh menuduh antara orang-orang kafir dengan pengikut-pengikutnya di hari kiamat; keni'matan di surga; tentang pohin zaqqum; celaan terhadap orang-orang yang mengatakan bahwa Allah beranak; seorang yang baik belum tentu menrunkan keturunan yang baik pula.</p>"
+WHERE id= 37;

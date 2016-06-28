@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat Al Hujuurat terdiri atas 18 ayat, termasuk golongan sruat-surat Madaniyyah, diturunkan sesudah surat Al Mujaadilah.</p>
+<p>Dinamai 'Al Hujuurat'(kamar-kamar), diambil dari perkataan 'Al Hujuurat' yang terdapat pada ayat 4 surat ini. Ayat tersebut mencela para sahabat yang memanggil Nabi Muhammad s.a.w. yang sedang berada di dalam kamar rumahnya bersama isterinya. Memanggil Nabi Muhammad s.a.w. dengan cara dan dalam keadaan yang demikian menunjukkan sifat kurang hormat kepada beliau dan mengganggu ketentraman beliau.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Masuk Islam harus disempurnakan dengan iman yang sebenar-benarnya.</p>
+<b>2.Hukum-hukum:</b>
+<p>Larangan mengambil keputusan yang menyimpang dari ketetapan Allah dan rasul-Nya; keharusan meneliti sesuatu perkhabaran yang disampaikan oleh orang yang fasik; kewajiban mengadakan islah antara orang muslim yang bersengketa karena orang-orang Islam itu bersaudara; kewajiban mengambil tindakan terhadap golongan orang kaum muslimin yang bertindak aniaya kepada golongan kaum muslimin yang lain; larangan mencaci, menghina dan sebagainya; larangan berburuk sangka; bergunjing dan memfitnah dan lain-lain.</p>
+<b>3.Dan lain-lain:</b>
+<p>Adab sopan santun berbicara dengan Rasulallah s.a.w. Allah menciptakan manusia bersuku-suku dan berbangsa-bangsa agar satu sama lain kenal mengenal; setiap manusia sama pada sisi Allah, kelebihan hanya pada orang-orang yang bertakwa; sifat-sifat orang-orang yang sebenar-benarnya beriman.</p>"
+WHERE id= 49;

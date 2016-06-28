@@ -1,0 +1,10 @@
+update surah set muqodimah= "
+<p>Surat Fushshilat terdiri atas 54 ayat termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Mu'min.</p>
+<p>Dinamai 'fushshilat' (yang dijelaskan) karena ada hubungannya dengan perkataan 'Fushshilat' yang terdapat pada permulaan surat ini, yang berarti 'yang dijelaskan'. Maksudnya ayat ayatnya diperinci dengan jelas tentang hukum-hukum, keimanan, janji dan ancaman, budi pekerti, kisah dan sebagainya.</p>
+<p>Dinamai juga dengan 'Haa Miin As Sajdah' karena surat ini dimulai dengan 'Haa Miim' dan dalam surat ini terdapat ayat sajdah.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Al Qur'an dan sikap orang-orang musyirk terhadapnya; kejadian-kejadian langit dan bumi dan apa yang ada pada keduanya membuktikan adanya Allah; semua yang terjadi dalam alam semesta tidak lepas dari pengetahuan Allah.</p>
+<b>2.Dan lain-lain:</b>
+<p>Hikmah diciptakannya gunung-gunung; anggota tubuh tiap-tiap orang menjadi saksi terhadap dirinya pada hari kimat; azab yang ditimpakan kepada kaum 'Aad dan Tsamud; permohonan orang-orang kafir agar dikembalikan ke dunia untuk mengerjakan amal-amal shaleh; berita gembira dari malaikat kepada orang-orang yang beriman; anjuran menghadapi orang-orang kafir secara baik; ancaman terhadap orang-orang yang mengingkari ke-Esaan Allah; sifat-sifat Al Qur'an Al Karim; manusia dan wataknya.</p>"
+WHERE id= 41;

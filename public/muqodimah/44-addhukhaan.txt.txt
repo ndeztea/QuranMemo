@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat Ad Dukhaan terdiri atas 59 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Az Zuhkruf.</p>
+<p>Dinamai 'Ad Dukhaan' (kabut), diambil dari perkataan 'Dukhaan' yang terdapat pada ayat 10 surat ini.</p>
+<p>Menurut riwayat Bukhari secara ringkas dapat diterangkan sebagai berikut: orang-orang kafir Mekah dalam menghalang-halangi agama Islam dan menyakiti serta mendurhakai Nabi Muhammad s.a.w. sudah melewati batas, karena itu Nabi mendo'a kepada Allah agar diturunkan azab, sebagaimana yang telah diturunkan kepada orang-orang yang durhaka kepada Nabi Yusuf yaitu musim kemarau panjang. Do'a Nabi itu dikabulkan Allah, sampai orang-orang kafir memakan tulang dan bangkai, karena kelaparan. Mereka selalu mengadah ke langit mengharap pertolongan Allah. Tetapi tidak satupun yang mereka lihat kecuali kabut yang menutupi pandangan mereka.</p>
+<p>Akhirnya mereka datang kepada Nabi agar Nabi memohon kepada Allah supaya hujan diturunkan. Allah mengabulkan do'a Nabi, dan hujan diturunkan, mereka kembali kafir seperti semula; karena itu Allah menyatakan bahwa nanti mereka akan diazab dengan azab yang pedih.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Dalil-dalil atas kenabian Muhammad s.a.w.; huru-hara dan kehebatan hari kiamat; pada hari kiamat hanya amal-amal seseorang yang dapat menolongnya; azab dan penderitaan yang ditemui orang-orang kafir di akhirat serta ni'mat dan kesenangan yang diterima orang-orang mu'min.</p>
+<b>2.Hukum-hukum:</b>
+<p>Kisah Musa a.s. dengan Fir'aun dan kaumnya.</p>
+<b>3.Dan lain-lain:</b>
+<p>Permulaan turunnya Al Qur'an pada malam lailatul Qadar; orang-orang kafir hanya beriman kalau mereka ditimpa bahaya, kalau bahaya telah hilang mereka kafir kembali; dalam penciptaan langit dan bumi itu terdapat hikmat yang besar.</p>"
+WHERE id= 44;

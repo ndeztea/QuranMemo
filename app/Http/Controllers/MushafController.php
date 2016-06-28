@@ -19,6 +19,15 @@ class MushafController extends Controller
      */
     public function index($page=1)
     {
+        /*$directory = '/Volumes/Jobs/www/QuranNote/public/muqodimah/';
+        $files = File::allFiles($directory);
+        foreach ($files as $file)
+        {
+            $contents = File::get($file);
+
+            echo (string)$contents, "";
+        }
+        die();*/
         // get pages mushaf quran
         $QuranModel = new Quran;
         $pages = $QuranModel->getPage();

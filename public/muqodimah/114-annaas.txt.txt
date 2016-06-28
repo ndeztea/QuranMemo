@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 6 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Falaq Nama 'An Naas' diambil dari 'An Naas' yang berulang kali disebut dalam surat ini yang artinya manusia.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Perintah kepada manusia agar berlindung kepada Allah dari segala macam kejahatan yang datang ke dalam jiwa manusia dari jin dan manusia.</p>"
+WHERE id= 114;

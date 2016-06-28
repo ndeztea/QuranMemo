@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat Maryam terdiri dari atas 98 ayat, termasuk golongan surat-surat Makkiyyah, karena hampir seluruhnya ayatnya diturunkan sebelum Nabi Muhammad s.a.w. hijrah ke Madinah, bahkan sebelum sahabat-sahabat beliau hijrah ke negri Habsyi. Menurut riwayat Ibnu Mas'ud, Ja'far bin Abi Thalib membacakan permulaan surat ini kepada raja Najasyi dan pengikut-pengikutnya di waktu ia ikut hijrah bersama-sama sahabat-sahabat yang lain ke negeri Habsyi.</p>
+<p>Surat ini dinamai 'Maryam', karena surat ini mengadnung kisah Maaryam, ibu Nabi Isa a.s. yang serba ajaib, yaitu melahirkan puteranya Isa a.s., sedang ia sebelumnya belum pernah dikawini atau dicampuri oleh seorang laki-laki pun. Kelahiran Isa a.s. tanpa bapak merupakan suatu bukti kekuasaan Allah s.w.t. Pengutaraan kisah Maryam sebagai kejadian yang luar biasa dan ajaib dalam surat ini, diawali dengan kisah kejadian yang luar biasa dan ajaib, yaitu dikabulkannya do'a Zakariya a.s. oleh Allah S.W.T., agar beliau dianugerahi seorang putera sebagai pewawris dan pelanjut cita-cita dan kepercayaan beliau, sedang usia beliau sudah sangat tua dan isteri beliau seorang yang mandul, yang menurut ukuran ilmu biologi tidak mungkin akan terjadi.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Allah berbuat sesuatu menurut yang dikehendaki-Nya, kendatipun menyimpang dari hjukum-hukum alam; Isa a.s. bukan anak Allah karena musathil Allah mempunyai anak; Jibril a.s. turun kepada rasul-rasul membawa wahyu atas perintah Allah; dihari kiamat orang kafir menghadap Allah sendiri-sendiri semua manusai akan menghadap Tuhan sebagai hamba.</p>
+<b>2.Kisah-kisah:</b>
+<p>Allah mengabulkan do'a Zakariya a.s.untuk memperoleh anak, sekalipun usia beliau sudah sangat tua dan isteri beliau seorang yang mandul; kisah kelahiran Isa a.s. tanpa bapak; Kisah Ibrahim a.s. dengan bapaknya; Musa a.s. seorang yang dipilih oleh Allah; Ismail a.s. seorang yang benar dalam janjinjya; Idris a.s. seorang yang sangat kuat kepercayaannya.</p>
+<b>3.Dan lain-lain:</b>
+<p>Ancaman terhadap orang yang meninggalkan sembahyang dan mengikuti hawa nafsunya serta kabar gembira untuk orang-orang yang telah taubat yang dan menjalankan amal-amal yang salaeh; keadaan disurga; membiarkan orang yang sesat setelah diberi petunjuk bergelimang dalam kesesatannya adalah sunnah Allah.</p>"
+WHERE id= 19;

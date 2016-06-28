@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat Saba' terdiri atas 54 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Luqman.</p>
+<p>Dinamakan Saba' karena di dalamnya terdapat kisah kaum Saba. 'Saba' adalah nama suatu kabilah dari kabilah-kabilah 'Arab yang tinggal di daerah Yaman sekarang ini. mereka mendirikan kerajaan yang terkenal dengan nama Kerajaan Sabaiyyah, ibukotanya Ma'rib; telah dapat membangun suatu bendungan raksasa, yang bernama 'Bendungan Ma'rib', sehingga negeri merka subur dan makmur. Kemewahan dan kemakmuran ini menyebabkan kaum Saba' lupa dan ingkar kepada Alalh yang telah melimpahkan ni'matNya kepada mereka, serta mereka mengingkari pula seruan para rasul. Karena keingkaran mereka ini Allah menimpakan kepada mereka azam berupa 'saitul 'arim' (banjir yang besar) yang ditimbulkan oelh bobolnya bendungan Ma'rib setelah bendungan Ma'rib bobol negeri Saba' menjadi kering dan kerajaan mereka hancur.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Ilmu Allah meliputi segala yang ada di langit dan segala yang ada di bumi; kebenaran adanya hari berbangkit dan hari pembalasan; Nabi Muhammad s.a.w. adalah pemberi peringatan; pada hari kiamat berhala-berhala itu tidak dapat memberi manfa'at sedikit pun; kalau seorang sesat maka akibat kesesatannya itu menimpa dirinya sendiri, dan kalau ia menemui jalan yang benar adalah berkat petunjuk Allah.</p>
+<b>2.Kisah-kisah:</b>
+<p>Kisah Nabi Daud a.s. dan Nabi Sulaiman a.s.; kisah kaum Saba'.</p>
+<b>3.Dan lain-lain:</b>
+<p>Celaan kepada kaum musyrikin yang menyembah berhala; tuduh menuduh antara pemimpin-pemimpin yang menyesatkan dengan pengikut-pengikutnya di hari kiamat; sikap orang-orang musyrik di waktu mendengar Al Qur'an; rasul-rasul tidak meminta upah dalam melaksanakan da'wahnya; orang-orang musyrik mendo'a kepada Allahagar dikembalikan ke dunjia untuk melaksanakan perintah dan menjauhi larangan Allah; orang yang hidup berlebih-lebihan dan sewenang-wenang selalu memusuhi Nabi.</p>"
+WHERE id= 34;

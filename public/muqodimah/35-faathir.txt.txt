@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat Faathir terdiri atas 45 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Furqaan dan merupakan surat akhir dari urutan surat-surat dalam Al Qur'an yang dimulai dengan 'Alhamdulillah'.</p>
+<p>Dinamakan 'Faathir' (pencipta) ada hubungannya dengan perkataan 'Faathir' yang terdapat pada ayat pertama pada surat ini.</p>
+<p>Pada ayat tersebut diterangkan bahwa Allah adalah Pencipta Langit dan Bumi. Pencipta malaikat-malaikat, pencipta semesta alam yang semuanya itu adalah sebagai bukti atas kekuasaan dan kebesarann-Nya.</p>
+<p>Surat ini dinamai juga dengan 'surat Malaikat' karena pada ayat pertama disebutkan bahwa Allah telah menjadikan malaikat-malaikat sebagai utusan-Nya yang mempunyai beberapa sayap.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Bukti-bukti kekuasaaan Allah dan ni'mat-ni'mat yang telah di anugerahkan-Nya; Allah menciptakan para malaikat menurut bentuk yang dikehendaki-Nya, bukti-bukti atas kebenaran adanya hari berbangkit.</p>
+<b>2.dan lain-lain:</b>
+<p>Kesenangan hidup diduia adalah sementara; menguatkan hati Rasulallah s.a.w. dalam menyeru orang-orang kafir dengan mengingatkannya kepada Rasul-Rasul yang terdahulu dan orang-orang yang mendustakannya; seruan kepada anusia supaya menjerjakan amalam yang baik dan meninggalkan pekerjaan yang buruk supaya janga mengikutui langkah syaitan; tiap-tiap orang memikul dosanya sendiri; manusia adalah khalifah Allah di muka bumi; gambaran akibat-akibat yang diterima oleh orang mu'min dan orang-orang kafir; tingkatan orang-orang mu'min.</p>"
+WHERE id= 35;

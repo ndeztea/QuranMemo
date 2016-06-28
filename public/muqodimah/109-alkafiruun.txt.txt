@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Kaafiruun terdiri atas 6 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Maa'uun.</p>
+<p>Dinamai 'Al Kafiruun' (orang-orang kafir), diambil dari perkataan 'Al Kafiruun' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Pernyataan bahwa Tuhan yang disembah Nabi Muhammad s.a.w. dan pengikut-pengikutnya bukanlah apa yang disembah oelh orang-orang kafir, dan Nabi Muhammad s.a.w. tidak akan menyembah apa yang disembah oleh orang-orang kafir.</p>"
+WHERE id= 109;

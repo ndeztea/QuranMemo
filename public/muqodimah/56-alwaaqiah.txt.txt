@@ -1,0 +1,9 @@
+update surah set muqodimah= "
+<p>Surat Al Waaqi'ah terdiri atas 96 ayat, termasuk golongan-golongan surat-surat Makkiyyah, diturunkan sesudah surat Thaa Haa.</p>
+<p>Dinamai 'Al Waaqi'ah' (Hari Kiamat), diambil dari perkataan Al Waaqi'ah yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Huru hara di waktu terjadinya hari kiamat; manusia di waktu berhisab terbagi atas tiga golongan, yaitu golongan yang bersegera menjalankan kebaikan, golongan kanan dan golongan yang celaka serta balasan yang diperoleh oleh masing-masing golongan; bantahan Allah terhadap keingkaran orang yang mengingkari adanya Tuhan, hari berbangkit, dan adanya hisab; Al Qur'an berasal dari Lauh Mahfuuzh.</p>
+<b>3.Dan lain-lain:</b>
+<p>Gambaran tentang surga dan neraka.</p>"
+WHERE id= 56;

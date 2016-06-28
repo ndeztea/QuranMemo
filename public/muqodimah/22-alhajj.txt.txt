@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat Al Hajj, termask golongan surat-surat Madaniyyah, terdiri atas 78 ayat, sedang menurut pendapat sebahagian ahli tafsir termasuk golongan surat-surat Makkiyyah. Sebab perbedaan ini ialah karena sebahagian ayat-ayat surat ini ada yang diturunkan di Mekah dan sebahagian lagi diturukan di Madinah.</p>
+<p>Dinamai surat ini 'Al Hajj'. karena surat ini mengemukakan hal-hal yang berhubungan dengan ibadat haji, seperti ihram, thawaf, sa'i, wuquf di Arafah, mencukur rambut, syi'ar-syi'ar Allah, faedah-faedah dan hikmah-hikmah disyari'atkannnya haji. Ditegaskan pula bahwa ibadat haji itu telah disyari'atkan di masa Nabi Ibrahim a.s., dan Ka'bah didirikan oleh Nabi Ibrahim a.s. bersama puteranya Ismail a.as.</p>
+<p>Menurut Al Ghaznawi, surat Al Hajj termasuk diantara surat-surat yang ajaib, diturunakn di malam dan di siang hari, dalam musdafir dan dalam keadaan tidak musafir, ada ayat-ayat yang diturunkan di Mekah dan ada pula yang diturunkan di Madinah, isinya ada yang berhubungan dengan peperangan dan ada pula yang berhubungan dngan perdamaian, ada ayat-ayatnya yang muhkam dan ada pula yang mutasyabihaat.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Keimanan tentang adanya kebangkitan dan huru-hara hari kiamat; dan susunan alam semesta dapat diambil bukti-bukti tentang adanya Allah Maha Pencipta.</p>
+<b>2.Hukum-hukum:</b>
+<p>Kewajiban behaji bagi kaum muslimin dan haji telah disyariatkan pada masa Ibrahim a.s. hukum berkata dusta; larangan menyembah berhala; binatang-binatang yang halal dimakan; hukum menghalang-halangi manusia dari jalan Allah dan Masjidil-haram; keizinan berperang untuk mempertahankan diri dan agama; hukum-hukum yang berhubungan dengan haji.</p>
+<b>3.Dan lain-lain:</b>
+<p>Membantah kebenaran tanpa pengetahuan adalah perbuatan yang tercela; tanda-tanda takwa yang sampai ke hati; tiap-tiap agama yang dibawa rasul-rasul sejak dahulu mempunyai syari'at tertentu dan cara melakukannya; pahala orang yang mati dalam berhijrah di jalan Allah; sikap orang-orang kafir bila mendengar ayat-ayat Al Qur'an; anjuran berjihad dengan sesungguhnya; celaan Islam terhadap orang-orang yang tidak tetap pendiriannya dan selalu mencari keuntungan untuk diri sendiri.</p>"
+WHERE id= 22; 

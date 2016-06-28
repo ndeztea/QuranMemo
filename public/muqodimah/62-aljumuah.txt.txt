@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Jumu'ah initerdiri atas 11 ayat, termasuk golongan-golongan surat-surat Madaniyyah dan diturunkan sesudah surat As Shaaf.</p>
+<p>Nama surat Al Jumu'ah diambil dari kata Al Jumu'ah yang terdapat pada ayat 9 surat ini yang artinya: 'Hari Jum'at'.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Menjelaskan sifat-sifat orang-orang munafik dan sifat-sifat buruk pada umunya, di antaranya berdusta, sbersumpah palsu dan penakut; mengajak orang-orang mu'min supaya ta'at dan patuh kepada Allah dan Rasul-Nya dan supaya bersedia menafkahkan harta untuk menegakkan agama-Nya sebelum ajal datang.</p>"
+WHERE id= 62;

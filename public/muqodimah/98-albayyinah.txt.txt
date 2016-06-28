@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Bayyinah terdiri atas 8 ayat, termasuk golongan surat-surat Madaniyyah, diturunkan sesudah surat Ath Thalaq.</p>
+<p>Dinamai 'Al Bayyinah' (bukti yang nyata) diambil dari perkataan 'Al Bayyinah' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Pernyataan dari ahli kitab dan orang-orang musyrik bahwa mereka akan tetap dalam agamanya masing-masing samapi datang nabi yang telah di janjikan oleh Tuhan. Setelah Nabi Muhammad s.a.w. datang, mereka terpecah belah, ada yang beriman dan ada yang tidak, padahal Nabi yang datang itu sifat-sifatnya sesuai dengan sifat-sifat yang mereka kenal pada kitab-kitab mereka dan membawa ajaran yang benar yaitu ikhlas dalam eribadah, mendirikan sembahyang, menunaikan zakat.</p>"
+WHERE id= 98;

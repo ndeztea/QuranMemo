@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Buruuj terdiri atas 22 ayat, termasuk golongan surat-surat Makkiyyah diturunkan sesudah surat Asy-Syams.</p>
+<p>Dinamai 'Al Buruuj' (gugusan bintang) diambil dari perkataan 'Al Buruuj' yang terdapat pada ayat 1 surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Sikap dan tindakan-tindakan orang-orang kafir terhadap orang-orang yang mengikuti seruan para rasul; bukti-bukti kekuasaan dan keesaan Allah; isyarat dari Allah bahwa orang-orang kafir Mekah akan ditimpa azab sebagaimana kaum Fir'aun dan Tsamud telah ditimpa azab; jaminan Allah terhadap kemurnian Al Qur'an.</p>"
+WHERE id= 85;

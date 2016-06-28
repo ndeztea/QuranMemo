@@ -1,0 +1,5 @@
+update surah set mquodimah= "
+<p>Surat ini terdiri atas 4 ayat, termasuk golongan surat-surat Makkiyyah dan diturunkan sesudah surat At Tiin. Nama 'Quraisy' diambil dari kata 'Quraisy' yang terdapat pada ayat pertama, artinya suku Quraisy. Suku Quraisy adalah suku yang mendapat kehormatan untuk memelihara Ka'bah.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Peringatan kepada orang Quraisy tentang ni'mat-ni'mat yang diberikan Allah kepada mereka karena itu mereka diperintahkan untuk menyembah Allah.</p>"
+WHERE id= 106;

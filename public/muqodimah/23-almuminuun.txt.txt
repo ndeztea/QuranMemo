@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surt Al Mu'minuum terdiri atas 118 ayat, termasuk golongan surat-surat Makkiyyah.</p>
+<p>Dinamai 'Al Mu'minuum', karena permulaan surat ini menerangkan bagaimana seharusnya sifat-sifat orang mu'min yang menyebabkan keberuntungan mereka di akhirat dan ketentraman jiwa mereka di dunia. Demikian tingginya sifat-sifat itu, hingga ia telah menjadi akhlak bagi Nabi Muhammad s.a.w.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Kepastian hari berbangkit dan hal-hal yang terjadi pada hari kiamat; Allah tidak memerlukan anak atau sekutu.</p>
+<b>2.Hukum-hukum:</b>
+<p>Manusia dibebaani sesuai dengan kesanggupannya rasul-rasul semuanya menyuruh manusia memakan mamkanan yang halal lagi baik; pokok-pokok agama yang dibawa para nabi adalah sama,hanya syariatnya yang berbeda-beda.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kisah Nuh a.s.; kisah Hud a.s. kisah musa a.s. dan Harun a.s.; kisah Isa a.s.</p>
+<b>4.Dan lain-lain:</b>
+<p>Tujuh perkara yang harus dipenuhi, oleh seorang mu'min yang ingin mendapat keberuntungan hidup di dunia maupun di akhirat; proses kejadian manusia; tanga-tanda orang yang bersegera kepada kebaikan; ni'mat Allah yang di anugerahkan kepada manusia wajib di syukuri.</p>"
+WHERE id= 23;

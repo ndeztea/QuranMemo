@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat Muhammad terdiri atas 38 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Hadid.</p>
+<p>Nama 'Muhammad' sebagai nama surat ini diambil dari perkataan Muhammad yang terdapat pada ayat 2 surat ini.</p>
+<p>Pada ayat 1,2 dan 3 surat ini Allah membandingkan antara hasil yang diperoleh oleh orang-orang yang percaya kepada apa yang diturunkan kepada Nabi Muhammad s.a.w. merekalah orang-orang yang beriman dan mengikuti jejak yang hak, diterima Allah semua amalnya, diampuni segala kesalahannya. Adapun orang-orang yang tidak percaya kepada Muhammad s.a.w. adalah orang-orang yang mengikuti kebatilan, amalnya tidak diterima, dosa mereka tidak diampuni, kepada mereka dijanjjikan azab didunia dan di akhirat.</p>
+<p>Dinamai juga dengan 'Al Qital' (peperangan), karena sebahagian besar surat ini mengutamakan tentang peperangan dan pokok-pokok hukumnya, serta bagaimana seharusnya sikap orang-orang mu'min terhadap orang-orang kafir.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Orang yang mati syahid akan masuk surga; balas-balasan yang disediakan di akhirat bagi orang-orang yang takwa dan orang-orang yang durhaka; keesaan Allah.</p>
+<b>2.Hukum-hukum:</b>
+<p>Menumpas musuh pada permulaan peperangan (sebelum gejala-gejala kemenangan). menawan mereka kalau telah kelihatan gejala-gejala kemenangan, membebaskan tawana itu dengan menerima tebusan atau tidak. Larangan mengajak damai apabila telah nyata kemenangan;</p>
+<b>3.Dan lain-lain:</b>
+<p>Allah selalu memberi cobaan kepada orang-orang mu'min, untuk mengetahui siapa yang berjihad dan sipa yang sabar; kehidupan dunia adalah permainan belaka dan bahwa iman dan takwalah yang menghasilkan pahala; Allah akan menolong orang yang menolong agamanya.</p>"
+WHERE id= 47;

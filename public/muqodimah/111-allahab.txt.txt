@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 5 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Fath. Nama 'Al Lahab' diambil dari kata 'Lahab' yang terdapat pada ayat ketiga surat ini yang artinya gejolak api. Surat ini juga dinamakan 'Al Masad'.</p>
+<p>Pokok-pokok isinya:</p>
+<P>Cerita Abu Lahab dan isterinya yang menentang Rasul s.a.w. keduanya akan celaka dan masuk neraka. Harta Abu Lahab, tak berguna keselamatannya demikianj pula segala usaha-usahanya.</p>"
+WHERE id= 111;

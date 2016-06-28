@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 52 ayat, termasuk golongan surat-surat Makkiyyah dan diturunkan sesudah surat Al Mulk.</p>
+<p>Nama 'Al Haaqqah' diambil dai kata 'Al Haaqqah' yang terdapat pada ayat pertama surat ini yang artinya 'Hari Kiamat'.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Peringatan tentang azab yang ditimpakan kepada kaum-kaum Tsamud, 'Aad, Fir'aun, kaum Nuh dan dan Kaum-kaum sebelum mereka yang mengingkari rasul-rasul mereka pada hari kiamat; kejadian-kejadian pada hari kiamat dan hari berhisab; penegasan Allah bahwa Al Qur'an itu benar-benar wahyu Allah.</p>"
+WHERE id= 69; 

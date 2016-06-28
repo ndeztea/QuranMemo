@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Asy Syams terdiri atas 15 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Qadr.</p>
+<p>Dinamai 'Asy Syams' (matahari), diambil dari perkataan Asy Syams yang terdapat pada ayat permulaan surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Kaum Tsamud telah dihancurkan Allah karena kedurhakannya, Tuhan menegaskan bahwa hal ini adalah mudah bagi-Nya, sebagaimana mudahnya menciptakan benda-benda alam, siang dan malam dan menciptakan jiwa yang tersebut dalam sumpah-Nya; Allah memberitahukan kepada manusia jalan ketakwaan dan jalan kekafiran; manusia mempunyai kebebasan memilih antara kedua jalan itu.</p>"
+WHERE id= 91;

@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat Asy Syuura terdiri atas 93 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Fushshilat.</p>
+<p>Dinamai 'Asy Syuura' (musyawarat) diambil dari perkataan 'Syuura' yang terdapat pada ayat 38 surat ini. Dalam ayat tersebut diletakkan salah satu dari dasar-dasar pemerintahan Islam ialah musyawarat.</p>
+<p>Dinamai juga 'Has Miim 'Ain Siin Qaaf' karena surat ini dimulai dengan huruf-huruf hijaiyah itu.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Dalil-dalil tentang Allah Yang Maha Esa dengan menerngkan kejadian langit dan bumi, turunnya hujan, berlayarnya kapal di lautan dengan aman dan sebagainya; Allah memberi rezki kepada hamba-Nya dengan ukuran tertentu sesuai dengan kemaslahatan mereka dan sesuai pula dengan hikmah dan Ilmu-Nya; Allah memberikan anak-anak laki-laki atau anak-anak perempuan atau anak laki-laki dan perempuan kepada siapa yang dikehendaki-Nya, atau tidak memberi anak seorang pun; cara-cara Allah menyampaikan perkataan-Nya kepada manusia; pokok-pokok agama yang dibawa para rasul adalah sama.</p>
+<b>2.Hukum:</b>
+<p>Tidak ada dasar untuk menuntut orang yang mempertahankan diri.</p>
+<b>3.Dan lain-lain:</b>
+<p>Keterangan bagaimana keadaan orang-orang kafir dan keadaan orang-orang mu'min nanati di akhirat; memberi ampun lebih baik dari pada membalas dan membalas jangan sampai melampaui batas; orang-orang kafir mendesak Nabi Muhammad s.a.w. supaya hari kiamat disegerakan datangnya; kewajiban rasul hanya menyampaikan risalahnya.</p>"
+WHERE id= 42; 

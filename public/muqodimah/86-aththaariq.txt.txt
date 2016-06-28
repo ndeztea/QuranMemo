@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Ath Thaariq terdiri atas 17 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Balad.</p>
+<p>Dinamai 'Ath Thaariq' (yang datang di malam hari) diambil dari perkataan 'Ath Thaariq' yang terdapat pada ayat 1 surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Tiap-tiap jiwa selalu dipelihara dan di awasi Allah; merenungkan asal kejadian diri sendiri yaitu dari air mani akan menghilangkan sifat sombong dan takabur; Allah kuasa menghidupkan manusia embali pada hari kiamat, pada waktu itu tidak ada kekuatan yang dapat menolong selain Allah; Al Qur'an adalah pemisah antara yang hak dan yang basil.</p>"
+WHERE id= 86;

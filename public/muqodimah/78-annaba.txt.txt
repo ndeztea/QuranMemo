@@ -1,0 +1,8 @@
+update surah set muqodimah= "
+<p>Surat An Naba' terdiri atas 40 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Ma'aarij.</p>
+<p>Dinamai 'An Naba' (berita besar), diambil dari perkataan An Naba' yang terdapat pada ayat 2 surat ini.</p>
+<p>Dinamai juga 'Amma yatasaa aluun' diambil dari perkataan 'Amma yatasaa aluun' yang terdapat pada ayat 1 surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<b>Keimanan:</b>
+<p>Pengingkaran orang-orang musyrik terhadap adanya hari berbangkit dan ancaman Allah terhadap sikap mereka itu; kekuasaan-kekuasaan Allah terlihat dalam alam sebagai bukti adanya hari berbangkit; peristiwa-peristiwa yang terjadi pada hari berbangkit; azab yang diterima orang-orang yang mendustakan ayat-ayat Allah serta kebahagiaan yang diterima orang-orang mu'min di hari kiamat; penyesalan orang kafir di hari kiamat.</p>"
+WHERE id= 78; 

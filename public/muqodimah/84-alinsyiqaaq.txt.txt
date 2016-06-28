@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Insyiqaaq terdiri atas 25 ayat, termasuk golongan surat-surat Makkiyyah diturunkan sesudah surat Al Infithaar.</p>
+<p>Dinamai 'Al Insyiqaaq' (terbelah), diambil dari perkataan 'Insyiqaat' yang terdapat pada permulaan surat ini, yang pokok katanya ialah 'Insyiqaaq'.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Peristiwa-peristiwa pada permulaan terjadinya hari kiamat; peringatan bahwa manusia bersusah payah menemui Tuhannya; dalam menemui Tuhannya kelak ada yang mendapat kebahagiaan dan ada pula yang mendapat kesengsaraan; tingkat-tingkat kejadian dan kehidupan manusisa di dunia dan di akhirat.</p>"
+WHERE id= 84;

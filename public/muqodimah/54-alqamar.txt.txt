@@ -1,0 +1,11 @@
+update surah set muqadimah= "
+<p>Surat Al Qamar terdiri atas 55 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Ath Thaariq.</p>
+<p>Nama 'Al Qamar' (bulan) diambil dari perkataan 'Al Qamar' yang terdapat pada ayat yang pertama surat ini. Pada ayat ini diterangkan tentang terbelahnya bulan sebagai mu'jizat Nabi Muhammad s.a.w.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Pemberitaan bahwa datangnya hari kiaat sudah dekat, semua yang ada pada alam adalah dengan ketetapan Allah; kehendak Allah pasti berlaku; tiap-tiap pekerjaan manusia dicatat oleh malaikat.</p>
+<b>2.Kisah-kisah:</b>
+<p>Kisah kaum yang mendustakan rasul-rasul dimasa dahulu, seperti kaum Nuh, 'Aad, Tsamud dan Fir'aun.</p>
+<b>3.Dan lain-lain:</b>
+<p>Orang-orang kafir dikumpulkan di akhirat dalam keadaan hina dan akan menerima balasan yang setimpal; celaan terhadap orang-orang yang tidak memperhatikan ayat-ayat Al Qur'an.</p>"
+WHERE id= 54;

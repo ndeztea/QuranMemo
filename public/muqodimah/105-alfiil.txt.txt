@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 5 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Kafiruun. Nama Al Fiil diambil dari kata 'Al Fiil' yang terdapat pada ayat pertama surat ini, artinya (gajah). Surat Al Fiil mengemukakan cerita pasukan bergajah dari Yaman yang dipimpin oleh Abrahah yang ingin meruntuhkan Ka'bah di Mekah. Peristiwa ini terjadi pada tahun Nabi Muhammad s.a.w. dilahirkan.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Cerita tentang pasukan bergajah yang di azab oleh Allah s.w.t. degan mengirimkan sejenis burung yang menyerang mereka sampai binasa.</p>"
+WHERE id= 105;

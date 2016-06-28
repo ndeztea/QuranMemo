@@ -1,0 +1,9 @@
+update surah set muqodimah= "
+<p>Surat Al MUjaadilah terdiri atas 22 ayat, termasuk golongan surat Madaniyyah, diturunkan sesudah surat Al Munaafiquun.</p>
+<p>Surat ini dinamai 'Al Mujaadilah (wanita yang mengajukan gugatan) karena pada awal surat ini disebutkan bantahan seorang perempuan, menurut riwayat bernama Khaulah binti Tsa 'labah terhadap sikap suaminya yang telah menzhirarnya. Hal ini diadukan kepada Rasulallah s.a.w. dan dia menuntut supaya belaiu memberikan putusan yang adil dalam persoalan itu.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Hukum:</b>
+<p>Hukum zhirar dan sangsi-sangsi bagi orang yang melakukannya bila ia menarik kembali perataanya; larangan menjadikan musuh Allah sebagai teman.</p>
+<b>2.Dan lain-lain:</b>
+<p>Menjaga adab sopan santun dalam suatu majlis pertemuan; adab sopan santun terhadap Rasulallah s.a.w.</p>"
+WHERE id= 58;

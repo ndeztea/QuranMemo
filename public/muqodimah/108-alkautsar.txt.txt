@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat Al Kautsar terdiri ats 3 ayat, termasuk golongan surat-surat Makkiyyah diturunkan sesudah surat Al Aadiyaat. Dinamai 'Al Kautsar' (ni'mat yang banyak) diambil dari perkataan 'Al Kautsar' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Allah telah melimpahkan ni'mat yang banyak karena itu bersembahyang dan berkorbanlah; Nabi Muhammad s.a.w. akan mempunyai pengikut yang banayak sampai hari kiamat dan akan mempunyai nama yang baik di dunia dan di akhirat, tidak sebagai yang dituduhkan pembenci-pembencinya.</p>"
+WHERE id= 108;

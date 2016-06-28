@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al 'Alaq terdiri atas 19 ayat,termasuk golongan surat-surat Makkiyyah. Ayat 1 sampai dengan 5 dari surat ini adalah ayat-ayat Al Qur'an yang pertama sekali diturunkan, yaitu diwaktu Nabi Muhammad s.a.w. berkhalwat di gua Hira'</p>
+<p>Surat ini dinamai 'Al Alaq' (segumpal darah), diambil dari perkataan 'Alaq' yang terdapat pada ayat 2 surat ini. Surat ini dinamai juga dengan 'Iqra' atau 'Al Qalam'</p>
+<p>Pokok-pokok isinya:</p>
+<p>Perintah membaca Al Qur'an; manusia dijadikan dari segumpal darah; Allah menjadikan kalam sebagai alat mengembangkan pengetahuan; manusia bertindak melampaui batas karena merasa dirinya serba cuykup; ancaman Allah terhadap orang-orang kafir yang menghalang-halangi kaum muslimin melaksanakan perintah-Nya.</p>"
+WHERE id= 96;]

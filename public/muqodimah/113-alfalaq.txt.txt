@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 5 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Fiil. Nama 'Al Falaq' diambil dari kata Al Falaq yang terdapat pada ayat pertama surat ini yang artinya waktu subuh.</p>
+<p>Diriwayatkan oleh Abu Daud, At Tirmizi dan An Nasa-i dari 'Uqbah bin 'Aamir bahwa Rasulallah s.a.w. bersembahyang dengan membaca surat Falaq dan surat An Naas dalam perjalanan.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Perintah agar kita berlindung kepada Allah s.w.t. dari segala macam kejahatan.</p>"
+WHERE id= 113;

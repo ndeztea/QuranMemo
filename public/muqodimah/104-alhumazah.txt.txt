@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Humazah terdiri atas 9 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Qiyaamah.</p>
+<p>Dinamai 'Al Humazah' (pengumpat) diambil dari perkataan 'Humazah' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Ancaman Allah terhadap orang-orang yang akan mencela orang lain, maka mengumpat dan suka mengumpulkan harta tetapi tidak menafkahkannya di jalan Allah.</p>"
+WHERE id= 104;

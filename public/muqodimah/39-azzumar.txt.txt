@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat Az Zumar terdiri atas 75 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Saba'.</p>
+<p>Dinamakan 'Az Zumar' (rombongan-rombingan0 karena perkataan 'Az Zumar; yang terdapat pada ayat 71 dan ayat 73 ini.</p>
+<p>Dalam ayat-ayat tersebut diterangkan keadaan manusia di hari kiamat setelah mereka di hisab, di waktu itu mereka terbagi atas dua rombonjgan; satu rombongan dibawa ke neraka dan satu rombongan lagi dibawa ke surga. Masing-masing rombongan memperoleh balasan dari apa yang mereka kerjakan di dunia dahulu.</p>
+<p>Surat ini dinamakan juga 'Al Ghuraf' (kamar-kamar) berhubung perkataan 'ghuraf' yang terdpat pada ayat 20, di mana diterangkan keadaan kamar-kamar dalam surga yang diperoleh orang-orang yang bertakwa.</p>
+<p>Pokok-pook isinya:</p>
+<b>1.Keimanan:</b>
+<p>Dalil-dalil' ke-Esaan dan kekuasaan Allah; malaikat-malaikat berkumpul di sekeliting 'Arsy bertasbih kepada Tuhannya; pada hari kiamat tiap-tiap orang mempunyai catatan amalan masing-masing.</p>
+<b>2.Kisah-kisah:</b>
+<p>Perintah memurnikan keta'atan kepada Allah; larangan berputus asa terhadap perintah Allah.</p>
+<b>3.Dan lain-lain:</b>
+<p>Tabiat orang-orang musyrik dalam keadaan senang dan susah; perumpamaan dalam Al Qur'an dan faedahnya; kedahsyatan hari kiamat; air muka orang musyrik dan air muka orang mu'min pada hari kiamat; janji Allah mengampuni orang-orang yang bersalah bila mereka bertaubat.</p>"
+WHERE id= 39;

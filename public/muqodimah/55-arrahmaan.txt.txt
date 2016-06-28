@@ -1,0 +1,11 @@
+update surah set muqadimah= "
+<p>Surat Ar Rahmaan terdiri atas 78 ayat, termasuk gollongan surat-surat Madaniyyah, diturunkan sesudah surat Ar Ra'du</p>
+<p>Dinamai 'Ar Rahmaan' (yang maha pemurah), diambil dari perkataan 'Ar Rahmaan' yang terdapat pada ayat pertama surat ini. Ar Rahmaan adalah salah satu nama-nama Allah. Sebahagian besar dari surat ini menerangkan kepemurahan Allah s.w.t. kepada hamba-hamba-Nya. yaitu dengan memberikan ni'mat-ni'mat yang tidak terhingga baik di dunia maupun di akhirat nanti,</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Allah mengajar manusia pandai berbicara; pohon-pohonan dan tumbuh-tumbuhan tunduk kepada Allah; semua makhluk akan hancur kecuali Allah; Allah selalu dalam kesibukan; seluruh alam merupakan ni'mat Allah terhadap umat manusia; manusia diciptakan dari tanah dan jin dari api.</p>
+<b>2.Hukum-hukum:</b>
+<p>Kewajiban mengukur, menakar, menimbang dengan adil.</p>
+<b>3.Dan lain-lain:</b>
+<p>Manusia dan jin tidak dapat melepaskan diri dari kekuasaan Allah s.w.t. banyak dari umat manusia yang tidak mensyukuri ni'mat Tuhan, nubu'at tentang hal-hal yang akan terjadi dan hal itu benar-benar terjadi seperti terusan Suez dan Panama.</p>"
+WHERE id= 55;

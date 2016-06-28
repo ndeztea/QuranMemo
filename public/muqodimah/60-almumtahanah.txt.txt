@@ -1,0 +1,9 @@
+update surah set muqodimah= "
+<p>Surat Al Mumtahanah terdiri atas 13 ayat, termasuk golongan surat-surat madaniyyah, diturunkan sesudah surat Al Ahzab.</p>
+<p>Dinamai 'Al Mumtahanah' (wanita yang diuji), di ambil dari kata 'Famtahinuuhunna' yang berarti 'maka ujilah mereka', yang terdapat pada ayat 10 surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1Hukum-hukum:</b>
+<p>Larangan mengadakan hubungan persahabatan dengan orang-orang kafir yang memusuhi Islam, sedang dengan orang-orang kafir yang tidak memusuhi Islam lebih mengadakan persahabatan; hukum perkawinan bagi orang-orang yang pindah agama.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kisah Ibrahim a.s. bersama kaumnya sebagai contoh dan teladan bagi orang-orang mu'min.</p>"
+WHERE id= 60;

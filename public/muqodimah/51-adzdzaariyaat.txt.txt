@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat Adz Dzaariyaat terdiri atas 60 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Ahqaaf.</p>
+<p>Dinamai 'Adz-Dzaariyaat' (angin yang menerbangkan), diambil dari perkataan 'Adz Dzaariyaat' yang terdapat pada ayat pertama surat ini. Allah bersumpah dengan angin, mega, bahtera dan malaikat yang menjadi sumber kesejahteraan dan pembawa kemakmuran. Hal ini mengisyaratkan inayat Allah kepada hamba-hamba-Nya.</P
+<p>Pokok-pokok isinya:</p>
+<b>1.keimanan:</b>
+<p>bagaimana keadaan orang-orang yang beriman didalam syurga sebagai balasan ketaatan bagi orang yang bertakwa; manusia dan jin dijadikan Allah untuk beribadat kepada-Nya; Allah sebagai Maha Pemberi Rezki; neraka sebagai balasan bagi orang-orang kafir.</p>
+<b>2.Hukum-hukum:</b>
+<p>Larangan mempersekutukan Allah dengan selain-Nya; perintah berpaling dari orang-orang musyrik yang berkepala batu dan memberikan peringatan dan pengajaran kepada orang-orang mu'min; pada harta kekayaan seseorang terdapat hak orang miskin.</p>
+<b>3.Kisah-kisah:</b>
+<p>Ibrahim a.s. dengan malaikat yang datang ke rumahnya; Musa a.s. dengan Fir'aun; kaum 'Aaddan Tsamud; Nuh a.s. dengan kaumnya.</p>
+<b>4.Dan lain-lain:</b>
+<p>Segala sesuatu diciptakan Allah dengan berpasang-pasangan; pada diri manusia sendiri terdapat tanda-tanda kebesaran Allah.</p>"
+WHERE id= 41;

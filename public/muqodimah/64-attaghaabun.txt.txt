@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 18 ayat, termasuk golongan surat-surat Madaniyyah dan diturunkan sesudah surat At Tahrim.</p>
+<p>Nama At Taghaabun, diambil dari kata 'at taghaabun' yang terdapat pada ayat ke 9 yang artinya: hari dinampakkan kesalahan-kesalahan.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Seluruh isi Alam bertasbih kepada Allah s.w.t., penjelasan tentang kekuasaan Allah s.w.t. serta keluasan ilmu-Nya; penegasan bahwa semua yang terjadi dalam alam ii adalah atas izin Allah.</p>
+<b>2.Hukum-hukum:</b>
+<p>Perintah ta'at kepada Allah dan Rasul; perintah supaya bertakwa dan menafkahkan harta.</p>
+<b>3.Dan lain-lain:</b>
+<p>Peringatan kepada orang-orang kafir tentang nasib orang-orang dahulu yang mendurhakai Rasul-rasul; diantara isteri-isteri dan anak-anak seseorang ada yang menjadi musuh baginya; harta dan anak-anak adalah cobaan dan ujian bagimanusia.</p>"
+WHERE id= 64; 

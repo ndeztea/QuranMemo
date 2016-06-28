@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 8 ayat, termasuk golongan surat-surat Madaniyyah diturunkan sesudah surat An Nisaa; Nama Al Zalzalah diambil dari kata :Zilzaal yang terdapat pada ayat pertama surat ini yang berarti goncangan.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Kegoncangan bumi yang amat hebat pada hari kiamat dan kebingunganj manusia ketika itu; manusia pada hari kiamat itu dikumpulkan untuk dihisab segala amal perbuatan mereka.</p>"
+WHERE id= 99;

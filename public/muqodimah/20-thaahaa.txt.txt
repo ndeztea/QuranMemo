@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat Thaahaa terdiri atas 135 ayat, diturunkan sesudah diturunkannya surat Maryam, termasuk golongan surat-surat Makkiyyah.</p>
+<p>Surat ini dinamai 'Thaahaa', diambil dari perkataan yang berasal dari ayat pertama surat ini. Sebagaimana yang lazim terdapat pada surat-surat yang memakai huruf-huruf abjad pada permulaannya, di mana huruf tersebut seakan-akan merupakan pemberitahuan Allah kepada orang-orang yang membacanya, bahwa sesudah hruf itu akan dikemukakan hal-hal yang sangan penting diketahui, maka demikian pula halnya dengan ayat-ayat yang terdapat sesudah huruf 'Thaahaa' dalam surat ini. Allah menerangkan bahwa Al Qur'an merupakan peringatan bagi manusia, wahyu dari Allah, Pencipta semesta alam. Kemudian Allah menerangkan kisah beberapa orang Nabi; akibat-akibat yang telah ada akan dialami oleh orang-orang yang percaya kepada Allah dan orang-orang yang mengingkari-Nya, baik didunia maupun di akhirat. Selain hal-hal tersebut diats, maka surat ini mengandung pokok-pokok isi sebagai berikut:</p>
+<b>1.Keimanan:</b>
+<p>Al Qur'an adalh peringatan bagi manusia terutama bagi orang-orang yang bertakwa; Musa a.s. langsung menerima wahyu dari Allah, tanpa perantara Jibril; Allah menguasai 'Arsy, mengetahui sesuatu yang samar dan yang lebih samar; keadaan orang berdosa dihimpunkan dihari kiamat; syafa'at tidak bermanfaat di hari kiamat, kecuali syafa'at dari orang-orang yang dapat izin dari Allah.</p>
+<b>2.Hukum-hukum:</b>
+<p>Perintah mengerjakan sembahyang dan keutamaan waktu-waktunya; kewajiban menyuruh keluarga melakukan sembahyang.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kisah Musa a.s. dan Harun a.s. dalam menghadapi Fir'aun dan Bani Israil; kisah Nabi Adam a.s. dan ibllis.</p>
+<b>4.Dan lain-lain:</b>
+<p>Perintah Allah kepada Nabi Muhammad s.a.w. supaya dia meminta tambahan ilmu kepada Allah sekalipun sudah menjadi rasul; Allah tidak akan mengazab sesuatu kaum sebelum diutus rasul kepada mereka; jangan terpengaruh oleh kesenangan kehidupan dunia.</p>'
+WHERE id= 20; 

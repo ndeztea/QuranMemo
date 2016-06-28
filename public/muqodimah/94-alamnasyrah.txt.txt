@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 8 ayat, termasuk golongan surat-surat Makkiyyah dan diturunkan sesudah surah Adh Dhuhaa. Nama 'Alam Nasyrah' diambil dari kata 'Alam Nasyrah' yang terdapat pada ayat pertama, yang berarti: bukanlah Kami telah melapangkan.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Penegasan tentang ni'mat-ni'mat Allah s.w.t. yang diberikan kepada Nabi Muhammad s.a.w. dan penyataan Allah bahwa di samping kesukaran ada kemudahan karena itu diperintahkan kepada Nabi agar tetap melakukan amal-amal saleh dan bertawakkal kepada-Nya.</p>"
+WHERE id= 94;

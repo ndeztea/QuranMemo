@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 12 ayat, termasuk golongan surat-surat Madaniyyah, diturunkan sesudah surat Al Hujuraat.</p>
+<p>Dinamai surat At Tahriim karena pada awal surat ini terdapat kata 'tuharrim' yang kata asalnya adalah At Tahriim yang berarti 'mengharamkan'.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Kesempatan bertaubat itu hanyalah di dunia saja, segala amal perbuatan manusia di dunia akan dibalas di akhirat.</p>
+<b>2.Hukum-hukum:</b>
+<p>Larangan mengharamkan apa yang dibolehkan Allah s.w.t.; kewajiban membebaskan diri dari sumpah yang diucapkan untuk engharamkan ayng halal dengan membayar kaffarat; kewajiban memelihara diri dan keluarga dari api neraka; perintah memerangi orang-orang kafir dan munafiq dan berlaku keras terhadap mereka diwaktu perang.</p>
+<b>3.Dan lain-lain:</b>
+<p>Iman dan perbuatan baik atau buruk seseorang tidak tergantung kepada iman dan perbuatan orang lain walaupun antara suami isteri, seperti isteri Nabi Nuh a.s., isteri Nabi Luth a.s., Isteri Fir'aun dn Maryam.</p>"
+WHERE id= 66;

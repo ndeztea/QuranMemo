@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 7 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat At Takaatsur. Nama 'Al Maa'un' diambil dari kata 'Al Maa'uun' yang terdapat pada ayat 7, artinya barang-barang yang berguna.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Beberapa sifat manusia yang dipandang sebagai mendustakan agama. Ancaman berhadap orang-orang yang melakukan dengan shalat dengan lalai dan riya.</p>"
+WHERE id= 107;

@@ -1,0 +1,9 @@
+update surah set muqodimah= "
+<p>Surat An Naazi'aat terdiri atas 46 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat An Naba'.</p>
+<p>Dinamai 'An Naazi'aat' (Malaikat-malaikat yang mencabut) diambil dari perkataan 'An Naazi'aat' yang terdapat pada ayat 14, dan dinamai juga 'Ath Thaammah' dari ayat 34.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Penegasan Allah tentang adanya hari kiamat dan sikap orang-orang musyrik terhadapnya; manusia dibagi 2 golongan di akhirat; manusia tidak dapat mengetahui kapan terjadinya hari kiamat.</p>
+<b>2.Kisah:</b>
+<p>Kisah Musa a.s. dengan Fir'aun.</p>"
+WHERE id= 79;

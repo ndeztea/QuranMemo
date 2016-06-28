@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat An Nuur terdiri atas 64 ayat, dan termasuk golongan surat-surat Madaniyyah. Dinamai 'An Nuur' yang berarti 'cahaya', diambil dari kata An Nuur yang terdapat pada ayat 35. Dalam ayat ini, Allah s.w.t. menjelaskan tentang Nuur Ilahi, ya'ni Al Qur'an yang mengandung petunjuk-petunjuk.</p>
+<p>Petunjuk-petunjuk Allah itu, merupakan cahaya yang terang-benderang menerangi alam semesta. Surat ini sebagian besar isinya memuat petunjuk-petunjuk Allah yang berhubungan sengan soal kemasyarakatan dan rumah tangga.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Kesaksian Lidah dan anggota-anggota tubuh atas segala perbuatan manusia pada hari kiamat; hanya Allah yang menguasai langit dan bui\mi; kewajiban rasul, hanyalah menyampaikan agama Allah; Iman merupakan dasar daripada diterimanya amal ibadah.</p>
+<b>2.Hukum-hukum:</b>
+<p>Hukum-hukum sekitar masalah zina, li'an dan adab-adab pergaulan di luar dan di dalam rumah tangga.</p>
+<b>3.Kisah-kisah:</b>
+<p>Cerita tentang berita bohonh terhadap Ummul Mu'minin 'Aisyah r.a. (Qishshatul Ifki).</p>
+<b>4.Dan lain-lain:</b>
+<p>Semua jenis hewan diciptakan Allah dari air; janji Allah kepada kaum muslimin yang beramal saleh.</p>"
+WHERE id= 24;

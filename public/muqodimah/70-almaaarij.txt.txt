@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 44 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Haaqqah.</p>
+<p>Perkataan 'Al Ma'aarij' yang menjadi nama bagi surat ini adalah kata jamak dari 'Mi'raj', diambil dari perkataan Al Ma'aarij yang terdapat pada ayat 3, yang artinya menurut bahasa 'tempat naik'. Sedang para ahli tafsir memberi arti bermacam-macam di antarnya ialah 'langit', ni'mat karunia dan derajat atau tingkatan yang diberikan Allah  s.w.t. kepada ahli surga.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Perintah bersabar kepada Nabi Muhammad s.a.w. dalam menghadapi ejekan-ejekan dan keingkaran orang-orang kafir, kejadian-kejadian pada hari kiamat; azab Allah tak dapat dihindarkan dengan tebusan apapun, sifat-sifat manusia yang mendorongnya ke api neraka; amal-amal pebuatan yang dapat membawa manusia ke martabat yang tinggi; peringatan Allah akan mengganti kaum yang durhaka dengan kaum yang lebih baik.</p>"
+WHERE id= 70; 

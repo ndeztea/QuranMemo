@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 30 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Ath Thuur.</p>
+<p>Nama 'Al Mulk' diambil dari kata 'Al Mulk' yang terdapat pada ayat pertama surat ini yang artinya kerajaan atau kekuasaan. Dinamai pula surat ini dengan 'Tabaarak' (Maha Suci).</p>
+<p>Pokok-pokok isinya:</p>
+<p>Hidup dan mati ujian bagi manusia Allah menciptakan berlapis-lapis dan semua ciptaan-Nya mempunyai keseimbangan; perintah Allah untuk memperhatikan isi alam semesta; azab yang diancamkan kepada orang-orang kafir; dan janji Allah kepada orang-orang mu'min; Allah menjadikan bumi sedemikian rupa hingga mudah bagi manusia untuk mencari rezeki; peringatan Allah kepada manusia tentang sedikitnya mereka yang bersyukur kepada ni'mat Allah.</p>"
+WHERE id= 67;

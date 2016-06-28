@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Ash Shaaf terdiri ats 14 ayat, termasuk golongan surat-surat Madaniyyah.</p>
+<p>Dinamai dengan 'Ash Shaaf', karena pada ayat 4 surat ini terdapat kata 'Saffan' yang berarti 'satu barisan'. Ayat ini menerangkan apa yang diridhai Allah sesudah menerangkan apa yang dimurkai-Nya. Pada ayat 3 diterangkan bahwa Allah murka kpada orang yang hanya pandai berkata saja ettapi tidak melaksanakan apa yang di ucapkannya. Dan pada ayat 4 diterangkan bahwa Allah menyukai orang yang mempraktekan apa yang diucapkannya yaitu orang-orang yang berperang pada jalan Allah dalam satu barisan.</p>
+<p>Pokok-pokok isinya:</p>
+<p>semua yang ada di langit dan di bumi bertasbih kepada-Nya, anjuran berjihad pada jalan Allah. Pengikut-pengikut nabi Musa a.s. pernah mengingkari ajaran-ajaran nabi mereka. Demikian pula kaum musyrikin Mekah ingin hendak memadamkan cahaya Allah (agama Islam). Ampunan Allah dan Syurga dapat dicapai dengan iman dan berjuang menegakkan kalimah Allah dengan harta dan jiwa.</p>"
+WHERE id= 61;

@@ -1,0 +1,14 @@
+update surah set muqodimah= "
+<p>Surat Al Fat-h terdiri atas 29 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Jumu'ah.</p>
+<p>Dinamai 'Al Fat-h (kemenangan)' diambil dari perkataan 'Fat-han' yang terdapat pada ayat pertama surat ini. Sebagian besar dari ayat-ayat surat inimenerangkan hal-hal yang berhubungan dengan kemenangan yang dicapai Nabi Muhammad s.a.w. dalam peperangan-peperangannya.</p>
+<p>Nabi Muhammad s.a.w. sangat gembira denganturunnya ayat pertama surat ini. Kegembiraan ini dinyatakan dalam sabda beliau yang diriwayat kan Bukhari; Sesungguhnya telah diturunkan kepadaku suatu surat, yang surat itu benar-benar lebih aku cintai dari seluruh apa yang disinari matahari. Kegembiraan Nabi Muhammad s.aw. itu ialah karena ayat-ayatnya menerangkan tentang kemenangan yang akan diproleh Muhammad s.a.w. dalam perjuangannya dan tentang kesempurnaan ni'mat Allah kepadanya.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Allah mempunyai tentara langit dan di bumi; janji Allah kepada orang mu'min bahwa mereka akan mendapat ampunan Tuhan dan pahala yang besar; Allah mengutus Muhammad s.a.w.; Agama Islam akan mengalahkan agama-agama lain.</b>
+<b>2.Hukum-hukum:</b>
+<p>Orang pincang dan orang-orang yang sakit dibebaskan dari kewajiban berperang.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kejadian-keajdian sekitar Bai'aturridhwan dan Perdamaian Hudaibiyyah.</p>
+<b>4.Dan lain-lain:</b>
+<p>Berita gembira yang disampaikan Allah kepada Nabi Muhammad s.a.w. bahwa dia bersama-sama orang-orang mu'min akan memasuki kota Mekah dengan kemenangan dan hal ini memang terlaksana setelah setahun Kemudian, sikap orang-orang mu'min terhadap sesama mu'min dan sikap mereka terhadap orang-orang kafir; sifat-sifat Nabi Muhammad s.a.w. dan para sahabatnya sudah disebutkan dalam Taurat dan Injil; janji Allah bahwa orang Islam akan menguasai daerah-daerah yang sewaktu Nabi Muhammad s.a.w belum kuasai.</p>"
+WHERE id= 48;

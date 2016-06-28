@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Qiyaamah terdiri atas 40 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Qaari'ah.</p>
+<p>Dinamai 'Al Qiyaamah' (hari kiamat) diambil dari perkataan 'Al Qiyaamah' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Kepastian terjadinya hari kiamat dan huru-hara yang terjadi padanya; jaminan Allah terhadap ayat-ayat Al Qur'an dalam dada Nabi sehingga Nabi tidak lupa tentang urutan arti dan pembacaannya; celaan Allah kepada orang-orang musyrik yang lebih mencintai dunia dan meninggalkan akhirat; keadaan manusia di waktu sakaratul maut.</p>"
+WHERE id= 75;

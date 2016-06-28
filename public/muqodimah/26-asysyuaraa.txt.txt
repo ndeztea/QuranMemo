@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>surat ini terdiri dari 227 ayat termasuik golongan surat-surat Makikyyah. DInamakan 'Asy Syu'araa' (kata jamak dari 'Asy Syaa'ir' yang berarti penyair) diambil dari kata 'Asy Syuaraa' yang terdapat pada ayat 224, yaitu pada bagian terakhir surat ini, di kala Allah s.w.t. secara khusus menyebutkan kedudukan penyair-penyair. Para penyair-penyair itu mempunyai sifat-sifat yang jauh berbeda dengan para rasul-rasul; mereka diikuti oleh orang-orang yang sesat dan mereka suka memutar balikkan lidah dan mereka ucapkan. Sifat-sifat yang demikian tidaklah sekali-kali terdapat pada rasul-rasul. Oleh karena deemikian tidak patut bila Nabi Muhammad s.a.w. dituduh sebagai penyair, dan Al Qur'an dituduh sebagai penyair, Al Qur'an adalah wahyu Allah, bhukan buatan manusia.</p>
+<p>Pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Jaminan Allah akan kemenangan perjuangan rasul-rasul-Nya dan keselamatan mereka. Al Qur'an benar-benar wahyu Allah yang dibawa rutun kedunia oleh Malaikat Jibril a.s. (Ruuhul amiin) hanya Allah yang wajib disembah.</p>
+<b>2.Hukum-hukum:</b>
+<p>Keharusan memenuhi takaran dan timbangan; larangan mengu\gubah syair yang berisi cacian-cacian, khufurat-khufurat, dan kebohongan-kebohongan.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kisah-kisah Nabi MUsa aa.s. dengan Fir'aun; kisah Nabi Ibrahim a.s. dengan kaumnya; kisah Nabi Nuh a.s. dengan kaumnya; kisah Nabi Shaleh a.s. dengan kaumnya (Tsamud); kisah Nabi Hud a.s. dengan kaumnya ('A ad), kisah Nabi Luth a.s. dengan kaumnya; kisah Nabi Syu'aib a.s. dengan penduduk Aikah.</p>
+<b>4.Dan lain-lain:</b>
+<p>Kebinasaan suatu bangsa atat\u umat disebabkan mereka meninggalkan petunjuk-petunjuk agama; tumbuh-tumbuhan yang beraneka ragam dan pperobahan-perobahannya adalah bukti adanya Tuhan Yang Maha Esa; petunjuk-petunjuk Allah bagi pemimpin agar berlaku lemah lembut terhadap pengikut-pengikutnya; turunnya kitab Al Qur'an dalam bahasa Arab sudah disebut dalam kitab-kitab suci dahulu.</p>"
+WHERE id= 26;  

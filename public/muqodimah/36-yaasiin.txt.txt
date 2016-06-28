@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat 'Yaa'Siin' terdiri atas 83 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Jin.</p>
+<p>dinamai 'Yaa Siin' karena dimulai dengan huruf  'Yaa Siin'.</p>
+<p>Sebagaimana halnya arti huruf-huruf abjad yang terletak pada permulaan beberapa surat Al Qur'an, maka demikian pula arti 'Yaa Siin' yang terdapat pada ayat permulaan surat ini, yaitu Allah mengisyaratkan bahwa sesudah huruf tersebut akan dikekmukakan hal-hal yang penting antara lain: Allah bersumpah dengan Al Qur'an bahwa Muhammad s.a.w. benar-benar seorang rasul yang diutus-Nya kepada kaum yang belum ernah diutus kepada merka rasul-rasul.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Bukti-bukti adanya hari berbangkit; Al Qur'an bukanlah sya'ir; ilmu, kekuasaan dan rahmat Allah; surga dan sifat-sifatnya yang disediakan bagi orang-orang mu'min; mensucikan Allah dari sifat-sifat yang tidak layak bagi-Nya; anggota badan manusia menjadi saksi pada hari kiamat atas segala perbuatannya di dunia.</p>
+<b>2.Kisah:</b>
+<p>Kisah utusan-utusan Nabi Isa a.s. dengan penduduk Anthakiyah (syam).</p>
+<b>3.Dan lain-lain:</b>
+<p>Tidak ada faedah peringatan bagi orang-orang musyrik; Allah menciptakan segala sesuatu berpasang-pasangan; semua binatang-binatang di cakrawala bejalan pada haris edar yang telah diterapkan Allah; ajaal dan hari kiamat datangnya secara tiba-tiba; Allah menghibur hati Rasulallah s.a.w. terhadap sokap kaum musyrikin yang menyakitkan hatinya.</p>"
+WHERE id= 36;

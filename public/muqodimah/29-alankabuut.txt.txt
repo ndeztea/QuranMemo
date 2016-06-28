@@ -1,0 +1,13 @@
+update surah set muqodimah= "
+<p>Surat Al'Ankabuut terdiri atas 99 ayat, termasuk golongan surat-surat Makkiyyah.</p>
+<p>Dinamai 'Al'Ankabuut' berhubung terdapatnya perkataan Al'Ankabuut yang berarti laba-laba pada ayat 41 ini, di mana Allah mengumpamakan penyembah-penyembah berhala-berhala itiu, dengan laba-laba yang percaya kepada kekuatan rumahnya sebagai tempat ia berlindung dan tempat menjerat mangsanya, padahal kalau dihembus angin atau ditimpa oleh suatu barang yang kecil saja, rumah itu akan hancur. Begitu pula halnya dengan kaum musyrikin yang percaya kepada kekuatan sembahan-sembahan mereka itu tidak mampu sedikit juga menolong mereka dari azab Allah waktu di dunia, seperti yang terjadi pada kaum Nuh, kaum Ibrahim, kaum Luth, kaum Syu'aib, kaum Saleh, dan lain-lain. Apalagi menghadpai azam Allah di akhirat nanti, sembahan-sembahan mereka itu lebih tidak mampu menghindarkan dan melindungi mereka.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Bukti-bukti tentang adanya hari berbangkit dan ancaman terhadap orang-orang yang mengingkarinya; tiap-tiap diri akan merasakan mati dan hanya kepada Alah mereka akan kembali; Allah akan menjamin rezki tiap-tiap makhluk-Nya.</p>
+<b>2.Hukum-hukum:</b>
+<p>Kewajiban berbuat baik kepada dua orang ibu bapa; kewajiban mengerjakan sembahyang karena sembahyang itu mencegah dari perbuatan keji dan perbuatan mungkar; kewajiban menentang ajakan mempersekutukan Allah sekalipun datangnya dari ibu bapa.</p>
+<b>3.Kisah-kisah:</b>
+<p>Kisah-kisah cobaan yang dialami oleh Nabi Nuh a.s., Nabi Ibrahim a.s., Nabi Luth a.s., Nabi Syu'aib a.s., Nabi Daud a.s., Nabi Shaleh a.s., Nabi Musa a.s.</p>
+<b>4.Dan lain-lain:</b>
+<p>cobaan itu perlu untuk menguji keimanan seseorang, usaha manusia itu manfa'atnya untuk dirinya sendiri bukan untuk Allah. Perlawanan terhadap kebenaran pasti hancur.</p>"
+WHERE id= 29;

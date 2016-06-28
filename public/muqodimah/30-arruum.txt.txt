@@ -1,0 +1,14 @@
+update surah set muqodimah= "
+<p>Surat Ar Ruum yang terdiri atas 60 ayat, termasuk golongan surat-surat Makkiyyah diturunkan sesudah ayat Al Insyiqaaq.</p>
+<p>Dinamakan Ar Ruum karena pada permulaan surat ini, yaitu ayat 2, 3, dan 4 terdapat pemberitaan bangsa Rumawi yang pada mulanya dikalahkan oleh bangsa Persia, tetapi setelah beberapa tahun kemudian kerajaan Ruum dapat menuntut balas dan mengalahkan kerajaan Persia kembali.</p>
+<p>Ini adalah salah satu dari mu'jizat Al Qur'an, yaitu memberitakan hal-hal yang akan terjadi di masa yang akan datang. Dan juga suatu isyarat bahwa kaum muslimin yang demikian lemahnya di waktu itu akan menang dan dapat menghancurkan kaum musyrikin. Isyarat ini terbukti pertama kali pada perang Badar.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Bukti-bukti atas kerasulan Nabi Muhammad s.a.w. dengan memberitahukan kepadanya hal yang ghaib seperti menangnya kembali bangsa Rumawi atas kerajaan Persia; bukti-bukti ke-Esaan Allah yang terdapat pada alam sebagai makhluk-Nya dan kejadian-kejadian pada alam itu sendiri; bukti-bukti atas kebenaran adanya hari berbangkit; contoh-contoh dan perumpamaan yang menjelaskan bahwa berhala dan sembahan-sembahan itu tidak dapat menolong dan memberi manfaat kepada penyembah-penyembahnya sedikitpun.</p>
+<b>2.Hukum-hukum:</b>
+<p>Kewajiban menyembah Allah dan mengakui ke-Esaan-Nya karena hal itu sesuai dengan fitnah manusia; kewajiban berda'wah; kewajiban memberikan nafkah (sedekah) kepada kaum kerabat, fakir miskin, musafir dan sebagainya; larangan mengikuti orang musyrik; hukum riba.</p>
+<b>3.Kisah-kisah:</b>
+<p>Pemberitaan tentang bangsa Rumawi sebagai suatu umat yang beragama walaupun dikalahkan pada mulanya oleh kerajaan Persia yang menyembah api akhirnya dapat menang kembali.</p>
+<b>4.Dan lain-lain:</b>
+<p>Manusia umumnya bersifat gembira dan bangga apabila mendapat ni'mat dan berputus asa apabila ditimpa musibah, kecuali orang-orang yang beriman; kewajiban rasul hanya menyampaikan da'wah; kejadian-kejadian yang dialami oleh umat-umat yang terdahulu patut menjadi i'tibar dan pelajaran bagi umat yang kemudian.</p>"
+WHERE id= 30;

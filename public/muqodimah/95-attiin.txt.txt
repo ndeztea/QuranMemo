@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat ini terdiri atas 8 ayat, termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Buruuj. Nama At Tii diambil dari kata 'At Tiin' yang terdapat pada ayat pertama surat ini yang artinya buah tin.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Manusia makhluk yang terbaik rohaniah dan jasmaniah, tetapi mereka akan dijadikan orang yang amat rendah jika tidak beriman dan beramal saleh; Allah adalah Hakim Yang Maha Adil.</p>"
+WHERE id= 95;

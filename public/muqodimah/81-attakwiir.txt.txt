@@ -1,0 +1,5 @@
+update surah set muqodimah= "
+<p>Surat At Takwiir terdiri atas 29 ayat dan termasuk golongan surat-surat Makkiyyah, diturunkan sesudah surat Al Masadd. Kata 'At Takwiir' yang menjadi nama bagi surat ini adalah kata asal (mashdar) dari kata 'kuwwirat' (digulung) yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Kegoncangan-kegoncangan yang terjadi pada hari kiamat; pada hari kiamat setiap jiwa akan mengetahui apa yang telah dikerjakannya waktu di dunia; Al Qur'an adalah firman Allah yang disampaikan oleh Jibril a.s.; penegasan atas kenabian Muhammad s.a.w.; Al Qur'an sumber petunjuk bagi umat manusia yang menginginkan hidup lurus; suksesnya manusia dalam mencapai kehidupan yang lurus itu tergantung kepada taufiq dari Allah.</p>"
+WHERE id= 81;

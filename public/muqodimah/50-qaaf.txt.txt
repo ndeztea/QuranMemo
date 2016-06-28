@@ -1,0 +1,14 @@
+update surah set muqodimah= "
+<p>Surat Qaaf terdiri atas 45 ayat, termasuk golongan surat-surat Makkiyyah diturunkan sesudah surat Al Mursalaat.</p>
+<p>Dinamai 'QAAF' Karena surat ini dimulai dengan huruf hijaiyyah 'Qaaf'</p>
+<p>Menurut hadist yang diriwayatkan Imam Muslim, bahwa Rasulallah s.a.w. senang membaca surat ini pada rakaat pertama sembahyang subuh dan pada sembahyang hari raya. Sedang menurut riwayat Abu Daud, Al Bhaiqsy dan Ibnu Majah bahwa Rasulallah s.a.w. membaca surat ini pada tiap-tiap membaca Khutbah pada hari jum'at.</p>
+<p>Kedua riwayat ini menunjukkan bahwa surat QAAF, sering dibaca Nabi Muhammad s.a.w. ditempat-tempat umum, untuk memperingatkan manusia tentang kejadian mereka dan nimat-ni'mat yang diberikan kepadanya, begitu pula tentang hari berbangkit, hari berhisab, surga, neraka, pahala, dosa dan sebagainya.</p>
+<p>Surat ini dinamai juga 'Al Baasiqaat', diambil dari perkataan 'Al Baasiqaat' yang terdapat pada ayat 10 surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Setiap manusia pada hari kiamat akan hadir di padang mahsyar diiringkan oleh dua orang malaikat, yang seorang sebagai pengiringnya dan yang seorang lagi sebagai saksi atas segala perbuatannya di dunia. Kebangkitan manusia dari kubur digambarkan sebagai tanah yang kering, setelah disirami hujan hidup kembali; Allah lebih dekat kepada manusia dari urat lehernya sendiri; tiap-tiap manusia didampingi oleh malaikat yang selalu mencatat segala perbuatannya; Allah menciptakan langit oleh bumi dan apa yang ada antara keduanya dalam enam masa.</p>
+<b>2.Hukum-hukum:</b>
+<p>Ajuran bertasbih dan bertahmid kepada Tuhan pada waktu-waktu malam sebelum terbit dan terbenam matahari dan sesudah mengerjakan sembahyang. Perintah Allah kepada Rasul-Nya agar ememberi peringatan dengan ayat-ayat Al Quran kepada orang yang beriman; anjuran memperhatikan kejadian langit dan bumi.</p>
+<b>3.Dan lain-lain:</b>
+<p>Keingkaran orang-orang musyrik terhadap kenabian dan hari berbangkit; hiburan kepada Nabi Muhammad s.a.w. agar jangan berputus asa dalam menghadapi keingkaran orang-orang kafir Mekah; karena rasul-rasul dahulu juga menghadapi keingkaran kaumnya masing-masing; Al Qur'an adalah sebagai peringatan bagi orang-orang yang takut kepada ancaman Allah.</p>"
+WHERE id= 50;

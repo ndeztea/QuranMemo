@@ -1,0 +1,11 @@
+update surah set muqodimah= "
+<p>Surat As Sajdah terdiri atas 30 ayat termasuk golongan-golongan surat Makkiyyah diturunkan sesudah surat Al Mu'minuun.</p>
+<p>Dinamakan 'As Sajdah' berhubung pada surat ini terdapat ayat sajdah, yaitu ayat yang kelima belas*).</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Menyatakan bahwa Nabi Muhammad s.a.w. itui benar-benar seorang rasul dan menjelaskan bahwa kepada musyrikin Mekah belum pernah diutus seorang rasulpun sebelumnya; menegaskan bahwa Allah Maha Esa, bahwa Dia-lah yang menguasai alam semesta dan Dia-lah yang mengaturnya dengan aturan yang paling sempurna; menyatakan bahwa hari berbangkit benar-benar akan terjadi.</p>
+<b>2.Hukum:</b>
+<p>Anjuran melakukan sembahyang malam (sembahyang tahajud dan sembahyang witir).</p>
+<b>3.Dan lain-lain:</b>
+<p>Keterangan mengenai kejadian manusia di dalam rahim dan fase-fase yang dilaluinya sampai ia menjadi manusia; penjelasan bagaimana keadaan orang-orang mu'min di dunia dan ni'mat serta pahala-pahala yang disediakan Allah bagi mereka di akhirat; kehinaan yang menimpa orang-orang kafir di Akhirat dan mereka pada waktu itu meminta supaya dikembalikan saja ke dunia untuk bertobat dan berbuat kebaikan, tetapi keinginan ini ditolak; keingkaran kaum musyrikin terhadap hari berbangkit dan mereka menganggap bahwa hal itu adalah mustahil.</p>"
+WHERE id= 32; 

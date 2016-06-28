@@ -1,0 +1,6 @@
+update surah set muqodimah= "
+<p>Surat Al Muddaststsir terdiri atas 56 ayat, termasuk golngan surat-surat Makkiyyah, iturunkan sesudah surat Al Muzzammil.</p>
+<p>Dinamai 'Al Muddaststsir' 9orang yang berkemul) diambil dari perkataan 'Al Muddaststsir' yang terdapat pada ayat pertama surat ini.</p>
+<p>Pokok-pokok isinya:</p>
+<p>Perintah untuk mulai berda'wah mengagungkan Allah, membersihkan pakaian, menjauhi ma'siat, memberikan sesuatu dengan ikhlas dan bersabar dalam menjalankan perintah dan menjauhi larangan Allah; Allah akan mengazab orang-orang yang menentang Nabi Muhammad s.a.w. dan mendustakan Al Qur'an; tiap-tiap manusia terikat dengan apa yang telah ia usahakan.</p>"
+WHERE id= 74;

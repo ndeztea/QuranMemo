@@ -1,0 +1,14 @@
+update surah set muqodimah= "
+<p>Surat Al Ahzab terdiri atas 73 ayat, termasuk golongan surat-surat Madaniyyah; diturunkan sesudah surat Ali'Imran.</p>
+<p>Dinamai 'Al Ahzab' yang berarti 'golongan-golongan yang bersekutu' karena dalam surat ini terdapat beberapa ayat, yaitu ayat 8 sampai dengan ayat 27 yang berhubungan dengan peperangan Al Ahzab, yaitu peperangan yang dilancarkan oleh orang-orang Yahudi, kaum munafik dan orang-orang musyrik terhadap orang-orang mu'min di Madinah. Mereka telah mengepung rapat orang-orang mu'min sehingga sebahagian dari mereka telah berputus asa dan menyangka bahwa mereka akan dihancurkan oleh musuh-musuh mereka itu.</p>
+<p>Ini adalah suatu ujian yang berat dari Allah untuk menguji sampai di mana teguhnya keimanan mereka. Akhirnya Allah mengirimkan bantuan berupa tentara yang tidak kelihatan dan angin topan, sehingga musuh-musuh itu menjadi kacau balaudan melarikan diri.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Cukuplah Allah saja sebagai pelindung; taqdir Allah tidak dapat ditolak; Nabi Muhammad s.a.w. adalah contoh dan teladan yang paling baik; Nabi Muhammad s.a.w. adalah rasul dan nabi yang terakhir; hanya Allah saja yang mengetahui bila terjadinya kiamat.</p>
+<b>2.Hukum-hukum</b>
+<p>Hukum zhirar; kedudukan anak angkat; dasar waris mewarisi dalam Islam ialah hubungan nasab (pertalian darahh); tidak ada iddah bagi perempuan yang ditalak sebelum dicampuri; hukum-hukum khsuus mengenal perkawinan Nabi dan Kewajiban istri-istrinya; larangan menyakiti hati Nabi.</p>
+<b>3.Kisah-kisah:</b>
+<p>Perang Ahzab (Khandaq); kisah Zainab binti Jahsy dengan Zaid; memerangi Bani Quraizhah.</p>
+<b>4.Dan lain-lain:</b>
+<p>Penyesalan orang-orang kafir di akhirat karena mereka mengingkari Allah dan Rasul-Nya; sifat-sifat orang-orang munafik.</p>"
+WHERE id= 33;

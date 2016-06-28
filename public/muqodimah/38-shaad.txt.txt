@@ -1,0 +1,12 @@
+update surah set muqodimah= "
+<p>Surat Shaad terdiri atas 88 ayat termsuk golongan surat Makkiyyah, diturunkan sesudah surat Al Qamar.</p>
+<p>Dinamai dengan 'Shaad' karena surat ini dimulai dengan 'Shaad' (selanjutnya llihat no 10).</p>
+<p>Dalam surat ini Allah bersumpah dengan Al Qur'an, untuk menunjukkan bahwa Al Qur'an itu suatu kitab yang agung dan bahwa siapa saja yang mengikutinya akan mendapat kebahagiaan dunia dan akhirat dan untuk menunjukkan bahwa Al Qur'an ini adalah mu'jizat Nabi Muhammad s.a.w. yang menyatakan kebenarannya dan ketinggian akhlaknya.</p>
+<p>Pokok-pokok isinya:</p>
+<b>1.Keimanan:</b>
+<p>Dalil-dalil tentag kenabian Muhammad s.a.w. yaitu bahwa dia mengetahui hal-hal yang hanya dapat diketahui dengan jalan wahyu; sumpah iblis untuk menyesatkan manusia seluruhnya keculi hamba-hamba Allah yang ikhlas; Al Qur'an diturunkan untuk menjadi pelajaran bagi jin dan manusia seluruhnya.</p>
+<b>2.Kisah-kisah:</b>
+<p>Kisah Daud a.s. dan kisah Sulaiman a.s.; kisah Ayyub a.s.</p>
+<b>3.Dan lain-lain:</b>
+<p>Kaum musyrikin tercengang mendengar pengakuan Nabi Muhammad s.a.w., bahwa Allah adalah Maha Esa; rahasia yang terdapat pada kejadian alam; pertengkaran setara orang-orang yang sesat dan pengikut mereka di neraka; ni'mat-ni'mat yang dilimpahkan kepada penduduk surga dan azab yang ditimpakan atas isi neraka.</p>"
+WHERE id= 38;
