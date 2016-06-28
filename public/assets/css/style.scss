@@ -1853,6 +1853,14 @@ body.body-memo{
 		.arabic-puzzle{
 			float:left;
 			width:auto;
+			padding: 5px !important;
+			margin: 2px;
+			border: dotted 1px #333;
+
+			&:empty{
+				padding: 0 !important;
+				border:none;
+			}
 		}
 	}
 }

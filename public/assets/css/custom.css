@@ -611,7 +611,7 @@ ul.juz-list {
 }
 
 .puzzle_border {
-    border: 1px solid #000
+    border: 1px dotted #333
 }
 
 .puzzle_no_border {
