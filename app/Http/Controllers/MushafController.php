@@ -19,14 +19,27 @@ class MushafController extends Controller
      */
     public function index($page=1)
     {
-        /*$directory = '/Volumes/Jobs/www/QuranNote/public/muqodimah/';
-        $files = File::allFiles($directory);
-        foreach ($files as $file)
-        {
-            $contents = File::get($file);
+        /*$directory = '/Volumes/Jobs/www/QuranNote/public/Arabic.sql';
+        $contents = File::get($directory);
 
-            echo (string)$contents, "";
-        }
+        //$files = File::allFiles($directory);
+        $arr1 = explode(';', $contents);
+        foreach ($arr1 as $arr11) {
+            $arr2 = explode('VALUES ', $arr11);
+            //echo @$arr2[1].'<br>';
+            if(isset($arr2[1])){
+             $arr3 = explode(',', @$arr2[1]);
+                    $arr3_3 = str_replace(')','',@$arr3[3]);
+                    if($arr3[1]!=1 && $arr3[2]==1){
+                        $arr3_3 = str_replace('بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', '', $arr3_3);
+                    }
+
+                    $sql = "UPDATE quran SET text_arabic=".$arr3_3." WHERE surah=".@$arr3[1]." AND ayat=".@$arr3[2].";";
+                    echo $sql.'<br>';
+                }     
+            }
+           
+        
         die();*/
         // get pages mushaf quran
         $QuranModel = new Quran;

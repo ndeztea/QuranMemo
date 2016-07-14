@@ -150,7 +150,7 @@
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
-                        <li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Register</a></li>
+                        <!--li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Register</a></li-->
                         
                     </ul>
                     <div class="navbar-nav navbar-right">
