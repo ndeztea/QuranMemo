@@ -119,6 +119,8 @@ $surahMuratal[114] = "An-Nas";
 // set number arabic
 $numberArabic[1] = '1';
 $prev_surah = '';
+
+$coo_muratal = isset($_COOKIE['coo_sound'])?$_COOKIE['coo_sound']:'Al_Afasy';
 ?>
 
 <script type="text/javascript">
@@ -137,7 +139,7 @@ $(document).ready(function(){
 			{
 				
 				title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
-				mp3: "{{url('sound/hal_2/Al-Fatiha.001.mp3')}}"
+				mp3: "{{url('sound/'.$coo_muratal.'/001001.mp3')}}"
 			},
 			@endif
 		<?php endif?>
@@ -146,9 +148,10 @@ $(document).ready(function(){
 			title:"section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}",
 			<?php 
 				$halMuratal = $ayat->page + 1;
-				$ayatMp3 = $surahMuratal[$ayat->surah].'.'.str_pad($ayat->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
+				$ayatMp3 = str_pad($ayat->surah, 3, "0", STR_PAD_LEFT).str_pad($ayat->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
 			?>
-			mp3: "{{url('sound/hal_'.$halMuratal.'/'.$ayatMp3)}}"
+			//mp3: "{{url('sound/hal_'.$halMuratal.'/'.$ayatMp3)}}"
+			mp3: "{{url('sound/'.$coo_muratal.'/'.$ayatMp3)}}"
 		},
 		<?php $prev_surah = $ayat->surah?>
 		@endforeach

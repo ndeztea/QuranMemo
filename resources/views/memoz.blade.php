@@ -70,7 +70,7 @@
 				<div class="memoz_options">
 
 					<div class="btn-group">
-					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val())" class="btn btn-green-small">
+					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val())" class="btn btn-green-small">
 					    &nbsp;<i class="fa fa-cog"></i>&nbsp;
 					  </button>
 					  
@@ -80,6 +80,7 @@
 				<!-- /memoz-player -->
 				@endif
 				<input type="hidden" name="repeat" class="repeat" value="1" />
+				<input type="hidden" name="muratal" class="muratal" value="1" />
 
 			</div>
 			<!-- /nav-top -->
@@ -315,6 +316,11 @@ $(document).ready(function(){
 		});
 
 		jQuery('.memozed').hide();
+
+		@if(isset($_COOKIE['coo_sound']))
+			QuranJS.configMuratal('{{$_COOKIE['coo_sound']}}')
+		@endif
+
 	});
 
 	function hideInfo(){

@@ -66,6 +66,7 @@ class MushafController extends Controller
         //echo $_COOKIE['coo_mushaf_bookmark_url'].'=='.$_SERVER['REQUEST_URI'];
         //die();
         $data['cookies'] = getCookie();
+        setcookie('coo_muratal_new',1);
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
         // show view template
@@ -364,15 +365,26 @@ class MushafController extends Controller
         $mushaf_layout = $_GET['mushaf_layout'];
         $automated_play = $_GET['automated_play'];
         $footer_action = $_GET['footer_action'];
+        $muratal = $_GET['muratal'];
 
+        $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
         $data['mushaf_layout'] = $mushaf_layout;
         $data['automated_play'] = $automated_play;
         $data['footer_action'] = $footer_action;
+        $data['muratal'] = $muratal;
+
+
         $dataHTML['modal_title'] = 'Setting Mushaf';
         $dataHTML['modal_body'] = view('mushaf_config',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
+    }
+
+    public function set_muratal($qori){
+        setcookie('coo_muratal',$qori);
+        //die($qori);
+        return redirect('mushaf');
     }
 
     

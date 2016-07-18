@@ -96,8 +96,13 @@ class MemozController extends Controller
 
     public function config(){
         $repeat = $_GET['repeat'];
+        $muratal = $_GET['muratal'];
 
+        $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
+        $data['muratal'] = $muratal;
         $data['repeat'] = $repeat;
+
+
         $dataHTML['modal_title'] = 'Setting Memoz';
         $dataHTML['modal_body'] = view('memoz_config',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
