@@ -12,7 +12,20 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.ndeztea.quranmemo"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.ndeztea.quranmemo"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ndeztea.quranmemo"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ndeztea.quranmemo"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ndeztea.quranmemo"
+        }
+    }
 }

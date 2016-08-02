@@ -151,6 +151,7 @@
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
                         <!--li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Register</a></li-->
                         
                     </ul>
@@ -282,22 +283,72 @@
         });
 
 
-             $(window).bind('beforeunload', function(){
-               $('#preloader').show();
-             });
-            /* if('{{Request::segment(3)}}'=='593'){
-                 QuranJS.callModal('buku');
-                }*/
-             if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-                if('{{@$_COOKIE['coo_muratal_new']}}'==''){
-                    QuranJS.callModal('muratal');
-                }
+         $(window).bind('beforeunload', function(){
+           $('#preloader').show();
+         });
+        /* if('{{Request::segment(3)}}'=='593'){
+             QuranJS.callModal('buku');
+            }*/
+         if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
+            if('{{@$_COOKIE['coo_book_promo']}}'==''){
+                QuranJS.callModal('buku');
+            }
 
-                
-                if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
-                   QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
-                }
-             }
+            /*if('{{@$_COOKIE['coo_muratal_new']}}'==''){
+                QuranJS.callModal('muratal');
+            }*/
+
+            
+            if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
+               QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
+            }
+         }
+
+         // CAPTURE AUDIO
+        // Called when capture operation is finished
+        //
+        function captureSuccess(mediaFiles) {
+            var i, len;
+            for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+                uploadFile(mediaFiles[i]);
+            }
+        }
+
+        // Called if something bad happens.
+        //
+        function captureError(error) {
+            var msg = 'An error occurred during capture: ' + error.code;
+            navigator.notification.alert(msg, null, 'Uh oh!');
+        }
+
+        // A button will call this function
+        //
+        function captureAudio() {
+             alert('1');
+            // Launch device audio recording application,
+            // allowing user to capture up to 2 audio clips
+            navigator.device.capture.captureAudio(captureSuccess, captureError, {limit: 2});
+            alert('a');
+        }
+
+        // Upload files to server
+        function uploadFile(mediaFile) {
+            var ft = new FileTransfer(),
+                path = mediaFile.fullPath,
+                name = mediaFile.name;
+
+            ft.upload(path,
+                "http://my.domain.com/upload.php",
+                function(result) {
+                    console.log('Upload success: ' + result.responseCode);
+                    console.log(result.bytesSent + ' bytes sent');
+                },
+                function(error) {
+                    console.log('Error uploading file ' + path + ': ' + error.code);
+                },
+                { fileName: name });
+        }
+
 
 
         </script>
