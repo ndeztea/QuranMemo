@@ -64,7 +64,8 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
-        <script src="{{url('assets/js/jquery.cookie.js')}}"></script>
+        <script src="{{url('assets/js/jquery.form.js')}}"></script>
+
         <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         
         <script type="text/javascript">
@@ -152,7 +153,7 @@
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
-                        <!--li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Register</a></li-->
+                        <li><a href="{{url('register')}}">Register</a></li>
                         
                     </ul>
                     <div class="navbar-nav navbar-right">
@@ -219,22 +220,9 @@
                 $('#preloader').hide();
                 QuranJS.redHightlight();
 
-                /*var promise = Kinvey.init({
-                    appKey    : 'af86c6c58e514a45acfa7b0a56ff642b',
-                    appSecret : '2786e39b23f444e6b42506925d78a098'
-                });
-                promise.then(function(activeUser) {
-                    console.log('ok');
-                }, function(error) {
-                    console.log('error');
-                });
-
-                var promise = Kinvey.ping();
-                promise.then(function(response) {
-                    console.log('Kinvey Ping Success. Kinvey Service is alive, version: ' + response.version + ', response: ' + response.kinvey);
-                }, function(error) {
-                    console.log('Kinvey Ping Failed. Response: ' + error.description);
-                });*/
+                $('#registerForm').ajaxForm(function() { 
+                    alert("Thank you for your comment!"); 
+                }); 
             });
             //var vph = $(window).height();
             //$('body').css('height',vph/2).css('overflow','hidden');

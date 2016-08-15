@@ -1,5 +1,5 @@
 <form class="form-inline" id="paggingForm" action="{{url('buku')}}" method="post">
-	<p>QuranMemo insyaAllah akan berbagi buku (lagi), sekarang akan berbagi Al-Quran Tikrar untuk menghafal Al-Quran, syaratnya adalah perbanyak menghafal menggunakan QuranMemo, tanggal 1 September 2016 QuranMemo akan menyeleksi 5 orang yang banyak menghafal dan menggunakan QuranMemo :) mari semangat terus dalam menghafal dan membumikan Al-Quran.</p>
+	<p>QuranMemo insyaAllah akan berbagi buku lagi, sekarang akan berbagi Al-Quran Tikrar untuk menghafal Al-Quran, syaratnya adalah perbanyak menghafal menggunakan QuranMemo, tanggal 1 September 2016 QuranMemo akan menyeleksi 8 orang yang banyak menghafal dan menggunakan QuranMemo :) mari semangat terus dalam menghafal dan membumikan Al-Quran.</p>
   
   <!--div class="form-group">
     <div class="input-group">

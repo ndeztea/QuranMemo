@@ -70,6 +70,8 @@ Route::get('muratal', 'ContentController@muratal');
 
 Route::get('auth/login', 'Auth\AuthController@login');
 
+Route::get('register', 'RegisterController@index');
+Route::post('register/process', 'RegisterController@process');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/create', 'MemozController@create');

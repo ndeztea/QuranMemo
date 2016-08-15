@@ -68,40 +68,5 @@ class AuthController extends Controller
         return response()->json($dataHTML);
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {   
-        $errorMessages = [
-            'name.required' => 'Nama harus di isi',
-            'name.required' => 'Email harus di isi',
-            'email.unique' => 'Email sudah di pakai, gunakan email yang lain',
-            'password.required' => 'Email harus di isi'
-        ];
-        
-        return Validator::make($data, [
-            'name' => 'required',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed',
-        ],$errorMessages);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
+    
 }
