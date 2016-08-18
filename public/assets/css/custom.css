@@ -657,3 +657,6 @@ ul.juz-list {
     color: #fff;
     font-size: 30px;
 }
+.login_form .btn-group .btn, .register_form .btn-group .btn{
+    width: 100%;
+}

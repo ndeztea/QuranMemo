@@ -92,11 +92,18 @@ var QuranJS = {
 	/** AUTH code**/
 	showRegister  : function(){
 		this.removeModalClass();
-		$('.modal-title').html('Daftar');
-		$('.login_form').hide();
-		$('.register_form').show();
-		$('#QuranModal').addClass('register-mode');
+		
+		$.getJSON(this.siteUrl+'/register',{},function(response){
+			$('.modal-title').html(response.modal_title);
+			$('.modal-body').html(response.modal_body);
+			$('.modal-footer').html(response.modal_footer);
+
+			$('.modal-header button').show();
+			clientId = jQuery('#clientId_tmp').val();
+			jQuery('#register_device_id').val(clientId);
+		});
 	},
+
 	registerProcess : function(){
 		this.modalLoadingBlock();
 

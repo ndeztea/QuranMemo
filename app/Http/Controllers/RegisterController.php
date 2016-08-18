@@ -22,9 +22,9 @@ class RegisterController extends Controller
      * @return \Illuminate\Http\Response
      */
    public function index(){
-        $data['header_title'] = 'Daftar QuranMemo';
+        $data['header_title'] = 'Daftar';
         $data['body_class'] = 'body-register';
-
+        
         return view('register_index',$data);
     }
 
@@ -38,25 +38,31 @@ class RegisterController extends Controller
         $validator = $this->validator($request->all());
 
         // validation
-        // skip validation 
-        /*if ($validator->fails()) {
-            $messageErrors = $validator->errors();
-            $errorHtml = '<ul>';
+        
+        if ($validator->fails()) {
+            $messageErrors = $validator->errors()->all();
+            $errorHtml = '<p>';
             foreach($messageErrors as $error){
-                $errorHtml .= '<li>'.$error.'</li>';
+                $errorHtml .= $error.'<br>';
             }
-            $errorHtml .= '</ul>';
+            $errorHtml .= '</p>';
 
-            $dataHTML['modal_error'] = $errorHtml;
-            $dataHTML['success'] = false;
-
-            return response()->json($dataHTML);
-        }*/
+            return redirect('register')->with('messageError',$errorHtml)->withInput();
+        }
 
         if($this->create($request->all())){
+            // send email
+            $data = $request->all();
+            $contentsEmail = '';
+            foreach ($data as $key=>$value) {
+                $contentsEmail .= $key.'='.$value.'<br>';
+            }
+
+            mail('quranmemo.id@gmail.com', 'Daftar QuranMemo', $contentsEmail);
+
             return redirect('register')->with('messageSuccess', 'Terima kasih telah berpartisipai, kami akan kontak Antum jika terpilih untuk mendapatkan buku pilihan QuranMemo. Jazakallah Khairan');
         }else{
-            return redirect('register')->with('messageError', 'Daftar gagal, email sudah ada di dalam database')->withInput();
+            return redirect('register')->with('messageError', 'Email sudah di pakai, gunakan email yang lain')->withInput();
         }
     }
 
@@ -73,17 +79,18 @@ class RegisterController extends Controller
             'name.required' => 'Nama harus di isi',
             'email.unique' => 'Email sudah di pakai, gunakan email yang lain',
             'email.email' => 'Email yang di masukan salah',
-            'password.required' => 'Password harus di isi',
-            'city.email' => 'Kota harus di isi',
-            'address.required' => 'Alamat harus di isi',
+            'email.required' => 'Email harus di isi',
+            //'password.required' => 'Password harus di isi',
+            'city.required' => 'Kota harus di isi',
+            'address.required' => 'Alamat lengkap harus di isi',
         ];
         
         return Validator::make($data, [
             'name' => 'required',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed',
-            'city' => 'required|confirmed',
-            'address' => 'required|confirmed',
+            'email' => 'required|email|unique:users',
+            //'password' => 'required|confirmed',
+            'city' => 'required',
+            'address' => 'required',
         ],$errorMessages);
     }
 

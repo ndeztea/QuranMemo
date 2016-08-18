@@ -18,7 +18,6 @@
 								<h1 class="pull-left">Daftar QuranMemo</h1>
 							</div>
 							<div class="register_form clearfix">
-								
 								<div class="promo pull-left">
 									<div class="clearfix">
 										<div class="buku">
@@ -33,11 +32,11 @@
 									<input type="hidden" name="device_id" id="register_device_id" value=""/>
 									<div class="form-group">
 										<label for="name" class="control-label sr-only">Full Name</label>
-										<input type="name" class="form-control" name="name" id="name" aria-label="Full Name" placeholder="Nama Lengkap Antum" />
+										<input type="name" class="form-control" name="name" id="name" aria-label="Full Name" placeholder="Nama Lengkap Antum" value="{{ old('name')}}"/>
 									</div>
 									<div class="form-group">
 										<label for="email" class="control-label sr-only">Email</label>
-										<input type="email" class="form-control" name="email" id="register_email" aria-label="email" placeholder="Email yang aktif" />
+										<input type="email" class="form-control" name="email" id="register_email" aria-label="email" placeholder="Email yang aktif" value="{{ old('email')}}" />
 
 									</div>
 									<!--div class="form-group">
@@ -46,11 +45,11 @@
 									</div-->
 									<div class="form-group">
 										<label for="city" class="control-label sr-only">Kota</label>
-										<input type="text" class="form-control" name="city" id="register_city" aria-label="kota asal" placeholder="Kota Asal" />
+										<input type="text" class="form-control" name="city" id="register_city" aria-label="kota asal" placeholder="Kota Asal" value="{{ old('city')}}"/>
 									</div>
 									<div class="form-group">
 										<label for="address" class="control-label sr-only">Alamat Lengkap</label>
-										<textarea class="form-control" name="address" id="register_address" aria-label="alamat lengkap" placeholder="Mohon isi dengan alamat yang lengkap" /></textarea>
+										<textarea class="form-control" name="address" id="register_address" aria-label="alamat lengkap" placeholder="Mohon isi dengan alamat yang lengkap" value="{{ old('address')}}"/></textarea>
 									</div>
 									<div class="form-group">
 										<div class="btn-group" role="group" aria-label="...">

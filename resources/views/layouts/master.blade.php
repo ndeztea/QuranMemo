@@ -64,7 +64,6 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
-        <script src="{{url('assets/js/jquery.form.js')}}"></script>
 
         <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         
@@ -153,7 +152,7 @@
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
-                        <li><a href="{{url('register')}}">Register</a></li>
+                        <li><a href="{{url('register')}}">Daftar Buku Gratis</a></li>
                         
                     </ul>
                     <div class="navbar-nav navbar-right">
@@ -219,10 +218,6 @@
           $(document).ready(function(){
                 $('#preloader').hide();
                 QuranJS.redHightlight();
-
-                $('#registerForm').ajaxForm(function() { 
-                    alert("Thank you for your comment!"); 
-                }); 
             });
             //var vph = $(window).height();
             //$('body').css('height',vph/2).css('overflow','hidden');
@@ -278,7 +273,7 @@
              QuranJS.callModal('buku');
             }*/
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_book_promo']}}'==''){
+            if('{{@$_COOKIE['coo_book_daftar']}}'==''){
                 QuranJS.callModal('buku');
             }
 
