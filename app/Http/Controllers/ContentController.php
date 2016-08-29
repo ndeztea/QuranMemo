@@ -47,6 +47,16 @@ class ContentController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function promo()
+    {
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Tahfidz Gratis';
+        $dataHTML['modal_body'] = view('content_promo')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
     public function buku(Request $request)
     {   
         $email = $request->input('email');

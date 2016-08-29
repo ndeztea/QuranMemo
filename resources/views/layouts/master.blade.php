@@ -153,6 +153,7 @@
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
                         <li><a href="{{url('register')}}">Daftar Buku Gratis</a></li>
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li>
                         
                     </ul>
                     <div class="navbar-nav navbar-right">
@@ -273,8 +274,12 @@
              QuranJS.callModal('buku');
             }*/
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_book_daftar']}}'==''){
+            if('{{@$_COOKIE['coo_book_daftar']}}'=='' && '{{@$_COOKIE['coo_promo']}}'!=''){
                 QuranJS.callModal('buku');
+            }
+
+            if('{{@$_COOKIE['coo_promo']}}'==''){
+                QuranJS.callModal('promo');
             }
 
             /*if('{{@$_COOKIE['coo_muratal_new']}}'==''){

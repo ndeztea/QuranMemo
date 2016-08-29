@@ -65,6 +65,7 @@ Route::get('donasi', 'ContentController@donasi');
 Route::get('buku', 'ContentController@buku');
 Route::post('buku', 'ContentController@buku');
 Route::get('buku', 'ContentController@buku');
+Route::get('promo', 'ContentController@promo');
 Route::get('muratal', 'ContentController@muratal');
 
 

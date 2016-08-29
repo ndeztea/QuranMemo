@@ -66,8 +66,11 @@ class MushafController extends Controller
         //echo $_COOKIE['coo_mushaf_bookmark_url'].'=='.$_SERVER['REQUEST_URI'];
         //die();
         $data['cookies'] = getCookie();
-        setcookie('coo_muratal_new',1);
-        setcookie('coo_book_daftar',1);
+        //setcookie('coo_muratal_new',1);
+        if(@$_COOKIE['coo_promo']!=''){
+            setcookie('coo_book_daftar',1);
+        }
+        setcookie('coo_promo',1);
         
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
