@@ -343,5 +343,23 @@ $prev_surah = '';
 		@endif
 
 	});
+
+	$(function() {
+	  $("body").swipe( {
+
+	  	//Generic swipe handler for all directions
+	    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+	      if(direction=='left'){
+	      	jQuery('.fa-angle-right').click();
+	      }else if(direction=='right'){
+	      	jQuery('.fa-angle-right').click();
+	      }
+	  	},
+	    allowPageScroll : "vertical",
+	    threshold:130
+	  });
+
+	 
+	});
 	</script>
 @endsection
