@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Quran;
+use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests;
@@ -324,7 +325,30 @@ class MushafController extends Controller
 
 
     public function generate(){
-       echo '<pre>';
+        $filename = '/Volumes/Jobs/www/QuranNote/Analytics.csv';
+        if (($handle = fopen($filename, 'r')) !== FALSE)
+        {
+            $a = 0;
+            while (($row = fgetcsv($handle, 1000, ',')) !== FALSE)
+            {
+                $a++;
+                $UsersModel = new Users;
+                echo '<pre>';
+                $dataUsers = $UsersModel->getUsersDevicetId($row[0]);
+                if(!empty($dataUsers)){
+                    echo $row[1].'<br>';
+                    echo $row[0].'<br>';
+                    echo $dataUsers[0]->email.'<br>';
+                    echo 'Nama : '.$dataUsers[0]->name.'<br>';
+                    echo 'Alamat : '.$dataUsers[0]->address.'<br>';
+                    echo 'No.HP :';
+                    echo '<hr>';
+                }
+                
+            }
+            fclose($handle);
+        }
+       /*echo '<pre>';
         $list = File::allFiles('/Volumes/Jobs/www/QuranNote/public/sound');
         $folders  = File::directories('/Volumes/Jobs/www/QuranNote/public/sound');
         $arrFolder = array();
@@ -362,7 +386,7 @@ class MushafController extends Controller
             $a++;
             echo '$surahMuratal['.$a.'] = "'.$tmpFile.'";';
             echo '<br>';
-        }
+        }*/
         
     }
 
