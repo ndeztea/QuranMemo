@@ -358,8 +358,6 @@ $prev_surah = '';
 	    allowPageScroll : "vertical",
 	    threshold:130
 	  });
-
-	 
 	});
 	</script>
 @endsection

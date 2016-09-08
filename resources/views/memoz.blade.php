@@ -333,6 +333,22 @@ $(document).ready(function(){
 	@if((@$ayat->surah==1))
 	QuranJS.headSurah = 1;
 	@endif
+
+	$(function() {
+	  $("body").swipe( {
+
+	  	//Generic swipe handler for all directions
+	    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+	      if(direction=='left'){
+	      	jQuery('.selected').next().click();
+	      }else if(direction=='right'){
+	      	jQuery('.selected').prev().click();
+	      }
+	  	},
+	    allowPageScroll : "vertical",
+	    threshold:130
+	  });
+	});
 </script>
 
 @endsection
