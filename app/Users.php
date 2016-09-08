@@ -2,6 +2,7 @@
 
 namespace App;
 
+use DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
@@ -23,5 +24,16 @@ class Users extends Model
 
     public function login($data){
     	// login code
+    }
+
+    public function getUsersDevicetId($deviceId){
+         $juz = DB::table('users')
+                ->select('*')
+                ->where('device_id','=',$deviceId)
+                ->orderBy('id','asc')
+                ->get();
+
+
+        return $juz;
     }
 }
