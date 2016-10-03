@@ -23,8 +23,8 @@
 										<div class="buku">
 										</div>
 										<div class="promo-txt">
-											<h3>Dapatkan Al-Quran Tikrar untuk menghafal Al-Quran</h3>
-											<p>Syaratnya adalah perbanyak menghafal menggunakan QuranMemo, mulai tanggal 1 September 2016, QuranMemo akan menyeleksi 8 orang yang banyak menghafal dan menggunakan QuranMemo :) mari semangat terus dalam menghafal dan membumikan Al-Quran.</p>
+											<h3>Dapatkan Tafsir Ringkas Ibnu Katsir</h3>
+											<p>Syaratnya adalah perbanyak menghafal menggunakan QuranMemo mulai tanggal 1 Oktober 2016 sampai 1 bulan kedepan, QuranMemo akan menyeleksi beberapa pengguna yang banyak menghafal dan menggunakan QuranMemo :) mari semangat terus dalam menghafal dan membumikan Al-Quran.</p>
 										</div>
 									</div>
 								</div>
@@ -49,7 +49,11 @@
 									</div>
 									<div class="form-group">
 										<label for="address" class="control-label sr-only">Alamat Lengkap</label>
-										<textarea class="form-control" name="address" id="register_address" aria-label="alamat lengkap" placeholder="Mohon isi dengan alamat yang lengkap" value="{{ old('address')}}"/></textarea>
+										<textarea class="form-control" name="address" id="register_address" aria-label="alamat lengkap" placeholder="Mohon isi dengan alamat yang lengkap"/>{{ old('address')}}</textarea>
+									</div>
+									<div class="form-group">
+										<label for="hp" class="control-label sr-only">Handphone</label>
+										<input type="text" class="form-control" name="hp" id="hp" aria-label="No Handphone" placeholder="No Handphone" value="{{ old('hp')}}"/>
 									</div>
 									<div class="form-group">
 										<div class="btn-group" role="group" aria-label="...">

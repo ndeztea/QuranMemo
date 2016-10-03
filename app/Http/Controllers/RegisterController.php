@@ -83,6 +83,7 @@ class RegisterController extends Controller
             //'password.required' => 'Password harus di isi',
             'city.required' => 'Kota harus di isi',
             'address.required' => 'Alamat lengkap harus di isi',
+            'hp.required' => 'No handphone harus di isi',
         ];
         
         return Validator::make($data, [
@@ -91,6 +92,7 @@ class RegisterController extends Controller
             //'password' => 'required|confirmed',
             'city' => 'required',
             'address' => 'required',
+            'hp' => 'required',
         ],$errorMessages);
     }
 
@@ -105,13 +107,15 @@ class RegisterController extends Controller
         if(Users::where('email', '=', $data['email'])->count()>=1){
             return false;
         }
-        
+        //print_r($data);
+        //die();
         return Users::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt('alfatihah'),
             'city'  => $data['city'],
             'address' => $data['address'],
+            'hp'    => $data['hp'],
             //'id_ayat'   =>  $data['id_ayat'],
             //'id_surah'  =>  $data['id_surah'],
             'device_id' =>  $data['device_id'],

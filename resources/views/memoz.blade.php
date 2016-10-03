@@ -335,7 +335,7 @@ $(document).ready(function(){
 	@endif
 
 	$(function() {
-	  $("body").swipe( {
+	  $(".ayat_section").swipe( {
 
 	  	//Generic swipe handler for all directions
 	    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {

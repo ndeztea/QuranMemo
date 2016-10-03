@@ -273,14 +273,15 @@
         /* if('{{Request::segment(3)}}'=='593'){
              QuranJS.callModal('buku');
             }*/
+
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_book_daftar']}}'=='' && '{{@$_COOKIE['coo_promo']}}'!=''){
+            if('{{@$_COOKIE['coo_promo_3_tafsir']}}'==''){
                 QuranJS.callModal('buku');
             }
 
-            if('{{@$_COOKIE['coo_promo']}}'==''){
+            /*if('{{@$_COOKIE['coo_promo']}}'==''){
                 QuranJS.callModal('promo');
-            }
+            }*/
 
             /*if('{{@$_COOKIE['coo_muratal_new']}}'==''){
                 QuranJS.callModal('muratal');

@@ -20,7 +20,7 @@ class Users extends Model
     public $city;
     public $address;
 
-    protected $fillable = array('name', 'email', 'password','city','address','device_id');
+    protected $fillable = array('name', 'email', 'password','city','address','hp','device_id');
 
     public function login($data){
     	// login code
