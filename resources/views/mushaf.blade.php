@@ -352,7 +352,7 @@ $prev_surah = '';
 	      if(direction=='left'){
 	      	jQuery('.fa-angle-right').click();
 	      }else if(direction=='right'){
-	      	jQuery('.fa-angle-right').click();
+	      	jQuery('.fa-angle-left').click();
 	      }
 	  	},
 	    allowPageScroll : "vertical",
