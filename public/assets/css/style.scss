@@ -984,12 +984,24 @@ body.body-memo{
 			}
 
 			.close{
+				float:left;
 				color:#fff;
 				opacity: .6;
 
 				&:hover,
 				&:focus{
 					opacity: 1;
+				}
+
+				&:before{
+					content: "\f104";
+					font-family: FontAwesome;
+				    font-style: normal;
+				    font-weight: normal;
+				    text-decoration: inherit;
+				}
+				span{
+					display: none;
 				}
 			}
 		}
@@ -1848,11 +1860,11 @@ body.body-memo{
 
 .puzzle{
 	background-color: #DDD;
-	
 	.content_ayat{
 		.arabic-puzzle{
 			float:left;
 			width:auto;
+
 			padding: 5px !important;
 			margin: 2px;
 			border: dotted 1px #333;
@@ -1863,4 +1875,5 @@ body.body-memo{
 			}
 		}
 	}
+	
 }
