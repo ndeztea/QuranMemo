@@ -119,6 +119,8 @@ $surahMuratal[114] = "An-Nas";
 // set number arabic
 $numberArabic[1] = '1';
 $prev_surah = '';
+
+$coo_muratal = isset($_COOKIE['coo_sound'])?$_COOKIE['coo_sound']:'Al_Afasy';
 ?>
 
 <script type="text/javascript">
@@ -133,22 +135,23 @@ $(document).ready(function(){
 		// file list
 		@foreach($ayats as $ayat)
 			@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
-			@if($ayat->ayat==1 && $ayat->surah!=1 )
-			{
-				
-				title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
-				mp3: "{{url('sound/hal_2/Al-Fatiha.001.mp3')}}"
-			},
+				@if($ayat->ayat==1 && $ayat->surah!=1 && $ayat->surah!=9)
+				{
+					
+					title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
+					mp3: "{{url('sound/'.$coo_muratal.'/001001.mp3')}}"
+				},
+				@endif
 			@endif
-		<?php endif?>
 		{
 			
 			title:"section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}",
 			<?php 
 				$halMuratal = $ayat->page + 1;
-				$ayatMp3 = $surahMuratal[$ayat->surah].'.'.str_pad($ayat->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
+				$ayatMp3 = str_pad($ayat->surah, 3, "0", STR_PAD_LEFT).str_pad($ayat->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
 			?>
-			mp3: "{{url('sound/hal_'.$halMuratal.'/'.$ayatMp3)}}"
+			//mp3: "{{url('sound/hal_'.$halMuratal.'/'.$ayatMp3)}}"
+			mp3: "{{url('sound/'.$coo_muratal.'/'.$ayatMp3)}}"
 		},
 		<?php $prev_surah = $ayat->surah?>
 		@endforeach
@@ -267,6 +270,9 @@ $(document).ready(function(){
 	<?php $a++;endforeach?>
 });
 </script>
+<!--button id="takeVideo" onclick="captureVideo()">Capture video</button> <br>
+<div id="videoArea"></div>
+<button onclick="captureAudio();">Capture Audio</button> <br-->
 <div class="quran_player">
 	<div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
 		<div class="jp-type-playlist">

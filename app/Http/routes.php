@@ -41,6 +41,8 @@ Route::get('mushaf/searchKeyword', 'MushafController@searchKeyword');
 Route::get('mushaf/config', 'MushafController@config');
 Route::get('mushaf/muqodimah', 'MushafController@muqodimah');
 Route::get('mushaf/muqodimah/{idsurah}', 'MushafController@muqodimah');
+Route::get('mushaf/set_muratal/{qori}', 'MushafController@set_muratal');
+
 
 Route::get('notes/', 'NotesController@index');
 
@@ -62,11 +64,15 @@ Route::get('about', 'ContentController@about');
 Route::get('donasi', 'ContentController@donasi');
 Route::get('buku', 'ContentController@buku');
 Route::post('buku', 'ContentController@buku');
+Route::get('buku', 'ContentController@buku');
+Route::get('promo', 'ContentController@promo');
+Route::get('muratal', 'ContentController@muratal');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
-Route::post('auth/registerProcess', 'Auth\AuthController@registerProcess');
 
+Route::get('register', 'RegisterController@index');
+Route::post('register/process', 'RegisterController@process');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/create', 'MemozController@create');

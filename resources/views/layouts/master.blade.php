@@ -64,7 +64,9 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
+
         <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
+        <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
         
         <script type="text/javascript">
             QuranJS.siteUrl = '{{url()}}';
@@ -83,7 +85,6 @@
 
         <!-- JPlayer-->
         <link href="{{url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="{{url('assets/jplayer/lib/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{url('assets/jplayer/dist/jplayer/jquery.jplayer.min.js')}}"></script>
         <script type="text/javascript" src="{{url('assets/jplayer/dist/add-on/jplayer.playlist.min.js')}}"></script>
     </head>
@@ -149,8 +150,12 @@
                         </li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
-                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li>
-                        <!--li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Register</a></li-->
+                        <li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Register</a></li>
+                        <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
+                        <li><a href="{{url('register')}}">Daftar Buku Gratis</a></li>
+                        <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li-->
+
                         
                     </ul>
                     <div class="navbar-nav navbar-right">
@@ -174,10 +179,10 @@
         </div>
 
         <div class="footer">
-            <div class="ads"><a href="javascript:;" onclick="alert('Untuk melihat informasi pasantren UBK Plus, buka halaman www.ubkplus.com')" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}" alt="Pasantren UBK Plus"></a></div>
+            <!--div class="ads"><a href="javascript:;" onclick="alert('Untuk melihat informasi pasantren UBK Plus, buka halaman www.ubkplus.com')" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}" alt="Pasantren UBK Plus"></a></div-->
             <br>
             <ul>
-                <li><span>Copyright &copy; 2016</span></li>
+                <li><span>Copyright &copy; 2016 <a href="http://www.ubkplus.org">www.ubkplus.org</a></span></li>
             </ul>
             <ul>
                 <li><a href="javascript:void(0)" onclick="QuranJS.callModal('about')" >Tentang Quran Memo</a></li>
@@ -216,23 +221,6 @@
           $(document).ready(function(){
                 $('#preloader').hide();
                 QuranJS.redHightlight();
-
-                /*var promise = Kinvey.init({
-                    appKey    : 'af86c6c58e514a45acfa7b0a56ff642b',
-                    appSecret : '2786e39b23f444e6b42506925d78a098'
-                });
-                promise.then(function(activeUser) {
-                    console.log('ok');
-                }, function(error) {
-                    console.log('error');
-                });
-
-                var promise = Kinvey.ping();
-                promise.then(function(response) {
-                    console.log('Kinvey Ping Success. Kinvey Service is alive, version: ' + response.version + ', response: ' + response.kinvey);
-                }, function(error) {
-                    console.log('Kinvey Ping Failed. Response: ' + error.description);
-                });*/
             });
             //var vph = $(window).height();
             //$('body').css('height',vph/2).css('overflow','hidden');
@@ -281,18 +269,77 @@
         });
 
 
-             $(window).bind('beforeunload', function(){
-               $('#preloader').show();
-             });
-            /* if('{{Request::segment(3)}}'=='593'){
-                 QuranJS.callModal('buku');
-                }*/
-             if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-                //QuranJS.callModal('buku');
-                if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!=''){
-                   QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
-                }
-             }
+         $(window).bind('beforeunload', function(){
+           $('#preloader').show();
+         });
+        /* if('{{Request::segment(3)}}'=='593'){
+             QuranJS.callModal('buku');
+            }*/
+
+         if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
+            if('{{@$_COOKIE['coo_promo_3_tafsir']}}'==''){
+                QuranJS.callModal('buku');
+            }
+
+            /*if('{{@$_COOKIE['coo_promo']}}'==''){
+                QuranJS.callModal('promo');
+            }*/
+
+            /*if('{{@$_COOKIE['coo_muratal_new']}}'==''){
+                QuranJS.callModal('muratal');
+            }*/
+
+            
+            if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
+               QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
+            }
+         }
+
+         // CAPTURE AUDIO
+        // Called when capture operation is finished
+        //
+        function captureSuccess(mediaFiles) {
+            var i, len;
+            for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+                uploadFile(mediaFiles[i]);
+            }
+        }
+
+        // Called if something bad happens.
+        //
+        function captureError(error) {
+            var msg = 'An error occurred during capture: ' + error.code;
+            navigator.notification.alert(msg, null, 'Uh oh!');
+        }
+
+        // A button will call this function
+        //
+        function captureAudio() {
+             alert('1');
+            // Launch device audio recording application,
+            // allowing user to capture up to 2 audio clips
+            navigator.device.capture.captureAudio(captureSuccess, captureError, {limit: 2});
+            alert('a');
+        }
+
+        // Upload files to server
+        function uploadFile(mediaFile) {
+            var ft = new FileTransfer(),
+                path = mediaFile.fullPath,
+                name = mediaFile.name;
+
+            ft.upload(path,
+                "http://my.domain.com/upload.php",
+                function(result) {
+                    console.log('Upload success: ' + result.responseCode);
+                    console.log(result.bytesSent + ' bytes sent');
+                },
+                function(error) {
+                    console.log('Error uploading file ' + path + ': ' + error.code);
+                },
+                { fileName: name });
+        }
+
 
 
         </script>

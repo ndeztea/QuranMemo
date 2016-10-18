@@ -9,7 +9,8 @@
       ga(function(tracker) {
 		  var clientId = tracker.get('clientId');
 		  jQuery('#clientId_tmp').val(clientId);
+      jQuery('#register_device_id').val(clientId);
 		});
 
-    </script>
-  <input type="hidden" name="clientId_tmp" id="clientId_tmp" value=""-->
+    </script-->
+  <input type="hidden" name="clientId_tmp" id="clientId_tmp" value="">

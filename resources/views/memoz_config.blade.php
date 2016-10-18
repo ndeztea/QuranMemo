@@ -1,4 +1,13 @@
 <div class="container-segmented">
+<h4>Muratal</h4>
+  <select class="form-control" name="muratal" id="muratal" onchange="QuranJS.configMuratal(this.value)">
+    @foreach($arr_muratal_list as $key=>$val)
+    <option value="{{$key}}" {{$key==$muratal?'selected':''}}>{{$val}}</option>
+    @endforeach
+  </select>
+  <div class="muratal_modified" style="display:none"><a href="javascript:location.reload()" style="color:#4DB578">Refresh</a> dahulu untuk mengganti muratal.</div>
+  <br>
+  
   <h4>Ulangi muratal per-ayat</h4>
   <div class="segmented-control" style="width: 100%; color: #4DB578">
     <input type="radio" name="sc-1-1" id="sc-1-1-1" {{$repeat==1?'checked':''}}>

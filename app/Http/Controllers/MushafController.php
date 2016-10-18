@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Quran;
+use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests;
@@ -79,6 +80,10 @@ class MushafController extends Controller
         //echo $_COOKIE['coo_mushaf_bookmark_url'].'=='.$_SERVER['REQUEST_URI'];
         //die();
         $data['cookies'] = getCookie();
+        //setcookie('coo_muratal_new',1);
+        if(empty($_COOKIE['coo_promo_3_tafsir'])){
+            setcookie('coo_promo_3_tafsir',1);
+        }
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
         // show view template
@@ -331,7 +336,30 @@ class MushafController extends Controller
 
 
     public function generate(){
-       echo '<pre>';
+        $filename = '/Volumes/Jobs/www/QuranNote/Analytics.csv';
+        if (($handle = fopen($filename, 'r')) !== FALSE)
+        {
+            $a = 0;
+            while (($row = fgetcsv($handle, 1000, ',')) !== FALSE)
+            {
+                $a++;
+                $UsersModel = new Users;
+                echo '<pre>';
+                $dataUsers = $UsersModel->getUsersDevicetId($row[0]);
+                if(!empty($dataUsers)){
+                    echo $row[1].'<br>';
+                    echo $row[0].'<br>';
+                    echo $dataUsers[0]->email.'<br>';
+                    echo 'Nama : '.$dataUsers[0]->name.'<br>';
+                    echo 'Alamat : '.$dataUsers[0]->address.'<br>';
+                    echo 'No.HP :';
+                    echo '<hr>';
+                }
+                
+            }
+            fclose($handle);
+        }
+       /*echo '<pre>';
         $list = File::allFiles('/Volumes/Jobs/www/QuranNote/public/sound');
         $folders  = File::directories('/Volumes/Jobs/www/QuranNote/public/sound');
         $arrFolder = array();
@@ -369,7 +397,7 @@ class MushafController extends Controller
             $a++;
             echo '$surahMuratal['.$a.'] = "'.$tmpFile.'";';
             echo '<br>';
-        }
+        }*/
         
     }
 
@@ -377,15 +405,26 @@ class MushafController extends Controller
         $mushaf_layout = $_GET['mushaf_layout'];
         $automated_play = $_GET['automated_play'];
         $footer_action = $_GET['footer_action'];
+        $muratal = $_GET['muratal'];
 
+        $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
         $data['mushaf_layout'] = $mushaf_layout;
         $data['automated_play'] = $automated_play;
         $data['footer_action'] = $footer_action;
+        $data['muratal'] = $muratal;
+
+
         $dataHTML['modal_title'] = 'Setting Mushaf';
         $dataHTML['modal_body'] = view('mushaf_config',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
+    }
+
+    public function set_muratal($qori){
+        setcookie('coo_muratal',$qori);
+        //die($qori);
+        return redirect('mushaf');
     }
 
     
