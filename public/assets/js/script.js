@@ -15,7 +15,7 @@ var QuranJS = {
 	},
 
 	modalLoadingBlock : function(){
-
+		$('.modal-body').html('loading');
 	},
 
 	removeModalClass : function(){
@@ -489,6 +489,18 @@ var QuranJS = {
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 		$('.modal-header button').show();
 		$('#QuranModal').modal('show');
+	},
+
+	authProcess : function(){
+		this.modalLoadingBlock();
+		$.post(this.siteUrl+'/auth/loginAction',{
+					email : $('#email').val(),
+					password : $('#password').val(),
+				}, function (reponse){
+					console.log(reponse);
+					this.removeModalClass();
+				}
+			);
 	}
 
 	

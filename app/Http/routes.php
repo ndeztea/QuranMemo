@@ -70,6 +70,8 @@ Route::get('muratal', 'ContentController@muratal');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
+Route::post('auth/loginAction', 'Auth\AuthController@loginAction');
+
 
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');

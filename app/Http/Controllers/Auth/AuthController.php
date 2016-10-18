@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+
 
 class AuthController extends Controller
 {
@@ -39,6 +45,23 @@ class AuthController extends Controller
         $dataHTML['modal_title'] = 'Masuk dahulu';
         $dataHTML['modal_body'] = view('auth_login',$data)->render();
         $dataHTML['modal_footer'] = 'Lupa Password ?';
+
+        return response()->json($dataHTML);
+    }
+
+    /**
+    * login action from modal
+    *
+    */
+    public function loginAction(Request $request){
+        $data['email'] = $request->input('email');
+        $data['password'] = Hash::make($request->input('password'));
+        // auth by using auth lib from laravel
+        if (Auth::attempt($data)){
+            $dataHTML['login'] = true;
+        }else{
+            $dataHTML['login'] = false;
+        }
 
         return response()->json($dataHTML);
     }

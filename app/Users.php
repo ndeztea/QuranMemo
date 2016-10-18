@@ -4,6 +4,7 @@ namespace App;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 
 class Users extends Model
 {
@@ -24,6 +25,15 @@ class Users extends Model
 
     public function login($data){
     	// login code
+         $juz = DB::table('users')
+                ->select('*')
+                ->where('username','=',$data['username'])
+                ->where('password','=', Hash::make($data['password']))
+                ->orderBy('id','asc')
+                ->get();
+
+
+        return $juz;
     }
 
     public function getUsersDevicetId($deviceId){
