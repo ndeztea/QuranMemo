@@ -39,10 +39,14 @@
 										<input type="email" class="form-control" name="email" id="register_email" aria-label="email" placeholder="Email yang aktif" value="{{ old('email')}}" />
 
 									</div>
-									<!--div class="form-group">
+									<div class="form-group">
 										<label for="password" class="control-label sr-only">Password</label>
-										<input type="password" class="form-control" name="password" id="register_password" aria-label="password" placeholder="Password" />
-									</div-->
+										<input type="password" class="form-control" name="password" id="password" aria-label="password" placeholder="Password" />
+									</div>
+									<div class="form-group">
+										<label for="password" class="control-label sr-only">Re-Password</label>
+										<input type="password" class="form-control" name="password_confirmation" id="password_confirmation" aria-label="password" placeholder="Tulis ulang password" />
+									</div>
 									<div class="form-group">
 										<label for="city" class="control-label sr-only">Kota</label>
 										<input type="text" class="form-control" name="city" id="register_city" aria-label="kota asal" placeholder="Kota Asal" value="{{ old('city')}}"/>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Users;
 use Validator;
 
@@ -80,7 +81,9 @@ class RegisterController extends Controller
             'email.unique' => 'Email sudah di pakai, gunakan email yang lain',
             'email.email' => 'Email yang di masukan salah',
             'email.required' => 'Email harus di isi',
-            //'password.required' => 'Password harus di isi',
+            'password.required' => 'Password harus di isi',
+            'password.confirmed' => 'Password tidak sama',
+            'password_confirmation.required' => 'Password konfirmasi harus di isi',
             'city.required' => 'Kota harus di isi',
             'address.required' => 'Alamat lengkap harus di isi',
             'hp.required' => 'No handphone harus di isi',
@@ -89,7 +92,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            //'password' => 'required|confirmed',
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
             'city' => 'required',
             'address' => 'required',
             'hp' => 'required',
@@ -112,7 +116,7 @@ class RegisterController extends Controller
         return Users::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt('alfatihah'),
+            'password' => Hash::make($data['password']),
             'city'  => $data['city'],
             'address' => $data['address'],
             'hp'    => $data['hp'],
