@@ -118,6 +118,9 @@ class MemozController extends Controller
         $QuranModel = new Quran;
         $surahs = $QuranModel->getSurah();
         $data['surahs'] = $surahs;
+        $data['date_start'] = '';
+        $data['date_end'] = '';
+        $data['note'] = '';
 
         $dataHTML['modal_title'] = 'Simpan Hafalan';
         $dataHTML['modal_body'] = view('memoz_form',$data)->render();
