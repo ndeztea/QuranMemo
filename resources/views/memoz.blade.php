@@ -59,6 +59,9 @@
 			</div>
 			@if(!empty($ayats))
 				<div class="select-surah pull-left">
+					@if(session('sess_id'))
+					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.formMemoModal()"><i class="fa fa-floppy-o"></i> Simpan</a>
+					@endif
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i> Info</a>

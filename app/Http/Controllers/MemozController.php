@@ -110,8 +110,15 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
-    public function create(){
-        $data[''] = '';
+    public function form(Request $request){
+        $data['surah_start'] = $request->input('surah_start');
+        $data['ayat_start'] = $request->input('ayat_start');
+        $data['ayat_end'] = $request->input('ayat_end');
+
+        $QuranModel = new Quran;
+        $surahs = $QuranModel->getSurah();
+        $data['surahs'] = $surahs;
+
         $dataHTML['modal_title'] = 'Simpan Hafalan';
         $dataHTML['modal_body'] = view('memoz_form',$data)->render();
         $dataHTML['modal_footer'] = '';
