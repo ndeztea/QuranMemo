@@ -42,7 +42,7 @@ class AuthController extends Controller
     public function login(){
         $data[''] = '';
         $dataHTML['modal_class'] = 'login-mode';
-        $dataHTML['modal_title'] = 'Masuk dahulu';
+        $dataHTML['modal_title'] = 'Login';
         $dataHTML['modal_body'] = view('auth_login',$data)->render();
         $dataHTML['modal_footer'] = 'Lupa Password ?';
 
