@@ -70,16 +70,19 @@ Route::get('muratal', 'ContentController@muratal');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
+Route::get('auth/logout', 'Auth\AuthController@logout');
 Route::post('auth/loginAction', 'Auth\AuthController@loginAction');
 
 
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');
 
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');
     Route::get('notes/create/{surah}/{idsurah}', 'NotesController@create');
+    Route::get('dashboard','DashboardController@index');
 
     Route::post('notes/save', 'NotesController@save');
 

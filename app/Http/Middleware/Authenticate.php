@@ -34,8 +34,8 @@ class Authenticate
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->guest()) {
-            return redirect('auth/login');
+        if (empty($request->session()->get('sess_id'))) {
+            return redirect('mushaf')->with('messageError', 'Tidak bisa akses, harus login dahulu');
         }
 
         return $next($request);

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Auth;
-use App\User;
+use App\Users;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -49,16 +49,33 @@ class AuthController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function logout(Request $request){
+        // remove all sessions
+        $request->session()->forget('sess_id');
+        $request->session()->forget('sess_email');
+        $request->session()->forget('sess_name');
+        return redirect('mushaf');
+    }
+
     /**
     * login action from modal
     *
     */
     public function loginAction(Request $request){
         $data['email'] = $request->input('email');
-        $data['password'] = Hash::make($request->input('password'));
-        // auth by using auth lib from laravel
-        if (Auth::attempt($data)){
+        $data['password'] = $request->input('password');
+
+        // auth by
+        $objUsers = new Users;
+        $dataLogin = $objUsers->login($data);
+        if ($dataLogin){
             $dataHTML['login'] = true;
+            $dataHTML['redirect'] = url('dashboard');
+
+            // set session
+            $request->session()->put('sess_id', $dataLogin->id);
+            $request->session()->put('sess_email', $dataLogin->email);
+            $request->session()->put('sess_name', $dataLogin->name);
         }else{
             $dataHTML['login'] = false;
         }

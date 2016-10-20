@@ -6,6 +6,7 @@ use DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
+
 class Users extends Model
 {
     //
@@ -25,15 +26,15 @@ class Users extends Model
 
     public function login($data){
     	// login code
-         $juz = DB::table('users')
+         $user = DB::table('users')
                 ->select('*')
-                ->where('username','=',$data['username'])
-                ->where('password','=', Hash::make($data['password']))
-                ->orderBy('id','asc')
-                ->get();
-
-
-        return $juz;
+                ->where('email','=',$data['email'])
+                ->first();
+        if(!empty($user)){
+            if(Hash::check($data['password'],$user->password))
+                return $user;
+        }
+        return false;
     }
 
     public function getUsersDevicetId($deviceId){
