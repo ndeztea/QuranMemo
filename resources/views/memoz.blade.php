@@ -245,7 +245,7 @@
 	</div>
 <!-- end main main-content-wrap -->	
 </div>
-
+<input type="hidden" name="id" id="id" value=""/>
 
 <script type="text/javascript">
 $(document).ready(function(){

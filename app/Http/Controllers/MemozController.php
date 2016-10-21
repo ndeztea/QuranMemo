@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use DB;
 use App\Notes;
 use App\Quran;
+use App\Memo;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
@@ -110,6 +112,10 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+    /**
+    * to show memoz form on modal
+    *
+    */
     public function form(Request $request){
         $data['surah_start'] = $request->input('surah_start');
         $data['ayat_start'] = $request->input('ayat_start');
@@ -125,6 +131,42 @@ class MemozController extends Controller
         $dataHTML['modal_title'] = 'Simpan Hafalan';
         $dataHTML['modal_body'] = view('memoz_form',$data)->render();
         $dataHTML['modal_footer'] = '';
+
+        return response()->json($dataHTML);
+    }
+
+    /**
+    * save memoz
+    *
+    */
+    public function save(Request $request){
+        $dataRecord['id'] = $request->input('id');
+        $dataRecord['surah_start'] = $request->input('surah_start');
+        $dataRecord['ayat_start'] = $request->input('ayat_start');
+        $dataRecord['ayat_end'] = $request->input('ayat_end');
+        $dataRecord['date_start'] = $request->input('date_start');
+        $dataRecord['date_end'] = $request->input('date_end');
+        $dataRecord['note'] = $request->input('note');
+        $dataRecord['id_user'] = $request->session()->get('sess_id');
+
+        // saving to DB
+        $Memo = new Memo;
+        if(empty($dataRecord['id'])){
+            $save = $Memo->store($dataRecord);
+        }else{
+            $save = $Memo->edit($dataRecord);
+        }
+
+        // check the process and send as json
+        if($save){
+            $dataHTML['id'] = $save;
+            $dataHTML['status'] = true;
+            $dataHTML['message'] = 'Hafalan berhasil disimpan';
+        }else{
+            $dataHTML['id'] = '';
+            $dataHTML['status'] = true;
+            $dataHTML['message'] = 'Hafalan gagal disimpan';
+        }
 
         return response()->json($dataHTML);
     }
