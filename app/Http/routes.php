@@ -54,9 +54,7 @@ Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
 Route::post('memoz/search', 'MemozController@search');
 Route::get('memoz/search', 'MemozController@search');
 Route::get('memoz/config', 'MemozController@config');
-Route::post('memoz/form', 'MemozController@form');
 
-//Route::get('memoz/create', ['middleware' => 'auth'],'MemozController@create');
 
 Route::get('bookmarks/', 'BookmarksController@index');
 
@@ -78,8 +76,12 @@ Route::post('auth/loginAction', 'Auth\AuthController@loginAction');
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');
 
-
+//auth pages
 Route::group(['middleware' => 'auth'], function () {
+	Route::post('memoz/form', 'MemozController@form');
+	Route::post('memoz/save', 'MemozController@save');
+
+
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');
     Route::get('notes/create/{surah}/{idsurah}', 'NotesController@create');
