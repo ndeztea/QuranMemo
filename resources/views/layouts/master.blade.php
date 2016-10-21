@@ -44,7 +44,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="#4DB578">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Scheherazade:400,700&subset=latin,arabic' rel='stylesheet' type='text/css'>
@@ -58,6 +57,7 @@
         <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/bootstrap-datepicker.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
 
@@ -220,6 +220,8 @@
     <script src="{{url('assets/js/jquery-ui.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{url('assets/js/jquery.highlight.min.js')}}"></script>
+    <script src="{{url('assets/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{url('assets/js/bootstrap-datepicker.en-GB.min.js')}}"></script>
 
     <script type="text/javascript">
           $(document).ready(function(){
@@ -298,53 +300,6 @@
                QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
             }
          }
-
-         // CAPTURE AUDIO
-        // Called when capture operation is finished
-        //
-        function captureSuccess(mediaFiles) {
-            var i, len;
-            for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-                uploadFile(mediaFiles[i]);
-            }
-        }
-
-        // Called if something bad happens.
-        //
-        function captureError(error) {
-            var msg = 'An error occurred during capture: ' + error.code;
-            navigator.notification.alert(msg, null, 'Uh oh!');
-        }
-
-        // A button will call this function
-        //
-        function captureAudio() {
-             alert('1');
-            // Launch device audio recording application,
-            // allowing user to capture up to 2 audio clips
-            navigator.device.capture.captureAudio(captureSuccess, captureError, {limit: 2});
-            alert('a');
-        }
-
-        // Upload files to server
-        function uploadFile(mediaFile) {
-            var ft = new FileTransfer(),
-                path = mediaFile.fullPath,
-                name = mediaFile.name;
-
-            ft.upload(path,
-                "http://my.domain.com/upload.php",
-                function(result) {
-                    console.log('Upload success: ' + result.responseCode);
-                    console.log(result.bytesSent + ' bytes sent');
-                },
-                function(error) {
-                    console.log('Error uploading file ' + path + ': ' + error.code);
-                },
-                { fileName: name });
-        }
-
-
 
         </script>
          

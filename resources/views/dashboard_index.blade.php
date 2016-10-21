@@ -16,6 +16,11 @@
 				<h2>Dashboard page</h2>
 			</div>
 			{{session('sess_name')}}
+			<div class="input-daterange input-group" id="datepicker">
+			    <input type="text" class="input-sm form-control" name="start" />
+			    <span class="input-group-addon">to</span>
+			    <input type="text" class="input-sm form-control" name="end" />
+			</div>
 		<!-- end single-column-->
 		</div>
 	<!-- end main main-content -->	
