@@ -50,34 +50,41 @@
 							</div>
 							
 							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
-							
+								
+							@if(session('sess_id'))
+							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.callModal('memoz/list')" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
+							@else
 							@if(isset($_COOKIE['coo_last_memoz']))
 							<a class="btn btn-cari-ayat btn-last-memoz" href="{{$_COOKIE['coo_last_memoz']}}"><i class="fa fa-sign-in"></i> Hafalan Terakhir</a>
+							@endif
 							@endif
 					</form>
 				</div>
 			</div>
 			@if(!empty($ayats))
 				<div class="select-surah pull-left">
-					@if(session('sess_id'))
-					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.formMemoModal()"><i class="fa fa-floppy-o"></i> Simpan</a>
-					@endif
-					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a>
+					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
-					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i> Info</a>
+					@if(session('sess_id'))
+					<button type="button" class="btn btn-green-small" onclick="QuranJS.formMemoModal()"><i class="fa fa-floppy-o"></i></button>
+					<a class="btn btn-green-small" onclick="QuranJS.callModal('memoz/list')" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>
+					 @endif
+					
 				</div>
 			@endif
 			
 				@if(!empty($ayats))
 
 				<div class="memoz_options">
-
 					<div class="btn-group">
-					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val())" class="btn btn-green-small">
+					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i></a>
+					</div>
+					<div class="btn-group">
+					  <button type="button"onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val())" class="btn btn-green-small">
 					    &nbsp;<i class="fa fa-cog"></i>&nbsp;
 					  </button>
-					  
 					</div>
+					
 					
 				</div>
 				<!-- /memoz-player -->
@@ -245,7 +252,7 @@
 	</div>
 <!-- end main main-content-wrap -->	
 </div>
-<input type="hidden" name="id" id="id" value=""/>
+<input type="hidden" name="id" id="id" value="{{$id}}"/>
 
 <script type="text/javascript">
 $(document).ready(function(){

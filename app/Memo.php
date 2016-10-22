@@ -30,4 +30,23 @@ class Memo extends Model
         return $data['id'];
     }
 
+    public function getDetail($id){
+        $memoDetail = DB::table($this->table)
+                ->select('*')
+                ->where('id',$id)
+                ->first();
+
+
+        return $memoDetail;
+    }
+
+    public function getList($id_user){
+        $memoList = DB::table($this->table)
+                ->select('*')
+                ->where('id_user',$id_user)
+                ->get();
+
+
+        return $memoList;
+    }
 }

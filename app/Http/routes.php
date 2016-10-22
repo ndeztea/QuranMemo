@@ -80,7 +80,7 @@ Route::post('register/process', 'RegisterController@process');
 Route::group(['middleware' => 'auth'], function () {
 	Route::post('memoz/form', 'MemozController@form');
 	Route::post('memoz/save', 'MemozController@save');
-
+	Route::get('memoz/list', 'MemozController@list');
 
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');

@@ -21,7 +21,7 @@ class MemozController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($surah_start='',$ayat_range='',$message='')
+    public function index($surah_start='',$ayat_range='',$id='')
     {   
 
         $messageErrors = $ayats = '';
@@ -52,10 +52,15 @@ class MemozController extends Controller
             $data['header_title'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
             $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
         }
+
+        if($id){
+            // get detail memo
+        }
         
 
         //$data['fill_ayat_end'] = $fill_ayat_end;
         $data['ayats'] = $ayats;
+        $data['id'] = $id;
         $data['surahs'] = $surahs;
         $data['surah_start'] = $surah_start;
         $data['ayat_start'] = $ayat_start;
@@ -112,6 +117,17 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+     public function list(Request $request){
+        $MemoModel = new Memo();
+
+        $data['list']  = $MemoModel->getList($request->session()->get('sess_id'));
+        $dataHTML['modal_title'] = 'Daftar Hafalan';
+        $dataHTML['modal_body'] = view('memoz_list',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
     /**
     * to show memoz form on modal
     *
@@ -127,6 +143,15 @@ class MemozController extends Controller
         $data['date_start'] = '';
         $data['date_end'] = '';
         $data['note'] = '';
+
+        $id = $request->input('id');
+        if(!empty($id)){
+            $MemoModel = new Memo();
+            $memoDetail = $MemoModel->getDetail($id);
+            $data['date_start'] = $memoDetail->date_start;
+            $data['date_end'] = $memoDetail->date_end;
+            $data['note'] = $memoDetail->note;
+        }
 
         $dataHTML['modal_title'] = 'Simpan Hafalan';
         $dataHTML['modal_body'] = view('memoz_form',$data)->render();
@@ -170,6 +195,8 @@ class MemozController extends Controller
 
         return response()->json($dataHTML);
     }
+
+
 
 
     

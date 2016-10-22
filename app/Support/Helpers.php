@@ -15,3 +15,12 @@ function getCookie(){
 
 	return $return;
 }
+
+function dayDiff($dateStart,$dateEnd){
+	$dateStart = date('Y-m-d');
+	$date1=date_create($dateStart);
+	$date2=date_create($dateEnd);
+	$diff=date_diff($date1,$date2);
+
+	return $diff;
+}
