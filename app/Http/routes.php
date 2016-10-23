@@ -78,9 +78,12 @@ Route::post('register/process', 'RegisterController@process');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
+	Route::get('memoz/form/{id}', 'MemozController@form');
 	Route::post('memoz/form', 'MemozController@form');
 	Route::post('memoz/save', 'MemozController@save');
 	Route::get('memoz/list', 'MemozController@list');
+	Route::post('memoz/remove', 'MemozController@remove');
+
 
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');

@@ -30,6 +30,11 @@ class Memo extends Model
         return $data['id'];
     }
 
+    public function remove($id){
+        return DB::table($this->table)->where('id', '=', $id)->delete();
+
+    }
+
     public function getDetail($id){
         $memoDetail = DB::table($this->table)
                 ->select('*')
@@ -41,9 +46,11 @@ class Memo extends Model
     }
 
     public function getList($id_user){
-        $memoList = DB::table($this->table)
-                ->select('*')
+        $memoList = DB::table($this->table.' as memo')
+                ->select('memo.*','s.name_indonesia as surah')
+                ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('id_user',$id_user)
+                ->orderby('date_end','asc')
                 ->get();
 
 

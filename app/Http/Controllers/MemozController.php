@@ -145,9 +145,13 @@ class MemozController extends Controller
         $data['note'] = '';
 
         $id = $request->input('id');
+        $data['id'] = $id;
         if(!empty($id)){
             $MemoModel = new Memo();
             $memoDetail = $MemoModel->getDetail($id);
+            $data['surah_start'] = $memoDetail->surah_start;
+            $data['ayat_start'] = $memoDetail->ayat_start;
+            $data['ayat_end'] = $memoDetail->ayat_end;
             $data['date_start'] = $memoDetail->date_start;
             $data['date_end'] = $memoDetail->date_end;
             $data['note'] = $memoDetail->note;
@@ -155,7 +159,7 @@ class MemozController extends Controller
 
         $dataHTML['modal_title'] = 'Simpan Hafalan';
         $dataHTML['modal_body'] = view('memoz_form',$data)->render();
-        $dataHTML['modal_footer'] = '';
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
     }
@@ -193,6 +197,24 @@ class MemozController extends Controller
             $dataHTML['message'] = 'Hafalan gagal disimpan';
         }
 
+        return response()->json($dataHTML);
+    }
+
+    public function remove(Request $request){
+        $id = $request->input('id');
+         $MemoModel = new Memo();
+        $memoDetail = $MemoModel->getDetail($id);
+
+       
+        $dataHTML['message'] = 'Hafalan gagal dihapus';
+        $dataHTML['status'] = false;
+        if($memoDetail->id_user == $request->session()->get('sess_id')){
+            if($MemoModel->remove($id)){
+                $dataHTML['message'] = 'Hafalan berhasil dihapus';
+                $dataHTML['status'] = true;
+                $dataHTML['id'] = $id;
+            }
+        }
         return response()->json($dataHTML);
     }
 
