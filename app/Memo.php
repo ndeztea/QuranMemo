@@ -18,7 +18,7 @@ class Memo extends Model
     public $status;
     public $note;
 
-    protected $fillable = array('id','id_user', 'surah_start','ayat_end','ayat_start','date_start','note');
+    protected $fillable = array('id_user', 'surah_start','ayat_end','ayat_start','date_start','note');
 
 
     public function store($data){

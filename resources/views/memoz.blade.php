@@ -254,6 +254,21 @@
 </div>
 <input type="hidden" name="id" id="id" value="{{$id}}"/>
 
+<div class="quran_recorder" style="display:none">
+	<div class="action">
+		<a class="button" id="record"><i class="fa fa-stop"></i></a>
+		<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
+		<a class="button disabled one" id="play"><i class="fa fa-play"></i></a>
+		<a class="button disabled upload" id="save"><i class="fa fa-upload"></i></a>
+	</div>
+	
+	<div class="player">
+		<audio controls src="" id="audio"></audio>
+	</div>
+	<canvas id="level" height="200" width="500"></canvas>
+	<input id="base64Decode" type="hidden" value="">
+</div>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	QuranJS.fillAyatEnd();
@@ -360,5 +375,8 @@ $(document).ready(function(){
 	  });
 	});
 </script>
+<script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
+<script type="text/javascript" src="{{url('assets/js/Fr.voice.js')}}"></script>
+<script type="text/javascript" src="{{url('assets/js/record.js')}}"></script>
 
 @endsection

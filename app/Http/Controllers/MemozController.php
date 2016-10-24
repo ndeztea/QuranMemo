@@ -193,7 +193,7 @@ class MemozController extends Controller
             $dataHTML['message'] = 'Hafalan berhasil disimpan';
         }else{
             $dataHTML['id'] = '';
-            $dataHTML['status'] = true;
+            $dataHTML['status'] = false;
             $dataHTML['message'] = 'Hafalan gagal disimpan';
         }
 
@@ -218,8 +218,15 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function uploadRecorded(Request $request){
+        $audio = $request->input('audioBase64');
+        
+        $audio = str_replace('data:audio/wav;base64,', '', $audio);
+        $decoded = base64_decode($audio);
+        $file_location = public_path("recorded/recorded_audio.wav");
 
+        file_put_contents($file_location, $decoded);
 
-
+    }   
     
 }
