@@ -220,13 +220,30 @@ class MemozController extends Controller
 
     public function uploadRecorded(Request $request){
         $audio = $request->input('audioBase64');
-        
+        $id = $request->input('id');
+        $MemoModel = new Memo();
+
         $audio = str_replace('data:audio/wav;base64,', '', $audio);
         $decoded = base64_decode($audio);
-        $file_location = public_path("recorded/recorded_audio.wav");
+        $fileName = 'rec_'.$request->session()->get('sess_id').'_'.$id.'.wav';
+        $fileName = "recorded/".$fileName;
+        $fileName = public_path($fileName);
+        $dataHTML['status'] = false;
+        $dataHTML['message'] = 'Hasil rekaman gagal di upload.';
+        if(file_put_contents($fileName, $decoded)){
+            $dataRecord['id'] = $id;
+            $dataRecord['record'] = $fileName;
+            $save = $MemoModel->edit($dataRecord);
+            if($save){
+                $dataHTML['status'] = true;
+                $dataHTML['message'] = 'Hasil rekaman berhasil di upload';
+                // remove the old file
+                $memoDetail = $MemoModel->getDetail($id);
+                File::delete(public_path($memoDetail->record));
+            }
 
-        file_put_contents($file_location, $decoded);
-
+        }
+        return response()->json($dataHTML);
     }   
     
 }

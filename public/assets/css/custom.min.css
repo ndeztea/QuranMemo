@@ -730,6 +730,11 @@ ul.juz-list {
     opacity:0.7;
   }
 
+
+
+.quran_recorder_cont{
+    width: 80%;
+}
 .quran_recorder{
     margin: auto;
     left: 0;
@@ -738,14 +743,12 @@ ul.juz-list {
     bottom: 0;
     background-color: rgba(255,255,255,0.8);
     z-index: 99;
-    width: 80%;
+    width: 100%;
     border-top: 2px solid #cae6c0;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0px;
 }
-
 .quran_recorder a{
-    margin : 0px 5px;
     border:0px;
     background-color: transparent;
 }
@@ -770,4 +773,10 @@ ul.juz-list {
     top: 0px;
     /* width: 100%; */
     left: 0px;
+    width: 100%;
+    height: 50px;
+    opacity: 0.9;
+}
+.fa-spin{
+    font-size: 15px;
 }

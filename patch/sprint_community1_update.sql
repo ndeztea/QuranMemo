@@ -42,3 +42,5 @@ ALTER TABLE `memo_target`
 --
 ALTER TABLE `memo_target`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+
+ALTER TABLE `memo_target` ADD `record` VARCHAR(100) NULL AFTER `note`;

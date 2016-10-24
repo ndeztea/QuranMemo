@@ -14,6 +14,9 @@ $(document).ready(function() {
             elem.addClass("disabled");
             $("#live").addClass("disabled");
             $(".one").removeClass("disabled");
+            // blur awal by default
+            QuranJS.showAyat('start');
+
             analyser = Fr.voice.context.createAnalyser();
             analyser.fftSize = 2048;
             analyser.minDecibels = -90;
@@ -22,17 +25,17 @@ $(document).ready(function() {
             Fr.voice.input.connect(analyser);
             var bufferLength = analyser.frequencyBinCount;
             var dataArray = new Uint8Array(bufferLength);
-            WIDTH = 500, HEIGHT = 200;
+            WIDTH = 500, HEIGHT = 50;
             canvasCtx = $("#level")[0].getContext("2d");
             canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
 
             function draw() {
                 drawVisual = requestAnimationFrame(draw);
                 analyser.getByteTimeDomainData(dataArray);
-                canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+                canvasCtx.fillStyle = 'rgba(222,239,215,0.4)';
                 canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
                 canvasCtx.lineWidth = 2;
-                canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+                canvasCtx.strokeStyle = '#8D94AB';
                 canvasCtx.beginPath();
                 var sliceWidth = WIDTH * 1.0 / bufferLength;
                 var x = 0;
@@ -73,6 +76,8 @@ $(document).ready(function() {
             $('#base64Decode').val(base64);
         }, "base64");
         $('.upload').removeClass('disabled');
+        // remove blur 
+        $('.ayat_arabic_memoz').removeClass('blur-ayat');
         restore();
     });
     $(document).on("click", "#download:not(.disabled)", function() {
@@ -101,12 +106,19 @@ $(document).ready(function() {
     });
     $(document).on("click", "#save:not(.disabled)", function() {
         var idMemo = $('#id').val();
+        $('.btn-upload').removeClass('fa-upload');
+        $('#save,#record').addClass('disabled');
+        $('.btn-upload').addClass('fa-cog fa-spin fa-3x fa-fw');
         if(idMemo!=''){
              base64Decode = $('#base64Decode').val();
              $.post("http://localhost/QuranNote/public/memoz/uploadRecorded",{
                   audioBase64:base64Decode,
+                  id : idMemo
                 }, function (response){
-                  alert("Hasil rekaman berhasil di upload.");
+                    alert(response.message);
+                    $('.btn-upload').addClass('fa-upload');
+                    $('.btn-upload').removeClass('fa-cog fa-spin fa-3x fa-fw');
+                    $('#save,#record').removeClass('disabled');
                 }
               );
             restore();
@@ -115,18 +127,3 @@ $(document).ready(function() {
         }
     });
 });
-
-function uploadRecorded(url){
-  Fr.voice.export(function(blob) {
-    alert(blob);
-    var formData = new FormData();
-    formData.append('file', blob);
-    $.post(url,{
-        data:formData,
-      }, function (response){
-        alert("Saved In Server. See audio element's src for URL");
-      }
-    );
-  }, "blob");
-  restore();
-}
