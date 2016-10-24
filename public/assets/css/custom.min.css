@@ -780,3 +780,10 @@ ul.juz-list {
 .fa-spin{
     font-size: 15px;
 }
+
+.ayat_arabic_memoz{
+    cursor: pointer;
+}
+.wrong{
+    color: rgb(255, 145, 0);
+}

@@ -180,7 +180,7 @@
 										@foreach($arr_ayats as $per_ayat)
 											<?php $per++;?>
 											<span class="puzzle_border puzzle_no_border">
-												<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>"  data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</span>
+												<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>" onclick="QuranJS.correctionMemoz('{{$a}}','{{$per}}')"  data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</span>
 											</span>
 										@endforeach
 
