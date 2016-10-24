@@ -213,6 +213,9 @@ class MemozController extends Controller
                 $dataHTML['message'] = 'Hafalan berhasil dihapus';
                 $dataHTML['status'] = true;
                 $dataHTML['id'] = $id;
+
+                // remove recorded file if available
+                File::delete($memoDetail->record);
             }
         }
         return response()->json($dataHTML);
