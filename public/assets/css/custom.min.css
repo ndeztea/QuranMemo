@@ -781,9 +781,12 @@ ul.juz-list {
     font-size: 15px;
 }
 
-.ayat_arabic_memoz{
+.step-4 .ayat_arabic_memoz{
     cursor: pointer;
 }
 .wrong{
     color: rgb(255, 145, 0);
+}
+.blur-ayat.wrong{
+    color: transparent;
 }

@@ -53,12 +53,16 @@ class MemozController extends Controller
             $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
         }
 
+        $memoDetail = '';
         if($id){
             // get detail memo
+            $memoModel = new Memo;
+            $memoDetail = $memoModel->getDetail($id);
         }
         
 
         //$data['fill_ayat_end'] = $fill_ayat_end;
+        $data['memoDetail'] = $memoDetail;
         $data['ayats'] = $ayats;
         $data['id'] = $id;
         $data['surahs'] = $surahs;
@@ -229,13 +233,16 @@ class MemozController extends Controller
         $audio = str_replace('data:audio/wav;base64,', '', $audio);
         $decoded = base64_decode($audio);
         $fileName = 'rec_'.$request->session()->get('sess_id').'_'.$id.'.wav';
-        $fileName = "recorded/".$fileName;
-        $fileName = public_path($fileName);
+        $dataRecord['record'] = "recorded/".$fileName;
+
+        //$dataRecord['record'] = $fileName;    
+
+        $fileName = public_path($dataRecord['record']);
+
         $dataHTML['status'] = false;
         $dataHTML['message'] = 'Hasil rekaman gagal di upload.';
         if(file_put_contents($fileName, $decoded)){
             $dataRecord['id'] = $id;
-            $dataRecord['record'] = $fileName;
             $save = $MemoModel->edit($dataRecord);
             if($save){
                 $dataHTML['status'] = true;
