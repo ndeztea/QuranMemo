@@ -15,7 +15,7 @@
 			<div class="page-title">
 				<h1 class="pull-left">Menghafal</h1>
 				@if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}"  alt="Download di Google Play" width="150"></a>
+    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}"  alt="Download di Google Play" width="120"></a>
     			@endif
 				
 			</div>

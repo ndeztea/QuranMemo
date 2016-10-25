@@ -17,7 +17,7 @@ $prev_surah = '';
 					<div class="page-title">
 						<h2 class="pull-left">Pencarian</h2>
 						@if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-		    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
+		    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="120"></a>
 		    			@endif
 					</div>
 					@if(!empty($search_result))
