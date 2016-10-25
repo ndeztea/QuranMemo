@@ -6,6 +6,7 @@ use DB;
 use App\Notes;
 use App\Quran;
 use App\Memo;
+use App\MemoCorrection;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -255,5 +256,37 @@ class MemozController extends Controller
         }
         return response()->json($dataHTML);
     }   
-    
+
+    public function formCorrection(){
+        $dataHTML['modal_title'] = 'Kirim Koreksi';
+        $dataHTML['modal_body'] = view('memoz_correction_form')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
+    public function saveCorrection(Request $request){
+        $dataRecord['id_memo_target'] = $request->input('id_memo_target');
+        $dataRecord['id_user'] = $request->session()->get('sess_id');
+        $dataRecord['note'] = $request->input('note');
+        $dataRecord['correction'] = $request->input('correction');
+
+        $dataRecord['correction'] = array_filter(explode('|', $dataRecord['correction']));
+        $dataRecord['correction'] = json_encode($dataRecord['correction']);
+
+        $MemoCorrection = new MemoCorrection;
+        $save = $MemoCorrection->store($dataRecord);
+        if($save){
+            $dataHTML['id'] = $save;
+            $dataHTML['status'] = true;
+            $dataHTML['message'] = 'Koreksi berhasil di kirimkan';
+        }else{
+            $dataHTML['id'] = '';
+            $dataHTML['status'] = false;
+            $dataHTML['message'] = 'Koreksi gagal  di kirimkan';
+        }
+
+         return response()->json($dataHTML);
+
+    }       
 }

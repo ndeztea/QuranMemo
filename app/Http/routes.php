@@ -85,6 +85,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('memoz/remove', 'MemozController@remove');
     Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
 
+    Route::post('memoz/formCorrection','MemozController@formCorrection');
+    Route::post('memoz/saveCorrection','MemozController@saveCorrection');
+
 
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');

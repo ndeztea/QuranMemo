@@ -260,10 +260,12 @@
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
 			<a class="button disabled one" id="play"><i class="fa fa-play"></i></a>
 			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
+
+			<a class="button" id="btn-correction" style="display:none" onclick="QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
 		</div>
 		
 		<div class="player">
-			<audio controls src="{{url($memoDetail->record)}}" id="audio"></audio>
+			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" id="audio"></audio>
 		</div>
 		<canvas id="level" height="50" width="100%"></canvas>
 		<input id="base64Decode" type="hidden" value="">
