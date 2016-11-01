@@ -22,7 +22,7 @@ class MemozController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($surah_start='',$ayat_range='',$id='')
+    public function index($surah_start='',$ayat_range='',$id='',$idCorrection='')
     {   
 
         $messageErrors = $ayats = '';
@@ -60,11 +60,20 @@ class MemozController extends Controller
             $memoModel = new Memo;
             $memoDetail = $memoModel->getDetail($id);
         }
+
+        // if correction there
+        if($idCorrection){
+            $MemoCorrection = new MemoCorrection;
+            $correctionDetail = $MemoCorrection->getDetail($idCorrection);
+            $correctionDetail->correction = json_decode($correctionDetail->correction);
+            $data['correctionDetail'] = $correctionDetail;
+        }
         
 
         //$data['fill_ayat_end'] = $fill_ayat_end;
         $data['memoDetail'] = $memoDetail;
         $data['ayats'] = $ayats;
+        $data['idCorrection'] = $idCorrection;
         $data['id'] = $id;
         $data['surahs'] = $surahs;
         $data['surah_start'] = $surah_start;
@@ -230,26 +239,29 @@ class MemozController extends Controller
         $audio = $request->input('audioBase64');
         $id = $request->input('id');
         $MemoModel = new Memo();
+        $memoDetail = $MemoModel->getDetail($id);
 
         $audio = str_replace('data:audio/wav;base64,', '', $audio);
         $decoded = base64_decode($audio);
-        $fileName = 'rec_'.$request->session()->get('sess_id').'_'.$id.'.wav';
+        $uniqfile = uniqid('rec_');
+        $fileName = $uniqfile.'_'.$request->session()->get('sess_id').'_'.$id.'.wav';
         $dataRecord['record'] = "recorded/".$fileName;
 
         //$dataRecord['record'] = $fileName;    
 
         $fileName = public_path($dataRecord['record']);
-
         $dataHTML['status'] = false;
         $dataHTML['message'] = 'Hasil rekaman gagal di upload.';
-        if(file_put_contents($fileName, $decoded)){
+
+        $saveAudio = file_put_contents($fileName, $decoded);
+        if($saveAudio){
             $dataRecord['id'] = $id;
             $save = $MemoModel->edit($dataRecord);
             if($save){
                 $dataHTML['status'] = true;
                 $dataHTML['message'] = 'Hasil rekaman berhasil di upload';
+
                 // remove the old file
-                $memoDetail = $MemoModel->getDetail($id);
                 File::delete(public_path($memoDetail->record));
             }
 

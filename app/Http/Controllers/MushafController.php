@@ -336,7 +336,7 @@ class MushafController extends Controller
 
 
     public function generate(){
-        $filename = '/Volumes/Jobs/www/QuranNote/Analytics.csv';
+        $filename = '/Volumes/Jobs/www/QuranNote/Analytics20160901-20161031.csv';
         if (($handle = fopen($filename, 'r')) !== FALSE)
         {
             $a = 0;
@@ -352,7 +352,7 @@ class MushafController extends Controller
                     echo $dataUsers[0]->email.'<br>';
                     echo 'Nama : '.$dataUsers[0]->name.'<br>';
                     echo 'Alamat : '.$dataUsers[0]->address.'<br>';
-                    echo 'No.HP :';
+                    echo 'No.HP :'.$dataUsers[0]->hp;
                     echo '<hr>';
                 }
                 

@@ -122,9 +122,13 @@
 							<div class="steps_desc">
 								<div class="alert alert-success">
 									<p> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal</p>
+									@if(!empty($correctionDetail))
+									<strong>Catatan :</strong><br>
+									<i>{{$correctionDetail->note}}</i>
+									@endif
 								</div>
 							</div>
-							<?php  $a=0; ?>
+							@if($idCorrection=='')
 							<div class="memoz_nav" style="display: none">
 								<a href="javascript:;" class="btn btn-start" onclick="QuranJS.showAyat('start')">Awal</a>
 								<a href="javascript:;" class="btn btn-middle" onclick="QuranJS.showAyat('middle')">Tengah</a>
@@ -132,10 +136,12 @@
 								<a href="javascript:;" class="btn btn-mix" onclick="QuranJS.showAyat('mix')">Awal+Akhir</a>
 								<a href="javascript:;" class="btn btn-random" onclick="QuranJS.showAyat('random')">Acak</a>
 							</div>
+							@endif
 							<script>
 								QuranJS.totalAyat = {{count($ayats)}}
 							</script>
 							
+							<?php  $a=0; ?>
 							@foreach($ayats as $ayat)
 							@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
 							<a name="head_surah_{{$ayat->surah}}"></a>
@@ -180,7 +186,7 @@
 										@foreach($arr_ayats as $per_ayat)
 											<?php $per++;?>
 											<span class="puzzle_border puzzle_no_border">
-												<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?>" onclick="QuranJS.correctionMemoz('{{$a}}','{{$per}}')"  data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</span>
+												<span class="ayat_arabic ayat_arabic_memoz per_words_<?php echo $per?> @if(isset($correctionDetail->correction)) @if(in_array('.arabic_'.$a.' .per_words_'.$per.'',$correctionDetail->correction)) wrong @endif @endif" onclick="QuranJS.correctionMemoz('{{$a}}','{{$per}}')"  data-css=".arabic_{{$a}} .per_words_{{$per}}">{{$per_ayat}}</span>
 											</span>
 										@endforeach
 
@@ -207,7 +213,7 @@
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
 									<span class="content_ayat">{{$ayat->text_indo}}</span> 
 								</div>
-								
+								@if($idCorrection=='')
 								<div class="action-footer">
 					                <div class="btn-group">
 					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
@@ -215,6 +221,7 @@
 					                  <a class="memozed btn-share-ayat btn" style="display:none" href="javascript:void(0)" onclick="QuranJS.memorized('section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}')"><i class="fa fa-thumbs-up"></i> Hafal</a>
 					                </div>
 					            </div>
+					            @endif
 							</div>
 
 							<?php $prev_surah = $ayat->surah; $tempCountSpaces = $countSpaces?>
@@ -362,6 +369,7 @@ $(document).ready(function(){
 	QuranJS.headSurah = 1;
 	@endif
 
+	@if($idCorrection=='')
 	$(function() {
 	  $(".ayat_section").swipe( {
 
@@ -377,6 +385,9 @@ $(document).ready(function(){
 	    threshold:130
 	  });
 	});
+	@else
+	QuranJS.stepMemoz('correction');
+	@endif
 </script>
 <script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/Fr.voice.js')}}"></script>
