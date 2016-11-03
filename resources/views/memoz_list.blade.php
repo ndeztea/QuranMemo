@@ -7,7 +7,7 @@
 				<strong><a href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></strong>
 				<span class="memoz-target"> 
 					<i>{{dayDiff($row->date_start,$row->date_end)->days}} hari</i>
-					&bull; <i>@if($row->status==0) Belum Hafal @else Setor @endif</i>
+					&bull; <i>@if($row->status==0) Belum Hafal @else Hafan dan Menunggu koreksi @endif</i>
 				</span>
 				<p>{{$row->note}}</p>
 			</div>

@@ -215,9 +215,13 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+    /**
+    * remove memoz
+    *
+    */
     public function remove(Request $request){
         $id = $request->input('id');
-         $MemoModel = new Memo();
+        $MemoModel = new Memo();
         $memoDetail = $MemoModel->getDetail($id);
 
        
@@ -236,6 +240,55 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+    /**
+    * Update status memoz
+    *
+    * 0 = on process, 1 = need correction, 2 = DONE
+    */
+    public function updateStatus(Request $request){
+        $id = $request->input('id');
+        $status = $request->input('status');
+
+        $MemoModel = new Memo;
+        $memoDetail = $MemoModel->getDetail($id);
+
+        $dataHTML['message'] = 'Status gagal di update';
+        $dataHTML['status'] = false;
+        $dataHTML['status_memoz'] = $status;
+        $dataHTML['id'] = $id;
+
+        $dataRecord['id'] = $id;
+        $dataRecord['status'] = $status;
+
+        $save = $MemoModel->edit($dataRecord);
+        // send ajax response
+        if($save){
+            $dataHTML['message'] = 'Status berhasil di update';
+            $dataHTML['status'] = true;
+            $dataHTML['status_memoz'] = $memoDetail->status;
+        }
+
+        switch ($dataHTML['status_memoz']) {
+            case 1:
+                $dataHTML['text_confirm'] = 'Hafalan ini sudah hafal? dan ingin dipublikasikan untuk di test oleh pengguna lain?';
+                break;
+            
+             case 0:
+                $dataHTML['text_confirm'] = 'Hafalan ini belum di hafal dengan benar?';
+                break;
+
+            default:
+                # code...
+                break;
+        }
+
+        return response()->json($dataHTML);
+    }
+
+    /**
+    * Upload recorded video and import to mp3
+    *
+    */
     public function uploadRecorded(Request $request){
         $audio = $request->input('audioBase64');
         $id = $request->input('id');
@@ -280,6 +333,10 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }   
 
+    /**
+    * for showing the correction form
+    *
+    */
     public function formCorrection(){
         $dataHTML['modal_title'] = 'Kirim Koreksi';
         $dataHTML['modal_body'] = view('memoz_correction_form')->render();
@@ -288,6 +345,10 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+    /**
+    * saving the correction
+    *
+    */
     public function saveCorrection(Request $request){
         $dataRecord['id_memo_target'] = $request->input('id_memo_target');
         $dataRecord['id_user'] = $request->session()->get('sess_id');
