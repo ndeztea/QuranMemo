@@ -23,6 +23,13 @@ class SqsQueue extends Queue implements QueueContract
     protected $default;
 
     /**
+     * The sqs prefix url.
+     *
+     * @var string
+     */
+    protected $prefix;
+
+    /**
      * The job creator callback.
      *
      * @var callable|null
@@ -34,11 +41,13 @@ class SqsQueue extends Queue implements QueueContract
      *
      * @param  \Aws\Sqs\SqsClient  $sqs
      * @param  string  $default
+     * @param  string  $prefix
      * @return void
      */
-    public function __construct(SqsClient $sqs, $default)
+    public function __construct(SqsClient $sqs, $default, $prefix = '')
     {
         $this->sqs = $sqs;
+        $this->prefix = $prefix;
         $this->default = $default;
     }
 
@@ -86,7 +95,6 @@ class SqsQueue extends Queue implements QueueContract
         $delay = $this->getSeconds($delay);
 
         return $this->sqs->sendMessage([
-
             'QueueUrl' => $this->getQueue($queue), 'MessageBody' => $payload, 'DelaySeconds' => $delay,
 
         ])->get('MessageId');
@@ -136,7 +144,13 @@ class SqsQueue extends Queue implements QueueContract
      */
     public function getQueue($queue)
     {
-        return $queue ?: $this->default;
+        $queue = $queue ?: $this->default;
+
+        if (filter_var($queue, FILTER_VALIDATE_URL) !== false) {
+            return $queue;
+        }
+
+        return rtrim($this->prefix, '/').'/'.($queue);
     }
 
     /**

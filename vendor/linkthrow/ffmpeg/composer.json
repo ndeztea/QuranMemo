@@ -1,0 +1,36 @@
+{
+    "name": "linkthrow/ffmpeg",
+    "description": "A laravel audio and video conversion, thumbnail generator and metadata editor package powered by ffmpeg",
+    "keywords": ["laravel", "ffmpeg", "ffprobe", "converter"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hussan Choudhry",
+            "email": "hussan@uselinkthrow.com"
+        },
+        {
+            "name": "Rafael Sampaio",
+            "email": "rafaelsampaio@live.com"
+        },
+        {
+            "name": "Closca Costel",
+            "email": "closca.costel@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "LinkThrow\\Ffmpeg\\": "src"
+        },
+        "files": [
+            "src/Classes/FFMPEG.php",
+            "src/Helpers.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}

@@ -14,6 +14,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Crypt;
 use File;
+use FFMPEG;
 
 class MemozController extends Controller
 {
@@ -260,6 +261,16 @@ class MemozController extends Controller
             if($save){
                 $dataHTML['status'] = true;
                 $dataHTML['message'] = 'Hasil rekaman berhasil di upload';
+
+                // convert to mp3
+                $fileNameMp3 =  str_replace('wav', 'mp3', $dataRecord['record']);
+                $convert = FFMPEG::convert()->input($fileName)->output($fileNameMp3)->go();
+                
+                $dataRecord['record'] = str_replace('wav', 'mp3', $dataRecord['record']);
+                $MemoModel->edit($dataRecord);
+
+                File::delete(public_path($fileName));
+                
 
                 // remove the old file
                 File::delete(public_path($memoDetail->record));

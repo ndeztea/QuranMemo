@@ -67,9 +67,8 @@
 
         <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
-        
         <script type="text/javascript">
-            QuranJS.siteUrl = '{{url()}}';
+            QuranJS.siteUrl = '{{url('')}}';
         </script>
 
         @if(session('searchSurah'))
@@ -139,7 +138,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{url()}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
+                    <a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
