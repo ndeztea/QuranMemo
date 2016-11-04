@@ -273,7 +273,7 @@ $(document).ready(function(){
 <!--button id="takeVideo" onclick="captureVideo()">Capture video</button> <br>
 <div id="videoArea"></div>
 <button onclick="captureAudio();">Capture Audio</button> <br-->
-@if(empty($idCorrection))
+@if(Request::segment(2)!='correction')
 <div class="quran_player">
 	<div id="muratalPlaylistContainer" class="jp-video jp-video-270p" role="application" aria-label="media player">
 		<div class="jp-type-playlist">

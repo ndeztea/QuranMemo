@@ -56,4 +56,16 @@ class Memo extends Model
 
         return $memoList;
     }
+
+    public function getNeedCorrection(){
+        $memoList = DB::table($this->table.' as memo')
+                ->select('memo.*','s.name_indonesia as surah','u.name')
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->join('surah as s', 's.id', '=', 'memo.surah_start')
+                ->where('status',1)
+                ->orderby('updated_at','desc')
+                ->get();
+
+        return $memoList;
+    }
 }

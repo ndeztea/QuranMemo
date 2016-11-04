@@ -137,7 +137,7 @@
 									@endif
 								</div>
 							</div>
-							@if($idCorrection=='')
+							@if(Request::segment(2)!='correction')
 							<div class="memoz_nav" style="display: none">
 								<a href="javascript:;" class="btn btn-start" onclick="QuranJS.showAyat('start')">Awal</a>
 								<a href="javascript:;" class="btn btn-middle" onclick="QuranJS.showAyat('middle')">Tengah</a>
@@ -222,7 +222,7 @@
 									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
 									<span class="content_ayat">{{$ayat->text_indo}}</span> 
 								</div>
-								@if($idCorrection=='')
+								@if(Request::segment(2)!='correction')
 								<div class="action-footer">
 					                <div class="btn-group">
 					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
@@ -272,11 +272,12 @@
 <div class="quran_recorder_cont">
 	<div class="quran_recorder" style="display:none">
 		<div class="action">
+			@if(Request::segment(2)!='correction')
 			<a class="button" id="record"><i class="fa fa-stop"></i></a>
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
 			<a class="button disabled one" id="play"><i class="fa fa-play"></i></a>
 			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
-
+			@endif
 			<a class="button" id="btn-correction" style="display:none" onclick="QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
 		</div>
 		
@@ -378,7 +379,7 @@ $(document).ready(function(){
 	QuranJS.headSurah = 1;
 	@endif
 
-	@if($idCorrection=='')
+	@if(Request::segment(2)!='correction')
 	$(function() {
 	  $(".ayat_section").swipe( {
 
