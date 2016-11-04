@@ -204,6 +204,10 @@ class MemozController extends Controller
         // check the process and send as json
         if($save){
             $dataHTML['id'] = $save;
+            $dataHTML['surah_start'] = $dataRecord['surah_start'] ;
+            $dataHTML['ayat_start'] = $dataRecord['ayat_start'];
+            $dataHTML['ayat_end'] = $dataRecord['ayat_end'];
+            $dataHTML['siteUrl'] = url('');
             $dataHTML['status'] = true;
             $dataHTML['message'] = 'Hafalan berhasil disimpan';
         }else{
