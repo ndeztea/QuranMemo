@@ -61,19 +61,20 @@
 					</form>
 				</div>
 			</div>
-			@if(!empty($ayats) && Request::segment(2)!='correction'))
+			@if(!empty($ayats) && Request::segment(2)!='correction')
 				<div class="select-surah pull-left">
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
 					@if(session('sess_id'))
 					<button type="button" class="btn btn-green-small btn-form-memoz" onclick="QuranJS.formMemoModal()"><i class="fa fa-floppy-o"></i></button>
 					<a class="btn btn-green-small" onclick="QuranJS.callModal('memoz/list')" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>
+					<a class="btn btn-green-small" onclick="QuranJS.callModal('memoz/correction/list/{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
 					 @endif
 					
 				</div>
 			@endif
 			
-				@if(!empty($ayats) && Request::segment(2)!='correction'))
+				@if(!empty($ayats) && Request::segment(2)!='correction')
 
 				<div class="memoz_options">
 					<div class="btn-group">
@@ -132,6 +133,8 @@
 								<div class="alert alert-success">
 									<p> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal</p>
 									@if(!empty($correctionDetail))
+									<strong>Tester :</strong><br>
+									<i>{{$correctionDetail->name}} ({{$correctionDetail->email}}) </i><br>
 									<strong>Catatan :</strong><br>
 									<i>{{$correctionDetail->note}}</i>
 									@endif

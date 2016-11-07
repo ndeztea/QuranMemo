@@ -132,7 +132,7 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
-     public function list(Request $request){
+    public function list(Request $request){
         $MemoModel = new Memo();
 
         $data['list']  = $MemoModel->getList($request->session()->get('sess_id'));
@@ -142,6 +142,8 @@ class MemozController extends Controller
 
         return response()->json($dataHTML);
     }
+
+
 
     /**
     * to show memoz form on modal
@@ -386,6 +388,16 @@ class MemozController extends Controller
         }
 
          return response()->json($dataHTML);
-
     }       
+
+    public function listCorrection($idMemo){
+        $MemoCorrectionModel = new MemoCorrection();
+
+        $data['list']  = $MemoCorrectionModel->getMemoCorrection($idMemo);
+        $dataHTML['modal_title'] = 'Daftar koreksi';
+        $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
 }

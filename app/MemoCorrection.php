@@ -32,9 +32,10 @@ class MemoCorrection extends Model
     }
 
     public function getDetail($id){
-        $memoDetail = DB::table($this->table)
-                ->select('*')
-                ->where('id',$id)
+        $memoDetail = DB::table($this->table.' as memo')
+                ->select('u.name','u.email','memo.*')
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->where('memo.id',$id)
                 ->first();
 
 
@@ -47,6 +48,20 @@ class MemoCorrection extends Model
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('id_user',$id_user)
                 ->orderby('date_end','asc')
+                ->get();
+
+
+
+        return $memoList;
+    }
+
+    public function getMemoCorrection($id_memo_target){
+        $memoList = DB::table($this->table.' as memo')
+                ->select('u.name','u.email','memo.*','mt.surah_start','mt.ayat_start','mt.ayat_end')
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->join('memo_target as mt', 'mt.id', '=', 'memo.id_memo_target')
+                ->where('id_memo_target',$id_memo_target)
+                ->orderby('id','desc')
                 ->get();
 
 

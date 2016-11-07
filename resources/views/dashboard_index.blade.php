@@ -24,6 +24,7 @@
 			  		<li>
 			  			<strong>{{$row->name}}</strong><br/>
 			  			<em><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></em>
+			  			&bullet; <i class="fa fa-check-square-o">{{$row->count_correction}} koreksi</i>
 			  		</li>
 			  		@endforeach
 			  	</ul>    
