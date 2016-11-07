@@ -99,3 +99,6 @@ ALTER TABLE `memo_target_correction`
 --
 ALTER TABLE `memo_target_correction`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `memo_target` ADD `count_correction` INT NOT NULL AFTER `record`;

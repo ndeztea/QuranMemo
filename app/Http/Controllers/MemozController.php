@@ -132,7 +132,7 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
-     public function list(Request $request){
+    public function list(Request $request){
         $MemoModel = new Memo();
 
         $data['list']  = $MemoModel->getList($request->session()->get('sess_id'));
@@ -142,6 +142,8 @@ class MemozController extends Controller
 
         return response()->json($dataHTML);
     }
+
+
 
     /**
     * to show memoz form on modal
@@ -362,12 +364,23 @@ class MemozController extends Controller
         $dataRecord['correction'] = array_filter(explode('|', $dataRecord['correction']));
         $dataRecord['correction'] = json_encode($dataRecord['correction']);
 
+        // memo detail
+        $MemoModel = new Memo;
+        $memoDetail = $MemoModel->getDetail($dataRecord['id_memo_target']);
+        $countCorrection = $memoDetail->count_correction;
+
         $MemoCorrection = new MemoCorrection;
         $save = $MemoCorrection->store($dataRecord);
         if($save){
             $dataHTML['id'] = $save;
             $dataHTML['status'] = true;
             $dataHTML['message'] = 'Koreksi berhasil di kirimkan';
+            $countCorrection++;
+
+            $dataUpdate['count_correction'] = $countCorrection;
+            $dataUpdate['id'] = $dataRecord['id_memo_target'];
+            // update stats
+            $MemoModel->edit($dataUpdate);
         }else{
             $dataHTML['id'] = '';
             $dataHTML['status'] = false;
@@ -375,6 +388,16 @@ class MemozController extends Controller
         }
 
          return response()->json($dataHTML);
-
     }       
+
+    public function listCorrection($idMemo){
+        $MemoCorrectionModel = new MemoCorrection();
+
+        $data['list']  = $MemoCorrectionModel->getMemoCorrection($idMemo);
+        $dataHTML['modal_title'] = 'Daftar koreksi';
+        $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
 }

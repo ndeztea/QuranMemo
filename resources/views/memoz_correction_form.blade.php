@@ -1,7 +1,10 @@
 <form class="form-inline">
-		<br>
 		<div class="form-group display-inline-block-xs">
-			<textarea class="form-control" id="note" placeholder="Catatan" name="note"></textarea>
+			<strong>Yang test : </strong> {{session('sess_name')}} ({{session('sess_email')}})
+		</div>
+		<div class="form-group display-inline-block-xs">
+			<strong>Catatan untuk hafalan ini</strong>
+			<textarea class="form-control" id="note" placeholder="Masukan catatan yang di dapat ketika mengetes hafalan ini" name="note"></textarea>
 		</div>
 		
 		<button class="btn btn-cari-ayat btn-save-memoz" type="submit" name="btnSubmit" onclick="QuranJS.saveMemozCorrection();return false;">
