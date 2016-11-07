@@ -1,1529 +1,1302 @@
 @import 'responsive-media';
-	
 $opacityValue: 1;
-
 @import 'variables';
-
 $btn-normal: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: transparent, txtColor: $main-color);
 $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-color, txtColor: #fff);
-
 @mixin boxy($bWidth, $bColor, $bStyle, $bgColor, $txtColor) {
-  border-width: $bWidth;
-  border-color: $bColor;
-  border-style: $bStyle;
-  background-color: $bgColor;
-  color: $txtColor;
-  background-image: none;
-  text-shadow:none;
+	border-width: $bWidth;
+	border-color: $bColor;
+	border-style: $bStyle;
+	background-color: $bgColor;
+	color: $txtColor;
+	background-image: none;
+	text-shadow: none;
 }
 
 @font-face {
-    font-family: $arab-font;
+	font-family: $arab-font;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	user-select: text !important;
 }
 
-.splash-body{
+.splash-body {
 	position: relative;
 	z-index: 1001;
-	background:#000;
+	background: #000;
 	transition: all 2s ease;
-	display:block;
-	width:100%;
-
-		.splash-inner{
-			background: url("../images/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center / cover ;
+	display: block;
+	width: 100%;
+	.splash-inner {
+		background: url("../images/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center / cover;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 1s ease;
+		animation-delay: .5s;
+		display: block;
+	}
+	.splash {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(77, 181, 120, 0.9);
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		.holder {
+			position: relative;
+			top: 45%;
+			transform: translateY(-45%);
 			width: 100%;
-			height:100%;
-			opacity: 0;
-			transition: opacity 1s ease;
-			animation-delay:.5s;
+			margin: auto;
+			text-align: center;
+			padding: 0;
+		}
+	}
+	.splash-text {
+		animation-delay: 4s;
+		span {
 			display: block;
+			text-align: center;
+			padding: 40px;
+			vertical-align: middle;
 		}
-
-		.splash{
-			width: 100%;
-			height: 100%;
-			background-color: rgba(77,181,120, 0.9);
-			-webkit-transform-style: preserve-3d;
-			-moz-transform-style: preserve-3d;
-			transform-style: preserve-3d;
-
-			.holder{
-				position: relative;
-				top: 45%;
-				transform: translateY(-45%);
-				width: 100%;
-				margin:auto;
-				text-align:center;
-				padding:0;
-			}
+		img {
+			padding-top: 60px;
+			display: inline-block;
 		}
-
-		.splash-text{
-			
-			animation-delay:4s;
-			span{
-				display: block;
-				text-align: center;
-				padding:40px;
-				vertical-align: middle;
-			}
-
-			img{
-				padding-top:60px;
-				display: inline-block;
-				
-			}
+	}
+	.start {
+		width: 125px;
+		margin: 20px auto;
+		text-align: center;
+		animation-delay: 5s;
+		display: block;
+		padding: 13px 0;
+		background-color: $main-color-hover;
+		border: none;
+		color: #fff;
+		&:hover,
+		&:focus,
+		&.selected {
+			color: #000;
+			background-color: lighten($main-color, 10%);
 		}
-
-
-		.start{
-			width:125px;
-			margin:20px auto;
-			text-align:center;
-			animation-delay:5s;
-			display:block;
-			padding: 13px 0;
-			background-color: $main-color-hover;
-			border:none;
-			color: #fff;
-
-				&:hover,
-				&:focus,
-				&.selected{
-					color: #000;
-					background-color: lighten($main-color,10%);
-
-				}
-		}
+	}
 }
 
-body{
+body {
 	background: #fff;
 	font-family: $font-stack;
 }
 
 a,
 a:hover,
-a:focus{
+a:focus {
 	text-decoration: none;
-	outline:0 none;
+	outline: 0 none;
 	cursor: pointer;
 }
 
-.arabic, 
-.head_surah{
+.arabic,
+.head_surah {
 	font-family: $arab-font;
 	font-size: 33px;
 	word-spacing: 0px;
 }
 
-.clearfix{
-	clear:both;
+.clearfix {
+	clear: both;
 }
 
 .mushaf_display a.selected,
-.steps a.selected {font-weight: bold;}
+.steps a.selected {
+	font-weight: bold;
+}
 
-
-.navbar{
+.navbar {
 	margin-bottom: 0;
-
 	&.fixed {
-	  position: fixed;
-	  top:0; 
-	  left:0;
-	  width: 100%; 
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
 	}
 }
 
-.navbar-default{
-	background-image:none;
+.navbar-default {
+	background-image: none;
 	background: $main-color;
 	border-radius: 0;
-	border:none;
+	border: none;
 	z-index: 3;
-
-	.navbar-toggle{
-	    border-color: transparent;
-
-	    .icon-bar{
-		    background-color: #fff;
-		  }
-
-		  &:hover,
-		  &:focus{
-		    background-color: $main-color;
-		  }
-	 } 
-	
-	.navbar-collapse, 
-	.navbar-form{
+	.navbar-toggle {
+		border-color: transparent;
+		.icon-bar {
+			background-color: #fff;
+		}
+		&:hover,
+		&:focus {
+			background-color: $main-color;
+		}
+	}
+	.navbar-collapse,
+	.navbar-form {
 		box-shadow: none;
 		border-color: transparent;
 	}
-
-	.navbar-brand{
+	.navbar-brand {
 		color: #fff;
-		text-shadow:none;
+		text-shadow: none;
 		font-weight: 700;
 		transition: color 1s ease;
 		padding: 6px 20px;
-
 		&:hover,
-		&:focus{
+		&:focus {
 			opacity: .7;
 			// color: darken($main-color-hover,5%);
 		}
 	}
-
-	.navbar-nav{
-
-		& > .active > a, 
-		& > .open > a{
-			background-image:none;
+	.navbar-nav {
+		&>.active>a,
+		&>.open>a {
+			background-image: none;
 		}
-
-		& > li > a{
+		&>li>a {
 			color: #fff;
-			text-shadow:none;
+			text-shadow: none;
 		}
-
-		& > .active > a, 
-		& > .active > a:focus, 
-		& > .active > a:hover{
+		&>.active>a,
+		&>.active>a:focus,
+		&>.active>a:hover {
 			background-color: $main-color-hover;
 			color: #fff;
 		}
-
-		@include media("<tablet", ">=phone") {
-      		margin: 0;
-  		}
-
+		@include media("<tablet",
+		">=phone") {
+			margin: 0;
+		}
 	}
-	
-
 }
 
-
-#main-nav{
+#main-nav {
 	display: none;
 }
 
-.nav-top{
+.nav-top {
 	position: relative;
 	border-bottom: solid 1px #ddd;
 	padding: 10px 10px;
 	background-color: #f6f6f6;
 	z-index: 999;
-
-	@include media("<=tablet", ">=phone") {
-      	padding: 5px 10px;
-  	}
-
-	.btn-surah-trigger{
+	@include media("<=tablet",
+	">=phone") {
+		padding: 5px 10px;
+	}
+	.btn-surah-trigger {
 		width: 100%;
 		background-color: $main-color;
 		color: #fff;
-
 		&:hover,
-		&:focus{
+		&:focus {
 			background-color: $main-color-hover;
 		}
 	}
-
-	#surah-collapse{
-
-		@include media("<=480px", ">=phone") {
-          	margin-top:15px;
-      	}
-		
+	#surah-collapse {
+		@include media("<=480px",
+		">=phone") {
+			margin-top: 15px;
+		}
 	}
-
-	.memoz_options{
+	.memoz_options {
 		position: absolute;
-		top:11px;
+		top: 11px;
 		right: 9px;
 		z-index: 5;
-
-		@include media(">=phone", "<=767px") {
-          	top: 6px;
-      	}
-
-		.btn{
+		@include media(">=phone",
+		"<=767px") {
+			top: 6px;
+		}
+		.btn {
 			background: transparent;
-			border:none;
+			border: none;
 			box-shadow: none;
 			text-shadow: none;
 			color: #999;
-
 			&:hover,
-			&:focus{
+			&:focus {
 				background-color: transparent;
 				color: $main-color;
 			}
 		}
-
-		.dropdown-menu{
+		.dropdown-menu {
 			padding: 10px 15px;
-
-			@include media(">=phone", "<=767px") {
-	          	left: auto;
-	          	right: 0;
-	      	}
-
-			li{
+			@include media(">=phone",
+			"<=767px") {
+				left: auto;
+				right: 0;
+			}
+			li {
 				padding: 10px 0;
-				&.divider{
+				&.divider {
 					padding: 0;
 				}
 			}
 		}
-
-
 	}
 }
 
-.select-surah{
-
-	@include media(">=phone", "<=767px") {
-      	padding-top: 10px;
-  	}
-
-	.form-inline{
+.select-surah {
+	@include media(">=phone",
+	"<=767px") {
+		padding-top: 10px;
+	}
+	.form-inline {
 		margin-bottom: 0;
-
-		.form-group{
+		.form-group {
 			margin: 0 5px 0 0;
-
-			.form-control.search_ayat{
+			.form-control.search_ayat {
 				width: 75px;
-
-				@include media(">=phone", "<=767px") {
-		          	width: 100%;
-		      	}
-
-		      	
+				@include media(">=phone",
+				"<=767px") {
+					width: 100%;
+				}
 			}
-
-			.input-group-addon{
+			.input-group-addon {
 				border-left: none;
 				border-right: none;
 			}
-
-			@include media("<=767px", ">=phone") {
-	          	margin-bottom: 10px;
-	      	}
+			@include media("<=767px",
+			">=phone") {
+				margin-bottom: 10px;
+			}
 		}
-
-		.btn{
+		.btn {
 			background-color: $main-color;
 			color: #fff;
 			font-size: 14px;
 			margin-left: 3px;
-
-			span{
+			span {
 				color: #fff;
 				padding-left: 10px;
 			}
-
-			@include media("<=480px", ">=phone") {
-	          	width: 100%;
-	          	display: block;
-	          	margin-left: 0;
-	      	}
-
+			@include media("<=480px",
+			">=phone") {
+				width: 100%;
+				display: block;
+				margin-left: 0;
+			}
 			&:hover,
-			&:focus{
+			&:focus {
 				background-color: $main-color-hover;
 			}
 		}
-
-		select{
-			@include media(">=tablet", "<=931px") {
-	          	width: 150px;
-	      	}
+		select {
+			@include media(">=tablet",
+			"<=931px") {
+				width: 150px;
+			}
 		}
-
-
 	}
-
 	.checkbox,
 	.form-control,
-	span{
+	span {
 		color: $nav-top-color;
 	}
-
-	.search-title{
-
-		@include media(">=phone", "<=767px") {
-          	margin-bottom:10px;
-          	display: block;
-      	}
-
-	}
-
-	.search_ayat{
-		width:67px;
-		text-align: center;
-	}
-
-}
-
-.body-memo .nav-top .select-surah{
-
-	width: 100%;
-}
-
-.surah-nav{
-	width: 100%;
-	margin:auto;
-	text-align: center;
-
-	.input-group{
-		margin: auto;
-
-		.btn{
-			background-color: $main-color;
-		    border-color: $main-color;
-		    color: #fff;
-		    text-shadow:none;
+	.search-title {
+		@include media(">=phone",
+		"<=767px") {
+			margin-bottom: 10px;
+			display: block;
 		}
 	}
-
+	.search_ayat {
+		width: 67px;
+		text-align: center;
+	}
 }
 
-.wrap .alert{
+.body-memo .nav-top .select-surah {
+	width: 100%;
+}
+
+.surah-nav {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	.input-group {
+		margin: auto;
+		.btn {
+			background-color: $main-color;
+			border-color: $main-color;
+			color: #fff;
+			text-shadow: none;
+		}
+	}
+}
+
+.wrap .alert {
 	width: 80.6%;
-	margin: 20px auto 5px; 
+	margin: 20px auto 5px;
 	transition: all 1s ease;
 	text-align: center;
 	position: relative;
 	z-index: 2;
 }
 
-.wrap{
-	.steps_desc{
-		.alert{
+.wrap {
+	.steps_desc {
+		.alert {
 			width: 100%;
 			margin: 0 0 10px;
 		}
 	}
 }
 
-.pagination > .active > a, 
-.pagination > .active > a:focus, 
-.pagination > .active > a:hover, 
-.pagination > .active > span, 
-.pagination > .active > span:focus, 
-.pagination > .active > span:hover{
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
 	background-color: $main-color;
 	border-color: $main-color;
 }
 
-.pagination > li > a, 
-.pagination > li > span{
+.pagination>li>a,
+.pagination>li>span {
 	color: $gray;
-	border:solid 1px $gray;
+	border: solid 1px $gray;
 	background: transparent;
 }
 
-.pagination>li>a:focus, 
-.pagination>li>a:hover, 
-.pagination>li>span:focus, 
-.pagination>li>span:hover{
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
 	background-color: $main-color;
 	border-color: $main-color;
 	color: #fff;
 }
 
-.pagination .page_free_input{
-	form{
-	  margin:0px;
+.pagination .page_free_input {
+	form {
+		margin: 0px;
 	}
-
-	a{
-	  padding:0px !important;
-	  &:hover,
-	  &:focus{
-	  	background-color: transparent;
-	  }
-	}
-
-	.form-group{
-		height: 28px;
-
-		.input-group-addon{
+	a {
+		padding: 0px !important;
+		&:hover,
+		&:focus {
 			background-color: transparent;
-			border:none;
-			border-left:solid 1px $gray;
+		}
+	}
+	.form-group {
+		height: 28px;
+		.input-group-addon {
+			background-color: transparent;
+			border: none;
+			border-left: solid 1px $gray;
 			height: 28px;
 			transition: background .5s ease;
-
-			&:hover{
-		 		background: $main-color;
-		 		color: #fff;
-		 	}
+			&:hover {
+				background: $main-color;
+				color: #fff;
+			}
 		}
-
-		input{
+		input {
 			border: 0px;
 			width: 50px;
 			text-align: center;
 			height: 26px;
 			border-radius: 0;
 		}
-
-		button{
+		button {
 			height: 0;
 			padding: 0px;
-		 	margin: -7px 0;
-		 	background-color: transparent;
-		 	border:none;
-
-
+			margin: -7px 0;
+			background-color: transparent;
+			border: none;
 		}
 	}
 }
 
-.display-inline-block-xs{
+.display-inline-block-xs {
 	margin: 10px 5px 10px 0;
 }
 
-.surah-action{
+.surah-action {
 	text-align: right;
 	margin: 7px 0 0;
-
-	@include media("<=480px", ">=phone") {
-      	text-align: center;
-      	float: none !important;
-      	width: 100%;
-  	}
-
-	.auto-play{
+	@include media("<=480px",
+	">=phone") {
+		text-align: center;
+		float: none !important;
+		width: 100%;
+	}
+	.auto-play {
 		margin-right: 10px;
 		color: #fff;
-
-		@include media("<=480px", ">=phone") {
-	      	text-align: center;
-	      	margin: 20px 0;
-	      	display: block;
-	  	}
+		@include media("<=480px",
+		">=phone") {
+			text-align: center;
+			margin: 20px 0;
+			display: block;
+		}
 	}
-
-	#playnow{
+	#playnow {
 		color: #999;
 	}
 }
 
-.main-content-wrap{
+.main-content-wrap {
 	width: 100%;
 	margin: 0;
 	display: block;
 	position: relative;
 	min-height: 500px;
-	
-
-	.main-content{
+	.main-content {
 		padding: 20px 0;
-
-		.backdrop{
+		.backdrop {
 			background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center / cover;
 			width: 100%;
 			height: 400px;
 			position: fixed;
-			top:0;
+			top: 0;
 			left: 0;
 			z-index: 1;
-
-			.backdrop-inner{
-				background-color: rgba(31,142,97,0.85);
+			.backdrop-inner {
+				background-color: rgba(31, 142, 97, 0.85);
 				width: 100%;
 				height: 100%;
 			}
 		}
-
-		.single-column{
+		.single-column {
 			width: 80%;
-			margin:0 auto;
+			margin: 0 auto;
 			position: relative;
 			z-index: 2;
-
 			@include media(">=1200px") {
-	          	width: 80%;
-	      	}
-
-			@include media(">=desktop", "<=1200px") {
-	          	width: 90%;
-	      	}
-
-			@include media("<desktop", ">=tablet") {
-	          	width: 95%;
-	      	}
-
-	      	@include media(">=tablet","<=800px") {
-	          	width: 100%;
-	      	}
-
-	      	@include media("<tablet",">=phone") {
-	          	width: 100%;
-	      	}
-
+				width: 80%;
+			}
+			@include media(">=desktop",
+			"<=1200px") {
+				width: 90%;
+			}
+			@include media("<desktop",
+			">=tablet") {
+				width: 95%;
+			}
+			@include media(">=tablet",
+			"<=800px") {
+				width: 100%;
+			}
+			@include media("<tablet",
+			">=phone") {
+				width: 100%;
+			}
 			.page-title {
 				position: relative;
-
-				h1{
-
-					@include media("<tablet",">=phone") {
+				h1 {
+					@include media("<tablet",
+					">=phone") {
 						margin: 0 0 0 40px !important;
 					}
-					
 				}
-				
-				h2{
+				h2 {
 					margin: 0 0 20px;
 					color: #fff;
-
-					@include media("<tablet",">=480px") {
-			          	text-align: center;
-			          	float: none !important;
-			          	width: 100%;
-			          	margin: 0 !important;
-			      	}
-
-			      	@include media("<479px",">=phone") {
-			          	text-align: left;
-			      	}
+					@include media("<tablet",
+					">=480px") {
+						text-align: center;
+						float: none !important;
+						width: 100%;
+						margin: 0 !important;
+					}
+					@include media("<479px",
+					">=phone") {
+						text-align: left;
+					}
 				}
-
-				.gp-link{
-					margin-top:-7px;
-
-					@include media("<tablet",">=phone") {
-			          	position: absolute;
-			          	top:-5px;
-			          	right: 5px;
-			          	float: none !important;
-			          	width: auto;
-			      	}
-
-
+				.gp-link {
+					margin-top: -7px;
+					@include media("<tablet",
+					">=phone") {
+						position: absolute;
+						top: -5px;
+						right: 5px;
+						float: none !important;
+						width: auto;
+					}
 				}
-				
-
 			}
-
-			.nav-top{
-				#surah-collapse{
+			.nav-top {
+				#surah-collapse {
 					@include media(">=1234px") {
-			          	width: 65%;
-			          	float: left;
-			      	}
-					@include media(">=1201px","<=1233px") {
-			          	width: 70%;
-			          	float: left;
-			      	}
-			      	@include media(">=1098px","<=1200px") {
-			          	width: 65%;
-			          	float: left;
-			      	}
-			      	@include media(">=932px","<=1097px") {
-			          	width: 75%;
-			          	float: left;
-			      	}
-			      	@include media(">=768px","<=931px") {
-			          	width: 70%;
-			          	float: left;
-			      	}
+						width: 65%;
+						float: left;
+					}
+					@include media(">=1201px",
+					"<=1233px") {
+						width: 70%;
+						float: left;
+					}
+					@include media(">=1098px",
+					"<=1200px") {
+						width: 65%;
+						float: left;
+					}
+					@include media(">=932px",
+					"<=1097px") {
+						width: 75%;
+						float: left;
+					}
+					@include media(">=768px",
+					"<=931px") {
+						width: 70%;
+						float: left;
+					}
 				}
 			}
 		}
 	}
 }
 
-body.body-memo{
-
-	.mushaf{
-		padding-top:1px;
+body.body-memo {
+	.mushaf {
+		padding-top: 1px;
 	}
 }
 
-.mushaf{
+.mushaf {
 	// padding-bottom: 15px;
 	position: relative;
 	margin: 0 auto;
 	background-color: #fff;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
 	right: 0;
-
-	.mushaf_display{
-		margin:0 auto;
+	.mushaf_display {
+		margin: 0 auto;
 		text-align: center;
 		position: relative;
 		display: block;
 		width: 100%;
-
 		.btn-group {
 			display: block;
 			width: 100.3%;
-
-			.btn{
+			.btn {
 				border-color: $main-color;
 				color: $main-color;
 				width: 33.3%;
 				border-radius: 0;
-				border:none;
+				border: none;
 				padding: 13px 0;
 				font-size: 16px;
-
 				&.active,
-				&:active{
+				&:active {
 					background-color: $main-color;
-				    border-color: $main-color;
-				    color: #fff;
-				    text-shadow: none;
-				    background-image: none;
-				    box-shadow: none;
+					border-color: $main-color;
+					color: #fff;
+					text-shadow: none;
+					background-image: none;
+					box-shadow: none;
 				}
-
 				&:hover,
-				&:focus{
+				&:focus {
 					background-color: $main-color;
 					color: #fff;
 				}
 			}
-
 		}
 	}
-
-	.ayat_section{
+	.ayat_section {
 		border-bottom: dashed 1px #ddd;
 		// padding: 15px 10px;
 		position: relative;
 		overflow: hidden;
 		transition: all 1s ease;
-
-		@include media("<tablet", ">=phone") {
-			transition:height .35s ease;
+		@include media("<tablet",
+		">=phone") {
+			transition: height .35s ease;
 		}
-
-		&:last-child{
+		&:last-child {
 			border-bottom: none;
 		}
-		
-
-		&.playing{
-			&.playing .arabic{
-				background-color: darken(hsla(103, 44%, 89%, 0.82),10%) !important;
-				color: darken($main-color,20%);
-			} 
-			&.playing .trans{
+		&.playing {
+			&.playing .arabic {
+				background-color: darken(hsla(103, 44%, 89%, 0.82), 10%) !important;
+				color: darken($main-color, 20%);
+			}
+			&.playing .trans {
 				background-color: hsla(103, 44%, 89%, 0.82) !important;
-				color: darken($main-color,20%);
-			} 
-		  
+				color: darken($main-color, 20%);
+			}
 		}
-
-		.head_surah{
+		.head_surah {
 			text-align: center;
 			padding-bottom: 10px;
-
-			@include media("<tablet", ">=phone") {
+			@include media("<tablet",
+			">=phone") {
 				font-size: 30px;
-	      		padding:0px;
+				padding: 0px;
 			}
-
-			
 		}
-
-		.surah_name{
+		.surah_name {
 			padding: 10px;
 		}
-
-		&.playing{
-			background-color: rgba(255,255,255,0.8);
+		&.playing {
+			background-color: rgba(255, 255, 255, 0.8);
 		}
-
-		.arabic{
+		.arabic {
 			text-align: right;
 			color: #2B4538;
 			width: 100%;
 			line-height: 65px;
 			-moz-animation-duration: 1s;
-	        -webkit-animation-duration: 1s;
-	        transition: all 1s ease;
-	        background-color: #f6f6f6;
-	        padding: 10px;
-	        position:relative;
-	        opacity: 1;
-
-	        @include media("<tablet", ">=phone") {
+			-webkit-animation-duration: 1s;
+			transition: all 1s ease;
+			background-color: #f6f6f6;
+			padding: 10px;
+			position: relative;
+			opacity: 1;
+			@include media("<tablet",
+			">=phone") {
 				font-size: 33px;
-    			padding:20px 10px 20px 0;
-    			transition:height .35s ease;
+				padding: 20px 10px 20px 0;
+				transition: height .35s ease;
 			}
-
-	        .content_ayat{
-	        	display: inline-block;
-	        	padding: 0 15px;
-	        	line-height: 50px;
-	        	direction: rtl;
-	        }
-
-	        .no_ayat_arabic{
-	        	display: inline;
-	        	text-align: center;
-	        	// background: url(../images/frame-ayat.png) no-repeat center center;
-		        width: 37px;
-		        height: 46px;
-		        font-size: 14px; 
-		        letter-spacing:-2;
-		        position: relative;
-
-		        img{
-		        	position: absolute;
-		        	top:-9px;
-		        	left:-12px;
-		        }
-
-			    &.visible-xs{
-			    	display: inline;
-			    }
-	        }
-
-	        .no_ayat_arabic_memoz{
-	        	display: inline-block !important;
-	        	text-align: center;
-	        	// background: url(../images/frame-ayat.png) no-repeat center center;
-		        width: 37px;
-		        height: 46px;
-		        font-size: 14px; 
-		        letter-spacing:-2;
-		        position: relative;
-		        margin-right: 10px;
-
-		        img{
-		        	position: absolute;
-		        	top:5px;
-		        	left:2px;
-		        }
-
-			    &.visible-xs{
-			    	display: inline-block;
-			    }
-	        }
-
-	        .ayat_arabic{
-	        	padding-left:20px;
-	        }
-	        .ayat_arabic_memoz{
-	        	padding-left: 0;
-	        }
-	        .ayat_arabic_memoz:last-child{
-	        	padding-left: 0px;
-	        }
+			.content_ayat {
+				display: inline-block;
+				padding: 0 15px;
+				line-height: 50px;
+				direction: rtl;
+			}
+			.no_ayat_arabic {
+				display: inline;
+				text-align: center;
+				// background: url(../images/frame-ayat.png) no-repeat center center;
+				width: 37px;
+				height: 46px;
+				font-size: 14px;
+				letter-spacing: -2;
+				position: relative;
+				img {
+					position: absolute;
+					top: -9px;
+					left: -12px;
+				}
+				&.visible-xs {
+					display: inline;
+				}
+			}
+			.no_ayat_arabic_memoz {
+				display: inline-block !important;
+				text-align: center;
+				// background: url(../images/frame-ayat.png) no-repeat center center;
+				width: 37px;
+				height: 46px;
+				font-size: 14px;
+				letter-spacing: -2;
+				position: relative;
+				margin-right: 10px;
+				img {
+					position: absolute;
+					top: 5px;
+					left: 2px;
+				}
+				&.visible-xs {
+					display: inline-block;
+				}
+			}
+			.ayat_arabic {
+				padding-left: 20px;
+			}
+			.ayat_arabic_memoz {
+				padding-left: 0;
+			}
+			.ayat_arabic_memoz:last-child {
+				padding-left: 0px;
+			}
 		}
-
-		.trans{
+		.trans {
 			text-align: left;
 			color: rgba(43, 69, 56, 0.7);
 			font-size: 16px;
 			width: 100%;
 			line-height: 24px;
 			-moz-animation-duration: 1s;
-	        -webkit-animation-duration: 1s;
-	        transition: all 1s ease;
-	        background-color: #fefefe;
-	        padding: 10px;
-	        position:relative;
-	        opacity: 1;
-
-	        @include media("<tablet", ">=phone") {
+			-webkit-animation-duration: 1s;
+			transition: all 1s ease;
+			background-color: #fefefe;
+			padding: 10px;
+			position: relative;
+			opacity: 1;
+			@include media("<tablet",
+			">=phone") {
 				font-size: 15px;
-    			padding: 20px 0px 20px 10px;
-    			transition:height .35s ease;
+				padding: 20px 0px 20px 10px;
+				transition: height .35s ease;
 			}
-
-	        .trans_content{
-	        	padding: 0 15px;
-	        
-	        }
-
+			.no_ayat,
+			.content_ayat {
+				display: inline-block;
+			}
+			.trans_content {
+				padding: 0 15px;
+			}
 		}
-
-		.puff
-		{
-        	z-index: 1;
-        	height: 0 !important;
-        	padding: 0;
-        	opacity: 0;
-        }
-
-		.go{
-			height:100%;
+		.puff {
+			z-index: 1;
+			height: 0 !important;
+			padding: 0;
+			opacity: 0;
+		}
+		.go {
+			height: 100%;
 			z-index: 2;
 			padding: 20px 10px 40px;
-
 		}
-
-		.action-footer{
+		.action-footer {
 			position: relative;
 			width: 100%;
 			height: 35px;
 			z-index: 5;
 			background-color: #eee;
-
-		    .btn{
+			.btn {
 				margin: 0;
 				background-color: #eee;
 				color: #aaa;
-				border-left:solid 1px #ddd;
+				border-left: solid 1px #ddd;
 				border-radius: 0;
 				padding: 7px 20px;
-
-				&:first-child{
+				&:first-child {
 					border-left: none;
 				}
-
 				&:hover,
-				&:focus{
+				&:focus {
 					background-color: $main-color;
 					color: #fff;
 				}
 			}
 		}
-
 	}
-
 }
 
-.nav-top-collapse{
+.nav-top-collapse {
 	display: block;
-    height: auto !important;
-    overflow: visible !important;
-    padding-bottom: 0;
+	height: auto !important;
+	overflow: visible !important;
+	padding-bottom: 0;
 }
 
-.fa-3{
+.fa-3 {
 	font-size: 4em;
 }
 
-.toggle-player{
+.toggle-player {
 	position: fixed;
 	bottom: -10px;
-    right:0;
-    z-index: 999;
-    padding: 10px 0;
-
-    .btn-toggle-player{
-    	border:solid 1px $main-color;
-    	color: $main-color;
-    	text-align: center;
-    	background: #fff;
-    	border-radius: 0;
-
-    	&:hover,
-    	&:focus{
-    		background-color: $main-color;
-    		color: #333;
-    	}
-    }
+	right: 0;
+	z-index: 999;
+	padding: 10px 0;
+	.btn-toggle-player {
+		border: solid 1px $main-color;
+		color: $main-color;
+		text-align: center;
+		background: #fff;
+		border-radius: 0;
+		&:hover,
+		&:focus {
+			background-color: $main-color;
+			color: #333;
+		}
+	}
 }
 
-.memoz_player{
+.memoz_player {
 	padding: 5px 20px;
 	margin: 15px 0;
 }
 
-.steps_desc{
+.steps_desc {
 	color: #999;
 	font-size: 16px;
 	padding: 0 10px;
 }
 
-.mushaf-hafalan{
-
-	.step-wrap{
+.mushaf-hafalan {
+	.step-wrap {
 		width: 100%;
-		margin:7px 0;
-
-		.steps{
-			padding:0 10px;
+		margin: 7px 0;
+		.steps {
+			padding: 0 10px;
 			margin: 10px 0;
 			display: block;
-
-			.btn{
-
+			.btn {
 				@include boxy($btn-normal...);
 				width: 20%;
-
 				&:hover,
 				&:focus,
-				&.selected{
-
+				&.selected {
 					@include boxy($btn-hover...);
-
 				}
-
 			}
 		}
-
 	}
-
 }
 
-.hafalan-actions{
-	margin:7px 0;
+.hafalan-actions {
+	margin: 7px 0;
 }
 
-.modal{
-
-	.modal-header{
-			
-			background-color: rgba(77,181,120,.8);
-			
-			h4{
+.modal {
+	.modal-header {
+		background-color: rgba(77, 181, 120, .8);
+		h4 {
+			color: #fff;
+			font-size: 20px;
+			text-transform: uppercase;
+		}
+		.close {
+			color: #fff;
+			opacity: .6;
+			&:hover,
+			&:focus {
+				opacity: 1;
+			}
+		}
+	}
+	&.content-mode {
+		.modal-header {
+			background-color: rgba(77, 181, 120, .8);
+			h4 {
 				color: #fff;
 				font-size: 20px;
 				text-transform: uppercase;
 			}
-
-			.close{
-				color:#fff;
-				opacity: .6;
-
-				&:hover,
-				&:focus{
-					opacity: 1;
-				}
-			}
-		}
-
-	&.content-mode{
-
-		.modal-header{
-			
-			background-color: rgba(77,181,120,.8);
-			
-			h4{
+			.close {
 				color: #fff;
-				font-size: 20px;
-				text-transform: uppercase;
-			}
-
-			.close{
-				color:#fff;
 				opacity: .6;
-
 				&:hover,
-				&:focus{
+				&:focus {
 					opacity: 1;
 				}
 			}
 		}
-
-		.modal-body{
-
-			a{
+		.modal-body {
+			a {
 				color: $main-color;
-
 				&:hover,
-				&:focus{
+				&:focus {
 					color: $main-color-hover;
 				}
 			}
-
 		}
 	}
-
-	&.share-mode{
-
-		.modal-header{
-			
-			background-color: rgba(77,181,120,.8);
-			
-			h4{
+	&.share-mode {
+		.modal-header {
+			background-color: rgba(77, 181, 120, .8);
+			h4 {
 				color: #fff;
 				font-size: 20px;
 				text-transform: uppercase;
 			}
-
-			.close{
-				color:#fff;
+			.close {
+				color: #fff;
 				opacity: .6;
-
 				&:hover,
-				&:focus{
+				&:focus {
 					opacity: 1;
 				}
 			}
 		}
-
-		.modal-body{
-
-			a{
+		.modal-body {
+			a {
 				width: 33.3%;
 				position: relative;
 				display: block;
 				float: left;
 				padding: 10px;
 				color: #fff;
-
-				@include media("<=439px",">=phone") {
-					float:none;
+				@include media("<=439px",
+				">=phone") {
+					float: none;
 					width: 100%;
 				}
-
 				&:before,
-				&:after{
+				&:after {
 					position: absolute;
 				}
-
-				&:before{
+				&:before {
 					top: 11px;
 					left: 65px;
 				}
-
-				&:after{
+				&:after {
 					bottom: 15px;
 					left: 65px;
 					padding: 5px 8px;
 					border-radius: 7px;
 				}
-
 				&:hover,
-				&:focus{
+				&:focus {
 					opacity: .85;
 				}
 			}
-
-			a:nth-child(1){
-
+			a:nth-child(1) {
 				background-color: $fb-color;
-
-				&:before{
-					content:"Facebook";
+				&:before {
+					content: "Facebook";
 				}
-
-				&:after{
+				&:after {
 					content: "Share";
-					background-color: darken($fb-color,10%);
+					background-color: darken($fb-color, 10%);
 				}
 			}
-
-			a:nth-child(2){
-
+			a:nth-child(2) {
 				background-color: $tw-color;
-
-				&:before{
-					content:"Twitter";
+				&:before {
+					content: "Twitter";
 				}
-
-				&:after{
+				&:after {
 					content: "Share";
-					background-color: darken($tw-color,10%);
+					background-color: darken($tw-color, 10%);
 				}
 			}
-
-			a:nth-child(3){
-
+			a:nth-child(3) {
 				background-color: $gp-color;
-
-				&:before{
-					content:"Google Plus";
+				&:before {
+					content: "Google Plus";
 				}
-
-				&:after{
+				&:after {
 					content: "Share";
-					background-color: darken($gp-color,10%);
+					background-color: darken($gp-color, 10%);
 				}
 			}
 		}
 	}
-
-	&.content-mode{
-		.modal-dialog{
+	&.content-mode {
+		.modal-dialog {
 			width: 90%;
-			margin-top:3%;
+			margin-top: 3%;
 		}
 	}
-	.modal-dialog{
+	.modal-dialog {
 		width: 500px;
-		margin-top:11%;
-
-		@include media("<=767px",">=phone") {
+		margin-top: 11%;
+		@include media("<=767px",
+		">=phone") {
 			width: auto;
 		}
-
-		.modal-content{
+		.modal-content {
 			border-radius: 0;
 		}
 	}
-
-	.modal-header{
+	.modal-header {
 		border-bottom: none;
 		text-transform: capitalize;
 		text-align: center;
 	}
-
-	.modal-footer{
-		border-top:none;
+	.modal-footer {
+		border-top: none;
 	}
-
 }
 
-.modal.login-mode{
-
-	.modal-dialog{
-
-		background: url("../images/cal1.png") no-repeat center center / cover ;
-		.modal-content{
+.modal.login-mode {
+	.modal-dialog {
+		background: url("../images/cal1.png") no-repeat center center / cover;
+		.modal-content {
 			background-color: rgba(255, 255, 255, 0.9);
 		}
-
 	}
-
-	.modal-footer{
+	.modal-footer {
 		background: lighten($main-color, 10%);
 		color: #fff;
 	}
-	
 }
 
-.modal.register-mode{
-
-	.modal-dialog{
-
-		background: url("../images/cal1.png") no-repeat center center / cover ;
-		.modal-content{
+.modal.register-mode {
+	.modal-dialog {
+		background: url("../images/cal1.png") no-repeat center center / cover;
+		.modal-content {
 			background-color: rgba(255, 255, 255, 0.9);
 		}
-
 	}
-
-	.modal-footer{
+	.modal-footer {
 		background: lighten($main-color, 10%);
 		color: #fff;
 	}
-	
 }
 
 .login_form .btn-group,
-.register_form .btn-group{
+.register_form .btn-group {
 	width: 100%;
 }
 
 .login_form .btn-group .btn,
-.register_form .btn-group .btn{
+.register_form .btn-group .btn {
 	width: 50%;
 	border-radius: 0;
 }
 
-.login_form{
-
+.login_form {
 	width: 80%;
-	margin:0 auto;
-
-	.btn-masuk{
+	margin: 0 auto;
+	.btn-masuk {
 		@include boxy($btn-normal...);
-
 		&:hover,
 		&:focus,
-		&.selected{
-
+		&.selected {
 			@include boxy($btn-hover...);
-
 		}
-
 	}
-
-	.btn-daftar{
+	.btn-daftar {
 		@include boxy($btn-hover...);
-
 		&:hover,
 		&:focus,
-		&.selected{
-
+		&.selected {
 			@include boxy($btn-normal...);
-
 		}
-		
 	}
-
 }
 
-.register_form{
-
+.register_form {
 	padding: 35px 45px 45px;
 	margin: 20px auto;
 	background: #fff;
-
-	.promo{
-		border:solid 1px darken($main-color,20%);
+	.promo {
+		border: solid 1px darken($main-color, 20%);
 		width: 45%;
 		height: 250px;
-		position:relative;
+		position: relative;
 		overflow: hidden;
-
-		.buku{
-			width:100%;
-			height:250px;
+		.buku {
+			width: 100%;
+			height: 250px;
 			position: absolute;
-			top:0;
-			left:0;
+			top: 0;
+			left: 0;
 			background: url(../images/alqurantikrar.png) no-repeat center center;
-
-			@include media("<tablet",">=phone") {
-				
-				height:400px;
+			@include media("<tablet",
+			">=phone") {
+				height: 400px;
 			}
 		}
-
-		.promo-txt{
-			padding:10px;
+		.promo-txt {
+			padding: 10px;
 			position: relative;
 			z-index: 2;
-			background: rgba(77,181,120,.85);
+			background: rgba(77, 181, 120, .85);
 			height: 250px;
-			color:#fff;
-			padding:15px;
+			color: #fff;
+			padding: 15px;
 			font-size: 16px;
-
-			h3{
-				text-align:center;
+			h3 {
+				text-align: center;
 				color: yellow;
 				font-weight: 600;
 			}
-
-			@include media("<tablet",">=phone") {
-				
-				height:auto;
+			@include media("<tablet",
+			">=phone") {
+				height: auto;
 			}
 		}
-
-		@include media("<tablet",">=phone") {
+		@include media("<tablet",
+		">=phone") {
 			width: 100%;
-			float:none !important;
+			float: none !important;
 			margin-bottom: 30px;
-			height:auto;
+			height: auto;
 		}
 	}
-
-	form{
-		width:50%;
+	form {
+		width: 50%;
 		margin-top: 15px;
-
-		@include media("<tablet",">=phone") {
+		@include media("<tablet",
+		">=phone") {
 			width: 90%;
-			float:none !important;
-			margin:0 auto;
+			float: none !important;
+			margin: 0 auto;
 		}
 	}
-
-	.btn-masuk{
+	.btn-masuk {
 		@include boxy($btn-normal...);
-
 		&:hover,
 		&:focus,
-		&.selected{
-
+		&.selected {
 			@include boxy($btn-hover...);
-
 		}
-
 	}
-
-	.btn-daftar{
+	.btn-daftar {
 		@include boxy($btn-normal...);
-
 		&:hover,
 		&:focus,
-		&.selected{
-
+		&.selected {
 			@include boxy($btn-hover...);
-			
-
 		}
-		
 	}
-
 }
 
-.form-horizontal{
-
-	.form-group{
+.form-horizontal {
+	.form-group {
 		margin: -16px -15px 15px;
-
-		.form-control{
+		.form-control {
 			border-radius: 0;
-			height:auto;
+			height: auto;
 			padding: 12px;
 		}
-	}	
+	}
 }
 
-.input-group { 
-	width: 100%; 
+.input-group {
+	width: 100%;
 }
 
-.btn-breadcrumb{
-
+.btn-breadcrumb {
 	.btn:not(:last-child):after {
-	  content: " ";
-	  display: block;
-	  width: 0;
-	  height: 0;
-	  border-top: 17px solid transparent;
-	  border-bottom: 17px solid transparent;
-	  border-left: 10px solid white;
-	  position: absolute;
-	  top: 50%;
-	  margin-top: -17px;
-	  left: 100%;
-	  z-index: 3;
+		content: " ";
+		display: block;
+		width: 0;
+		height: 0;
+		border-top: 17px solid transparent;
+		border-bottom: 17px solid transparent;
+		border-left: 10px solid white;
+		position: absolute;
+		top: 50%;
+		margin-top: -17px;
+		left: 100%;
+		z-index: 3;
 	}
-
 	.btn:not(:last-child):before {
-	  content: " ";
-	  display: block;
-	  width: 0;
-	  height: 0;
-	  border-top: 17px solid transparent;
-	  border-bottom: 17px solid transparent;
-	  border-left: 10px solid #4db578;
-	  position: absolute;
-	  top: 50%;
-	  margin-top: -17px;
-	  margin-left: 1px;
-	  left: 100%;
-	  z-index: 3;
+		content: " ";
+		display: block;
+		width: 0;
+		height: 0;
+		border-top: 17px solid transparent;
+		border-bottom: 17px solid transparent;
+		border-left: 10px solid #4db578;
+		position: absolute;
+		top: 50%;
+		margin-top: -17px;
+		margin-left: 1px;
+		left: 100%;
+		z-index: 3;
 	}
-
 	/** The Spacing **/
-
 	.btn {
-	  padding:6px 12px 6px 24px;
-	  box-shadow: none;
+		padding: 6px 12px 6px 24px;
+		box-shadow: none;
 	}
 	.btn:first-child {
-	  padding:6px 6px 6px 10px;
+		padding: 6px 6px 6px 10px;
 	}
 	.btn:last-child {
-	  padding:6px 18px 6px 24px;
+		padding: 6px 18px 6px 24px;
 	}
-
 	/** Default button **/
 	.btn.btn-default.selected:not(:last-child):after {
-	  border-left: 10px solid #4db578;
+		border-left: 10px solid #4db578;
 	}
 	.btn.btn-default:not(:last-child):after {
-	  border-left: 10px solid #fff;
+		border-left: 10px solid #fff;
 	}
 	.btn.btn-default:not(:last-child):before {
-	  border-left: 10px solid #4db578;
+		border-left: 10px solid #4db578;
 	}
 	.btn.btn-default:hover:not(:last-child):after {
-	  border-left: 10px solid #4db578;
+		border-left: 10px solid #4db578;
 	}
 	.btn.btn-default:hover:not(:last-child):before {
-	  border-left: 10px solid #fff;
+		border-left: 10px solid #fff;
 	}
-
 }
 
-.detail_top{
+.detail_top {
 	text-align: center;
 	color: #1C9A71 !important;
 	background-color: #dff0d8;
-
 	.btn {
-	    margin: 0;
-	    background-color: #1fa67a;
-	    color: #fff;
-	    border-left: solid 1px #1b926c;
-
-	    &:hover,
-	    &:focus {
-			background-color:#1b926c;
-			color:#fff
+		margin: 0;
+		background-color: #1fa67a;
+		color: #fff;
+		border-left: solid 1px #1b926c;
+		&:hover,
+		&:focus {
+			background-color: #1b926c;
+			color: #fff
 		}
-			
 	}
 }
 
-.no_ayat_arabic{font-size: 20px}
+.no_ayat_arabic {
+	font-size: 20px
+}
 
 .surah_title {
 	background-color: hsla(103, 44%, 89%, 0.82);
 	color: #3C763D;
 	padding-bottom: 10px;
-
 	.surah_name,
-	.head_surah{
+	.head_surah {
 		text-align: center;
 	}
-
-	.surah_name  {
-	  margin-bottom: 10px;
-
-	  strong {
-		  font-size: 16px;
+	.surah_name {
+		margin-bottom: 10px;
+		strong {
+			font-size: 16px;
 		}
 	}
-
 }
 
-.input-group{
-
-  
-	@include media("<=767px",">=585px") {
+.input-group {
+	@include media("<=767px",
+	">=585px") {
 		width: 90%;
 		float: left;
 		margin-right: 20px;
 	}
-
-	@include media("<=584px",">=481px") {
+	@include media("<=584px",
+	">=481px") {
 		width: 85%;
 		float: left;
 		margin-right: 20px;
 	}
-
-	@include media("<=480px",">=phone") {
+	@include media("<=480px",
+	">=phone") {
 		width: 80%;
 		float: left;
 		margin-right: 20px;
 	}
 }
-.form-group{
 
-	@include media("<tablet",">=phone") {
+.form-group {
+	@include media("<tablet",
+	">=phone") {
 		margin-bottom: 0px;
 	}
 }
 
-.footer{
+.footer {
 	text-align: center;
 	width: 100%;
 	position: relative;
 	margin-bottom: 30px;
-
-	ul{
+	ul {
 		list-style: none;
-		li{
+		li {
 			display: inline-block;
 			margin-right: 10px;
-			
-			span{
-				color: darken($main-color,10%);
+			span {
+				color: darken($main-color, 10%);
 			}
-			a{
+			a {
 				color: $main-color;
 				&:hover,
-				&:focus{
-					color: lighten($main-color,10%);
+				&:focus {
+					color: lighten($main-color, 10%);
 				}
 			}
 		}
@@ -1531,129 +1304,115 @@ body.body-memo{
 }
 
 .dropdown-backdrop {
-  position: static;
+	position: static;
 }
 
 #preloader {
-    width: 100%;
-    height: 1700px;
-    z-index: 10000;
-    position: absolute;
-    overflow: overlay;
-    background-color: rgba(77,181,120,.87);
-    text-align: center;
+	width: 100%;
+	height: 1700px;
+	z-index: 10000;
+	position: absolute;
+	overflow: overlay;
+	background-color: rgba(77, 181, 120, .87);
+	text-align: center;
 }
 
-.btn-green{
+.btn-green {
 	background-color: $main-color;
 	color: #fff;
 	font-size: 14px;
 	margin-left: 3px;
-
-	@include media("<=480px", ">=phone") {
-      	width: 100%;
-      	display: block;
-      	margin-left: 0;
-  	}
-
+	@include media("<=480px",
+	">=phone") {
+		width: 100%;
+		display: block;
+		margin-left: 0;
+	}
 	&:hover,
-	&:focus{
+	&:focus {
 		background-color: $main-color-hover;
 	}
 }
 
-.search-result{
-
-	.search-item{
-		p{
+.search-result {
+	.search-item {
+		p {
 			padding: 10px 20px;
 			margin: 0;
-			color: darken($gray,10%);
-
+			color: darken($gray, 10%);
 		}
-		.search-footer{
+		.search-footer {
 			padding: 5px 20px;
 			background-color: $light-gray;
-			
 			.fa,
-			a{
-				color: $main-color;;
+			a {
+				color: $main-color;
+				;
 			}
 		}
 	}
 }
 
-.btn-search-surah{
+.btn-search-surah {
 	margin-left: 10px;
 	@include boxy($btn-hover...);
-
 	&:hover,
 	&:focus,
-	&.selected{
-
+	&.selected {
 		background-color: $main-color-hover;
 		border: solid 1px $main-color-hover;
 		color: #fff;
-
 	}
-
-	@include media("<tablet",">=phone") {
-      	width: 40px;
-      	margin: 5px 0;
-  	}
-
+	@include media("<tablet",
+	">=phone") {
+		width: 40px;
+		margin: 5px 0;
+	}
 }
 
-.btn-setting{
+.btn-setting {
 	margin-left: 10px;
 	@include boxy($btn-hover...);
-
 	&:hover,
 	&:focus,
-	&.selected{
-
+	&.selected {
 		background-color: $main-color-hover;
 		border: solid 1px $main-color-hover;
 		color: #fff;
-
 	}
-
-	@include media("<tablet",">=phone") {
-      	float: right !important;
-      	width: 40px;
-      	margin: 5px 0;
-  	}
-
-  	&.btn-juz{
-  		@include media("<tablet",">=phone") {
-	      	margin-left: 6px;
-	      	float: left !important;
-	  	}
-  		
-  	}
+	@include media("<tablet",
+	">=phone") {
+		float: right !important;
+		width: 40px;
+		margin: 5px 0;
+	}
+	&.btn-juz {
+		@include media("<tablet",
+		">=phone") {
+			margin-left: 6px;
+			float: left !important;
+		}
+	}
 }
 
-.juz-list{
-	li{
+.juz-list {
+	li {
 		float: left;
 		width: 33.3%;
 		margin-bottom: 10px;
-		a{
+		a {
 			display: block;
-
-			.juz-arabic{
+			.juz-arabic {
 				font-weight: bold;
 			}
-
-			.juz-indo{
+			.juz-indo {
 				display: block;
 				color: #aaa;
 			}
-
 			&:hover,
 			&:focus,
 			&:hover .juz-indo,
-			&:focus .juz-indo{
+			&:focus .juz-indo {
 				color: $main-color;
 				text-decoration: none;
 			}
@@ -1661,278 +1420,269 @@ body.body-memo{
 	}
 }
 
-.mushaf_header{
+.mushaf_header {
 	background-color: #efefef;
 	width: 100%;
 	margin: 0 auto;
 	padding: 6px 0;
 	position: relative;
 	border-bottom: solid 1px #ddd;
-
-		.btn{
-			position: absolute;
-			top:5px;
-			background:transparent;
-			color: #999;
-			text-shadow: none;
-			box-shadow: none;
-			border: solid 1px #ccc;
-			border-radius: 0;
-
-			&:hover,
-			&:focus{
-				background-color: $main-color;
-				color: #fff;
-				border: 1px solid transparent;
-			}
-
-			@include media("<=767px",">=phone") {
-		      	top: 8px;
-		  	}
+	.btn {
+		position: absolute;
+		top: 5px;
+		background: transparent;
+		color: #999;
+		text-shadow: none;
+		box-shadow: none;
+		border: solid 1px #ccc;
+		border-radius: 0;
+		&:hover,
+		&:focus {
+			background-color: $main-color;
+			color: #fff;
+			border: 1px solid transparent;
 		}
-
-	    .btn:first-child{
-	    	left: 0;
-	    	border-left:none;
-	    }
-	    .btn:last-child{
-	    	right: 0;
-	    	border-right:none;
-	    }
-
-	    .mids{
-	    	width: 50%;
-	    	margin: 0 auto;
-	    	text-align: center;
-
-	    	@include media("<=767px",">=phone") {
-		      	width: 100%;
-		  	}
-
-	    	span{
-	    		border:solid 1px #ccc;
-	    		padding: 5px 25px;
-	    		display: inline-block;
-	    		color: #999;
-	    		margin: 0 -2px;
-
-	    		@include media("<=767px",">=phone") {
-			      	padding: 5px 10px;
-			  	}
-	    	}
-	    }
+		@include media("<=767px",
+		">=phone") {
+			top: 8px;
+		}
+	}
+	.btn:first-child {
+		left: 0;
+		border-left: none;
+	}
+	.btn:last-child {
+		right: 0;
+		border-right: none;
+	}
+	.mids {
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+		@include media("<=767px",
+		">=phone") {
+			width: 100%;
+		}
+		span {
+			border: solid 1px #ccc;
+			padding: 5px 25px;
+			display: inline-block;
+			color: #999;
+			margin: 0 -2px;
+			@include media("<=767px",
+			">=phone") {
+				padding: 5px 10px;
+			}
+		}
+	}
 }
 
-.quran-player{
+.quran-player {
 	margin: auto;
-    left: 0;
-    right: 0;
-    position: fixed;
-    bottom: 0;
-    background-color: rgba(255,255,255,0.8);
-    z-index:99;
-
-    @include media(">=1200px") {
-      	width: 80%;
-  	}
-
-	@include media(">=desktop", "<1200px") {
-      	width: 90%;
-  	}
-
-	@include media("<desktop", ">=801px") {
-      	width: 95%;
-  	}
-
-  	@include media(">=tablet","<=800px") {
-      	width: 100%;
-  	}
-
-  	@include media("<tablet",">=phone") {
-      	width: 100%;
-  	}
+	left: 0;
+	right: 0;
+	position: fixed;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+	z-index: 99;
+	@include media(">=1200px") {
+		width: 80%;
+	}
+	@include media(">=desktop",
+	"<1200px") {
+		width: 90%;
+	}
+	@include media("<desktop",
+	">=801px") {
+		width: 95%;
+	}
+	@include media(">=tablet",
+	"<=800px") {
+		width: 100%;
+	}
+	@include media("<tablet",
+	">=phone") {
+		width: 100%;
+	}
 }
 
-.quran_player{
+.quran_player {
 	height: 50px;
 	// position: fixed;
 	// bottom:0;
 	// left: 0;
 	background: transparent;
-	z-index:99;
-
+	z-index: 99;
 	@include media(">=1200px") {
-      	width: 100%;
-  	}
-
-  	@include media(">=desktop", "<=1200px") {
-      	width: 90%;
-  	}
-
-	@include media("<=380px", ">=phone") {
+		width: 100%;
+	}
+	@include media(">=desktop",
+	"<=1200px") {
+		width: 90%;
+	}
+	@include media("<=380px",
+	">=phone") {
 		width: 320px;
 	}
-
-	@include media("<desktop", ">=801px") {
-      	width: 95%;
-  	}
-
-  	@include media(">=tablet","<=800px") {
-      	width: 100%;
-  	}
-
-	@include media("<tablet", ">=381px") {
-		
+	@include media("<desktop",
+	">=801px") {
+		width: 95%;
 	}
-
-	.jp-video{
-
+	@include media(">=tablet",
+	"<=800px") {
+		width: 100%;
+	}
+	@include media("<tablet",
+	">=381px") {}
+	.jp-video {
 		@include media(">=1200px") {
-	      	width: 100%;
-	  	}
-
-	  	@include media(">=desktop", "<=1200px") {
-	      	width: 90%;
-	  	}
-
-	  	@include media("<desktop", ">=801px") {
-      		width: 95%;
-	  	}
-
-	  	@include media(">=tablet","<=800px") {
-	      	width: 100%;
-	  	}
-
-		@include media("<=380px", ">=phone") {
-			width: 320px;
-		}
-
-		@include media("<tablet", ">=381px") {
 			width: 100%;
 		}
-
+		@include media(">=desktop",
+		"<=1200px") {
+			width: 90%;
+		}
+		@include media("<desktop",
+		">=801px") {
+			width: 95%;
+		}
+		@include media(">=tablet",
+		"<=800px") {
+			width: 100%;
+		}
+		@include media("<=380px",
+		">=phone") {
+			width: 320px;
+		}
+		@include media("<tablet",
+		">=381px") {
+			width: 100%;
+		}
 		background:transparent;
 		margin: 0 auto;
-
-		.jp-progress{
+		.jp-progress {
 			height: 3px;
-			background-color: rgba(191,225,178,0.82) !important;
+			background-color: rgba(191, 225, 178, 0.82) !important;
 		}
-		.jp-current-time{
+		.jp-current-time {
 			margin-left: 0;
 		}
-		.jp-duration{
+		.jp-duration {
 			margin-right: 0;
 		}
 	}
-
-	.jp-controls-holder{
+	.jp-controls-holder {
 		top: -12px;
-    	left: -45px;
-
+		left: -45px;
 		@include media(">=1200px") {
-	      	width: 100% !important;
-	  	}
-
-	  	@include media(">=desktop", "<=1200px") {
-	      	width: 90% !important;
-	  	}
-
-	  	@include media("<desktop", ">=801px") {
-	      	width: 95% !important;
-	  	}
-
-	  	@include media(">=tablet","<=800px") {
-	      	width: 100% !important;
-	  	}
-
-		@include media("<=380px", ">=phone") {
+			width: 100% !important;
+		}
+		@include media(">=desktop",
+		"<=1200px") {
+			width: 90% !important;
+		}
+		@include media("<desktop",
+		">=801px") {
+			width: 95% !important;
+		}
+		@include media(">=tablet",
+		"<=800px") {
+			width: 100% !important;
+		}
+		@include media("<=380px",
+		">=phone") {
 			width: 320px !important;
 			top: -12px;
 			left: 0;
 		}
-
-		@include media("<tablet", ">=381px") {
+		@include media("<tablet",
+		">=381px") {
 			width: 100% !important;
 		}
-
-    }
-
-	.jp-audio, 
-	.jp-audio-stream, 
-	.jp-video{
-		border:none;
 	}
-
-	.jp-video{
-		.jp-type-playlist{
-			.jp-controls{
+	.jp-audio,
+	.jp-audio-stream,
+	.jp-video {
+		border: none;
+	}
+	.jp-video {
+		.jp-type-playlist {
+			.jp-controls {
 				margin: auto;
 				float: none;
-
-				@include media("<=400px", ">=phone") {
-					margin-left: 185px ;
+				@include media("<=400px",
+				">=phone") {
+					margin-left: 185px;
 				}
 			}
 		}
 	}
-
-	.jp-interface{
+	.jp-interface {
 		// border-top:1px solid $main-color !important;
 		// border-left:1px solid $main-color !important;
 		// border-right:1px solid $main-color !important;
-		border:none !important;
+		border: none !important;
 		background-color: transparent;
 	}
-
-	.jp-play-bar{
+	.jp-play-bar {
 		background: #2e6e48 !important;
 	}
-
 }
 
-.memoz_nav{
+.memoz_nav {
 	width: 98%;
 	margin: 0 auto 10px;
-
-	@include media("<=480px", ">=phone") {
+	@include media("<=480px",
+	">=phone") {
 		width: 88%;
 	}
-
-	.btn{
+	.btn {
 		color: $main-color;
 		border: solid 1px $main-color;
 		display: inline-block;
 		width: 19.7%;
-
 		&:hover,
-		&:focus{
+		&:focus {
 			color: #fff;
 			background: $main-color-hover;
 		}
-
-		@include media("<=480px", ">=phone") {
+		@include media("<=480px",
+		">=phone") {
 			width: auto;
 			padding: 4px 5px;
 		}
 	}
 }
 
-.puzzle{
+.puzzle {
 	background-color: #DDD;
-	
-	.content_ayat{
-		.arabic-puzzle{
-			float:left;
-			width:auto;
+	.content_ayat {
+		display: inline-block;
+		.arabic-puzzle {
+			float: left;
+			width: auto;
 			padding: 5px !important;
 			margin: 2px;
 			border: dotted 1px #333;
-
-			&:empty{
+			&:empty {
 				padding: 0 !important;
-				border:none;
+				border: none;
 			}
 		}
 	}
+}
+
+::-moz-selection {
+	background: $main-color !important;
+	color: $txtColor !important;
+}
+
+::-webkit-selection {
+	background: $main-color !important;
+	color: $txtColor !important;
+}
+
+::selection {
+	background: $main-color !important;
+	color: $txtColor !important;
 }
