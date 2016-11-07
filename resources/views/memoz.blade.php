@@ -61,7 +61,7 @@
 					</form>
 				</div>
 			</div>
-			@if(!empty($ayats) && Request::segment(2)!='correction')
+			@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user))
 				<div class="select-surah pull-left">
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
@@ -74,7 +74,7 @@
 				</div>
 			@endif
 			
-				@if(!empty($ayats) && Request::segment(2)!='correction')
+				@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user))
 
 				<div class="memoz_options">
 					<div class="btn-group">
