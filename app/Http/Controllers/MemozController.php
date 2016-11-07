@@ -362,12 +362,23 @@ class MemozController extends Controller
         $dataRecord['correction'] = array_filter(explode('|', $dataRecord['correction']));
         $dataRecord['correction'] = json_encode($dataRecord['correction']);
 
+        // memo detail
+        $MemoModel = new Memo;
+        $memoDetail = $MemoModel->getDetail($dataRecord['id_memo_target']);
+        $countCorrection = $memoDetail->count_correction;
+
         $MemoCorrection = new MemoCorrection;
         $save = $MemoCorrection->store($dataRecord);
         if($save){
             $dataHTML['id'] = $save;
             $dataHTML['status'] = true;
             $dataHTML['message'] = 'Koreksi berhasil di kirimkan';
+            $countCorrection++;
+
+            $dataUpdate['count_correction'] = $countCorrection;
+            $dataUpdate['id'] = $dataRecord['id_memo_target'];
+            // update stats
+            $MemoModel->edit($dataUpdate);
         }else{
             $dataHTML['id'] = '';
             $dataHTML['status'] = false;

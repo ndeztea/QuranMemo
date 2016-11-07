@@ -16,6 +16,7 @@ class Memo extends Model
     public $date_start;
     public $date_end;
     public $status;
+    public $count_correction;
     public $note;
 
     protected $fillable = array('id_user', 'surah_start','ayat_end','ayat_start','date_start','note');

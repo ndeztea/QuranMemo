@@ -61,7 +61,7 @@
 					</form>
 				</div>
 			</div>
-			@if(!empty($ayats))
+			@if(!empty($ayats) && Request::segment(2)!='correction'))
 				<div class="select-surah pull-left">
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
@@ -73,7 +73,7 @@
 				</div>
 			@endif
 			
-				@if(!empty($ayats))
+				@if(!empty($ayats) && Request::segment(2)!='correction'))
 
 				<div class="memoz_options">
 					<div class="btn-group">
@@ -284,8 +284,10 @@
 		<div class="player">
 			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" id="audio"></audio>
 		</div>
+		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%"></canvas>
 		<input id="base64Decode" type="hidden" value="">
+		@endif
 	</div>
 </div>
 
@@ -396,7 +398,7 @@ $(document).ready(function(){
 	  });
 	});
 	@else
-	QuranJS.stepMemoz('correction');
+	QuranJS.stepMemoz('correction','{{Request::segment(6)}}');
 	@endif
 </script>
 <script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
