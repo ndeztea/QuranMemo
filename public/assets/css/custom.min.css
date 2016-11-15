@@ -563,9 +563,9 @@ ul.juz-list {
     font-size: 12px
 }
 
-.modal-dialog {
+/*.modal-dialog {
     margin: 1px auto!important
-}
+}*/
 
 .arabic.juz_head {
     background-color: rgba(77, 181, 120, 0.28)!important;
@@ -660,9 +660,9 @@ ul.juz-list {
     color: #fff;
     font-size: 30px;
 }
-.login_form .btn-group .btn, .register_form .btn-group .btn{
+/*.login_form .btn-group .btn, .register_form .btn-group .btn{
     width: 100%;
-}
+}*/
 
 .memoz-list .memoz-item .memoz-body{
 	padding: 5px;

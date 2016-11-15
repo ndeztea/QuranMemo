@@ -1007,7 +1007,9 @@ body.body-memo {
 
 .modal.login-mode {
 	.modal-dialog {
-		background: url("../images/cal1.png") no-repeat center center / cover;
+		width: 350px;
+		margin-top: 30px;
+		background-color: #fff;
 		.modal-content {
 			background-color: rgba(255, 255, 255, 0.9);
 		}
@@ -1044,22 +1046,38 @@ body.body-memo {
 
 .login_form {
 	width: 80%;
-	margin: 0 auto;
-	.btn-masuk {
-		@include boxy($btn-normal...);
-		&:hover,
-		&:focus,
-		&.selected {
-			@include boxy($btn-hover...);
+	margin: 30px auto 0;
+	.form-control {
+		border: solid 1px #fff;
+		border-bottom: dashed 1px #ddd;
+		box-shadow: none;
+		margin-bottom: 7px;
+		&:focus {
+			border-bottom: solid 2px $main-color;
 		}
 	}
-	.btn-daftar {
-		@include boxy($btn-hover...);
-		&:hover,
-		&:focus,
-		&.selected {
-			@include boxy($btn-normal...);
+	.btn-group {
+		margin-top: 55px;
+		padding-top: 20px;
+		.btn {
+			width: 50%;
+			color: $main-color;
+			font-size: 20px;
+			background: transparent;
+			border: solid 1px #fff;
+			box-shadow: none !important;
+			&:hover,
+			&:focus,
+			&.selected {
+				color: darken(yellow, 10%);
+			}
 		}
+	}
+	.btn-masuk {
+		text-align: left;
+	}
+	.btn-daftar {
+		text-align: right;
 	}
 }
 
