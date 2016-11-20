@@ -139,7 +139,7 @@ $(document).ready(function(){
 				{
 					
 					title:"section_{{$ayat->page}}_{{$ayat->surah}}_0",
-					mp3: "{{url('sound/'.$coo_muratal.'/001001.mp3')}}"
+					mp3: "{{urlMp3('sound/'.$coo_muratal.'/001001.mp3')}}"
 				},
 				@endif
 			@endif
@@ -150,8 +150,7 @@ $(document).ready(function(){
 				$halMuratal = $ayat->page + 1;
 				$ayatMp3 = str_pad($ayat->surah, 3, "0", STR_PAD_LEFT).str_pad($ayat->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
 			?>
-			//mp3: "{{url('sound/hal_'.$halMuratal.'/'.$ayatMp3)}}"
-			mp3: "{{url('sound/'.$coo_muratal.'/'.$ayatMp3)}}"
+			mp3: "{{urlMp3('sound/'.$coo_muratal.'/'.$ayatMp3)}}"
 		},
 		<?php $prev_surah = $ayat->surah?>
 		@endforeach

@@ -24,3 +24,9 @@ function dayDiff($dateStart,$dateEnd){
 
 	return $diff;
 }
+
+function urlMp3($file){
+	$mp3_url = config('app.mp3_url');
+	return $mp3_url.$file;
+
+}

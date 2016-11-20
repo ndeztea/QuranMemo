@@ -1,7 +1,8 @@
 <?php
 
 return [
-
+    
+    'mp3_url' => 'http://localhost/QuranNote/public/',
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

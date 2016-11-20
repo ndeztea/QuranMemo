@@ -132,7 +132,7 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
-    public function list(Request $request){
+    public function listing(Request $request){
         $MemoModel = new Memo();
 
         $data['list']  = $MemoModel->getList($request->session()->get('sess_id'));
