@@ -23,14 +23,19 @@
 										<div class="buku">
 										</div>
 										<div class="promo-txt">
-											<h3>Dapatkan Tafsir Ringkas Ibnu Katsir</h3>
-											<p>Syaratnya adalah perbanyak menghafal menggunakan QuranMemo mulai tanggal 1 Oktober 2016 sampai 1 bulan kedepan, QuranMemo akan menyeleksi beberapa pengguna yang banyak menghafal dan menggunakan QuranMemo :) mari semangat terus dalam menghafal dan membumikan Al-Quran.</p>
+											<h3>Dapatkan Al Quran Madinah dan Terjemah yg dilengkapi "Menghafal Cara Madinah"</h3>
+											<p>Syaratnya adalah perbanyak menghafal menggunakan QuranMemo mulai tanggal 1 November 2016 sampai akhir Desember. QuranMemo akan menyeleksi beberapa pengguna yang banyak menghafal dan menggunakan QuranMemo :) mari semangat terus dalam menghafal dan membumikan Al-Quran.</p>
 										</div>
 									</div>
 								</div>
+								
 								<form class="form-horizontal pull-right" action="{{url('register/process')}}" method="post">
+
 									<input type="hidden" name="device_id" id="register_device_id" value=""/>
 									<div class="form-group">
+										<p class="alert alert-info" style="width:100%;margin:0px 0px 10px 0px">
+											Untuk yang sudah mendaftarkan email sebelumnya, tidak perlu mendaftar lagi, tapi ID device Antum sudah masuk kedalam database kami, lanjutkan saja menggunakan QuranMemo, insyaAllah tetap akan kami seleksi. Jazakallah Khair...
+										</p>
 										<label for="name" class="control-label sr-only">Full Name</label>
 										<input type="name" class="form-control" name="name" id="name" aria-label="Full Name" placeholder="Nama Lengkap Antum" value="{{ old('name')}}"/>
 									</div>

@@ -13,6 +13,12 @@ use File;
 
 class MushafController extends Controller
 {
+    protected $request;
+
+    public function __construct(Request $request) {
+        $this->request = $request;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -67,10 +73,19 @@ class MushafController extends Controller
         //echo $_COOKIE['coo_mushaf_bookmark_url'].'=='.$_SERVER['REQUEST_URI'];
         //die();
         $data['cookies'] = getCookie();
+        
         //setcookie('coo_muratal_new',1);
-        if(empty($_COOKIE['coo_promo_3_tafsir'])){
-            setcookie('coo_promo_3_tafsir',1);
+        $Request = new Request();
+        if($this->request->segment(2)=='' && $this->request->segment(1)=='mushaf'){
+            if(empty($_COOKIE['coo_promo_4_tafsir'])){
+                setcookie('coo_promo_4_tafsir',1);
+            }elseif(isset($_COOKIE['coo_promo_4_tafsir']) && empty($_COOKIE['coo_new_feature_mushaf'])){
+
+                setcookie('coo_new_feature_mushaf',1);
+            }
         }
+        
+
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
         // show view template
