@@ -27,18 +27,23 @@ class MushafController extends Controller
         $arr1 = explode(';', $contents);
         foreach ($arr1 as $arr11) {
             $arr2 = explode('VALUES ', $arr11);
+            //print_r($arr2);
             //echo @$arr2[1].'<br>';
-            if(isset($arr2[1])){
-             $arr3 = explode(',', @$arr2[1]);
-                    $arr3_3 = str_replace(')','',@$arr3[3]);
-                    if($arr3[1]!=1 && $arr3[2]==1){
-                        $arr3_3 = str_replace('بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', '', $arr3_3);
-                    }
+            if(isset($arr2[0])){
+                $arr3 = explode(',', @$arr2[0]);
+                //echo '<pre>';
+                //print_r($arr3);
+                $arr3_3 = str_replace(')','',@$arr3[6]);
+                //$arr3_3 = str_replace('\'','',@$arr3_3);
+                if($arr3[4]!=1 && $arr3[5]==1){
+                    echo 'in';
+                    $arr3_3 = str_replace('بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ', '', $arr3_3);
+                }
 
-                    $sql = "UPDATE quran SET text_arabic=".$arr3_3." WHERE surah=".@$arr3[1]." AND ayat=".@$arr3[2].";";
-                    echo $sql.'<br>';
-                }     
-            }
+                $sql = "UPDATE quran SET text_arabic=".$arr3_3." WHERE surah=".@$arr3[4]." AND ayat=".@$arr3[5].";";
+                echo $sql.'<br>';
+            }     
+        }
            
         
         die();*/
