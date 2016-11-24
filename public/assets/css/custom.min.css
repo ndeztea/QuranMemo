@@ -209,6 +209,12 @@ input[type="number"] {
 .highlight-red {
     color: #FF0037
 }
+.highlight-orange{
+    color: #fdb300;
+}
+.highlight-green{
+    color: #4db578;
+}
 
 .count-search .badge {
     color: #FFF
@@ -631,7 +637,7 @@ ul.juz-list {
 }
 
 .puzzle {
-    font-size: 33px
+    font-size: 23px
 }
 
 .arabic a {
@@ -794,4 +800,8 @@ ul.juz-list {
 }
 .blur-ayat.wrong{
     color: transparent;
+}
+.pause-marks{
+    position: relative;
+    top:8px;
 }

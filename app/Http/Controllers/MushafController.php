@@ -20,7 +20,7 @@ class MushafController extends Controller
      */
     public function index($page=1)
     {
-        /*$directory = '/Volumes/Jobs/www/QuranNote/public/Arabic.sql';
+        /*$directory = '/Volumes/Jobs/www/QuranNote/public/quran-uthmani.sql';
         $contents = File::get($directory);
 
         //$files = File::allFiles($directory);
@@ -35,7 +35,7 @@ class MushafController extends Controller
                 //print_r($arr3);
                 $arr3_3 = str_replace(')','',@$arr3[6]);
                 //$arr3_3 = str_replace('\'','',@$arr3_3);
-                if($arr3[4]!=1 && $arr3[5]==1){
+                if(@$arr3[4]!=1 && @$arr3[5]==1){
                     echo 'in';
                     $arr3_3 = str_replace('بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ', '', $arr3_3);
                 }
