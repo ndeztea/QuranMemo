@@ -216,6 +216,11 @@ input[type="number"] {
     color: #4db578;
 }
 
+.pause-marks{
+    position: relative;
+    top:8px;
+}
+
 .count-search .badge {
     color: #FFF
 }
@@ -801,7 +806,4 @@ ul.juz-list {
 .blur-ayat.wrong{
     color: transparent;
 }
-.pause-marks{
-    position: relative;
-    top:8px;
-}
+
