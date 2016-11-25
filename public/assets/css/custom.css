@@ -1,10 +1,11 @@
 @font-face {
-     font-family: 'me_quran';
-     src: url(../fonts/me_quran.ttf);
- }
+    font-family: 'me_quran';
+    src: url(../fonts/me_quran.ttf)
+}
+
 @media (max-width: 767px) and (min-width: 270px) {
     .main-content-wrap .main-content .single-column .page-title h1.pull-left {
-        margin: -10px 10px 10px 10px !important;
+        margin: -10px 10px 10px!important
     }
     .mushaf .ayat_section .arabic {
         padding: 0!important
@@ -29,7 +30,7 @@
     }
     .arabic,
     .head_surah {
-        font-family: "me_quran","Lateef", "Traditional Arabic";
+        font-family: "me_quran", "Lateef", "Traditional Arabic";
         padding-bottom: 0
     }
     .mushaf .ayat_section .trans {
@@ -143,7 +144,7 @@ input[type="number"] {
 }
 
 .mushaf-hafalan.mushaf .puzzle .arabic-puzzle {
-    font-family: "me_quran","Lateef", "Traditional Arabic";
+    font-family: "me_quran", "Lateef", "Traditional Arabic";
     padding: 0 2px 2px!important
 }
 
@@ -208,6 +209,19 @@ input[type="number"] {
 .highlight-red {
     color: #FF0037
 }
+
+.highlight-orange{
+    color: #fdb300;
+}
+.highlight-green{
+    color: #4db578;
+}
+
+.pause-marks{
+    position: relative;
+    top:8px;
+}
+
 
 .count-search .badge {
     color: #FFF
@@ -651,19 +665,22 @@ ul.juz-list {
 .header_page:hover {
     background-color: #4DB578;
     cursor: pointer;
-    color: #FFFFFF !important;
-    border : 1px solid #4DB578;
-}
-.muqodimah b{
-    font-size: 16px;
-    margin-bottom: 10px;
+    color: #FFF!important;
+    border: 1px solid #4DB578
 }
 
-.main-content-wrap .main-content .single-column .page-title h1{
+.muqodimah b {
+    font-size: 16px;
+    margin-bottom: 10px
+}
+
+.main-content-wrap .main-content .single-column .page-title h1 {
     margin: 0 0 20px;
     color: #fff;
-    font-size: 30px;
+    font-size: 30px
 }
-.login_form .btn-group .btn, .register_form .btn-group .btn{
-    width: 100%;
+
+.login_form .btn-group .btn,
+.register_form .btn-group .btn {
+    width: 100%
 }
