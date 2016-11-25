@@ -152,7 +152,8 @@
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
-                        <li><a href="{{url('register')}}">Daftar Buku Gratis</a></li>
+                        <li><a href="{{url('register')}}">Daftar</a></li>
+                        <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>
                         <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li-->
                         
                     </ul>
