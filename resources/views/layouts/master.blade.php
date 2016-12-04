@@ -58,13 +58,23 @@
         <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
-
+        <style>
+        .tanwin1:nth-letter(1){
+            position: relative;
+            top:-15px;
+            left: 2px;
+        }
+        .tanwin2:nth-letter(1){
+            position: relative;
+            top:1px;
+            left: 2px;
+        }
+        </style>
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
-
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
-
+        
         <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
         
@@ -215,11 +225,12 @@
     <script src="{{url('assets/js/jquery-ui.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{url('assets/js/jquery.highlight.min.js')}}"></script>
-
+    <script src="{{url('assets/js/jQuery.nthEverything.min.js')}}"></script>  
     <script type="text/javascript">
           $(document).ready(function(){
                 $('#preloader').hide();
                 QuranJS.redHightlight();
+                QuranJS.tajwidHighlight();
             });
             //var vph = $(window).height();
             //$('body').css('height',vph/2).css('overflow','hidden');

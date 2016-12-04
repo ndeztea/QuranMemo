@@ -165,12 +165,15 @@ var QuranJS = {
 	},
 
 	redHightlight:function (){
+		// Allah mark
 		$('.trans').highlight('Allah','highlight-red', { wordsOnly: true });
         $('.arabic').highlight('للَّهِ','highlight-red');
         $('.arabic').highlight('ٱللَّهُ','highlight-red');
         $('.arabic').highlight('ٱللَّهَ','highlight-red');
         $('.arabic').highlight('لِلَّهِ','highlight-red');
 
+
+        // mark stop
         $('.arabic').highlight('ۛ','highlight-red pause-marks');
         $('.arabic').highlight('ۘ','highlight-red');
         $('.arabic').highlight('ۗ','highlight-red pause-marks');
@@ -179,7 +182,14 @@ var QuranJS = {
         $('.arabic').highlight('ۖ','highlight-orange');
 
         $('.arabic').highlight('ۙ','highlight-green pause-marks');
-        
+
+        // tajwid mark (Ikhfa)
+        /*var arrIkhfa = ['ت','د','ذ','ز','ث','ج','س','ش','ص','ض','ط','ظ','ف','ق','ك'];
+        for (i = 0; i < arrIkhfa.length; i++) {
+        	// nun-mati
+        	$('.arabic').highlight('نْ'+arrIkhfa[i],'highlight-orange');
+		}*/
+		   
 	},
 
 	memorized:function(ayat) {

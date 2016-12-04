@@ -203,18 +203,29 @@ input[type="number"] {
 }
 
 .highlight {
-    background-color: #B0FF33
+    background-color: #B0FF33;
+    display: inline-block;
 }
 
 .highlight-red {
-    color: #FF0037
+    color: #FF0037;
+    display: inline-block;
 }
 
 .highlight-orange{
     color: #da9a00;
+    display: inline-block;
 }
 .highlight-green{
     color: #4db578;
+    display: inline-block;
+}
+
+.tanwin1{
+}
+
+.tanwin1::before{
+    content: '\200D';
 }
 
 .pause-marks{

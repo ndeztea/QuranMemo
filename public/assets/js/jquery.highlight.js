@@ -21,7 +21,7 @@ jQuery.fn.highlight = function(pat,cssClass) {
    var pos = node.data.toUpperCase().indexOf(pat);
    pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
    if (pos >= 0) {
-    var spannode = document.createElement('span');
+    var spannode = document.createElement('div');
     cssClass = cssClass==''?'highlight':cssClass;
     spannode.className = cssClass;//'highlight';
     var middlebit = node.splitText(pos);
@@ -46,7 +46,7 @@ jQuery.fn.highlight = function(pat,cssClass) {
 
 jQuery.fn.removeHighlight = function(cssClass) {
   cssClass = cssClass==''?'highlight':cssClass;
- return this.find("span."+cssClass).each(function() {
+ return this.find("div."+cssClass).each(function() {
   this.parentNode.firstChild.nodeName;
   with (this.parentNode) {
    replaceChild(this.firstChild, this);
