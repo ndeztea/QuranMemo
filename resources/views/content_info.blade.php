@@ -14,7 +14,7 @@
 	</tr>
 	<tr class="row2">
 		<th class="col0 center highlight-green">  لا  </th>
-		<td class="center"> Tidak boleh berhenti berhenti <br> contoh. <a style="color:green" href="{{url('mushaf/surah/16/57')}}"> An-Nahl : 76</a></td>
+		<td class="center"> Tidak boleh berhenti <br> contoh. <a style="color:green" href="{{url('mushaf/surah/16/57')}}"> An-Nahl : 76</a></td>
 		
 	</tr>
 	<tr class="row3">

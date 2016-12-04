@@ -140,7 +140,7 @@ input[type="number"] {
 }
 
 .puzzle {
-    padding: 0 25px
+    padding: 5px 25px
 }
 
 .mushaf-hafalan.mushaf .puzzle .arabic-puzzle {
@@ -211,7 +211,7 @@ input[type="number"] {
 }
 
 .highlight-orange{
-    color: #fdb300;
+    color: #da9a00;
 }
 .highlight-green{
     color: #4db578;

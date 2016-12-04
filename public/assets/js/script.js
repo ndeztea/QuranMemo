@@ -171,12 +171,12 @@ var QuranJS = {
         $('.arabic').highlight('ٱللَّهَ','highlight-red');
         $('.arabic').highlight('لِلَّهِ','highlight-red');
 
-        $('.arabic').highlight(' ۛ','highlight-red pause-marks');
+        $('.arabic').highlight('ۛ','highlight-red pause-marks');
         $('.arabic').highlight('ۘ','highlight-red');
         $('.arabic').highlight('ۗ','highlight-red pause-marks');
         $('.arabic').highlight('ۚ','highlight-red pause-marks');
 
-        $('.arabic').highlight(' ۖ','highlight-orange');
+        $('.arabic').highlight('ۖ','highlight-orange');
 
         $('.arabic').highlight('ۙ','highlight-green pause-marks');
         
