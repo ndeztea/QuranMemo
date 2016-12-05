@@ -286,7 +286,7 @@
             }*/
 
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_promo_4_tafsir']}}'==''){
+            if('{{@$_COOKIE['coo_promo_5_ali']}}'==''){
                 QuranJS.callModal('buku');
             }else{
                 if('{{@$_COOKIE['coo_new_feature_tajwid']}}'==''){
