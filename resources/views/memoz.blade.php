@@ -297,6 +297,9 @@ $(document).ready(function(){
 			}
 			//show & hide search setting
 
+			@if(!empty($_COOKIE['coo_tajwid']))
+				QuranJS.tajwidHighlight();
+			@endif
 		});
 
 		var stickyOffset = $('.qm-navbar').offset().top;
@@ -333,11 +336,6 @@ $(document).ready(function(){
 	}
 	@if((@$ayat->surah==1))
 	QuranJS.headSurah = 1;
-	@endif
-
-	
-	@if(!empty($_COOKIE['coo_tajwid']))
-		QuranJS.tajwidHighlight();
 	@endif
 
 	$(function() {

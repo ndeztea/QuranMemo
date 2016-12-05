@@ -30,7 +30,7 @@
     <label for="sc-1-1-8" data-value="Ya" onclick="QuranJS.showTajwid('true')">Ya</label>
     <label for="sc-1-1-9" data-value="Tidak" onclick="QuranJS.showTajwid('false')">Tidak</label>
   </div>
-  <div class="tajwid_modified" style="display:none"><a href="javascript:location.reload()" style="color:#4DB578">Refresh</a> dahulu untuk merubah tampilan tajwid.</div>
+  <div class="tajwid_modified" style="display:none"><a href="javascript:location.reload()" style="color:#4DB578">Refresh</a> dahulu untuk merubah tampilan tajwid.</div>  
   <br>
 
 </div>
