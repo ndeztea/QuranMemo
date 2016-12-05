@@ -70,7 +70,7 @@
 				<div class="memoz_options">
 
 					<div class="btn-group">
-					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val())" class="btn btn-green-small">
+					  <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-green-small">
 					    &nbsp;<i class="fa fa-cog"></i>&nbsp;
 					  </button>
 					  
@@ -81,6 +81,7 @@
 				@endif
 				<input type="hidden" name="repeat" class="repeat" value="1" />
 				<input type="hidden" name="muratal" class="muratal" value="1" />
+				<input type="hidden" name="tajwid" class="tajwid" value=""/>
 
 			</div>
 			<!-- /nav-top -->
@@ -332,6 +333,11 @@ $(document).ready(function(){
 	}
 	@if((@$ayat->surah==1))
 	QuranJS.headSurah = 1;
+	@endif
+
+	
+	@if(!empty($_COOKIE['coo_tajwid']))
+		QuranJS.tajwidHighlight();
 	@endif
 
 	$(function() {

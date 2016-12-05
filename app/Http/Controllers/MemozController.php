@@ -97,10 +97,13 @@ class MemozController extends Controller
     public function config(){
         $repeat = $_GET['repeat'];
         $muratal = $_GET['muratal'];
+        $tajwid = $_GET['tajwid'];
+
 
         $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
         $data['muratal'] = $muratal;
         $data['repeat'] = $repeat;
+        $data['tajwid'] = $tajwid;
 
 
         $dataHTML['modal_title'] = 'Setting Memoz';

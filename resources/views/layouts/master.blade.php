@@ -230,7 +230,6 @@
           $(document).ready(function(){
                 $('#preloader').hide();
                 QuranJS.redHightlight();
-                QuranJS.tajwidHighlight();
             });
             //var vph = $(window).height();
             //$('body').css('height',vph/2).css('overflow','hidden');

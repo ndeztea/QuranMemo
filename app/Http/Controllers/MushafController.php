@@ -408,12 +408,14 @@ class MushafController extends Controller
         $automated_play = $_GET['automated_play'];
         $footer_action = $_GET['footer_action'];
         $muratal = $_GET['muratal'];
+        $tajwid = $_GET['tajwid'];
 
         $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
         $data['mushaf_layout'] = $mushaf_layout;
         $data['automated_play'] = $automated_play;
         $data['footer_action'] = $footer_action;
         $data['muratal'] = $muratal;
+        $data['tajwid'] = $tajwid;
 
 
         $dataHTML['modal_title'] = 'Setting Mushaf';
