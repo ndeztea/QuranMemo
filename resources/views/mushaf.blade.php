@@ -91,12 +91,13 @@ $prev_surah = '';
 										  <input type="hidden" name="automated_play" class="automated_play" value="true"/>
 										  <input type="hidden" name="footer_action" class="footer_action" value="true"/>
 										  <input type="hidden" name="muratal" class="muratal" value="true"/>
+										  <input type="hidden" name="tajwid" class="tajwid" value=""/>
 										</div>
 									</div>
 								</div>
 							</div>
 							
-							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val()+'&muratal='+jQuery('.muratal').val())" class="btn btn-default btn-setting pull-right">
+							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-default btn-setting pull-right">
 								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
 							</button> 
 							<button type="button" href="#"  onclick="QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="btn btn-default btn-setting pull-right btn-bookmark">
@@ -340,6 +341,10 @@ $prev_surah = '';
 
 		@if(isset($_COOKIE['coo_sound']))
 			QuranJS.configMuratal('{{$_COOKIE['coo_sound']}}')
+		@endif
+
+		@if(!empty($_COOKIE['coo_tajwid']))
+			QuranJS.tajwidHighlight();
 		@endif
 
 	});

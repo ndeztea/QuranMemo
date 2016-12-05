@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta property="description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
         <meta name="description" content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}">
-        <meta property="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
+        <meta property="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari, Tajwid berwarna, Aplikasi tajwid berwarna" />
         <meta name="keywords"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta property="title"         content="QuranMemo - {{isset($header_title)?$header_title:''}}" />
         <meta property="og:url" content="{{Request::url()}}" />
@@ -50,6 +50,19 @@
 
         <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
 
+        <style>
+        .tanwin1:nth-letter(1){
+            position: relative;
+            top:-15px;
+            left: 2px;
+        }
+        .tanwin2:nth-letter(1){
+            position: relative;
+            top:1px;
+            left: 2px;
+        }
+        </style>
+
         <!-- Optional theme -->
         <link rel="stylesheet" href="{{url('assets/css/font-awesome.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/bootstrap-theme.min.css')}}">
@@ -60,17 +73,18 @@
         <link rel="stylesheet" href="{{url('assets/css/bootstrap-datepicker.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
-
+        
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
-
-        <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
-        <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
         <script type="text/javascript">
             QuranJS.siteUrl = '{{url('')}}';
         </script>
 
+
+        <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
+        <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
+        
         @if(session('searchSurah'))
         <script>
             $(document).ready(function(){
@@ -222,6 +236,7 @@
     <script src="{{url('assets/js/jquery.highlight.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap-datepicker.en-GB.min.js')}}"></script>
+    <script src="{{url('assets/js/jQuery.nthEverything.min.js')}}"></script>  
 
     <script type="text/javascript">
           $(document).ready(function(){

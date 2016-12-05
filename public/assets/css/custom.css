@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'me_quran';
+    src: url(../fonts/me_quran.ttf);
+}
+
 @media (max-width: 767px) and (min-width: 270px) {
     .main-content-wrap .main-content .single-column .page-title h1.pull-left {
         margin: -10px 10px 10px 10px !important;
@@ -139,7 +144,7 @@ input[type="number"] {
 }
 
 .mushaf-hafalan.mushaf .puzzle .arabic-puzzle {
-    font-family: "Lateef", "Traditional Arabic";
+    font-family: "me_quran","Lateef", "Traditional Arabic";
     padding: 0 2px 2px!important
 }
 
@@ -204,6 +209,17 @@ input[type="number"] {
 .highlight-red {
     color: #FF0037
 }
+.highlight-orange{
+    color: #fdb300;
+}
+.highlight-green{
+    color: #4db578;
+}
+
+.pause-marks{
+    position: relative;
+    top:8px;
+}
 
 .count-search .badge {
     color: #FFF
@@ -224,10 +240,10 @@ input[type="number"] {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    /*-moz-user-select: -moz-none;
+    -moz-user-select: -moz-none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    user-select: none;*/
+    user-select: none;
     -moz-transition-duration: .8s;
     -o-transition-duration: .8s;
     -webkit-transition-duration: .8s;
@@ -239,134 +255,134 @@ input[type="number"] {
     -webkit-tap-highlight-color: transparent
 }
 
-.segmented-control>input {
+.segmented-control > input {
     position: absolute;
     left: -10000px;
     opacity: 0
 }
 
-.segmented-control>input[type='checkbox']~label {
+.segmented-control > input[type='checkbox'] ~ label {
     -moz-transition-duration: 0;
     -o-transition-duration: 0;
     -webkit-transition-duration: 0;
     transition-duration: 0
 }
 
-.segmented-control>input[type='checkbox']~label:before {
+.segmented-control > input[type='checkbox'] ~ label:before {
     opacity: 0
 }
 
-.segmented-control>input:disabled:nth-child(1)~label:nth-of-type(1) {
+.segmented-control > input:disabled:nth-child(1) ~ label:nth-of-type(1) {
     opacity: .3;
     cursor: not-allowed
 }
 
-.segmented-control>input:nth-child(1):checked~label:nth-of-type(1):after,
-.segmented-control>input:nth-child(1):checked~label:nth-of-type(1):before {
+.segmented-control > input:nth-child(1):checked ~ label:nth-of-type(1):after,
+.segmented-control > input:nth-child(1):checked ~ label:nth-of-type(1):before {
     opacity: 1
 }
 
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(1):after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(1):before,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(1)~label:after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(1)~label:before {
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1) ~ label:before {
     left: 0
 }
 
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(2):after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(2):before,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(2)~label:after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(2)~label:before {
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:before {
     left: 0
 }
 
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(3):after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(3):before,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(3)~label:after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(3)~label:before {
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before {
     left: 0
 }
 
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(4):after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(4):before,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(4)~label:after,
-.segmented-control>input:nth-child(1):checked~label:first-of-type:nth-last-of-type(4)~label:before {
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
     left: 0
 }
 
-.segmented-control>input:disabled:nth-child(2)~label:nth-of-type(2) {
+.segmented-control > input:disabled:nth-child(2) ~ label:nth-of-type(2) {
     opacity: .3;
     cursor: not-allowed
 }
 
-.segmented-control>input:nth-child(2):checked~label:nth-of-type(2):after,
-.segmented-control>input:nth-child(2):checked~label:nth-of-type(2):before {
+.segmented-control > input:nth-child(2):checked ~ label:nth-of-type(2):after,
+.segmented-control > input:nth-child(2):checked ~ label:nth-of-type(2):before {
     opacity: 1
 }
 
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(2):after,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(2):before,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(2)~label:after,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(2)~label:before {
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2):after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2):before,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:before {
     left: 50%
 }
 
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(3):after,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(3):before,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(3)~label:after,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(3)~label:before {
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before {
     left: 33.33333%
 }
 
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(4):after,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(4):before,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(4)~label:after,
-.segmented-control>input:nth-child(2):checked~label:first-of-type:nth-last-of-type(4)~label:before {
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
     left: 25%
 }
 
-.segmented-control>input:disabled:nth-child(3)~label:nth-of-type(3) {
+.segmented-control > input:disabled:nth-child(3) ~ label:nth-of-type(3) {
     opacity: .3;
     cursor: not-allowed
 }
 
-.segmented-control>input:nth-child(3):checked~label:nth-of-type(3):after,
-.segmented-control>input:nth-child(3):checked~label:nth-of-type(3):before {
+.segmented-control > input:nth-child(3):checked ~ label:nth-of-type(3):after,
+.segmented-control > input:nth-child(3):checked ~ label:nth-of-type(3):before {
     opacity: 1
 }
 
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(3):after,
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(3):before,
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(3)~label:after,
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(3)~label:before {
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before {
     left: 66.66667%
 }
 
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(4):after,
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(4):before,
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(4)~label:after,
-.segmented-control>input:nth-child(3):checked~label:first-of-type:nth-last-of-type(4)~label:before {
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
     left: 50%
 }
 
-.segmented-control>input:disabled:nth-child(4)~label:nth-of-type(4) {
+.segmented-control > input:disabled:nth-child(4) ~ label:nth-of-type(4) {
     opacity: .3;
     cursor: not-allowed
 }
 
-.segmented-control>input:nth-child(4):checked~label:nth-of-type(4):after,
-.segmented-control>input:nth-child(4):checked~label:nth-of-type(4):before {
+.segmented-control > input:nth-child(4):checked ~ label:nth-of-type(4):after,
+.segmented-control > input:nth-child(4):checked ~ label:nth-of-type(4):before {
     opacity: 1
 }
 
-.segmented-control>input:nth-child(4):checked~label:first-of-type:nth-last-of-type(4):after,
-.segmented-control>input:nth-child(4):checked~label:first-of-type:nth-last-of-type(4):before,
-.segmented-control>input:nth-child(4):checked~label:first-of-type:nth-last-of-type(4)~label:after,
-.segmented-control>input:nth-child(4):checked~label:first-of-type:nth-last-of-type(4)~label:before {
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
     left: 75%
 }
 
-.segmented-control>label {
+.segmented-control > label {
     display: inline-block;
     padding: 0 .71em;
     cursor: pointer;
@@ -389,8 +405,8 @@ input[type="number"] {
     transition-timing-function: inherit
 }
 
-.segmented-control>label:before,
-.segmented-control>label:after {
+.segmented-control > label:before,
+.segmented-control > label:after {
     position: absolute;
     left: 0;
     top: 0;
@@ -399,7 +415,7 @@ input[type="number"] {
     pointer-events: none
 }
 
-.segmented-control>label:after {
+.segmented-control > label:after {
     color: #fff;
     content: attr(data-value);
     text-align: center;
@@ -423,8 +439,8 @@ input[type="number"] {
     transition-timing-function: inherit
 }
 
-.segmented-control>label:after,
-.segmented-control>label {
+.segmented-control > label:after,
+.segmented-control > label {
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -434,7 +450,7 @@ input[type="number"] {
     box-sizing: border-box
 }
 
-.segmented-control>label:before {
+.segmented-control > label:before {
     content: '';
     color: inherit;
     background: currentColor;
@@ -452,39 +468,39 @@ input[type="number"] {
     transition-timing-function: inherit
 }
 
-.segmented-control>label:first-of-type:nth-last-of-type(1),
-.segmented-control>label:first-of-type:nth-last-of-type(1):after,
-.segmented-control>label:first-of-type:nth-last-of-type(1):before,
-.segmented-control>label:first-of-type:nth-last-of-type(1)~label,
-.segmented-control>label:first-of-type:nth-last-of-type(1)~label:after,
-.segmented-control>label:first-of-type:nth-last-of-type(1)~label:before {
+.segmented-control > label:first-of-type:nth-last-of-type(1),
+.segmented-control > label:first-of-type:nth-last-of-type(1):after,
+.segmented-control > label:first-of-type:nth-last-of-type(1):before,
+.segmented-control > label:first-of-type:nth-last-of-type(1) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(1) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(1) ~ label:before {
     width: 100%
 }
 
-.segmented-control>label:first-of-type:nth-last-of-type(2),
-.segmented-control>label:first-of-type:nth-last-of-type(2):after,
-.segmented-control>label:first-of-type:nth-last-of-type(2):before,
-.segmented-control>label:first-of-type:nth-last-of-type(2)~label,
-.segmented-control>label:first-of-type:nth-last-of-type(2)~label:after,
-.segmented-control>label:first-of-type:nth-last-of-type(2)~label:before {
+.segmented-control > label:first-of-type:nth-last-of-type(2),
+.segmented-control > label:first-of-type:nth-last-of-type(2):after,
+.segmented-control > label:first-of-type:nth-last-of-type(2):before,
+.segmented-control > label:first-of-type:nth-last-of-type(2) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(2) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(2) ~ label:before {
     width: 50%
 }
 
-.segmented-control>label:first-of-type:nth-last-of-type(3),
-.segmented-control>label:first-of-type:nth-last-of-type(3):after,
-.segmented-control>label:first-of-type:nth-last-of-type(3):before,
-.segmented-control>label:first-of-type:nth-last-of-type(3)~label,
-.segmented-control>label:first-of-type:nth-last-of-type(3)~label:after,
-.segmented-control>label:first-of-type:nth-last-of-type(3)~label:before {
+.segmented-control > label:first-of-type:nth-last-of-type(3),
+.segmented-control > label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > label:first-of-type:nth-last-of-type(3) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(3) ~ label:before {
     width: 33.33333%
 }
 
-.segmented-control>label:first-of-type:nth-last-of-type(4),
-.segmented-control>label:first-of-type:nth-last-of-type(4):after,
-.segmented-control>label:first-of-type:nth-last-of-type(4):before,
-.segmented-control>label:first-of-type:nth-last-of-type(4)~label,
-.segmented-control>label:first-of-type:nth-last-of-type(4)~label:after,
-.segmented-control>label:first-of-type:nth-last-of-type(4)~label:before {
+.segmented-control > label:first-of-type:nth-last-of-type(4),
+.segmented-control > label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > label:first-of-type:nth-last-of-type(4) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(4) ~ label:before {
     width: 25%
 }
 
@@ -563,9 +579,9 @@ ul.juz-list {
     font-size: 12px
 }
 
-.modal-dialog {
+/*.modal-dialog {
     margin: 1px auto!important
-}
+}*/
 
 .arabic.juz_head {
     background-color: rgba(77, 181, 120, 0.28)!important;
@@ -591,7 +607,7 @@ ul.juz-list {
     text-shadow: 0 0 17px rgba(0, 0, 0, 0.5)
 }
 
-.modal-body>form>a.btn-last-memoz {
+.modal-body > form > a.btn-last-memoz {
     display: none
 }
 
@@ -626,7 +642,7 @@ ul.juz-list {
 }
 
 .puzzle {
-    font-size: 33px
+    font-size: 23px
 }
 
 .arabic a {
@@ -648,21 +664,146 @@ ul.juz-list {
     background-color: #4DB578;
     cursor: pointer;
     color: #FFFFFF !important;
-    border: 1px solid #4DB578;
+    border : 1px solid #4DB578;
 }
-
-.muqodimah b {
+.muqodimah b{
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-.main-content-wrap .main-content .single-column .page-title h1 {
+.main-content-wrap .main-content .single-column .page-title h1{
     margin: 0 0 20px;
     color: #fff;
     font-size: 30px;
 }
-
-.login_form .btn-group .btn,
-.register_form .btn-group .btn {
+/*.login_form .btn-group .btn, .register_form .btn-group .btn{
     width: 100%;
+}*/
+
+.memoz-list .memoz-item .memoz-body{
+    padding: 5px;
+    cursor: pointer;
 }
+.memoz-list .memoz-item{
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+}
+.memoz-list .memoz-item strong{
+    margin:0px;
+    color:#70C393;
+    font-size: 14px;
+}
+.memoz-list .memoz-item p {
+    margin : 10px 0px;
+}
+.memoz-list .memoz-item .memoz-target{
+    color :#adadad;
+    font-size:11px;
+}
+.memoz-list .memoz-item .memoz-action{
+    background-color: #daf5cd;
+    padding: 3px;
+    text-align: center;
+}
+
+.memoz-list .memoz-item .memoz-action a.left{
+    float: left;
+}
+.memoz-list .memoz-item .memoz-action a.right{
+    float: right;
+}
+
+
+/**
+ RECORDER
+ **/
+.button{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 5px;
+    padding: 5px 12px;
+    cursor: pointer;
+    outline: none;
+    font-size: 13px;
+    text-decoration: none !important;
+    text-align: center;
+    color:#fff;
+    background-color: #4D90FE;
+    background-image: linear-gradient(top,#4D90FE, #4787ED);
+    background-image: -ms-linear-gradient(top,#4D90FE, #4787ED);
+    background-image: -o-linear-gradient(top,#4D90FE, #4787ED);
+    background-image: linear-gradient(top,#4D90FE, #4787ED);
+    border: 1px solid #4787ED;
+    box-shadow: 0 1px 3px #BFBFBF;
+  }
+  a.button{
+    color: #fff;
+  }
+  .button:hover{
+    box-shadow: inset 0px 1px 1px #8C8C8C;
+  }
+  .button.disabled{
+    box-shadow:none;
+    opacity:0.7;
+  }
+
+
+
+.quran_recorder_cont{
+    width: 80%;
+}
+.quran_recorder{
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 99;
+    width: 100%;
+    border-top: 2px solid #cae6c0;
+    text-align: center;
+    padding: 10px 0px;
+}
+.quran_recorder a{
+    border:0px;
+    background-color: transparent;
+}
+
+.quran_recorder a{
+    color: #000;
+}
+.quran_recorder a.disable{
+    opacity: 0.2;
+}
+.quran_recorder a .fa-stop{
+    color: #FF0062;
+}
+.quran_recorder .action{
+    float: left;
+}
+.quran_recorder .player{
+    float: right;
+}
+#level {
+    position: fixed;
+    top: 0px;
+    /* width: 100%; */
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    opacity: 0.9;
+}
+.fa-spin{
+    font-size: 15px;
+}
+
+.step-4 .ayat_arabic_memoz{
+    cursor: pointer;
+}
+.wrong{
+    color: rgb(255, 145, 0);
+}
+.blur-ayat.wrong{
+    color: transparent;
+}
+

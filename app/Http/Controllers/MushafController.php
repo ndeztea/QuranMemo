@@ -411,20 +411,22 @@ class MushafController extends Controller
         $automated_play = $_GET['automated_play'];
         $footer_action = $_GET['footer_action'];
         $muratal = $_GET['muratal'];
+        $tajwid = $_GET['tajwid'];
 
         $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
         $data['mushaf_layout'] = $mushaf_layout;
         $data['automated_play'] = $automated_play;
         $data['footer_action'] = $footer_action;
         $data['muratal'] = $muratal;
-
+        $data['tajwid'] = $tajwid;
 
         $dataHTML['modal_title'] = 'Setting Mushaf';
         $dataHTML['modal_body'] = view('mushaf_config',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
-
+        
         return response()->json($dataHTML);
     }
+
 
     public function set_muratal($qori){
         setcookie('coo_muratal',$qori);

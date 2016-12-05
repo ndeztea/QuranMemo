@@ -170,8 +170,97 @@ var QuranJS = {
         $('.arabic').highlight('ٱللَّهُ','highlight-red');
         $('.arabic').highlight('ٱللَّهَ','highlight-red');
         $('.arabic').highlight('لِلَّهِ','highlight-red');
+
+        // mark stop
+        $('.arabic').highlight('ۛ','highlight-red pause-marks');
+        $('.arabic').highlight('ۘ','highlight-red');
+        $('.arabic').highlight('ۗ','highlight-red pause-marks');
+        $('.arabic').highlight('ۚ','highlight-red pause-marks');
+
+        $('.arabic').highlight('ۖ','highlight-orange');
+
+        $('.arabic').highlight('ۙ','highlight-green pause-marks');
         
 	},
+
+	 /**
+    * @todo satukan huruf
+    *
+    */
+    tajwidHighlight: function(){
+    	//tajwid mark (Ikhfa)
+        var arrIkhfa = ['ت','د','ذ','ز','ث','ج','س','ش','ص','ض','ط','ظ','ف','ق','ك'];
+        for (i = 0; i < arrIkhfa.length; i++) {
+        	// nun-mati
+        	jQuery('.arabic').highlight('نْ'+arrIkhfa[i],'highlight-orange tajwid');
+			$('.arabic').highlight('نْ '+arrIkhfa[i],'highlight-orange tajwid');
+
+        	// tanwin
+        	$('.arabic').highlight('ً '+arrIkhfa[i],'highlight-orange tajwid tanwin1');
+        	$('.arabic').highlight('ً'+arrIkhfa[i],'highlight-orange tajwid tanwin1');
+        	$('.arabic').highlight('ٌ '+arrIkhfa[i],'highlight-orange tajwid tanwin1');
+        	$('.arabic').highlight('ٌ'+arrIkhfa[i],'highlight-orange tajwid tanwin1');
+        	$('.arabic').highlight('ٍ '+arrIkhfa[i],'highlight-orange tajwid tanwin2');
+        	$('.arabic').highlight('ٍ'+arrIkhfa[i],'highlight-orange tajwid tanwin2');
+
+        	//
+        	
+		}
+
+		// idhgam
+		var arrIdgham = ['ي','ن','م','و','ل','ر'];
+		for (i = 0; i < arrIdgham.length; i++) {
+        	// nun-mati
+        	$('.arabic').highlight('نْ'+arrIdgham[i],'highlight-blue tajwid');
+			$('.arabic').highlight('نْ '+arrIdgham[i],'highlight-blue tajwid');
+
+        	// tanwin
+        	$('.arabic').highlight('ً '+arrIdgham[i],'highlight-blue tajwid tanwin1');
+        	$('.arabic').highlight('ً'+arrIdgham[i],'highlight-blue tajwid tanwin1');
+        	$('.arabic').highlight('ٌ '+arrIdgham[i],'highlight-blue tajwid tanwin1');
+        	$('.arabic').highlight('ٌ'+arrIdgham[i],'highlight-blue tajwid tanwin1');
+        	$('.arabic').highlight('ٍ '+arrIdgham[i],'highlight-blue tajwid tanwin2');
+        	$('.arabic').highlight('ٍ'+arrIdgham[i],'highlight-blue tajwid tanwin2');
+
+        	//
+        	
+		}
+
+		// iqlab
+		var arrIqlab = ['ب'];
+		for (i = 0; i < arrIqlab.length; i++) {
+        	// nun-mati
+        	$('.arabic').highlight('نْ'+arrIqlab[i],'highlight-green tajwid');
+			$('.arabic').highlight('نْ '+arrIqlab[i],'highlight-green tajwid');
+
+        	// tanwin
+        	$('.arabic').highlight('ً '+arrIqlab[i],'highlight-green tajwid tanwin1');
+        	$('.arabic').highlight('ً'+arrIqlab[i],'highlight-green tajwid tanwin1');
+        	$('.arabic').highlight('ٌ '+arrIqlab[i],'highlight-green tajwid tanwin1');
+        	$('.arabic').highlight('ٌ'+arrIqlab[i],'highlight-green tajwid tanwin1');
+        	$('.arabic').highlight('ٍ '+arrIqlab[i],'highlight-green tajwid tanwin2');
+        	$('.arabic').highlight('ٍ'+arrIqlab[i],'highlight-green tajwid tanwin2');
+
+        	//
+        	
+		}
+
+		// qalqalah
+		/*var arrIqlab = ['د','ج','','ب','ط','ق'];
+		for (i = 0; i < arrIqlab.length; i++) {
+        	// nun-mati
+        	//$('.arabic').highlight(arrIqlab[i]+'ْ','highlight-gray tajwid');
+			//$('.arabic').highlight(arrIqlab[i]+'ْ ','highlight-gray tajwid');
+		}*/
+		$.fn.nthEverything();
+
+		$( ".tajwid" ).each(function( index ) {
+			$(this).html("&zwj;"+$(this).html()+"&zwj;");
+		});
+		
+
+		$('.tajwid').val('true');
+    },
 
 	memorized:function(ayat) {
 		$('.'+ayat).addClass('memorized');

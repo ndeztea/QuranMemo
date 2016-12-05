@@ -92,7 +92,7 @@
 						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i></a>
 					</div>
 					<div class="btn-group">
-					  <button type="button"onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val())" class="btn btn-green-small">
+					   <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-green-small">
 					    &nbsp;<i class="fa fa-cog"></i>&nbsp;
 					  </button>
 					</div>
@@ -103,6 +103,7 @@
 				@endif
 				<input type="hidden" name="repeat" class="repeat" value="1" />
 				<input type="hidden" name="muratal" class="muratal" value="1" />
+				<input type="hidden" name="tajwid" class="tajwid" value=""/>
 
 			</div>
 			<!-- /nav-top -->
@@ -347,6 +348,9 @@ $(document).ready(function(){
 					}
 			}
 			//show & hide search setting
+			@if(!empty($_COOKIE['coo_tajwid']))
+				QuranJS.tajwidHighlight();
+			@endif
 
 		});
 
