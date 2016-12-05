@@ -1,3 +1,11 @@
+<div class="filter">
+	<!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Semua</a></li>
+	    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Belum Hafal</a></li>
+	    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sudah Hafal</a></li>
+	  </ul>
+</div>
 <div class="memoz-list">
 	@if(!empty($list))
 		@foreach($list as $row)
