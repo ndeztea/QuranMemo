@@ -95,12 +95,17 @@ body {
 	font-family: $font-stack;
 }
 
+a{
+	color: $main-color;
+}
+
 a,
 a:hover,
 a:focus {
-	text-decoration: none;
+	text-decoration: none !important;
 	outline: 0 none;
 	cursor: pointer;
+	color: $main-color-hover;
 }
 
 .arabic,
@@ -1710,4 +1715,41 @@ body.body-memo {
 ::selection {
 	background: $main-color !important;
 	color: $txtColor !important;
+}
+
+.memoz-list{
+	.memoz-item{
+		// box-shadow: 0 1px 3px 0 rgba(0,0,0,0.26);
+		border-left: solid 1px #ddd;
+		border-right: solid 1px #ddd;
+		border-bottom: solid 1px #ddd;
+		p{
+			color: #333;
+		}
+		.memoz-body{
+			padding: 15px;
+			.memoz-link-surah{
+				 display: inline-block;
+				 margin-right: 5px;
+			}
+		}
+		.memoz-action{
+			padding: 10px 15px;
+			text-align: center;
+			background: #daf5cd;
+		}
+	}
+}
+
+.filter{
+	.nav>li>a:focus, .nav>li>a:hover{
+		background: $main-color;
+		color:#fff;
+		border-color: darken($main-color,10%);
+	}
+}
+
+.spacer1{
+	display: inline-block;
+	padding:0 5px;
 }

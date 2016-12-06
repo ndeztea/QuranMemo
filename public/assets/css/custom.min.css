@@ -680,30 +680,30 @@ ul.juz-list {
     width: 100%;
 }*/
 
-.memoz-list .memoz-item .memoz-body{
+/*.memoz-list .memoz-item .memoz-body{
 	padding: 5px;
 	cursor: pointer;
 }
 .memoz-list .memoz-item{
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-}
+}*/
 .memoz-list .memoz-item strong{
 	margin:0px;
 	color:#70C393;
 	font-size: 14px;
 }
-.memoz-list .memoz-item p {
+/*.memoz-list .memoz-item p {
 	margin : 10px 0px;
-}
+}*/
 .memoz-list .memoz-item .memoz-target{
 	color :#adadad;
 	font-size:11px;
 }
-.memoz-list .memoz-item .memoz-action{
+/*.memoz-list .memoz-item .memoz-action{
 	background-color: #daf5cd;
     padding: 3px;
     text-align: center;
-}
+}*/
 
 .memoz-list .memoz-item .memoz-action a.left{
 	float: left;
