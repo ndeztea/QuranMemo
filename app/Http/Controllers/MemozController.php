@@ -411,10 +411,25 @@ class MemozController extends Controller
          return response()->json($dataHTML);
     }       
 
-    public function listCorrection($idMemo){
+    public function listCorrection($idMemo='', Request $request){
         $MemoCorrectionModel = new MemoCorrection();
 
         $data['list']  = $MemoCorrectionModel->getMemoCorrection($idMemo);
+      
+        
+        $dataHTML['modal_title'] = 'Daftar koreksi';
+        $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
+    public function listCorrectionByUser(Request $request){
+        $MemoCorrectionModel = new MemoCorrection();
+
+        $id_user = $request->session()->get('sess_id');
+        $data['list']  = $MemoCorrectionModel->getMemoCorrectionByUser($id_user);
+        
         $dataHTML['modal_title'] = 'Daftar koreksi';
         $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';

@@ -53,6 +53,7 @@
 								
 							@if(session('sess_id'))
 							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
+							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.callModal('memoz/correction/list')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
 							@else
 							@if(isset($_COOKIE['coo_last_memoz']))
 							<a class="btn btn-cari-ayat btn-last-memoz" href="{{$_COOKIE['coo_last_memoz']}}"><i class="fa fa-sign-in"></i> Hafalan Terakhir</a>

@@ -7,7 +7,7 @@
 				<strong>{{$row->name}} ({{$row->email}})</strong>
 				<br>
 				<span class="memoz-target"> 
-					<i>{{dayDiff($row->date_updated,date('Y-m-d'))->days}} hari yang lalu</i>
+					<i>{{dayDiff(date('Y-m-d'),$row->date_updated)->days}} hari yang lalu</i>
 				</span>
 				<p>{{str_limit($row->note,100,'...')}}</p>
 			</div>
