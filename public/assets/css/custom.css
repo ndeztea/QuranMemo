@@ -216,6 +216,18 @@ input[type="number"] {
     color: #4db578;
 }
 
+.highlight-blue{
+     color:#312994;
+ }
+ .highlight-gray{
+     color:yellow;
+ }
+ 
+ 
+ .tanwin1::before{
+     content: '\200D';
+ }
+
 .pause-marks{
     position: relative;
     top:8px;
@@ -602,7 +614,7 @@ ul.juz-list {
 }
 
 .blur-ayat,
-.blur-ayat .highlight-red {
+.blur-ayat .highlight-red,.blur-ayat .highlight-green,.blur-ayat .highlight-orange,.blur-ayat .highlight-blue {
     color: transparent;
     text-shadow: 0 0 17px rgba(0, 0, 0, 0.5)
 }

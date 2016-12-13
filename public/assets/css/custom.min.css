@@ -3,7 +3,18 @@
     src: url(../fonts/me_quran.ttf);
 }
 
+.arabic, .head_surah{
+    font-family: 'me_quran';
+}
+.arabic{
+    font-size: 23px;
+    word-spacing: 5px;
+}
 @media (max-width: 767px) and (min-width: 270px) {
+    .mushaf .ayat_section .arabic{
+        font-size: 25px;
+    }
+
     .main-content-wrap .main-content .single-column .page-title h1.pull-left {
         margin: -10px 10px 10px 10px !important;
     }
@@ -215,6 +226,18 @@ input[type="number"] {
 .highlight-green{
     color: #4db578;
 }
+
+.highlight-blue{
+     color:#312994;
+ }
+ .highlight-gray{
+     color:yellow;
+ }
+ 
+ 
+ .tanwin1::before{
+     content: '\200D';
+ }
 
 .pause-marks{
     position: relative;
@@ -602,7 +625,7 @@ ul.juz-list {
 }
 
 .blur-ayat,
-.blur-ayat .highlight-red {
+.blur-ayat .highlight-red,.blur-ayat .highlight-green,.blur-ayat .highlight-orange,.blur-ayat .highlight-blue {
     color: transparent;
     text-shadow: 0 0 17px rgba(0, 0, 0, 0.5)
 }
@@ -680,36 +703,36 @@ ul.juz-list {
     width: 100%;
 }*/
 
-/*.memoz-list .memoz-item .memoz-body{
-	padding: 5px;
-	cursor: pointer;
+.memoz-list .memoz-item .memoz-body{
+    padding: 5px;
+    cursor: pointer;
 }
 .memoz-list .memoz-item{
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-}*/
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+}
 .memoz-list .memoz-item strong{
-	margin:0px;
-	color:#70C393;
-	font-size: 14px;
+    margin:0px;
+    color:#70C393;
+    font-size: 14px;
 }
-/*.memoz-list .memoz-item p {
-	margin : 10px 0px;
-}*/
+.memoz-list .memoz-item p {
+    margin : 10px 0px;
+}
 .memoz-list .memoz-item .memoz-target{
-	color :#adadad;
-	font-size:11px;
+    color :#adadad;
+    font-size:11px;
 }
-/*.memoz-list .memoz-item .memoz-action{
-	background-color: #daf5cd;
+.memoz-list .memoz-item .memoz-action{
+    background-color: #daf5cd;
     padding: 3px;
     text-align: center;
-}*/
+}
 
 .memoz-list .memoz-item .memoz-action a.left{
-	float: left;
+    float: left;
 }
 .memoz-list .memoz-item .memoz-action a.right{
-	float: right;
+    float: right;
 }
 
 

@@ -165,11 +165,13 @@ var QuranJS = {
 	},
 
 	redHightlight:function (){
-		$('.trans').highlight('Allah','highlight-red', { wordsOnly: true });
-        $('.arabic').highlight('للَّهِ','highlight-red');
-        $('.arabic').highlight('ٱللَّهُ','highlight-red');
-        $('.arabic').highlight('ٱللَّهَ','highlight-red');
-        $('.arabic').highlight('لِلَّهِ','highlight-red');
+		// Allah mark
+		jQuery('.trans').highlight('Allah','highlight-red', { wordsOnly: true });
+        jQuery('.arabic').highlight('للَّهِ','highlight-red');
+        jQuery('.arabic').highlight('ٱللَّهُ','highlight-red');
+        jQuery('.arabic').highlight('ٱللَّهَ','highlight-red');
+        jQuery('.arabic').highlight('لِلَّهِ','highlight-red');
+
 
         // mark stop
         $('.arabic').highlight('ۛ','highlight-red pause-marks');
@@ -180,10 +182,9 @@ var QuranJS = {
         $('.arabic').highlight('ۖ','highlight-orange');
 
         $('.arabic').highlight('ۙ','highlight-green pause-marks');
-        
-	},
+    },
 
-	 /**
+    /**
     * @todo satukan huruf
     *
     */
@@ -316,6 +317,17 @@ var QuranJS = {
 		
 		document.cookie = 'coo_mushaf_layout='+mushaf+';visited=true;path=/;';
 	},
+
+	showTajwid : function(tajwid){
+		if(tajwid=='true'){
+			document.cookie = 'coo_tajwid='+tajwid+';visited=true;path=/;';
+		}else{
+			document.cookie = 'coo_tajwid=;visited=true;path=/;';
+		}
+		
+		$('.tajwid_modified').show();
+	},
+
 
 	autoPlay : function (val){
 		$('.automated_play').val(val);
