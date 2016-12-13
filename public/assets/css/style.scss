@@ -1749,7 +1749,38 @@ body.body-memo {
 	}
 }
 
-.spacer1{
+.spacer1{ 
 	display: inline-block;
 	padding:0 5px;
+}
+
+.boxcontent{
+	@extend .mushaf;
+	padding: 35px;
+}
+
+.boxcontent-label{
+	margin-top: 0;
+}
+
+.list-unstyled{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.correction-list{
+	.username{
+		display: block;
+		color: $main-color;
+		font-weight: bold;
+	}
+
+	.correction-list-item{
+		margin-bottom: 10px;
+	}
+
+	.ayat-target{
+		display: inline-block;
+	}
 }

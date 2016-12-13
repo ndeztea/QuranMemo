@@ -15,20 +15,21 @@
 			<div class="page-title">
 				<h2>Dashboard page</h2>
 			</div>
-			  <div id="content">
-			  	<strong>Butuh Koreksi</strong>
-			  	@if(!empty($needCorrections))
-			  	<ul>
-			  		@foreach($needCorrections as $row)
+			  <div id="content" class="boxcontent">
+			  	<h3 class="boxcontent-label">Butuh Koreksi</h3>
+				  @if(!empty($needCorrections))
+			  		<ul class="correction-list list-unstyled">
+						  @foreach($needCorrections as $row)
 			  		<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
-			  		<li>
-			  			<strong>{{$row->name}}</strong><br/>
-			  			<em><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></em>
-			  			&bullet; <i class="fa fa-check-square-o">{{$row->count_correction}} koreksi</i>
+					  <li class="correction-list-item">
+			  			<span class="username">{{$row->name}}</span>
+			  			<span class="ayat-target"><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></span>
+			  			<span class="spacer1">&bullet;</span> <i class="fa fa-check-square-o">{{$row->count_correction}} koreksi</i>
 			  		</li>
-			  		@endforeach
-			  	</ul>    
+					  @endforeach
+				  	</ul>
 			  	@endif
+			  	
 			  </div>
 		<!-- end single-column-->
 		</div>
