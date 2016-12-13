@@ -332,8 +332,46 @@ var QuranJS = {
 	autoPlay : function (val){
 		$('.automated_play').val(val);
 		document.cookie = 'coo_automated_play='+val+';visited=true;path=/;';
+	},	
+
+	memozList : function(){
+		$('#QuranModal').modal('show');
+		this.modalLoading();
+		this.removeModalClass();
+		$.getJSON(this.siteUrl+'/memoz/list',{},function(response){
+			$('.modal-title').html(response.modal_title);
+			$('.modal-body').html(response.modal_body);
+			if(response.modal_footer!=''){
+				$('.modal-footer').show();
+				$('.modal-footer').html(response.modal_footer);
+			}
+			
+			$('#QuranModal').addClass(response.modal_class);
+			$('.modal-header button').show();
+
+			// show default listing memoz
+			jQuery('.memoz-loading').show();
+			$.post(response.site_url+'/memoz/list_ajax',{
+				filter : 'all'
+			},function(response){
+				jQuery('.memoz-list').html(response.html);
+				jQuery('.memoz-loading').hide();
+			});
+		})
 	},
 
+	memozFilter : function(filter){
+		jQuery('.memoz-list').hide();
+		jQuery('.memoz-loading').show();
+		$.post(this.siteUrl+'/memoz/list_ajax',{
+			filter : filter
+		},function(response){
+			jQuery('.memoz-list').html(response.html);
+			jQuery('.memoz-list').show();
+			jQuery('.memoz-loading').hide();
+		});
+	},
+ 
 	showInfoMemoz : function (){
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Panduan menghafal');
@@ -343,6 +381,9 @@ var QuranJS = {
 
 	stepMemoz : function(steps){
 		jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
+		// hide recorder
+		jQuery('.quran_player').show();
+		jQuery('.quran_recorder').hide();
 		if(steps==1){
 			//jQuery('.trans').removeClass('puff').removeClass('go');
 			//jQuery('.arabic').removeClass('puff').removeClass('go');
@@ -404,6 +445,12 @@ var QuranJS = {
 
 			jQuery('.trans').show();
 			jQuery('.arabic').show();
+
+			// show recorder
+			jQuery('.trans').show();
+			jQuery('.arabic').show();
+			jQuery('.quran_player').hide();
+			jQuery('.quran_recorder').show();
 
 		}else if(steps==5){
 			//jQuery('.trans').addClass('puff').removeClass('go');
@@ -472,13 +519,13 @@ var QuranJS = {
 			jQuery('#puzzle_word').val(puzzle_word);
 
 			// check if ayat already finish
-			console.log(jQuery( '.puzzle_'+puzzle_ayat+' .arabic-puzzle a' ).length);
+			//console.log(jQuery( '.puzzle_'+puzzle_ayat+' .arabic-puzzle a' ).length);
 			if(jQuery( '.puzzle_'+puzzle_ayat+' .arabic-puzzle a' ).length==0){
 				jQuery('.puzzle_'+puzzle_ayat).remove();
 				puzzle_ayat+=1;
 				jQuery('#puzzle_ayat').val(puzzle_ayat);
 				jQuery('#puzzle_word').val('1');
-				console.log('.arabic_'+puzzle_ayat+' .per_words_1');
+				//console.log('.arabic_'+puzzle_ayat+' .per_words_1');
 				jQuery('.arabic_'+puzzle_ayat+' .per_words_1').parent().removeClass('puzzle_no_border');
 			}
 		}else{
@@ -500,7 +547,7 @@ var QuranJS = {
 				}
 			}else if(show=='end'){
 				max = this.totalAyatSpaces[o]>=10?this.totalAyatSpaces[o] - 1:this.totalAyatSpaces[o];
-				console.log(max);
+				//console.log(max);
 				for(b=1;b<=this.totalAyatSpaces[o];b++){
 					if(b<max){
 						jQuery('.arabic_'+o+' .per_words_'+b).addClass('blur-ayat');
@@ -553,6 +600,161 @@ var QuranJS = {
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 	},
 
+	formMemoModal : function (id=''){
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Simpan Hafalan');
+		$.post(this.siteUrl+'/memoz/form',{
+					surah_start : $('#surah_start').val(),
+					ayat_start : $('#ayat_start').val(),
+					ayat_end : $('#ayat_end').val(),
+					id : id,
+				}, function (response){
+					$('.modal-title').html(response.modal_title);
+					$('.modal-body').html(response.modal_body);
+					$('.modal-footer').html(response.modal_footer);
+
+					$('.modal-header button').show();
+					$('.input-daterange').datepicker({
+			            format: "yyyy-mm-dd",
+			            clearBtn: true,
+			            autoclose: true,
+			            todayHighlight: true
+			        });
+				}
+			);
+	},
+
+	formMemoCorrectionModal : function (id=''){
+		$('.label-loading').show();
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Kirim Koreksi');
+		$.post(this.siteUrl+'/memoz/formCorrection',{
+					id : id,
+				}, function (response){
+					$('.label-loading').hide();
+					$('.modal-title').html(response.modal_title);
+					$('.modal-body').html(response.modal_body);
+					$('.modal-footer').html(response.modal_footer);
+				}
+			);
+	},
+
+	saveMemozCorrection : function(){
+		$('.label-loading').show();
+		id = $('#id').val();
+		var correction = '';
+		$( ' .wrong' ).each(function( index ) {
+			  correction += $( this ).data('css')+'|';
+			});
+		$.post(this.siteUrl+'/memoz/saveCorrection',{
+					id_memo_target : id,
+					note : $('#note').val(),
+					correction : correction,
+				}, function (response){
+					$('.label-loading').hide();
+					$('#QuranModal').modal('hide');
+					alert('Koreksi sudah dikirim');
+				}
+			);
+	},
+
+	saveMemoz : function (id=''){
+		$('.label-loading').show();
+		$('.label-save').hide();
+		$.post(this.siteUrl+'/memoz/save',{
+					id : id,
+					surah_start : $('#surah_start').val(),
+					ayat_start : $('#ayat_start').val(),
+					ayat_end : $('#ayat_end').val(),
+					date_start : $('#date_start').val(),
+					date_end : $('#date_end').val(),
+					note : $('#note').val(),
+				}, function (response){
+					alert(response.message);
+					$('.label-loading').hide();
+					$('.label-save').show();
+					$('#id').val(response.id);
+					if(response.status==true){
+						location.href = response.siteUrl+'/memoz/surah/'+response.surah_start+'/'+response.ayat_start+'-'+response.ayat_end+'/'+response.id;
+						//$('.btn-save-memoz').attr('onclick','QuranJS.saveMemoz('+response.id+');return false;');
+						//$('.btn-form-memoz').attr('onclick','QuranJS.formMemoModal('+response.id+');return false;');
+					}
+				}
+			);
+	},
+
+	updateStatusMemoz : function (id='',status='',text=''){
+		var r = confirm(text);//"Sudah hafal dan dipublikasikan untuk di test oleh pengguna lain?");
+		if(r==true){
+			$('.label-status-loading').show();
+			$('.label-status-save').hide();
+			$('.label-status-save').removeClass('fa-thumbs-up');
+			$('.label-status-save').removeClass('fa-thumbs-down');
+			$.post(this.siteUrl+'/memoz/updateStatus',{
+					id : id,
+					status : status
+				}, function (response){
+					alert(response.message);
+					$('.label-status-loading').hide();
+					$('.label-status-save').show();
+					if(response.status==true){
+						$('.btn-status-save').attr('onclick','QuranJS.updateStatusMemoz(\''+response.id+'\',\''+response.status_memoz+'\',\''+response.text_confirm+'\');return false;');
+						if(response.status_memoz==0){
+							$('.label-status-save').addClass('fa-thumbs-down');
+						}else{
+							$('.label-status-save').addClass('fa-thumbs-up');
+						}
+					}
+				}
+			);
+		}
+		
+	},
+
+	deleteMemoz : function (id){
+		var r = confirm("Yakin hafalan ini di hapus?!");
+		if(r==true){
+			$('.label-loading').show();
+			$('.label-save').hide();
+			$.post(this.siteUrl+'/memoz/remove',{
+					id : id,
+				}, function (response){
+					alert(response.message);
+					$('.label-loading').hide();
+					$('.label-save').show();
+					if(response.status==true){
+						$('.memoz-'+response.id).hide();
+					}
+				}
+			);
+		}
+		
+	},
+
+	correctionMemoz : function (line,id){
+		if($('.mushaf-hafalan').hasClass('step-4')){
+			if(!$('.arabic_'+line+' .per_words_'+id).hasClass('wrong')){
+				$('.arabic_'+line+' .per_words_'+id).addClass('wrong');
+			}else{
+				$('.arabic_'+line+' .per_words_'+id).removeClass('wrong');
+			}
+			$('#btn-correction').hide();
+			$( ' .wrong' ).each(function( index ) {
+			  console.log( index + ": " + $( this ).data('css') );
+			  $('#btn-correction').show();
+			});
+		}
+		
+	},
+
+	createMemoModal : function(){
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Hafalan Baru');
+		htmlSearchSurah = jQuery('.select-surah').html();
+		$('.modal-body').html(htmlSearchSurah);
+		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
+	},
+
 	setBookmark : function(title, url){
 		var hasClass = jQuery('#bookmark').hasClass('fa-bookmark-o');
 		if(hasClass==true){
@@ -593,16 +795,23 @@ var QuranJS = {
 	},
 
 	authProcess : function(){
-		this.modalLoadingBlock();
+		$('.label-loading').show();
+		$('.label-masuk').hide();
 		$.post(this.siteUrl+'/auth/loginAction',{
-					email : $('#email').val(),
-					password : $('#password').val(),
-				}, function (reponse){
-					console.log(reponse);
-					this.removeModalClass();
+					email : $('#login_email').val(),
+					password : $('#login_password').val(),
+				}, function (response){
+					if(response.login==true){
+						location.href=response.redirect;
+					}else{
+						alert('Login anda salah');
+					}
+					$('.label-masuk').show();
+					$('.label-loading').hide();
 				}
 			);
 	}
+
 
 	
 

@@ -3,7 +3,18 @@
     src: url(../fonts/me_quran.ttf);
 }
 
+.arabic, .head_surah{
+    font-family: 'me_quran';
+}
+.arabic{
+    font-size: 23px;
+    word-spacing: 5px;
+}
 @media (max-width: 767px) and (min-width: 270px) {
+    .mushaf .ayat_section .arabic{
+        font-size: 25px;
+    }
+
     .main-content-wrap .main-content .single-column .page-title h1.pull-left {
         margin: -10px 10px 10px 10px !important;
     }
