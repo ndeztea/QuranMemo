@@ -133,14 +133,34 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+     /**
+    * show memoz list menu filter
+    *
+    */
     public function listing(Request $request){
         $MemoModel = new Memo();
 
-        $data['list']  = $MemoModel->getList($request->session()->get('sess_id'));
         $dataHTML['modal_title'] = 'Daftar Hafalan';
-        $dataHTML['modal_body'] = view('memoz_list',$data)->render();
+        $dataHTML['modal_body'] = view('memoz_list')->render();
+        $dataHTML['site_url'] = url('');
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
 
+        return response()->json($dataHTML);
+    }
+
+    /**
+    * show memoz list via ajax
+    *
+    */
+    public function list_ajax(Request $request){
+        $MemoModel = new Memo();
+        $sess_user_id = $request->session()->get('sess_id');
+        $filter = $request->input('filter');
+
+        $data['list']  = $MemoModel->getList($sess_user_id,$filter);
+
+        $dataHTML['html'] = view('memoz_list_ajax',$data)->render();
+        
         return response()->json($dataHTML);
     }
 

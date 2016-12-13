@@ -46,13 +46,16 @@ class Memo extends Model
         return $memoDetail;
     }
 
-    public function getList($id_user){
+    public function getList($id_user,$filter){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
-                ->where('id_user',$id_user)
-                ->orderby('date_end','asc')
-                ->get();
+                ->where('id_user',$id_user);
+
+        if($filter!='all'){
+            $memoList = $memoList->where('status',$filter);
+        }
+        $memoList = $memoList->orderby('date_end','asc')->get();
 
 
         return $memoList;

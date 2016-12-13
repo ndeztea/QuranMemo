@@ -66,6 +66,8 @@ Route::post('buku', 'ContentController@buku');
 Route::get('buku', 'ContentController@buku');
 Route::get('promo', 'ContentController@promo');
 Route::get('muratal', 'ContentController@muratal');
+Route::get('info', 'ContentController@info');
+
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
@@ -82,6 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('memoz/form', 'MemozController@form');
 	Route::post('memoz/save', 'MemozController@save');
 	Route::get('memoz/list', 'MemozController@listing');
+    Route::post('memoz/list_ajax', 'MemozController@list_ajax');
 	Route::post('memoz/remove', 'MemozController@remove');
     Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
     Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}/{idCorrection}', 'MemozController@index');
