@@ -69,11 +69,11 @@ Route::get('muratal', 'ContentController@muratal');
 Route::get('info', 'ContentController@info');
 
 
-
 Route::get('auth/login', 'Auth\AuthController@login');
 Route::get('auth/logout', 'Auth\AuthController@logout');
 Route::post('auth/loginAction', 'Auth\AuthController@loginAction');
-
+Route::get('auth/forget', 'Auth\AuthController@forget');
+Route::post('auth/forgetProcess', 'Auth\AuthController@forgetProcess');
 
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');

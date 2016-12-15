@@ -44,7 +44,17 @@ class AuthController extends Controller
         $dataHTML['modal_class'] = 'login-mode';
         $dataHTML['modal_title'] = 'Login';
         $dataHTML['modal_body'] = view('auth_login',$data)->render();
-        $dataHTML['modal_footer'] = 'Lupa Password ?';
+        $dataHTML['modal_footer'] = '<a href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Minta Password ?';
+
+        return response()->json($dataHTML);
+    }
+
+    public function forget(){
+        $data[''] = '';
+        $dataHTML['modal_class'] = 'login-mode';
+        $dataHTML['modal_title'] = 'Minta Password';
+        $dataHTML['modal_body'] = view('auth_forget',$data)->render();
+        $dataHTML['modal_footer'] = '<a href="javascript:;" onclick="QuranJS.callModal(\'auth/login\')">Login <i class="fa fa-angle-right"></i>';
 
         return response()->json($dataHTML);
     }
@@ -78,6 +88,27 @@ class AuthController extends Controller
             $request->session()->put('sess_name', $dataLogin->name);
         }else{
             $dataHTML['login'] = false;
+        }
+
+        return response()->json($dataHTML);
+    }
+
+    /**
+    * forget password action
+    *
+    */
+    public function forgetProcess(Request $request){
+        $data['email'] = $request->input('email');
+
+        // auth by
+        $objUsers = new Users;
+        $dataLogin = $objUsers->checkEmail($data);
+        if ($dataLogin){
+            $dataHTML['return'] = true;
+           // process random password
+            $objUsers->setRandomPassword($data);
+        }else{
+            $dataHTML['return'] = false;
         }
 
         return response()->json($dataHTML);

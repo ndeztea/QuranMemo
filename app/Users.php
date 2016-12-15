@@ -26,7 +26,7 @@ class Users extends Model
 
     public function login($data){
     	// login code
-         $user = DB::table('users')
+         $user = DB::table($this->table)
                 ->select('*')
                 ->where('email','=',$data['email'])
                 ->first();
@@ -37,8 +37,21 @@ class Users extends Model
         return false;
     }
 
+    public function checkEmail($data){
+        // login code
+         $user = DB::table($this->table)
+                ->select('*')
+                ->where('email','=',$data['email'])
+                ->first();
+
+        if(!empty($user)){
+            return $data['email'];
+        }
+        return false;
+    }
+
     public function getUsersDevicetId($deviceId){
-         $juz = DB::table('users')
+         $juz = DB::table($this->table)
                 ->select('*')
                 ->where('device_id','=',$deviceId)
                 ->orderBy('id','asc')
@@ -47,4 +60,31 @@ class Users extends Model
 
         return $juz;
     }
+
+    /**
+    *  get random password based on random ayat
+    *
+    */
+    public function setRandomPassword($data){
+        $password = DB::table('quran')
+                ->select('*')
+                ->orderByRaw('RAND()')->first();
+
+        $newpassword = str_replace(' ', '-', $password->surah_name);
+        $newPassword = $newpassword.':'.$password->ayat;
+
+        // update now
+        $dataUser['password'] = Hash::make($newPassword);
+        $dataUser['email'] = $data['email'];
+        $sucess = DB::table($this->table)->where('email',$dataUser['email'])->update($dataUser);
+        if($sucess){
+            return $newPassword;
+        }else{
+            return false;
+        }
+        
+        
+        
+    }
+
 }
