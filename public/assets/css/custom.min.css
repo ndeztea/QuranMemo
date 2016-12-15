@@ -11,6 +11,10 @@
     word-spacing: 5px;
 }
 @media (max-width: 767px) and (min-width: 270px) {
+    .select-surah input, .select-surah select, .modal-body input,.modal-body select{
+        height: 50px;
+        font-size: 23px;
+    }
     .mushaf .ayat_section .arabic{
         font-size: 25px;
     }

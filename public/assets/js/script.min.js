@@ -810,10 +810,24 @@ var QuranJS = {
 					$('.label-loading').hide();
 				}
 			);
+	},
+
+	forgetProcess : function(){
+		$('.label-loading').show();
+		$('.label-masuk').hide();
+		$.post(this.siteUrl+'/auth/forgetProcess',{
+					email : $('#login_email').val(),
+				}, function (response){
+					if(response.return==true){
+						alert('Password sudah dikirim ke email, silahkan cek.');
+					}else{
+						alert('Email tidak terdaftar, silahkan daftar terlebih dahulu');
+					}
+					$('.label-masuk').show();
+					$('.label-loading').hide();
+				}
+			);
 	}
-
-
-	
 
 } 
 

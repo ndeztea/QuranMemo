@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+use Mail;
+
 
 class AuthController extends Controller
 {
@@ -44,7 +46,17 @@ class AuthController extends Controller
         $dataHTML['modal_class'] = 'login-mode';
         $dataHTML['modal_title'] = 'Login';
         $dataHTML['modal_body'] = view('auth_login',$data)->render();
-        $dataHTML['modal_footer'] = 'Lupa Password ?';
+        $dataHTML['modal_footer'] = '<a href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Minta Password ?';
+
+        return response()->json($dataHTML);
+    }
+
+    public function forget(){
+        $data[''] = '';
+        $dataHTML['modal_class'] = 'login-mode';
+        $dataHTML['modal_title'] = 'Minta Password';
+        $dataHTML['modal_body'] = view('auth_forget',$data)->render();
+        $dataHTML['modal_footer'] = '<a href="javascript:;" onclick="QuranJS.callModal(\'auth/login\')">Login <i class="fa fa-angle-right"></i>';
 
         return response()->json($dataHTML);
     }
@@ -72,12 +84,50 @@ class AuthController extends Controller
             $dataHTML['login'] = true;
             $dataHTML['redirect'] = url('dashboard');
 
+            // update last login
+            $dataUser['last_login'] = date('Y-m-d h:i:s');
+            $dataUser['id'] = $dataLogin->id;
+            $objUsers->edit($dataUser);
+
             // set session
             $request->session()->put('sess_id', $dataLogin->id);
             $request->session()->put('sess_email', $dataLogin->email);
             $request->session()->put('sess_name', $dataLogin->name);
         }else{
             $dataHTML['login'] = false;
+        }
+
+        return response()->json($dataHTML);
+    }
+
+    /**
+    * forget password action
+    *
+    */
+    public function forgetProcess(Request $request){
+        $data['email'] = $request->input('email');
+
+        // auth by
+        $objUsers = new Users;
+        $dataUser = $objUsers->checkEmail($data);
+        if ($dataUser){
+            $dataHTML['return'] = true;
+
+            // process random password
+            $newPassword = $objUsers->setRandomPassword($data);
+            $emailData['newPassword'] = $newPassword;
+            $emailData['name'] = $dataUser->name;
+            $emailData['email'] = $dataUser->email;
+
+            $dataHTML['newPassword'] = $newPassword;
+
+             Mail::send('emails.forget_password', ['emailData' => $emailData], function ($m) use ($emailData) {
+                $m->from('info@quranmemo.id', 'QuranMemo');
+                $m->to($emailData['email'], $emailData['name'])->subject('Password baru QuranMemo!');
+            });
+
+        }else{
+            $dataHTML['return'] = false;
         }
 
         return response()->json($dataHTML);
