@@ -45,7 +45,7 @@ class Users extends Model
                 ->first();
 
         if(!empty($user)){
-            return $data['email'];
+            return $user;
         }
         return false;
     }
@@ -59,6 +59,10 @@ class Users extends Model
 
 
         return $juz;
+    }
+
+    public function edit($dataUser){
+        return DB::table($this->table)->where('id',$dataUser['id'])->update($dataUser);
     }
 
     /**

@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+use Mail;
+
 
 class AuthController extends Controller
 {
@@ -82,6 +84,11 @@ class AuthController extends Controller
             $dataHTML['login'] = true;
             $dataHTML['redirect'] = url('dashboard');
 
+            // update last login
+            $dataUser['last_login'] = date('Y-m-d h:i:s');
+            $dataUser['id'] = $dataLogin->id;
+            $objUsers->edit($dataUser);
+
             // set session
             $request->session()->put('sess_id', $dataLogin->id);
             $request->session()->put('sess_email', $dataLogin->email);
@@ -102,11 +109,23 @@ class AuthController extends Controller
 
         // auth by
         $objUsers = new Users;
-        $dataLogin = $objUsers->checkEmail($data);
-        if ($dataLogin){
+        $dataUser = $objUsers->checkEmail($data);
+        if ($dataUser){
             $dataHTML['return'] = true;
-           // process random password
-            $objUsers->setRandomPassword($data);
+
+            // process random password
+            $newPassword = $objUsers->setRandomPassword($data);
+            $emailData['newPassword'] = $newPassword;
+            $emailData['name'] = $dataUser->name;
+            $emailData['email'] = $dataUser->email;
+
+            $dataHTML['newPassword'] = $newPassword;
+
+             Mail::send('emails.forget_password', ['emailData' => $emailData], function ($m) use ($emailData) {
+                $m->from('info@quranmemo.id', 'QuranMemo');
+                $m->to($emailData['email'], $emailData['name'])->subject('Password baru QuranMemo!');
+            });
+
         }else{
             $dataHTML['return'] = false;
         }
