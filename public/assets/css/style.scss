@@ -1784,3 +1784,18 @@ body.body-memo {
 		display: inline-block;
 	}
 }
+
+.btn-green-small {
+    background-color: $main-color !important;
+    color: #FFF!important;
+    border: solid 1px $main-color-hover !important;
+	&:hover,
+	&:focus{
+		background: lighten($main-color,10%) !important;
+	}
+}
+
+.btn-green-small-darker {
+    background-color: #25835B!important;
+    color: #FFF!important
+}

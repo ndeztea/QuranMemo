@@ -64,13 +64,15 @@
 			</div>
 			@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user))
 				<div class="select-surah pull-left">
-					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
+					<div class="btn-group" role="group">
+						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
 					@if(session('sess_id'))
 					<button type="button" class="btn btn-green-small btn-form-memoz" onclick="QuranJS.formMemoModal()"><i class="fa fa-floppy-o"></i></button>
 					<a class="btn btn-green-small" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>
 					@if(!empty($memoDetail))
 					<a class="btn btn-green-small" onclick="QuranJS.callModal('memoz/correction/list/{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
+					</div>
 					@endif
 					 @endif
 					
@@ -80,24 +82,20 @@
 				@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user))
 
 				<div class="memoz_options">
-					<div class="btn-group">
-						@if(!empty($memoDetail))
-							@if($memoDetail->status==0)
-							<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Hafalan ini sudah hafal? dan ingin dipublikasikan untuk di test oleh pengguna lain?')"><i class="fa fa-thumbs-up label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
-							@else
-							<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="fa fa-thumbs-down label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
+						<div class="btn-group" role="group">
+							@if(!empty($memoDetail))
+								@if($memoDetail->status==0)
+								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Hafalan ini sudah hafal? dan ingin dipublikasikan untuk di test oleh pengguna lain?')"><i class="fa fa-thumbs-up label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
+								@else
+								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="fa fa-thumbs-down label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
+								@endif
 							@endif
-						@endif
-					</div>
-					<div class="btn-group">
-						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i></a>
-					</div>
-					<div class="btn-group">
-					   <button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-green-small">
-					    &nbsp;<i class="fa fa-cog"></i>&nbsp;
-					  </button>
-					</div>
-					
+						
+							<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i></a>
+						<button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-green-small">
+							&nbsp;<i class="fa fa-cog"></i>&nbsp;
+						</button>
+						</div>
 					
 				</div>
 				<!-- /memoz-player -->
