@@ -685,11 +685,14 @@ body.body-memo {
 				text-align: center;
 				font-family:"Lateef";
 				// background: url(../images/frame-ayat.png) no-repeat center center;
-				width: 37px;
+				width: 46px;
 				height: 46px;
-				font-size: 14px;
+				font-size: 18px;
 				letter-spacing: -2;
 				position: relative;
+				border:solid 2px #2B4538;
+				border-radius: 100%;
+				padding: 5px 7px;
 				img {
 					position: absolute;
 					top: -9px;
@@ -719,7 +722,7 @@ body.body-memo {
 				}
 			}
 			.ayat_arabic {
-				padding-left: 20px;
+				padding-left: 10px;
 			}
 			.ayat_arabic_memoz {
 				padding-left: 0;
