@@ -204,8 +204,8 @@
 											</span>
 										@endforeach
 
-										<span class="no_ayat_arabic_memoz">
-											<img src="{{url('assets/images/frame-ayat.png')}}"  alt="ayat">
+										<span class="no_ayat_arabic">
+											<!--img src="{{url('assets/images/frame-ayat.png')}}"  alt="ayat"-->
 											<span>{{arabicNum($ayat->ayat)}}</span> 
 										</span>
 									</span> 
@@ -224,8 +224,8 @@
 								<!-- END -->
 
 								<div class="trans trans_{{$a}}"> 
-									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
-									<span class="content_ayat">{{$ayat->text_indo}}</span> 
+									<!--span class="no_ayat"></span--> 
+									<span class="content_ayat">( {{$ayat->ayat}} ) {{$ayat->text_indo}}</span> 
 								</div>
 								@if(Request::segment(2)!='correction')
 								<div class="action-footer">

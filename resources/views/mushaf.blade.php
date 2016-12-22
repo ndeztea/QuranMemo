@@ -200,8 +200,8 @@ $prev_surah = '';
 									</span> 
 								</div>
 								<div class="trans trans_{{$a}}"> 
-									<span class="no_ayat">( {{$ayat->ayat}} )</span> 
-									<span class="content_ayat">{{$ayat->text_indo}}</span> 
+									<!--span class="no_ayat"></span--> 
+									<span class="content_ayat"> ( {{$ayat->ayat}} ) {{$ayat->text_indo}}</span> 
 								</div>
 								
 								<div class="action-footer">
