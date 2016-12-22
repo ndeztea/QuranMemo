@@ -341,7 +341,7 @@ class MushafController extends Controller
 
 
     public function generate(){
-        $filename = '/Volumes/Jobs/www/QuranNote/Analytics20160901-20161031.csv';
+        $filename = '/Volumes/Jobs/www/QuranNote/AnalyticsNovDes16.csv';
         if (($handle = fopen($filename, 'r')) !== FALSE)
         {
             $a = 0;
