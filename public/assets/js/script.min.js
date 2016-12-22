@@ -380,6 +380,12 @@ var QuranJS = {
 	},
 
 	stepMemoz : function(steps){
+		jQuery('.mushaf-hafalan').removeClass('step-1');
+		jQuery('.mushaf-hafalan').removeClass('step-2');
+		jQuery('.mushaf-hafalan').removeClass('step-3');
+		jQuery('.mushaf-hafalan').removeClass('step-4');
+		jQuery('.mushaf-hafalan').removeClass('step-5');
+		jQuery('.mushaf-hafalan').addClass('step-'+steps);
 		jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
 		// hide recorder
 		jQuery('.quran_player').show();

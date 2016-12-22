@@ -290,7 +290,7 @@
 			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" id="audio"></audio>
 		</div>
 		@if(Request::segment(2)!='correction')
-		<canvas id="level" height="50" width="100%"></canvas>
+		<canvas id="level" height="50" width="100%" style="display: none"></canvas>
 		<input id="base64Decode" type="hidden" value="">
 		@endif
 	</div>
