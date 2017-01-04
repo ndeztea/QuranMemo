@@ -1,6 +1,6 @@
 <form class="form-inline" id="paggingForm" action="{{url('buku')}}" method="post">
-	<p>QuranMemo insyaAllah akan berbagi buku untuk pengguna paling banyak bulan November-Desember 2016. </p>
-	<p>Al Quran Madinah dan Terjemah yg dilengkapi "Menghafal Cara Madinah", Dzikir Pagi dan Petang dari Yayasan Syekh Ali Jaber</p>
+	<p>QuranMemo insyaAllah akan berbagi buku untuk ke 4 kali  nya yang di khususkan untuk pengguna paling banyak bulan Januari-Februari 2017. </p>
+	<p>Buku "Pintar Ahli Ibadah", buku di ambil dari beberapa point penting Kitab Ihya Ilummudin, ringkas dan penuh hikmah. InsyaAllah akan bermanfaat untuk meningkatkan iman kita, membuat istiqomah dan membersihkan hati dari penyakit-penyakitnya</p>
 	<p><a href="{{url('register')}}" class="btn btn-green" style="width:100%">Daftar sekarang !!!</a></p>
   
   <!--div class="form-group">
@@ -10,5 +10,5 @@
       <div class="input-group-addon"><a name="btnPage" onclick="$('#clientId').val($('#clientId_tmp').val());paggingForm.submit()">Kirim</a> </div>
     </div>
   </div-->
- <img src="{{url('assets/images/al-quran-ali-jaber.jpg')}}" style="width:100%" alt="Al-Quran yayasan Ali Jaber">
+ <img src="{{url('assets/images/buku-pintar-ibadah.jpg')}}" style="width:100%" alt="Buku pintar ibadah">
 </form>
