@@ -360,7 +360,7 @@ var QuranJS = {
 		}else if(steps==2){
 			//jQuery('.trans').addClass('puff').removeClass('go');
 			//jQuery('.arabic').removeClass('puff').addClass('go');
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic, update counter berapa kali telah antum dibaca');
 			jQuery('.jp-stop').click();
 			jQuery('.memozed,.memoz_nav').hide();
 			jQuery('*','.mushaf').removeClass('playing');
