@@ -289,8 +289,8 @@
             if('{{@$_COOKIE['coo_promo_4_pintar']}}'==''){
                 QuranJS.callModal('buku');
             }else{
-                if('{{@$_COOKIE['coo_new_feature_tajwid']}}'==''){
-                    QuranJS.callModal('muratal');
+                if('{{@$_COOKIE['coo_new_donasi_wa_darwan_azis']}}'==''){
+                    //QuranJS.callModal('donasi');
                 }
             }
 
