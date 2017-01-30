@@ -171,6 +171,8 @@ var QuranJS = {
         jQuery('.arabic').highlight('ٱللَّهُ','highlight-red');
         jQuery('.arabic').highlight('ٱللَّهَ','highlight-red');
         jQuery('.arabic').highlight('لِلَّهِ','highlight-red');
+        jQuery('.arabic').highlight('اللَّهُ','highlight-red');
+        jQuery('.arabic').highlight('اللَّهَ','highlight-red');
 
 
         // mark stop
@@ -606,31 +608,9 @@ var QuranJS = {
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 	},
 
-	formMemoModal : function (id=''){
-		$('#QuranModal').modal('show');
-		$('.modal-title').html('Simpan Hafalan');
-		$.post(this.siteUrl+'/memoz/form',{
-					surah_start : $('#surah_start').val(),
-					ayat_start : $('#ayat_start').val(),
-					ayat_end : $('#ayat_end').val(),
-					id : id,
-				}, function (response){
-					$('.modal-title').html(response.modal_title);
-					$('.modal-body').html(response.modal_body);
-					$('.modal-footer').html(response.modal_footer);
+	
 
-					$('.modal-header button').show();
-					$('.input-daterange').datepicker({
-			            format: "yyyy-mm-dd",
-			            clearBtn: true,
-			            autoclose: true,
-			            todayHighlight: true
-			        });
-				}
-			);
-	},
-
-	formMemoCorrectionModal : function (id=''){
+	formMemoCorrectionModal : function (id){
 		$('.label-loading').show();
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Kirim Koreksi');
@@ -664,7 +644,7 @@ var QuranJS = {
 			);
 	},
 
-	saveMemoz : function (id=''){
+	saveMemoz : function (id){
 		$('.label-loading').show();
 		$('.label-save').hide();
 		$.post(this.siteUrl+'/memoz/save',{
@@ -689,7 +669,7 @@ var QuranJS = {
 			);
 	},
 
-	updateStatusMemoz : function (id='',status='',text=''){
+	updateStatusMemoz : function (id,status,text){
 		var r = confirm(text);//"Sudah hafal dan dipublikasikan untuk di test oleh pengguna lain?");
 		if(r==true){
 			$('.label-status-loading').show();
