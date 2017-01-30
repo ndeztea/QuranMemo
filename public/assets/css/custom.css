@@ -697,3 +697,16 @@ ul.juz-list {
 .register_form .btn-group .btn {
     width: 100%
 }
+.mushaf .ayat_section .arabic .no_ayat_arabic_memoz, .mushaf .ayat_section .arabic .no_ayat_arabic, .boxcontent .ayat_section .arabic .no_ayat_arabic {
+    display: inline !important;
+    text-align: center;
+    font-family: "Lateef";
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+    letter-spacing: -2;
+    position: relative;
+    border: solid 2px #2B4538;
+    border-radius: 100%;
+    padding: 5px 7px;
+}
