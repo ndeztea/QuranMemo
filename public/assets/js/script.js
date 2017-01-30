@@ -171,7 +171,9 @@ var QuranJS = {
         jQuery('.arabic').highlight('ٱللَّهُ','highlight-red');
         jQuery('.arabic').highlight('ٱللَّهَ','highlight-red');
         jQuery('.arabic').highlight('لِلَّهِ','highlight-red');
-
+        jQuery('.arabic').highlight('اللَّهُ','highlight-red');
+        jQuery('.arabic').highlight('اللَّهَ','highlight-red');
+        
 
         // mark stop
         $('.arabic').highlight('ۛ','highlight-red pause-marks');
