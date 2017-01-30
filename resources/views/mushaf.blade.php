@@ -194,7 +194,7 @@ $prev_surah = '';
 											{{$ayat->text}}
 										</span>
 										<span class="no_ayat_arabic">
-											<img src="{{url('assets/images/frame-ayat.png')}}" alt="ayat">
+											<!--img src="{{url('assets/images/frame-ayat.png')}}" alt="ayat"-->
 											<span>{{arabicNum($ayat->ayat)}}</span> 
 										</span>
 									</span> 

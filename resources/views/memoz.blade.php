@@ -176,7 +176,7 @@
 										@endforeach
 
 										<span class="no_ayat_arabic_memoz">
-											<img src="{{url('assets/images/frame-ayat.png')}}"  alt="ayat">
+											<!--img src="{{url('assets/images/frame-ayat.png')}}"  alt="ayat"-->
 											<span>{{arabicNum($ayat->ayat)}}</span> 
 										</span>
 									</span> 
