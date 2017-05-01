@@ -5,7 +5,7 @@
 		<div class="memoz-body" onclick="location.href='{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}'">
 			<a class="memoz-link-surah" href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}"><strong>{{$row->surah}} : {{$ayat_target}}</strong></a>
 			<span class="memoz-target"> 
-				<i>{{dayDiff($row->date_start,$row->date_end)->days}} hari</i>
+				<i>{{dayDiff($row->date_start,$row->date_end)->days}} hari lagi</i>
 				<span class="spacer1">&bull;</span> <i>@if($row->status==0) Belum Hafal @else Hafal dan Menunggu koreksi @endif</i>
 			</span>
 			<p>{{$row->note}}</p>

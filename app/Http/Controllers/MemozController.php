@@ -55,7 +55,8 @@ class MemozController extends Controller
             $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
         }
 
-        $memoDetail = '';
+        $memoDetail = new \stdClass();
+        $memoDetail->id = '';
         if($id){
             // get detail memo
             $memoModel = new Memo;
