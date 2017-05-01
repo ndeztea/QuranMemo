@@ -23,8 +23,8 @@
 										<div class="buku">
 										</div>
 										<div class="promo-txt">
-											<h3>Dapatkan Tafsir Ringkas Ibnu Katsir</h3>
-											<p>Syaratnya adalah perbanyak menghafal menggunakan QuranMemo mulai tanggal 1 Oktober 2016 sampai 1 bulan kedepan, QuranMemo akan menyeleksi beberapa pengguna yang banyak menghafal dan menggunakan QuranMemo :) mari semangat terus dalam menghafal dan membumikan Al-Quran.</p>
+											<h3>Mari kita silahturami dengan para penghafal Al-Quran</h3>
+											<p>Memudahkan mengkontrol hafalan antum, berkenalan dengan penghafal yang lain, saling setor hafalan, dll...</p>
 										</div>
 									</div>
 								</div>
@@ -62,6 +62,7 @@
 									<div class="form-group">
 										<div class="btn-group" role="group" aria-label="...">
 											<button type="submit" class="btn btn-default btn-daftar">Daftar</button>
+											<button type="button" class="btn btn-primary btn-daftar" onclick="QuranJS.callModal('auth/login')">Login</button>
 										</div>
 									</div>
 								</form>	
