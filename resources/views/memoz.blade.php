@@ -22,7 +22,7 @@
 			<div class="nav-top clearfix">
 			<div style="display:{{!empty($ayats)?'none':''}}">
 				<div class="select-surah pull-left">
-					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post" onsubmit="cookieLastMemo()">
+					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<!--span class="search-title">Surah</span-->
 							<div class="form-group">
 								<select name="surah_start"  id="surah_start" class="form-control">
@@ -48,33 +48,27 @@
 								  <input class="form-control search_ayat" id="ayat_end" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 								</div>
 							</div>
-							
-							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
+							<a class="btn btn-cari-ayat" onclick="jQuery('.form-inline').submit()" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
 								
 							@if(session('sess_id'))
 							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
 							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.callModal('memoz/correction/list')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
-							@else
-							@if(isset($_COOKIE['coo_last_memoz']))
-							<!--a class="btn btn-cari-ayat btn-last-memoz" href="{{$_COOKIE['coo_last_memoz']}}"><i class="fa fa-sign-in"></i> Hafalan Terakhir</a-->
-							@endif
 							@endif
 					</form>
 				</div>
 			</div>
-			@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user))
+			@if(Request::segment(2)!='correction' && session('sess_id'))
 				<div class="select-surah pull-left">
 					<div class="btn-group" role="group">
 						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
-					@if(session('sess_id'))
-					<button type="button" class="btn btn-green-small btn-form-memoz" onclick="QuranJS.formMemoModal()"><i class="fa fa-floppy-o"></i></button>
-					<a class="btn btn-green-small" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>
-					@if(!empty($memoDetail))
-					<a class="btn btn-green-small" onclick="QuranJS.callModal('memoz/correction/list/{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
+						<button type="button" class="btn btn-green-small btn-form-memoz" onclick="QuranJS.formMemoModal()"><i class="fa fa-floppy-o"></i></button>
+						<a class="btn btn-green-small" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>
+						@if(!empty($memoDetail))
+						<a class="btn btn-green-small" onclick="QuranJS.callModal('memoz/correction/list/{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
+						@endif
 					</div>
-					@endif
-					 @endif
+						
 					
 				</div>
 			@endif
