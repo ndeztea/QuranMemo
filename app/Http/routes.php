@@ -46,16 +46,6 @@ Route::get('mushaf/set_muratal/{qori}', 'MushafController@set_muratal');
 
 Route::get('notes/', 'NotesController@index');
 
-Route::get('memoz/', 'MemozController@index');
-Route::post('memoz/', 'MemozController@index');
-Route::get('memoz/surah/{surah}', 'MemozController@index');
-Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');
-Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
-Route::post('memoz/search', 'MemozController@search');
-Route::get('memoz/search', 'MemozController@search');
-Route::get('memoz/config', 'MemozController@config');
-
-
 Route::get('bookmarks/', 'BookmarksController@index');
 
 Route::get('contact', 'ContentController@contact');
@@ -78,9 +68,20 @@ Route::post('auth/forgetProcess', 'Auth\AuthController@forgetProcess');
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');
 
+Route::get('memoz/', 'MemozController@index');
+Route::post('memoz/', 'MemozController@index');
+
+
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('memoz/form/{id}', 'MemozController@form');
+	Route::get('memoz/surah/{surah}', 'MemozController@index');
+    Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');
+    Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
+    Route::post('memoz/search', 'MemozController@search');
+    Route::get('memoz/search', 'MemozController@search');
+    Route::get('memoz/config', 'MemozController@config');
+
+    Route::get('memoz/form/{id}', 'MemozController@form');
 	Route::post('memoz/form', 'MemozController@form');
 	Route::post('memoz/save', 'MemozController@save');
 	Route::get('memoz/list', 'MemozController@listing');
