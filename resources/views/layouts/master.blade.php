@@ -184,6 +184,26 @@
         </nav>
 
         <div class="wrap">
+
+            @if(Request::segment(2)=='' && Request::segment(1)=='mushaf')
+            <div class="alert alert-warning" style="text-align: left">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Bismillah.. Assamualaikum warahmatullahi wabarakatuh, <br><br>
+                <p>QuranMemo sedang mengembangkan versi selanjutnya untuk memudahkan para penghafal  Al-Quran yang sejauh ini sudah berjumlah 5000 orang penghafal yang aktif dan 500 orang penghafal tiap harinya. <br>
+                Saat ini kami sangat membutuhkan sukarelawan yang paham dalam pembuatan web atau native app untuk membantu dalam pengembangan aplikasi ini, dan / atau dana untuk pengembangan supaya berjalan dengan lancar dan sesuai yang diharapkan.<br>
+                Jika ada yang ingin ikut berkontribusi dalam pengembangan aplikasi ini baik itu kontribusi tenaga, ide, infaq atau sedekah bisa mengirimkan email ke quranmemo.id@gmail.com<br>
+
+                Sejauh ini progress pengembangan aplikasi bisa di lihat di halaman web 
+                https://quranmemo.com
+                </p><br>
+                Walaikumsalam warahmatullahi wabarakatuh.<br>
+                Jazakallah Khair.<br>
+                -QuranMemo Team-
+                <br>
+                <button type="button" class="btn btn-juz" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">Tutup</span></button>
+
+            </div>
+            @endif
             @yield('content')
         </div>
 
@@ -286,13 +306,13 @@
             }*/
 
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_promo_4_pintar']}}'==''){
-                QuranJS.callModal('buku');
-            }else{
+            if('{{@$_COOKIE['coo_promo_6_BUKUBLMTAU']}}'==''){
+                //QuranJS.callModal('buku');
+            }/*else{
                 if('{{@$_COOKIE['coo_new_donasi_wa_darwan_azis']}}'==''){
                     //QuranJS.callModal('donasi');
                 }
-            }
+            }*/
 
             /*if('{{@$_COOKIE['coo_promo']}}'==''){
                 QuranJS.callModal('promo');
@@ -306,6 +326,9 @@
             if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
                QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
             }
+
+            
+
          }
 
          // CAPTURE AUDIO
