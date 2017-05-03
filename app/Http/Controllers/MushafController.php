@@ -77,12 +77,12 @@ class MushafController extends Controller
         //setcookie('coo_muratal_new',1);
         $Request = new Request();
         if($this->request->segment(2)=='' && $this->request->segment(1)=='mushaf'){
-            if(empty($_COOKIE['coo_promo_4_pintar'])){
-                setcookie('coo_promo_4_pintar',1);
-            }elseif(isset($_COOKIE['coo_promo_4_pintar']) && empty($_COOKIE['coo_new_donasi_wa_darwan_azis'])){
+            if(empty($_COOKIE['coo_promo_5_37_populer'])){
+                setcookie('coo_promo_5_37_populer',1);
+            }/*elseif(isset($_COOKIE['coo_promo_5_37_populer']) && empty($_COOKIE['coo_new_donasi_wa_darwan_azis'])){
 
                 setcookie('coo_new_donasi_wa_darwan_azis',1);
-            }
+            }*/
         }
         
 
@@ -354,7 +354,7 @@ class MushafController extends Controller
                     echo $dataUsers[0]->email.'<br>';
                     echo 'Nama : '.$dataUsers[0]->name.'<br>';
                     echo 'Alamat : '.$dataUsers[0]->address.'<br>';
-                    echo 'No.HP :';
+                    echo 'No.HP :'.$dataUsers[0]->hp.'<br>';
                     echo '<hr>';
                 }
                 
