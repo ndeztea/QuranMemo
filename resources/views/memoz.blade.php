@@ -21,7 +21,7 @@
 			</div>
 			<div class="nav-top clearfix">
 			<div style="display:{{!empty($ayats)?'none':''}}">
-				<div class="select-surah pull-left">
+				<div class="select-surah">
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<!--span class="search-title">Surah</span-->
 							<div class="form-group">
@@ -31,16 +31,6 @@
 									@endforeach
 								</select>
 							</div>
-							<!--div class="form-group display-inline-block-xs">
-								<input class="form-control search_ayat" type="number" name="ayat_start" value="<?php echo $ayat_start?$ayat_start:''?>">
-							</div>
-							<!--div class="checkbox display-inline-block-xs">
-								<label>
-									<input type="checkbox" value="1" id="fill_ayat_end" <?php echo !empty($fill_ayat_end)?'checked':''?> name="fill_ayat_end" onclick="QuranJS.fillAyatEnd(this)">  <span>Sampai ayat </span>
-								</label>
-							</div>
-
-							-->
 							<div class="form-group display-inline-block-xs">
 								<div class="input-group memoz-form">
 								  <input class="form-control search_ayat" id="ayat_start" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
@@ -58,7 +48,7 @@
 				</div>
 			</div>
 			@if(Request::segment(2)!='correction' && session('sess_id') && !empty($ayats))
-				<div class="select-surah pull-left">
+				<div class="pull-left">
 					<div class="btn-group" role="group">
 						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 						<a class="btn btn-green-small" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>

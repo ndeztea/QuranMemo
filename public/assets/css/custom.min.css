@@ -11,8 +11,8 @@
     word-spacing: 5px;
 }
 @media (max-width: 767px) and (min-width: 270px) {
-    .select-surah .form-inline .btn{
-        font-size: 22px;
+    .select-surah .form-inline .btn,.select-surah .form-inline .btn-last-memoz{
+        font-size: 22px !important;
     }
     .select2-container{
         width: 100% !important;

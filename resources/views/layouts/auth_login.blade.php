@@ -34,7 +34,7 @@
 		</div>
 		<div class="form-group">
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default btn-masuk" onclick="QuranJS.showLogin()"><i class="fa fa-angle-left"></i> Login Sekarang</button>
+				<button type="submit" class="btn btn-default btn-masuk"><i class="fa fa-angle-left"></i> Login Sekarang</button>
 				<button type="button" class="btn btn-default btn-daftar" onclick="QuranJS.registerProcess()">Daftar</button>
 			</div>
 		</div>
