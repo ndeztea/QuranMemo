@@ -79,7 +79,7 @@
 
 				<div class="memoz_options">
 						<div class="btn-group" role="group">
-							@if(!empty($memoDetail))
+							@if(!empty($memoDetail->id))
 								@if($memoDetail->status==0)
 								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="fa fa-thumbs-up label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
 								@else
