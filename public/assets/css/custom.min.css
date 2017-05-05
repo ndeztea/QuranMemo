@@ -11,6 +11,24 @@
     word-spacing: 5px;
 }
 @media (max-width: 767px) and (min-width: 270px) {
+    .select2-container{
+        width: 100% !important;
+    }
+    .select2-results__option{
+        font-size: 18px;
+    }
+    .select2-container--default .select2-selection--single{
+        height: 50px !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered{
+        color: #999;
+        line-height: 28px;
+        font-size: 20px;
+        padding: 9px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow{
+        padding: 23px 14px;
+    }
     .select-surah input, .select-surah select, .modal-body input,.modal-body select{
         height: 50px;
         font-size: 23px;
@@ -822,5 +840,13 @@ ul.juz-list {
 }
 .blur-ayat.wrong{
     color: transparent;
+}
+
+/* select2*/
+.select2-container--default .select2-selection--single{
+    height: 32px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    color: #999;
 }
 

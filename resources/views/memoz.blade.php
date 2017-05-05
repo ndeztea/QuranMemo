@@ -25,7 +25,7 @@
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<!--span class="search-title">Surah</span-->
 							<div class="form-group">
-								<select name="surah_start"  id="surah_start" class="form-control">
+								<select name="surah_start"  id="surah_start" class="selectpicker form-control">
 									@foreach($surahs as $surah)
 									<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
 									@endforeach

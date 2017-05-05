@@ -49,6 +49,7 @@
         <link href='https://fonts.googleapis.com/css?family=Scheherazade:400,700&subset=latin,arabic' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/select2.min.css')}}">
 
         <style>
         .tanwin1:nth-letter(1){
@@ -235,12 +236,15 @@
     <script src="{{url('assets/js/jquery.highlight.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap-datepicker.en-GB.min.js')}}"></script>
-    <script src="{{url('assets/js/jQuery.nthEverything.min.js')}}"></script>  
+    <script src="{{url('assets/js/jQuery.nthEverything.min.js')}}"></script>
+    <script src="{{url('assets/js/select2.min.js')}}"></script>  
 
     <script type="text/javascript">
           $(document).ready(function(){
                 $('#preloader').hide();
                 QuranJS.redHightlight();
+
+                $('.selectpicker').select2();
             });
             //var vph = $(window).height();
             //$('body').css('height',vph/2).css('overflow','hidden');
