@@ -77,16 +77,17 @@ class RegisterController extends Controller
     {  
         
         $errorMessages = [
-            'name.required' => 'Nama harus di isi',
-            'email.unique' => 'Email sudah di pakai, gunakan email yang lain',
+            'name.required' => 'Nama harus diisi',
+            'email.unique' => 'Email sudah dipakai, gunakan email yang lain',
             'email.email' => 'Email yang di masukan salah',
-            'email.required' => 'Email harus di isi',
-            'password.required' => 'Password harus di isi',
+            'email.required' => 'Email harus diisi',
+            'gender.required' => 'Jenis kelamin harus diisi',
+            'password.required' => 'Password harus diisi',
             'password.confirmed' => 'Password tidak sama',
-            'password_confirmation.required' => 'Password konfirmasi harus di isi',
+            'password_confirmation.required' => 'Password konfirmasi harus diisi',
             'city.required' => 'Kota harus di isi',
-            'address.required' => 'Alamat lengkap harus di isi',
-            'hp.required' => 'No handphone harus di isi',
+            'address.required' => 'Alamat lengkap harus diisi',
+            'hp.required' => 'No handphone harus diisi',
         ];
         
         return Validator::make($data, [
@@ -94,6 +95,7 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
             'password_confirmation' => 'required',
+            'gender' => 'required',
             'city' => 'required',
             'address' => 'required',
             'hp' => 'required',
@@ -115,6 +117,7 @@ class RegisterController extends Controller
         //die();
         return Users::create([
             'name' => $data['name'],
+            'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'city'  => $data['city'],

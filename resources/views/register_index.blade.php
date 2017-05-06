@@ -48,6 +48,13 @@
 										<input type="password" class="form-control" name="password_confirmation" id="password_confirmation" aria-label="password" placeholder="Tulis ulang password" />
 									</div>
 									<div class="form-group">
+										<label for="gender" class="control-label sr-only">Jenis Kelamin</label>
+										<select name="gender" id="gender">
+											<option value="M">Laki-laki</option>
+											<option value="F">Perempuan</option>
+										</select>
+									</div>
+									<div class="form-group">
 										<label for="city" class="control-label sr-only">Kota</label>
 										<input type="text" class="form-control" name="city" id="register_city" aria-label="kota asal" placeholder="Kota Asal" value="{{ old('city')}}"/>
 									</div>

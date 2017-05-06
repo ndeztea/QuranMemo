@@ -105,4 +105,7 @@ ALTER TABLE `memo_target` ADD `count_correction` INT NOT NULL AFTER `record`;
 
 ALTER TABLE `users`  ADD `last_login` DATETIME NULL;
 
+ALTER TABLE `users` ADD `gender` VARCHAR(1) NOT NULL AFTER `name`;
+
+
 
