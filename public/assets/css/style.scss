@@ -989,8 +989,10 @@ body.body-memo {
 	}
 	&.content-mode {
 		.modal-dialog {
-			width: 90%;
+			width: 10%;
 			margin-top: 3%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 	.modal-dialog {
@@ -998,7 +1000,9 @@ body.body-memo {
 		margin-top: 11%;
 		@include media("<=767px",
 		">=phone") {
-			width: auto;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		.modal-content {
 			border-radius: 0;
