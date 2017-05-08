@@ -644,6 +644,30 @@ var QuranJS = {
 			);
 	},
 
+	formMemoModal : function (id=''){
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Simpan Hafalan');
+		$.post(this.siteUrl+'/memoz/form',{
+					surah_start : $('#surah_start').val(),
+					ayat_start : $('#ayat_start').val(),
+					ayat_end : $('#ayat_end').val(),
+					id : id,
+				}, function (response){
+					$('.modal-title').html(response.modal_title);
+					$('.modal-body').html(response.modal_body);
+					$('.modal-footer').html(response.modal_footer);
+
+					$('.modal-header button').show();
+					$('.input-daterange').datepicker({
+			            format: "yyyy-mm-dd",
+			            clearBtn: true,
+			            autoclose: true,
+			            todayHighlight: true
+			        });
+				}
+			);
+	},
+
 	saveMemoz : function (id){
 		$('.label-loading').show();
 		$('.label-save').hide();
