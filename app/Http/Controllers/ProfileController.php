@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $data['header_title'] = 'Edit Profile';
         $UsersModel = new Users;
 
-        if($request->get('action')){
+        if($request->get('action')!=''){
             // change password
             $password = $request->get('password');
             $password_confirmation = $request->get('password');
@@ -38,13 +38,13 @@ class ProfileController extends Controller
             }
 
             // change profile data
-            $dataProfile['id'] = session('sess_id')
+            $dataProfile['id'] = session('sess_id');
             $dataProfile['name'] = $request->get('name');
             $dataProfile['city'] = $request->get('city');
             $dataProfile['address'] = $request->get('address');
             $dataProfile['gender'] = $request->get('gender');
             $dataProfile['hp'] = $request->get('hp');
-            $UsersModel->edit($dataPass);
+            $UsersModel->edit($dataProfile);
 
             return redirect('profile/edit')->with('messageSuccess', 'Profile berhasil disimpan')->withInput();
 

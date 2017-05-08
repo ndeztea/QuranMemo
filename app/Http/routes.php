@@ -108,10 +108,3 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile/edit', 'ProfileController@edit');
 
 });
-
-
-
-
-
-
-
