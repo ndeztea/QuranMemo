@@ -104,6 +104,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('notes/save', 'NotesController@save');
 
+    Route::post('profile/edit', 'ProfileController@edit');
+    Route::get('profile/edit', 'ProfileController@edit');
+
 });
 
 
