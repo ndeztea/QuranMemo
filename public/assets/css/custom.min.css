@@ -779,48 +779,15 @@ ul.juz-list {
   .button:hover{
     box-shadow: inset 0px 1px 1px #8C8C8C;
   }
-  .button.disabled{
-    box-shadow:none;
-    opacity:0.7;
-  }
-
-
 
 .quran_recorder_cont{
     width: 80%;
-}
-.quran_recorder{
-    margin: auto;
-    left: 0;
-    right: 0;
-    position: fixed;
-    bottom: 0;
-    background-color: rgba(255,255,255,0.8);
-    z-index: 99;
-    width: 100%;
-    border-top: 2px solid #cae6c0;
-    text-align: center;
-    padding: 10px 0px;
-}
-.quran_recorder a{
-    border:0px;
-    background-color: transparent;
-}
-
-.quran_recorder a{
-    color: #000;
-}
+} 
 .quran_recorder a.disable{
     opacity: 0.2;
 }
 .quran_recorder a .fa-stop{
-    color: #FF0062;
-}
-.quran_recorder .action{
-    float: left;
-}
-.quran_recorder .player{
-    float: right;
+    
 }
 #level {
     position: fixed;

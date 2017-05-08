@@ -1683,6 +1683,10 @@ body.body-memo {
 			color: #fff;
 			background: $main-color-hover;
 		}
+		@include media("<=1279px",
+		">=481px") {
+			width: 18.7%;
+		}
 		@include media("<=480px",
 		">=phone") {
 			width: auto;
@@ -1805,4 +1809,52 @@ body.body-memo {
 .btn-green-small-darker {
     background-color: #25835B!important;
     color: #FFF!important
+}
+
+.quran_recorder{
+	margin: auto;
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 99;
+    width: 100%;
+    border-top: 2px solid #cae6c0;
+    text-align: center;
+    padding: 10px 0px;
+	.action{
+		float: left;
+		@include media("<=480px",
+		">=phone") {
+			float: none;
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+	.button{
+		box-shadow: none;
+		border:0px;
+    	background-color: transparent;
+		color: #000;
+		&.disable{
+			opacity:0.7;
+		}
+		&.stop{
+			color: #FF0062;
+		}
+	}
+	.player{
+		float: right;
+		@include media("<=tablet",
+		">=desktop") {
+			
+		}
+		@include media("<=480px",
+		">=phone") {
+			float: none;
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
 }
