@@ -171,6 +171,7 @@
                         <li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Login</a></li>
                         @else
                         <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                        <li><a href="{{url('profile/edit')}}">Edit Profile</a></li>
                         <li><a href="{{url('auth/logout')}}">Logout</a></li>
                         @endif
 

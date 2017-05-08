@@ -67,6 +67,19 @@ class Users extends Model
     }
 
     /**
+    * get detail data
+    */ 
+    public function getDetail($id){
+        $detailUser = DB::table($this->table)
+                ->select('*')
+                ->where('id','=',$id)
+                ->get();
+
+
+        return $detailUser;
+    }
+
+    /**
     *  get random password based on random ayat
     *
     */
