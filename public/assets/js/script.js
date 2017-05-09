@@ -129,6 +129,8 @@ var QuranJS = {
 		$('#QuranModal').addClass('login-mode');
 	},
 
+
+
 	// show & hide player
 	// togglePlayer : function (){
 
@@ -354,7 +356,7 @@ var QuranJS = {
 			// show default listing memoz
 			jQuery('.memoz-loading').show();
 			$.post(response.site_url+'/memoz/list_ajax',{
-				filter : 'all'
+				filter : '0'
 			},function(response){
 				jQuery('.memoz-list').html(response.html);
 				jQuery('.memoz-loading').hide();
@@ -595,21 +597,28 @@ var QuranJS = {
 	showSearch : function(){
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Pencarian');
-		htmlSearchSurah = jQuery('.select-surah').html();
-		$('.modal-body').html(htmlSearchSurah);
+		var htmlSelectSurah = $('.select-surah').html();
+		$('.modal-body').html(htmlSelectSurah);
+		$('.select2-container').remove();
+		$('.selectpicker').select2();
+		
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
+
 	},
 
 	createMemoModal : function(){
+		$('.modal-body').html('');
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Hafalan Baru');
-		htmlSearchSurah = jQuery('.select-surah').html();
-		$('.modal-body').html(htmlSearchSurah);
+		//$('.select-surah').detach().appendTo('.modal-body');
+		var htmlSelectSurah = $('.select-surah').html();
+		$('.modal-body').html(htmlSelectSurah);
+		$('.select2-container').remove();
+		$('.selectpicker').select2();
+		
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 	},
-
 	
-
 	formMemoCorrectionModal : function (id){
 		$('.label-loading').show();
 		$('#QuranModal').modal('show');
@@ -645,6 +654,7 @@ var QuranJS = {
 	},
 
 	formMemoModal : function (id=''){
+		this.modalLoading();
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Simpan Hafalan');
 		$.post(this.siteUrl+'/memoz/form',{
@@ -755,14 +765,6 @@ var QuranJS = {
 			});
 		}
 		
-	},
-
-	createMemoModal : function(){
-		$('#QuranModal').modal('show');
-		$('.modal-title').html('Hafalan Baru');
-		htmlSearchSurah = jQuery('.select-surah').html();
-		$('.modal-body').html(htmlSearchSurah);
-		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 	},
 
 	setBookmark : function(title, url){
