@@ -30,3 +30,12 @@ function urlMp3($file){
 	return $mp3_url.$file;
 
 }
+function getAvatar($data){
+	if(!File::exists(public_path('assets/images/avatar/'.$data->avatar))){
+        $avatar = $data->gender=='m'?url('assets/images/avatar/default_female.png'):url('assets/images/avatar/default_male.png');
+    }else{
+        $avatar = url('assets/images/avatar/'.$data->avatar);
+    }
+
+    return $avatar;
+}

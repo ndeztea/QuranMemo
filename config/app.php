@@ -147,6 +147,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
 
 
     ],
@@ -198,6 +199,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'FFMPEG'    => LinkThrow\Ffmpeg\Facade\FfmpegFacade::class,
+        'Image'     => Intervention\Image\Facades\Image::class
+
+
 
     ],
 

@@ -107,5 +107,8 @@ ALTER TABLE `users`  ADD `last_login` DATETIME NULL;
 
 ALTER TABLE `users` ADD `gender` VARCHAR(1) NOT NULL AFTER `name`;
 
+ALTER TABLE `users` ADD `avatar` VARCHAR(100) NULL AFTER `hp`;
+
+
 
 

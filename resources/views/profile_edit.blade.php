@@ -18,8 +18,14 @@
 								<h1 class="pull-left">Daftar QuranMemo</h1>
 							</div>
 							<div class="register_form clearfix">
-								<form class="form-horizontal" action="{{url('profile/edit')}}" method="post">
+								<form class="form-horizontal" action="#" onsubmit="return false" method="post">
 									<input type="hidden" name="device_id" id="profile_edit" value=""/>
+									<h3>Avatar</h3>
+									<img src="{{getAvatar($detailUser)}}" width="150" id="img_avatar"/>
+									<input type="file" name="avatar" id="avatar">
+									<input type="submit" value="Upload" id="btn-upload" class="btn btn-green" onclick="QuranJS.uploadAvatar()"/>
+								</form>
+								<form class="form-horizontal" action="{{url('profile/edit')}}" method="post">
 									<h3>Data Login</h3>
 									<div class="form-group">
 										<label for="email" class="control-label sr-only">Email</label>

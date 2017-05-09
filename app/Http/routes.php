@@ -106,5 +106,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('profile/edit', 'ProfileController@edit');
     Route::get('profile/edit', 'ProfileController@edit');
+    Route::post('profile/uploadAvatar','ProfileController@uploadAvatar');
 
 });
