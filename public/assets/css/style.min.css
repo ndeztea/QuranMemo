@@ -7,8 +7,19 @@ body {
   position: relative;
   user-select: text !important; }
 
-a:hover, a:focus, a:active {
-  outline: none 0; }
+body {
+  background: #fff;
+  font-family: "Fira Sans", sans-serif; }
+
+a {
+  color: #4db578; }
+  a:hover, a:focus, a:active {
+    outline: none 0; }
+  a:hover, a:focus {
+    text-decoration: none !important;
+    outline: 0 none;
+    cursor: pointer;
+    color: #409965; }
 
 .splash-body {
   position: relative;
@@ -63,21 +74,6 @@ a:hover, a:focus, a:active {
     .splash-body .start:hover, .splash-body .start:focus, .splash-body .start.selected {
       color: #000;
       background-color: #71c493; }
-
-body {
-  background: #fff;
-  font-family: "Fira Sans", sans-serif; }
-
-a {
-  color: #4db578; }
-
-a,
-a:hover,
-a:focus {
-  text-decoration: none !important;
-  outline: 0 none;
-  cursor: pointer;
-  color: #409965; }
 
 .arabic,
 .head_surah {
