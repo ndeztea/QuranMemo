@@ -15,7 +15,7 @@
 						<div class="register-block">
 							<!-- /login-form -->
 							<div class="page-title clearfix">
-								<h1 class="pull-left">Daftar QuranMemo</h1>
+								<h1 class="pull-left">Edit Profile</h1>
 							</div>
 							<div class="register_form clearfix">
 								<form class="form-horizontal" action="#" onsubmit="return false" method="post">

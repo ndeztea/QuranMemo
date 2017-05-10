@@ -63,7 +63,7 @@ class Memo extends Model
 
     public function getNeedCorrection(){
         $memoList = DB::table($this->table.' as memo')
-                ->select('memo.*','s.name_indonesia as surah','u.name')
+                ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('status',1)
