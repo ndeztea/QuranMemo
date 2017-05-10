@@ -7,6 +7,9 @@ body {
   position: relative;
   user-select: text !important; }
 
+a:hover, a:focus, a:active {
+  outline: none 0; }
+
 .splash-body {
   position: relative;
   z-index: 1001;
@@ -658,16 +661,19 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
   margin: 7px 0; }
 
 .modal .modal-header {
-  background-color: rgba(77, 181, 120, 0.8); }
+  background-color: transparent; }
   .modal .modal-header h4 {
-    color: #fff;
+    color: rgba(77, 181, 120, 0.8);
     font-size: 20px;
     text-transform: uppercase; }
   .modal .modal-header .close {
-    color: #fff;
+    color: rgba(77, 181, 120, 0.8);
     opacity: .6; }
     .modal .modal-header .close:hover, .modal .modal-header .close:focus {
       opacity: 1; }
+.modal .modal-body {
+  padding: 0;
+  overflow: auto; }
 .modal.content-mode .modal-header {
   background-color: rgba(77, 181, 120, 0.8); }
   .modal.content-mode .modal-header h4 {
@@ -740,23 +746,23 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
     background-color: #b03626; }
 .modal.content-mode .modal-dialog {
   width: 10%;
-  margin-top: 3%;
   margin-left: auto;
   margin-right: auto; }
 .modal .modal-dialog {
-  width: 500px;
-  margin-top: 11%; }
+  width: 500px; }
   @media (max-width: 767px) and (min-width: 320px) {
     .modal .modal-dialog {
       width: 100%;
       margin-left: auto;
       margin-right: auto; } }
   .modal .modal-dialog .modal-content {
-    border-radius: 0; }
+    border-radius: 7px; }
 .modal .modal-header {
   border-bottom: none;
   text-transform: capitalize;
-  text-align: center; }
+  text-align: center;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px; }
 .modal .modal-footer {
   border-top: none; }
 
@@ -1324,23 +1330,67 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
 .memoz-list .memoz-item {
   border-left: solid 1px #ddd;
   border-right: solid 1px #ddd;
-  border-bottom: solid 1px #ddd; }
+  border-bottom: solid 1px #ddd;
+  margin: 0;
+  padding: 7px 13px; }
+  .memoz-list .memoz-item:nth-child(even) {
+    background: #fefefe; }
   .memoz-list .memoz-item p {
     color: #333; }
   .memoz-list .memoz-item .memoz-body {
-    padding: 15px; }
+    display: flex;
+    padding: 15px;
+    align-items: center; }
+    .memoz-list .memoz-item .memoz-body .memoz-tr {
+      width: 20%; }
+      .memoz-list .memoz-item .memoz-body .memoz-tr .tr-days {
+        font-size: 30px;
+        font-weight: bold;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 70px; }
+    .memoz-list .memoz-item .memoz-body .memoz-content {
+      width: 75%; }
     .memoz-list .memoz-item .memoz-body .memoz-link-surah {
       display: inline-block;
       margin-right: 5px; }
   .memoz-list .memoz-item .memoz-action {
     padding: 10px 15px;
-    text-align: center;
-    background: #daf5cd; }
+    text-align: center; }
+    .memoz-list .memoz-item .memoz-action a {
+      font-size: 12px;
+      color: #aaa; }
 
-.filter .nav > li > a:focus, .filter .nav > li > a:hover {
-  background: #4db578;
-  color: #fff;
-  border-color: #3d9260; }
+.filter .nav-tabs > li {
+  width: 33.333%; }
+.filter .nav-tabs > li,
+.filter .nav-tabs > li.active {
+  margin-bottom: 0; }
+.filter .nav-tabs > li > a {
+  margin-right: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  color: #adadad;
+  border: solid transparent;
+  border-width: 3px 0;
+  outline: 0 none;
+  font-weight: bold;
+  text-align: center; }
+.filter .nav-tabs > li.active > a,
+.filter .nav-tabs > li.active > a:focus,
+.filter .nav-tabs > li.active > a:hover {
+  color: #4db578;
+  border-bottom: solid 3px #4db578; }
+.filter .nav > li > a:focus,
+.filter .nav > li > a:hover {
+  background-color: transparent;
+  color: #4db578;
+  border: solid transparent;
+  border-width: 3px 0;
+  border-bottom: solid 3px #4db578;
+  border-radius: 0;
+  margin-bottom: 0; }
 
 .spacer1 {
   display: inline-block;
@@ -1412,5 +1462,8 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
         float: none;
         width: 90%;
         margin: 0 auto; } }
+
+.no-content-center {
+  text-align: center; }
 
 /*# sourceMappingURL=style.min.css.map */

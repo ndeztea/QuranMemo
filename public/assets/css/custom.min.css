@@ -722,9 +722,9 @@ ul.juz-list {
     padding: 5px;
     cursor: pointer;
 }
-.memoz-list .memoz-item{
+/*.memoz-list .memoz-item{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-}
+}*/
 .memoz-list .memoz-item strong{
     margin:0px;
     color:#70C393;
@@ -738,17 +738,16 @@ ul.juz-list {
     font-size:11px;
 }
 .memoz-list .memoz-item .memoz-action{
-    background-color: #daf5cd;
     padding: 3px;
-    text-align: center;
+    text-align: left;
 }
 
-.memoz-list .memoz-item .memoz-action a.left{
+/*.memoz-list .memoz-item .memoz-action a.left{
     float: left;
 }
 .memoz-list .memoz-item .memoz-action a.right{
     float: right;
-}
+}*/
 
 
 /**

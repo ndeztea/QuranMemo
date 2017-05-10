@@ -284,6 +284,12 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+
+
+	$('.modal').on('show.bs.modal', function () {
+		$('.modal-body').css('height',$( window ).height()*0.75);
+	});
+
 	QuranJS.fillAyatEnd();
 
 	<?php if(!empty($ayats) && empty($_COOKIE['coo_hide_info'])):?>

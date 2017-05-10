@@ -25,6 +25,14 @@ body {
 	user-select: text !important;
 }
 
+a{
+	&:hover,
+	&:focus,
+	&:active{
+		outline: none 0;
+	}
+}
+
 .splash-body {
 	position: relative;
 	z-index: 1001;
@@ -864,20 +872,24 @@ body.body-memo {
 
 .modal {
 	.modal-header {
-		background-color: rgba(77, 181, 120, .8);
+		background-color: transparent;
 		h4 {
-			color: #fff;
+			color: rgba(77, 181, 120, .8);;
 			font-size: 20px;
 			text-transform: uppercase;
 		}
 		.close {
-			color: #fff;
+			color:rgba(77, 181, 120, .8);
 			opacity: .6;
 			&:hover,
 			&:focus {
 				opacity: 1;
 			}
 		}
+	}
+	.modal-body{
+		padding:0;
+		overflow: auto;
 	}
 	&.content-mode {
 		.modal-header {
@@ -990,14 +1002,14 @@ body.body-memo {
 	&.content-mode {
 		.modal-dialog {
 			width: 10%;
-			margin-top: 3%;
+			// margin-top: 3%;
 			margin-left: auto;
 			margin-right: auto;
 		}
 	}
 	.modal-dialog {
 		width: 500px;
-		margin-top: 11%;
+		// margin-top: 11%;
 		@include media("<=767px",
 		">=phone") {
 			width: 100%;
@@ -1005,13 +1017,15 @@ body.body-memo {
 			margin-right: auto;
 		}
 		.modal-content {
-			border-radius: 0;
+			border-radius: 7px;
 		}
 	}
 	.modal-header {
 		border-bottom: none;
 		text-transform: capitalize;
 		text-align: center;
+		border-top-left-radius: 7px;
+		border-top-right-radius: 7px;
 	}
 	.modal-footer {
 		border-top: none;
@@ -1731,14 +1745,35 @@ body.body-memo {
 .memoz-list{
 	.memoz-item{
 		// box-shadow: 0 1px 3px 0 rgba(0,0,0,0.26);
+		&:nth-child(even){
+			background: #fefefe;
+		}
 		border-left: solid 1px #ddd;
 		border-right: solid 1px #ddd;
 		border-bottom: solid 1px #ddd;
+		margin:0;
+		padding:7px 13px;
 		p{
 			color: #333;
 		}
 		.memoz-body{
+			display:flex;
 			padding: 15px;
+			align-items: center;
+			.memoz-tr{
+				width:20%;
+				.tr-days{
+					font-size: 30px;
+					font-weight: bold;
+					display: block;
+					overflow: hidden;
+    				text-overflow: ellipsis;
+    				width: 70px;
+				}
+			}
+			.memoz-content{
+				width: 75%;
+			}
 			.memoz-link-surah{
 				 display: inline-block;
 				 margin-right: 5px;
@@ -1747,16 +1782,51 @@ body.body-memo {
 		.memoz-action{
 			padding: 10px 15px;
 			text-align: center;
-			background: #daf5cd;
+			a{
+				font-size: 12px;
+				color: #aaa;
+			}
 		}
 	}
 }
 
 .filter{
-	.nav>li>a:focus, .nav>li>a:hover{
-		background: $main-color;
-		color:#fff;
-		border-color: darken($main-color,10%);
+	.nav-tabs>li{
+		width: 33.333%;
+	}
+	
+	.nav-tabs>li,
+	.nav-tabs>li.active{
+		margin-bottom: 0;
+	}
+
+	.nav-tabs>li>a{
+		margin-right: 0;
+		border-radius: 0;
+		margin-bottom: 0;
+		color: #adadad;
+		border: solid transparent;
+		border-width: 3px 0;
+		outline: 0 none;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.nav-tabs>li.active>a, 
+	.nav-tabs>li.active>a:focus, 
+	.nav-tabs>li.active>a:hover{
+		color: $main-color;
+		border-bottom: solid 3px $main-color;
+	}
+	.nav>li>a:focus, 
+	.nav>li>a:hover{
+		background-color: transparent;
+		color: $main-color;
+		border: solid transparent;
+		border-width: 3px 0;
+		border-bottom: solid 3px $main-color;
+		border-radius: 0;
+		margin-bottom: 0;
 	}
 }
 
@@ -1857,4 +1927,8 @@ body.body-memo {
 			margin: 0 auto;
 		}
 	}
+}
+
+.no-content-center{
+	text-align: center;
 }
