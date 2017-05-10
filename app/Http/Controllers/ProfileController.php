@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Image; 
 use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -50,11 +51,42 @@ class ProfileController extends Controller
 
         }
 
-        // get need correction memoz
+        // avatar
         $data['detailUser'] = $UsersModel->getDetail(session('sess_id'))[0];
 
 
         return view('profile_edit',$data);
+    }
+
+    public function uploadAvatar(Request $request){
+        $UsersModel = new Users;
+        $detailUser = $UsersModel->getDetail(session('sess_id'))[0];
+
+        if ($request->file('avatar')->isValid()) {
+            $fileName = session('sess_id').uniqid('_avatar_').'.jpg';
+            $path = $request->file('avatar')->move(public_path('assets/images/avatar'), $fileName);
+            // make sure upload sucess
+            if(File::exists($path)){
+                // resize
+                Image::make($path)->resize(null,200, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($path);
+
+                // remove old photo
+                File::delete(public_path('assets/images/avatar/'.$detailUser->avatar));
+
+                // store to DB
+                $dataProfile['avatar'] = $fileName;
+                $dataProfile['id'] = session('sess_id');
+                $UsersModel->edit($dataProfile);
+
+            }else{
+                return 'false';
+            }
+        }else{
+            return 'false';
+        }
+        return url('assets/images/avatar/'.$fileName);
     }
 
     
