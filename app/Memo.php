@@ -46,11 +46,13 @@ class Memo extends Model
         return $memoDetail;
     }
 
-    public function getList($id_user,$filter){
+    public function getList($id_user,$filter,$start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
-                ->where('id_user',$id_user);
+                ->where('id_user',$id_user)
+                ->offset($start)
+                ->limit($limit);
 
         if($filter!='all'){
             $memoList = $memoList->where('status',$filter);
@@ -61,13 +63,33 @@ class Memo extends Model
         return $memoList;
     }
 
-    public function getNeedCorrection(){
+    public function getAnotherList($id_user,$filter,$start=0,$limit=5){
+        $memoList = DB::table($this->table.' as memo')
+                ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar')
+                ->join('surah as s', 's.id', '=', 'memo.surah_start')
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->where('id_user','!=',$id_user)
+                ->offset($start)
+                ->limit($limit);
+
+        if($filter!='all'){
+            $memoList = $memoList->where('status',$filter);
+        }
+        $memoList = $memoList->orderby('date_end','asc')->get();
+
+
+        return $memoList;
+    }
+
+    public function getNeedCorrection($start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('status',1)
                 ->orderby('updated_at','desc')
+                ->offset($start)
+                ->limit($limit)
                 ->get();
 
         return $memoList;

@@ -41,6 +41,20 @@
 					  @endforeach
 				  	</ul>
 			  	@endif
+
+			  	<h4 class="boxcontent-label">Hafalan lain</h4>
+				  @if(!empty($listMemoz))
+			  		<ul class="correction-list list-unstyled">
+						  @foreach($listMemoz as $row)
+			  		<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
+					  <li class="correction-list-item">
+					  	<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px" class="img-circle">
+			  			<span class="username">{{$row->name}}</span>
+			  			<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+			  		</li>
+					  @endforeach
+				  	</ul>
+			  	@endif
 			  	
 			  </div>
 		<!-- end single-column-->
