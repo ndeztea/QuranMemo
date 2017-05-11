@@ -166,6 +166,7 @@ class MemozController extends Controller
 
         $dataHTML['html'] = view('memoz_list_ajax',$data)->render();
         $dataHTML['start'] = $start;
+        $dataHTML['count'] = count($data['list']);
 
         return response()->json($dataHTML);
     }
