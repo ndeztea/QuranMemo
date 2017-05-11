@@ -46,7 +46,7 @@ class Memo extends Model
         return $memoDetail;
     }
 
-    public function getList($id_user,$filter,$start=0,$limit=1){
+    public function getList($id_user,$filter,$start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
