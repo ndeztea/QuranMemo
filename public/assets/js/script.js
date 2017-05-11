@@ -364,15 +364,28 @@ var QuranJS = {
 		})
 	},
 
-	memozFilter : function(filter){
-		jQuery('.memoz-list').hide();
-		jQuery('.memoz-loading').show();
+	memozFilter : function(filter,next=''){
+		if(next!=''){
+			jQuery('.btn-loadmore').html('Loading...');
+		}else{
+			jQuery('.memoz-list').hide();
+			jQuery('.memoz-loading').show();
+		}
+		
+		var count = $( ".memoz-item" ).length;
 		$.post(this.siteUrl+'/memoz/list_ajax',{
-			filter : filter
+			filter : filter,
+			start : count
 		},function(response){
-			jQuery('.memoz-list').html(response.html);
+			if(response.start=='0'){
+				jQuery('.memoz-list').html(response.html);
+			}else{
+				jQuery('.btn-loadmore').before(response.html);
+			}
+			
 			jQuery('.memoz-list').show();
 			jQuery('.memoz-loading').hide();
+			jQuery('.btn-loadmore').html('Selanjutnya');
 		});
 	},
  
@@ -601,7 +614,7 @@ var QuranJS = {
 		$('.modal-body').html(htmlSelectSurah);
 		$('.select2-container').remove();
 		$('.selectpicker').select2();
-		
+
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
 
 	},
@@ -839,6 +852,34 @@ var QuranJS = {
 					$('.label-loading').hide();
 				}
 			);
+	},
+
+	uploadAvatar : function(){
+		$('#btn-upload').val('Uploading...');
+		$('#btn-upload').prop("disabled",true);
+
+		var formData = new FormData();
+		formData.append('avatar', $('#avatar')[0].files[0]); 
+
+		$.ajax({
+			url: this.siteUrl+'/profile/uploadAvatar', // Url to which the request is send
+			type: "POST",             // Type of request to be send, called as method
+			data:  formData, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			contentType: false,       // The content type used when sending data to the server.
+			cache: false,             // To unable request pages to be cached
+			processData:false,        // To send DOMDocument or non processed data file it is set to false
+			success: function(data)   // A function to be called if request succeeds
+			{
+				if(data=='false'){
+					alert('Upload avatar gagal');
+				}else{
+					alert('Upload avatar sukses');
+					$('#img_avatar').attr('src',data);
+				}
+				$('#btn-upload').val('Upload');
+				$('#btn-upload').removeAttr("disabled");
+			}
+		});
 	}
 
 } 

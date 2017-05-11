@@ -157,11 +157,16 @@ class MemozController extends Controller
         $MemoModel = new Memo();
         $sess_user_id = $request->session()->get('sess_id');
         $filter = $request->input('filter');
+        $start = $request->input('start');
+        $start = empty($start)?0:$start;
 
-        $data['list']  = $MemoModel->getList($sess_user_id,$filter);
+        $data['list']  = $MemoModel->getList($sess_user_id,$filter,$start);
+        $data['filter'] = $filter;
+        $data['start'] = $start;
 
         $dataHTML['html'] = view('memoz_list_ajax',$data)->render();
-        
+        $dataHTML['start'] = $start;
+
         return response()->json($dataHTML);
     }
 
