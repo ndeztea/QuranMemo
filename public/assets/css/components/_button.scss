@@ -9,3 +9,136 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 	background-image: none;
 	text-shadow: none;
 }
+
+.btn-green-small {
+    background-color: $main-color !important;
+    color: #FFF!important;
+    border: solid 1px $main-color-hover !important;
+	&:hover,
+	&:focus{
+		background: lighten($main-color,10%) !important;
+	}
+}
+
+.btn-green-small-darker {
+    background-color: #25835B!important;
+    color: #FFF!important
+}
+
+.btn-breadcrumb {
+	.btn:not(:last-child):after {
+		content: " ";
+		display: block;
+		width: 0;
+		height: 0;
+		border-top: 17px solid transparent;
+		border-bottom: 17px solid transparent;
+		border-left: 10px solid white;
+		position: absolute;
+		top: 50%;
+		margin-top: -17px;
+		left: 100%;
+		z-index: 3;
+	}
+	.btn:not(:last-child):before {
+		content: " ";
+		display: block;
+		width: 0;
+		height: 0;
+		border-top: 17px solid transparent;
+		border-bottom: 17px solid transparent;
+		border-left: 10px solid #4db578;
+		position: absolute;
+		top: 50%;
+		margin-top: -17px;
+		margin-left: 1px;
+		left: 100%;
+		z-index: 3;
+	}
+	/** The Spacing **/
+	.btn {
+		padding: 6px 12px 6px 24px;
+		box-shadow: none;
+	}
+	.btn:first-child {
+		padding: 6px 6px 6px 10px;
+	}
+	.btn:last-child {
+		padding: 6px 18px 6px 24px;
+	}
+	/** Default button **/
+	.btn.btn-default.selected:not(:last-child):after {
+		border-left: 10px solid #4db578;
+	}
+	.btn.btn-default:not(:last-child):after {
+		border-left: 10px solid #fff;
+	}
+	.btn.btn-default:not(:last-child):before {
+		border-left: 10px solid #4db578;
+	}
+	.btn.btn-default:hover:not(:last-child):after {
+		border-left: 10px solid #4db578;
+	}
+	.btn.btn-default:hover:not(:last-child):before {
+		border-left: 10px solid #fff;
+	}
+}
+
+.btn-green {
+	background-color: $main-color;
+	color: #fff;
+	font-size: 14px;
+	margin-left: 3px;
+	@include media("<=480px",
+	">=phone") {
+		width: 100%;
+		display: block;
+		margin-left: 0;
+	}
+	&:hover,
+	&:focus {
+		background-color: $main-color-hover;
+	}
+}
+
+.btn-search-surah {
+	margin-left: 10px;
+	@include boxy($btn-hover...);
+	&:hover,
+	&:focus,
+	&.selected {
+		background-color: $main-color-hover;
+		border: solid 1px $main-color-hover;
+		color: #fff;
+	}
+	@include media("<tablet",
+	">=phone") {
+		width: 40px;
+		margin: 5px 0;
+	}
+}
+
+.btn-setting {
+	margin-left: 10px;
+	@include boxy($btn-hover...);
+	&:hover,
+	&:focus,
+	&.selected {
+		background-color: $main-color-hover;
+		border: solid 1px $main-color-hover;
+		color: #fff;
+	}
+	@include media("<tablet",
+	">=phone") {
+		float: right !important;
+		width: 40px;
+		margin: 5px 0;
+	}
+	&.btn-juz {
+		@include media("<tablet",
+		">=phone") {
+			margin-left: 6px;
+			float: left !important;
+		}
+	}
+}

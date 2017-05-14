@@ -26,3 +26,720 @@ a{
 	color: $main-color-hover;
     }
 }
+
+::-moz-selection {
+	background: $main-color !important;
+	color: $txtColor !important;
+}
+
+::-webkit-selection {
+	background: $main-color !important;
+	color: $txtColor !important;
+}
+
+::selection {
+	background: $main-color !important;
+	color: $txtColor !important;
+}
+
+.splash-body {
+	position: relative;
+	z-index: 1001;
+	background: #000;
+	transition: all 2s ease;
+	display: block;
+	width: 100%;
+	.splash-inner {
+		background: url("../images/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center / cover;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 1s ease;
+		animation-delay: .5s;
+		display: block;
+	}
+	.splash {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(77, 181, 120, 0.9);
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		.holder {
+			position: relative;
+			top: 45%;
+			transform: translateY(-45%);
+			width: 100%;
+			margin: auto;
+			text-align: center;
+			padding: 0;
+		}
+	}
+	.splash-text {
+		animation-delay: 4s;
+		span {
+			display: block;
+			text-align: center;
+			padding: 40px;
+			vertical-align: middle;
+		}
+		img {
+			padding-top: 60px;
+			display: inline-block;
+		}
+	}
+	.start {
+		width: 125px;
+		margin: 20px auto;
+		text-align: center;
+		animation-delay: 5s;
+		display: block;
+		padding: 13px 0;
+		background-color: $main-color-hover;
+		border: none;
+		color: #fff;
+		&:hover,
+		&:focus,
+		&.selected {
+			color: #000;
+			background-color: lighten($main-color, 10%);
+		}
+	}
+}
+
+.arabic,
+.head_surah {
+	font-family: $arab-font;
+	font-size: 33px;
+	word-spacing: 0px;
+}
+
+.navbar {
+	margin-bottom: 0;
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+.navbar-default {
+	background-image: none;
+	background: $main-color;
+	border-radius: 0;
+	border: none;
+	z-index: 3;
+	.navbar-toggle {
+		border-color: transparent;
+		.icon-bar {
+			background-color: #fff;
+		}
+		&:hover,
+		&:focus {
+			background-color: $main-color;
+		}
+	}
+	.navbar-collapse,
+	.navbar-form {
+		box-shadow: none;
+		border-color: transparent;
+	}
+	.navbar-brand {
+		color: #fff;
+		text-shadow: none;
+		font-weight: 700;
+		transition: color 1s ease;
+		padding: 6px 20px;
+		&:hover,
+		&:focus {
+			opacity: .7;
+			// color: darken($main-color-hover,5%);
+		}
+	}
+	.navbar-nav {
+		&>.active>a,
+		&>.open>a {
+			background-image: none;
+		}
+		&>li>a {
+			color: #fff;
+			text-shadow: none;
+		}
+		&>.active>a,
+		&>.active>a:focus,
+		&>.active>a:hover {
+			background-color: $main-color-hover;
+			color: #fff;
+		}
+		@include media("<tablet",
+		">=phone") {
+			margin: 0;
+		}
+	}
+}
+
+#main-nav {
+	display: none;
+}
+
+.nav-top {
+	position: relative;
+	border-bottom: solid 1px #ddd;
+	padding: 10px 10px;
+	background-color: #f6f6f6;
+	z-index: 999;
+	@include media("<=tablet",
+	">=phone") {
+		padding: 5px 10px;
+	}
+	.btn-surah-trigger {
+		width: 100%;
+		background-color: $main-color;
+		color: #fff;
+		&:hover,
+		&:focus {
+			background-color: $main-color-hover;
+		}
+	}
+	#surah-collapse {
+		@include media("<=480px",
+		">=phone") {
+			margin-top: 15px;
+		}
+	}
+	.memoz_options {
+		position: absolute;
+		top: 11px;
+		right: 9px;
+		z-index: 5;
+		@include media(">=phone",
+		"<=767px") {
+			top: 6px;
+		}
+		.btn {
+			background: transparent;
+			border: none;
+			box-shadow: none;
+			text-shadow: none;
+			color: #999;
+			&:hover,
+			&:focus {
+				background-color: transparent;
+				color: $main-color;
+			}
+		}
+		.dropdown-menu {
+			padding: 10px 15px;
+			@include media(">=phone",
+			"<=767px") {
+				left: auto;
+				right: 0;
+			}
+			li {
+				padding: 10px 0;
+				&.divider {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+
+
+.select-surah {
+	@include media(">=phone",
+	"<=767px") {
+		padding-top: 10px;
+	}
+	.form-inline {
+		margin-bottom: 0;
+		.form-group {
+			margin: 0 5px 0 0;
+			.form-control.search_ayat {
+				width: 75px;
+				@include media(">=phone",
+				"<=767px") {
+					width: 100%;
+				}
+			}
+			.input-group-addon {
+				border-left: none;
+				border-right: none;
+			}
+			@include media("<=767px",
+			">=phone") {
+				margin-bottom: 10px;
+			}
+		}
+		.btn {
+			background-color: $main-color;
+			color: #fff;
+			font-size: 14px;
+			margin-left: 3px;
+			span {
+				color: #fff;
+				padding-left: 10px;
+			}
+			@include media("<=480px",
+			">=phone") {
+				width: 100%;
+				display: block;
+				margin-left: 0;
+			}
+			&:hover,
+			&:focus {
+				background-color: $main-color-hover;
+			}
+		}
+		select {
+			@include media(">=tablet",
+			"<=931px") {
+				width: 150px;
+			}
+		}
+	}
+	.checkbox,
+	.form-control,
+	span {
+		color: $nav-top-color;
+	}
+	.search-title {
+		@include media(">=phone",
+		"<=767px") {
+			margin-bottom: 10px;
+			display: block;
+		}
+	}
+	.search_ayat {
+		width: 67px;
+		text-align: center;
+	}
+}
+
+.surah-nav {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	.input-group {
+		margin: auto;
+		.btn {
+			background-color: $main-color;
+			border-color: $main-color;
+			color: #fff;
+			text-shadow: none;
+		}
+	}
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+	background-color: $main-color;
+	border-color: $main-color;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+	color: $gray;
+	border: solid 1px $gray;
+	background: transparent;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+	background-color: $main-color;
+	border-color: $main-color;
+	color: #fff;
+}
+
+.pagination .page_free_input {
+	form {
+		margin: 0px;
+	}
+	a {
+		padding: 0px !important;
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+	}
+	.form-group {
+		height: 28px;
+		.input-group-addon {
+			background-color: transparent;
+			border: none;
+			border-left: solid 1px $gray;
+			height: 28px;
+			transition: background .5s ease;
+			&:hover {
+				background: $main-color;
+				color: #fff;
+			}
+		}
+		input {
+			border: 0px;
+			width: 50px;
+			text-align: center;
+			height: 26px;
+			border-radius: 0;
+		}
+		button {
+			height: 0;
+			padding: 0px;
+			margin: -7px 0;
+			background-color: transparent;
+			border: none;
+		}
+	}
+}
+
+.surah-action {
+	text-align: right;
+	margin: 7px 0 0;
+	@include media("<=480px",
+	">=phone") {
+		text-align: center;
+		float: none !important;
+		width: 100%;
+	}
+	.auto-play {
+		margin-right: 10px;
+		color: #fff;
+		@include media("<=480px",
+		">=phone") {
+			text-align: center;
+			margin: 20px 0;
+			display: block;
+		}
+	}
+	#playnow {
+		color: #999;
+	}
+}
+
+.main-content-wrap {
+	width: 100%;
+	margin: 0;
+	display: block;
+	position: relative;
+	min-height: 500px;
+	.main-content {
+		padding: 20px 0;
+		.backdrop {
+			background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center / cover;
+			width: 100%;
+			height: 400px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			.backdrop-inner {
+				background-color: rgba(31, 142, 97, 0.85);
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.single-column {
+			width: 80%;
+			margin: 0 auto;
+			position: relative;
+			z-index: 2;
+			@include media(">=1200px") {
+				width: 80%;
+			}
+			@include media(">=desktop",
+			"<=1200px") {
+				width: 90%;
+			}
+			@include media("<desktop",
+			">=tablet") {
+				width: 95%;
+			}
+			@include media(">=tablet",
+			"<=800px") {
+				width: 100%;
+			}
+			@include media("<tablet",
+			">=phone") {
+				width: 100%;
+			}
+			.page-title {
+				position: relative;
+				h1 {
+					@include media("<tablet",
+					">=phone") {
+						margin: 0 0 0 40px !important;
+					}
+				}
+				h2 {
+					margin: 0 0 20px;
+					color: #fff;
+					@include media("<tablet",
+					">=480px") {
+						text-align: center;
+						float: none !important;
+						width: 100%;
+						margin: 0 !important;
+					}
+					@include media("<479px",
+					">=phone") {
+						text-align: left;
+					}
+				}
+				.gp-link {
+					margin-top: -7px;
+					@include media("<tablet",
+					">=phone") {
+						position: absolute;
+						top: -5px;
+						right: 5px;
+						float: none !important;
+						width: auto;
+					}
+				}
+			}
+			.nav-top {
+				#surah-collapse {
+					@include media(">=1234px") {
+						width: 65%;
+						float: left;
+					}
+					@include media(">=1201px",
+					"<=1233px") {
+						width: 70%;
+						float: left;
+					}
+					@include media(">=1098px",
+					"<=1200px") {
+						width: 65%;
+						float: left;
+					}
+					@include media(">=932px",
+					"<=1097px") {
+						width: 75%;
+						float: left;
+					}
+					@include media(">=768px",
+					"<=931px") {
+						width: 70%;
+						float: left;
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-top-collapse {
+	display: block;
+	height: auto !important;
+	overflow: visible !important;
+	padding-bottom: 0;
+}
+
+.toggle-player {
+	position: fixed;
+	bottom: -10px;
+	right: 0;
+	z-index: 999;
+	padding: 10px 0;
+	.btn-toggle-player {
+		border: solid 1px $main-color;
+		color: $main-color;
+		text-align: center;
+		background: #fff;
+		border-radius: 0;
+		&:hover,
+		&:focus {
+			background-color: $main-color;
+			color: #333;
+		}
+	}
+}
+
+.detail_top {
+	text-align: center;
+	color: #1C9A71 !important;
+	background-color: #dff0d8;
+	.btn {
+		margin: 0;
+		background-color: #1fa67a;
+		color: #fff;
+		border-left: solid 1px #1b926c;
+		&:hover,
+		&:focus {
+			background-color: #1b926c;
+			color: #fff
+		}
+	}
+}
+
+.no_ayat_arabic {
+	font-size: 20px
+}
+
+.surah_title {
+	background-color: hsla(103, 44%, 89%, 0.82);
+	color: #3C763D;
+	padding-bottom: 10px;
+	.surah_name,
+	.head_surah {
+		text-align: center;
+	}
+	.surah_name {
+		margin-bottom: 10px;
+		strong {
+			font-size: 16px;
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+	width: 100%;
+	position: relative;
+	margin-bottom: 30px;
+	ul {
+		list-style: none;
+		li {
+			display: inline-block;
+			margin-right: 10px;
+			span {
+				color: darken($main-color, 10%);
+			}
+			a {
+				color: $main-color;
+				&:hover,
+				&:focus {
+					color: lighten($main-color, 10%);
+				}
+			}
+		}
+	}
+}
+
+#preloader {
+	width: 100%;
+	height: 1700px;
+	z-index: 10000;
+	position: absolute;
+	overflow: overlay;
+	background-color: rgba(77, 181, 120, .87);
+	text-align: center;
+}
+
+.search-result {
+	.search-item {
+		p {
+			padding: 10px 20px;
+			margin: 0;
+			color: darken($gray, 10%);
+		}
+		.search-footer {
+			padding: 5px 20px;
+			background-color: $light-gray;
+			.fa,
+			a {
+				color: $main-color;
+				;
+			}
+		}
+	}
+}
+
+.juz-list {
+	li {
+		float: left;
+		width: 33.3%;
+		margin-bottom: 10px;
+		a {
+			display: block;
+			.juz-arabic {
+				font-weight: bold;
+			}
+			.juz-indo {
+				display: block;
+				color: #aaa;
+			}
+			&:hover,
+			&:focus,
+			&:hover .juz-indo,
+			&:focus .juz-indo {
+				color: $main-color;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.filter{
+	.nav-tabs>li{
+		width: 33.333%;
+	}
+	
+	.nav-tabs>li,
+	.nav-tabs>li.active{
+		margin-bottom: 0;
+	}
+
+	.nav-tabs>li>a{
+		margin-right: 0;
+		border-radius: 0;
+		margin-bottom: 0;
+		color: #adadad;
+		border: solid transparent;
+		border-width: 3px 0;
+		outline: 0 none;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.nav-tabs>li.active>a, 
+	.nav-tabs>li.active>a:focus, 
+	.nav-tabs>li.active>a:hover{
+		color: $main-color;
+		border-bottom: solid 3px $main-color;
+	}
+	.nav>li>a:focus, 
+	.nav>li>a:hover{
+		background-color: transparent;
+		color: $main-color;
+		border: solid transparent;
+		border-width: 3px 0;
+		border-bottom: solid 3px $main-color;
+		border-radius: 0;
+		margin-bottom: 0;
+	}
+}
+
+.boxcontent{
+	@extend .mushaf;
+	padding: 35px;
+}
+
+.boxcontent-label{
+	margin-top: 0;
+}
+
+.correction-list{
+	.username{
+		display: block;
+		color: $main-color;
+		font-weight: bold;
+	}
+
+	.correction-list-item{
+		margin-bottom: 10px;
+	}
+
+	.ayat-target{
+		display: inline-block;
+	}
+}

@@ -1,0 +1,140 @@
+.memoz_nav {
+	width: 98%;
+	margin: 0 auto 10px;
+	@include media("<=480px",
+	">=phone") {
+		width: 88%;
+	}
+	.btn {
+		color: $main-color;
+		border: solid 1px $main-color;
+		display: inline-block;
+		width: 19.7%;
+		&:hover,
+		&:focus {
+			color: #fff;
+			background: $main-color-hover;
+		}
+		@include media("<=1279px",
+		">=481px") {
+			width: 18.7%;
+		}
+		@include media("<=480px",
+		">=phone") {
+			width: auto;
+			padding: 4px 5px;
+		}
+	}
+}
+
+.body-memo .nav-top .select-surah {
+	width: 100%;
+}
+
+body.body-memo {
+	.mushaf {
+		padding-top: 1px;
+	}
+}
+
+.puzzle {
+	background-color: #DDD;
+	.content_ayat {
+		display: inline-block;
+		.arabic-puzzle {
+			float: left;
+			width: auto;
+			padding: 5px !important;
+			margin: 2px;
+			border: dotted 1px #333;
+			&:empty {
+				padding: 0 !important;
+				border: none;
+			}
+		}
+	}
+}
+
+.memoz-list{
+	.memoz-item{
+		// box-shadow: 0 1px 3px 0 rgba(0,0,0,0.26);
+		&:nth-child(even){
+			background: #fefefe;
+		}
+		border-left: solid 1px #ddd;
+		border-right: solid 1px #ddd;
+		border-bottom: solid 1px #ddd;
+		margin:0;
+		padding:7px 13px;
+		p{
+			color: #333;
+		}
+		.memoz-body{
+			display:flex;
+			padding: 15px;
+			align-items: center;
+			.memoz-tr{
+				width:20%;
+				.tr-days{
+					font-size: 30px;
+					font-weight: bold;
+					display: block;
+					overflow: hidden;
+    				text-overflow: ellipsis;
+    				width: 70px;
+				}
+			}
+			.memoz-content{
+				width: 75%;
+			}
+			.memoz-link-surah{
+				 display: inline-block;
+				 margin-right: 5px;
+			}
+		}
+		.memoz-action{
+			padding: 10px 15px;
+			text-align: center;
+			a{
+				font-size: 12px;
+				color: #aaa;
+			}
+		}
+	}
+}
+
+.memoz_player {
+	padding: 5px 20px;
+	margin: 15px 0;
+}
+
+.steps_desc {
+	color: #999;
+	font-size: 16px;
+	padding: 0 10px;
+}
+
+.mushaf-hafalan {
+	.step-wrap {
+		width: 100%;
+		margin: 7px 0;
+		.steps {
+			padding: 0 10px;
+			margin: 10px 0;
+			display: block;
+			.btn {
+				@include boxy($btn-normal...);
+				width: 20%;
+				&:hover,
+				&:focus,
+				&.selected {
+					@include boxy($btn-hover...);
+				}
+			}
+		}
+	}
+}
+
+.hafalan-actions {
+	margin: 7px 0;
+}

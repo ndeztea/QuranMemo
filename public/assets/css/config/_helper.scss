@@ -1,0 +1,48 @@
+.no-content-center{
+	text-align: center;
+}
+
+.list-unstyled{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.spacer1{ 
+	display: inline-block;
+	padding:0 5px;
+}
+
+.fa-3 {
+	font-size: 4em;
+}
+
+.display-inline-block-xs {
+	margin: 10px 5px 10px 0;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.wrap .alert {
+	width: 80.6%;
+	margin: 20px auto 5px;
+	transition: all 1s ease;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+
+.dropdown-backdrop {
+	position: static;
+}
+
+.wrap {
+	.steps_desc {
+		.alert {
+			width: 100%;
+			margin: 0 0 10px;
+		}
+	}
+}

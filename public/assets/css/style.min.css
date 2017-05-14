@@ -1,5 +1,577 @@
 @font-face {
   font-family: "Scheherazade", "Traditional Arabic"; }
+.no-content-center {
+  text-align: center; }
+
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.spacer1 {
+  display: inline-block;
+  padding: 0 5px; }
+
+.fa-3 {
+  font-size: 4em; }
+
+.display-inline-block-xs {
+  margin: 10px 5px 10px 0; }
+
+.clearfix {
+  clear: both; }
+
+.wrap .alert {
+  width: 80.6%;
+  margin: 20px auto 5px;
+  transition: all 1s ease;
+  text-align: center;
+  position: relative;
+  z-index: 2; }
+
+.dropdown-backdrop {
+  position: static; }
+
+.wrap .steps_desc .alert {
+  width: 100%;
+  margin: 0 0 10px; }
+
+.btn-green-small {
+  background-color: #4db578 !important;
+  color: #FFF !important;
+  border: solid 1px #409965 !important; }
+  .btn-green-small:hover, .btn-green-small:focus {
+    background: #71c493 !important; }
+
+.btn-green-small-darker {
+  background-color: #25835B !important;
+  color: #FFF !important; }
+
+.btn-breadcrumb {
+  /** The Spacing **/
+  /** Default button **/ }
+  .btn-breadcrumb .btn:not(:last-child):after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 10px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: 100%;
+    z-index: 3; }
+  .btn-breadcrumb .btn:not(:last-child):before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 10px solid #4db578;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 3; }
+  .btn-breadcrumb .btn {
+    padding: 6px 12px 6px 24px;
+    box-shadow: none; }
+  .btn-breadcrumb .btn:first-child {
+    padding: 6px 6px 6px 10px; }
+  .btn-breadcrumb .btn:last-child {
+    padding: 6px 18px 6px 24px; }
+  .btn-breadcrumb .btn.btn-default.selected:not(:last-child):after {
+    border-left: 10px solid #4db578; }
+  .btn-breadcrumb .btn.btn-default:not(:last-child):after {
+    border-left: 10px solid #fff; }
+  .btn-breadcrumb .btn.btn-default:not(:last-child):before {
+    border-left: 10px solid #4db578; }
+  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+    border-left: 10px solid #4db578; }
+  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+    border-left: 10px solid #fff; }
+
+.btn-green {
+  background-color: #4db578;
+  color: #fff;
+  font-size: 14px;
+  margin-left: 3px; }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .btn-green {
+      width: 100%;
+      display: block;
+      margin-left: 0; } }
+  .btn-green:hover, .btn-green:focus {
+    background-color: #409965; }
+
+.btn-search-surah {
+  margin-left: 10px;
+  border-width: 1px;
+  border-color: #4db578;
+  border-style: solid;
+  background-color: #4db578;
+  color: #fff;
+  background-image: none;
+  text-shadow: none; }
+  .btn-search-surah:hover, .btn-search-surah:focus, .btn-search-surah.selected {
+    background-color: #409965;
+    border: solid 1px #409965;
+    color: #fff; }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .btn-search-surah {
+      width: 40px;
+      margin: 5px 0; } }
+
+.btn-setting {
+  margin-left: 10px;
+  border-width: 1px;
+  border-color: #4db578;
+  border-style: solid;
+  background-color: #4db578;
+  color: #fff;
+  background-image: none;
+  text-shadow: none; }
+  .btn-setting:hover, .btn-setting:focus, .btn-setting.selected {
+    background-color: #409965;
+    border: solid 1px #409965;
+    color: #fff; }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .btn-setting {
+      float: right !important;
+      width: 40px;
+      margin: 5px 0; } }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .btn-setting.btn-juz {
+      margin-left: 6px;
+      float: left !important; } }
+
+.modal .modal-header {
+  background-color: transparent; }
+  .modal .modal-header h4 {
+    color: rgba(77, 181, 120, 0.8);
+    font-size: 20px;
+    text-transform: uppercase; }
+  .modal .modal-header .close {
+    color: rgba(77, 181, 120, 0.8);
+    opacity: .6; }
+    .modal .modal-header .close:hover, .modal .modal-header .close:focus {
+      opacity: 1; }
+.modal .modal-body {
+  padding: 0;
+  overflow: auto; }
+.modal.content-mode .modal-header {
+  background-color: rgba(77, 181, 120, 0.8); }
+  .modal.content-mode .modal-header h4 {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase; }
+  .modal.content-mode .modal-header .close {
+    color: #fff;
+    opacity: .6; }
+    .modal.content-mode .modal-header .close:hover, .modal.content-mode .modal-header .close:focus {
+      opacity: 1; }
+.modal.content-mode .modal-body a {
+  color: #4db578; }
+  .modal.content-mode .modal-body a:hover, .modal.content-mode .modal-body a:focus {
+    color: #409965; }
+.modal.share-mode .modal-header {
+  background-color: rgba(77, 181, 120, 0.8); }
+  .modal.share-mode .modal-header h4 {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase; }
+  .modal.share-mode .modal-header .close {
+    color: #fff;
+    opacity: .6; }
+    .modal.share-mode .modal-header .close:hover, .modal.share-mode .modal-header .close:focus {
+      opacity: 1; }
+.modal.share-mode .modal-body a {
+  width: 33.3%;
+  position: relative;
+  display: block;
+  float: left;
+  padding: 10px;
+  color: #fff; }
+  @media (max-width: 439px) and (min-width: 320px) {
+    .modal.share-mode .modal-body a {
+      float: none;
+      width: 100%; } }
+  .modal.share-mode .modal-body a:before, .modal.share-mode .modal-body a:after {
+    position: absolute; }
+  .modal.share-mode .modal-body a:before {
+    top: 11px;
+    left: 65px; }
+  .modal.share-mode .modal-body a:after {
+    bottom: 15px;
+    left: 65px;
+    padding: 5px 8px;
+    border-radius: 7px; }
+  .modal.share-mode .modal-body a:hover, .modal.share-mode .modal-body a:focus {
+    opacity: .85; }
+.modal.share-mode .modal-body a:nth-child(1) {
+  background-color: #3b5998; }
+  .modal.share-mode .modal-body a:nth-child(1):before {
+    content: "Facebook"; }
+  .modal.share-mode .modal-body a:nth-child(1):after {
+    content: "Share";
+    background-color: #2d4373; }
+.modal.share-mode .modal-body a:nth-child(2) {
+  background-color: #55acee; }
+  .modal.share-mode .modal-body a:nth-child(2):before {
+    content: "Twitter"; }
+  .modal.share-mode .modal-body a:nth-child(2):after {
+    content: "Share";
+    background-color: #2795e9; }
+.modal.share-mode .modal-body a:nth-child(3) {
+  background-color: #d34836; }
+  .modal.share-mode .modal-body a:nth-child(3):before {
+    content: "Google Plus"; }
+  .modal.share-mode .modal-body a:nth-child(3):after {
+    content: "Share";
+    background-color: #b03626; }
+.modal.content-mode .modal-dialog {
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto; }
+.modal .modal-dialog {
+  width: 500px; }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .modal .modal-dialog {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto; } }
+  .modal .modal-dialog .modal-content {
+    border-radius: 7px; }
+.modal .modal-header {
+  border-bottom: none;
+  text-transform: capitalize;
+  text-align: center;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px; }
+.modal .modal-footer {
+  border-top: none; }
+
+.modal.login-mode .modal-dialog {
+  width: 350px;
+  margin-top: 30px;
+  background-color: #fff; }
+  .modal.login-mode .modal-dialog .modal-content {
+    background-color: rgba(255, 255, 255, 0.9); }
+.modal.login-mode .modal-footer {
+  background: #71c493;
+  color: #fff; }
+
+.modal.register-mode .modal-dialog {
+  background: url("../images/cal1.png") no-repeat center center/cover; }
+  .modal.register-mode .modal-dialog .modal-content {
+    background-color: rgba(255, 255, 255, 0.9); }
+.modal.register-mode .modal-footer {
+  background: #71c493;
+  color: #fff; }
+
+.input-group {
+  width: 100%; }
+  @media (max-width: 767px) and (min-width: 585px) {
+    .input-group {
+      width: 90%;
+      float: left;
+      margin-right: 20px; } }
+  @media (max-width: 584px) and (min-width: 481px) {
+    .input-group {
+      width: 85%;
+      float: left;
+      margin-right: 20px; } }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .input-group {
+      width: 80%;
+      float: left;
+      margin-right: 20px; } }
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .form-group {
+    margin-bottom: 0px; } }
+
+.form-horizontal .form-group {
+  margin: -16px -15px 15px; }
+  .form-horizontal .form-group .form-control {
+    border-radius: 0;
+    height: auto;
+    padding: 12px; }
+
+.login_form .btn-group,
+.register_form .btn-group {
+  width: 100%; }
+
+.login_form .btn-group .btn,
+.register_form .btn-group .btn {
+  width: 50%;
+  border-radius: 0; }
+
+.login_form {
+  width: 80%;
+  margin: 30px auto 0; }
+  .login_form .form-control {
+    border: solid 1px #fff;
+    border-bottom: dashed 1px #ddd;
+    box-shadow: none;
+    margin-bottom: 7px; }
+    .login_form .form-control:focus {
+      border-bottom: solid 2px #4db578; }
+  .login_form .btn-group {
+    margin-top: 55px;
+    padding-top: 20px; }
+    .login_form .btn-group .btn {
+      width: 50%;
+      color: #4db578;
+      font-size: 20px;
+      background: transparent;
+      border: solid 1px #fff;
+      box-shadow: none !important; }
+      .login_form .btn-group .btn:hover, .login_form .btn-group .btn:focus, .login_form .btn-group .btn.selected {
+        color: #cccc00; }
+  .login_form .btn-masuk {
+    text-align: left; }
+  .login_form .btn-daftar {
+    text-align: right; }
+
+.register_form {
+  padding: 35px 45px 45px;
+  margin: 20px auto;
+  background: #fff; }
+  .register_form .promo {
+    border: solid 1px #2e6e48;
+    width: 45%;
+    height: 333px;
+    position: relative;
+    overflow: hidden; }
+    .register_form .promo .buku {
+      width: 100%;
+      height: 333px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(../images/alqurantikrar.png) no-repeat center center; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .register_form .promo .buku {
+          height: 400px; } }
+    .register_form .promo .promo-txt {
+      padding: 10px;
+      position: relative;
+      z-index: 2;
+      background: rgba(77, 181, 120, 0.85);
+      height: 333px;
+      color: #fff;
+      padding: 10px 35px;
+      font-size: 16px; }
+      .register_form .promo .promo-txt h3 {
+        text-align: center;
+        color: yellow;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-size: 20px; }
+      .register_form .promo .promo-txt p {
+        font-size: 17px;
+        line-height: 24px; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .register_form .promo .promo-txt {
+          height: auto; } }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .register_form .promo {
+        width: 100%;
+        float: none !important;
+        margin-bottom: 30px;
+        height: auto; } }
+  .register_form form {
+    width: 50%;
+    margin-top: 15px; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .register_form form {
+        width: 90%;
+        float: none !important;
+        margin: 0 auto; } }
+  .register_form .btn-masuk {
+    border-width: 1px;
+    border-color: #4db578;
+    border-style: solid;
+    background-color: transparent;
+    color: #4db578;
+    background-image: none;
+    text-shadow: none; }
+    .register_form .btn-masuk:hover, .register_form .btn-masuk:focus, .register_form .btn-masuk.selected {
+      border-width: 1px;
+      border-color: #4db578;
+      border-style: solid;
+      background-color: #4db578;
+      color: #fff;
+      background-image: none;
+      text-shadow: none; }
+  .register_form .btn-daftar {
+    border-width: 1px;
+    border-color: #4db578;
+    border-style: solid;
+    background-color: transparent;
+    color: #4db578;
+    background-image: none;
+    text-shadow: none; }
+    .register_form .btn-daftar:hover, .register_form .btn-daftar:focus, .register_form .btn-daftar.selected {
+      border-width: 1px;
+      border-color: #4db578;
+      border-style: solid;
+      background-color: #4db578;
+      color: #fff;
+      background-image: none;
+      text-shadow: none; }
+
+.quran-player {
+  margin: auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 99; }
+  @media (min-width: 1200px) {
+    .quran-player {
+      width: 80%; } }
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    .quran-player {
+      width: 90%; } }
+  @media (max-width: 1023px) and (min-width: 801px) {
+    .quran-player {
+      width: 95%; } }
+  @media (min-width: 768px) and (max-width: 800px) {
+    .quran-player {
+      width: 100%; } }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .quran-player {
+      width: 100%; } }
+
+.quran_player {
+  height: 50px;
+  background: transparent;
+  z-index: 99; }
+  @media (min-width: 1200px) {
+    .quran_player {
+      width: 100%; } }
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .quran_player {
+      width: 90%; } }
+  @media (max-width: 380px) and (min-width: 320px) {
+    .quran_player {
+      width: 320px; } }
+  @media (max-width: 1023px) and (min-width: 801px) {
+    .quran_player {
+      width: 95%; } }
+  @media (min-width: 768px) and (max-width: 800px) {
+    .quran_player {
+      width: 100%; } }
+  .quran_player .jp-video {
+    background: transparent;
+    margin: 0 auto; }
+    @media (min-width: 1200px) {
+      .quran_player .jp-video {
+        width: 100%; } }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+      .quran_player .jp-video {
+        width: 90%; } }
+    @media (max-width: 1023px) and (min-width: 801px) {
+      .quran_player .jp-video {
+        width: 95%; } }
+    @media (min-width: 768px) and (max-width: 800px) {
+      .quran_player .jp-video {
+        width: 100%; } }
+    @media (max-width: 380px) and (min-width: 320px) {
+      .quran_player .jp-video {
+        width: 320px; } }
+    @media (max-width: 767px) and (min-width: 381px) {
+      .quran_player .jp-video {
+        width: 100%; } }
+    .quran_player .jp-video .jp-progress {
+      height: 3px;
+      background-color: rgba(191, 225, 178, 0.82) !important; }
+    .quran_player .jp-video .jp-current-time {
+      margin-left: 0; }
+    .quran_player .jp-video .jp-duration {
+      margin-right: 0; }
+  .quran_player .jp-controls-holder {
+    top: -12px;
+    left: -45px; }
+    @media (min-width: 1200px) {
+      .quran_player .jp-controls-holder {
+        width: 100% !important; } }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+      .quran_player .jp-controls-holder {
+        width: 90% !important; } }
+    @media (max-width: 1023px) and (min-width: 801px) {
+      .quran_player .jp-controls-holder {
+        width: 95% !important; } }
+    @media (min-width: 768px) and (max-width: 800px) {
+      .quran_player .jp-controls-holder {
+        width: 100% !important; } }
+    @media (max-width: 380px) and (min-width: 320px) {
+      .quran_player .jp-controls-holder {
+        width: 320px !important;
+        top: -12px;
+        left: 0; } }
+    @media (max-width: 767px) and (min-width: 381px) {
+      .quran_player .jp-controls-holder {
+        width: 100% !important; } }
+  .quran_player .jp-audio,
+  .quran_player .jp-audio-stream,
+  .quran_player .jp-video {
+    border: none; }
+  .quran_player .jp-video .jp-type-playlist .jp-controls {
+    margin: auto;
+    float: none; }
+    @media (max-width: 400px) and (min-width: 320px) {
+      .quran_player .jp-video .jp-type-playlist .jp-controls {
+        margin-left: 185px; } }
+  .quran_player .jp-interface {
+    border: none !important;
+    background-color: transparent; }
+  .quran_player .jp-play-bar {
+    background: #2e6e48 !important; }
+
+.quran_recorder {
+  margin: auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 99;
+  width: 100%;
+  border-top: 2px solid #cae6c0;
+  text-align: center;
+  padding: 10px 0px; }
+  .quran_recorder .action {
+    float: left; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .quran_recorder .action {
+        float: none;
+        width: 90%;
+        margin: 0 auto; } }
+  .quran_recorder .button {
+    box-shadow: none;
+    border: 0px;
+    background-color: transparent;
+    color: #000; }
+    .quran_recorder .button.disable {
+      opacity: 0.7; }
+    .quran_recorder .button.stop {
+      color: #FF0062; }
+  .quran_recorder .player {
+    float: right; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .quran_recorder .player {
+        float: none;
+        width: 90%;
+        margin: 0 auto; } }
+
 html,
 body {
   width: 100%;
@@ -20,6 +592,18 @@ a {
     outline: 0 none;
     cursor: pointer;
     color: #409965; }
+
+::-moz-selection {
+  background: #4db578 !important;
+  color: #fff !important; }
+
+::-webkit-selection {
+  background: #4db578 !important;
+  color: #fff !important; }
+
+::selection {
+  background: #4db578 !important;
+  color: #fff !important; }
 
 .splash-body {
   position: relative;
@@ -80,13 +664,6 @@ a {
   font-family: "Scheherazade", "Traditional Arabic";
   font-size: 33px;
   word-spacing: 0px; }
-
-.clearfix {
-  clear: both; }
-
-.mushaf_display a.selected,
-.steps a.selected {
-  font-weight: bold; }
 
 .navbar {
   margin-bottom: 0; }
@@ -229,9 +806,6 @@ a {
   width: 67px;
   text-align: center; }
 
-.body-memo .nav-top .select-surah {
-  width: 100%; }
-
 .surah-nav {
   width: 100%;
   margin: auto;
@@ -243,18 +817,6 @@ a {
       border-color: #4db578;
       color: #fff;
       text-shadow: none; }
-
-.wrap .alert {
-  width: 80.6%;
-  margin: 20px auto 5px;
-  transition: all 1s ease;
-  text-align: center;
-  position: relative;
-  z-index: 2; }
-
-.wrap .steps_desc .alert {
-  width: 100%;
-  margin: 0 0 10px; }
 
 .pagination > .active > a,
 .pagination > .active > a:focus,
@@ -308,9 +870,6 @@ a {
     margin: -7px 0;
     background-color: transparent;
     border: none; }
-
-.display-inline-block-xs {
-  margin: 10px 5px 10px 0; }
 
 .surah-action {
   text-align: right;
@@ -418,8 +977,198 @@ a {
           width: 70%;
           float: left; } }
 
-body.body-memo .mushaf, body.body-memo .boxcontent {
-  padding-top: 1px; }
+.nav-top-collapse {
+  display: block;
+  height: auto !important;
+  overflow: visible !important;
+  padding-bottom: 0; }
+
+.toggle-player {
+  position: fixed;
+  bottom: -10px;
+  right: 0;
+  z-index: 999;
+  padding: 10px 0; }
+  .toggle-player .btn-toggle-player {
+    border: solid 1px #4db578;
+    color: #4db578;
+    text-align: center;
+    background: #fff;
+    border-radius: 0; }
+    .toggle-player .btn-toggle-player:hover, .toggle-player .btn-toggle-player:focus {
+      background-color: #4db578;
+      color: #333; }
+
+.detail_top {
+  text-align: center;
+  color: #1C9A71 !important;
+  background-color: #dff0d8; }
+  .detail_top .btn {
+    margin: 0;
+    background-color: #1fa67a;
+    color: #fff;
+    border-left: solid 1px #1b926c; }
+    .detail_top .btn:hover, .detail_top .btn:focus {
+      background-color: #1b926c;
+      color: #fff; }
+
+.no_ayat_arabic {
+  font-size: 20px; }
+
+.surah_title {
+  background-color: rgba(222, 239, 215, 0.82);
+  color: #3C763D;
+  padding-bottom: 10px; }
+  .surah_title .surah_name,
+  .surah_title .head_surah {
+    text-align: center; }
+  .surah_title .surah_name {
+    margin-bottom: 10px; }
+    .surah_title .surah_name strong {
+      font-size: 16px; }
+
+.footer {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px; }
+  .footer ul {
+    list-style: none; }
+    .footer ul li {
+      display: inline-block;
+      margin-right: 10px; }
+      .footer ul li span {
+        color: #3d9260; }
+      .footer ul li a {
+        color: #4db578; }
+        .footer ul li a:hover, .footer ul li a:focus {
+          color: #71c493; }
+
+#preloader {
+  width: 100%;
+  height: 1700px;
+  z-index: 10000;
+  position: absolute;
+  overflow: overlay;
+  background-color: rgba(77, 181, 120, 0.87);
+  text-align: center; }
+
+.search-result .search-item p {
+  padding: 10px 20px;
+  margin: 0;
+  color: #a2a2a2; }
+.search-result .search-item .search-footer {
+  padding: 5px 20px;
+  background-color: #eee; }
+  .search-result .search-item .search-footer .fa,
+  .search-result .search-item .search-footer a {
+    color: #4db578; }
+
+.juz-list li {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 10px; }
+  .juz-list li a {
+    display: block; }
+    .juz-list li a .juz-arabic {
+      font-weight: bold; }
+    .juz-list li a .juz-indo {
+      display: block;
+      color: #aaa; }
+    .juz-list li a:hover, .juz-list li a:focus, .juz-list li a:hover .juz-indo, .juz-list li a:focus .juz-indo {
+      color: #4db578;
+      text-decoration: none; }
+
+.filter .nav-tabs > li {
+  width: 33.333%; }
+.filter .nav-tabs > li,
+.filter .nav-tabs > li.active {
+  margin-bottom: 0; }
+.filter .nav-tabs > li > a {
+  margin-right: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  color: #adadad;
+  border: solid transparent;
+  border-width: 3px 0;
+  outline: 0 none;
+  font-weight: bold;
+  text-align: center; }
+.filter .nav-tabs > li.active > a,
+.filter .nav-tabs > li.active > a:focus,
+.filter .nav-tabs > li.active > a:hover {
+  color: #4db578;
+  border-bottom: solid 3px #4db578; }
+.filter .nav > li > a:focus,
+.filter .nav > li > a:hover {
+  background-color: transparent;
+  color: #4db578;
+  border: solid transparent;
+  border-width: 3px 0;
+  border-bottom: solid 3px #4db578;
+  border-radius: 0;
+  margin-bottom: 0; }
+
+.boxcontent {
+  padding: 35px; }
+
+.boxcontent-label {
+  margin-top: 0; }
+
+.correction-list .username {
+  display: block;
+  color: #4db578;
+  font-weight: bold; }
+.correction-list .correction-list-item {
+  margin-bottom: 10px; }
+.correction-list .ayat-target {
+  display: inline-block; }
+
+.mushaf_header {
+  background-color: #efefef;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6px 0;
+  position: relative;
+  border-bottom: solid 1px #ddd; }
+  .mushaf_header .btn {
+    position: absolute;
+    top: 5px;
+    background: transparent;
+    color: #999;
+    text-shadow: none;
+    box-shadow: none;
+    border: solid 1px #ccc;
+    border-radius: 0; }
+    .mushaf_header .btn:hover, .mushaf_header .btn:focus {
+      background-color: #4db578;
+      color: #fff;
+      border: 1px solid transparent; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .mushaf_header .btn {
+        top: 8px; } }
+  .mushaf_header .btn:first-child {
+    left: 0;
+    border-left: none; }
+  .mushaf_header .btn:last-child {
+    right: 0;
+    border-right: none; }
+  .mushaf_header .mids {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .mushaf_header .mids {
+        width: 100%; } }
+    .mushaf_header .mids span {
+      border: solid 1px #ccc;
+      padding: 5px 25px;
+      display: inline-block;
+      color: #999;
+      margin: 0 -2px; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .mushaf_header .mids span {
+          padding: 5px 10px; } }
 
 .mushaf, .boxcontent {
   position: relative;
@@ -594,30 +1343,86 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
           background-color: #4db578;
           color: #fff; }
 
-.nav-top-collapse {
-  display: block;
-  height: auto !important;
-  overflow: visible !important;
-  padding-bottom: 0; }
+.mushaf_display a.selected,
+.steps a.selected {
+  font-weight: bold; }
 
-.fa-3 {
-  font-size: 4em; }
-
-.toggle-player {
-  position: fixed;
-  bottom: -10px;
-  right: 0;
-  z-index: 999;
-  padding: 10px 0; }
-  .toggle-player .btn-toggle-player {
-    border: solid 1px #4db578;
+.memoz_nav {
+  width: 98%;
+  margin: 0 auto 10px; }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .memoz_nav {
+      width: 88%; } }
+  .memoz_nav .btn {
     color: #4db578;
-    text-align: center;
-    background: #fff;
-    border-radius: 0; }
-    .toggle-player .btn-toggle-player:hover, .toggle-player .btn-toggle-player:focus {
-      background-color: #4db578;
-      color: #333; }
+    border: solid 1px #4db578;
+    display: inline-block;
+    width: 19.7%; }
+    .memoz_nav .btn:hover, .memoz_nav .btn:focus {
+      color: #fff;
+      background: #409965; }
+    @media (max-width: 1279px) and (min-width: 481px) {
+      .memoz_nav .btn {
+        width: 18.7%; } }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .memoz_nav .btn {
+        width: auto;
+        padding: 4px 5px; } }
+
+.body-memo .nav-top .select-surah {
+  width: 100%; }
+
+body.body-memo .mushaf, body.body-memo .boxcontent {
+  padding-top: 1px; }
+
+.puzzle {
+  background-color: #DDD; }
+  .puzzle .content_ayat {
+    display: inline-block; }
+    .puzzle .content_ayat .arabic-puzzle {
+      float: left;
+      width: auto;
+      padding: 5px !important;
+      margin: 2px;
+      border: dotted 1px #333; }
+      .puzzle .content_ayat .arabic-puzzle:empty {
+        padding: 0 !important;
+        border: none; }
+
+.memoz-list .memoz-item {
+  border-left: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  margin: 0;
+  padding: 7px 13px; }
+  .memoz-list .memoz-item:nth-child(even) {
+    background: #fefefe; }
+  .memoz-list .memoz-item p {
+    color: #333; }
+  .memoz-list .memoz-item .memoz-body {
+    display: flex;
+    padding: 15px;
+    align-items: center; }
+    .memoz-list .memoz-item .memoz-body .memoz-tr {
+      width: 20%; }
+      .memoz-list .memoz-item .memoz-body .memoz-tr .tr-days {
+        font-size: 30px;
+        font-weight: bold;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 70px; }
+    .memoz-list .memoz-item .memoz-body .memoz-content {
+      width: 75%; }
+    .memoz-list .memoz-item .memoz-body .memoz-link-surah {
+      display: inline-block;
+      margin-right: 5px; }
+  .memoz-list .memoz-item .memoz-action {
+    padding: 10px 15px;
+    text-align: center; }
+    .memoz-list .memoz-item .memoz-action a {
+      font-size: 12px;
+      color: #aaa; }
 
 .memoz_player {
   padding: 5px 20px;
@@ -655,811 +1460,5 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
 
 .hafalan-actions {
   margin: 7px 0; }
-
-.modal .modal-header {
-  background-color: transparent; }
-  .modal .modal-header h4 {
-    color: rgba(77, 181, 120, 0.8);
-    font-size: 20px;
-    text-transform: uppercase; }
-  .modal .modal-header .close {
-    color: rgba(77, 181, 120, 0.8);
-    opacity: .6; }
-    .modal .modal-header .close:hover, .modal .modal-header .close:focus {
-      opacity: 1; }
-.modal .modal-body {
-  padding: 0;
-  overflow: auto; }
-.modal.content-mode .modal-header {
-  background-color: rgba(77, 181, 120, 0.8); }
-  .modal.content-mode .modal-header h4 {
-    color: #fff;
-    font-size: 20px;
-    text-transform: uppercase; }
-  .modal.content-mode .modal-header .close {
-    color: #fff;
-    opacity: .6; }
-    .modal.content-mode .modal-header .close:hover, .modal.content-mode .modal-header .close:focus {
-      opacity: 1; }
-.modal.content-mode .modal-body a {
-  color: #4db578; }
-  .modal.content-mode .modal-body a:hover, .modal.content-mode .modal-body a:focus {
-    color: #409965; }
-.modal.share-mode .modal-header {
-  background-color: rgba(77, 181, 120, 0.8); }
-  .modal.share-mode .modal-header h4 {
-    color: #fff;
-    font-size: 20px;
-    text-transform: uppercase; }
-  .modal.share-mode .modal-header .close {
-    color: #fff;
-    opacity: .6; }
-    .modal.share-mode .modal-header .close:hover, .modal.share-mode .modal-header .close:focus {
-      opacity: 1; }
-.modal.share-mode .modal-body a {
-  width: 33.3%;
-  position: relative;
-  display: block;
-  float: left;
-  padding: 10px;
-  color: #fff; }
-  @media (max-width: 439px) and (min-width: 320px) {
-    .modal.share-mode .modal-body a {
-      float: none;
-      width: 100%; } }
-  .modal.share-mode .modal-body a:before, .modal.share-mode .modal-body a:after {
-    position: absolute; }
-  .modal.share-mode .modal-body a:before {
-    top: 11px;
-    left: 65px; }
-  .modal.share-mode .modal-body a:after {
-    bottom: 15px;
-    left: 65px;
-    padding: 5px 8px;
-    border-radius: 7px; }
-  .modal.share-mode .modal-body a:hover, .modal.share-mode .modal-body a:focus {
-    opacity: .85; }
-.modal.share-mode .modal-body a:nth-child(1) {
-  background-color: #3b5998; }
-  .modal.share-mode .modal-body a:nth-child(1):before {
-    content: "Facebook"; }
-  .modal.share-mode .modal-body a:nth-child(1):after {
-    content: "Share";
-    background-color: #2d4373; }
-.modal.share-mode .modal-body a:nth-child(2) {
-  background-color: #55acee; }
-  .modal.share-mode .modal-body a:nth-child(2):before {
-    content: "Twitter"; }
-  .modal.share-mode .modal-body a:nth-child(2):after {
-    content: "Share";
-    background-color: #2795e9; }
-.modal.share-mode .modal-body a:nth-child(3) {
-  background-color: #d34836; }
-  .modal.share-mode .modal-body a:nth-child(3):before {
-    content: "Google Plus"; }
-  .modal.share-mode .modal-body a:nth-child(3):after {
-    content: "Share";
-    background-color: #b03626; }
-.modal.content-mode .modal-dialog {
-  width: 10%;
-  margin-left: auto;
-  margin-right: auto; }
-.modal .modal-dialog {
-  width: 500px; }
-  @media (max-width: 767px) and (min-width: 320px) {
-    .modal .modal-dialog {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto; } }
-  .modal .modal-dialog .modal-content {
-    border-radius: 7px; }
-.modal .modal-header {
-  border-bottom: none;
-  text-transform: capitalize;
-  text-align: center;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px; }
-.modal .modal-footer {
-  border-top: none; }
-
-.modal.login-mode .modal-dialog {
-  width: 350px;
-  margin-top: 30px;
-  background-color: #fff; }
-  .modal.login-mode .modal-dialog .modal-content {
-    background-color: rgba(255, 255, 255, 0.9); }
-.modal.login-mode .modal-footer {
-  background: #71c493;
-  color: #fff; }
-
-.modal.register-mode .modal-dialog {
-  background: url("../images/cal1.png") no-repeat center center/cover; }
-  .modal.register-mode .modal-dialog .modal-content {
-    background-color: rgba(255, 255, 255, 0.9); }
-.modal.register-mode .modal-footer {
-  background: #71c493;
-  color: #fff; }
-
-.login_form .btn-group,
-.register_form .btn-group {
-  width: 100%; }
-
-.login_form .btn-group .btn,
-.register_form .btn-group .btn {
-  width: 50%;
-  border-radius: 0; }
-
-.login_form {
-  width: 80%;
-  margin: 30px auto 0; }
-  .login_form .form-control {
-    border: solid 1px #fff;
-    border-bottom: dashed 1px #ddd;
-    box-shadow: none;
-    margin-bottom: 7px; }
-    .login_form .form-control:focus {
-      border-bottom: solid 2px #4db578; }
-  .login_form .btn-group {
-    margin-top: 55px;
-    padding-top: 20px; }
-    .login_form .btn-group .btn {
-      width: 50%;
-      color: #4db578;
-      font-size: 20px;
-      background: transparent;
-      border: solid 1px #fff;
-      box-shadow: none !important; }
-      .login_form .btn-group .btn:hover, .login_form .btn-group .btn:focus, .login_form .btn-group .btn.selected {
-        color: #cccc00; }
-  .login_form .btn-masuk {
-    text-align: left; }
-  .login_form .btn-daftar {
-    text-align: right; }
-
-.register_form {
-  padding: 35px 45px 45px;
-  margin: 20px auto;
-  background: #fff; }
-  .register_form .promo {
-    border: solid 1px #2e6e48;
-    width: 45%;
-    height: 333px;
-    position: relative;
-    overflow: hidden; }
-    .register_form .promo .buku {
-      width: 100%;
-      height: 333px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: url(../images/alqurantikrar.png) no-repeat center center; }
-      @media (max-width: 767px) and (min-width: 320px) {
-        .register_form .promo .buku {
-          height: 400px; } }
-    .register_form .promo .promo-txt {
-      padding: 10px;
-      position: relative;
-      z-index: 2;
-      background: rgba(77, 181, 120, 0.85);
-      height: 333px;
-      color: #fff;
-      padding: 10px 35px;
-      font-size: 16px; }
-      .register_form .promo .promo-txt h3 {
-        text-align: center;
-        color: yellow;
-        font-weight: 600;
-        margin-bottom: 20px;
-        font-size: 20px; }
-      .register_form .promo .promo-txt p {
-        font-size: 17px;
-        line-height: 24px; }
-      @media (max-width: 767px) and (min-width: 320px) {
-        .register_form .promo .promo-txt {
-          height: auto; } }
-    @media (max-width: 767px) and (min-width: 320px) {
-      .register_form .promo {
-        width: 100%;
-        float: none !important;
-        margin-bottom: 30px;
-        height: auto; } }
-  .register_form form {
-    width: 50%;
-    margin-top: 15px; }
-    @media (max-width: 767px) and (min-width: 320px) {
-      .register_form form {
-        width: 90%;
-        float: none !important;
-        margin: 0 auto; } }
-  .register_form .btn-masuk {
-    border-width: 1px;
-    border-color: #4db578;
-    border-style: solid;
-    background-color: transparent;
-    color: #4db578;
-    background-image: none;
-    text-shadow: none; }
-    .register_form .btn-masuk:hover, .register_form .btn-masuk:focus, .register_form .btn-masuk.selected {
-      border-width: 1px;
-      border-color: #4db578;
-      border-style: solid;
-      background-color: #4db578;
-      color: #fff;
-      background-image: none;
-      text-shadow: none; }
-  .register_form .btn-daftar {
-    border-width: 1px;
-    border-color: #4db578;
-    border-style: solid;
-    background-color: transparent;
-    color: #4db578;
-    background-image: none;
-    text-shadow: none; }
-    .register_form .btn-daftar:hover, .register_form .btn-daftar:focus, .register_form .btn-daftar.selected {
-      border-width: 1px;
-      border-color: #4db578;
-      border-style: solid;
-      background-color: #4db578;
-      color: #fff;
-      background-image: none;
-      text-shadow: none; }
-
-.form-horizontal .form-group {
-  margin: -16px -15px 15px; }
-  .form-horizontal .form-group .form-control {
-    border-radius: 0;
-    height: auto;
-    padding: 12px; }
-
-.input-group {
-  width: 100%; }
-
-.btn-breadcrumb {
-  /** The Spacing **/
-  /** Default button **/ }
-  .btn-breadcrumb .btn:not(:last-child):after {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 17px solid transparent;
-    border-bottom: 17px solid transparent;
-    border-left: 10px solid white;
-    position: absolute;
-    top: 50%;
-    margin-top: -17px;
-    left: 100%;
-    z-index: 3; }
-  .btn-breadcrumb .btn:not(:last-child):before {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 17px solid transparent;
-    border-bottom: 17px solid transparent;
-    border-left: 10px solid #4db578;
-    position: absolute;
-    top: 50%;
-    margin-top: -17px;
-    margin-left: 1px;
-    left: 100%;
-    z-index: 3; }
-  .btn-breadcrumb .btn {
-    padding: 6px 12px 6px 24px;
-    box-shadow: none; }
-  .btn-breadcrumb .btn:first-child {
-    padding: 6px 6px 6px 10px; }
-  .btn-breadcrumb .btn:last-child {
-    padding: 6px 18px 6px 24px; }
-  .btn-breadcrumb .btn.btn-default.selected:not(:last-child):after {
-    border-left: 10px solid #4db578; }
-  .btn-breadcrumb .btn.btn-default:not(:last-child):after {
-    border-left: 10px solid #fff; }
-  .btn-breadcrumb .btn.btn-default:not(:last-child):before {
-    border-left: 10px solid #4db578; }
-  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
-    border-left: 10px solid #4db578; }
-  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
-    border-left: 10px solid #fff; }
-
-.detail_top {
-  text-align: center;
-  color: #1C9A71 !important;
-  background-color: #dff0d8; }
-  .detail_top .btn {
-    margin: 0;
-    background-color: #1fa67a;
-    color: #fff;
-    border-left: solid 1px #1b926c; }
-    .detail_top .btn:hover, .detail_top .btn:focus {
-      background-color: #1b926c;
-      color: #fff; }
-
-.no_ayat_arabic {
-  font-size: 20px; }
-
-.surah_title {
-  background-color: rgba(222, 239, 215, 0.82);
-  color: #3C763D;
-  padding-bottom: 10px; }
-  .surah_title .surah_name,
-  .surah_title .head_surah {
-    text-align: center; }
-  .surah_title .surah_name {
-    margin-bottom: 10px; }
-    .surah_title .surah_name strong {
-      font-size: 16px; }
-
-@media (max-width: 767px) and (min-width: 585px) {
-  .input-group {
-    width: 90%;
-    float: left;
-    margin-right: 20px; } }
-@media (max-width: 584px) and (min-width: 481px) {
-  .input-group {
-    width: 85%;
-    float: left;
-    margin-right: 20px; } }
-@media (max-width: 480px) and (min-width: 320px) {
-  .input-group {
-    width: 80%;
-    float: left;
-    margin-right: 20px; } }
-
-@media (max-width: 767px) and (min-width: 320px) {
-  .form-group {
-    margin-bottom: 0px; } }
-
-.footer {
-  text-align: center;
-  width: 100%;
-  position: relative;
-  margin-bottom: 30px; }
-  .footer ul {
-    list-style: none; }
-    .footer ul li {
-      display: inline-block;
-      margin-right: 10px; }
-      .footer ul li span {
-        color: #3d9260; }
-      .footer ul li a {
-        color: #4db578; }
-        .footer ul li a:hover, .footer ul li a:focus {
-          color: #71c493; }
-
-.dropdown-backdrop {
-  position: static; }
-
-#preloader {
-  width: 100%;
-  height: 1700px;
-  z-index: 10000;
-  position: absolute;
-  overflow: overlay;
-  background-color: rgba(77, 181, 120, 0.87);
-  text-align: center; }
-
-.btn-green {
-  background-color: #4db578;
-  color: #fff;
-  font-size: 14px;
-  margin-left: 3px; }
-  @media (max-width: 480px) and (min-width: 320px) {
-    .btn-green {
-      width: 100%;
-      display: block;
-      margin-left: 0; } }
-  .btn-green:hover, .btn-green:focus {
-    background-color: #409965; }
-
-.search-result .search-item p {
-  padding: 10px 20px;
-  margin: 0;
-  color: #a2a2a2; }
-.search-result .search-item .search-footer {
-  padding: 5px 20px;
-  background-color: #eee; }
-  .search-result .search-item .search-footer .fa,
-  .search-result .search-item .search-footer a {
-    color: #4db578; }
-
-.btn-search-surah {
-  margin-left: 10px;
-  border-width: 1px;
-  border-color: #4db578;
-  border-style: solid;
-  background-color: #4db578;
-  color: #fff;
-  background-image: none;
-  text-shadow: none; }
-  .btn-search-surah:hover, .btn-search-surah:focus, .btn-search-surah.selected {
-    background-color: #409965;
-    border: solid 1px #409965;
-    color: #fff; }
-  @media (max-width: 767px) and (min-width: 320px) {
-    .btn-search-surah {
-      width: 40px;
-      margin: 5px 0; } }
-
-.btn-setting {
-  margin-left: 10px;
-  border-width: 1px;
-  border-color: #4db578;
-  border-style: solid;
-  background-color: #4db578;
-  color: #fff;
-  background-image: none;
-  text-shadow: none; }
-  .btn-setting:hover, .btn-setting:focus, .btn-setting.selected {
-    background-color: #409965;
-    border: solid 1px #409965;
-    color: #fff; }
-  @media (max-width: 767px) and (min-width: 320px) {
-    .btn-setting {
-      float: right !important;
-      width: 40px;
-      margin: 5px 0; } }
-  @media (max-width: 767px) and (min-width: 320px) {
-    .btn-setting.btn-juz {
-      margin-left: 6px;
-      float: left !important; } }
-
-.juz-list li {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 10px; }
-  .juz-list li a {
-    display: block; }
-    .juz-list li a .juz-arabic {
-      font-weight: bold; }
-    .juz-list li a .juz-indo {
-      display: block;
-      color: #aaa; }
-    .juz-list li a:hover, .juz-list li a:focus, .juz-list li a:hover .juz-indo, .juz-list li a:focus .juz-indo {
-      color: #4db578;
-      text-decoration: none; }
-
-.mushaf_header {
-  background-color: #efefef;
-  width: 100%;
-  margin: 0 auto;
-  padding: 6px 0;
-  position: relative;
-  border-bottom: solid 1px #ddd; }
-  .mushaf_header .btn {
-    position: absolute;
-    top: 5px;
-    background: transparent;
-    color: #999;
-    text-shadow: none;
-    box-shadow: none;
-    border: solid 1px #ccc;
-    border-radius: 0; }
-    .mushaf_header .btn:hover, .mushaf_header .btn:focus {
-      background-color: #4db578;
-      color: #fff;
-      border: 1px solid transparent; }
-    @media (max-width: 767px) and (min-width: 320px) {
-      .mushaf_header .btn {
-        top: 8px; } }
-  .mushaf_header .btn:first-child {
-    left: 0;
-    border-left: none; }
-  .mushaf_header .btn:last-child {
-    right: 0;
-    border-right: none; }
-  .mushaf_header .mids {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center; }
-    @media (max-width: 767px) and (min-width: 320px) {
-      .mushaf_header .mids {
-        width: 100%; } }
-    .mushaf_header .mids span {
-      border: solid 1px #ccc;
-      padding: 5px 25px;
-      display: inline-block;
-      color: #999;
-      margin: 0 -2px; }
-      @media (max-width: 767px) and (min-width: 320px) {
-        .mushaf_header .mids span {
-          padding: 5px 10px; } }
-
-.quran-player {
-  margin: auto;
-  left: 0;
-  right: 0;
-  position: fixed;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 99; }
-  @media (min-width: 1200px) {
-    .quran-player {
-      width: 80%; } }
-  @media (min-width: 1024px) and (max-width: 1199px) {
-    .quran-player {
-      width: 90%; } }
-  @media (max-width: 1023px) and (min-width: 801px) {
-    .quran-player {
-      width: 95%; } }
-  @media (min-width: 768px) and (max-width: 800px) {
-    .quran-player {
-      width: 100%; } }
-  @media (max-width: 767px) and (min-width: 320px) {
-    .quran-player {
-      width: 100%; } }
-
-.quran_player {
-  height: 50px;
-  background: transparent;
-  z-index: 99; }
-  @media (min-width: 1200px) {
-    .quran_player {
-      width: 100%; } }
-  @media (min-width: 1024px) and (max-width: 1200px) {
-    .quran_player {
-      width: 90%; } }
-  @media (max-width: 380px) and (min-width: 320px) {
-    .quran_player {
-      width: 320px; } }
-  @media (max-width: 1023px) and (min-width: 801px) {
-    .quran_player {
-      width: 95%; } }
-  @media (min-width: 768px) and (max-width: 800px) {
-    .quran_player {
-      width: 100%; } }
-  .quran_player .jp-video {
-    background: transparent;
-    margin: 0 auto; }
-    @media (min-width: 1200px) {
-      .quran_player .jp-video {
-        width: 100%; } }
-    @media (min-width: 1024px) and (max-width: 1200px) {
-      .quran_player .jp-video {
-        width: 90%; } }
-    @media (max-width: 1023px) and (min-width: 801px) {
-      .quran_player .jp-video {
-        width: 95%; } }
-    @media (min-width: 768px) and (max-width: 800px) {
-      .quran_player .jp-video {
-        width: 100%; } }
-    @media (max-width: 380px) and (min-width: 320px) {
-      .quran_player .jp-video {
-        width: 320px; } }
-    @media (max-width: 767px) and (min-width: 381px) {
-      .quran_player .jp-video {
-        width: 100%; } }
-    .quran_player .jp-video .jp-progress {
-      height: 3px;
-      background-color: rgba(191, 225, 178, 0.82) !important; }
-    .quran_player .jp-video .jp-current-time {
-      margin-left: 0; }
-    .quran_player .jp-video .jp-duration {
-      margin-right: 0; }
-  .quran_player .jp-controls-holder {
-    top: -12px;
-    left: -45px; }
-    @media (min-width: 1200px) {
-      .quran_player .jp-controls-holder {
-        width: 100% !important; } }
-    @media (min-width: 1024px) and (max-width: 1200px) {
-      .quran_player .jp-controls-holder {
-        width: 90% !important; } }
-    @media (max-width: 1023px) and (min-width: 801px) {
-      .quran_player .jp-controls-holder {
-        width: 95% !important; } }
-    @media (min-width: 768px) and (max-width: 800px) {
-      .quran_player .jp-controls-holder {
-        width: 100% !important; } }
-    @media (max-width: 380px) and (min-width: 320px) {
-      .quran_player .jp-controls-holder {
-        width: 320px !important;
-        top: -12px;
-        left: 0; } }
-    @media (max-width: 767px) and (min-width: 381px) {
-      .quran_player .jp-controls-holder {
-        width: 100% !important; } }
-  .quran_player .jp-audio,
-  .quran_player .jp-audio-stream,
-  .quran_player .jp-video {
-    border: none; }
-  .quran_player .jp-video .jp-type-playlist .jp-controls {
-    margin: auto;
-    float: none; }
-    @media (max-width: 400px) and (min-width: 320px) {
-      .quran_player .jp-video .jp-type-playlist .jp-controls {
-        margin-left: 185px; } }
-  .quran_player .jp-interface {
-    border: none !important;
-    background-color: transparent; }
-  .quran_player .jp-play-bar {
-    background: #2e6e48 !important; }
-
-.memoz_nav {
-  width: 98%;
-  margin: 0 auto 10px; }
-  @media (max-width: 480px) and (min-width: 320px) {
-    .memoz_nav {
-      width: 88%; } }
-  .memoz_nav .btn {
-    color: #4db578;
-    border: solid 1px #4db578;
-    display: inline-block;
-    width: 19.7%; }
-    .memoz_nav .btn:hover, .memoz_nav .btn:focus {
-      color: #fff;
-      background: #409965; }
-    @media (max-width: 1279px) and (min-width: 481px) {
-      .memoz_nav .btn {
-        width: 18.7%; } }
-    @media (max-width: 480px) and (min-width: 320px) {
-      .memoz_nav .btn {
-        width: auto;
-        padding: 4px 5px; } }
-
-.puzzle {
-  background-color: #DDD; }
-  .puzzle .content_ayat {
-    display: inline-block; }
-    .puzzle .content_ayat .arabic-puzzle {
-      float: left;
-      width: auto;
-      padding: 5px !important;
-      margin: 2px;
-      border: dotted 1px #333; }
-      .puzzle .content_ayat .arabic-puzzle:empty {
-        padding: 0 !important;
-        border: none; }
-
-::-moz-selection {
-  background: #4db578 !important;
-  color: #fff !important; }
-
-::-webkit-selection {
-  background: #4db578 !important;
-  color: #fff !important; }
-
-::selection {
-  background: #4db578 !important;
-  color: #fff !important; }
-
-.memoz-list .memoz-item {
-  border-left: solid 1px #ddd;
-  border-right: solid 1px #ddd;
-  border-bottom: solid 1px #ddd;
-  margin: 0;
-  padding: 7px 13px; }
-  .memoz-list .memoz-item:nth-child(even) {
-    background: #fefefe; }
-  .memoz-list .memoz-item p {
-    color: #333; }
-  .memoz-list .memoz-item .memoz-body {
-    display: flex;
-    padding: 15px;
-    align-items: center; }
-    .memoz-list .memoz-item .memoz-body .memoz-tr {
-      width: 20%; }
-      .memoz-list .memoz-item .memoz-body .memoz-tr .tr-days {
-        font-size: 30px;
-        font-weight: bold;
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 70px; }
-    .memoz-list .memoz-item .memoz-body .memoz-content {
-      width: 75%; }
-    .memoz-list .memoz-item .memoz-body .memoz-link-surah {
-      display: inline-block;
-      margin-right: 5px; }
-  .memoz-list .memoz-item .memoz-action {
-    padding: 10px 15px;
-    text-align: center; }
-    .memoz-list .memoz-item .memoz-action a {
-      font-size: 12px;
-      color: #aaa; }
-
-.filter .nav-tabs > li {
-  width: 33.333%; }
-.filter .nav-tabs > li,
-.filter .nav-tabs > li.active {
-  margin-bottom: 0; }
-.filter .nav-tabs > li > a {
-  margin-right: 0;
-  border-radius: 0;
-  margin-bottom: 0;
-  color: #adadad;
-  border: solid transparent;
-  border-width: 3px 0;
-  outline: 0 none;
-  font-weight: bold;
-  text-align: center; }
-.filter .nav-tabs > li.active > a,
-.filter .nav-tabs > li.active > a:focus,
-.filter .nav-tabs > li.active > a:hover {
-  color: #4db578;
-  border-bottom: solid 3px #4db578; }
-.filter .nav > li > a:focus,
-.filter .nav > li > a:hover {
-  background-color: transparent;
-  color: #4db578;
-  border: solid transparent;
-  border-width: 3px 0;
-  border-bottom: solid 3px #4db578;
-  border-radius: 0;
-  margin-bottom: 0; }
-
-.spacer1 {
-  display: inline-block;
-  padding: 0 5px; }
-
-.boxcontent {
-  padding: 35px; }
-
-.boxcontent-label {
-  margin-top: 0; }
-
-.list-unstyled {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
-.correction-list .username {
-  display: block;
-  color: #4db578;
-  font-weight: bold; }
-.correction-list .correction-list-item {
-  margin-bottom: 10px; }
-.correction-list .ayat-target {
-  display: inline-block; }
-
-.btn-green-small {
-  background-color: #4db578 !important;
-  color: #FFF !important;
-  border: solid 1px #409965 !important; }
-  .btn-green-small:hover, .btn-green-small:focus {
-    background: #71c493 !important; }
-
-.btn-green-small-darker {
-  background-color: #25835B !important;
-  color: #FFF !important; }
-
-.quran_recorder {
-  margin: auto;
-  left: 0;
-  right: 0;
-  position: fixed;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 99;
-  width: 100%;
-  border-top: 2px solid #cae6c0;
-  text-align: center;
-  padding: 10px 0px; }
-  .quran_recorder .action {
-    float: left; }
-    @media (max-width: 480px) and (min-width: 320px) {
-      .quran_recorder .action {
-        float: none;
-        width: 90%;
-        margin: 0 auto; } }
-  .quran_recorder .button {
-    box-shadow: none;
-    border: 0px;
-    background-color: transparent;
-    color: #000; }
-    .quran_recorder .button.disable {
-      opacity: 0.7; }
-    .quran_recorder .button.stop {
-      color: #FF0062; }
-  .quran_recorder .player {
-    float: right; }
-    @media (max-width: 480px) and (min-width: 320px) {
-      .quran_recorder .player {
-        float: none;
-        width: 90%;
-        margin: 0 auto; } }
-
-.no-content-center {
-  text-align: center; }
 
 /*# sourceMappingURL=style.min.css.map */
