@@ -47,7 +47,7 @@
 					</form>
 				</div>
 			</div>
-			@if(Request::segment(2)!='correction' && session('sess_id') && !empty($ayats))
+			@if(session('sess_id') && !empty($ayats))
 				<div class="pull-left">
 					<div class="btn-group" role="group">
 						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
@@ -63,7 +63,7 @@
 				</div>
 			@endif
 			
-				@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user))
+				@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user) && Request::segment(2)!='correction')
 
 				<div class="memoz_options">
 						<div class="btn-group" role="group">
@@ -98,7 +98,7 @@
 					<div class="">
 						<div class="mushaf mushaf-hafalan">
 							<div class="clearfix surah_title head_surah_1 center">{{$header_title}}</div>
-					
+							@if(Request::segment(2)!='correction')
 							<div class="step-wrap">
 								<div class="steps clearfix btn-group btn-breadcrumb" role="group" aria-label="steps">
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('1')" class="btn btn-default steps_1 selected"># 1</a>
@@ -108,6 +108,7 @@
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');" class="btn btn-default steps_5"># 5</a>
 								</div>
 							</div>
+							
 							<!-- /step-wrap -->
 							<!--div class="pull-right hafalan-actions">
 								<button class="btn"  data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/create')">Simpan Hafalan</button>
@@ -118,21 +119,27 @@
 							<div class="steps_desc">
 								<div class="alert alert-success">
 									<p> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal</p>
-									@if(!empty($correctionDetail))
-									<strong>Tester :</strong><br>
-									<i>{{$correctionDetail->name}} ({{$correctionDetail->email}}) </i><br>
-									<strong>Catatan :</strong><br>
-									<i>{{$correctionDetail->note}}</i>
-									@endif
 								</div>
 							</div>
-							@if(Request::segment(2)!='correction')
 							<div class="memoz_nav" style="display: none">
 								<a href="javascript:;" class="btn btn-start" onclick="QuranJS.showAyat('start')">Awal</a>
 								<a href="javascript:;" class="btn btn-middle" onclick="QuranJS.showAyat('middle')">Tengah</a>
 								<a href="javascript:;" class="btn btn-end" onclick="QuranJS.showAyat('end')">Akhir</a>
 								<a href="javascript:;" class="btn btn-mix" onclick="QuranJS.showAyat('mix')">Awal+Akhir</a>
 								<a href="javascript:;" class="btn btn-random" onclick="QuranJS.showAyat('random')">Acak</a>
+							</div>
+							@else
+							<div class="alert alert-success">
+								
+								@if(!empty($correctionDetail))
+								<p>Detail koreksi</p>
+								<strong>Tester :</strong><br>
+								<i>{{$correctionDetail->name}} ({{$correctionDetail->email}}) </i><br>
+								<strong>Catatan :</strong><br>
+								<i>{{$correctionDetail->note}}</i>
+								@else
+								<p> Dengarkan rekaman, dan bandingkan dengan ayat-ayat hafalan apakah betul atau salah, jika ada ayat yang salah klik ayatnya, dan kirimkan koreksi ke penghafal dengan catatan yang diperlukan</p>
+								@endif
 							</div>
 							@endif
 							<script>
@@ -290,7 +297,7 @@ $(document).ready(function(){
 
 	QuranJS.fillAyatEnd();
 
-	<?php if(!empty($ayats) && empty($_COOKIE['coo_hide_info'])):?>
+	<?php if(!empty($ayats) && empty($_COOKIE['coo_hide_info']) && Request::segment(2)!='correction'):?>
 	QuranJS.showInfoMemoz();
 	<?php endif?>
 
