@@ -59,15 +59,15 @@ body.body-memo {
 	.memoz-item{
 		// box-shadow: 0 1px 3px 0 rgba(0,0,0,0.26);
 		&:nth-child(even){
-			background: #fefefe;
+			background: #fcfcfc;
 		}
 		border-left: solid 1px #ddd;
 		border-right: solid 1px #ddd;
 		border-bottom: solid 1px #ddd;
 		margin:0;
-		padding:7px 13px;
+		padding:7px 9px;
 		p{
-			color: #333;
+			color: #aaa;
 		}
 		.memoz-body{
 			display:flex;
@@ -80,16 +80,19 @@ body.body-memo {
 					font-weight: bold;
 					display: block;
 					overflow: hidden;
+                    text-align: center;
     				text-overflow: ellipsis;
-    				width: 70px;
+    				width: 55px;
 				}
 			}
 			.memoz-content{
 				width: 75%;
+                padding:5px 10px;
 			}
 			.memoz-link-surah{
 				 display: inline-block;
 				 margin-right: 5px;
+                 font-weight: bold;
 			}
 		}
 		.memoz-action{
@@ -137,4 +140,19 @@ body.body-memo {
 
 .hafalan-actions {
 	margin: 7px 0;
+}
+
+.memoz-check-link{
+    color: $main-color;
+    text-align: center;
+    display: block;
+}
+
+.memoz-link-area{
+    font-size: 40px;
+}
+
+.memoz-status{
+    display: none;
+    visibility: hidden;
 }

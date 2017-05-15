@@ -32,7 +32,9 @@
 			</div>
 			<!--/memoz-content-->
 			<div class="memoz-check-hafalan">
-				<input type="checkbox"/>Hafal
+				<a class="memoz-check-link" href="#">
+					<span class="memoz-link-area"><i class="fa fa-circle-thin"></i></span>
+					<span class="check-label">Hafal</span></a>
 			</div>
 		</div>
 	</div>
