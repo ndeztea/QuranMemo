@@ -37,11 +37,10 @@
 		</div>
 	</div>
 	<!--/memoz-item-->
-
+	@endforeach
 	@if($start==0)
 		<a href="javascript:void(0)" onclick="QuranJS.memozFilter({{$filter}},'next')" class="btn btn-green btn-loadmore">Selanjutnya</a>
 	@endif
-	@endforeach
 @else
 	@if($start==0)
 	<p class="alert alert-warning no-content-center">Hafalan belum ada</p>

@@ -365,10 +365,12 @@ var QuranJS = {
 	},
 
 	memozFilter : function(filter,next=''){
+		jQuery('.btn-loadmore').show();
 		if(next!=''){
 			jQuery('.btn-loadmore').html('Loading...');
 		}else{
 			jQuery('.memoz-list').hide();
+			jQuery('.memoz-list').html('');
 			jQuery('.memoz-loading').show();
 		}
 		
@@ -385,7 +387,12 @@ var QuranJS = {
 			
 			jQuery('.memoz-list').show();
 			jQuery('.memoz-loading').hide();
-			jQuery('.btn-loadmore').html('Selanjutnya');
+			if(response.count!=0){
+				jQuery('.btn-loadmore').html('Selanjutnya');
+			}else{
+				jQuery('.btn-loadmore').hide();
+			}
+			
 		});
 	},
  
