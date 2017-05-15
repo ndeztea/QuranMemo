@@ -420,26 +420,34 @@ class MemozController extends Controller
 
     public function listCorrection($idMemo='', Request $request){
         $MemoCorrectionModel = new MemoCorrection();
+        $start = $request->input('start');
+        $start = empty($start)?0:$start;
 
         $data['list']  = $MemoCorrectionModel->getMemoCorrection($idMemo);
-      
+        $data['start'] = $start;
         
         $dataHTML['modal_title'] = 'Daftar koreksi';
         $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+        $dataHTML['start'] = $start;
 
         return response()->json($dataHTML);
     }
 
     public function listCorrectionByUser(Request $request){
         $MemoCorrectionModel = new MemoCorrection();
+        $start = $request->input('start');
+        $start = empty($start)?0:$start;
 
         $id_user = $request->session()->get('sess_id');
-        $data['list']  = $MemoCorrectionModel->getMemoCorrectionByUser($id_user);
+        $data['list']  = $MemoCorrectionModel->getMemoCorrectionByUser($id_user,$start,1);
+        $data['start'] = $start;
         
         $dataHTML['modal_title'] = 'Daftar koreksi';
         $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+        $dataHTML['start'] = $start;
+        $dataHTML['count'] = count($data['list']);
 
         return response()->json($dataHTML);
     }

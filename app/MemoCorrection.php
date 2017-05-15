@@ -68,13 +68,15 @@ class MemoCorrection extends Model
         return $memoList;
     }
 
-    public function getMemoCorrectionByUser($id_user){
+    public function getMemoCorrectionByUser($id_user,$start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
                 ->select('u.name','u.email','memo.*','mt.surah_start','mt.ayat_start','mt.ayat_end')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->join('memo_target as mt', 'mt.id', '=', 'memo.id_memo_target')
                 ->where('mt.id_user',$id_user)
                 ->orderby('id','desc')
+                ->offset($start)
+                ->limit($limit)
                 ->get();
 
 
