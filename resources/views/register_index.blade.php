@@ -36,7 +36,7 @@
 									</div>
 									<div class="form-group">
 										<label for="email" class="control-label sr-only">Email</label>
-										<input type="email" class="form-control" name="email" id="register_email" aria-label="email" placeholder="Email yang aktif" value="{{ old('email')}}" {{ $detailUser->gender=='M'?'selected':''}}/>
+										<input type="email" class="form-control" name="email" id="register_email" aria-label="email" placeholder="Email yang aktif" value="{{ old('email')}}" {{ old('gender')=='M'?'selected':''}}/>
 
 									</div>
 									<div class="form-group">
