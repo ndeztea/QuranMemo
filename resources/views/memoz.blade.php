@@ -52,10 +52,10 @@
 					<div class="btn-group" role="group">
 						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
 						<a class="btn btn-green-small" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>
-						<a class="btn btn-green-small" href="javascript:;"  btn-form-memoz" onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i></a>
+						<a class="btn btn-green-small" href="javascript:;"   onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i></a>
 						
 						@if(!empty($memoDetail->id))
-						<a class="btn btn-green-small" onclick="QuranJS.callModal('memoz/correction/list/{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
+						<a class="btn btn-green-small" onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
 						@endif
 					</div>
 						

@@ -11,12 +11,12 @@
 				<span class="memoz-target"> 
 					<i>{{dayDiff(date('Y-m-d'),$row->date_updated)->days}} hari yang lalu</i>
 				</span>
-				<p>{{str_limit($row->note,100,'...')}}</p>
 			</div>
+			<p>{{str_limit($row->note,100,'...')}}</p>
 		</div>
 		@endforeach
 		@if($start==0)
-			<a href="javascript:void(0)" onclick="QuranJS.correctionList('next')" class="btn btn-green btn-loadmore">Selanjutnya</a>
+			<a href="javascript:void(0)" onclick="QuranJS.correctionList('next','{{$idMemo}}')" class="btn btn-green btn-loadmore">Selanjutnya</a>
 		@endif
 	@else
 		@if($start==0)
