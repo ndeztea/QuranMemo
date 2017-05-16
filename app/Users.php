@@ -25,15 +25,21 @@ class Users extends Model
 
     protected $fillable = array('name', 'email', 'gender','password','city','address','hp','device_id');
 
-    public function login($data){
+    public function login($data,$encyrpt=''){
     	// login code
          $user = DB::table($this->table)
                 ->select('*')
                 ->where('email','=',$data['email'])
                 ->first();
         if(!empty($user)){
-            if(Hash::check($data['password'],$user->password))
-                return $user;
+            if($encyrpt){
+                if($data['password']==$user->password)
+                    return $user;
+            }else{
+                if(Hash::check($data['password'],$user->password))
+                    return $user;
+            }
+            
         }
         return false;
     }

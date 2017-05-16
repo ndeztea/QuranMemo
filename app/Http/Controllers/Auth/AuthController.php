@@ -93,6 +93,10 @@ class AuthController extends Controller
             $request->session()->put('sess_id', $dataLogin->id);
             $request->session()->put('sess_email', $dataLogin->email);
             $request->session()->put('sess_name', $dataLogin->name);
+
+            // set cookie
+            setcookie('coo_quranmemo_email',$dataLogin->email);
+            setcookie('coo_quranmemo_password',$dataLogin->password);
         }else{
             $dataHTML['login'] = false;
         }
