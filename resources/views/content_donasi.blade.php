@@ -1,8 +1,22 @@
-<p>Bismillah, tetangga saudara kami sekaligus salah satu imam mesjid daerah kami (Mesjid Riyadul Mutaqqin Soreang Indah Kab.bandung) Wa Darwan sedang diuji oleh Allah Ta'ala dengan diberikan kesakitan kepada putranya Azis, terkena KANKER PARU yang sudah menjalar ke sebagian tubuhnya. Sekarang sedang di rawat intens di RS Rutin Sulu Bandung
-</p>
-<p>Jika sahabat punya kelebihan rezeki untuk membantu meringankan biaya pengobatan dan kemoterapi bisa  transfer donasi ke rekening : 
- : <br><br><strong style="font-size:14pt">BRI 3268-01-030069-53-0 an Budi Hartono</strong> <br>
-<p>Mohon doanya supaya diberikan kebaikan-kebaikan oleh Allah, Jazakallah Khair atas bantuan dan doanya, semoga Allah Ta'ala memberkahi rezeki dan kehidupan sahabat semua.. Aamiin</p>
-<br>*) Konfirmasi yang sudah transfer ke no HP 085956331813</p>
-<img src="{{url('assets/images/azis.jpg')}}" style="width:100%"><br>
+<p>Bismillah.. Assamualaikum warahmatullahi wabarakatuh, </p>
+<p>QuranMemo sedang mengembangkan versi selanjutnya untuk memudahkan para penghafal  Al-Quran yang sejauh ini sudah berjumlah 5000 orang penghafal yang aktif dan 500 orang penghafal tiap harinya. <br>
+Saat ini kami sangat membutuhkan sukarelawan yang paham dalam pembuatan web atau native app untuk membantu dalam pengembangan aplikasi ini, dan / atau infaq untuk pengembangan supaya berjalan dengan lancar dan sesuai yang diharapkan.<br>
+Jika ada yang ingin ikut berkontribusi dalam pengembangan aplikasi ini baik itu kontribusi tenaga, ide, infaq atau infaq bisa mengirimkan email ke quranmemo.id@gmail.com<br>
 
+Sejauh ini progress pengembangan aplikasi bisa di lihat di halaman web 
+https://quranmemo.com</p>
+
+<p><br>Ini beberapa tampilan yang kemungkinan akan ada di QuranMemo Community</p>
+Daftar Hafalan
+<img src="{{url('assets/images/daftarhafalan.png')}}" style="width:100%"><br>
+Rekam Hafalan
+<img src="{{url('assets/images/rekamhafalan.png')}}" style="width:100%"><br>
+Setor dan koreksi hafalan
+<img src="{{url('assets/images/setorkoreksihafalan.png')}}" style="width:100%"><br>
+
+
+</p><br>
+Walaikumsalam warahmatullahi wabarakatuh.<br>
+Jazakallah Khair.<br>
+-QuranMemo Team-
+<br>

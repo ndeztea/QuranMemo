@@ -160,7 +160,7 @@
                         </li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
-                        <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >QuranMemo Community <sup>new</sup></a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
                         <li><a href="{{url('register')}}">Daftar</a></li>
                         <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>
@@ -184,27 +184,7 @@
         </nav>
 
         <div class="wrap">
-
-            @if(Request::segment(2)=='' && Request::segment(1)=='mushaf')
-            <div class="alert alert-warning" style="text-align: left">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                Bismillah.. Assamualaikum warahmatullahi wabarakatuh, <br><br>
-                <p>QuranMemo sedang mengembangkan versi selanjutnya untuk memudahkan para penghafal  Al-Quran yang sejauh ini sudah berjumlah 5000 orang penghafal yang aktif dan 500 orang penghafal tiap harinya. <br>
-                Saat ini kami sangat membutuhkan sukarelawan yang paham dalam pembuatan web atau native app untuk membantu dalam pengembangan aplikasi ini, dan / atau dana untuk pengembangan supaya berjalan dengan lancar dan sesuai yang diharapkan.<br>
-                Jika ada yang ingin ikut berkontribusi dalam pengembangan aplikasi ini baik itu kontribusi tenaga, ide, infaq atau sedekah bisa mengirimkan email ke quranmemo.id@gmail.com<br>
-
-                Sejauh ini progress pengembangan aplikasi bisa di lihat di halaman web 
-                https://quranmemo.com
-                </p><br>
-                Walaikumsalam warahmatullahi wabarakatuh.<br>
-                Jazakallah Khair.<br>
-                -QuranMemo Team-
-                <br>
-                <button type="button" class="btn btn-juz" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">Tutup</span></button>
-
-            </div>
-            @endif
-            @yield('content')
+             @yield('content')
         </div>
 
         <div class="footer">
