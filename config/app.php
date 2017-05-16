@@ -200,9 +200,6 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'FFMPEG'    => LinkThrow\Ffmpeg\Facade\FfmpegFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class
-
-
-
     ],
 
 ];
