@@ -719,7 +719,7 @@ ul.juz-list {
 }*/
 
 .memoz-list .memoz-item .memoz-body{
-    padding: 5px;
+    /*padding: 5px;*/
     cursor: pointer;
 }
 /*.memoz-list .memoz-item{
@@ -730,17 +730,17 @@ ul.juz-list {
     color:#70C393;
     font-size: 14px;
 }
-.memoz-list .memoz-item p {
+/*.memoz-list .memoz-item p {
     margin : 10px 0px;
-}
+}*/
 .memoz-list .memoz-item .memoz-target{
     color :#adadad;
     font-size:11px;
 }
-.memoz-list .memoz-item .memoz-action{
+/*.memoz-list .memoz-item .memoz-action{
     padding: 3px;
     text-align: left;
-}
+}*/
 
 /*.memoz-list .memoz-item .memoz-action a.left{
     float: left;

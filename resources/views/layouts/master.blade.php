@@ -44,7 +44,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="#4DB578">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-        <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Scheherazade:400,700&subset=latin,arabic' rel='stylesheet' type='text/css'>
 

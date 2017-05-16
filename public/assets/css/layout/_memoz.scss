@@ -65,14 +65,21 @@ body.body-memo {
 		border-right: solid 1px #ddd;
 		border-bottom: solid 1px #ddd;
 		margin:0;
-		padding:7px 9px;
+		padding: 0;
 		p{
 			color: #aaa;
+			margin:0;
 		}
 		.memoz-body{
 			display:flex;
-			padding: 15px;
+			padding: 0;
 			align-items: center;
+			flex-direction: column;
+			.memoz-body-inner{
+				width:100%;
+				display: flex;
+				align-items: center;
+			}
 			.memoz-tr{
 				width:20%;
 				.tr-days{
@@ -96,11 +103,18 @@ body.body-memo {
 			}
 		}
 		.memoz-action{
-			padding: 10px 15px;
+			width:100%;
+			padding: 10px 0 5px;
+			margin-top: 5px;
 			text-align: center;
+			display: flex;
+			border-top: solid 1px #ddd;
 			a{
+				width: 33.33%;
 				font-size: 12px;
-				color: #aaa;
+				color: #399;
+				text-transform: uppercase;
+
 			}
 		}
 	}
@@ -149,7 +163,9 @@ body.body-memo {
 }
 
 .memoz-link-area{
+	display: inline-block;
     font-size: 40px;
+	margin-bottom: -20px;
 }
 
 .memoz-status{
