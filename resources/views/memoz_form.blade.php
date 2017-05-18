@@ -28,7 +28,7 @@
 		<div class="input-daterange input-group" id="datepicker">
 		    <input type="hidden" class="form-control"  id="date_start" type="text" name="date_start" placeholder="Tanggal awal" aria-label="Tanggal awal"  value="{{$date_start?$date_start:''}}" />
 		    <!--span class="input-group-addon">Sampai</span-->
-		    <input type="text" class=" form-control" type="text" name="date_start" id="date_end" placeholder="target hafal" aria-label="Tanggal Akhir"  value="{{$date_end?$date_end:''}}" />
+		    <input type="text" class=" form-control" type="text" readonly="readonly"  name="date_start" id="date_end" placeholder="target hafal" aria-label="Tanggal Akhir"  value="{{$date_end?$date_end:''}}" />
 		</div>
 
 		<br>
