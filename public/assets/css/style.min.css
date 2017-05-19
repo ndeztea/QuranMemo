@@ -161,8 +161,7 @@
     .modal .modal-header .close:hover, .modal .modal-header .close:focus {
       opacity: 1; }
 .modal .modal-body {
-  padding: 0;
-  overflow: auto; }
+  padding: 0; }
 .modal.content-mode .modal-header {
   background-color: rgba(77, 181, 120, 0.8); }
   .modal.content-mode .modal-header h4 {
@@ -302,6 +301,66 @@
   border-bottom: solid 3px #4db578;
   border-radius: 0;
   margin-bottom: 0; }
+
+.memoz-list {
+  overflow: auto;
+  max-height: 425px; }
+
+.memoz-loading {
+  padding: 40px 0;
+  display: block;
+  text-align: center;
+  width: 100%; }
+
+.memoz-list .memoz-item {
+  border-left: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  margin: 0;
+  padding: 0; }
+  .memoz-list .memoz-item:nth-child(even) {
+    background: #fcfcfc; }
+  .memoz-list .memoz-item p {
+    color: #aaa;
+    margin: 0; }
+  .memoz-list .memoz-item .memoz-body {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    flex-direction: column; }
+    .memoz-list .memoz-item .memoz-body .memoz-body-inner {
+      width: 100%;
+      display: flex;
+      align-items: center; }
+    .memoz-list .memoz-item .memoz-body .memoz-tr {
+      width: 20%; }
+      .memoz-list .memoz-item .memoz-body .memoz-tr .tr-days {
+        font-size: 30px;
+        font-weight: bold;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        width: 55px; }
+    .memoz-list .memoz-item .memoz-body .memoz-content {
+      width: 75%;
+      padding: 5px 10px; }
+    .memoz-list .memoz-item .memoz-body .memoz-link-surah {
+      display: inline-block;
+      margin-right: 5px;
+      font-weight: bold; }
+  .memoz-list .memoz-item .memoz-action {
+    width: 100%;
+    padding: 10px 0 5px;
+    margin-top: 5px;
+    text-align: center;
+    display: flex;
+    border-top: dashed 1px #ddd; }
+    .memoz-list .memoz-item .memoz-action a {
+      width: 33.33%;
+      font-size: 12px;
+      color: #aaa;
+      text-transform: uppercase; }
 
 .input-group {
   width: 100%; }
@@ -1388,56 +1447,6 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
       .puzzle .content_ayat .arabic-puzzle:empty {
         padding: 0 !important;
         border: none; }
-
-.memoz-list .memoz-item {
-  border-left: solid 1px #ddd;
-  border-right: solid 1px #ddd;
-  border-bottom: solid 1px #ddd;
-  margin: 0;
-  padding: 0; }
-  .memoz-list .memoz-item:nth-child(even) {
-    background: #fcfcfc; }
-  .memoz-list .memoz-item p {
-    color: #aaa;
-    margin: 0; }
-  .memoz-list .memoz-item .memoz-body {
-    display: flex;
-    padding: 0;
-    align-items: center;
-    flex-direction: column; }
-    .memoz-list .memoz-item .memoz-body .memoz-body-inner {
-      width: 100%;
-      display: flex;
-      align-items: center; }
-    .memoz-list .memoz-item .memoz-body .memoz-tr {
-      width: 20%; }
-      .memoz-list .memoz-item .memoz-body .memoz-tr .tr-days {
-        font-size: 30px;
-        font-weight: bold;
-        display: block;
-        overflow: hidden;
-        text-align: center;
-        text-overflow: ellipsis;
-        width: 55px; }
-    .memoz-list .memoz-item .memoz-body .memoz-content {
-      width: 75%;
-      padding: 5px 10px; }
-    .memoz-list .memoz-item .memoz-body .memoz-link-surah {
-      display: inline-block;
-      margin-right: 5px;
-      font-weight: bold; }
-  .memoz-list .memoz-item .memoz-action {
-    width: 100%;
-    padding: 10px 0 5px;
-    margin-top: 5px;
-    text-align: center;
-    display: flex;
-    border-top: solid 1px #ddd; }
-    .memoz-list .memoz-item .memoz-action a {
-      width: 33.33%;
-      font-size: 12px;
-      color: #399;
-      text-transform: uppercase; }
 
 .memoz_player {
   padding: 5px 20px;
