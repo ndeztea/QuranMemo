@@ -1,3 +1,4 @@
+<div class="memoz_filter_{{$filter}}">
 @if(!empty($list))
 	@foreach($list as $row)
 	<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
@@ -54,3 +55,4 @@
 	<p class="alert alert-warning no-content-center">Hafalan belum ada</p>
 	@endif
 @endif
+</div>
