@@ -40,6 +40,7 @@
 			  		</li>
 					  @endforeach
 				  	</ul>
+				  	<a href="javascript:void(0)" onclick="QuranJS.needCorrections(0)">Lainnya</a>
 			  	@endif
 
 			  	<h4 class="boxcontent-label">Hafalan lain</h4>
@@ -54,6 +55,7 @@
 			  		</li>
 					  @endforeach
 				  	</ul>
+				  	<a href="javascript:void(0)" onclick="QuranJS.memozOthers()">Lainnya</a>
 			  	@endif
 			  	
 			  </div>

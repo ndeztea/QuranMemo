@@ -7,11 +7,14 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+use Illuminate\Http\Request;
+use App\Http\Requests;
+
 abstract class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function __construct(){
+    public function __construct(Request $request){
     	// auto login
         $coo_email = @$_COOKIE['coo_quranmemo_email'];
         $coo_password = @$_COOKIE['coo_quranmemo_password'];

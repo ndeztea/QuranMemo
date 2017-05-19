@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use App\Users;
 use Validator;
+use Cookie;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -66,7 +67,7 @@ class AuthController extends Controller
         $request->session()->forget('sess_id');
         $request->session()->forget('sess_email');
         $request->session()->forget('sess_name');
-        return redirect('mushaf');
+        return redirect('mushaf')->withCookie(Cookie::forget('coo_quranmemo_email'))->withCookie(Cookie::forget('coo_quranmemo_password'));
     }
 
     /**
@@ -83,6 +84,8 @@ class AuthController extends Controller
         if ($dataLogin){
             $dataHTML['login'] = true;
             $dataHTML['redirect'] = url('dashboard');
+            $dataHTML['coo_quranmemo_email'] = $dataLogin->email;
+            $dataHTML['coo_quranmemo_password'] = $dataLogin->password;
 
             // update last login
             $dataUser['last_login'] = date('Y-m-d h:i:s');
@@ -95,8 +98,11 @@ class AuthController extends Controller
             $request->session()->put('sess_name', $dataLogin->name);
 
             // set cookie
-            setcookie('coo_quranmemo_email',$dataLogin->email);
+            /*setcookie('coo_quranmemo_email',$dataLogin->email);
             setcookie('coo_quranmemo_password',$dataLogin->password);
+            Cookie::forever('coo_quranmemo_email', $dataLogin->email);
+            Cookie::forever('coo_quranmemo_password', $dataLogin->password);*/
+
         }else{
             $dataHTML['login'] = false;
         }

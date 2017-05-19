@@ -160,11 +160,33 @@ class MemozController extends Controller
         $start = $request->input('start');
         $start = empty($start)?0:$start;
 
-        $data['list']  = $MemoModel->getList($sess_user_id,$filter,$start);
+        $data['list']  = $MemoModel->getList($sess_user_id,$filter,$start,10);
         $data['filter'] = $filter;
         $data['start'] = $start;
 
         $dataHTML['html'] = view('memoz_list_ajax',$data)->render();
+        $dataHTML['start'] = $start;
+        $dataHTML['count'] = count($data['list']);
+
+        return response()->json($dataHTML);
+    }
+
+     /**
+    * show memoz list via ajax
+    *
+    */
+    public function list_others_ajax(Request $request){
+        $MemoModel = new Memo();
+        $sess_user_id = $request->session()->get('sess_id');
+        $filter = $request->input('filter');
+        $start = $request->input('start');
+        $start = empty($start)?0:$start;
+
+        $data['list']  = $MemoModel->getAnotherList(session('sess_id'),0,$start,10);
+        $data['filter'] = $filter;
+        $data['start'] = $start;
+
+        $dataHTML['html'] = view('memoz_list_others_ajax',$data)->render();
         $dataHTML['start'] = $start;
         $dataHTML['count'] = count($data['list']);
 
@@ -424,10 +446,10 @@ class MemozController extends Controller
         $idMemo = $request->input('idMemo','');
 
         if($idMemo!=''){
-            $data['list']  = $MemoCorrectionModel->getMemoCorrection($idMemo,$start);
+            $data['list']  = $MemoCorrectionModel->getMemoCorrection($idMemo,$start,10);
         }else{
             $id_user = $request->session()->get('sess_id');
-            $data['list']  = $MemoCorrectionModel->getMemoCorrectionByUser($id_user,$start);
+            $data['list']  = $MemoCorrectionModel->getMemoCorrectionByUser($id_user,$start,10);
         }
         $data['start'] = $start;
         $data['idMemo'] = $idMemo;
