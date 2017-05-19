@@ -87,6 +87,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('memoz/list', 'MemozController@listing');
     Route::post('memoz/list_ajax', 'MemozController@list_ajax');
     Route::post('memoz/list_others_ajax', 'MemozController@list_others_ajax');
+    Route::post('memoz/list_need_corrections_ajax', 'MemozController@list_need_corrections_ajax');
+
 	Route::post('memoz/remove', 'MemozController@remove');
     Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
     Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}/{idCorrection}', 'MemozController@index');

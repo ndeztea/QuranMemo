@@ -444,7 +444,7 @@ class MemozController extends Controller
         $MemoCorrectionModel = new MemoCorrection();
         $start = $request->input('start',0);
         $idMemo = $request->input('idMemo','');
-
+        
         if($idMemo!=''){
             $data['list']  = $MemoCorrectionModel->getMemoCorrection($idMemo,$start,10);
         }else{
@@ -457,6 +457,21 @@ class MemozController extends Controller
         $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
        
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+        $dataHTML['start'] = $start;
+        $dataHTML['count'] = count($data['list']);
+
+        return response()->json($dataHTML);
+    }
+
+    public function list_need_corrections_ajax(Request $request){
+        $MemoCorrectionModel = new MemoCorrection();
+        $start = $request->input('start',0);
+        
+        $MemoModel = new Memo();
+        $data['list']  = $MemoModel->getNeedCorrection($start,10);
+        
+        $data['start'] = $start;
+        $dataHTML['html'] = view('memoz_need_correction_list',$data)->render();
         $dataHTML['start'] = $start;
         $dataHTML['count'] = count($data['list']);
 
