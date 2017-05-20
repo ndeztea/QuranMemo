@@ -36,7 +36,7 @@
 					  	<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px" class="img-circle">
 			  			<span class="username">{{$row->name}}</span>
 			  			<span class="ayat-target"><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></span>
-			  			<span class="spacer1">&bullet;</span> <i class="fa fa-check-square-o">{{$row->count_correction}} koreksi</i>
+			  			<span class="spacer1">&bullet;</span> <i class="fa fa-check-square-o">{{empty($row->count_correction)?0:$row->count_correction}} koreksi</i>
 			  		</li>
 					  @endforeach
 				  	</ul>
