@@ -632,6 +632,7 @@ var QuranJS = {
 		$('.modal-title').html('Hafalan Baru');
 		//$('.select-surah').detach().appendTo('.modal-body');
 		var htmlSelectSurah = $('.select-surah').html();
+		$( ".form-inline" ).wrap( "<div class='modal-spacing'></div>" );
 		$('.modal-body').html(htmlSelectSurah);
 		$('.select2-container').remove();
 		$('.selectpicker').select2();
