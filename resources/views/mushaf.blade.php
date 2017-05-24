@@ -43,7 +43,7 @@ $prev_surah = '';
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="select-surah">
-
+											<div class="modal-spacing">
 											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
 												
 													<div class="form-group">
@@ -78,7 +78,7 @@ $prev_surah = '';
 													<a href="javascript:;"  class="btn btn-setting btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
 							
 											</form>
-
+</div>
 										</div>
 										<!-- /select-surah -->
 

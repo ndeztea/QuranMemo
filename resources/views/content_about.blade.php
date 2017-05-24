@@ -1,3 +1,4 @@
+<div class="modal-spacing">
 <p>
 Assalamualaikum warahmatullahi wabarakatuh, <br><br>
 
@@ -31,3 +32,4 @@ Mohon do'anya dari antum supaya niat kami ini bisa di berkahi, dilancarkan dan d
 Wassalam warahmatullahi wabarakatuh, <br>
 Team QuranMemo.id
 </p>
+</div>

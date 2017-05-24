@@ -3,6 +3,7 @@
 @section('title', 'Manage Notes')
 
 @section('content')
+<div class="modal-spacing">
 	<form action="" method="post">
 	<p>
 	<?php echo trans('trans.surah_awal') ?> :    
@@ -39,7 +40,7 @@
 	</p>
 	
 	</form>
+</div>
 
-	
 
 @endsection

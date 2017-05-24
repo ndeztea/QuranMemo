@@ -1,3 +1,4 @@
+<div class="modal-spacing">
 <form class="form-inline" action="<?php echo url('memoz/search')?>" method="post" onsubmit="cookieLastMemo()">
 		<!--span class="search-title">Surah</span-->
 		<div class="form-group">
@@ -41,3 +42,4 @@
 		<i class="fa fa-spinner fa-spin fa-3x fa-fw label-loading" style="display:none"></i>
 		</button>
 </form>
+</div>

@@ -228,7 +228,8 @@
 }
 
 .memoz-list{
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	max-height: 425px;
 }
 
@@ -324,6 +325,15 @@
 }
 
 .modal-contentbody{
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	max-height: 425px;
+}
+
+.modal-spacing{
+	padding: 20px;
+}
+
+.container-segmented{
+	margin-bottom: 15px;
 }

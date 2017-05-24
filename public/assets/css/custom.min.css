@@ -596,7 +596,8 @@ ul {
 }
 
 ul.juz-list {
-    list-style: none
+    list-style: none;
+    padding: 10px 3px 0 10px;
 }
 
 .juz-list li {

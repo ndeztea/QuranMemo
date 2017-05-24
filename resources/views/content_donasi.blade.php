@@ -1,4 +1,4 @@
-
+<div class="modal-spacing">
 <h4>Pembangunan dan Renovasi Mesjid Al-Islah</h4>
 <p>Alamat mesjid terletak di Komp. Soreang Indah Blok J, Kabupaten Bandung, Jawa Barat</p>
 <img src="{{url('assets/images/al-islah1.png')}}" style="width:100%"><br>
@@ -15,3 +15,4 @@ Konfirmasi donasi ke email quranmemo.id@gmail.com atau SMS/WA/Telp 085956331813
 <p>
 	Jazakallah Khair
 </p>
+</div>

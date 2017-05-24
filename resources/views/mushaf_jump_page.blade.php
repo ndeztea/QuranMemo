@@ -1,3 +1,4 @@
+<div class="modal-spacing">
 <form class="form-inline" id="paggingForm" onsubmit="return false">
   <div class="form-group">
     <div class="input-group">
@@ -6,3 +7,4 @@
     </div>
   </div>
 </form>
+</div>

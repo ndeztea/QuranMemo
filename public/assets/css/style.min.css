@@ -303,7 +303,8 @@
   margin-bottom: 0; }
 
 .memoz-list {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   max-height: 425px; }
 
 .memoz-loading {
@@ -379,8 +380,15 @@
   vertical-align: middle; }
 
 .modal-contentbody {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   max-height: 425px; }
+
+.modal-spacing {
+  padding: 20px; }
+
+.container-segmented {
+  margin-bottom: 15px; }
 
 .input-group {
   width: 100%; }

@@ -1,3 +1,4 @@
+<div class="modal-spacing">
 <p><strong>Tanda Berhenti / Waqaf</strong>  menurut bahasa artinya berhenti. Menurut istilah waqaf ialah menghentikan bacaan sejenak atau putus suara dan berganti nafas akhir atau di tengah ayat. Penerapan waqaf disesuaikan dengan tanda tertentu. Tanda waqaf ada yang terdapat di permulaan ayat atau di tengah tengah ayat.
 </p>
 <b>Macam-macam waqaf yang di implementasikan di QuranMemo: </b>
@@ -87,3 +88,4 @@
 	
 	
 </tbody></table>
+</div>
