@@ -824,3 +824,9 @@ ul.juz-list {
     color: #999;
 }
 
+.filter .nav-tabs > li{
+    width: 50%;
+}
+.mushaf-hafalan .step-wrap .steps .btn{
+    width:33.3333%;
+}

@@ -26,10 +26,17 @@
 				</div>
 				<!--/memoz-content-->
 				<div class="memoz-check-hafalan">
+					@if($row->status==0)
 					<a class="memoz-check-link" href="#">
 						<span class="memoz-link-area"><i class="fa fa-circle-thin"></i></span>
 						<span class="check-label">Hafal</span>
 					</a>
+					@else
+					<a class="memoz-check-link" href="#">
+						<span class="memoz-link-area"><i class="fa fa-circle"></i></span>
+						<span class="check-label">Lupa</span>
+					</a>
+					@endif
 				</div>
 				<!--/memoz-check-hafalan-->
 			</div>
