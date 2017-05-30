@@ -286,8 +286,8 @@
             }*/
 
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_promo_6_BUKUBLMTAU']}}'==''){
-                //QuranJS.callModal('buku');
+            if('{{@$_COOKIE['coo_promo_6_TES']}}'==''){
+                QuranJS.callModal('buku');
             }else{
                 if('{{@$_COOKIE['coo_new_infoquranmemocommunity']}}'==''){
                     QuranJS.callModal('donasi');

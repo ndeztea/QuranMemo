@@ -77,9 +77,9 @@ class MushafController extends Controller
         //setcookie('coo_muratal_new',1);
         $Request = new Request();
         if($this->request->segment(2)=='' && $this->request->segment(1)=='mushaf'){
-            if(empty($_COOKIE['coo_promo_6_BUKUBLMTAU'])){
-                setcookie('coo_promo_6_BUKUBLMTAU',1);
-            }elseif(isset($_COOKIE['coo_promo_6_BUKUBLMTAU']) && empty($_COOKIE['coo_new_infoquranmemocommunity'])){
+            if(empty($_COOKIE['coo_promo_6_TES'])){
+                setcookie('coo_promo_6_TES',1);
+            }elseif(isset($_COOKIE['coo_promo_6_TES']) && empty($_COOKIE['coo_new_infoquranmemocommunity'])){
 
                 setcookie('coo_new_infoquranmemocommunity',1);
             }
