@@ -57,7 +57,7 @@ $prev_surah = '';
 																		$selectedSurah = 'selected';
 																	}
 																?>
-															<option  {{$selectedSurah}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
+															<option  {{$selectedSurah}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}}  {{$surah->ayat}} ayat)</option>
 															@endforeach
 														</select>
 													</div>

@@ -63,6 +63,15 @@ class Memo extends Model
         return $memoList;
     }
 
+    public function getSummaryTargetMemo($id_user){
+        $memoList = DB::table($this->table.' as memo')
+                ->select('surah_start','ayat_start','ayat_end')
+                ->where('id_user',$id_user)
+                ->where('status','!=',0)->get();
+
+        return $memoList;
+    }
+
     public function getAnotherList($id_user,$filter,$start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar')
