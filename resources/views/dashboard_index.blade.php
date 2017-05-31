@@ -18,8 +18,14 @@
 
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
-			  		<h3>Assamualaikum, wr wb, {{session('sess_name')}}</h3>
-			  		<img src="{{getAvatar($detailProfile)}}" style="width: 100px;height: 100px" class="img-circle">
+			  		<div class="dash-profile-detail-wrap">
+					  	<div class="dash-profile-detail">
+							<div class="dash-profile-img img-circle">
+								<img src="{{getAvatar($detailProfile)}}">
+							</div>
+							<h4 class="dash-profile-name">{{session('sess_name')}}</h4>
+						</div>
+					</div>
 			  		<a class="btn btn-green" href="{{url('profile/edit')}}">Edit Profile</a>
 			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')">Bacaan Terakhir</a>
 			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.memozList()">Hafalan</a>

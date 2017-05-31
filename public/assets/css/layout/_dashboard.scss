@@ -1,0 +1,29 @@
+.dash-profile-detail-wrap{
+    
+}
+
+.dash-profile-detail{
+    background: $main-color;
+}
+
+.dash-profile-img{
+    width:120px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dash-profile-img img{
+    width:100%;
+    height: auto;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+
+

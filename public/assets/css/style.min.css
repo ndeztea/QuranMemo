@@ -1527,4 +1527,23 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
   display: none;
   visibility: hidden; }
 
+.dash-profile-detail {
+  background: #4db578; }
+
+.dash-profile-img {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  overflow: hidden; }
+
+.dash-profile-img img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; }
+
 /*# sourceMappingURL=style.min.css.map */
