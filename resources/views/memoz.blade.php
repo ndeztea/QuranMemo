@@ -27,7 +27,7 @@
 							<div class="form-group">
 								<select name="surah_start"  id="surah_start" class="selectpicker form-control">
 									@foreach($surahs as $surah)
-									<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
+									<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}} {{$surah->ayat}} ayat)</option>
 									@endforeach
 								</select>
 							</div>
@@ -58,7 +58,11 @@
 						<a class="btn btn-green-small" onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
 						@endif
 					</div>
-						
+					<div>
+						<a class="btn btn-green-small" onclick="QuranJS.stepMemoz('1');"><i class="fa fa-chevron-circle-right"></i> Linier</a>
+						<a class="btn btn-green-small" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" style="color:red"><i class="fa fa-stop"></i>  Rekam</a>
+						<a class="btn btn-green-small" onclick="QuranJS.stepMemoz('5');" ><i class="fa fa-puzzle-piece"></i> Puzzle</a>
+					</div>	
 					
 				</div>
 			@endif
@@ -104,8 +108,8 @@
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('1')" class="btn btn-default steps_1 selected"># 1</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('2')" class="btn btn-default steps_2"># 2</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('3')" class="btn btn-default steps_3"># 3</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" class="btn btn-default steps_4"># 4</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');" class="btn btn-default steps_5"># 5</a>
+									<!--a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" class="btn btn-default steps_4"># 4</a>
+									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');" class="btn btn-default steps_5"># 5</a-->
 								</div>
 							</div>
 							

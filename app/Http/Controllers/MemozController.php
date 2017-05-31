@@ -144,7 +144,7 @@ class MemozController extends Controller
         $dataHTML['modal_title'] = 'Daftar Hafalan';
         $dataHTML['modal_body'] = view('memoz_list')->render();
         $dataHTML['site_url'] = url('');
-        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+        $dataHTML['modal_footer'] = ' <button class="btn btn-green-small info" data-dismiss="modal"><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display: none;"></i>  Tutup</button>';
 
         return response()->json($dataHTML);
     }
@@ -193,6 +193,58 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+     /**
+    * show memoz list via ajax
+    *
+    */
+    public function summary(Request $request){
+        $MemoModel = new Memo();
+        $QuranModel = new Quran();
+
+        $sess_user_id = $request->session()->get('sess_id');
+
+        $listSurah  = $QuranModel->getSurah();
+        $summaryTargetMemo = $MemoModel->getSummaryTargetMemo($sess_user_id);
+
+        // get progress
+        if(!empty($summaryTargetMemo)){
+            foreach ($summaryTargetMemo as $summary) {
+                $arrAyat = array();
+               // get summary length
+               for($a=$summary->ayat_start;$a<=$summary->ayat_end;$a++){
+                    array_push($arrAyat, $a);
+               }
+               $tempSummaries[$summary->surah_start][] =  $arrAyat;
+            }
+            $summaries = array();
+            foreach ($tempSummaries as $key=>$val) {
+                $summaries[$key] = array();
+                foreach ($val as $row) {
+                    foreach ($row as $row2) {
+                        array_push( $summaries[$key], $row2);
+                    }
+                }
+                //print_r($summaries[$key]);
+                $summaries[$key] = array_unique($summaries[$key]);
+            }
+        }
+
+        // merge progress with list surah
+        $a=0;
+        foreach ($listSurah as $surah) {
+            $listSurah[$a]->countAyat = isset($summaries[$surah->id])?count($summaries[$surah->id]):0;
+            $listSurah[$a]->percent = number_format((($listSurah[$a]->countAyat / $surah->ayat) * 100),0);
+            $a++;
+        }
+        
+
+        $data['listSurah'] = $listSurah;
+        $dataHTML['modal_title'] = 'Summary Hafalan';
+        $dataHTML['modal_body'] = view('memoz_goal',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
 
 
     /**
