@@ -11,9 +11,9 @@
 			<div class="backdrop-inner"></div>
 		</div>
 		<!-- /backdrop -->
-		<div class="single-column">
+		<div class="single-column dashboard-wrap">
 			<div class="page-title">
-				<h2>Dashboard page</h2>
+				<h2>Dashboard</h2>
 			</div>
 
 			  <div id="content" class="boxcontent">
@@ -23,17 +23,26 @@
 							<div class="dash-profile-img img-circle">
 								<img src="{{getAvatar($detailProfile)}}">
 							</div>
-							<h4 class="dash-profile-name">{{session('sess_name')}}</h4>
+							<div class="dash-profile-desc">
+								<h4 class="dash-profile-name">{{session('sess_name')}} <sup><i class="fa fa-certificate"><span>P</span></i></sup></h4>
+								<span class='qm-badge'>Level 7 Chuunin</span>
+							</div>
 						</div>
+						<!--/dash-profile-detail-->
 					</div>
-			  		<a class="btn btn-green" href="{{url('profile/edit')}}">Edit Profile</a>
-			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')">Bacaan Terakhir</a>
-			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.memozList()">Hafalan</a>
-			  		<a class="btn btn-green">Bookmark</a>
-			  		<a class="btn btn-green" onclick="QuranJS.callModal('memoz/summary')">Summary</a>
-			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.correctionList()">Koreksi <sup>New</sup></a>
+					<!--/dash-profile-detail-wrap -->
+			  		<div class="tabbed-nav">
+					  	<ul class="tabbed-nav-list list-unstyled">
+						  	<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('profile/edit')}}">Edit Profile</a></li>
+							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')">Bacaan Terakhir</a></li>
+							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()">Hafalan</a></li>
+							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link">Bookmark</a></li>
+							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('memoz/summary')">Summary</a></li>
+							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.correctionList()">Koreksi <sup class="text-danger">New</sup></a></li>
+						</ul>
+					</div>
 			  	</div>
-			  	<hr>
+				  <!-- /dash-profile -->
 			  	<h4 class="boxcontent-label">Butuh Koreksi</h4>
 				  @if(!empty($needCorrections))
 			  		<ul class="correction-list list-unstyled">
