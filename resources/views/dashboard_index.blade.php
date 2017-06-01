@@ -28,23 +28,28 @@
 								<h4 class="dash-profile-name">{{session('sess_name')}} <sup><i class="fa fa-certificate"><span>P</span></i></sup></h4>
 								<span class='qm-badge'>Level 7 Chuunin</span>
 							</div>
+							<button class="btn btn-trigger-dashboard" type="button" data-toggle="collapse" data-target="#dashboard-items" aria-expanded="false" aria-controls="dashboard-items">
+								<i class="fa fa-angle-up"></i>
+							</button>
 						</div>
 						<!--/dash-profile-detail-->
 					</div>
 					<!--/dash-profile-detail-wrap -->
-			  		<div class="tabbed-nav">
-					  	<ul class="tabbed-nav-list list-unstyled">
-						  	<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('profile/edit')}}">Edit Profile</a></li>
-							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')">Bacaan Terakhir</a></li>
-							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()">Hafalan</a></li>
-							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link">Bookmark</a></li>
-							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('memoz/summary')">Summary Target</a></li>
-							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.correctionList()">Koreksi <sup class="text-danger">New</sup></a></li>
-						</ul>
+					<div class="collapse in" id="dashboard-items">
+						<div class="tabbed-nav">
+							<ul class="tabbed-nav-list list-unstyled">
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('profile/edit')}}"><i class="fa fa-user"></i>Edit Profile</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="fa fa-book"></i>Bacaan Terakhir</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()"><i class="fa fa-check-square-o"></i>Hafalan</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link"><i class="fa fa-bookmark"></i> Bookmark</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('memoz/summary')"><i class="fa fa-crosshairs"></i> Summary Target</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.correctionList()"><i class="fa fa-book"></i> Koreksi <sup class="text-danger">New</sup></a></li>
+							</ul>
+						</div>
 					</div>
 			  	</div>
 				  <!-- /dash-profile -->
-			  	<h4 class="boxcontent-label">Butuh Koreksi</h4>
+			  	<h4 class="boxcontent-label">Timeline Koreksi</h4>
 				  @if(!empty($needCorrections))
 			  		<ul class="correction-list list-unstyled">
 						  @foreach($needCorrections as $row)
@@ -82,6 +87,12 @@
 	</div>
 <!-- end main main-content-wrap -->	
 </div>
+<script>
+$('.btn-trigger-dashboard').click(function() {
+
+    $(".fa",this).toggleClass("fa-angle-up fa-angle-down");
+});
+</script>
 <script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/Fr.voice.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/record.js')}}"></script>
