@@ -63,3 +63,9 @@
 	@endif
 @endif
 </div>
+<script>
+$('.memoz-check-link').click(function() {
+
+    $(".memoz-link-area i",this).toggleClass("fa-check-circle fa-circle-thin");
+});
+</script>
