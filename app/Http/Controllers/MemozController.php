@@ -211,24 +211,23 @@ class MemozController extends Controller
             foreach ($summaryTargetMemo as $summary) {
                 $arrAyat = array();
                // get summary length
-               for($a=$summary->ayat_start;$a<=$summary->ayat_end;$a++){
-                    array_push($arrAyat, $a);
+               $arrAyat = range($summary->ayat_start,$summary->ayat_end);
+               if(!empty($tempSummaries[$summary->surah_start])){
+                    $tempSummaries[$summary->surah_start] .=  implode(',',$arrAyat).',';
+               }else{
+                    $tempSummaries[$summary->surah_start] =  implode(',',$arrAyat).',';
                }
-               $tempSummaries[$summary->surah_start][] =  $arrAyat;
+               
             }
             $summaries = array();
             foreach ($tempSummaries as $key=>$val) {
-                $summaries[$key] = array();
-                foreach ($val as $row) {
-                    foreach ($row as $row2) {
-                        array_push( $summaries[$key], $row2);
-                    }
-                }
-                //print_r($summaries[$key]);
+                $arr = explode(',', $val);
+                $arrPop = array_pop($arr);
+                $summaries[$key] = $arr;
                 $summaries[$key] = array_unique($summaries[$key]);
             }
         }
-
+        //print_r($summaries);die();
         // merge progress with list surah
         $a=0;
         foreach ($listSurah as $surah) {
@@ -239,7 +238,7 @@ class MemozController extends Controller
         
 
         $data['listSurah'] = $listSurah;
-        $dataHTML['modal_title'] = 'Summary Hafalan';
+        $dataHTML['modal_title'] = 'To Hafidz';
         $dataHTML['modal_body'] = view('memoz_goal',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
 

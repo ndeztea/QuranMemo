@@ -830,3 +830,14 @@ ul.juz-list {
 .mushaf-hafalan .step-wrap .steps .btn{
     width:33.3333%;
 }
+
+ul.goal {
+    list-style-type: none;
+    padding: 10px;
+}
+ul.goal .progress{
+    margin-bottom:10px;
+}
+ul.goal strong{
+    color:#323639;
+}

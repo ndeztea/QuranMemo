@@ -24,7 +24,7 @@
 			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')">Bacaan Terakhir</a>
 			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.memozList()">Hafalan</a>
 			  		<a class="btn btn-green">Bookmark</a>
-			  		<a class="btn btn-green" onclick="QuranJS.callModal('memoz/summary')">Summary</a>
+			  		<a class="btn btn-green" onclick="QuranJS.callModal('memoz/summary')">To Hafidz</a>
 			  		<a class="btn btn-green" href="javascript:void(0)" onclick="QuranJS.correctionList()">Koreksi <sup>New</sup></a>
 			  	</div>
 			  	<hr>
