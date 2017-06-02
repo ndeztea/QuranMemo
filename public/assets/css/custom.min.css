@@ -848,3 +848,10 @@ ul.goal strong{
 .register_form{
     margin-top: 0px;
 }
+.koreksi-desc{
+    padding: 0px 10px;
+}
+.koreksi-box .koreksi-avatar img {
+    width: 80%;
+    height: 80%;
+}

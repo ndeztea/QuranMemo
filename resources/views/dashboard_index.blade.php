@@ -26,7 +26,7 @@
 							</div>
 							<div class="dash-profile-desc">
 								<h4 class="dash-profile-name">{{session('sess_name')}} <sup><i class="fa fa-certificate"><span>P</span></i></sup></h4>
-								<span class='qm-badge'>Level 7 Chuunin</span>
+								<span class='qm-badge'>Level Muqamah</span>
 							</div>
 							<button class="btn btn-trigger-dashboard" type="button" data-toggle="collapse" data-target="#dashboard-items" aria-expanded="false" aria-controls="dashboard-items">
 								<i class="fa fa-angle-up"></i>
@@ -64,7 +64,7 @@
 									<li class="correction-list-item">
 										<div class="koreksi-box">
 											<div class="koreksi-avatar img-circle">
-												<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px">
+												<img src="{{getAvatar($row)}}"  class="img-circle">
 											</div>
 											<div class="koreksi-desc">
 												<span class="username">{{$row->name}}</span>
@@ -85,7 +85,7 @@
 										@foreach($listMemoz as $row)
 									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
 									<li class="correction-list-item">
-										<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px" class="img-circle">
+										<img src="{{getAvatar($row)}}"  class="img-circle">
 										<span class="username">{{$row->name}}</span>
 										<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
 									</li>
