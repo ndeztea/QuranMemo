@@ -841,3 +841,10 @@ ul.goal .progress{
 ul.goal strong{
     color:#323639;
 }
+
+.main-content-wrap .main-content{
+    padding: 0px !important;
+}
+.register_form{
+    margin-top: 0px;
+}

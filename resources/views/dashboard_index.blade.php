@@ -12,15 +12,15 @@
 		</div>
 		<!-- /backdrop -->
 		<div class="single-column dashboard-wrap">
-			<div class="page-title">
+			<!--div class="page-title">
 				<h2>Dashboard</h2>
-			</div>
+			</div-->
 
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
 
 			  		<div class="dash-profile-detail-wrap">
-					  	<div class="dash-profile-detail">
+					  	<div class="dash-profile-detail"  style="background: url('https://static1.squarespace.com/static/530e8d24e4b04fb5b2cdcbf1/t/56ef127ac6fc08f28e0714d1/1458508431289/upload.jpg')">
 							<div class="dash-profile-img img-circle">
 								<img src="{{getAvatar($detailProfile)}}">
 							</div>
@@ -49,46 +49,52 @@
 					</div>
 			  	</div>
 				  <!-- /dash-profile -->
-				  <div class="timeline-koreksi">
-					  <h4 class="boxcontent-label">Timeline Koreksi</h4>
-				  		@if(!empty($needCorrections))
+				  <div class="timeline-koreksi filter">
+				  		<ul class="nav nav-tabs" role="tablist">
+						    <li role="presentation" class="active"><a href="#koreksi" aria-controls="koreksi" role="tab" data-toggle="tab">Timeline Koreksi</a></li>
+						    <li role="presentation"><a href="#hafalan" aria-controls="hafalan" role="tab" data-toggle="tab">Hafalan lain</a></li>
+						</ul>
+						<!-- Tab panes -->
+						  <div class="tab-content">
+						    <div role="tabpanel" class="tab-pane active" id="koreksi">
+						    	@if(!empty($needCorrections))
 							<ul class="correction-list list-unstyled">
 								@foreach($needCorrections as $row)
-							<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
-							<li class="correction-list-item">
-								<div class="koreksi-box">
-									<div class="koreksi-avatar img-circle">
-										<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px">
-									</div>
-									<div class="koreksi-desc">
+									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
+									<li class="correction-list-item">
+										<div class="koreksi-box">
+											<div class="koreksi-avatar img-circle">
+												<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px">
+											</div>
+											<div class="koreksi-desc">
+												<span class="username">{{$row->name}}</span>
+												<span class="ayat-target"><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></span>
+												<span class="spacer1">&bullet;</span> <i class="fa fa-commenting"> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</i>
+											</div>
+											<!--/koreksi-desc-->
+										</div>
+									</li>
+									@endforeach
+									</ul>
+									<a class="btn-green btn" href="javascript:void(0)" onclick="QuranJS.needCorrections(0)">Lainnya</a>
+								@endif
+						    </div>
+						    <div role="tabpanel" class="tab-pane" id="hafalan">
+						    	@if(!empty($listMemoz))
+									<ul class="correction-list list-unstyled">
+										@foreach($listMemoz as $row)
+									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
+									<li class="correction-list-item">
+										<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px" class="img-circle">
 										<span class="username">{{$row->name}}</span>
-										<span class="ayat-target"><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></span>
-										<span class="spacer1">&bullet;</span> <i class="fa fa-commenting"> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</i>
-									</div>
-									<!--/koreksi-desc-->
-								</div>
-							</li>
-							@endforeach
-							</ul>
-							<a class="btn-green btn" href="javascript:void(0)" onclick="QuranJS.needCorrections(0)">Lainnya</a>
-						@endif
-						</div>
-						<div class="timeline-koreksi">
-							<h4 class="boxcontent-label">Hafalan lain</h4>
-							@if(!empty($listMemoz))
-								<ul class="correction-list list-unstyled">
-									@foreach($listMemoz as $row)
-								<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
-								<li class="correction-list-item">
-									<img src="{{getAvatar($row)}}" style="width: 50px;height: 50px" class="img-circle">
-									<span class="username">{{$row->name}}</span>
-									<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
-								</li>
-								@endforeach
-								</ul>
-								<a href="javascript:void(0)" onclick="QuranJS.memozOthers()">Lainnya</a>
-							@endif
-						</div>
+										<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+									</li>
+									@endforeach
+									</ul>
+									<a href="javascript:void(0)" class="btn-green btn" onclick="QuranJS.memozOthers()">Lainnya</a>
+								@endif
+						    </div>
+						  </div>
 			  	
 			  </div>
 		<!-- end single-column-->

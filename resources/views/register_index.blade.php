@@ -14,9 +14,9 @@
 					<div class="row">
 						<div class="register-block">
 							<!-- /login-form -->
-							<div class="page-title clearfix">
+							<!--div class="page-title clearfix">
 								<h1 class="pull-left">Daftar QuranMemo</h1>
-							</div>
+							</div-->
 							<div class="register_form clearfix">
 								<div class="promo pull-left">
 									<div class="clearfix">

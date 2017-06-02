@@ -197,8 +197,7 @@
             @yield('content')
         </div>
 
-        <div class="footer">
-            <!--div class="ads"><a href="javascript:;" onclick="alert('Untuk melihat informasi pasantren UBK Plus, buka halaman www.ubkplus.com')" target="_blank"><img src="{{url('assets/images/ubk.jpg')}}" alt="Pasantren UBK Plus"></a></div-->
+        <!--div class="footer">
             <br>
             <ul>
                 <li><span>Copyright &copy; 2016 <a href="http://www.ubkplus.org">www.ubkplus.org</a></span></li>
@@ -208,7 +207,7 @@
                 <li><a href="javascript:void(0)" onclick="QuranJS.callModal('contact')" >Hubungi Kami</a></li>
             </ul>
           <br><br>
-        </div>
+        </div-->
         <!-- /footer -->
 
         @if(!empty($ayats))

@@ -18,20 +18,7 @@ $prev_surah = '';
 				</div>
 				<!-- /backdrop -->
 				<div class="single-column">
-					<div class="page-title">
-						<h1 class="pull-left">Mushaf</h1>
-						 @if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-            			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" alt="Download di Google Play" width="150"></a>
-            			@endif
-						@if(empty($selected_surah))
-							<!--div class="surah-action pull-right">
-								<span class="auto-play">
-									<input type="checkbox" id="automated_play" name="automated_play" {{Request::segment(4)=='autoplay' || empty(Request::segment(4))?'checked':''}} >&nbsp;<i class="fa fa-play-circle-o"></i>  {{trans('trans.play_otomatis')}}
-								</span>
-							</div>
-							<!-- /surah-action -->
-						@endif
-					</div>
+					
 
 					<div class="nav-top clearfix">
 						<div class="container-fluid">

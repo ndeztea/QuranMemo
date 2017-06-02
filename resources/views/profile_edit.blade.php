@@ -14,9 +14,9 @@
 					<div class="row">
 						<div class="register-block">
 							<!-- /login-form -->
-							<div class="page-title clearfix">
+							<!--div class="page-title clearfix">
 								<h1 class="pull-left">Edit Profile</h1>
-							</div>
+							</div-->
 							<div class="register_form clearfix">
 								<form class="form-horizontal" action="#" onsubmit="return false" method="post">
 									<input type="hidden" name="device_id" id="profile_edit" value=""/>
