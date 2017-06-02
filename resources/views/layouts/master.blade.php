@@ -48,8 +48,8 @@
         <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Scheherazade:400,700&subset=latin,arabic' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/select2.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/select2.min.css')}}">
 
         <style>
         .tanwin1:nth-letter(1){
@@ -65,13 +65,15 @@
         </style>
 
         <!-- Optional theme -->
-        <link rel="stylesheet" href="{{url('assets/css/font-awesome.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/bootstrap-theme.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/animate.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/ionicons.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/materialdesignicons.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-theme.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/animate.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/bootstrap-datepicker.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
         
