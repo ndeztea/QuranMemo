@@ -38,9 +38,9 @@
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
 							<ul class="tabbed-nav-list list-unstyled">
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('profile/edit')}}"><i class="fa fa-user"></i>Edit Profile</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('profile/edit')}}"><i class="ion-ios-contact"></i>Edit Profile</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="fa fa-book"></i>Bacaan Terakhir</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()"><i class="fa fa-check-square-o"></i>Hafalan</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()"><i class="ion-ios-list-outline"></i>Hafalan</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link"><i class="fa fa-bookmark"></i> Bookmark</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('memoz/summary')"><i class="fa fa-crosshairs"></i> Summary Target</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.correctionList()"><i class="fa fa-commenting"></i> Koreksi <sup class="text-white">New</sup></a></li>
