@@ -4,6 +4,7 @@ body {
 	height: 100%;
 	position: relative;
 	user-select: text !important;
+	padding-top: 50px;
 }
 
 body {
@@ -115,6 +116,7 @@ a{
 }
 
 .navbar {
+	transition: top 0.2s ease-in-out;
 	margin-bottom: 0;
 	&.fixed {
 		position: fixed;
@@ -708,4 +710,8 @@ a{
 .btn:focus,
 .btn:active{
 		outline: none 0;
+}
+
+.navi-up {
+    top: -40px;
 }
