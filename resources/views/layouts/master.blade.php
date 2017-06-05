@@ -148,24 +148,7 @@
 
         <nav class="navmenu navmenu-default offcanvas navmenu-fixed-left qm-navbar" id="qm-navbar" role="navigation">
             
-
-            <ul class="nav navmenu-nav">
-                <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
-                <a href="<?php echo url('mushaf')?>">{{trans('trans.mushaf')}}</a>
-                </li>
-                <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
-                <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
-                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
-                <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>
-                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li-->
-                @if(empty(session('sess_id')))
-                <li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Login</a></li>
-                @else
-                <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-                <li><a href="{{url('profile/edit')}}">Edit Profile</a></li>
-                <li><a href="{{url('auth/logout')}}">Logout</a></li>
-                @endif
-            </ul>
+            <a class="qm-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
 
             <div class="navbar-nav navbar-right">
                 <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
@@ -177,6 +160,25 @@
                     </div>
                 </form>
             </div>
+
+            <ul class="nav navmenu-nav">
+                <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
+                <a href="<?php echo url('mushaf')?>">{{trans('trans.mushaf')}}</a>
+                </li>
+                <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
+                <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
+                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
+                <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>
+                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li-->
+                @if(empty(session('sess_id')))
+                <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')">Login</a></li>
+                @else
+                <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                <li><a href="{{url('profile/edit')}}">Edit Profile</a></li>
+                <li><a href="{{url('auth/logout')}}">Logout</a></li>
+                @endif
+            </ul>
+
         </nav>
 
         <div class="qm-nav navbar navbar-default navbar-fixed-top navi-down">
