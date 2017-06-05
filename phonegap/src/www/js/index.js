@@ -47,6 +47,14 @@ var app = {
         app.receivedEvent('deviceready');
         //app.browser = cordova.InAppBrowser.open('http://www.quranmemo.id/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
         app.browser = cordova.InAppBrowser.open('http://192.168.1.2/QuranNote/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
+        // disable back
+        document.addEventListener("backbutton", function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure you want to exit app?")) {
+                navigator.app.exitApp();
+            }   
+        }, false );
+
         
         app.browser.addEventListener('loadstop', function() {
             app.browser.show();
