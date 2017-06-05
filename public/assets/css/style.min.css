@@ -1019,6 +1019,9 @@ a {
   display: block;
   position: relative;
   min-height: 500px; }
+  @media (max-width: 768px) {
+    .main-content-wrap {
+      padding-bottom: 120px; } }
   .main-content-wrap .main-content {
     padding: 20px 0; }
     .main-content-wrap .main-content .backdrop {
@@ -1240,13 +1243,15 @@ a {
     margin: 20px auto;
     text-align: center;
     width: 200px; }
-  .qm-navbar .navbar-nav {
-    margin: 0 !important; }
-    .qm-navbar .navbar-nav .navbar-form {
-      border-top: none !important;
-      border-bottom: none !important;
-      box-shadow: none;
-      margin: 11px 0; }
+  .qm-navbar .navbar-nav .navbar-form {
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none;
+    margin: 11px 0; }
+  .qm-navbar .qm-cari-kata {
+    width: 100%;
+    float: none !important;
+    margin-bottom: 15px !important; }
 
 .navmenu-default .navmenu-nav > li > a, .navbar-default .navbar-offcanvas .navmenu-nav > li > a {
   color: #eee; }

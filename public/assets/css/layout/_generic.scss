@@ -432,6 +432,9 @@ a{
 	display: block;
 	position: relative;
 	min-height: 500px;
+	@include media("<=tablet"){
+		padding-bottom: 120px;
+	}
 	.main-content {
 		padding: 20px 0;
 		.backdrop {
@@ -737,13 +740,17 @@ a{
 		width: 200px;
 	}
 	.navbar-nav{
-		margin: 0 !important;
 		.navbar-form{
 			border-top: none !important;
 			border-bottom: none !important;
 			box-shadow: none;
 			margin: 11px 0;
 		}
+	}
+	.qm-cari-kata{
+		width:100%;
+		float: none !important;
+		margin-bottom: 15px !important;
 	}
 }
 

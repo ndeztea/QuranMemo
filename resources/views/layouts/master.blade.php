@@ -150,7 +150,7 @@
             
             <a class="qm-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
 
-            <div class="navbar-nav navbar-right">
+            <div class="navbar-nav qm-cari-kata">
                 <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
