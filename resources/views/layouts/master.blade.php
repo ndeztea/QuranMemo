@@ -179,7 +179,7 @@
             </div>
         </nav>
 
-        <div class="navbar navbar-default navbar-fixed-top">
+        <div class="qm-nav navbar navbar-default navbar-fixed-top navi-down">
             <a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body">
                 <span class="icon-bar"></span>
@@ -247,7 +247,7 @@
             var didScroll;
             var lastScrollTop = 0;
             var delta = 5;
-            var navbarHeight = $('.qm-navbar').outerHeight();
+            var navbarHeight = $('.qm-nav').outerHeight();
 
             $(window).scroll(function(event){
                 didScroll = true;
@@ -271,11 +271,11 @@
                 // This is necessary so you never see what is "behind" the navbar.
                 if (st > lastScrollTop && st > navbarHeight){
                     // Scroll Down
-                    $('.qm-navbar').removeClass('navi-down').addClass('navi-up');
+                    $('.qm-nav').removeClass('navi-down').addClass('navi-up');
                 } else {
                     // Scroll Up
                     if(st + $(window).height() < $(document).height()) {
-                        $('.qm-navbar').removeClass('navi-up').addClass('navi-down');
+                        $('.qm-nav').removeClass('navi-up').addClass('navi-down');
                     }
                 }
                 
