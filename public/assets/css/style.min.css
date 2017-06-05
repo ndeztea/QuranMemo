@@ -1263,6 +1263,9 @@ a {
 .navmenu-default, .navbar-default .navbar-offcanvas {
   border: none !important; }
 
+.modal-open .modal {
+  display: block !important; }
+
 .mushaf_header {
   background-color: #efefef;
   width: 100%;
