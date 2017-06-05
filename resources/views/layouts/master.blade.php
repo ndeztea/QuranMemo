@@ -49,6 +49,7 @@
         <link href='https://fonts.googleapis.com/css?family=Scheherazade:400,700&subset=latin,arabic' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/jasny-bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/select2.min.css')}}">
 
         <style>
@@ -145,55 +146,47 @@
             
         </div>
 
-        <nav class="navbar navbar-default qm-navbar">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#qm-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
-                </div>
+        <nav class="navmenu navmenu-default offcanvas navmenu-fixed-left qm-navbar" id="qm-navbar" role="navigation">
+            
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="qm-navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
-                        <a href="<?php echo url('mushaf')?>">{{trans('trans.mushaf')}}</a>
-                        </li>
-                        <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
-                        <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
-                        <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
-                        <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>
-                        <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li-->
-                        @if(empty(session('sess_id')))
-                        <li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Login</a></li>
-                        @else
-                        <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-                        <li><a href="{{url('profile/edit')}}">Edit Profile</a></li>
-                        <li><a href="{{url('auth/logout')}}">Logout</a></li>
-                        @endif
+            <ul class="nav navmenu-nav">
+                <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
+                <a href="<?php echo url('mushaf')?>">{{trans('trans.mushaf')}}</a>
+                </li>
+                <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
+                <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
+                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
+                <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>
+                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li-->
+                @if(empty(session('sess_id')))
+                <li><a href="javascript:;" onclick="QuranJS.callModal('auth/login')">Login</a></li>
+                @else
+                <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                <li><a href="{{url('profile/edit')}}">Edit Profile</a></li>
+                <li><a href="{{url('auth/logout')}}">Logout</a></li>
+                @endif
+            </ul>
 
-                        
-                    </ul>
-                    <div class="navbar-nav navbar-right">
-                        <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
+            <div class="navbar-nav navbar-right">
+                <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
+                        <div class="input-group-btn">
+                            <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
                     </div>
-                    
-
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+                </form>
+            </div>
         </nav>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
 
         <div class="wrap">
             @yield('content')
@@ -235,6 +228,7 @@
 
     <script src="{{url('assets/js/jquery-ui.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('assets/js/jasny-bootstrap.min.js')}}"></script>
     <script src="{{url('assets/js/jquery.highlight.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap-datepicker.en-GB.min.js')}}"></script>

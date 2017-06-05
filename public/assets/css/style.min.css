@@ -1,5 +1,8 @@
 @font-face {
   font-family: "Scheherazade", "Traditional Arabic"; }
+@media (min-width: 660px) {
+  body {
+    padding-left: 300px; } }
 .no-content-center {
   text-align: center; }
 
