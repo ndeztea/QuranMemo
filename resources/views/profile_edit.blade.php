@@ -13,6 +13,15 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="register-block">
+							<div class="timeline-koreksi filter">
+					  		<ul class="nav nav-tabs" role="tablist">
+							    <li role="presentation" class="active"><a href="#koreksi" aria-controls="koreksi" role="tab" data-toggle="tab">Edit Profile</a></li>
+							    <li role="presentation"><a href="#hafalan" aria-controls="hafalan" role="tab" data-toggle="tab">Edit Avatar</a></li>
+							</ul>
+							<!-- Tab panes -->
+							  <div class="tab-content">
+							    <div role="tabpanel" class="tab-pane active" id="koreksi"></div>
+							  </div>
 							<!-- /login-form -->
 							<!--div class="page-title clearfix">
 								<h1 class="pull-left">Edit Profile</h1>

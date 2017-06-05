@@ -144,7 +144,7 @@ class MemozController extends Controller
         $dataHTML['modal_title'] = 'Daftar Hafalan';
         $dataHTML['modal_body'] = view('memoz_list')->render();
         $dataHTML['site_url'] = url('');
-        $dataHTML['modal_footer'] = ' <button class="btn btn-green-small info" data-dismiss="modal"><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display: none;"></i>  Tutup</button>';
+        $dataHTML['modal_footer'] = '<a class="btn btn-green-small info" href="'.url('memoz').'"><i class="fa fa-file"></i> Hafalan Baru</a> <button class="btn btn-green-small info" data-dismiss="modal"><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display: none;"></i>  Tutup</button>';
 
         return response()->json($dataHTML);
     }
