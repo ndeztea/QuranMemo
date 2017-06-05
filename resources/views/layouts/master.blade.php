@@ -245,6 +245,8 @@
                 $('.selectpicker').select2();
             });
 
+            $('.navmenu').offcanvas({autohide:true,toggle:false});
+
             // Hide Header on on scroll down
             var didScroll;
             var lastScrollTop = 0;
