@@ -746,7 +746,7 @@ body.canvas-slid{
 	background: darken($main-color,25%);
 	.qm-brand{
 		display: block;
-		margin: 20px auto;
+		margin: 30px auto;
 		text-align: center;
 		width: 200px;
 	}
@@ -783,4 +783,13 @@ body.canvas-slid{
 		display: block !important;
 	}
 } 
+
+.close-navi{
+	position: absolute;
+	top:10px;
+	right: 10px;
+	color: #fff;
+	font-size: 18px;
+	padding:5px;
+}
 	

@@ -1247,7 +1247,7 @@ body.canvas-slid .loading {
   background: #265c3d; }
   .qm-navbar .qm-brand {
     display: block;
-    margin: 20px auto;
+    margin: 30px auto;
     text-align: center;
     width: 200px; }
   .qm-navbar .navbar-nav .navbar-form {
@@ -1272,6 +1272,14 @@ body.canvas-slid .loading {
 
 .modal-open .modal {
   display: block !important; }
+
+.close-navi {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px; }
 
 .mushaf_header {
   background-color: #efefef;

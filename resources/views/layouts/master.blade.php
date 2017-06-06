@@ -150,6 +150,8 @@
             
             <a class="qm-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
 
+            <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
+
             <div class="navbar-nav qm-cari-kata">
                 <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
                     <div class="input-group">
@@ -245,7 +247,7 @@
                 $('.selectpicker').select2();
             });
 
-            $('.navmenu').offcanvas({autohide:true,toggle:false});
+            $('.navmenu').offcanvas({autohide: false,toggle:false});
 
             // Hide Header on on scroll down
             var didScroll;
