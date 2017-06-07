@@ -56,7 +56,7 @@
 				  <div class="timeline-koreksi filter">
 				  		<ul class="nav nav-tabs" role="tablist">
 						    <li role="presentation" class="active"><a href="#koreksi" aria-controls="koreksi" role="tab" data-toggle="tab">Timeline Koreksi</a></li>
-						    <li role="presentation"><a href="#hafalan" aria-controls="hafalan" role="tab" data-toggle="tab">Hafalan lain</a></li>
+						    <li role="presentation"><a href="#hafalan" aria-controls="hafalan" role="tab" data-toggle="tab">Sedang menghafal</a></li>
 						</ul>
 						<!-- Tab panes -->
 						  <div class="tab-content">
@@ -89,9 +89,15 @@
 										@foreach($listMemoz as $row)
 									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
 									<li class="correction-list-item">
-										<img src="{{getAvatar($row)}}"  class="img-circle">
-										<span class="username">{{$row->name}}</span>
-										<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+										<div class="koreksi-box">
+											<div class="koreksi-avatar img-circle">
+												<img src="{{getAvatar($row)}}"  class="img-circle">
+											</div>
+											<div class="koreksi-desc">
+												<span class="username">{{$row->name}}</span>
+												<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+											</div>
+										</div>
 									</li>
 									@endforeach
 									</ul>
