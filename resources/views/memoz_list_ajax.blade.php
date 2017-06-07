@@ -54,7 +54,7 @@
 	</div>
 	<!--/memoz-item-->
 	@endforeach
-	@if($start==0)
+	@if($start==0 && count($list)>10)
 		<a href="javascript:void(0)" onclick="QuranJS.memozFilter({{$filter}},'next')" class="btn btn-green btn-loadmore">Selanjutnya</a>
 	@endif
 @else

@@ -259,11 +259,14 @@ class MemozController extends Controller
         $surahs = $QuranModel->getSurah();
         $data['surahs'] = $surahs;
         $data['date_start'] = '';
-        $data['date_end'] = '';
+        $timestamp = time()-86400;
+        $target = strtotime("+7 day", $timestamp);
+        $data['date_end'] = date('Y-m-d',$target);
         $data['note'] = '';
 
         $id = $request->input('id');
         $data['id'] = $id;
+
         if(!empty($id)){
             $MemoModel = new Memo();
             $memoDetail = $MemoModel->getDetail($id);

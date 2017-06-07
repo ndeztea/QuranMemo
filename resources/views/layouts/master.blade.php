@@ -166,20 +166,19 @@
             </div>
 
             <ul class="nav navmenu-nav">
+                @if(!empty(session('sess_id')))    
+                <li><a href="{{url('dashboard')}}"><i class="mdi mdi-bank"></i> Dashboard</a></li>
+                @endif
+                <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}"><i class="mdi mdi-library"></i> Menghafal</a></li>
                 <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
-                <a href="<?php echo url('mushaf')?>">{{trans('trans.mushaf')}}</a>
+                 <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant"></i> Baca</a>
                 </li>
-                <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
-                <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
-                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Donasi</a></li-->
-                <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>
-                <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('promo')">Tahfidz Gratis</a></li-->
+                <li><a href="javascript:;" onclick="QuranJS.callModal('info')"><i class="mdi mdi-information"></i> Info</a></li>
                 @if(empty(session('sess_id')))
-                <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')">Login</a></li>
+                <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i>  Login</a></li>
                 @else
-                <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-                <li><a href="{{url('profile/edit')}}">Edit Profile</a></li>
-                <li><a href="{{url('auth/logout')}}">Logout</a></li>
+                <li><a href="{{url('profile/edit')}}"><i class="mdi mdi-account-edit"></i> Edit Profile</a></li>
+                <li><a href="{{url('auth/logout')}}"><i class="mdi mdi-lock-open"></i> Logout</a></li>
                 @endif
             </ul>
 

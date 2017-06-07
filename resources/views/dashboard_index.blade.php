@@ -20,7 +20,7 @@
 			  	<div class="dash-profile">
 
 			  		<div class="dash-profile-detail-wrap">
-					  	<div class="dash-profile-detail"  style="background: url('https://static1.squarespace.com/static/530e8d24e4b04fb5b2cdcbf1/t/56ef127ac6fc08f28e0714d1/1458508431289/upload.jpg')">
+					  	<div class="dash-profile-detail"  style="background: url('http://localhost/QuranNote/public/assets/images/dzuhur.jpg')">
 							<div class="dash-profile-img img-circle">
 								<img src="{{getAvatar($detailProfile)}}">
 							</div>
@@ -39,8 +39,8 @@
 						<div class="tabbed-nav">
 							<ul class="tabbed-nav-list list-unstyled">
 
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()"><i class="mdi mdi-book-open"></i>Menghafal</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book"></i>Baca</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()"><i class="mdi mdi-library"></i>Menghafal</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Baca</a></li>
 								
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('mushaf/juz')" ><i class="mdi mdi-bookmark"></i> Pilih Juz</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('memoz/summary')"><i class="mdi mdi-target"></i> Summary Target</a></li>
@@ -56,7 +56,7 @@
 				  <div class="timeline-koreksi filter">
 				  		<ul class="nav nav-tabs" role="tablist">
 						    <li role="presentation" class="active"><a href="#koreksi" aria-controls="koreksi" role="tab" data-toggle="tab">Timeline Koreksi</a></li>
-						    <li role="presentation"><a href="#hafalan" aria-controls="hafalan" role="tab" data-toggle="tab">Hafalan lain</a></li>
+						    <li role="presentation"><a href="#hafalan" aria-controls="hafalan" role="tab" data-toggle="tab">Sedang menghafal</a></li>
 						</ul>
 						<!-- Tab panes -->
 						  <div class="tab-content">
@@ -89,9 +89,15 @@
 										@foreach($listMemoz as $row)
 									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
 									<li class="correction-list-item">
-										<img src="{{getAvatar($row)}}"  class="img-circle">
-										<span class="username">{{$row->name}}</span>
-										<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+										<div class="koreksi-box">
+											<div class="koreksi-avatar img-circle">
+												<img src="{{getAvatar($row)}}"  class="img-circle">
+											</div>
+											<div class="koreksi-desc">
+												<span class="username">{{$row->name}}</span>
+												<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+											</div>
+										</div>
 									</li>
 									@endforeach
 									</ul>
