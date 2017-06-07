@@ -2,6 +2,9 @@
     font-family: 'me_quran';
     src: url(../fonts/me_quran.ttf);
 }
+body{
+    padding-top:0px;
+}
 
 .arabic, .head_surah{
     font-family: 'me_quran';
