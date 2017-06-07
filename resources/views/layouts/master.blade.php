@@ -147,6 +147,8 @@
         </div>
 
         <nav class="navmenu navmenu-default offcanvas navmenu-fixed-left qm-navbar" id="qm-navbar" role="navigation">
+
+            <div class="navmenu-overlay"> 
             
             <a class="qm-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
 
@@ -180,6 +182,8 @@
                 <li><a href="{{url('auth/logout')}}">Logout</a></li>
                 @endif
             </ul>
+
+            </div>
 
         </nav>
 
