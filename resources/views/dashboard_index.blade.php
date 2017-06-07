@@ -20,7 +20,7 @@
 			  	<div class="dash-profile">
 
 			  		<div class="dash-profile-detail-wrap">
-					  	<div class="dash-profile-detail"  style="background: url('https://static1.squarespace.com/static/530e8d24e4b04fb5b2cdcbf1/t/56ef127ac6fc08f28e0714d1/1458508431289/upload.jpg')">
+					  	<div class="dash-profile-detail"  style="background: url('http://localhost/QuranNote/public/assets/images/dzuhur.jpg')">
 							<div class="dash-profile-img img-circle">
 								<img src="{{getAvatar($detailProfile)}}">
 							</div>
