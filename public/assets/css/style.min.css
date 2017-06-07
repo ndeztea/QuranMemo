@@ -51,10 +51,10 @@
   float: right !important; }
 
 .qm-navbar {
-  background: #265c3d; }
+  background: #fff; }
   .qm-navbar .qm-brand {
     display: block;
-    margin: 30px auto;
+    margin: 15px auto;
     text-align: center;
     width: 200px; }
   .qm-navbar .navbar-nav .navbar-form {
@@ -65,10 +65,21 @@
   .qm-navbar .qm-cari-kata {
     width: 100%;
     float: none !important;
-    margin-bottom: 15px !important; }
+    margin: 7.5px 0 15px !important; }
+
+.navmenu-header {
+  background: #265c3d;
+  padding: 5px 0; }
+
+.navmenu-default .navmenu-nav > li {
+  border-bottom: solid 1px #efefef; }
+  .navmenu-default .navmenu-nav > li.active {
+    border-bottom: none; }
 
 .navmenu-default .navmenu-nav > li > a, .navbar-default .navbar-offcanvas .navmenu-nav > li > a {
-  color: #eee; }
+  color: #4db578;
+  font-size: 16px;
+  padding: 15px 30px; }
 
 .navmenu-default .navmenu-nav > .active > a, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a, .navmenu-default .navmenu-nav > .active > a:hover, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:hover, .navmenu-default .navmenu-nav > .active > a:focus, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:focus {
   color: #fff !important;
