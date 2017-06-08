@@ -147,40 +147,50 @@
         </div>
 
         <nav class="navmenu navmenu-default offcanvas navmenu-fixed-left qm-navbar" id="qm-navbar" role="navigation">
+
+            <div class="navmenu-overlay"> 
             
-            <a class="qm-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
+                <div class="navmenu-header">
+                    <a class="qm-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
 
-            <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
+                    <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
 
-            <div class="navbar-nav qm-cari-kata">
-                <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
-                        <div class="input-group-btn">
-                            <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
-                        </div>
+                    <div class="navbar-nav qm-cari-kata">
+                        <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
+                </div>
+                <!--/navmenu-header-->
 
-            <ul class="nav navmenu-nav">
-                @if(!empty(session('sess_id')))    
-                <li><a href="{{url('dashboard')}}"><i class="mdi mdi-bank"></i> Dashboard</a></li>
-                @endif
-                <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}"><i class="mdi mdi-library"></i> Menghafal</a></li>
-                <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
-                 <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant"></i> Baca</a>
-                </li>
-                <li><a href="javascript:;" onclick="QuranJS.callModal('info')"><i class="mdi mdi-information"></i> Info</a></li>
-                @if(empty(session('sess_id')))
-                <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i>  Login</a></li>
-                @else
-                <li><a href="{{url('profile/edit')}}"><i class="mdi mdi-account-edit"></i> Edit Profile</a></li>
-                <li><a href="{{url('auth/logout')}}"><i class="mdi mdi-lock-open"></i> Logout</a></li>
-                @endif
-            </ul>
+                <ul class="nav navmenu-nav">
+                    @if(!empty(session('sess_id')))    
+                    <li><a href="{{url('dashboard')}}"><i class="mdi mdi-bank"></i> Dashboard</a></li>
+                    @endif
+                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}"><i class="mdi mdi-library"></i> Menghafal</a></li>
+                    <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
+                    <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant"></i> Baca</a>
+                    </li>
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('info')"><i class="mdi mdi-information"></i> Info</a></li>
+                    @if(empty(session('sess_id')))
+                    <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i>  Login</a></li>
+                    @else
+                    <li><a href="{{url('profile/edit')}}"><i class="mdi mdi-account-edit"></i> Edit Profile</a></li>
+                    <li><a href="{{url('auth/logout')}}"><i class="mdi mdi-lock-open"></i> Logout</a></li>
+                    @endif
+                </ul>
+                <!--/navmenu-nav-->
+
+            </div>
+            <!--/navmenu-overlay-->
 
         </nav>
+        <!--/navmenu-->
 
         <div class="qm-nav navbar navbar-default navbar-fixed-top navi-down">
             <a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
