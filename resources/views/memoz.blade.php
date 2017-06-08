@@ -38,7 +38,7 @@
 								  <input class="form-control search_ayat" id="ayat_end" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 								</div>
 							</div>
-							<a class="btn btn-cari-ayat" onclick="jQuery('.form-inline').submit()" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
+							<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) jQuery('.form-inline').submit() @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
 								
 							@if(session('sess_id'))
 							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>

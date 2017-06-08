@@ -98,8 +98,12 @@ $prev_surah = '';
 						<div class="nav-top clearfix detail_top">
 							<h4>{{$selected_surah}} ayat {{$ayat}}</h4>
 							<a href="#"  class="btn btn-share-ayat" onclick="QuranJS.callModal('bookmarks?url={{Request::url()}}')"><i class="fa fa-share-alt"></i> Bagikan</a>
-
-							<a href="{{url('memoz/surah/'.$id_surah.'/'.$ayat)}}" class="btn btn-share-ayat"><i class="fa fa-plus"></i> Hafalkan</a>
+							@if(!empty(session('sess_id'))) 
+							<a href="{{url('memoz/surah/'.$id_surah.'/'.$ayat)}}" class="btn btn-share-ayat">
+							 @else 
+							<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-share-ayat">
+							@endif
+							<i class="fa fa-plus"></i> Hafalkan</a>
 							<!--a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
 							
 							<a href="{{url('mushaf/page/'.$ayats[0]->page)}}" class="btn btn-share-ayat"><i class="fa fa-arrow-right"></i> Halaman penuh</a>
@@ -196,7 +200,12 @@ $prev_surah = '';
 					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
 					                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
 					                  <a class="btn btn-share-ayat" href="#" onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
-					                  <a class="btn btn-play-ayat" href="{{url('memoz/surah/'.$ayat->surah.'/'.$ayat->ayat)}}"><i class="fa fa-plus"></i> Hafalkan</a>
+					                  @if(!empty(session('sess_id'))) 
+										<a class="btn btn-play-ayat" href="{{url('memoz/surah/'.$ayat->surah.'/'.$ayat->ayat)}}">
+										 @else 
+										<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-play-ayat">
+										@endif
+					                  <i class="fa fa-plus"></i> Hafalkan</a>
 					                  
 					                </div>
 					            </div>
