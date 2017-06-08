@@ -3,8 +3,8 @@
     <feature name="Camera">
         <param name="browser-package" value="Camera" />
     </feature>
-    <name>QuranMemo</name>
-    <description>Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan</description>
+    <name>QuranMemo Community</name>
+    <description>Komunitas Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan</description>
     <author email="quranmemo.id@gmail.com" href="http://quranmemo.id">Team QuranMemo.id</author>
     <content src="index.html" />
     <project default="help" name="QuranMemo" />

@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ndeztea.quranmemo" version="1.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>QuranMemo</name>
-    <description>Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan</description>
+    <name>QuranMemo Community</name>
+    <description>Komunitas Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan</description>
     <author email="quranmemo.id@gmail.com" href="http://quranmemo.id">Team QuranMemo.id</author>
     <content src="index.html" />
-    <project name="QuranMemo" default="help" />
+    <project default="help" name="QuranMemo" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
@@ -44,7 +44,6 @@
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
     <access origin="*" />
-    <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -55,4 +54,5 @@
         <allow-intent href="market:*" />
     </platform>
     <engine name="android" spec="~5.1.1" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
 </widget>
