@@ -105,6 +105,7 @@ class AuthController extends Controller
 
         }else{
             $dataHTML['login'] = false;
+            $dataHTML['errorMessage'] = 'Login salah';
         }
 
         return response()->json($dataHTML);
