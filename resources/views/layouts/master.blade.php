@@ -389,7 +389,7 @@
 
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
             if('{{@$_COOKIE['coo_promo_3_tafsir']}}'==''){
-                QuranJS.callModal('buku');
+                //QuranJS.callModal('buku');
             }
 
             /*if('{{@$_COOKIE['coo_promo']}}'==''){
