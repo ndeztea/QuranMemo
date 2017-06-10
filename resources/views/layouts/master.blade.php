@@ -66,6 +66,8 @@
         </style>
 
         <!-- Optional theme -->
+        <link rel="stylesheet" href="{{url('assets/css/vendors/vex.css')}}" />
+        <link rel="stylesheet" href="{{url('assets/css/vendors/vex-theme-os.css')}}" />
         <link rel="stylesheet" href="{{url('assets/css/vendors/font-awesome.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/ionicons.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/materialdesignicons.min.css')}}">
@@ -85,6 +87,8 @@
             QuranJS.siteUrl = '{{url('')}}';
         </script>
 
+        <script src="{{url('assets/js/vex.combined.min.js')}}"></script>
+        <script>vex.defaultOptions.className = 'vex-theme-os'</script>
 
         <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
