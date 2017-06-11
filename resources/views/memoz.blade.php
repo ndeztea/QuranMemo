@@ -47,7 +47,7 @@
 					</form>
 				</div>
 			</div>
-			@if(session('sess_id') && !empty($ayats))
+			@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction'))
 				<div class="pull-left">
 					<div class="btn-group" role="group">
 						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
@@ -278,7 +278,9 @@
 			<a class="button disabled one" id="play"><i class="fa fa-play"></i></a>
 			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
 			@endif
-			<a class="button" id="btn-correction" style="display:none" onclick="QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
+			@if(session('sess_id')!=$memoDetail->id_user)
+				<a class="button" id="btn-correction" style="display:none" onclick="QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
+			@endif
 		</div>
 		
 		<div class="player">

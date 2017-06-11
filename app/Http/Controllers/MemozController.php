@@ -51,8 +51,14 @@ class MemozController extends Controller
 
         // data header
         if(!empty($ayats)){
-            $data['header_title'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
-            $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+            if(request()->segment(2)=='correction'){
+                $data['header_title'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
+                $data['header_description'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+            }else{
+                $data['header_title'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
+                $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+            }
+            
         }
 
         $memoDetail = new \stdClass();
