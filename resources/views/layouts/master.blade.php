@@ -410,5 +410,6 @@
          
     </script>
     @include('layouts.analytics') 
+
     </body>
 </html>

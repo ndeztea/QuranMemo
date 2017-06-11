@@ -73,9 +73,9 @@
 						<div class="btn-group" role="group">
 							@if(!empty($memoDetail->id))
 								@if($memoDetail->status==0)
-								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="fa fa-thumbs-up label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
+								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
 								@else
-								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="fa fa-thumbs-down label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
+								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
 								@endif
 							@endif
 						
@@ -293,7 +293,6 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-
 	QuranJS.fillAyatEnd();
 
 	<?php if(!empty($ayats) && empty($_COOKIE['coo_hide_info']) && Request::segment(2)!='correction'):?>

@@ -46,21 +46,14 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         //app.browser = cordova.InAppBrowser.open('http://www.quranmemo.id/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
-        app.browser = cordova.InAppBrowser.open('http://192.168.100.4/QuranNote/public/mushaf/start', '_blank', 'location=no,zoom=no,hidden=yes');
+        app.browser = cordova.InAppBrowser.open('http://www.quranmemo.com/public/mushaf/start', '_blank', 'location=no,zoom=no,hidden=yes');
         // disable back
-        /*document.addEventListener("backbutton", function (e) {
+        document.addEventListener("backbutton", function (e) {
             e.preventDefault();
             if (confirm("Are you sure you want to exit app?")) {
                 navigator.app.exitApp();
             }   
-        }, false );*/
-
-        document.addEventListener("backbutton", onBackKeyDown, false);
-
-        function onBackKeyDown() {
-            // Handle the back button
-            alert('asdsad');
-        }
+        }, false );
 
         
         app.browser.addEventListener('loadstop', function() {
