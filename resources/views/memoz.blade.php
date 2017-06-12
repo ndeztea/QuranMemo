@@ -295,9 +295,10 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	QuranJS.fillAyatEnd();
-	jQuery('.memoz-1,.memoz-0').hide();
-	jQuery('.memoz-{{$memoDetail->status}}').show();
-	
+	@if(!empty($memoDetail))
+		jQuery('.memoz-1,.memoz-0').hide();
+		jQuery('.memoz-{{@$memoDetail->status}}').show();
+	@endif
 
 	<?php if(!empty($ayats) && empty($_COOKIE['coo_hide_info']) && Request::segment(2)!='correction'):?>
 	QuranJS.showInfoMemoz();
