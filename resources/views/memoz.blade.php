@@ -47,50 +47,38 @@
 					</form>
 				</div>
 			</div>
-			@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction'))
-				<div class="pull-left">
-					<div class="btn-group" role="group">
-						<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i></a>
-						<a class="btn btn-green-small" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i></a>
-						<a class="btn btn-green-small" href="javascript:;"   onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i></a>
-						
-						@if(!empty($memoDetail->id))
-						<a class="btn btn-green-small" onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i></a>
-						@endif
-					</div>
-					<div>
-						<a class="btn btn-green-small" onclick="QuranJS.stepMemoz('1');"><i class="fa fa-chevron-circle-right"></i> Linier</a>
-						<a class="btn btn-green-small" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" style="color:red"><i class="fa fa-stop"></i>  Rekam</a>
-						<a class="btn btn-green-small" onclick="QuranJS.stepMemoz('5');" ><i class="fa fa-puzzle-piece"></i> Puzzle</a>
-					</div>	
-					
+			@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction')
+				<div class="dropdown memoz-options">
+				  <button class="btn btn-green dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Options
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				    <li><a  href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a></li>
+				    <li><a  onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar hafalan</a></li>
+				    <li><a  href="javascript:;"   onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i> Simpan hafalan</a></li>
+				    @if(!empty($memoDetail->id))
+				    <li><a onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar koreksi</a></li>
+				    @endif
+				    
+				    @if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user) && Request::segment(2)!='correction')
+				    <li role="separator" class="divider"></li>
+				    <li>@if(!empty($memoDetail->id))
+								
+								<a style="display: none" class="memoz-0" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
+								<a style="display: none" class="memoz-1" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
+							@endif</li>
+					<li><a href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i> Panduan menghafal </a></li>
+					<li><a  href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())"><i class="fa fa-cog"></i> Setting Memoz
+						</a></li>
+				    @endif
+				  </ul>
 				</div>
-			@endif
-			
-				@if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user) && Request::segment(2)!='correction')
 
-				<div class="memoz_options">
-						<div class="btn-group" role="group">
-							@if(!empty($memoDetail->id))
-								@if($memoDetail->status==0)
-								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
-								@else
-								<a class="btn btn-green-small btn-status-save" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i></a>
-								@endif
-							@endif
-						
-							<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i></a>
-						<button type="button" href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-green-small">
-							&nbsp;<i class="fa fa-cog"></i>&nbsp;
-						</button>
-						</div>
-					
-				</div>
-				<!-- /memoz-player -->
-				@endif
-				<input type="hidden" name="repeat" class="repeat" value="1" />
-				<input type="hidden" name="muratal" class="muratal" value="1" />
-				<input type="hidden" name="tajwid" class="tajwid" value=""/>
+			@endif
+			<input type="hidden" name="repeat" class="repeat" value="1" />
+			<input type="hidden" name="muratal" class="muratal" value="1" />
+			<input type="hidden" name="tajwid" class="tajwid" value=""/>
 
 			</div>
 			<!-- /nav-top -->
@@ -101,6 +89,16 @@
 				<div class="">
 					<div class="">
 						<div class="mushaf mushaf-hafalan">
+							@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction')
+							<div class="clearfix"></div>
+							<div class="timeline-koreksi memoz-filter filter">
+						  		<ul class="nav nav-tabs" role="tablist">
+								    <li role="presentation" class="active"><a  onclick="QuranJS.stepMemoz('1',this);"><i class="fa fa-chevron-circle-right"></i> Linier</a></li>
+								    <li role="presentation"><a  onclick="QuranJS.stepMemoz('4',this);QuranJS.showAyat('start')" style="color:red"><i class="fa fa-stop"></i>  Rekam</a></li>
+								    <li role="presentation"><a  onclick="QuranJS.stepMemoz('5',this);" ><i class="fa fa-puzzle-piece"></i> Puzzle</a></li>
+								</ul>
+							</div>
+							@endif
 							<div class="clearfix surah_title head_surah_1 center">{{$header_title}}</div>
 							@if(Request::segment(2)!='correction')
 							<div class="step-wrap">
@@ -272,13 +270,14 @@
 <div class="quran_recorder_cont">
 	<div class="quran_recorder" style="display:none">
 		<div class="action">
+
 			@if(Request::segment(2)!='correction')
 			<a class="button" id="record"><i class="fa fa-stop"></i></a>
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
 			<a class="button disabled one" id="play"><i class="fa fa-play"></i></a>
 			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
 			@endif
-			@if(session('sess_id')!=$memoDetail->id_user)
+			@if(session('sess_id')!= @$memoDetail->id_user )
 				<a class="button" id="btn-correction" style="display:none" onclick="QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
 			@endif
 		</div>
@@ -296,6 +295,9 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	QuranJS.fillAyatEnd();
+	jQuery('.memoz-1,.memoz-0').hide();
+	jQuery('.memoz-{{$memoDetail->status}}').show();
+	
 
 	<?php if(!empty($ayats) && empty($_COOKIE['coo_hide_info']) && Request::segment(2)!='correction'):?>
 	QuranJS.showInfoMemoz();

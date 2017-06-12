@@ -858,3 +858,13 @@ ul.goal strong{
     width: 80%;
     height: 80%;
 }
+
+.memoz-filter ul li{
+    width: 33.3333% !important;
+}
+.memoz-options.open>.dropdown-menu {
+    width: 100%;
+}
+.memoz-options .dropdown-menu>li>a{
+    font-size: 16px;
+}
