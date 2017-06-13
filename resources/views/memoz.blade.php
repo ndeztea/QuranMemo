@@ -54,10 +54,12 @@
 				    <span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				    <li><a  href="javascript:;"   onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i> Simpan hafalan</a></li>
+				    <li role="separator" class="divider"></li>
 				    <li><a  href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a></li>
 				    <li><a  onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar hafalan</a></li>
-				    <li><a  href="javascript:;"   onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i> Simpan hafalan</a></li>
 				    @if(!empty($memoDetail->id))
+				    <li role="separator" class="divider"></li>
 				    <li><a onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar koreksi</a></li>
 				    @endif
 				    
