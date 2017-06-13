@@ -1317,7 +1317,7 @@ body.canvas-slid .loading {
       border: 1px solid transparent; }
     @media (max-width: 767px) and (min-width: 320px) {
       .mushaf_header .btn {
-        top: 8px; } }
+        top: 5px; } }
   .mushaf_header .btn:first-child {
     left: 0;
     border-left: none; }
@@ -1500,7 +1500,10 @@ body.canvas-slid .loading {
       width: 100%;
       height: 35px;
       z-index: 5;
-      background-color: #eee; }
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
       .mushaf .ayat_section .action-footer .btn, .boxcontent .ayat_section .action-footer .btn {
         margin: 0;
         background-color: #eee;
@@ -1614,9 +1617,6 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
 .dashboard-wrap
 .boxcontent {
   padding: 0; }
-  .dashboard-wrap
-  .boxcontent .dash-profile {
-    margin-bottom: 20px; }
 
 .dash-profile-detail {
   background: #4db578;

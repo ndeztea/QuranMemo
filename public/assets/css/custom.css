@@ -179,7 +179,8 @@ input[type="number"] {
 
 .surah-nav .pagination>li>a,
 .surah-nav .pagination>li>span {
-    padding: 4px 6px
+    /*padding: 4px 6px*/
+    padding: 5px 15px;
 }
 
 .memoz-message.alert-warning {
