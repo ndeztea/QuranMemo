@@ -160,6 +160,7 @@
                         </li>
                         <!--li><a href="<?php echo url('note')?>"><?php echo trans('trans.note')?></a></li-->
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
+                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('store')" >QuranMemo Store <sup>new</sup></a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >QuranMemo Community <sup>new</sup></a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
                         <li><a href="{{url('register')}}">Daftar</a></li>
@@ -289,8 +290,8 @@
             if('{{@$_COOKIE['coo_promo_6_TES']}}'==''){
                 QuranJS.callModal('buku');
             }else{
-                if('{{@$_COOKIE['coo_new_infoquranmemocommunity']}}'==''){
-                    QuranJS.callModal('donasi');
+                if('{{@$_COOKIE['coo_store']}}'==''){
+                    QuranJS.callModal('store');
                 }
             }
 

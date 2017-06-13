@@ -68,7 +68,7 @@ Route::get('buku', 'ContentController@buku');
 Route::get('promo', 'ContentController@promo');
 Route::get('muratal', 'ContentController@muratal');
 Route::get('info', 'ContentController@info');
-
+Route::get('store', 'ContentController@store');
 
 Route::get('auth/login', 'Auth\AuthController@login');
 
