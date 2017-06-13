@@ -84,7 +84,7 @@ class Memo extends Model
         if($filter!='all'){
             $memoList = $memoList->where('status',$filter);
         }
-        $memoList = $memoList->orderby('date_end','asc')->get();
+        $memoList = $memoList->orderby('updated_at','desc')->get();
 
 
         return $memoList;
