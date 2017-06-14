@@ -173,9 +173,7 @@
                 <!--/navmenu-header-->
 
                 <ul class="nav navmenu-nav">
-                    @if(!empty(session('sess_id')))    
-                    <li><a href="{{url('dashboard')}}"><i class="mdi mdi-bank"></i> Dashboard</a></li>
-                    @endif
+                    <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard')}}"><i class="mdi mdi-bank"></i> Dashboard</a></li>
                     <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant"></i> Baca</a>

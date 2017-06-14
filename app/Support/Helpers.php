@@ -31,6 +31,9 @@ function urlMp3($file){
 
 }
 function getAvatar($data){
+	if(empty($data)){
+		return url('assets/images/avatar/guest.png');
+	}
 	if(!is_file(public_path('assets/images/avatar/'.$data->avatar))){
         $avatar = $data->gender=='m'?url('assets/images/avatar/default_female.png'):url('assets/images/avatar/default_male.png');
     }else{

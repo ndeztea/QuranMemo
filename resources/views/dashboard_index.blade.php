@@ -25,7 +25,7 @@
 								<img src="{{getAvatar($detailProfile)}}">
 							</div>
 							<div class="dash-profile-desc">
-								<h4 class="dash-profile-name">{{session('sess_name')}} <sup><i class="fa fa-certificate"><span>P</span></i></sup></h4>
+								<h4 class="dash-profile-name">{{session('sess_name')?session('sess_name'):'Tamu'}} <sup><i class="fa fa-certificate"><span>P</span></i></sup></h4>
 								<span class='qm-badge'>Level Muqamah</span>
 							</div>
 							<button class="btn btn-trigger-dashboard" type="button" data-toggle="collapse" data-target="#dashboard-items" aria-expanded="false" aria-controls="dashboard-items">
@@ -39,13 +39,13 @@
 						<div class="tabbed-nav">
 							<ul class="tabbed-nav-list list-unstyled">
 
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.memozList()"><i class="mdi mdi-library"></i>Menghafal</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-library"></i>Daftar Hafalan</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Baca</a></li>
 								
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('mushaf/juz')" ><i class="mdi mdi-bookmark"></i> Pilih Juz</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('memoz/summary')"><i class="mdi mdi-target"></i> Summary Target</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="QuranJS.correctionList()"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white">New</sup></a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('profile/edit')}}"><i class="mdi mdi-account-edit"></i>Edit Profile</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-target"></i> Summary Target</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) QuranJS.correctionList() @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white">New</sup></a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) location.href='{{url('profile/edit')}}' @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-account-edit"></i>Edit Profile</a></li>
 								
 
 							</ul>

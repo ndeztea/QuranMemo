@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('mushaf');
+    return redirect('dashboard');
 });
 
 Route::get('note/manage', ['middleware' => 'auth', function () {
@@ -71,6 +71,7 @@ Route::post('register/process', 'RegisterController@process');
 Route::get('memoz/', 'MemozController@index');
 Route::post('memoz/', 'MemozController@index');
 
+Route::get('dashboard','DashboardController@index');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
@@ -103,7 +104,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');
     Route::get('notes/create/{surah}/{idsurah}', 'NotesController@create');
-    Route::get('dashboard','DashboardController@index');
+    
 
     Route::post('notes/save', 'NotesController@save');
 

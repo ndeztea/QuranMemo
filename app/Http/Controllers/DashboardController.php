@@ -30,7 +30,10 @@ class DashboardController extends Controller
         // get need correction memoz
         $data['needCorrections'] = $MemoModel->getNeedCorrection();
         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
-        $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'))[0];
+        $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
+        if(!empty($data['detailProfile'])){
+            $data['detailProfile'] = $data['detailProfile'][0];
+        }
 
         return view('dashboard_index',$data);
     }
