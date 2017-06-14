@@ -12,77 +12,82 @@
 			<div class="single-column">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="register-block">
+						<div class="register-block" style="background-color: #FFFFFF">
 							<div class="timeline-koreksi filter">
-					  		<ul class="nav nav-tabs" role="tablist">
-							    <li role="presentation" class="active"><a href="#koreksi" aria-controls="koreksi" role="tab" data-toggle="tab">Edit Profile</a></li>
-							    <li role="presentation"><a href="#hafalan" aria-controls="hafalan" role="tab" data-toggle="tab">Edit Avatar</a></li>
-							</ul>
-							<!-- Tab panes -->
-							  <div class="tab-content">
-							    <div role="tabpanel" class="tab-pane active" id="koreksi"></div>
-							  </div>
-							<!-- /login-form -->
-							<!--div class="page-title clearfix">
+					  		<!--div class="page-title clearfix">
 								<h1 class="pull-left">Edit Profile</h1>
 							</div-->
-							<div class="register_form clearfix">
-								<form class="form-horizontal" action="#" onsubmit="return false" method="post">
-									<input type="hidden" name="device_id" id="profile_edit" value=""/>
-									<h3>Avatar</h3>
-									<img src="{{getAvatar($detailUser)}}" width="150" id="img_avatar"/>
-									<input type="file" name="avatar" id="avatar">
-									<input type="submit" value="Upload" id="btn-upload" class="btn btn-green" onclick="QuranJS.uploadAvatar()"/>
-								</form>
-								<form class="form-horizontal" action="{{url('profile/edit')}}" method="post">
-									<h3>Data Login</h3>
-									<div class="form-group">
-										<label for="email" class="control-label sr-only">Email</label>
-										<input type="email" class="form-control" name="email" disabled="true" id="register_email" aria-label="email" placeholder="Email yang aktif" value="{{ $detailUser->email}}" />
+							<ul class="nav nav-tabs" role="tablist">
+							    <li role="presentation" class="active"><a href="#editprofile" aria-controls="koreksi" role="tab" data-toggle="tab">Edit Profile</a></li>
+							    <li role="presentation"><a href="#editavatar" aria-controls="hafalan" role="tab" data-toggle="tab">Edit Avatar</a></li>
+							</ul>
+								<!-- Tab panes -->
+							  <div class="tab-content">
+							    <div role="tabpanel" class="tab-pane active" id="editprofile">
+							    	<div class="register_form clearfix">
+										<form class="form-horizontal" action="{{url('profile/edit')}}" method="post">
+											<p><h5>Data Login</h5><br/></p>
+											<div class="form-group">
+												<label for="email" class="control-label sr-only">Email</label>
+												<input type="email" class="form-control" name="email" disabled="true" id="register_email" aria-label="email" placeholder="Email yang aktif" value="{{ $detailUser->email}}" />
 
+											</div>
+											<div class="form-group">
+												<label for="password" class="control-label sr-only">Password</label>
+												<input type="password" class="form-control" name="password" id="password" aria-label="password" placeholder="Password" />
+											</div>
+											<div class="form-group">
+												<label for="password" class="control-label sr-only">Re-Password</label>
+												<input type="password" class="form-control" name="password_confirmation" id="password_confirmation" aria-label="password" placeholder="Tulis ulang password" />
+											</div>
+											<p><h5>Data Profile</h5><br/></p>
+											<div class="form-group">
+												<label for="name" class="control-label sr-only">Full Name</label>
+												<input type="name" class="form-control" name="name" id="name" aria-label="Full Name" placeholder="Nama Lengkap Antum" value="{{ $detailUser->name}}"/>
+											</div>
+											<div class="form-group">
+												<label for="gender" class="control-label sr-only">Jenis Kelamin</label>
+												<select name="gender" id="gender" class="form-control">
+													<option value="M" {{ $detailUser->gender=='M'?'selected':''}}>Laki-laki</option>
+													<option value="F" {{ $detailUser->gender=='F'?'selected':''}}>Perempuan</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="city" class="control-label sr-only">Kota</label>
+												<input type="text" class="form-control" name="city" id="register_city" aria-label="kota asal" placeholder="Kota Asal" value="{{ $detailUser->city}}"/>
+											</div>
+											<div class="form-group">
+												<label for="address" class="control-label sr-only">Alamat Lengkap</label>
+												<textarea class="form-control" name="address" id="register_address" aria-label="alamat lengkap" placeholder="Mohon isi dengan alamat yang lengkap"/>{{ $detailUser->address}}</textarea>
+											</div>
+											<div class="form-group">
+												<label for="hp" class="control-label sr-only">Handphone</label>
+												<input type="text" class="form-control" name="hp" id="hp" aria-label="No Handphone" placeholder="No Handphone" value="{{ $detailUser->hp}}"/>
+											</div>
+											<div class="form-group">
+												<div class="btn-group" role="group" aria-label="...">
+													<button type="submit" class="btn  btn-green btn-full">Simpan</button>
+													<button type="button" class="btn btn-primary btn-daftar" onclick="history.back()">Kembali</button>
+												</div>
+											</div>
+											<input type="hidden" name="action" value="post"/>
+										</form>	
+										<!-- /register-form -->
 									</div>
-									<div class="form-group">
-										<label for="password" class="control-label sr-only">Password</label>
-										<input type="password" class="form-control" name="password" id="password" aria-label="password" placeholder="Password" />
+
+							    </div>
+							    <div role="tabpanel" class="tab-pane" id="editavatar">
+							    	<div class="register_form clearfix" style="text-align: center">
+										<form class="form-horizontal" action="#" onsubmit="return false" method="post">
+											<input type="hidden" name="device_id" id="profile_edit" value=""/>
+											<img src="{{getAvatar($detailUser)}}" width="150" id="img_avatar"/>
+											<input type="file" name="avatar" id="avatar">
+											<br/>
+											<input type="submit" value="Upload" id="btn-upload" class="btn btn-green" onclick="QuranJS.uploadAvatar()"/>
+										</form>
 									</div>
-									<div class="form-group">
-										<label for="password" class="control-label sr-only">Re-Password</label>
-										<input type="password" class="form-control" name="password_confirmation" id="password_confirmation" aria-label="password" placeholder="Tulis ulang password" />
-									</div>
-									<h3>Data Profile</h3>
-									<div class="form-group">
-										<label for="name" class="control-label sr-only">Full Name</label>
-										<input type="name" class="form-control" name="name" id="name" aria-label="Full Name" placeholder="Nama Lengkap Antum" value="{{ $detailUser->name}}"/>
-									</div>
-									<div class="form-group">
-										<label for="gender" class="control-label sr-only">Jenis Kelamin</label>
-										<select name="gender" id="gender">
-											<option value="M" {{ $detailUser->gender=='M'?'selected':''}}>Laki-laki</option>
-											<option value="F" {{ $detailUser->gender=='F'?'selected':''}}>Perempuan</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="city" class="control-label sr-only">Kota</label>
-										<input type="text" class="form-control" name="city" id="register_city" aria-label="kota asal" placeholder="Kota Asal" value="{{ $detailUser->city}}"/>
-									</div>
-									<div class="form-group">
-										<label for="address" class="control-label sr-only">Alamat Lengkap</label>
-										<textarea class="form-control" name="address" id="register_address" aria-label="alamat lengkap" placeholder="Mohon isi dengan alamat yang lengkap"/>{{ $detailUser->address}}</textarea>
-									</div>
-									<div class="form-group">
-										<label for="hp" class="control-label sr-only">Handphone</label>
-										<input type="text" class="form-control" name="hp" id="hp" aria-label="No Handphone" placeholder="No Handphone" value="{{ $detailUser->hp}}"/>
-									</div>
-									<div class="form-group">
-										<div class="btn-group" role="group" aria-label="...">
-											<button type="submit" class="btn btn-default btn-daftar btn-full">Simpan</button>
-											<button type="button" class="btn btn-primary btn-daftar" onclick="history.back()">Kembali</button>
-										</div>
-									</div>
-									<input type="hidden" name="action" value="post"/>
-								</form>	
-								<!-- /register-form -->
-							</div>
+							    </div>
+							  </div>
 						</div>
 					</div>
 				</div>
