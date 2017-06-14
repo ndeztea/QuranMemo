@@ -96,7 +96,7 @@
 							<div class="timeline-koreksi memoz-filter filter">
 						  		<ul class="nav nav-tabs" role="tablist">
 								    <li role="presentation" class="active"><a  onclick="QuranJS.stepMemoz('1',this);"><i class="fa fa-chevron-circle-right"></i> Linier</a></li>
-								    <li role="presentation"><a  onclick="QuranJS.stepMemoz('4',this);QuranJS.showAyat('start')" style="color:red"><i class="fa fa-stop"></i>  Rekam</a></li>
+								    <li role="presentation"><a  onclick="QuranJS.stepMemoz('4',this);QuranJS.showAyat('start')" style="color:red"><i class="fa fa-microphone"></i>  Rekam</a></li>
 								    <li role="presentation"><a  onclick="QuranJS.stepMemoz('5',this);" ><i class="fa fa-puzzle-piece"></i> Puzzle</a></li>
 								</ul>
 							</div>
@@ -274,9 +274,9 @@
 		<div class="action">
 
 			@if(Request::segment(2)!='correction')
-			<a class="button" id="record"><i class="fa fa-stop"></i></a>
+			<a class="button" id="record"><i class="fa fa-microphone" style="color:red"></i></a>
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
-			<a class="button disabled one" id="play"><i class="fa fa-play"></i></a>
+			<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
 			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
 			@endif
 			@if(session('sess_id')!= @$memoDetail->id_user )
@@ -285,7 +285,7 @@
 		</div>
 		
 		<div class="player">
-			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" id="audio"></audio>
+			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
 		</div>
 		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%" style="display: none"></canvas>
