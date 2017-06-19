@@ -168,7 +168,9 @@
   .btn-green:hover, .btn-green:focus {
     background-color: #409965; }
 
-.btn-search-surah {
+.btn-search-surah,
+.btn-juz,
+.btn-bookmark {
   margin-left: 10px;
   border-width: 1px;
   border-color: #4db578;
@@ -177,14 +179,26 @@
   color: #fff;
   background-image: none;
   text-shadow: none; }
-  .btn-search-surah:hover, .btn-search-surah:focus, .btn-search-surah.selected {
+  .btn-search-surah:hover, .btn-search-surah:focus, .btn-search-surah.selected,
+  .btn-juz:hover,
+  .btn-juz:focus,
+  .btn-juz.selected,
+  .btn-bookmark:hover,
+  .btn-bookmark:focus,
+  .btn-bookmark.selected {
     background-color: #409965;
     border: solid 1px #409965;
     color: #fff; }
   @media (max-width: 767px) and (min-width: 320px) {
-    .btn-search-surah {
-      width: 40px;
-      margin: 5px 0; } }
+    .btn-search-surah,
+    .btn-juz,
+    .btn-bookmark {
+      margin: 5px; } }
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .btn-juz,
+  .btn-bookmark {
+    float: left !important; } }
 
 .btn-setting {
   margin-left: 10px;
@@ -446,6 +460,9 @@
 
 .modal-spacing {
   padding: 20px; }
+  @media (min-width: 769px) {
+    .modal-spacing {
+      padding: 0; } }
 
 .container-segmented {
   margin-bottom: 15px; }
@@ -1143,23 +1160,23 @@ a {
               width: auto; } }
       @media (min-width: 1234px) {
         .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
-          width: 65%;
+          width: 73%;
           float: left; } }
       @media (min-width: 1201px) and (max-width: 1233px) {
         .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
-          width: 70%;
+          width: 75%;
           float: left; } }
       @media (min-width: 1098px) and (max-width: 1200px) {
         .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
-          width: 65%;
+          width: 73%;
           float: left; } }
       @media (min-width: 932px) and (max-width: 1097px) {
         .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
-          width: 75%;
+          width: 78%;
           float: left; } }
       @media (min-width: 768px) and (max-width: 931px) {
         .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
-          width: 70%;
+          width: 82%;
           float: left; } }
 
 .nav-top-collapse {
@@ -1294,6 +1311,10 @@ body.canvas-slid .loading {
 
 .modal-open .modal {
   display: block !important; }
+
+@media (min-width: 769px) and (max-width: 931px) {
+  .hide-on-smalldesktop {
+    display: none; } }
 
 .mushaf_header {
   background-color: #efefef;

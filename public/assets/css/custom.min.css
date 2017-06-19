@@ -215,7 +215,7 @@ input[type="number"] {
 
 .surah-nav .pagination>li.active>a{
     color: #fff;
-    border-radius: 50%;
+    border-radius: 8px;
 }
 
 .memoz-message.alert-warning {

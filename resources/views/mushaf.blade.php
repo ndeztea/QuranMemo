@@ -23,15 +23,16 @@ $prev_surah = '';
 					<div class="nav-top clearfix">
 						<div class="container-fluid">
 							<button class="btn btn-search-surah pull-left visible-xs" onclick="QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse">
-							  <i class="fa fa-search"></i>
+							  <i class="fa fa-search"></i> <span>Cari</span>
 							</button>
-							<a href="javascript:;"  class="btn btn-setting pull-right btn-juz visible-xs" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
+							<a href="javascript:;"  class="btn pull-right btn-juz visible-xs" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i> <span>Juz</span></a>
+							
 							<div class="hidden-xs" id="surah-collapse">
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="select-surah">
 											<div class="modal-spacing">
-											<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
+												<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
 												
 													<div class="form-group">
 														<select class="selectpicker form-control" name="surah">
@@ -62,7 +63,7 @@ $prev_surah = '';
 														</label>
 													</div> -->
 													<button class="btn btn-search"  onclick="QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
-													<a href="javascript:;"  class="btn btn-setting btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
+													<a href="javascript:;"  class="btn btn-juz" onclick="QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
 							
 											</form>
 </div>
@@ -85,10 +86,10 @@ $prev_surah = '';
 							</div>
 							
 							<button type="button" href="#"  onclick="QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-default btn-setting pull-right">
-								<i class="fa fa-cog"></i> <span class="hidden-xs">Setting</span>
+								<i class="fa fa-cog"></i> <span class="sr-only">Setting</span>
 							</button> 
-							<button type="button" href="#"  onclick="QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="btn btn-default btn-setting pull-right btn-bookmark">
-								<i class="fa {{$bookmarked}}" id="bookmark"></i> <span class="hidden-xs">Terakhir baca</span>
+							<button type="button" href="#"  onclick="QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="btn btn-default btn-bookmark pull-right btn-bookmark">
+								<i class="fa {{$bookmarked}}" id="bookmark"></i> <span class="hide-on-smalldesktop">Terakhir baca</span>
 							</button>
 							
 							<div class="clearfix"></div>

@@ -101,7 +101,9 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 	}
 }
 
-.btn-search-surah {
+.btn-search-surah,
+.btn-juz,
+.btn-bookmark {
 	margin-left: 10px;
 	@include boxy($btn-hover...);
 	&:hover,
@@ -113,9 +115,16 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 	}
 	@include media("<tablet",
 	">=phone") {
-		width: 40px;
-		margin: 5px 0;
+		margin: 5px;
 	}
+}
+
+.btn-juz,
+.btn-bookmark{
+	@include media("<tablet",
+	">=phone") {
+		float: left !important;
+	}	
 }
 
 .btn-setting {
