@@ -886,3 +886,12 @@ ul.goal strong{
 .quran_recorder .disabled,#audio .disabled{
     display: none;
 }
+
+#sec_counter{
+    border: 3px solid #f00;
+    border-radius: 35px;
+    padding: 0px;
+    color: red;
+    width: 80px;
+    font-size: 23px;
+}

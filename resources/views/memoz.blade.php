@@ -275,8 +275,9 @@
 		<div class="action">
 
 			@if(Request::segment(2)!='correction')
-			<a class="button" id="record"><i class="fa fa-microphone" style="color:red"></i></a>
+			<a class="button" id="record" onclick="sec=0;setRecordTime();"><i class="fa fa-microphone" style="color:red"></i></a>
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
+			<span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span>
 			<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
 			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
 			@endif
@@ -296,7 +297,26 @@
 </div>
 
 <script type="text/javascript">
+var sec = 0;
+
+function pad(val) {
+    return val > 9 ? val : "0" + val;
+}
+
+function setRecordTime(){
+	
+	var timer = setInterval(function () {
+	    $("#seconds").html(pad(++sec % 60));
+	    $("#minutes").html(pad(parseInt(sec / 60, 10)));
+	}, 1000);
+
+	setTimeout(function () {
+	    clearInterval(timer);
+	}, 11000);
+}
+
 $(document).ready(function(){
+
 	QuranJS.fillAyatEnd();
 	@if(!empty($memoDetail))
 		jQuery('.memoz-1,.memoz-0').hide();
