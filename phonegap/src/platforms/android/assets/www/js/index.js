@@ -46,7 +46,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         //app.browser = cordova.InAppBrowser.open('http://www.quranmemo.id/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
-        app.browser = cordova.InAppBrowser.open('http://www.quranmemo.com/public/mushaf/start', '_blank', 'location=no,zoom=no,hidden=yes');
+        app.browser = cordova.InAppBrowser.open('https://www.quranmemo.com/public/dashboard', '_blank', 'location=no,zoom=no,hidden=yes');
         // disable back
         document.addEventListener("backbutton", function (e) {
             e.preventDefault();
