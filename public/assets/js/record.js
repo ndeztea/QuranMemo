@@ -14,6 +14,7 @@ $(document).ready(function() {
             elem.addClass("disabled");
             $("#live").addClass("disabled");
             $(".one").removeClass("disabled");
+            $("#save,#play_audio,#pause_audio").addClass("disabled");
             // blur awal by default
             QuranJS.showAyat('start');
 
@@ -65,6 +66,10 @@ $(document).ready(function() {
         }
     });
     $(document).on("click", "#stop:not(.disabled)", function() {
+        if($('#audio').attr('src')!=''){
+            $("#play_audio").removeClass("disabled");
+        }
+        
         restore();
     });
     $(document).on("click", "#play:not(.disabled)", function() {
@@ -78,6 +83,9 @@ $(document).ready(function() {
         $('.upload').removeClass('disabled');
         // remove blur 
         $('.ayat_arabic_memoz').removeClass('blur-ayat');
+        if($('#audio').attr('src')!=''){
+            $("#pause_audio").removeClass("disabled");
+        }
         restore();
     });
     $(document).on("click", "#download:not(.disabled)", function() {
@@ -105,25 +113,34 @@ $(document).ready(function() {
         restore();
     });
     $(document).on("click", "#save:not(.disabled)", function() {
-        var idMemo = $('#id').val();
-        $('.btn-upload').removeClass('fa-upload');
-        $('#save,#record').addClass('disabled');
-        $('.btn-upload').addClass('fa-cog fa-spin fa-3x fa-fw');
-        if(idMemo!=''){
-             base64Decode = $('#base64Decode').val();
-             $.post("http://localhost/QuranNote/public/memoz/uploadRecorded",{
-                  audioBase64:base64Decode,
-                  id : idMemo
-                }, function (response){
-                    alert(response.message);
-                    $('.btn-upload').addClass('fa-upload');
-                    $('.btn-upload').removeClass('fa-cog fa-spin fa-3x fa-fw');
-                    $('#save,#record').removeClass('disabled');
+        vex.dialog.confirm({
+            message: 'Apakah rekaman ini mau diupload dan dikoreksi oleh penghafal yang lain?',
+            callback: function (value) {
+                if(value==true){
+                    var idMemo = $('#id').val();
+
+                    if(idMemo!=''){
+                        $('.btn-upload').removeClass('fa-upload');
+                        $('#save,#record').addClass('disabled');
+                        $('.btn-upload').addClass('fa-cog fa-spin fa-3x fa-fw');
+                        
+                         base64Decode = $('#base64Decode').val();
+                         $.post("http://localhost/QuranNote/public/memoz/uploadRecorded",{
+                              audioBase64:base64Decode,
+                              id : idMemo
+                            }, function (response){
+                                vex.dialog.alert(response.message);
+                                $('.btn-upload').addClass('fa-upload');
+                                $('.btn-upload').removeClass('fa-cog fa-spin fa-3x fa-fw');
+                                $('#save,#record').removeClass('disabled');
+                            }
+                          );
+                        restore();
+                    }else{
+                        vex.dialog.alert('Hafalan harus di simpan dulu');
+                    }
                 }
-              );
-            restore();
-        }else{
-            alert('Hafalan harus di simpan dulu');
-        }
+            }
+        });
     });
 });

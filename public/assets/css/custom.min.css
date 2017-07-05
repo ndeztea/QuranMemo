@@ -880,8 +880,11 @@ ul.goal strong{
 .memoz-options .dropdown-menu>li>a{
     font-size: 16px;
 }
-#record,#stop,#play{
+#record,#stop,#play,#play_audio, #pause_audio{
     font-size: 34px;
+}
+#save{
+    font-size: 24px;
 }
 .quran_recorder .disabled,#audio .disabled{
     display: none;
@@ -892,6 +895,6 @@ ul.goal strong{
     border-radius: 35px;
     padding: 0px;
     color: red;
-    width: 80px;
+    width: 160px;
     font-size: 23px;
 }
