@@ -20,6 +20,7 @@
 				
 			</div-->
 			<div class="nav-top clearfix">
+			@if (empty($ayats))
 			<div style="display:{{!empty($ayats)?'none':''}}">
 				<div class="select-surah">
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
@@ -33,9 +34,9 @@
 							</div>
 							<div class="form-group display-inline-block-xs">
 								<div class="input-group memoz-form">
-								  <input class="form-control search_ayat" id="ayat_start" type="number" min="1" name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
+								  <input class="form-control search_ayat" id="ayat_start"  name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
 								  <span class="input-group-addon">Sampai Ayat</span>
-								  <input class="form-control search_ayat" id="ayat_end" type="number" min="1" name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
+								  <input class="form-control search_ayat" id="ayat_end"  name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 								</div>
 							</div>
 							<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) jQuery('.form-inline').submit() @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
@@ -47,6 +48,7 @@
 					</form>
 				</div>
 			</div>
+			@endif
 			@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction')
 				<div class="dropdown memoz-options">
 				  <button class="btn btn-green dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -275,9 +277,13 @@
 		<div class="action">
 
 			@if(Request::segment(2)!='correction')
-			<a class="button" id="record" onclick="sec=0;setRecordTime();"><i class="fa fa-microphone" style="color:red"></i></a>
+			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
-			<span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span>
+			<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
+			<span class="button disabled one" id="sec_counter">recording...</span>
+			<a class="button  @if(empty($memoDetail->record)) disabled @endif" id="play_audio" onclick="playAudio()"><i class="fa fa-play-circle"></i></a>
+			<a class="button  disabled" id="pause_audio" onclick="pauseAudio()"><i class="fa fa-pause-circle"></i></a>
+			
 			<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
 			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
 			@endif
@@ -287,7 +293,7 @@
 		</div>
 		
 		<div class="player">
-			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
+			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: none"></audio>
 		</div>
 		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%" style="display: none"></canvas>
@@ -297,22 +303,36 @@
 </div>
 
 <script type="text/javascript">
-var sec = 0;
+function endAudio(){
+	$('#audio').bind("ended", function(){ jQuery('#play_audio').removeClass('disabled'); jQuery('#pause_audio').addClass('disabled'); });
+}
+function playAudio(){
+	jQuery('#pause_audio').removeClass('disabled');
+	jQuery('#play_audio').addClass('disabled');
+	jQuery('#audio').trigger('play');
+
+	endAudio();
+}
+function pauseAudio(){
+	jQuery('#pause_audio').addClass('disabled');
+	jQuery('#play_audio').removeClass('disabled');
+	jQuery('#audio').trigger('pause');
+}
 
 function pad(val) {
     return val > 9 ? val : "0" + val;
 }
 
 function setRecordTime(){
-	
+	var sec = 0;
 	var timer = setInterval(function () {
 	    $("#seconds").html(pad(++sec % 60));
 	    $("#minutes").html(pad(parseInt(sec / 60, 10)));
 	}, 1000);
 
-	setTimeout(function () {
+	/*setTimeout(function () {
 	    clearInterval(timer);
-	}, 11000);
+	}, 11000);*/
 }
 
 $(document).ready(function(){
