@@ -23,7 +23,7 @@ class DashboardController extends Controller
      */
     public function index(Request $request)
     {   
-        $data['header_title'] = 'Dashboard';
+        $data['header_top_title'] = $data['header_title'] = 'Dashboard';
         $MemoModel = new Memo;
         $UsersModel = new Users;
 

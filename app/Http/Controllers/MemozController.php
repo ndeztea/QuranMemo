@@ -45,7 +45,7 @@ class MemozController extends Controller
         $surahs = $QuranModel->getSurah();
 
         // data header
-        $data['header_title'] = 'Menghafal';
+        $data['header_top_title'] = $data['header_title'] = 'Menghafal';
         $data['body_class'] = 'body-memo';
         $data['on_memo'] = true;
 

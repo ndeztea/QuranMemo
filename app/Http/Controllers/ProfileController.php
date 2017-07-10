@@ -21,7 +21,7 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {   
-        $data['header_title'] = 'Edit Profile';
+        $data['header_top_title'] = $data['header_title'] = 'Edit Profile';
         $UsersModel = new Users;
 
         if($request->get('action')!=''){

@@ -78,6 +78,7 @@ class MushafController extends Controller
 
         // data header
         $data['header_title'] = 'Mushaf Hal '. $page.', Juz '.$ayats[0]->juz.', Surah '.$ayats[0]->surah_name;
+        $data['header_top_title'] = 'Mushaf';
         $data['body_class'] = 'body-mushaf';
 
         $data['ayat_start'] = '';
@@ -117,6 +118,7 @@ class MushafController extends Controller
         $surahs = $QuranModel->getSurah();
 
         $data['body_class'] = 'body-mushaf';
+
         
         $data['surahs'] = $surahs;
         $data['selected_surah'] = $surah[0]->surah_name;
@@ -134,6 +136,7 @@ class MushafController extends Controller
 
         // data header
         $data['header_title'] = 'Surah '. $surah[0]->surah_name.' : '.$ayat;
+        $data['header_top_title'] = 'Mushaf';
         $data['header_description'] = $ayats[0]->text_indo;
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
@@ -331,7 +334,7 @@ class MushafController extends Controller
         $data['keyword'] = $keyword;
         
         $data['pages'] = $pages;
-        $data['header_title'] = 'Cari Kata \''.$keyword.'\'';
+        $data['header_top_title'] = $data['header_title'] = 'Cari Kata \''.$keyword.'\'';
         $data['header_description'] = $header_description_add.'Cari kata dalam Al-Quran dan Tafsir Al-Quran';
 
         return view('mushaf_search',$data);

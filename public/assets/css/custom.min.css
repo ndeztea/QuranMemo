@@ -898,3 +898,9 @@ ul.goal strong{
     width: 160px;
     font-size: 23px;
 }
+
+a.title h1{
+    margin: 4px;
+    font-size: 28px;
+    font-weight: lighter;
+}

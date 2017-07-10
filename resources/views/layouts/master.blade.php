@@ -17,7 +17,7 @@
         <meta property="og:title"         content="QuranMemo - {{isset($header_title)?$header_title:''}}" />
         <meta property="og:description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
         <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
-        <meta property="og:image"         content="http://www.quranmemo.id/public/assets/images/cover.jpg" />
+        <meta property="og:image"         content="https://www.quranmemo.com/public/assets/images/cover.jpg" />
         
         <link rel="apple-touch-icon" sizes="57x57" href="{{url('assets/images/ico/apple-icon-60x60.png')}}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{url('assets/images/ico/apple-icon-60x60.png')}}">
@@ -195,7 +195,8 @@
         <!--/navmenu-->
 
         <div class="qm-nav navbar navbar-default navbar-fixed-top navi-down">
-            <a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
+            <!--a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a-->
+            <a class="navbar-brand title"  href="{{url('')}}"><h1>{{$header_top_title}}</h1></a>
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
