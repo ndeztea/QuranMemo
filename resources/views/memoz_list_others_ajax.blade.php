@@ -12,6 +12,10 @@
 				<div class="koreksi-desc">
 					<span class="username">{{$row->name}}</span>
 					<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+					<br>
+					<div>
+						<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="badge" style="width: 100px">Hafalkan</a>
+					</div>
 				</div>
 			</div>
 		</li>
