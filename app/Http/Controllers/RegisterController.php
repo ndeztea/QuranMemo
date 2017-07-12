@@ -23,7 +23,7 @@ class RegisterController extends Controller
      * @return \Illuminate\Http\Response
      */
    public function index(){
-        $data['header_title'] = 'Daftar';
+        $data['header_top_title']  = $data['header_title'] = 'Daftar';
         $data['body_class'] = 'body-register';
         
         return view('register_index',$data);
