@@ -155,11 +155,14 @@ a{
 		text-shadow: none;
 		font-weight: 700;
 		transition: color 1s ease;
-		padding: 8px 13px;
+		padding: 1-px 13px;
 		&:hover,
 		&:focus {
 			opacity: .7;
 			// color: darken($main-color-hover,5%);
+		}
+		&.title{
+			font-size: 23px;
 		}
 	}
 	.navbar-nav {
@@ -449,7 +452,7 @@ a{
 			left: 0;
 			z-index: 1;
 			.backdrop-inner {
-				background-color: rgba(31, 142, 97, 0.85);
+				background-color: rgba(0, 151, 138, 0.85);
 				width: 100%;
 				height: 100%;
 			}

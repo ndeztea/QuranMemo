@@ -901,6 +901,6 @@ ul.goal strong{
 
 a.title h1{
     margin: 4px;
-    font-size: 28px;
+    /* font-size: 28px; */
     font-weight: lighter;
 }

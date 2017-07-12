@@ -9,6 +9,9 @@
 
 .navbar-brand{
 	float: left !important;
+	h1{
+		font-size: 23px !important;
+	}
 }
 
 
@@ -19,7 +22,12 @@
 		display: block;
 		margin: 15px auto;
 		text-align: center;
-		width: 200px;
+		width: 195px;
+		height: 170px;
+		.qmc-logo{
+			display: inline-block;
+			margin-bottom: 10px;
+		}
 	}
 	.navbar-nav{
 		.navbar-form{
@@ -37,7 +45,7 @@
 }
 
 .navmenu-header{
-	background: darken($main-color,25%);
+	background: darken($main-color,1%);
 	padding: 5px 0;
 }
 

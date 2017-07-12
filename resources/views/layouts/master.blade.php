@@ -155,7 +155,10 @@
             <div class="navmenu-overlay"> 
             
                 <div class="navmenu-header">
-                    <a class="qm-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a>
+                    <a class="qm-brand" href="{{url('')}}">
+                        <img class='hires qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
+                        <img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+                    </a>
 
                     <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
 

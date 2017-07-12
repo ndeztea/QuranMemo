@@ -49,6 +49,8 @@
 
 .navbar-brand {
   float: left !important; }
+  .navbar-brand h1 {
+    font-size: 23px !important; }
 
 .qm-navbar {
   background: #fff; }
@@ -56,7 +58,11 @@
     display: block;
     margin: 15px auto;
     text-align: center;
-    width: 200px; }
+    width: 195px;
+    height: 170px; }
+    .qm-navbar .qm-brand .qmc-logo {
+      display: inline-block;
+      margin-bottom: 10px; }
   .qm-navbar .navbar-nav .navbar-form {
     border-top: none !important;
     border-bottom: none !important;
@@ -68,7 +74,7 @@
     margin: 7.5px 0 15px !important; }
 
 .navmenu-header {
-  background: #001815;
+  background: #009285;
   padding: 5px 0; }
 
 .navmenu-default .navmenu-nav > li {
@@ -893,9 +899,11 @@ a {
     text-shadow: none;
     font-weight: 700;
     transition: color 1s ease;
-    padding: 8px 13px; }
+    padding: 1-px 13px; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       opacity: .7; }
+    .navbar-default .navbar-brand.title {
+      font-size: 23px; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
     background-image: none; }
   .navbar-default .navbar-nav > li > a {
@@ -1109,7 +1117,7 @@ a {
       left: 0;
       z-index: 1; }
       .main-content-wrap .main-content .backdrop .backdrop-inner {
-        background-color: rgba(31, 142, 97, 0.85);
+        background-color: rgba(0, 151, 138, 0.85);
         width: 100%;
         height: 100%; }
     .main-content-wrap .main-content .single-column {
