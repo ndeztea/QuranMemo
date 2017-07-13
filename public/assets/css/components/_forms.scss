@@ -29,9 +29,9 @@
 
 .form-horizontal {
 	.form-group {
-		margin: -16px -15px 15px;
+		margin: 0 -15px 7px;
 		.form-control {
-			border-radius: 0;
+			border-radius: 6px;
 			height: auto;
 			padding: 12px;
 		}
@@ -45,7 +45,7 @@
 		border: solid 1px #fff;
 		border-bottom: dashed 1px #ddd;
 		box-shadow: none;
-		margin-bottom: 13px;
+		margin-bottom: 5px;
 		border-radius: 6px !important;
 		&:focus {
 			border-bottom: solid 2px $main-color;
@@ -78,48 +78,35 @@
 }
 
 .register_form {
-	padding: 35px 45px 45px;
+	padding: 0 45px 45px;
 	margin: 20px auto;
-	background: #fff;
+	background: transparent;
 	.btn-group{
 		.btn{
 			width: 50%;
 			border-radius: 6px;
 		}
 	}
-	.promo {
-		border: solid 1px darken($main-color, 20%);
+	.register-intro {
 		width: 45%;
 		height: 333px;
 		position: relative;
 		overflow: hidden;
-		.buku {
-			width: 100%;
-			height: 333px;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background: url(../images/alqurantikrar.png) no-repeat center center;
-			@include media("<tablet",
-			">=phone") {
-				height: 400px;
-			}
-		}
 		.promo-txt {
 			padding: 10px;
 			position: relative;
 			z-index: 2;
-			background: rgba(77, 181, 120, .85);
 			height: 333px;
 			color: #fff;
-			padding: 10px 35px;
+			padding: 10px 0;
 			font-size: 16px;
 			h3 {
 				text-align: center;
-				color: yellow;
+				color: #fff;
 				font-weight: 600;
 				margin-bottom: 20px;
 				font-size: 20px;
+				line-height: 28px;
 			}
 			p {
 				font-size: 17px;
@@ -134,7 +121,7 @@
 		">=phone") {
 			width: 100%;
 			float: none !important;
-			margin-bottom: 30px;
+			margin-bottom: 15px;
 			height: auto;
 		}
 	}
@@ -148,18 +135,32 @@
 			margin: 0 auto;
 		}
 	}
-	.btn-masuk {
-		@include boxy($btn-normal...);
+	.btn-daftar{
+		display: block;
+		padding: 12px;
+		width: 100%;
+		border-radius: 6px;
+		color: $main-color;
+		font-size: 20px;
+		background: #fff;
+		border: solid 1px #fff;
+		margin-bottom: 10px;
+		box-shadow: none !important;
 		&:hover,
 		&:focus,
 		&.selected {
-			@include boxy($btn-hover...);
+			color: darken(yellow, 10%);
 		}
 	}
-	.btn-daftar {
+	.btn-masuk{
 		color: #fff;
+		font-size: 16px;
+		margin: 15px auto 0;
 		display: block;
 		text-align: center;
+		background: none;
+		width: 100%;
+		border: none;
 	}
 }
 
@@ -169,4 +170,23 @@
 	text-align: center;
 	padding:10px 0;
 	font-size: 14px;
+}
+
+.register-block{
+	background: url("../images/vot1mpfUwZA.jpg") no-repeat center center;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	margin-top: -15px;
+	position: relative;
+	.register-backdrop{
+		background-color: rgba($main-color,.7);
+		width: 100%;
+		height:100%;
+		margin: auto;
+	}
+	.login-brand{
+		padding: 40px 0;
+		margin: 0 auto;
+	}
 }

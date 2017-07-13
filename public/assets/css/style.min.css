@@ -526,9 +526,9 @@
     margin-bottom: 0px; } }
 
 .form-horizontal .form-group {
-  margin: -16px -15px 15px; }
+  margin: 0 -15px 7px; }
   .form-horizontal .form-group .form-control {
-    border-radius: 0;
+    border-radius: 6px;
     height: auto;
     padding: 12px; }
 
@@ -539,7 +539,7 @@
     border: solid 1px #fff;
     border-bottom: dashed 1px #ddd;
     box-shadow: none;
-    margin-bottom: 13px;
+    margin-bottom: 5px;
     border-radius: 6px !important; }
     .login_form .form-control:focus {
       border-bottom: solid 2px #00978A; }
@@ -564,54 +564,43 @@
     width: 100%; }
 
 .register_form {
-  padding: 35px 45px 45px;
+  padding: 0 45px 45px;
   margin: 20px auto;
-  background: #fff; }
+  background: transparent; }
   .register_form .btn-group .btn {
     width: 50%;
     border-radius: 6px; }
-  .register_form .promo {
-    border: solid 1px #00312d;
+  .register_form .register-intro {
     width: 45%;
     height: 333px;
     position: relative;
     overflow: hidden; }
-    .register_form .promo .buku {
-      width: 100%;
-      height: 333px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: url(../images/alqurantikrar.png) no-repeat center center; }
-      @media (max-width: 767px) and (min-width: 320px) {
-        .register_form .promo .buku {
-          height: 400px; } }
-    .register_form .promo .promo-txt {
+    .register_form .register-intro .promo-txt {
       padding: 10px;
       position: relative;
       z-index: 2;
-      background: rgba(77, 181, 120, 0.85);
       height: 333px;
       color: #fff;
-      padding: 10px 35px;
+      padding: 10px 0;
       font-size: 16px; }
-      .register_form .promo .promo-txt h3 {
+      .register_form .register-intro .promo-txt h3 {
         text-align: center;
-        color: yellow;
+        color: #fff;
         font-weight: 600;
         margin-bottom: 20px;
-        font-size: 20px; }
-      .register_form .promo .promo-txt p {
+        font-size: 20px;
+        line-height: 28px; }
+      .register_form .register-intro .promo-txt p {
         font-size: 17px;
         line-height: 24px; }
       @media (max-width: 767px) and (min-width: 320px) {
-        .register_form .promo .promo-txt {
+        .register_form .register-intro .promo-txt {
           height: auto; } }
     @media (max-width: 767px) and (min-width: 320px) {
-      .register_form .promo {
+      .register_form .register-intro {
         width: 100%;
         float: none !important;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         height: auto; } }
   .register_form form {
     width: 50%;
@@ -621,26 +610,28 @@
         width: 90%;
         float: none !important;
         margin: 0 auto; } }
-  .register_form .btn-masuk {
-    border-width: 1px;
-    border-color: #00978A;
-    border-style: solid;
-    background-color: transparent;
-    color: #00978A;
-    background-image: none;
-    text-shadow: none; }
-    .register_form .btn-masuk:hover, .register_form .btn-masuk:focus, .register_form .btn-masuk.selected {
-      border-width: 1px;
-      border-color: #00978A;
-      border-style: solid;
-      background-color: #00978A;
-      color: #fff;
-      background-image: none;
-      text-shadow: none; }
   .register_form .btn-daftar {
-    color: #fff;
     display: block;
-    text-align: center; }
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    color: #00978A;
+    font-size: 20px;
+    background: #fff;
+    border: solid 1px #fff;
+    margin-bottom: 10px;
+    box-shadow: none !important; }
+    .register_form .btn-daftar:hover, .register_form .btn-daftar:focus, .register_form .btn-daftar.selected {
+      color: #cccc00; }
+  .register_form .btn-masuk {
+    color: #fff;
+    font-size: 16px;
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+    background: none;
+    width: 100%;
+    border: none; }
 
 .login-link,
 .forgot-pass-link {
@@ -648,6 +639,22 @@
   text-align: center;
   padding: 10px 0;
   font-size: 14px; }
+
+.register-block {
+  background: url("../images/vot1mpfUwZA.jpg") no-repeat center center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: -15px;
+  position: relative; }
+  .register-block .register-backdrop {
+    background-color: rgba(0, 151, 138, 0.7);
+    width: 100%;
+    height: 100%;
+    margin: auto; }
+  .register-block .login-brand {
+    padding: 40px 0;
+    margin: 0 auto; }
 
 .quran-player {
   margin: auto;
@@ -922,7 +929,7 @@ a {
     text-shadow: none;
     font-weight: 700;
     transition: color 1s ease;
-    padding: 1-px 13px; }
+    padding: 10px 13px; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       opacity: .7; }
     .navbar-default .navbar-brand.title {
@@ -1120,6 +1127,10 @@ a {
   .surah-action #playnow {
     color: #999; }
 
+.body-memo .main-content-wrap,
+.body-mushaf .main-content-wrap {
+  padding-bottom: 120px; }
+
 .main-content-wrap {
   width: 100%;
   margin: 0;
@@ -1128,7 +1139,7 @@ a {
   min-height: 500px; }
   @media (max-width: 768px) {
     .main-content-wrap {
-      padding-bottom: 120px; } }
+      padding-bottom: 60px; } }
   .main-content-wrap .main-content {
     padding: 20px 0; }
     .main-content-wrap .main-content .backdrop {
@@ -1284,7 +1295,7 @@ a {
   position: absolute;
   top: -50px;
   overflow: overlay;
-  background-color: rgba(77, 181, 120, 0.87);
+  background-color: rgba(0, 151, 138, 0.93);
   text-align: center; }
 
 body.canvas-slid #preloader,

@@ -37,7 +37,7 @@ body{
     }
     .select-surah input, .select-surah select, .modal-body input,.modal-body select{
         height: 50px;
-        font-size: 23px;
+        font-size: 19px;
     }
     .mushaf .ayat_section .arabic{
         font-size: 25px;
@@ -81,8 +81,8 @@ body{
         padding-left: 0
     }
     .container-fluid .btn {
-        margin-bottom: 0!important;
-        margin-top: 0!important
+        /* margin-bottom: 0!important;
+        margin-top: 0!important */
     }
     .main-content-wrap .main-content .single-column .page-title h2 {
         margin-left: 9px

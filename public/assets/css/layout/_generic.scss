@@ -155,7 +155,7 @@ a{
 		text-shadow: none;
 		font-weight: 700;
 		transition: color 1s ease;
-		padding: 1-px 13px;
+		padding: 10px 13px;
 		&:hover,
 		&:focus {
 			opacity: .7;
@@ -432,6 +432,13 @@ a{
 	}
 }
 
+.body-memo,
+.body-mushaf{
+	.main-content-wrap{
+		padding-bottom: 120px;
+	}
+}
+
 .main-content-wrap {
 	width: 100%;
 	margin: 0;
@@ -439,7 +446,7 @@ a{
 	position: relative;
 	min-height: 500px;
 	@include media("<=tablet"){
-		padding-bottom: 120px;
+		padding-bottom: 60px;
 	}
 	.main-content {
 		padding: 20px 0;
@@ -643,7 +650,7 @@ a{
 	position: absolute;
 	top:-50px;
 	overflow: overlay;
-	background-color: rgba(77, 181, 120, .87);
+	background-color: rgba($main-color, .93);
 	text-align: center;
 }
 
