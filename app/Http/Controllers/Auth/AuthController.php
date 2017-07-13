@@ -57,7 +57,7 @@ class AuthController extends Controller
         $dataHTML['modal_class'] = 'login-mode';
         $dataHTML['modal_title'] = 'Lupa Password';
         $dataHTML['modal_body'] = view('auth_forget',$data)->render();
-        $dataHTML['modal_footer'] = '<a href="javascript:;" onclick="QuranJS.callModal(\'auth/login\')">Login <i class="fa fa-angle-right"></i>';
+        $dataHTML['modal_footer'] = '<a href="javascript:;" class=\'login-link\' onclick="QuranJS.callModal(\'auth/login\')">Sudah punya Akun, Login <i class="fa fa-angle-right"></i>';
 
         return response()->json($dataHTML);
     }
