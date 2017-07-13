@@ -160,17 +160,35 @@
 }
 
 .modal.login-mode {
+	background: url("../images/vot1mpfUwZA.jpg") no-repeat center center;
+	width: 100%;
+	height: 100%;
 	.modal-dialog {
-		width: 350px;
-		margin-top: 30px;
-		background-color: #fff;
+		width: 100%;
+		height:100%;
+		margin: 0 !important;
+		background-color: rgba($main-color,.7);
 		.modal-content {
-			background-color: rgba(255, 255, 255, 0.9);
+			background-color: transparent;
+			border:none;
+			box-shadow: none;
+		}
+	}
+	.modal-header{
+		height: 50px;
+		.modal-title{
+			display: none;
+		}
+		.close{
+			color: #fff;
+			text-shadow: none;
 		}
 	}
 	.modal-footer {
-		background: lighten($main-color, 10%);
+		background-color: transparent;
 		color: #fff;
+		border-top: none !important;
+		margin-top: -13px;
 	}
 }
 
@@ -339,4 +357,21 @@
 
 .container-segmented{
 	margin-bottom: 15px;
+}
+
+.login-brand{
+	width:100%;
+	height: 180px;
+	margin: 20px auto 5px;
+	.qmc-logo{
+		display: block;
+		margin: 0 auto 10px;
+		width: 75px;
+		height: auto;
+	}
+	.qmc-title{
+		display: block;
+		width: 175px;
+		margin: auto;
+	}
 }

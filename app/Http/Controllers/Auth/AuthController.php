@@ -47,7 +47,7 @@ class AuthController extends Controller
         $dataHTML['modal_class'] = 'login-mode';
         $dataHTML['modal_title'] = 'Login';
         $dataHTML['modal_body'] = view('auth_login',$data)->render();
-        $dataHTML['modal_footer'] = '<a href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Minta Password ?';
+        $dataHTML['modal_footer'] = '<a class=\'forgot-pass-link\' href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Lupa Password ?';
 
         return response()->json($dataHTML);
     }
@@ -55,7 +55,7 @@ class AuthController extends Controller
     public function forget(){
         $data[''] = '';
         $dataHTML['modal_class'] = 'login-mode';
-        $dataHTML['modal_title'] = 'Minta Password';
+        $dataHTML['modal_title'] = 'Lupa Password';
         $dataHTML['modal_body'] = view('auth_forget',$data)->render();
         $dataHTML['modal_footer'] = '<a href="javascript:;" onclick="QuranJS.callModal(\'auth/login\')">Login <i class="fa fa-angle-right"></i>';
 
