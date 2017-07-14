@@ -123,9 +123,14 @@
 <!-- end main main-content-wrap -->	
 </div>
 <script>
+$(document).ready(function(){
+   
+    if('{{$starting}}'=='yes' && '{{session('sess_id')}}'==''){
+        QuranJS.callModal('auth/login')
+    }
+});
 $('.btn-trigger-dashboard').click(function() {
-
-    $(".fa",this).toggleClass("fa-angle-up fa-angle-down");
+	$(".fa",this).toggleClass("fa-angle-up fa-angle-down");
 });
 </script>
 <script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
