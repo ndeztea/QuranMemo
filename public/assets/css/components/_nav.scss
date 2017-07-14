@@ -35,6 +35,10 @@
 			border-bottom: none !important;
 			box-shadow: none;
 			margin: 11px 0;
+			.btn-search{
+				background-color: $color2;
+				color:#fff;
+			}
 		}
 	}
 	.qm-cari-kata{
@@ -64,7 +68,7 @@
 
 .navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover, .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus{
 		color: #fff !important;
-		background: $main-color  !important;
+		background: $color2 !important;
 }
 
 .navmenu-default, .navbar-default .navbar-offcanvas{

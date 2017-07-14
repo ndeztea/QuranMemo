@@ -68,6 +68,9 @@
     border-bottom: none !important;
     box-shadow: none;
     margin: 11px 0; }
+    .qm-navbar .navbar-nav .navbar-form .btn-search {
+      background-color: #20b2aa;
+      color: #fff; }
   .qm-navbar .qm-cari-kata {
     width: 100%;
     float: none !important;
@@ -89,7 +92,7 @@
 
 .navmenu-default .navmenu-nav > .active > a, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a, .navmenu-default .navmenu-nav > .active > a:hover, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:hover, .navmenu-default .navmenu-nav > .active > a:focus, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:focus {
   color: #fff !important;
-  background: #00978A !important; }
+  background: #20b2aa !important; }
 
 .navmenu-default, .navbar-default .navbar-offcanvas {
   border: none !important; }
@@ -105,7 +108,7 @@
 .btn-green-small {
   background-color: #00978A !important;
   color: #FFF !important;
-  border: solid 1px #006e65 !important; }
+  border: solid 1px #007763 !important; }
   .btn-green-small:hover, .btn-green-small:focus {
     background: #00cab9 !important; }
 
@@ -172,7 +175,7 @@
       display: block;
       margin-left: 0; } }
   .btn-green:hover, .btn-green:focus {
-    background-color: #006e65; }
+    background-color: #007763; }
 
 .btn-search-surah,
 .btn-juz,
@@ -192,8 +195,8 @@
   .btn-bookmark:hover,
   .btn-bookmark:focus,
   .btn-bookmark.selected {
-    background-color: #006e65;
-    border: solid 1px #006e65;
+    background-color: #007763;
+    border: solid 1px #007763;
     color: #fff; }
   @media (max-width: 767px) and (min-width: 320px) {
     .btn-search-surah,
@@ -216,8 +219,8 @@
   background-image: none;
   text-shadow: none; }
   .btn-setting:hover, .btn-setting:focus, .btn-setting.selected {
-    background-color: #006e65;
-    border: solid 1px #006e65;
+    background-color: #007763;
+    border: solid 1px #007763;
     color: #fff; }
   @media (max-width: 767px) and (min-width: 320px) {
     .btn-setting {
@@ -256,7 +259,7 @@
 .modal.content-mode .modal-body a {
   color: #00978A; }
   .modal.content-mode .modal-body a:hover, .modal.content-mode .modal-body a:focus {
-    color: #006e65; }
+    color: #007763; }
 .modal.share-mode .modal-header {
   background-color: rgba(77, 181, 120, 0.8); }
   .modal.share-mode .modal-header h4 {
@@ -565,7 +568,7 @@
 
 .register_form {
   padding: 0 45px 45px;
-  margin: 20px auto;
+  margin: 20px auto 0;
   background: transparent; }
   .register_form .btn-group .btn {
     width: 50%;
@@ -825,7 +828,7 @@ a {
     text-decoration: none !important;
     outline: 0 none;
     cursor: pointer;
-    color: #006e65; }
+    color: #007763; }
 
 ::-moz-selection {
   background: #00978A !important;
@@ -886,7 +889,7 @@ a {
     animation-delay: 5s;
     display: block;
     padding: 13px 0;
-    background-color: #006e65;
+    background-color: #007763;
     border: none;
     color: #fff; }
     .splash-body .start:hover, .splash-body .start:focus, .splash-body .start.selected {
@@ -940,7 +943,7 @@ a {
     color: #fff;
     text-shadow: none; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    background-color: #006e65;
+    background-color: #007763;
     color: #fff; }
   @media (max-width: 767px) and (min-width: 320px) {
     .navbar-default .navbar-nav {
@@ -963,7 +966,7 @@ a {
     background-color: #00978A;
     color: #fff; }
     .nav-top .btn-surah-trigger:hover, .nav-top .btn-surah-trigger:focus {
-      background-color: #006e65; }
+      background-color: #007763; }
   @media (max-width: 480px) and (min-width: 320px) {
     .nav-top #surah-collapse {
       margin-top: 15px; } }
@@ -1027,7 +1030,7 @@ a {
         display: block;
         margin-left: 0; } }
     .select-surah .form-inline .btn:hover, .select-surah .form-inline .btn:focus {
-      background-color: #006e65; }
+      background-color: #007763; }
   @media (min-width: 768px) and (max-width: 931px) {
     .select-surah .form-inline select {
       width: 150px; } }
@@ -1130,6 +1133,9 @@ a {
 .body-memo .main-content-wrap,
 .body-mushaf .main-content-wrap {
   padding-bottom: 120px; }
+
+.body-register .main-content-wrap {
+  padding-bottom: 0; }
 
 .main-content-wrap {
   width: 100%;
@@ -1597,7 +1603,7 @@ body.canvas-slid .loading {
     width: 19.7%; }
     .memoz_nav .btn:hover, .memoz_nav .btn:focus {
       color: #fff;
-      background: #006e65; }
+      background: #007763; }
     @media (max-width: 1279px) and (min-width: 481px) {
       .memoz_nav .btn {
         width: 18.7%; } }

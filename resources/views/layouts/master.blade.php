@@ -167,7 +167,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-green btn-search" type="submit"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
                                 </div>
                             </div>
                         </form>
