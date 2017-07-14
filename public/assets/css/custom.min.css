@@ -160,7 +160,6 @@ body{
     border-width: 1px;
     border-color: #4db578;
     border-style: solid;
-    background-color: #4db578;
     color: #fff;
     background-image: none;
     text-shadow: none;
@@ -237,10 +236,6 @@ input[type="number"] {
     text-align: center;
     width: 100%;
     top: 50%
-}
-
-.btn-search {
-    background-color: #25835B
 }
 
 .highlight {
