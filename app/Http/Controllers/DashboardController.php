@@ -24,6 +24,9 @@ class DashboardController extends Controller
     public function index(Request $request)
     {   
         $data['header_top_title'] = $data['header_title'] = 'Dashboard';
+
+        $starting = $request->input('starting');
+
         $MemoModel = new Memo;
         $UsersModel = new Users;
 
@@ -31,6 +34,7 @@ class DashboardController extends Controller
         $data['needCorrections'] = $MemoModel->getNeedCorrection();
         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
+        $data['starting'] = $starting;
         if(!empty($data['detailProfile'])){
             $data['detailProfile'] = $data['detailProfile'][0];
         }

@@ -67,7 +67,7 @@ class AuthController extends Controller
         $request->session()->forget('sess_id');
         $request->session()->forget('sess_email');
         $request->session()->forget('sess_name');
-        return redirect('mushaf')->withCookie(Cookie::forget('coo_quranmemo_email'))->withCookie(Cookie::forget('coo_quranmemo_password'));
+        return redirect('dashboard?starting=yes')->withCookie(Cookie::forget('coo_quranmemo_email'))->withCookie(Cookie::forget('coo_quranmemo_password'));
     }
 
     /**
