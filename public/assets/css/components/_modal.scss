@@ -4,12 +4,12 @@
 	.modal-header {
 		background-color: transparent;
 		h4 {
-			color: rgba(77, 181, 120, .8);;
+			color: rgba($main-color, .8);;
 			font-size: 20px;
 			text-transform: uppercase;
 		}
 		.close {
-			color:rgba(77, 181, 120, .8);
+			color:rgba($main-color, .8);
 			opacity: .6;
 			&:hover,
 			&:focus {
@@ -30,7 +30,7 @@
 		.btn-search,
 		.btn-cari-ayat {
 			border-width: 1px;
-			border-color: #4db578;
+			border-color: $main-color;
 			border-style: solid;
 			color: #fff;
 			background-image: none;
@@ -48,7 +48,7 @@
 	}
 	&.content-mode {
 		.modal-header {
-			background-color: rgba(77, 181, 120, .8);
+			background-color: rgba($main-color, .8);
 			h4 {
 				color: #fff;
 				font-size: 20px;
@@ -75,7 +75,7 @@
 	}
 	&.share-mode {
 		.modal-header {
-			background-color: rgba(77, 181, 120, .8);
+			background-color: rgba($main-color, .8);
 			h4 {
 				color: #fff;
 				font-size: 20px;
@@ -248,10 +248,10 @@
 		width: 33.333%;
 	}
 	
-	.nav-tabs>li,
-	.nav-tabs>li.active{
-		margin-bottom: 0;
-	}
+	// .nav-tabs>li,
+	// .nav-tabs>li.active{
+	// 	margin-bottom: 0;
+	// }
 
 	.nav-tabs>li>a{
 		margin-right: 0;
@@ -419,7 +419,7 @@ ul.juz-list {
 }
 
 .arabic.juz_head {
-    background-color: rgba(77, 181, 120, 0.28)!important;
+    background-color: rgba($main-color, 0.28)!important;
     border-bottom: 2px dashed rgba(57, 144, 94, 0.31)
 }
 

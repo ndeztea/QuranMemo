@@ -53,7 +53,7 @@
   color: #fdb300; }
 
 .highlight-green {
-  color: #4db578; }
+  color: #00978A; }
 
 .highlight-blue {
   color: #312994; }
@@ -174,7 +174,7 @@
     height: 0;
     border-top: 17px solid transparent;
     border-bottom: 17px solid transparent;
-    border-left: 10px solid #4db578;
+    border-left: 10px solid #00978A;
     position: absolute;
     top: 50%;
     margin-top: -17px;
@@ -189,13 +189,13 @@
   .btn-breadcrumb .btn:last-child {
     padding: 6px 18px 6px 24px; }
   .btn-breadcrumb .btn.btn-default.selected:not(:last-child):after {
-    border-left: 10px solid #4db578; }
+    border-left: 10px solid #00978A; }
   .btn-breadcrumb .btn.btn-default:not(:last-child):after {
     border-left: 10px solid #fff; }
   .btn-breadcrumb .btn.btn-default:not(:last-child):before {
-    border-left: 10px solid #4db578; }
+    border-left: 10px solid #00978A; }
   .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
-    border-left: 10px solid #4db578; }
+    border-left: 10px solid #00978A; }
   .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
     border-left: 10px solid #fff; }
 
@@ -267,17 +267,20 @@
       margin-left: 6px;
       float: left !important; } }
 
+.vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary {
+  background: #00978A; }
+
 .modal {
   text-align: center;
   padding: 0 !important; }
   .modal .modal-header {
     background-color: transparent; }
     .modal .modal-header h4 {
-      color: rgba(77, 181, 120, 0.8);
+      color: rgba(0, 151, 138, 0.8);
       font-size: 20px;
       text-transform: uppercase; }
     .modal .modal-header .close {
-      color: rgba(77, 181, 120, 0.8);
+      color: rgba(0, 151, 138, 0.8);
       opacity: .6; }
       .modal .modal-header .close:hover, .modal .modal-header .close:focus {
         opacity: 1; }
@@ -292,7 +295,7 @@
     .modal .modal-body .btn-search,
     .modal .modal-body .btn-cari-ayat {
       border-width: 1px;
-      border-color: #4db578;
+      border-color: #00978A;
       border-style: solid;
       color: #fff;
       background-image: none;
@@ -304,7 +307,7 @@
     .modal .modal-body .form-inline .form-control {
       width: 100%; }
   .modal.content-mode .modal-header {
-    background-color: rgba(77, 181, 120, 0.8); }
+    background-color: rgba(0, 151, 138, 0.8); }
     .modal.content-mode .modal-header h4 {
       color: #fff;
       font-size: 20px;
@@ -319,7 +322,7 @@
     .modal.content-mode .modal-body a:hover, .modal.content-mode .modal-body a:focus {
       color: #007763; }
   .modal.share-mode .modal-header {
-    background-color: rgba(77, 181, 120, 0.8); }
+    background-color: rgba(0, 151, 138, 0.8); }
     .modal.share-mode .modal-header h4 {
       color: #fff;
       font-size: 20px;
@@ -440,9 +443,6 @@
 
 .filter .nav-tabs > li {
   width: 33.333%; }
-.filter .nav-tabs > li,
-.filter .nav-tabs > li.active {
-  margin-bottom: 0; }
 .filter .nav-tabs > li > a {
   margin-right: 0;
   border-radius: 0;
@@ -577,7 +577,7 @@ ul.juz-list {
   font-size: 12px; }
 
 .arabic.juz_head {
-  background-color: rgba(77, 181, 120, 0.28) !important;
+  background-color: rgba(0, 151, 138, 0.28) !important;
   border-bottom: 2px dashed rgba(57, 144, 94, 0.31); }
 
 .juz-indo-head {
@@ -1482,8 +1482,8 @@ input[type="number"] {
   font-size: 20px; }
 
 .surah_title {
-  background-color: rgba(222, 239, 215, 0.82);
-  color: #3C763D;
+  background-color: rgba(0, 151, 138, 0.15);
+  color: #20b2aa;
   padding-bottom: 10px; }
   .surah_title .surah_name,
   .surah_title .head_surah {
@@ -1701,7 +1701,7 @@ body.canvas-slid .loading {
       background-color: rgba(255, 255, 255, 0.8); }
     .mushaf .ayat_section .arabic, .boxcontent .ayat_section .arabic {
       text-align: right;
-      color: #2B4538;
+      color: #0d4643;
       width: 100%;
       line-height: 65px;
       -moz-animation-duration: 1s;
@@ -1830,7 +1830,7 @@ body.canvas-slid .loading {
   border: none !important; }
 
 .surah-nav .pagination > li > a {
-  color: #4db578; }
+  color: #00978A; }
 
 .surah-nav .pagination > li.active > a {
   color: #fff;
@@ -1838,10 +1838,10 @@ body.canvas-slid .loading {
 
 .header_juz:hover,
 .header_page:hover {
-  background-color: #4DB578;
+  background-color: #00978A;
   cursor: pointer;
   color: #FFFFFF !important;
-  border: 1px solid #4DB578; }
+  border: 1px solid #00978A; }
 
 .muqodimah b {
   font-size: 16px;
@@ -2417,7 +2417,7 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
 
 .memoz_nav .btn.active {
   color: #fff;
-  background: #409965; }
+  background: #00978A; }
 
 .dashboard-wrap
 .boxcontent {
@@ -2430,7 +2430,7 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
   background-size: cover; }
 
 .dash-profile-detail {
-  background: rgba(0, 151, 138, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -2551,5 +2551,12 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
       right: 0;
       bottom: 0;
       margin: auto; }
+  .koreksi-box .koreksi-desc .jumlah-koreksi {
+    color: #999999; }
+  .koreksi-box .koreksi-desc .koreksi-action {
+    padding: 5px 0; }
+    .koreksi-box .koreksi-desc .koreksi-action .koreksi-action-link {
+      display: inline-block;
+      width: 47%; }
 
 /*# sourceMappingURL=style.min.css.map */

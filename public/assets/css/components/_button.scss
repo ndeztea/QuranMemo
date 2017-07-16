@@ -47,7 +47,7 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 		height: 0;
 		border-top: 17px solid transparent;
 		border-bottom: 17px solid transparent;
-		border-left: 10px solid #4db578;
+		border-left: 10px solid $main-color;
 		position: absolute;
 		top: 50%;
 		margin-top: -17px;
@@ -68,16 +68,16 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 	}
 	/** Default button **/
 	.btn.btn-default.selected:not(:last-child):after {
-		border-left: 10px solid #4db578;
+		border-left: 10px solid $main-color;
 	}
 	.btn.btn-default:not(:last-child):after {
 		border-left: 10px solid #fff;
 	}
 	.btn.btn-default:not(:last-child):before {
-		border-left: 10px solid #4db578;
+		border-left: 10px solid $main-color;
 	}
 	.btn.btn-default:hover:not(:last-child):after {
-		border-left: 10px solid #4db578;
+		border-left: 10px solid $main-color;
 	}
 	.btn.btn-default:hover:not(:last-child):before {
 		border-left: 10px solid #fff;
@@ -150,4 +150,7 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 			float: left !important;
 		}
 	}
+}
+.vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary{
+	background: $main-color;
 }

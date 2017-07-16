@@ -73,11 +73,11 @@
 											<div class="koreksi-desc">
 												<span class="username">{{$row->name}}</span>
 												<span class="ayat-target"><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></span>
-												<span class="spacer1">&bullet;</span> <i class="fa fa-commenting"> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</i>
-												<br>
-												<div>
-													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="badge" style="width: 100px">Koreksi</a>
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="badge" style="width: 100px">Hafalkan</a>
+												<span class="spacer1">&bullet;</span> 
+												<span class="jumlah-koreksi"><i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</span>
+												<div class="koreksi-action">
+													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" style="width: 100px">Koreksi</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" style="width: 100px">Hafalkan</a>
 												</div>
 											</div>
 											<!--/koreksi-desc-->

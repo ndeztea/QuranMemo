@@ -39,9 +39,9 @@
 
         <meta property="description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
         <meta property="tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
-        <meta name="theme-color" content="#4DB578" />
-        <meta name="msapplication-navbutton-color" content="#4DB578">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#4DB578">
+        <meta name="theme-color" content="#00978A" />
+        <meta name="msapplication-navbutton-color" content="#00978A">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#00978A">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700" rel="stylesheet">

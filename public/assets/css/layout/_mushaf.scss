@@ -136,7 +136,7 @@
 		}
 		.arabic {
 			text-align: right;
-			color: #2B4538;
+			color: darken($color2,25%);
 			width: 100%;
 			line-height: 65px;
 			-moz-animation-duration: 1s;
@@ -294,7 +294,7 @@
 }
 
 .surah-nav .pagination>li>a{
-    color: #4db578;
+    color: $main-color;
 }
 
 .surah-nav .pagination>li.active>a{
@@ -304,10 +304,10 @@
 
 .header_juz:hover,
 .header_page:hover {
-    background-color: #4DB578;
+    background-color: $main-color;
     cursor: pointer;
     color: #FFFFFF !important;
-    border : 1px solid #4DB578;
+    border : 1px solid $main-color;
 }
 .muqodimah b{
     font-size: 16px;

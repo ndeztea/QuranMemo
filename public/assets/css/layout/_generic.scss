@@ -629,8 +629,8 @@ input[type="number"] {
 }
 
 .surah_title {
-	background-color: hsla(103, 44%, 89%, 0.82);
-	color: #3C763D;
+	background-color: rgba($main-color, 0.15);
+	color: $color2;
 	padding-bottom: 10px;
 	.surah_name,
 	.head_surah {
