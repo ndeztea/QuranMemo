@@ -20,12 +20,12 @@
 			  	<div class="dash-profile">
 
 			  		<div class="dash-profile-detail-wrap">
-					  	<div class="dash-profile-detail"  style="background: url('http://localhost/QuranNote/public/assets/images/dzuhur.jpg')">
+					  	<div class="dash-profile-detail">
 							<div class="dash-profile-img img-circle">
 								<img src="{{getAvatar($detailProfile)}}">
 							</div>
 							<div class="dash-profile-desc">
-								<h4 class="dash-profile-name">{{session('sess_name')?session('sess_name'):'Tamu'}} <sup><i class="fa fa-certificate"><span>P</span></i></sup></h4>
+								<h4 class="dash-profile-name">{{session('sess_name')?session('sess_name'):'Tamu'}}</h4>
 								<span class='qm-badge'>Level Muqamah</span>
 							</div>
 							<button class="btn btn-trigger-dashboard" type="button" data-toggle="collapse" data-target="#dashboard-items" aria-expanded="false" aria-controls="dashboard-items">

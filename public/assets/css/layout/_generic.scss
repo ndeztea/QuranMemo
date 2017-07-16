@@ -7,6 +7,11 @@ body {
 	padding-top: 50px;
 }
 
+@font-face {
+    font-family: 'me_quran';
+    src: url(../fonts/me_quran.ttf);
+}
+
 body {
 	background: #fff;
 	font-family: $font-stack;
@@ -16,11 +21,13 @@ body {
 }
 
 a{
-    color: $main-color;
+	color: $main-color;
+	text-decoration: none;
 	&:hover,
 	&:focus,
 	&:active{
 		outline: none 0;
+		text-decoration: underline;
 	}
     &:hover,
     &:focus{
@@ -29,6 +36,11 @@ a{
 	cursor: pointer;
 	color: $main-color-hover;
     }
+}
+
+ol,
+ul {
+    padding-left: 20px
 }
 
 ::-moz-selection {
@@ -113,9 +125,14 @@ a{
 
 .arabic,
 .head_surah {
-	font-family: $arab-font;
+	font-family: 'me_quran';
 	font-size: 33px;
 	word-spacing: 0px;
+}
+
+.arabic{
+	font-size: 23px;
+	word-spacing: 5px;
 }
 
 .navbar {
@@ -155,7 +172,7 @@ a{
 		text-shadow: none;
 		font-weight: 700;
 		transition: color 1s ease;
-		padding: 10px 13px;
+		padding: 13px;
 		&:hover,
 		&:focus {
 			opacity: .7;
@@ -254,12 +271,14 @@ a{
 	}
 }
 
-
+input[type="number"] {
+    text-align: center
+}
 
 .select-surah {
 	@include media(">=phone",
 	"<=767px") {
-		padding-top: 10px;
+		padding-top: 0;
 	}
 	.form-inline {
 		margin-bottom: 0;
@@ -658,6 +677,15 @@ a{
 	overflow: overlay;
 	background-color: rgba($main-color, .93);
 	text-align: center;
+	overflow: none;
+	.loading {
+		font-size: 24px;
+		color: #FFF;
+		position: fixed;
+		text-align: center;
+		width: 100%;
+		top: 50%
+	}
 }
 
 body.canvas-slid{
@@ -755,5 +783,12 @@ body.canvas-slid{
 .hide-on-smalldesktop{
 	@include media(">tablet","<=931px") {
 		display: none;
+	}
+}
+
+.container-fluid {
+	@media (max-width: 767px) and (min-width: 270px) {
+        padding-right: 0;
+        padding-left: 0
 	}
 }

@@ -1,4 +1,6 @@
 .modal {
+	text-align: center;
+  	padding: 0!important;
 	.modal-header {
 		background-color: transparent;
 		h4 {
@@ -17,6 +19,32 @@
 	}
 	.modal-body{
 		padding:0;
+		.btn-juz,
+		.btn-last-memoz {
+			display: none!important
+		}
+		.input-group {
+			float: none;
+			width: 101%
+		}
+		.btn-search,
+		.btn-cari-ayat {
+			border-width: 1px;
+			border-color: #4db578;
+			border-style: solid;
+			color: #fff;
+			background-image: none;
+			text-shadow: none;
+			width: 100%;
+			margin-top: 10px;
+			font-size: 21px
+		}
+		.form-inline{
+			.form-group,
+			.form-control {
+				width: 100%
+			}
+		}
 	}
 	&.content-mode {
 		.modal-header {
@@ -136,6 +164,9 @@
 	}
 	.modal-dialog {
 		width: 500px;
+		display: inline-block;
+		text-align: left;
+		vertical-align: middle;
 		// margin-top: 11%;
 		@include media("<=767px",
 		">=phone") {
@@ -157,6 +188,13 @@
 	.modal-footer {
 		border-top: none;
 	}
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -4px;
+		}
 }
 
 .modal.login-mode {
@@ -323,25 +361,6 @@
 	}
 }
 
-.modal {
-  text-align: center;
-  padding: 0!important;
-}
-
-.modal:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -4px;
-}
-
-.modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-}
-
 .modal-contentbody{
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -374,4 +393,41 @@
 		width: 175px;
 		margin: auto;
 	}
+}
+
+ul.juz-list {
+    list-style: none;
+    padding: 10px 3px 0 10px;
+}
+
+.juz-list li {
+    float: left;
+    width: 31.3%;
+    margin-bottom: 10px;
+    background-color: rgba(112, 195, 147, 0.14);
+    padding: 5px;
+    margin-right: 7px;
+    text-align: center
+}
+
+.juz-list li strong {
+    font-size: 24px
+}
+
+.juz-list li a .juz-indo {
+    font-size: 12px
+}
+
+.arabic.juz_head {
+    background-color: rgba(77, 181, 120, 0.28)!important;
+    border-bottom: 2px dashed rgba(57, 144, 94, 0.31)
+}
+
+.juz-indo-head {
+    color: #aaa
+}
+
+.juz_head {
+    text-align: center;
+    background-color: #9FCFB3
 }

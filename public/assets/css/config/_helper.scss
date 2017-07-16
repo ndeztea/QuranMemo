@@ -51,3 +51,33 @@
 	left: 0 !important;
 	right: 0 !important;
 }
+
+.center {
+    text-align: center
+}
+
+.highlight {
+    background-color: #B0FF33
+}
+
+.highlight-red {
+    color: #FF0037
+}
+.highlight-orange{
+    color: #fdb300;
+}
+.highlight-green{
+    color: #4db578;
+}
+
+.highlight-blue{
+     color:#312994;
+ }
+ .highlight-gray{
+     color:yellow;
+ }
+ 
+ 
+ .tanwin1::before{
+     content: '\200D';
+ }

@@ -23,7 +23,7 @@
 	}
 	@include media("<tablet",
 	">=phone") {
-		width: 100%;
+		width: 100% !important;
 	}
 }
 
@@ -120,6 +120,10 @@
 		">=381px") {
 			width: 100% !important;
 		}
+		@media (max-width: 767px) and (min-width: 270px) {
+			left: 0 !important;
+			width: 100% !important;
+		}
 	}
 	.jp-audio,
 	.jp-audio-stream,
@@ -127,6 +131,10 @@
 		border: none;
 	}
 	.jp-video {
+		@media (max-width: 767px) and (min-width: 270px) {
+			margin: 0;
+        	width: 100%
+		}
 		.jp-type-playlist {
 			.jp-controls {
 				margin: auto;
@@ -134,6 +142,9 @@
 				@include media("<=400px",
 				">=phone") {
 					margin-left: 185px;
+				}
+				@media (max-width: 767px) and (min-width: 270px) {
+					margin: auto;
 				}
 			}
 		}
@@ -148,6 +159,11 @@
 	.jp-play-bar {
 		background: #2e6e48 !important;
 	}
+	.jp-volume-controls {
+		@media (max-width: 767px) and (min-width: 270px) {
+			display: none
+		}
+    }
 }
 
 .quran_recorder{

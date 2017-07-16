@@ -151,27 +151,28 @@
         </div>
 
         <nav class="navmenu navmenu-default offcanvas navmenu-fixed-left qm-navbar" id="qm-navbar" role="navigation">
-
-            <div class="navmenu-overlay"> 
             
                 <div class="navmenu-header">
-                    <a class="qm-brand" href="{{url('')}}">
-                        <img class='hires qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-                        <img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
-                    </a>
+                    <div class="navmenu-overlay"> 
+                        <a class="qm-brand" href="{{url('')}}">
+                            <img class='hires qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
+                            <img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+                        </a>
 
-                    <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
+                        <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
 
-                    <div class="navbar-nav qm-cari-kata">
-                        <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
+                        <div class="navbar-nav qm-cari-kata">
+                            <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
+                    <!--/navmenu-overlay-->
                 </div>
                 <!--/navmenu-header-->
 
@@ -191,8 +192,7 @@
                 </ul>
                 <!--/navmenu-nav-->
 
-            </div>
-            <!--/navmenu-overlay-->
+            
 
         </nav>
         <!--/navmenu-->
