@@ -14,12 +14,12 @@ $prev_surah = '';
 				</div>
 				<!-- /backdrop -->
 				<div class="single-column">
-					<div class="page-title">
+					<!--div class="page-title">
 						<h2 class="pull-left">Pencarian</h2>
 						@if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
 		    			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}" width="150"></a>
 		    			@endif
-					</div>
+					</div-->
 					@if(!empty($search_result))
 					<div class="nav-top clearfix">
 						<div class="container-fluid">

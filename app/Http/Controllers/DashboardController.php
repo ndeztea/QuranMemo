@@ -35,6 +35,7 @@ class DashboardController extends Controller
         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
         $data['starting'] = $starting;
+        $data['body_class'] = 'dashboard';
         if(!empty($data['detailProfile'])){
             $data['detailProfile'] = $data['detailProfile'][0];
         }

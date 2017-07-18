@@ -24,7 +24,6 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:rgb(77, 181, 120);
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -34,6 +33,7 @@ body {
     text-transform:capitalize;
     width:100%;
     overflow-x: hidden !important;
+    background: url(../img/bg.jpg) no-repeat center center;
 }
 
 /* Portrait layout (default) */
@@ -84,7 +84,7 @@ h1 {
 }
 
 .event.received {
-    background-color:#4B946A;
+    background-color:#00978A;
     display:none;
 }
 
@@ -109,40 +109,38 @@ h1 {
     position: relative;
     z-index: 1001;
     /*transition: all 2s ease;*/
-    background: rgba(77,181,120,1);
     display:block;
-    width:100%;
-}
-
-.splash-inner{
-    background: url("../img/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center / cover ;
-    width: 100%;
-    height:100%;
-    opacity: 0;
-    /*transition: opacity 1s ease;
-    animation-delay:.5s;*/
-    display: block;
-}
-
-.splash{
     width: 100%;
     height: 100%;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6dff72+0,4db578+100 */
-background: rgb(109,255,114); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(109,255,114,0.94) 0%, rgba(77,181,120,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(109,255,114,0.94) 0%,rgba(77,181,120,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(109,255,114,0.94) 0%,rgba(77,181,120,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00776e', endColorstr='#00978A',GradientType=0 ); /* IE6-9 */
-
+    background: rgb(0,151,140); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(0,93,86,0.94) 0%, rgba(77,181,120,.9) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,93,86,0.94) 0%,rgba(77,181,120,.9) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,93,86,0.94) 0%,rgba(77,181,120,.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00776e', endColorstr='#00978A',GradientType=0 ); /* IE6-9 */
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
 
+.splash-inner{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 250px;
+    height: 380px;
+}
+
+.splash{
+    
+}
+
 .holder{
     position: relative;
     top: 42%;
-    transform: translateY(-42%);
     width: 100%;
     margin:auto;
     text-align:center;
@@ -155,7 +153,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00776e', end
     text-align: center;
     padding:40px;
     vertical-align: middle;
-    top: -150px;
     position: relative;
 }
 
