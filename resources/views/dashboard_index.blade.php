@@ -72,12 +72,14 @@
 											</div>
 											<div class="koreksi-desc">
 												<span class="username">{{$row->name}}</span>
-												<span class="ayat-target"><a href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a></span>
-												<span class="spacer1">&bullet;</span> 
-												<span class="jumlah-koreksi"><i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</span>
+												<span class="ayat-target">
+													<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
+													<span class="spacer1">&bullet;</span> 
+													<span class="jumlah-koreksi"><i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</span>
+												</span>
 												<div class="koreksi-action">
-													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" style="width: 100px">Koreksi</a>
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" style="width: 100px">Hafalkan</a>
+													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link">Koreksi</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link">Hafalkan</a>
 												</div>
 											</div>
 											<!--/koreksi-desc-->
@@ -101,9 +103,8 @@
 											<div class="koreksi-desc">
 												<span class="username">{{$row->name}}</span>
 												<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>	
-												<br>
 												<div>
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="badge" style="width: 100px">Hafalkan</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="badge">Hafalkan</a>
 												</div>
 											</div>
 										</div>

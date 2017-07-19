@@ -191,3 +191,33 @@
 		margin: 0 auto;
 	}
 }
+
+.edit-profile-block{
+	@extend .register-block;
+	.edit-profile-backdrop{
+		@extend .register-backdrop;
+	}
+	.edit-profile-form{
+		@extend .filter;
+		padding-top: 15px;
+		.nav{
+			background: #fff;
+		}
+		.form-heading{
+			color: #fff;
+		}
+		.btn-simpan,
+		.btn-upload-img{
+			@extend .btn-daftar;
+		}
+		.btn-kembali{
+			@extend .btn-masuk;
+		}
+		.input-file{
+			color: #fff;
+			&:before{
+				color: #fff;
+			}
+		}
+	}
+}

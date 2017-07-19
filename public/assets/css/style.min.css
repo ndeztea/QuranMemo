@@ -441,9 +441,9 @@
   background: #00cab9;
   color: #fff; }
 
-.filter .nav-tabs > li {
+.filter .nav-tabs > li, .edit-profile-block .edit-profile-form .nav-tabs > li {
   width: 33.333%; }
-.filter .nav-tabs > li > a {
+.filter .nav-tabs > li > a, .edit-profile-block .edit-profile-form .nav-tabs > li > a {
   margin-right: 0;
   border-radius: 0;
   margin-bottom: 0;
@@ -453,13 +453,16 @@
   outline: 0 none;
   font-weight: 600;
   text-align: center; }
-.filter .nav-tabs > li.active > a,
+.filter .nav-tabs > li.active > a, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a,
 .filter .nav-tabs > li.active > a:focus,
-.filter .nav-tabs > li.active > a:hover {
+.edit-profile-block .edit-profile-form .nav-tabs > li.active > a:focus,
+.filter .nav-tabs > li.active > a:hover,
+.edit-profile-block .edit-profile-form .nav-tabs > li.active > a:hover {
   color: #00978A;
   border-bottom: solid 3px #00978A; }
-.filter .nav > li > a:focus,
-.filter .nav > li > a:hover {
+.filter .nav > li > a:focus, .edit-profile-block .edit-profile-form .nav > li > a:focus,
+.filter .nav > li > a:hover,
+.edit-profile-block .edit-profile-form .nav > li > a:hover {
   background-color: transparent;
   color: #00978A;
   border: solid transparent;
@@ -627,7 +630,7 @@ ul.juz-list {
     border-radius: 6px !important; }
     .login_form .form-control:focus {
       border-bottom: solid 2px #00978A; }
-  .login_form .btn-masuk {
+  .login_form .btn-masuk, .login_form .edit-profile-block .edit-profile-form .btn-kembali, .edit-profile-block .edit-profile-form .login_form .btn-kembali {
     padding: 12px;
     width: 100%;
     border-radius: 6px;
@@ -636,9 +639,11 @@ ul.juz-list {
     background: #fff;
     border: solid 1px #fff;
     box-shadow: none !important; }
-    .login_form .btn-masuk:hover, .login_form .btn-masuk:focus, .login_form .btn-masuk.selected {
+    .login_form .btn-masuk:hover, .login_form .edit-profile-block .edit-profile-form .btn-kembali:hover, .edit-profile-block .edit-profile-form .login_form .btn-kembali:hover, .login_form .btn-masuk:focus, .login_form .edit-profile-block .edit-profile-form .btn-kembali:focus, .edit-profile-block .edit-profile-form .login_form .btn-kembali:focus, .login_form .btn-masuk.selected, .login_form .edit-profile-block .edit-profile-form .selected.btn-kembali, .edit-profile-block .edit-profile-form .login_form .selected.btn-kembali {
       color: #cccc00; }
-  .login_form .btn-daftar {
+  .login_form .btn-daftar, .login_form .edit-profile-block .edit-profile-form .btn-simpan, .edit-profile-block .edit-profile-form .login_form .btn-simpan,
+  .login_form .edit-profile-block .edit-profile-form .btn-upload-img,
+  .edit-profile-block .edit-profile-form .login_form .btn-upload-img {
     color: #fff;
     font-size: 16px;
     margin: 15px auto 0;
@@ -694,7 +699,9 @@ ul.juz-list {
         width: 90%;
         float: none !important;
         margin: 0 auto; } }
-  .register_form .btn-daftar {
+  .register_form .btn-daftar, .register_form .edit-profile-block .edit-profile-form .btn-simpan, .edit-profile-block .edit-profile-form .register_form .btn-simpan,
+  .register_form .edit-profile-block .edit-profile-form .btn-upload-img,
+  .edit-profile-block .edit-profile-form .register_form .btn-upload-img {
     display: block;
     padding: 12px;
     width: 100%;
@@ -705,9 +712,15 @@ ul.juz-list {
     border: solid 1px #fff;
     margin-bottom: 10px;
     box-shadow: none !important; }
-    .register_form .btn-daftar:hover, .register_form .btn-daftar:focus, .register_form .btn-daftar.selected {
+    .register_form .btn-daftar:hover, .register_form .edit-profile-block .edit-profile-form .btn-simpan:hover, .edit-profile-block .edit-profile-form .register_form .btn-simpan:hover,
+    .register_form .edit-profile-block .edit-profile-form .btn-upload-img:hover,
+    .edit-profile-block .edit-profile-form .register_form .btn-upload-img:hover, .register_form .btn-daftar:focus, .register_form .edit-profile-block .edit-profile-form .btn-simpan:focus, .edit-profile-block .edit-profile-form .register_form .btn-simpan:focus,
+    .register_form .edit-profile-block .edit-profile-form .btn-upload-img:focus,
+    .edit-profile-block .edit-profile-form .register_form .btn-upload-img:focus, .register_form .btn-daftar.selected, .register_form .edit-profile-block .edit-profile-form .selected.btn-simpan, .edit-profile-block .edit-profile-form .register_form .selected.btn-simpan,
+    .register_form .edit-profile-block .edit-profile-form .selected.btn-upload-img,
+    .edit-profile-block .edit-profile-form .register_form .selected.btn-upload-img {
       color: #cccc00; }
-  .register_form .btn-masuk {
+  .register_form .btn-masuk, .register_form .edit-profile-block .edit-profile-form .btn-kembali, .edit-profile-block .edit-profile-form .register_form .btn-kembali {
     color: #fff;
     font-size: 16px;
     margin: 15px auto 0;
@@ -725,21 +738,32 @@ ul.juz-list {
   font-size: 14px;
   color: #fff; }
 
-.register-block {
+.register-block, .edit-profile-block {
   background: url("../images/vot1mpfUwZA.jpg") no-repeat center center;
   width: 100%;
   height: 100%;
   overflow-y: auto;
   margin-top: -15px;
   position: relative; }
-  .register-block .register-backdrop {
+  .register-block .register-backdrop, .edit-profile-block .register-backdrop, .edit-profile-block .edit-profile-backdrop {
     background-color: rgba(0, 151, 138, 0.7);
     width: 100%;
     height: 100%;
     margin: auto; }
-  .register-block .login-brand {
+  .register-block .login-brand, .edit-profile-block .login-brand {
     padding: 40px 0;
     margin: 0 auto; }
+
+.edit-profile-block .edit-profile-form {
+  padding-top: 15px; }
+  .edit-profile-block .edit-profile-form .nav {
+    background: #fff; }
+  .edit-profile-block .edit-profile-form .form-heading {
+    color: #fff; }
+  .edit-profile-block .edit-profile-form .input-file {
+    color: #fff; }
+    .edit-profile-block .edit-profile-form .input-file:before {
+      color: #fff; }
 
 .quran-player {
   margin: auto;
@@ -960,7 +984,7 @@ a.button {
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   color: #999; }
 
-.filter .nav-tabs > li {
+.filter .nav-tabs > li, .edit-profile-block .edit-profile-form .nav-tabs > li {
   width: 50%; }
 
 .mushaf-hafalan .step-wrap .steps .btn {
@@ -1351,7 +1375,8 @@ input[type="number"] {
 .body-mushaf .main-content-wrap {
   padding-bottom: 120px; }
 
-.body-register .main-content-wrap {
+.body-register .main-content-wrap,
+.dashboard .main-content-wrap {
   padding-bottom: 0; }
 
 .main-content-wrap {
@@ -1568,15 +1593,6 @@ body.canvas-slid .loading {
 .boxcontent-label {
   margin-top: 0; }
 
-.correction-list .username {
-  display: block;
-  color: #00978A;
-  font-weight: bold; }
-.correction-list .correction-list-item {
-  margin-bottom: 10px; }
-.correction-list .ayat-target {
-  display: inline-block; }
-
 .btn:hover,
 .btn:focus,
 .btn:active {
@@ -1646,6 +1662,9 @@ body.canvas-slid .loading {
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   right: 0; }
+  @media (max-width: 767px) and (min-width: 270px) {
+    .mushaf, .boxcontent {
+      box-shadow: none; } }
   .mushaf .mushaf_display, .boxcontent .mushaf_display {
     margin: 0 auto;
     text-align: center;
@@ -2530,6 +2549,9 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
 .correction-list-item {
   border-bottom: solid 1px #eee; }
   .correction-list
+  .correction-list-item:nth-child(even) {
+    background-color: #fafafa; }
+  .correction-list
   .correction-list-item:last-child {
     border-bottom: none; }
 
@@ -2537,7 +2559,8 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
   display: flex;
   position: relative;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  padding: 17px; }
   .koreksi-box .koreksi-avatar {
     width: 75px;
     height: 75px;
@@ -2552,12 +2575,28 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
       right: 0;
       bottom: 0;
       margin: auto; }
-  .koreksi-box .koreksi-desc .jumlah-koreksi {
-    color: #999999; }
-  .koreksi-box .koreksi-desc .koreksi-action {
-    padding: 5px 0; }
-    .koreksi-box .koreksi-desc .koreksi-action .koreksi-action-link {
-      display: inline-block;
-      width: 47%; }
+  .koreksi-box .koreksi-desc {
+    width: 80%; }
+    .koreksi-box .koreksi-desc .username {
+      font-size: 18px;
+      display: block;
+      color: #00978A;
+      font-weight: bold; }
+    .koreksi-box .koreksi-desc .ayat-target {
+      display: inline-block; }
+      .koreksi-box .koreksi-desc .ayat-target .ayat-target-link {
+        font-size: 17px; }
+    .koreksi-box .koreksi-desc .jumlah-koreksi {
+      color: #999999; }
+    .koreksi-box .koreksi-desc .koreksi-action {
+      padding: 7px 0 0; }
+      .koreksi-box .koreksi-desc .koreksi-action .koreksi-action-link {
+        display: inline-block;
+        text-align: center;
+        padding: 7px 15px;
+        background-color: #f9f9f9;
+        border: solid 1px #00978A;
+        margin-right: 7px;
+        border-radius: 4px; }
 
 /*# sourceMappingURL=style.min.css.map */

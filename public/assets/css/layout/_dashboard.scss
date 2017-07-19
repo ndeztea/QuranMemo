@@ -139,6 +139,9 @@
 .correction-list
     .correction-list-item{
         border-bottom: solid 1px #eee;
+        &:nth-child(even){
+            background-color: $color7;
+        }
         &:last-child{
             border-bottom: none;
         }
@@ -149,6 +152,7 @@
     position: relative;
     flex-direction: row;
     align-items: center;
+    padding: 17px;
     .koreksi-avatar{
         width: 75px;
         height: 75px;
@@ -166,14 +170,32 @@
         }
     }
     .koreksi-desc{
+        width: 80%;
+        .username{
+            font-size: 18px;
+            display: block;
+            color: $main-color;
+            font-weight: bold;
+        }
+        .ayat-target{
+            display: inline-block;
+            .ayat-target-link{
+                font-size: 17px;
+            }
+        }
         .jumlah-koreksi{
             color: $color5;
         }
         .koreksi-action{
-            padding: 5px 0;
+            padding: 7px 0 0;
             .koreksi-action-link{
                 display: inline-block;
-                width: 47%;
+                text-align: center;
+                padding: 7px 15px;
+                background-color: $color6;
+                border: solid 1px $main-color;
+                margin-right: 7px;
+                border-radius: 4px;
             }
         }
     }

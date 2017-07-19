@@ -458,7 +458,8 @@ input[type="number"] {
 	}
 }
 
-.body-register{
+.body-register,
+.dashboard{
 	.main-content-wrap{
 		padding-bottom: 0;
 	}
@@ -750,22 +751,6 @@ body.canvas-slid{
 
 .boxcontent-label{
 	margin-top: 0;
-}
-
-.correction-list{
-	.username{
-		display: block;
-		color: $main-color;
-		font-weight: bold;
-	}
-
-	.correction-list-item{
-		margin-bottom: 10px;
-	}
-
-	.ayat-target{
-		display: inline-block;
-	}
 }
 
 .btn:hover,
