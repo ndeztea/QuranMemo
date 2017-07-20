@@ -57,6 +57,7 @@ Route::get('buku', 'ContentController@buku');
 Route::get('promo', 'ContentController@promo');
 Route::get('muratal', 'ContentController@muratal');
 Route::get('info', 'ContentController@info');
+Route::get('info_memoz', 'ContentController@info_memoz');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
