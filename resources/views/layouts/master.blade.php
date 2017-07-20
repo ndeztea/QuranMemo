@@ -290,8 +290,8 @@
             if('{{@$_COOKIE['coo_promo_6_TES']}}'==''){
                 QuranJS.callModal('buku');
             }else{
-                if('{{@$_COOKIE['coo_store']}}'==''){
-                    QuranJS.callModal('store');
+                if('{{@$_COOKIE['coo_qmc']}}'==''){
+                    QuranJS.callModal('donasi');
                 }
             }
 
