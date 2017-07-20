@@ -76,7 +76,7 @@
 
 									</div>
 									<div role="tabpanel" class="tab-pane" id="editavatar">
-										<div class="register_form clearfix" style="text-align: center">
+										<div class="register_form clearfix" style="text-align: center;padding-top:20px">
 											<form class="form-horizontal" action="#" onsubmit="return false" method="post">
 												<input type="hidden" name="device_id" id="profile_edit" value=""/>
 												<img src="{{getAvatar($detailUser)}}" width="150" id="img_avatar"/>

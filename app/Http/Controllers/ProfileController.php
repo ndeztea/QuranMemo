@@ -63,30 +63,35 @@ class ProfileController extends Controller
         $UsersModel = new Users;
         $detailUser = $UsersModel->getDetail(session('sess_id'))[0];
 
-        if ($request->file('avatar')->isValid()) {
-            $fileName = session('sess_id').uniqid('_avatar_').'.jpg';
-            $path = $request->file('avatar')->move(public_path('assets/images/avatar'), $fileName);
-            // make sure upload sucess
-            if(File::exists($path)){
-                // resize
-                Image::make($path)->resize(null,200, function ($constraint) {
-                    $constraint->aspectRatio();
-                })->save($path);
+        if(!empty($request->file('avatar'))){
+            if ($request->file('avatar')->isValid()) {
+                $fileName = session('sess_id').uniqid('_avatar_').'.jpg';
+                $path = $request->file('avatar')->move(public_path('assets/images/avatar'), $fileName);
+                // make sure upload sucess
+                if(File::exists($path)){
+                    // resize
+                    Image::make($path)->resize(null,200, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($path);
 
-                // remove old photo
-                File::delete(public_path('assets/images/avatar/'.$detailUser->avatar));
+                    // remove old photo
+                    File::delete(public_path('assets/images/avatar/'.$detailUser->avatar));
 
-                // store to DB
-                $dataProfile['avatar'] = $fileName;
-                $dataProfile['id'] = session('sess_id');
-                $UsersModel->edit($dataProfile);
+                    // store to DB
+                    $dataProfile['avatar'] = $fileName;
+                    $dataProfile['id'] = session('sess_id');
+                    $UsersModel->edit($dataProfile);
 
+                }else{
+                    return 'false';
+                }
             }else{
                 return 'false';
             }
         }else{
             return 'false';
         }
+        
         return url('assets/images/avatar/'.$fileName);
     }
 
