@@ -15,6 +15,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Crypt;
 use File;
 use FFMPEG;
+use Carbon\Carbon;
+
 
 class MemozController extends Controller
 {
@@ -501,6 +503,7 @@ class MemozController extends Controller
     }       
 
     public function listCorrection(Request $request){
+        Carbon::setLocale('id');
         $MemoCorrectionModel = new MemoCorrection();
         $start = $request->input('start',0);
         $idMemo = $request->input('idMemo','');
@@ -524,6 +527,7 @@ class MemozController extends Controller
     }
 
     public function list_need_corrections_ajax(Request $request){
+        Carbon::setLocale('id');
         $MemoCorrectionModel = new MemoCorrection();
         $start = $request->input('start',0);
         

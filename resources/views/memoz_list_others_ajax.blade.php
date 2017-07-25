@@ -11,10 +11,11 @@
 				</div>
 				<div class="koreksi-desc">
 					<span class="username">{{$row->name}}</span>
-					<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+					<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>	
 					<br>
-					<div>
-						<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="badge" style="width: 100px">Hafalkan</a>
+					<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
+					<div class="koreksi-action">
+						<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link">Hafalkan</a>
 					</div>
 				</div>
 			</div>
