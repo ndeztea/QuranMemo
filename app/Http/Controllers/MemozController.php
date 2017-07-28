@@ -191,6 +191,8 @@ class MemozController extends Controller
         $start = empty($start)?0:$start;
 
         $data['list']  = $MemoModel->getAnotherList(session('sess_id'),0,$start,10);
+        $data['listCount'] = $MemoModel->getCountAnotherList(session('sess_id'));
+
         $data['filter'] = $filter;
         $data['start'] = $start;
 
@@ -513,6 +515,7 @@ class MemozController extends Controller
         }else{
             $id_user = $request->session()->get('sess_id');
             $data['list']  = $MemoCorrectionModel->getMemoCorrectionByUser($id_user,$start,10);
+
         }
         $data['start'] = $start;
         $data['idMemo'] = $idMemo;
@@ -533,12 +536,13 @@ class MemozController extends Controller
         
         $MemoModel = new Memo();
         $data['list']  = $MemoModel->getNeedCorrection($start,10);
+        $data['listCount']  = $MemoModel->getCountNeedCorrection();
         
         $data['start'] = $start;
         $dataHTML['html'] = view('memoz_need_correction_list',$data)->render();
         $dataHTML['start'] = $start;
         $dataHTML['count'] = count($data['list']);
-
+        
         return response()->json($dataHTML);
     }
 

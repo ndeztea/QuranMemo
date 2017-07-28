@@ -90,6 +90,20 @@ class Memo extends Model
         return $memoList;
     }
 
+    public function getCountAnotherList($id_user,$filter=0){
+        $memoList = DB::table($this->table.' as memo')
+                ->select(DB::raw('count(*) as count'))->join('surah as s', 's.id', '=', 'memo.surah_start')
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->where('id_user','!=',$id_user);
+              
+        if($filter!='all'){
+            $memoList = $memoList->where('status',$filter);
+        }
+        $memoList  = $memoList->get();
+
+        return $memoList[0]->count;
+    }
+
     public function getNeedCorrection($start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar')
@@ -102,5 +116,16 @@ class Memo extends Model
                 ->get();
 
         return $memoList;
+    }
+
+    public function getCountNeedCorrection(){
+         $memoList = DB::table($this->table.' as memo')
+                ->select(DB::raw('count(*) as count'))
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->join('surah as s', 's.id', '=', 'memo.surah_start')
+                ->where('status',1)
+                ->get();
+
+        return $memoList[0]->count;
     }
 }

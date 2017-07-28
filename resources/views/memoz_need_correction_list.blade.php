@@ -27,7 +27,7 @@
 	</li>
 	@endforeach
 	</ul>
-	@if($start==0 && count($list)>10)
+	@if($start==0 && $listCount>10)
 		<a href="javascript:void(0)" onclick="QuranJS.needCorrections('next')" class="btn btn-green btn-loadmore">Selanjutnya</a>
 	@endif
 @else

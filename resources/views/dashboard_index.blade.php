@@ -115,7 +115,7 @@
 									</li>
 									@endforeach
 									</ul>
-									<a href="javascript:void(0)" class="btn-green btn" onclick="QuranJS.memozOthers()">Lainnya</a>
+									<a href="javascript:void(0)" class="btn-green btn" onclick="QuranJS.memozOthers(0)">Lainnya</a>
 								@endif
 						    </div>
 						  </div>
