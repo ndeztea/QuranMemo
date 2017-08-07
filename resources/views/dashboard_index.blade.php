@@ -89,7 +89,7 @@
 									</li>
 									@endforeach
 									</ul>
-									<a class="btn-green btn" href="javascript:void(0)" onclick="QuranJS.needCorrections(0)">Lainnya</a>
+									<a class="btn-green btn" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) QuranJS.needCorrections(0)  @else QuranJS.callModal('auth/login') @endif">Lainnya</a>
 								@endif
 						    </div>
 						    <div role="tabpanel" class="tab-pane" id="hafalan">
@@ -115,7 +115,7 @@
 									</li>
 									@endforeach
 									</ul>
-									<a href="javascript:void(0)" class="btn-green btn" onclick="QuranJS.memozOthers(0)">Lainnya</a>
+									<a href="javascript:void(0)" class="btn-green btn" onclick="@if(!empty(session('sess_id'))) QuranJS.memozOthers(0)  @else QuranJS.callModal('auth/login') @endif ">Lainnya</a>
 								@endif
 						    </div>
 						  </div>

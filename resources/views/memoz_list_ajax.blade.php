@@ -6,7 +6,8 @@
 		<div class="memoz-body">
 			<div class="memoz-body-inner">
 				<div class="memoz-tr">
-					<span class="tr-days">{{dayDiff($row->date_start,$row->date_end)->days}}</span>
+					<?php $days = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($row->date_end)),false)?>
+					<span class="tr-days">{{$days>0?$days:0}}</span>
 					<span class="tr-label">hari lagi</span>
 				</div>
 				<!--/memoz-time-remaining(tr)-->
@@ -54,7 +55,8 @@
 	</div>
 	<!--/memoz-item-->
 	@endforeach
-	@if($start==0 && count($list)>10)
+
+	@if($start==0 && count($list)>=0)
 		<a href="javascript:void(0)" onclick="QuranJS.memozFilter({{$filter}},'next')" class="btn btn-green btn-loadmore">Selanjutnya</a>
 	@endif
 @else

@@ -38,7 +38,7 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    background:url(../img/qmc-logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -140,7 +140,6 @@ h1 {
 
 .holder{
     position: relative;
-    top: 42%;
     width: 100%;
     margin:auto;
     text-align:center;
@@ -148,10 +147,9 @@ h1 {
 }
 
 .splash-text{
-    /*animation-delay:4s;*/
     display: block;
     text-align: center;
-    padding:40px;
+    padding:40px 0;
     vertical-align: middle;
     position: relative;
 }
@@ -159,7 +157,6 @@ h1 {
 .splash-text img{
     display: block;
     margin: 0 auto 20px;
-    max-width:250px;
 }
 
 .splash-text p{
@@ -167,14 +164,12 @@ h1 {
     font-weight: 700;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
-    /*animation-delay:.5s;*/
 }
 
 .start{
     width:125px;
     margin:0 auto;
     text-align:center;
-    /*animation-delay:5s;*/
     display:block;
     padding: 13px 0;
     background-color: #409965;
