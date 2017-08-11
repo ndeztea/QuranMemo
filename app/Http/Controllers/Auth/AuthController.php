@@ -47,7 +47,7 @@ class AuthController extends Controller
         $dataHTML['modal_class'] = 'login-mode';
         $dataHTML['modal_title'] = 'Login';
         $dataHTML['modal_body'] = view('auth_login',$data)->render();
-        $dataHTML['modal_footer'] = '<a class=\'forgot-pass-link\' href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Lupa Password ?';
+        $dataHTML['modal_footer'] = '<a class=\'forgot-pass-link\' href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Pernah register di Quranmemo?  minta password baru!';
 
         return response()->json($dataHTML);
     }
@@ -105,7 +105,7 @@ class AuthController extends Controller
 
         }else{
             $dataHTML['login'] = false;
-            $dataHTML['errorMessage'] = 'Login salah';
+            $dataHTML['errorMessage'] = 'Login gagal, username atau password salah.';
         }
 
         return response()->json($dataHTML);

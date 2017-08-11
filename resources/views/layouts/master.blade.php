@@ -127,7 +127,6 @@
 
         <!-- pre loader-->
         <div id="preloader">
-            <!--img src="{{url('assets/images/loading.gif')}}"-->
             <div class="loading">Mohon tunggu...<br>
             <img src="{{url('assets/images/loading.svg')}}" alt="loading"/></div>
         </div>

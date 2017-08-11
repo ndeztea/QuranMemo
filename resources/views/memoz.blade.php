@@ -26,7 +26,7 @@
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<!--span class="search-title">Surah</span-->
 							<div class="form-group">
-								<select name="surah_start"  id="surah_start" class="selectpicker form-control">
+								<select name="surah_start"  id="surah_start" class="selectpicker form-control surah_start_temp">
 									@foreach($surahs as $surah)
 									<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}} {{$surah->ayat}} ayat)</option>
 									@endforeach
@@ -34,9 +34,9 @@
 							</div>
 							<div class="form-group display-inline-block-xs">
 								<div class="input-group memoz-form">
-								  <input class="form-control search_ayat" id="ayat_start"  name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
+								  <input class="form-control search_ayat ayat_start_temp" id="ayat_start"  name="ayat_start" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_start?$ayat_start:''}}">
 								  <span class="input-group-addon">Sampai Ayat</span>
-								  <input class="form-control search_ayat" id="ayat_end"  name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
+								  <input class="form-control search_ayat ayat_end_temp" id="ayat_end"  name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 								</div>
 							</div>
 							<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) jQuery('.form-inline').submit() @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
@@ -48,6 +48,10 @@
 					</form>
 				</div>
 			</div>
+			@else
+			<input type="hidden" class="surah_start_temp" value="{{$surah_start}}"/>
+			<input type="hidden" class="ayat_start_temp" value="{{$ayat_start}}"/>
+			<input type="hidden" class="ayat_end_temp" value="{{$ayat_end}}"/>
 			@endif
 			@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction')
 				<div class="dropdown memoz-options">
@@ -58,7 +62,7 @@
 				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 				    <li><a  href="javascript:;"   onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i> Simpan hafalan</a></li>
 				    <li role="separator" class="divider"></li>
-				    <li><a  href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a></li>
+				    <li><a  href="<?php echo url('memoz')?>"><i class="fa fa-plus"></i> Hafalan baru</a></li>
 				    <li><a  onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar hafalan</a></li>
 				    @if(!empty($memoDetail->id))
 				    <li role="separator" class="divider"></li>
@@ -277,7 +281,11 @@
 		<div class="action">
 
 			@if(Request::segment(2)!='correction')
+			@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
+			<a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url http://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+			@else
 			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
+			@endif
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
 			<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
 			<span class="button disabled one" id="sec_counter">recording...</span>
