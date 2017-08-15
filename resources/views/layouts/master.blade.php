@@ -283,16 +283,18 @@
          $(window).bind('beforeunload', function(){
            $('#preloader').show();
          });
-        /* if('{{Request::segment(3)}}'=='593'){
-             QuranJS.callModal('buku');
-            }*/
-
+         var d = new Date();
+         var isFriday = d.getDay();
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
             if('{{@$_COOKIE['coo_promo_tshirt2']}}'==''){
                 QuranJS.callModal('tshirt');
             }else{
                 if('{{@$_COOKIE['coo_qmc']}}'==''){
                     QuranJS.callModal('donasi');
+                }else{
+                    if(isFriday==5){
+                        QuranJS.callModal('alkahfi');
+                    }
                 }
             }
 
