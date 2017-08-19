@@ -16,7 +16,7 @@
 }
 
 .qm-navbar{
-	background: #fff;
+	background: $white;
 	.qm-brand{
 		display: block;
 		margin: 0 auto;
@@ -42,7 +42,7 @@
 			margin: 11px 0;
 			.btn-search{
 				background-color: $color2;
-				color:#fff;
+				color:$white;
 			}
 		}
 	}
@@ -78,7 +78,7 @@
 }
 
 .navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover, .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus{
-		color: #fff !important;
+		color: $white !important;
 		background: $color2 !important;
 }
 
@@ -90,7 +90,7 @@
 	position: absolute;
 	top:10px;
 	right: 10px;
-	color: #fff;
+	color: $white;
 	font-size: 18px;
 	padding:5px;
 }

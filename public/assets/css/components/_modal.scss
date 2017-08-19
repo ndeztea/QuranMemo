@@ -32,7 +32,7 @@
 			border-width: 1px;
 			border-color: $main-color;
 			border-style: solid;
-			color: #fff;
+			color: $white;
 			background-image: none;
 			text-shadow: none;
 			width: 100%;
@@ -50,12 +50,12 @@
 		.modal-header {
 			background-color: rgba($main-color, .8);
 			h4 {
-				color: #fff;
+				color: $white;
 				font-size: 20px;
 				text-transform: uppercase;
 			}
 			.close {
-				color: #fff;
+				color: $white;
 				opacity: .6;
 				&:hover,
 				&:focus {
@@ -77,12 +77,12 @@
 		.modal-header {
 			background-color: rgba($main-color, .8);
 			h4 {
-				color: #fff;
+				color: $white;
 				font-size: 20px;
 				text-transform: uppercase;
 			}
 			.close {
-				color: #fff;
+				color: $white;
 				opacity: .6;
 				&:hover,
 				&:focus {
@@ -97,7 +97,7 @@
 				display: block;
 				float: left;
 				padding: 10px;
-				color: #fff;
+				color: $white;
 				@include media("<=439px",
 				">=phone") {
 					float: none;
@@ -218,13 +218,13 @@
 			display: none;
 		}
 		.close{
-			color: #fff;
+			color: $white;
 			text-shadow: none;
 		}
 	}
 	.modal-footer {
 		background-color: transparent;
-		color: #fff;
+		color: $white;
 		border-top: none !important;
 		margin-top: -13px;
 	}
@@ -239,7 +239,7 @@
 	}
 	.modal-footer {
 		background: lighten($main-color, 10%);
-		color: #fff;
+		color: $white;
 	}
 }
 

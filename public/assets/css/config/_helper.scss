@@ -57,24 +57,27 @@
 }
 
 .highlight {
-    background-color: #B0FF33
+	background-color: $color8;
+	color: $color3 !important;
+	font-weight: bold;
+	padding: 1px 4px;
 }
 
 .highlight-red {
-    color: #FF0037
+    color: $red;
 }
 .highlight-orange{
-    color: #fdb300;
+    color: $orange;
 }
 .highlight-green{
     color: $main-color;
 }
 
 .highlight-blue{
-     color:#312994;
+     color: $purple;
  }
  .highlight-gray{
-     color:yellow;
+     color: $yellow;
  }
  
  

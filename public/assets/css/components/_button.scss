@@ -1,5 +1,5 @@
 $btn-normal: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: transparent, txtColor: $main-color);
-$btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-color, txtColor: #fff);
+$btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-color, txtColor: $white);
 @mixin boxy($bWidth, $bColor, $bStyle, $bgColor, $txtColor) {
 	border-width: $bWidth;
 	border-color: $bColor;
@@ -12,7 +12,7 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 
 .btn-green-small {
     background-color: $main-color !important;
-    color: #FFF!important;
+    color: $white !important;
     border: solid 1px $main-color-hover !important;
 	&:hover,
 	&:focus{
@@ -22,7 +22,7 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 
 .btn-green-small-darker {
     background-color: #25835B!important;
-    color: #FFF!important
+    color: $white !important
 }
 
 .btn-breadcrumb {
@@ -71,7 +71,7 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 		border-left: 10px solid $main-color;
 	}
 	.btn.btn-default:not(:last-child):after {
-		border-left: 10px solid #fff;
+		border-left: 10px solid $white;
 	}
 	.btn.btn-default:not(:last-child):before {
 		border-left: 10px solid $main-color;
@@ -80,13 +80,13 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 		border-left: 10px solid $main-color;
 	}
 	.btn.btn-default:hover:not(:last-child):before {
-		border-left: 10px solid #fff;
+		border-left: 10px solid $white;
 	}
 }
 
 .btn-green {
 	background-color: $main-color;
-	color: #fff;
+	color: $white;
 	font-size: 14px;
 	margin-left: 3px;
 	@include media("<=480px",
@@ -111,7 +111,7 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 	&.selected {
 		background-color: $main-color-hover;
 		border: solid 1px $main-color-hover;
-		color: #fff;
+		color: $white;
 	}
 	@include media("<tablet",
 	">=phone") {
@@ -135,7 +135,7 @@ $btn-hover: (bWidth: 1px, bColor: $main-color, bStyle: solid, bgColor: $main-col
 	&.selected {
 		background-color: $main-color-hover;
 		border: solid 1px $main-color-hover;
-		color: #fff;
+		color: $white;
 	}
 	@include media("<tablet",
 	">=phone") {

@@ -12,7 +12,7 @@
 		width: 19.7%;
 		&:hover,
 		&:focus {
-			color: #fff;
+			color: $white;
 			background: $main-color-hover;
 		}
 		@include media("<=1279px",
@@ -387,7 +387,7 @@ body.body-memo {
 }
 
 .segmented-control > label:after {
-    color: #fff;
+    color: $white;
     content: attr(data-value);
     text-align: center;
     padding: inherit;
@@ -513,15 +513,11 @@ body.body-memo {
     top:8px;
 }
 
-.count-search .badge {
-    color: #FFF
-}
-
 .btn-bookmark {
     margin-right: 5px
 }
 
 .memoz_nav .btn.active {
-    color: #fff;
+    color: $white;
     background: $main-color;
 }

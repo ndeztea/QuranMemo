@@ -13,7 +13,7 @@ body {
 }
 
 body {
-	background: #fff;
+	background: $white;
 	font-family: $font-stack;
 	@include media("<660px",">=phone"){
 		padding-top: 0;
@@ -113,7 +113,7 @@ ul {
 		padding: 13px 0;
 		background-color: $main-color-hover;
 		border: none;
-		color: #fff;
+		color: $white;
 		&:hover,
 		&:focus,
 		&.selected {
@@ -155,7 +155,7 @@ ul {
 	.navbar-toggle {
 		border-color: transparent;
 		.icon-bar {
-			background-color: #fff;
+			background-color: $white;
 		}
 		&:hover,
 		&:focus {
@@ -168,7 +168,7 @@ ul {
 		border-color: transparent;
 	}
 	.navbar-brand {
-		color: #fff;
+		color: $white;
 		text-shadow: none;
 		font-weight: 700;
 		transition: color 1s ease;
@@ -188,14 +188,14 @@ ul {
 			background-image: none;
 		}
 		&>li>a {
-			color: #fff;
+			color: $white;
 			text-shadow: none;
 		}
 		&>.active>a,
 		&>.active>a:focus,
 		&>.active>a:hover {
 			background-color: $main-color-hover;
-			color: #fff;
+			color: $white;
 		}
 		@include media("<tablet",
 		">=phone") {
@@ -221,7 +221,7 @@ ul {
 	.btn-surah-trigger {
 		width: 100%;
 		background-color: $main-color;
-		color: #fff;
+		color: $white;
 		&:hover,
 		&:focus {
 			background-color: $main-color-hover;
@@ -302,11 +302,11 @@ input[type="number"] {
 		}
 		.btn {
 			background-color: $main-color;
-			color: #fff;
+			color: $white;
 			font-size: 14px;
 			margin-left: 3px;
 			span {
-				color: #fff;
+				color: $white;
 				padding-left: 10px;
 			}
 			@include media("<=480px",
@@ -354,7 +354,7 @@ input[type="number"] {
 		.btn {
 			background-color: $main-color;
 			border-color: $main-color;
-			color: #fff;
+			color: $white;
 			text-shadow: none;
 		}
 	}
@@ -383,7 +383,7 @@ input[type="number"] {
 .pagination>li>span:hover {
 	background-color: $main-color;
 	border-color: $main-color;
-	color: #fff;
+	color: $white;
 }
 
 .pagination .page_free_input {
@@ -407,7 +407,7 @@ input[type="number"] {
 			transition: background .5s ease;
 			&:hover {
 				background: $main-color;
-				color: #fff;
+				color: $white;
 			}
 		}
 		input {
@@ -438,7 +438,7 @@ input[type="number"] {
 	}
 	.auto-play {
 		margin-right: 10px;
-		color: #fff;
+		color: $white;
 		@include media("<=480px",
 		">=phone") {
 			text-align: center;
@@ -524,7 +524,7 @@ input[type="number"] {
 				}
 				h2 {
 					margin: 0 0 20px;
-					color: #fff;
+					color: $white;
 					@include media("<tablet",
 					">=480px") {
 						text-align: center;
@@ -598,7 +598,7 @@ input[type="number"] {
 		border: solid 1px $main-color;
 		color: $main-color;
 		text-align: center;
-		background: #fff;
+		background: $white;
 		border-radius: 0;
 		&:hover,
 		&:focus {
@@ -615,12 +615,12 @@ input[type="number"] {
 	.btn {
 		margin: 0;
 		background-color: #1fa67a;
-		color: #fff;
+		color: $white;
 		border-left: solid 1px #1b926c;
 		&:hover,
 		&:focus {
 			background-color: #1b926c;
-			color: #fff
+			color: $white;
 		}
 	}
 }
@@ -681,7 +681,7 @@ input[type="number"] {
 	overflow: none;
 	.loading {
 		font-size: 24px;
-		color: #FFF;
+		color: $white;
 		position: fixed;
 		text-align: center;
 		width: 100%;

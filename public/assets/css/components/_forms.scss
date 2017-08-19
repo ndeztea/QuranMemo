@@ -42,8 +42,8 @@
 	width: 80%;
 	margin: 30px auto 0;
 	.form-control {
-		border: solid 1px #fff;
-		border-bottom: dashed 1px #ddd;
+		border: solid 1px $white;
+		border-bottom: dashed 1px $white;
 		box-shadow: none;
 		margin-bottom: 5px;
 		border-radius: 6px !important;
@@ -57,8 +57,8 @@
 		border-radius: 6px;
 		color: $main-color;
 		font-size: 20px;
-		background: #fff;
-		border: solid 1px #fff;
+		background: $white;
+		border: solid 1px $white;
 		box-shadow: none !important;
 		&:hover,
 		&:focus,
@@ -67,7 +67,7 @@
 		}
 	}
 	.btn-daftar{
-		color: #fff;
+		color: $white;
 		font-size: 16px;
 		margin: 15px auto 0;
 		display: block;
@@ -97,12 +97,12 @@
 			position: relative;
 			z-index: 2;
 			height: 333px;
-			color: #fff;
+			color: $white;
 			padding: 10px 0;
 			font-size: 16px;
 			h3 {
 				text-align: center;
-				color: #fff;
+				color: $white;
 				font-weight: 600;
 				margin-bottom: 20px;
 				font-size: 20px;
@@ -142,8 +142,8 @@
 		border-radius: 6px;
 		color: $main-color;
 		font-size: 20px;
-		background: #fff;
-		border: solid 1px #fff;
+		background: $white;
+		border: solid 1px $white;
 		margin-bottom: 10px;
 		box-shadow: none !important;
 		&:hover,
@@ -153,7 +153,7 @@
 		}
 	}
 	.btn-masuk{
-		color: #fff;
+		color: $white;
 		font-size: 16px;
 		margin: 15px auto 0;
 		display: block;
@@ -170,7 +170,7 @@
 	text-align: center;
 	padding:10px 0;
 	font-size: 14px;
-	color: #fff;
+	color: $white;
 }
 
 .register-block{
@@ -201,10 +201,10 @@
 		@extend .filter;
 		padding-top: 15px;
 		.nav{
-			background: #fff;
+			background: $white;
 		}
 		.form-heading{
-			color: #fff;
+			color: $white;
 		}
 		.btn-simpan,
 		.btn-upload-img{
@@ -214,9 +214,15 @@
 			@extend .btn-masuk;
 		}
 		.input-file{
-			color: #fff;
+			color: $white;
+			width: 80%;
+			text-align: center !important;
+			padding: 10px 25px;
+			display: block;
+			border: solid 1px #fff;
+			margin: 20px auto 0;
 			&:before{
-				color: #fff;
+				color: $white;
 			}
 		}
 	}

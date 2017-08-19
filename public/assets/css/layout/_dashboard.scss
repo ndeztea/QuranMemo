@@ -39,7 +39,7 @@
     }
     .dash-profile-name{
         margin-bottom: 5px;
-        color: #fff;
+        color: $white;
         font-size: 18px;
         .fa{
             position: relative;
@@ -48,7 +48,7 @@
             span{
                 position: absolute;
                 text-align: center;
-                color: #fff;
+                color: $white;
                 top:0;
                 left:0;
                 right:0;
@@ -66,9 +66,9 @@
         bottom: -15px;
         right: 10px;
         border-radius: 100%;
-        border: solid 1px #fff;
+        border: solid 1px $white;
         background: $color4;
-        color: #fff;
+        color: $white;
         z-index: 99;
         font-size: 16px;
     }
@@ -113,7 +113,7 @@
                 padding-top: 10px;
             }
             .tabbed-nav-link{
-                color: #fff;
+                color: $white;
                 padding: 7px 5px;
                 text-align: center;
                 display: block;
@@ -192,7 +192,7 @@
                 display: inline-block;
                 text-align: center;
                 padding: 7px 15px;
-                background-color: $color6;
+                background-color: $white;
                 border: solid 1px $main-color;
                 margin-right: 7px;
                 border-radius: 4px;
@@ -200,8 +200,3 @@
         }
     }
 }
-
-
-
-
-
