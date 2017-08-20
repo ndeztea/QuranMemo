@@ -2453,6 +2453,16 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
   color: #fff;
   background: #00978A; }
 
+@media (max-width: 480px) and (min-width: 320px) {
+  .select-surah {
+    padding: 7px 0 !important; } }
+@media (max-width: 480px) and (min-width: 320px) {
+  .select-surah .form-inline .btn-cari-ayat {
+    width: 32.33% !important;
+    font-size: 14px !important;
+    padding: 10px 7px !important;
+    margin-top: 7px !important; } }
+
 .dashboard-wrap
 .boxcontent {
   padding: 0; }

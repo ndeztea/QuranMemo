@@ -521,3 +521,22 @@ body.body-memo {
     color: $white;
     background: $main-color;
 }
+
+.select-surah{
+    @include media("<=480px",
+    ">=phone") {
+        padding: 7px 0 !important;
+    }
+    .form-inline{
+        .btn-cari-ayat{
+            @include media("<=480px",
+            ">=phone") {
+                width: 32.33% !important;
+                font-size: 14px !important;
+                padding: 10px 7px !important;
+                margin-top: 7px !important;
+            }
+        }
+    }
+}
+
