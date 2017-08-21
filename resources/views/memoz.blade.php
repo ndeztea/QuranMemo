@@ -282,7 +282,8 @@
 
 			@if(Request::segment(2)!='correction')
 			@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-			<a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url http://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+			<!--a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url http://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a-->
+			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
 			@else
 			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
 			@endif
