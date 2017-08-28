@@ -237,7 +237,7 @@ class MushafController extends Controller
         $juzs = $QuranModel->getJuz();
 
         $data['juzs'] = $juzs;
-        $dataHTML['modal_title'] = 'Juz';
+        $dataHTML['modal_title'] =  'Juz';
         $dataHTML['modal_body'] = view('mushaf_juz',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
@@ -281,7 +281,7 @@ class MushafController extends Controller
         $data['curr_page'] = $page;
 
         // data header
-        $data['header_title'] = 'Mushaf Hal '. $page.', Juz '.$ayats[0]->juz.', Surah '.$ayats[0]->surah_name;
+        $data['header_title'] = $data['header_top_title'] = 'Mushaf Hal '. $page.', Juz '.$ayats[0]->juz.', Surah '.$ayats[0]->surah_name;
         $data['body_class'] = 'body-mushaf';
 
         $data['ayat_start'] = '';

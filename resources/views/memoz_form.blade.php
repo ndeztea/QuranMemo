@@ -4,7 +4,7 @@
 		<div class="form-group">
 			<select name="surah_start"  id="surah_start" class="form-control">
 				@foreach($surahs as $surah)
-				<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}})</option>
+				<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}}  {{$surah->ayat}} ayat)</option>
 				@endforeach
 			</select>
 		</div>
