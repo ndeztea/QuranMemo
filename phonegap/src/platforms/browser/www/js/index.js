@@ -45,7 +45,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        app.browser = cordova.InAppBrowser.open('http://192.168.100.7/QuranNote/public/dashboard', '_blank', 'location=no,zoom=no,hidden=yes');
+        app.browser = cordova.InAppBrowser.open('http://192.168.100.5/QuranNote/public/dashboard', '_blank', 'location=no,zoom=no,hidden=yes');
         //app.browser = cordova.InAppBrowser.open('https://www.quranmemo.com/public/dashboard?starting=yes', '_blank', 'location=no,zoom=no,hidden=yes');
         // disable back
         document.addEventListener("backbutton", function (e) {
