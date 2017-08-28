@@ -2459,7 +2459,7 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
 @media (max-width: 480px) and (min-width: 320px) {
   .select-surah .form-inline .btn-cari-ayat {
     width: 32.33% !important;
-    font-size: 14px !important;
+    font-size: 12px !important;
     padding: 10px 7px !important;
     margin-top: 7px !important; } }
 
@@ -2564,10 +2564,8 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
         .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:active, .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:hover, .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:focus {
           color: #00978A; }
 
-.timeline-koreksi {
-  margin-bottom: 20px; }
-  .timeline-koreksi .boxcontent-label {
-    text-align: center; }
+.timeline-koreksi .boxcontent-label {
+  text-align: center; }
 
 .correction-list
 .correction-list-item {
@@ -2622,5 +2620,8 @@ body.body-memo .mushaf, body.body-memo .boxcontent {
         border: solid 1px #00978A;
         margin-right: 7px;
         border-radius: 4px; }
+
+.tab-pane .btn-green {
+  border-radius: 0; }
 
 /*# sourceMappingURL=style.min.css.map */

@@ -129,7 +129,6 @@
 }
 
 .timeline-koreksi{
-    margin-bottom: 20px;
     .boxcontent-label{
         text-align: center;
     }
@@ -198,5 +197,11 @@
                 border-radius: 4px;
             }
         }
+    }
+}
+
+.tab-pane{
+    .btn-green{
+        border-radius: 0;
     }
 }
