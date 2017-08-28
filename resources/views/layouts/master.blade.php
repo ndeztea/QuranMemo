@@ -286,7 +286,7 @@
          var d = new Date();
          var isFriday = d.getDay();
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_promo_tshirt2']}}'==''){
+            if('{{@$_COOKIE['coo_promo_tshirtseptember17']}}'==''){
                 QuranJS.callModal('tshirt');
             }else{
                 if('{{@$_COOKIE['coo_qmc']}}'==''){

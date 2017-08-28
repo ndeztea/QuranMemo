@@ -23,8 +23,8 @@
 										<div class="buku">
 										</div>
 										<div class="promo-txt">
-											<h3>Dapatkan buku-buku gratis dari QuranMemo</h3>
-											<p>Syaratnya adalah perbanyak menghafal menggunakan QuranMemo, kami akan menyeleksi beberapa pengguna yang banyak menghafal dan menggunakan QuranMemo per 2 bulan sekali, ayo semangat terus dalam menghafal dan membumikan Al-Quran.</p>
+											<h3>Dapatkan T-Shirt gratis dari QuranMemo</h3>
+											<p>Syaratnya adalah perbanyak menghafal menggunakan QuranMemo, kami akan menyeleksi beberapa pengguna yang banyak menghafal dan menggunakan QuranMemo per 1 bulan sekali, ayo semangat terus dalam menghafal dan membumikan Al-Quran.</p>
 										</div>
 									</div>
 								</div>
