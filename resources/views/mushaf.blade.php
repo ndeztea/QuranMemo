@@ -22,10 +22,10 @@ $prev_surah = '';
 
 					<div class="nav-top clearfix">
 						<div class="container-fluid">
-							<button class="btn btn-search-surah pull-left hidden-xs" onclick="QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse">
+							<button class="btn btn-search-surah pull-left hidden-xs hidden-lg hidden-md" onclick="QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse">
 							  <i class="fa fa-search"></i> <span>Cari</span>
 							</button>
-							<a href="javascript:;" onclick="QuranJS.callModal('mushaf/juz')"  class="btn pull-right btn-juz hidden-xs"  ><i class="fa fa-book"></i> <span>Juz</span></a>
+							<a href="javascript:;" onclick="QuranJS.callModal('mushaf/juz')"  class="btn pull-right btn-juz hidden-xs hidden-lg hidden-md"  ><i class="fa fa-book"></i> <span>Juz</span></a>
 							
 							<div class="hidden-xs" id="surah-collapse">
 								<div class="row">

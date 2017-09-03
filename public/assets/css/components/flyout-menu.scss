@@ -1,6 +1,18 @@
-.c-circle-menu__item{
-    width: 36px !important;
-    height: 36px !important;
+@include media("<=767px",
+">=phone") {
+    .c-circle-menu__item{
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+@include media(
+">=tablet") {
+    .c-circle-menu__item,
+    .c-circle-menu__toggle{
+        width: 48px !important;
+        height: 48px !important;
+    }
 }
 
 .c-circle-menu__link{
