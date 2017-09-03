@@ -114,12 +114,21 @@
 		}
 		&.playing {
 			&.playing .arabic {
-				background-color: darken(hsla(103, 44%, 89%, 0.82), 10%) !important;
+				background-color: lighten($main-color, 50%) !important;
 				color: darken($main-color, 20%);
 			}
 			&.playing .trans {
-				background-color: hsla(103, 44%, 89%, 0.82) !important;
+				background-color: lighten($main-color, 55%) !important;
 				color: darken($main-color, 20%);
+			}
+			&.playing .action-footer{
+				border-top: dashed 2px $main-color;
+			}
+			&.playing .action-footer,
+			&.playing .action-footer .btn{
+				background-color: lighten($main-color, 55%) !important;
+				color: $dark;
+				border-left-color: $main-color;
 			}
 		}
 		.head_surah {
@@ -136,6 +145,8 @@
 		}
 		&.playing {
 			background-color: rgba(255, 255, 255, 0.8);
+			border-top: dashed 2px $main-color;
+			border-bottom: dashed 2px $main-color;
 		}
 		.arabic {
 			text-align: right;

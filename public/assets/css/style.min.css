@@ -1759,11 +1759,17 @@ body.canvas-slid .loading {
     .mushaf .ayat_section:last-child, .boxcontent .ayat_section:last-child {
       border-bottom: none; }
     .mushaf .ayat_section.playing.playing .arabic, .boxcontent .ayat_section.playing.playing .arabic {
-      background-color: rgba(191, 225, 178, 0.82) !important;
+      background-color: #97fff6 !important;
       color: #00312d; }
     .mushaf .ayat_section.playing.playing .trans, .boxcontent .ayat_section.playing.playing .trans {
-      background-color: rgba(222, 239, 215, 0.82) !important;
+      background-color: #b1fff8 !important;
       color: #00312d; }
+    .mushaf .ayat_section.playing.playing .action-footer, .boxcontent .ayat_section.playing.playing .action-footer {
+      border-top: dashed 2px #00978A; }
+    .mushaf .ayat_section.playing.playing .action-footer, .boxcontent .ayat_section.playing.playing .action-footer, .mushaf .ayat_section.playing.playing .action-footer .btn, .boxcontent .ayat_section.playing.playing .action-footer .btn {
+      background-color: #b1fff8 !important;
+      color: #00312d;
+      border-left-color: #00978A; }
     .mushaf .ayat_section .head_surah, .boxcontent .ayat_section .head_surah {
       text-align: center;
       padding-bottom: 10px; }
@@ -1774,7 +1780,9 @@ body.canvas-slid .loading {
     .mushaf .ayat_section .surah_name, .boxcontent .ayat_section .surah_name {
       padding: 10px; }
     .mushaf .ayat_section.playing, .boxcontent .ayat_section.playing {
-      background-color: rgba(255, 255, 255, 0.8); }
+      background-color: rgba(255, 255, 255, 0.8);
+      border-top: dashed 2px #00978A;
+      border-bottom: dashed 2px #00978A; }
     .mushaf .ayat_section .arabic, .boxcontent .ayat_section .arabic {
       text-align: right;
       color: #0d4643;
