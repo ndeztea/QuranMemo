@@ -1,0 +1,66 @@
+.c-circle-menu__item{
+    width: 36px !important;
+    height: 36px !important;
+}
+
+.c-circle-menu__link{
+    background-color: lighten($main-color,5%);
+    position: relative;
+    .menu-caption{
+        color: $white !important;
+        font-size: 14px;
+        position: absolute;
+    }
+}
+
+.menu-icon{
+    background-color: $main-color;
+    .fa{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 20px;
+        color: $white;
+        width: 32px;
+        height: 22px;
+        text-align: center;
+    }
+}
+
+.menu__link1{
+    .menu-caption{
+        top: -20px;
+        left: -19px;
+    }
+}
+
+.menu__link2{
+    .menu-caption{
+        top: -9px;
+        left: -25px;
+    }
+}
+
+.menu__link3{
+    .menu-caption{
+        top: 1px;
+        left: -95px;
+    }
+}
+
+.menu__link4{
+    .menu-caption{
+        top: 6px;
+        left: -54px;
+    }
+}
+
+.menu__link5{
+    .menu-caption{
+        top: 9px;
+        left: -82px;
+    }
+}

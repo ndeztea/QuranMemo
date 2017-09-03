@@ -11,8 +11,11 @@
 @import 'components/forms';
 @import 'components/quran-player';
 @import 'components/recorder';
+@import 'components/flyout-menu';
 // layouts
 @import 'layout/generic';
 @import 'layout/mushaf';
 @import 'layout/memoz';
 @import 'layout/dashboard';
+//vendors
+@import 'vendors/circle-menu';

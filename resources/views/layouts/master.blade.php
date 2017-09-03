@@ -51,6 +51,7 @@
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/jasny-bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/select2.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/vendors/circle-menu.min.css')}}">
 
         <style>
         .tanwin1:nth-letter(1){
@@ -251,7 +252,19 @@
     <script src="{{url('assets/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap-datepicker.en-GB.min.js')}}"></script>
     <script src="{{url('assets/js/jQuery.nthEverything.min.js')}}"></script>
-    <script src="{{url('assets/js/select2.min.js')}}"></script>  
+    <script src="{{url('assets/js/select2.min.js')}}"></script>
+    <script src="{{url('assets/js/circleMenu.js')}}"></script>
+
+    <script>
+        var el = '.js-menu';
+        var myMenu = cssCircleMenu(el);
+        $('.player-show').hide();
+        $( ".c-circle-menu__link" ).click(function() {
+           $('.c-circle-menu').removeClass('is-active');
+           $('.c-circle-menu__toggle').removeClass('is-active');
+           $('.c-circle-menu__mask').removeClass('is-active');
+        });
+    </script>
 
     <script type="text/javascript">
           $(document).ready(function(){

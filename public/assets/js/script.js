@@ -626,6 +626,14 @@ var QuranJS = {
 
 	},
 
+	hidePlayer : function() {
+		$('.quran_player').hide();
+	},
+
+	showPlayer : function() {
+		$('.quran_player').show();
+	},
+
 	createMemoModal : function(){
 		$('.modal-body').html('');
 		$('#QuranModal').modal('show');
