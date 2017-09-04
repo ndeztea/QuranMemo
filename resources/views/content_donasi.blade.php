@@ -5,8 +5,8 @@ Jika ada yang ingin ikut berkontribusi dalam pengembangan aplikasi ini baik itu 
 
 Sejauh ini progress pengembangan aplikasi bisa di lihat di halaman web 
 https://quranmemo.com</p-->
-<p>Yang ingin mencoba aplikasi QuranMemo <sup>Community</sup>  bisa download apk-nya(belum rilis playstore) dengan copy URL di bawah ini, lalu paste di halaman browser android antum...</p>
-<div style="font-size: 24px;text-align: center;border: 1px dashed;background-color: #ffe6d2;padding: 2px;">https://s.id/qmcom</div>
+<p>Download QuranMemo <sup>Community</sup> beta 2, copy URL di bawah ini, lalu paste di halaman browser android antum...</p>
+<div style="font-size: 24px;text-align: center;border: 1px dashed;background-color: #ffe6d2;padding: 2px;">https://s.id/qmcombeta2</div>
 <p>Jika ingin ikut berkontribusi dalam projek ini bisa kirim email ke </p>
 <div style="font-size: 16px;text-align: center;border: 1px dashed;background-color: #ffe6d2;padding: 2px;"">quranmemo.id@gmail.com</div>
 
