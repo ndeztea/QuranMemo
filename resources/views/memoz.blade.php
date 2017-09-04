@@ -53,36 +53,11 @@
 			<input type="hidden" class="ayat_start_temp" value="{{$ayat_start}}"/>
 			<input type="hidden" class="ayat_end_temp" value="{{$ayat_end}}"/>
 			@endif
-			@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction')
-				<div class="dropdown memoz-options">
-				  <button class="btn btn-green dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				    Options
-				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-				    <li><a  href="javascript:;"   onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')"><i class="fa fa-floppy-o"></i> Simpan hafalan</a></li>
-				    <li role="separator" class="divider"></li>
-				    <li><a  href="<?php echo url('memoz')?>"><i class="fa fa-plus"></i> Hafalan baru</a></li>
-				    <li><a  onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar hafalan</a></li>
-				    @if(!empty($memoDetail->id))
-				    <li role="separator" class="divider"></li>
-				    <li><a onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar koreksi</a></li>
-				    @endif
-				    
-				    @if(!empty($ayats) && (Request::segment(2)!='correction' || session('sess_id')==$memoDetail->id_user) && Request::segment(2)!='correction')
-				    <li role="separator" class="divider"></li>
-				    <li>@if(!empty($memoDetail->id))
-								
-								<a style="display: none" class="memoz-0" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
-								<a style="display: none" class="memoz-1" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
-							@endif</li>
-					<li><a href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i> Panduan menghafal </a></li>
-					<li><a  href="#" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())"><i class="fa fa-cog"></i> Setting Memoz
-						</a></li>
-				    @endif
-				  </ul>
-				</div>
-
+			@if(!empty($memoDetail->id))					
+				<a style="display: none" class="memoz-0 btn btn-green-small" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
+				<a style="display: none" class="memoz-1 btn btn-green-small" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
+			
+				<a onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn btn-green-small"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
 			@endif
 			<input type="hidden" name="repeat" class="repeat" value="1" />
 			<input type="hidden" name="muratal" class="muratal" value="1" />
@@ -282,14 +257,14 @@
 
 			@if(Request::segment(2)!='correction')
 			@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-			<!--a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url http://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a-->
-			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
+			<a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url http://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+			<!--a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a-->
 			@else
 			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
 			@endif
 			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
 			<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
-			<span class="button disabled one" id="sec_counter">recording...</span>
+			<!--span class="button disabled one" id="sec_counter">recording...</span-->
 			<a class="button  @if(empty($memoDetail->record)) disabled @endif" id="play_audio" onclick="playAudio()"><i class="fa fa-play-circle"></i></a>
 			<a class="button  disabled" id="pause_audio" onclick="pauseAudio()"><i class="fa fa-pause-circle"></i></a>
 			
@@ -311,6 +286,56 @@
 	</div>
 </div>
 
+@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction')
+<nav class="c-circle-menu js-menu mushaf-menu">
+	<button class="c-circle-menu__toggle js-menu-toggle">
+		<span>Toggle</span>
+	</button>
+	<ul class="c-circle-menu__items">
+		
+		<li class="c-circle-menu__item">
+			<button type="button" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()" class="c-circle-menu__link menu__link5">
+				<span class='menu-icon'><i class='fa fa-info'></i></span>
+				<span class='menu-caption'>Panduan</span>
+			</button>
+		</li>
+		<!-- end-item -->	
+
+		<li class="c-circle-menu__item">
+			<button type="button" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="c-circle-menu__link menu__link4">
+				<span class='menu-icon'><i class='fa fa-cog'></i></span>
+				<span class='menu-caption'>Setting</span>
+			</button>
+		</li>
+		<!-- end-item -->
+
+		<li class="c-circle-menu__item">
+			<a href="javascript:;" onclick="QuranJS.memozList()" class="c-circle-menu__link menu__link3">
+				<span class='menu-icon'><i class='fa fa-file-text'></i></span>
+				<span class='menu-caption'>Daftar Hafalan</span>
+			</a>
+		</li>
+		<!-- end-item -->	
+													
+		<li class="c-circle-menu__item">
+			<a  href="{{url('memoz')}}"  class="c-circle-menu__link menu__link2">
+				<span class='menu-icon'><i class='fa fa-plus'></i></span>
+				<span class='menu-caption'>Baru</span>
+			</a>
+		</li>
+
+		<li class="c-circle-menu__item">
+			<a type="button" onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')" class="c-circle-menu__link menu__link1">
+				<span class='menu-icon'><i class='fa fa-floppy-o'></i></span>
+				<span class='menu-caption'>Simpan</span>
+			</a>
+		</li>
+		<!-- end-item -->
+
+	</ul>
+	<div class="c-circle-menu__mask js-menu-mask"></div>
+</nav>
+@endif
 <script type="text/javascript">
 function endAudio(){
 	$('#audio').bind("ended", function(){ jQuery('#play_audio').removeClass('disabled'); jQuery('#pause_audio').addClass('disabled'); });
