@@ -54,10 +54,10 @@
 			<input type="hidden" class="ayat_end_temp" value="{{$ayat_end}}"/>
 			@endif
 			@if(!empty($memoDetail->id))					
-				<a style="display: none" class="memoz-0 btn btn-green-small" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
-				<a style="display: none" class="memoz-1 btn btn-green-small" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
+				<a style="display: none" class="memoz-0" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
+				<a style="display: none" class="memoz-1" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
 			
-				<a onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn btn-green-small"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
+				<a onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
 			@endif
 			<input type="hidden" name="repeat" class="repeat" value="1" />
 			<input type="hidden" name="muratal" class="muratal" value="1" />
