@@ -255,16 +255,7 @@
     <script src="{{url('assets/js/select2.min.js')}}"></script>
     <script src="{{url('assets/js/circleMenu.js')}}"></script>
 
-    <script>
-        var el = '.js-menu';
-        var myMenu = cssCircleMenu(el);
-        $('.player-show').hide();
-        $( ".c-circle-menu__link" ).click(function() {
-           $('.c-circle-menu').removeClass('is-active');
-           $('.c-circle-menu__toggle').removeClass('is-active');
-           $('.c-circle-menu__mask').removeClass('is-active');
-        });
-    </script>
+    
 
     <script type="text/javascript">
           $(document).ready(function(){
@@ -275,6 +266,17 @@
             });
 
             $('.navmenu').offcanvas({autohide: false,toggle:false});
+
+            $('#login_email').on("focus", function(){
+                $('.login-brand').hide();
+                console.log('mam');
+            });
+
+            $( ".login_form .form-control" ).focus(function() {
+            alert( "Handler for .focus() called." );
+            });
+
+
 
             // Hide Header on on scroll down
             var didScroll;
