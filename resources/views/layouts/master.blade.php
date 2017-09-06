@@ -289,7 +289,7 @@
             if('{{@$_COOKIE['coo_promo_tshirtseptember17']}}'==''){
                 QuranJS.callModal('tshirt');
             }else{
-                if('{{@$_COOKIE['coo_qmcbeta2']}}'==''){
+                if('{{@$_COOKIE['coo_qmrc']}}'==''){
                     QuranJS.callModal('donasi');
                 }else{
                     if(isFriday==5){
