@@ -6,11 +6,11 @@
 	<form class="form-horizontal" action="" onsubmit="QuranJS.authProcess();return false" method="post">
 		<div class="form-group">
 			<label for="email" class="control-label sr-only">Email</label>
-			<input type="email" class="form-control" name="login_email" id="login_email" aria-label="email" placeholder="Email" />
+			<input type="email" class="form-control" name="login_email" id="login_email" aria-label="email" placeholder="Email" onfocus="hideLoginStuff()" onblur="showLoginStuff()"/>
 		</div>
 		<div class="form-group">
 			<label for="password" class="control-label sr-only">Password</label>
-			<input type="password" class="form-control" name="login_password" id="login_password" aria-label="password" placeholder="Password" />
+			<input type="password" class="form-control" name="login_password" id="login_password" aria-label="password" placeholder="Password" onfocus="hideLoginStuff()"  onblur="showLoginStuff()"/>
 		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-default btn-masuk">
