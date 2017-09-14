@@ -162,6 +162,8 @@ $(document).ready(function(){
 
 			$('*','.mushaf').removeClass('playing');
 			$('div.'+ayat_selector).addClass('playing');
+
+
 			var tmpcurrentPlay = muratalPlaylist.current;
 			var currentPlay = parseInt(tmpcurrentPlay) + 1;
 			//console.log(muratalPlaylist.playlist.length+"="+ currentPlay);
@@ -170,6 +172,11 @@ $(document).ready(function(){
 
 			focusPlay = currentPlay - 1;
 			location.href='#play_'+focusPlay;
+
+			// update play counter
+			var counter_play = $('.play_'+tmpcurrentPlay+' .counter_play').html();
+			counter_play = parseInt(counter_play);
+			$('.play_'+tmpcurrentPlay+' .counter_play').html(counter_play+1);
 
 
 			if(muratalPlaylist.playlist.length==currentPlay){
