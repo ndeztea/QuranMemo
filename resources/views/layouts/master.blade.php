@@ -263,20 +263,18 @@
                 QuranJS.redHightlight();
 
                 $('.selectpicker').select2();
+
+
             });
+
+            function hideLoginStuff(){
+                 $('.login-brand,.modal-footer').hide();
+               }
+            function showLoginStuff(){
+                $('.login-brand,.modal-footer').show();
+               }
 
             $('.navmenu').offcanvas({autohide: false,toggle:false});
-
-            $('#login_email').on("focus", function(){
-                $('.login-brand').hide();
-                console.log('mam');
-            });
-
-            $( ".login_form .form-control" ).focus(function() {
-            alert( "Handler for .focus() called." );
-            });
-
-
 
             // Hide Header on on scroll down
             var didScroll;
@@ -422,9 +420,9 @@
             }
          }
 
+            
+
         </script>
-         
-    </script>
     @include('layouts.analytics') 
 
     </body>
