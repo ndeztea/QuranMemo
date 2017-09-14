@@ -176,7 +176,7 @@ $prev_surah = '';
 
 							<div    class="clearfix ayat_section section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}">
 								@if($a!=0)
-								<div id="play_{{$a + 1}}"></div>
+								<div id="play_{{$a}}"></div>
 								<div id="surah_{{$ayat->surah}}_{{$ayat->ayat}}"></div>
 								<?php endif?>
 								<div class="{{$ayat->juz_header!=0?'juz_head ':''}}arabic arabic_{{$a}}"> 
