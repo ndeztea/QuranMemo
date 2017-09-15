@@ -116,6 +116,11 @@
         &noscript=1"/>
         </noscript>
         <!-- End Facebook Pixel Code -->
+        @if(Request::segment(1)=='memoz')
+        <script>
+          fbq('track', 'ViewContent');
+        </script>
+        @endif
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif">
 
@@ -181,7 +186,7 @@
                         <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}">{{trans('trans.memo')}}</a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('tshirt')" >T-Shirt <sup>new</sup></a></li>
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('donasi')" >Community <sup>new</sup></a></li>
-                        <li><a href="javascript:void(0)" onclick="QuranJS.callModal('store')" >Store </a></li>
+                        <!--li><a href="javascript:void(0)" onclick="QuranJS.callModal('store')" >Store </a></li-->
                         <li><a href="javascript:void(0)" onclick="QuranJS.callModal('buku')" >Berbagi Buku</a></li>
                         <li><a href="{{url('register')}}">Daftar</a></li>
                         <li><a href="javascript:;" onclick="QuranJS.callModal('info')">Info</a></li>

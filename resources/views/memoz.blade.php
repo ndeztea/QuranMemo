@@ -22,6 +22,8 @@
 			<div class="nav-top clearfix">
 			<div style="display:{{!empty($ayats)?'none':''}}">
 				<div class="select-surah pull-left">
+					<p class="alert alert-warning memoz-message" style="width:100%;margin:10px 0px">Tentukan surah dan ayat yang Anda ingin hafal, di sarankan target hafalan jangan terlalu panjang, perkirakan sesuai kemampuan hafalan Anda.</p>
+								
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post" onsubmit="cookieLastMemo()">
 							<!--span class="search-title">Surah</span-->
 							<div class="form-group">
@@ -49,7 +51,7 @@
 								</div>
 							</div>
 							
-							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit"><i class="fa fa-search"></i><span class="sr-only">Cari</span></button>
+							<button class="btn btn-cari-ayat" type="submit" name="btnSubmit" onclick="fbq('track', 'HafalanBaru');"><i class="fa fa-play"></i> Mulai Menghafal<span class="sr-only">Cari</span></button>
 							
 							@if(isset($_COOKIE['coo_last_memoz']))
 							<a class="btn btn-cari-ayat btn-last-memoz" href="{{$_COOKIE['coo_last_memoz']}}"><i class="fa fa-sign-in"></i> Hafalan Terakhir</a>
@@ -59,7 +61,7 @@
 			</div>
 			@if(!empty($ayats))
 				<div class="select-surah pull-left">
-					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal()"><i class="fa fa-plus"></i> Hafalan baru</a>
+					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.createMemoModal();fbq('track', 'HafalanBaru')"><i class="fa fa-plus"></i> Hafalan baru</a>
 					<!--a class="btn btn-green-small" href="{{url('memoz')}}"><i class="fa fa fa-thumbs-up"></i> Hafal</a-->
 					<a class="btn btn-green-small" href="javascript:;" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()"><i class="fa fa-info"></i> Info</a>
 				</div>
@@ -201,7 +203,7 @@
 								
 								<div class="action-footer">
 					                <div class="btn-group">
-					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
+					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;" onclick="fbq('track', 'PutarAyat');"><i class="fa fa-play"></i> Putar</a>
 					                  <a class="btn btn-share-ayat" href="#"  onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
 					                  <a class="btn-share-ayat btn counter_{{$a}}" href="javascript:void(0)" onclick="QuranJS.updateCounter('counter_{{$a}}')"><i class="fa fa-volume-up"></i> Baca <span class="counter">0</span>x</a>
 					                  <a class="memozed btn-share-ayat btn" style="display:none" href="javascript:void(0)" onclick="QuranJS.memorized('section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}')"><i class="fa fa-thumbs-up"></i> Hafal</a>
@@ -217,7 +219,7 @@
 						<!-- /mushaf -->
 
 						<?php else:?>
-							<div class="alert alert-warning memoz-message">
+							<!--div class="alert alert-warning memoz-message">
 								<p>Tentukan surah dan ayat yang Anda ingin hafal, di sarankan target hafalan jangan terlalu panjang, perkirakan sesuai kemampuan hafalan Anda.</p>
 								<!--p>Dalam proses hafalan terdapat 5 tahapan, yaitu : </p>
 								<br>
@@ -231,7 +233,7 @@
 								<br>
 								<p>Jangan lupa untuk berdo'a kepada Allah Ta'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p-->
 
-							</div>
+							<!--/div-->
 						<?php endif?>		
 
 					</div>
@@ -355,5 +357,4 @@ $(document).ready(function(){
 	  });
 	});
 </script>
-
 @endsection

@@ -172,7 +172,6 @@ $(document).ready(function(){
 			focusPlay = currentPlay - 1;
 			location.href='#play_'+focusPlay;
 
-
 			if(muratalPlaylist.playlist.length==currentPlay){
 				window.goNext = true;
 			}
