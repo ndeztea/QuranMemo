@@ -112,11 +112,8 @@ function uploadPhoto(imageURI) {
 											<form class="form-horizontal" action="#" onsubmit="return false" method="post">
 												<input type="hidden" name="device_id" id="profile_edit" value=""/>
 												<img src="{{getAvatar($detailUser)}}" width="150" id="img_avatar"/>
-												@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-												<button onclick="getImage();alert('yes')" class="btn btn-primary"></button>
-												@else
 												<input class="input-file" type="file" name="avatar" id="avatar">
-												@endif
+												
 												<br/>
 												<input type="submit" value="Upload" id="btn-upload" class="btn btn-upload-img" onclick="QuranJS.uploadAvatar()"/>
 											</form>
