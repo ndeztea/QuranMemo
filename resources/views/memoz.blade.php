@@ -257,7 +257,7 @@
 
 			@if(Request::segment(2)!='correction')
 			@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-			<a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url http://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+			<a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
 			<!--a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a-->
 			@else
 			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
@@ -370,6 +370,8 @@ function setRecordTime(){
 }
 
 $(document).ready(function(){
+	@if(session('sess_id') && !empty($ayats) && Request::segment(2)!='correction')
+
 	var el = '.js-menu';
     var myMenu = cssCircleMenu(el);
     $('.player-show').hide();
@@ -378,7 +380,7 @@ $(document).ready(function(){
        $('.c-circle-menu__toggle').removeClass('is-active');
        $('.c-circle-menu__mask').removeClass('is-active');
     });
-        
+    @endif 
 	QuranJS.fillAyatEnd();
 	@if(!empty($memoDetail))
 		jQuery('.memoz-1,.memoz-0').hide();

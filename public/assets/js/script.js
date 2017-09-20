@@ -11,7 +11,7 @@ var QuranJS = {
 		$('.modal-title').html('<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>');
 		
 		$('.modal-body').html(this.loadingText[randomInt]);
-		$('.modal-header button').hide();
+		$('.modal-header button,.modal-footer').hide();
 	},
 
 	modalLoadingBlock : function(){
@@ -364,7 +364,50 @@ var QuranJS = {
 		})
 	},
 
-	memozFilter : function(filter,next=''){
+	correctionList : function (next,idMemo){
+		jQuery('.btn-loadmore').show();
+		if(next!=''){
+			jQuery('.btn-loadmore').html('Loading...');
+		}else{
+			jQuery('#QuranModal').modal('show');
+			this.modalLoading();
+			this.removeModalClass();
+
+			jQuery('.memoz-list').hide();
+			jQuery('.memoz-list').html('');
+			jQuery('.memoz-loading').show();
+		}
+		
+		var count = $( ".memoz-item" ).length;
+		$.post(this.siteUrl+'/memoz/correction/list',{
+			start : count,
+			idMemo : idMemo
+		},function(response){
+			if(response.modal_footer!=''){
+				jQuery('.modal-footer').show();
+				jQuery('.modal-footer').html(response.modal_footer);
+			}
+
+			if(response.start=='0'){
+				jQuery('.modal-title').html(response.modal_title);
+				jQuery('.modal-body').html(response.modal_body);
+			}else{
+				jQuery('.btn-loadmore').before(response.modal_body);
+			}
+			
+			jQuery('.memoz-list').show();
+			jQuery('.memoz-loading').hide();
+			if(response.count!=0){
+				jQuery('.btn-loadmore').html('Selanjutnya');
+			}else{
+				jQuery('.btn-loadmore').hide();
+			}
+			jQuery('.close').show();
+			
+		});
+	},
+
+	memozFilter : function(filter,next){
 		jQuery('.btn-loadmore').show();
 		if(next!=''){
 			jQuery('.btn-loadmore').html('Loading...');
@@ -395,26 +438,118 @@ var QuranJS = {
 			
 		});
 	},
- 
-	showInfoMemoz : function (){
-		$('#QuranModal').modal('show');
-		$('.modal-title').html('Panduan menghafal');
-		$('.modal-body').html('<p>Dalam proses hafalan terdapat 5 tahapan, yaitu: </p><br><ul><li> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal</li><li>Hafalkan dengan teliti target hafalan arabic</li><li>Fokuskan hafalan terjemahannya saja</li><li>TEST...!! Bacakan dan rekam setiap kata yang di hilangkan.</li><li>PUZZLE...!! Cocokan kata yang hilang secara berurutan</li></ul><br><p>Jangan lupa untuk berdo\'a kepada Allah Ta\'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><p>Kunci untuk mengafal adalah <strong>ulangi dan terus ulangi</strong> membaca dan mendengarkan muratal.');
-		$('.modal-footer').html('<span class="cont_hide_memoz_info"> <input type="checkbox" name="hide_memoz_info" onclick="hideInfo()" value="1"> Jangan tampilkan lagi <br></span><button  data-dismiss="modal" class="btn btn-green-small info">Bismillah mulai menghafal</button></div>');
+
+	memozOthers : function(filter,next){
+		jQuery('.btn-loadmore').show();
+		if(next!=''){
+			jQuery('.btn-loadmore').html('Loading...');
+		}else{
+			jQuery('#QuranModal').modal('show');
+			this.modalLoading();
+			jQuery('.memoz-list').hide();
+			jQuery('.memoz-list').html('');
+			jQuery('.memoz-loading').show();
+		}
+		
+		var count = $( ".memoz_filter_others .correction-list-item" ).length;
+		$.post(this.siteUrl+'/memoz/list_others_ajax',{
+			filter : filter,
+			start : count
+		},function(response){
+			if(response.start=='0'){
+				jQuery('.modal-body').html(response.html);
+				jQuery('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
+				jQuery('.modal-title').html('Hafalan lain');
+				jQuery('.modal-footer,.close').show();
+			
+			}else{
+				jQuery('.btn-loadmore').before(response.html);
+			}
+			
+			jQuery('.memoz-loading').hide();
+			if(response.count>0){
+				jQuery('.btn-loadmore').html('Selanjutnya');
+			}else{
+				jQuery('.btn-loadmore').hide();
+			}
+			
+		});
 	},
 
-	stepMemoz : function(steps){
+	needCorrections : function(next){
+		jQuery('.btn-loadmore').show();
+		if(next!=''){
+			jQuery('.btn-loadmore').html('Loading...');
+		}else{
+			jQuery('#QuranModal').modal('show');
+			this.modalLoading();
+			jQuery('.memoz-list').hide();
+			jQuery('.memoz-list').html('');
+			jQuery('.memoz-loading').show();
+		}
+		
+		var count = $( ".modal-body .correction-list-item" ).length;
+		$.post(this.siteUrl+'/memoz/list_need_corrections_ajax',{
+			start : count
+		},function(response){
+			if(response.start=='0'){
+				jQuery('.modal-body').html(response.html);
+				jQuery('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
+				jQuery('.modal-title').html('Butuh koreksi');
+				jQuery('.modal-footer,.close').show();
+			
+			}else{
+				jQuery('.btn-loadmore').before(response.html);
+			}
+			
+			jQuery('.memoz-loading').hide();
+			
+			if(response.count>0){
+				jQuery('.btn-loadmore').html('Selanjutnya');
+			}else{
+				jQuery('.btn-loadmore').hide();
+			}
+
+			// hide button lainnya
+			//console.log(response.html.indexOf("correction-list-item"));
+			/*if(response.html.indexOf("correction-list-item")!=-1){
+				jQuery('.btn-loadmore').show();
+			}else{
+				jQuery('.btn-loadmore').hide();
+			}*/
+			
+		});
+	},
+ 
+	showInfoMemoz : function (){
+		QuranJS.callModal('info_memoz');
+		$('#QuranModal').modal('show');
+		$('.modal-title').html('Panduan menghafal');
+
+	},
+
+	stepMemoz : function(steps,elm){
+		// active tabs
+		//console.log(elm.length);
+		if(typeof(elm.length)=='undefined'){
+			jQuery('.memoz-filter li').removeClass('active');
+			jQuery(elm).parent().addClass('active');
+		}
+		
 		jQuery('.mushaf-hafalan').removeClass('step-1');
 		jQuery('.mushaf-hafalan').removeClass('step-2');
 		jQuery('.mushaf-hafalan').removeClass('step-3');
 		jQuery('.mushaf-hafalan').removeClass('step-4');
 		jQuery('.mushaf-hafalan').removeClass('step-5');
 		jQuery('.mushaf-hafalan').addClass('step-'+steps);
+		if(steps=='correction'){
+			jQuery('.mushaf-hafalan').addClass('step-4');
+		}
 		jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
 		// hide recorder
-		jQuery('.quran_player').show();
-		jQuery('.quran_recorder').hide();
+		jQuery('.quran_recorder,.steps,.action-footer,.quran_player').hide();
 		if(steps==1){
+			jQuery('.steps,.action-footer,.quran_player').show();
 			//jQuery('.trans').removeClass('puff').removeClass('go');
 			//jQuery('.arabic').removeClass('puff').removeClass('go');
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal');
@@ -430,8 +565,7 @@ var QuranJS = {
 			jQuery('.trans').show();
 			jQuery('.arabic').show();
 		}else if(steps==2){
-			//jQuery('.trans').addClass('puff').removeClass('go');
-			//jQuery('.arabic').removeClass('puff').addClass('go');
+			jQuery('.steps,.action-footer,.quran_player').show();
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Hafalkan dengan teliti target hafalan arabic');
 			jQuery('.jp-stop').click();
 			jQuery('.memozed,.memoz_nav').hide();
@@ -443,10 +577,9 @@ var QuranJS = {
 			jQuery('.content_ayat .puzzle_border').addClass('puzzle_no_border');
 
 			jQuery('.trans').hide();
-			jQuery('.arabic').show();
+			jQuery('.arabic,.steps').show();
 		}else if(steps==3){
-			//jQuery('.trans').removeClass('puff').addClass('go');
-			//jQuery('.arabic').removeClass('go').addClass('puff');
+			jQuery('.steps,.action-footer,.quran_player').show();
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Fokuskan hafalan terjemahannya saja');
 			jQuery('.jp-stop').click();
 			jQuery('.memoz_nav').hide();
@@ -457,9 +590,9 @@ var QuranJS = {
 			jQuery('.content_ayat .puzzle_border').addClass('puzzle_no_border');
 			//jQuery('.quran_player,.toggle-player,.action-footer,.memoz_player,.memozed').hide();
 
-			jQuery('.trans').show();
+			jQuery('.trans,.steps').show();
 			jQuery('.arabic').hide();
-		}else if(steps==4){
+		}else if(steps==4 || steps=='correction'){
 			//jQuery('.trans').removeClass('puff').removeClass('go');
 			//jQuery('.arabic').removeClass('puff').removeClass('go');
 			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> TEST...!! Bacakan setiap kata yang di hilangkan.');
@@ -559,9 +692,14 @@ var QuranJS = {
 				jQuery('.arabic_'+puzzle_ayat+' .per_words_1').parent().removeClass('puzzle_no_border');
 			}
 		}else{
-			alert('salah');
+			vex.dialog.alert('salah');
 		}
 		
+	},
+
+	updateCounter : function(elm){
+		currVal = parseInt($('.'+elm+' .counter').html());
+		$('.'+elm+' .counter').html(currVal + 1);
 	},
 
 	showAyat : function (show){
@@ -628,24 +766,28 @@ var QuranJS = {
 
 	hidePlayer : function() {
 		$('.quran_player').hide();
+		$('.player-show').show();
+		$('.player-hide').hide();
 	},
 
 	showPlayer : function() {
 		$('.quran_player').show();
+		$('.player-show').hide();
+		$('.player-hide').show();
 	},
 
 	createMemoModal : function(){
-		$('.modal-body').html('');
+		this.formMemoModal('');
+		/*$('.modal-body').html('');
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Hafalan Baru');
 		//$('.select-surah').detach().appendTo('.modal-body');
 		var htmlSelectSurah = $('.select-surah').html();
-		$( ".form-inline" ).wrap( "<div class='modal-spacing'></div>" );
 		$('.modal-body').html(htmlSelectSurah);
 		$('.select2-container').remove();
 		$('.selectpicker').select2();
 		
-		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');
+		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');*/
 	},
 	
 	formMemoCorrectionModal : function (id){
@@ -677,19 +819,19 @@ var QuranJS = {
 				}, function (response){
 					$('.label-loading').hide();
 					$('#QuranModal').modal('hide');
-					alert('Koreksi sudah dikirim');
+					vex.dialog.alert('Koreksi sudah dikirim');
 				}
 			);
 	},
 
-	formMemoModal : function (id=''){
+	formMemoModal : function (id){
 		this.modalLoading();
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Simpan Hafalan');
 		$.post(this.siteUrl+'/memoz/form',{
-					surah_start : $('#surah_start').val(),
-					ayat_start : $('#ayat_start').val(),
-					ayat_end : $('#ayat_end').val(),
+					surah_start : $('.surah_start_temp').val(),
+					ayat_start : $('.ayat_start_temp').val(),
+					ayat_end : $('.ayat_end_temp').val(),
 					id : id,
 				}, function (response){
 					$('.modal-title').html(response.modal_title);
@@ -719,7 +861,7 @@ var QuranJS = {
 					date_end : $('#date_end').val(),
 					note : $('#note').val(),
 				}, function (response){
-					alert(response.message);
+					vex.dialog.alert(response.message);
 					$('.label-loading').hide();
 					$('.label-save').show();
 					$('#id').val(response.id);
@@ -733,50 +875,73 @@ var QuranJS = {
 	},
 
 	updateStatusMemoz : function (id,status,text){
-		var r = confirm(text);//"Sudah hafal dan dipublikasikan untuk di test oleh pengguna lain?");
-		if(r==true){
-			$('.label-status-loading').show();
-			$('.label-status-save').hide();
-			$('.label-status-save').removeClass('fa-thumbs-up');
-			$('.label-status-save').removeClass('fa-thumbs-down');
-			$.post(this.siteUrl+'/memoz/updateStatus',{
-					id : id,
-					status : status
-				}, function (response){
-					alert(response.message);
-					$('.label-status-loading').hide();
-					$('.label-status-save').show();
-					if(response.status==true){
-						$('.btn-status-save').attr('onclick','QuranJS.updateStatusMemoz(\''+response.id+'\',\''+response.status_memoz+'\',\''+response.text_confirm+'\');return false;');
-						if(response.status_memoz==0){
-							$('.label-status-save').addClass('fa-thumbs-down');
-						}else{
-							$('.label-status-save').addClass('fa-thumbs-up');
+		var id = id; 
+		var status = status;
+		var text = text;
+		var siteUrl = this.siteUrl;
+
+		vex.dialog.confirm({
+		    message: text,
+		    callback: function (value) {
+		    	if(value==true){
+		        	$('.label-status-loading').show();
+					$('.label-status-save').hide();
+					$.post(siteUrl+'/memoz/updateStatus',{
+							id : id,
+							status : status
+						}, function (response){
+							//alert(response.message);
+							$('.label-status-loading').hide();
+							$('.label-status-save').show();
+							if(response.status==true){
+								$('.btn-status-save').attr('onclick','QuranJS.updateStatusMemoz(\''+response.id+'\',\''+response.status_memoz+'\',\''+response.text_confirm+'\');return false;');
+								if(response.status_memoz==0){
+									$('.memoz-1').show();
+									$('.memoz-0').hide();
+								}else{
+									$('.memoz-1').hide();
+									$('.memoz-0').show();
+								}
+
+								// update on list memoz
+								$('.memoz-item.memoz-'+response.id).slideUp();
+
+							}
 						}
-					}
+					);
 				}
-			);
-		}
+		    }
+		})
+		
 		
 	},
 
 	deleteMemoz : function (id){
-		var r = confirm("Yakin hafalan ini di hapus?!");
-		if(r==true){
-			$('.label-loading').show();
-			$('.label-save').hide();
-			$.post(this.siteUrl+'/memoz/remove',{
-					id : id,
-				}, function (response){
-					alert(response.message);
-					$('.label-loading').hide();
-					$('.label-save').show();
-					if(response.status==true){
-						$('.memoz-'+response.id).hide();
-					}
+		var id = id;
+		var siteUrl = this.siteUrl;
+		vex.dialog.confirm({
+		    message: "Yakin hafalan ini di hapus?!",
+		    callback: function (value) {
+		    	if(value==true){
+		        	$('.label-status-loading').show();
+					//$('.label-loading').show();
+					$('.label-save').hide();
+					$.post(siteUrl+'/memoz/remove',{
+							id : id,
+						}, function (response){
+							$('.label-status-loading').hide();
+							//$('.label-loading').hide();
+							$('.label-save').show();
+							if(response.status==true){
+								$('.memoz-'+response.id).slideUp();
+							}else{
+								vex.dialog.alert(response.message);
+							}
+						}
+					);
 				}
-			);
-		}
+		    }
+		})
 		
 	},
 
@@ -803,13 +968,13 @@ var QuranJS = {
 			document.cookie = 'coo_mushaf_bookmark_url='+url+';visited=true;path=/;';
 			jQuery('#bookmark').removeClass('fa-bookmark-o');
 			jQuery('#bookmark').addClass('fa-bookmark');
-			alert(title+' - telah di tandai halaman terakhir dibaca');
+			vex.dialog.alert(title+' - telah di tandai halaman terakhir dibaca');
 		}else{
 			document.cookie = 'coo_mushaf_bookmark_title=;visited=true;path=/;';
 			document.cookie = 'coo_mushaf_bookmark_url=;visited=true;path=/;';
 			jQuery('#bookmark').removeClass('fa-bookmark');
 			jQuery('#bookmark').addClass('fa-bookmark-o');
-			alert('Halaman terakhir dibaca dihapus');
+			vex.dialog.alert('Halaman terakhir dibaca dihapus');
 		}
 		
 	},
@@ -843,10 +1008,13 @@ var QuranJS = {
 					password : $('#login_password').val(),
 				}, function (response){
 					if(response.login==true){
+						document.cookie = 'coo_quranmemo_email='+response.coo_quranmemo_email+';visited=true;path=/;';
+						document.cookie = 'coo_quranmemo_password='+response.coo_quranmemo_password+';visited=true;path=/;';
 						location.href=response.redirect;
 					}else{
-						alert('Login anda salah');
+						vex.dialog.alert(response.errorMessage);
 					}
+
 					$('.label-masuk').show();
 					$('.label-loading').hide();
 				}
@@ -860,9 +1028,9 @@ var QuranJS = {
 					email : $('#login_email').val(),
 				}, function (response){
 					if(response.return==true){
-						alert('Password sudah dikirim ke email, silahkan cek.');
+						vex.dialog.alert('Password sudah dikirim ke email, silahkan cek.');
 					}else{
-						alert('Email tidak terdaftar, silahkan daftar terlebih dahulu');
+						vex.dialog.alert('Email tidak terdaftar, silahkan daftar terlebih dahulu');
 					}
 					$('.label-masuk').show();
 					$('.label-loading').hide();
@@ -887,9 +1055,9 @@ var QuranJS = {
 			success: function(data)   // A function to be called if request succeeds
 			{
 				if(data=='false'){
-					alert('Upload avatar gagal');
+					vex.dialog.alert('Upload avatar gagal');
 				}else{
-					alert('Upload avatar sukses');
+					vex.dialog.alert('Upload avatar sukses');
 					$('#img_avatar').attr('src',data);
 				}
 				$('#btn-upload').val('Upload');
@@ -897,6 +1065,8 @@ var QuranJS = {
 			}
 		});
 	}
+
+	
 
 } 
 
