@@ -310,17 +310,19 @@
          var d = new Date();
          var isFriday = d.getDay();
          if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_promo_tshirtseptember17']}}'==''){
-                QuranJS.callModal('tshirt');
+            QuranJS.callModal('donasi');
+            /*if('{{@$_COOKIE['coo_qmcom']}}'==''){
+                QuranJS.callModal('donasi');
             }else{
-                if('{{@$_COOKIE['coo_qmrc']}}'==''){
-                    QuranJS.callModal('donasi');
+                if('{{@$_COOKIE['coo_promo_tshirtseptember17']}}'==''){
+                    QuranJS.callModal('tshirt');
                 }else{
                     if(isFriday==5){
                         QuranJS.callModal('alkahfi');
                     }
                 }
-            }
+            }*/
+            
 
             /*if('{{@$_COOKIE['coo_promo']}}'==''){
                 QuranJS.callModal('promo');

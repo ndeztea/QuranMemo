@@ -75,6 +75,10 @@ class MushafController extends Controller
         $data['cookies'] = getCookie();
         
         //setcookie('coo_muratal_new',1);
+        if(!empty($_COOKIE['coo_qmcom'])){
+            //return view('content_migrate');
+        }
+
         $Request = new Request();
         if($this->request->segment(2)=='' && $this->request->segment(1)=='mushaf'){
             if(empty($_COOKIE['coo_promo_tshirtseptember17'])){

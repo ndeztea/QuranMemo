@@ -37,6 +37,12 @@ class ContentController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function migrate()
+    {
+        setcookie('coo_qmcom',1);
+        return view('content_migrate');
+    }
+
     public function donasi()
     {
         $dataHTML['modal_class'] = '';

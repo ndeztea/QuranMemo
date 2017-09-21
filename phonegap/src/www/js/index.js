@@ -46,7 +46,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         //app.browser = cordova.InAppBrowser.open('http://www.quranmemo.id/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
-        app.browser = cordova.InAppBrowser.open('http://192.168.1.5/QuranNote/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
+        app.browser = cordova.InAppBrowser.open('http://192.168.100.3/QuranNote/public/mushaf', '_blank', 'location=no,zoom=no,hidden=yes');
         
         app.browser.addEventListener('loadstop', function() {
             app.browser.show();
