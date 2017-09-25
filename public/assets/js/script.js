@@ -488,7 +488,7 @@ var QuranJS = {
 			jQuery('.memoz-loading').show();
 		}
 		
-		var count = $( ".modal-body .correction-list-item" ).length;
+		var count = $( ".corrections_filter_others .correction-list-item" ).length;
 		$.post(this.siteUrl+'/memoz/list_need_corrections_ajax',{
 			start : count
 		},function(response){

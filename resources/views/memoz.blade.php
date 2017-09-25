@@ -42,8 +42,8 @@
 							<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) jQuery('.form-inline').submit() @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
 								
 							@if(session('sess_id'))
-							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
-							<a class="btn btn-cari-ayat btn-last-memoz" onclick="QuranJS.correctionList()" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
+							<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarHafalanPage');QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
+							<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarKoreksiPage');QuranJS.correctionList()" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
 							@endif
 					</form>
 				</div>
@@ -54,10 +54,10 @@
 			<input type="hidden" class="ayat_end_temp" value="{{$ayat_end}}"/>
 			@endif
 			@if(!empty($memoDetail->id))					
-				<a style="display: none" class="memoz-0" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
-				<a style="display: none" class="memoz-1" href="javascript:;" onclick="QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
+				<a style="display: none" class="memoz-0" href="javascript:;" onclick="fbq('track', 'clickBelumHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
+				<a style="display: none" class="memoz-1" href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
 			
-				<a onclick="QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
+				<a onclick="fbq('track', 'clickDaftarKoreksiMemoz');QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
 			@endif
 			<input type="hidden" name="repeat" class="repeat" value="1" />
 			<input type="hidden" name="muratal" class="muratal" value="1" />
@@ -76,9 +76,9 @@
 							<div class="clearfix"></div>
 							<div class="timeline-koreksi memoz-filter filter">
 						  		<ul class="nav nav-tabs" role="tablist">
-								    <li role="presentation" class="active"><a  onclick="QuranJS.stepMemoz('1',this);"><i class="fa fa-chevron-circle-right"></i> Linier</a></li>
-								    <li role="presentation"><a  onclick="QuranJS.stepMemoz('4',this);QuranJS.showAyat('start')" style="color:red"><i class="fa fa-microphone"></i>  Rekam</a></li>
-								    <li role="presentation"><a  onclick="QuranJS.stepMemoz('5',this);" ><i class="fa fa-puzzle-piece"></i> Puzzle</a></li>
+								    <li role="presentation" class="active"><a  onclick="fbq('track', 'clickLinier');QuranJS.stepMemoz('1',this);"><i class="fa fa-chevron-circle-right"></i> Linier</a></li>
+								    <li role="presentation"><a  onclick="fbq('track', 'clickRekam');QuranJS.stepMemoz('4',this);QuranJS.showAyat('start')" style="color:red"><i class="fa fa-microphone"></i>  Rekam</a></li>
+								    <li role="presentation"><a  onclick="fbq('track', 'clickPuzzle');QuranJS.stepMemoz('5',this);" ><i class="fa fa-puzzle-piece"></i> Puzzle</a></li>
 								</ul>
 							</div>
 							@endif
@@ -86,9 +86,9 @@
 							@if(Request::segment(2)!='correction')
 							<div class="step-wrap">
 								<div class="steps clearfix btn-group btn-breadcrumb" role="group" aria-label="steps">
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('1')" class="btn btn-default steps_1 selected"># 1</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('2')" class="btn btn-default steps_2"># 2</a>
-									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('3')" class="btn btn-default steps_3"># 3</a>
+									<a href="javascript:void(0)" onclick="fbq('track', 'clickStep1');QuranJS.stepMemoz('1','')" class="btn btn-default steps_1 selected"># 1</a>
+									<a href="javascript:void(0)" onclick="fbq('track', 'clickStep2');QuranJS.stepMemoz('2','')" class="btn btn-default steps_2"># 2</a>
+									<a href="javascript:void(0)" onclick="fbq('track', 'clickStep3');QuranJS.stepMemoz('3','')" class="btn btn-default steps_3"># 3</a>
 									<!--a href="javascript:void(0)" onclick="QuranJS.stepMemoz('4');QuranJS.showAyat('start')" class="btn btn-default steps_4"># 4</a>
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');" class="btn btn-default steps_5"># 5</a-->
 								</div>
@@ -107,11 +107,11 @@
 								</div>
 							</div>
 							<div class="memoz_nav" style="display: none">
-								<a href="javascript:;" class="btn btn-start" onclick="QuranJS.showAyat('start')">Awal</a>
-								<a href="javascript:;" class="btn btn-middle" onclick="QuranJS.showAyat('middle')">Tengah</a>
-								<a href="javascript:;" class="btn btn-end" onclick="QuranJS.showAyat('end')">Akhir</a>
-								<a href="javascript:;" class="btn btn-mix" onclick="QuranJS.showAyat('mix')">Awal+Akhir</a>
-								<a href="javascript:;" class="btn btn-random" onclick="QuranJS.showAyat('random')">Acak</a>
+								<a href="javascript:;" class="btn btn-start" onclick="fbq('track', 'clickBacaAwal');QuranJS.showAyat('start')">Awal</a>
+								<a href="javascript:;" class="btn btn-middle" onclick="fbq('track', 'clickBacaTengah');QuranJS.showAyat('middle')">Tengah</a>
+								<a href="javascript:;" class="btn btn-end" onclick="fbq('track', 'clickBacaAkhir');QuranJS.showAyat('end')">Akhir</a>
+								<a href="javascript:;" class="btn btn-mix" onclick="fbq('track', 'clickBacaAwalAkhir');QuranJS.showAyat('mix')">Awal+Akhir</a>
+								<a href="javascript:;" class="btn btn-random" onclick="fbq('track', 'clickAcak');QuranJS.showAyat('random')">Acak</a>
 							</div>
 							@else
 							<div class="alert alert-success">
@@ -206,10 +206,10 @@
 								@if(Request::segment(2)!='correction')
 								<div class="action-footer">
 					                <div class="btn-group">
-					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar <span class="counter_play">0</span>x</a>
+					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;" onclick="fbq('track', 'clickPutarMemoz');"><i class="fa fa-play"></i> Putar <span class="counter_play">0</span>x</a>
 					                  <!--a class="btn btn-share-ayat" href="#"  onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a-->
 					                  <a class="memozed btn-share-ayat btn" style="display:none" href="javascript:void(0)" onclick="QuranJS.memorized('section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}')"><i class="fa fa-thumbs-up"></i> Hafal</a>
-					                  <a class="btn-share-ayat btn counter_{{$a}}" href="javascript:void(0)" onclick="QuranJS.updateCounter('counter_{{$a}}')"><i class="fa fa-volume-up"></i> Baca <span class="counter">0</span>x</a>
+					                  <a class="btn-share-ayat btn counter_{{$a}}" href="javascript:void(0)" onclick="fbq('track', 'clickBacaCounter');QuranJS.updateCounter('counter_{{$a}}')"><i class="fa fa-volume-up"></i> Baca <span class="counter">0</span>x</a>
 					                </div>
 					            </div>
 					            @endif
@@ -257,22 +257,22 @@
 
 			@if(Request::segment(2)!='correction')
 			@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-			<a class="button" style="font-size: 34px;" onclick="vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+			<a class="button" style="font-size: 34px;" onclick="fbq('track', 'clickStartRekam');vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
 			<!--a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a-->
 			@else
-			<a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a>
+			<a class="button" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a>
 			@endif
-			<a class="button disabled one" id="stop"><i class="fa fa-remove"></i></a>
+			<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
 			<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
 			<!--span class="button disabled one" id="sec_counter">recording...</span-->
-			<a class="button  @if(empty($memoDetail->record)) disabled @endif" id="play_audio" onclick="playAudio()"><i class="fa fa-play-circle"></i></a>
-			<a class="button  disabled" id="pause_audio" onclick="pauseAudio()"><i class="fa fa-pause-circle"></i></a>
+			<a class="button  @if(empty($memoDetail->record)) disabled @endif" id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
+			<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
 			
 			<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
-			<a class="button disabled upload" id="save"><i class="fa fa-upload btn-upload"></i></a>
+			<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
 			@endif
 			@if(session('sess_id')!= @$memoDetail->id_user )
-				<a class="button" id="btn-correction" style="display:none" onclick="QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
+				<a class="button" id="btn-correction" style="display:none" onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
 			@endif
 		</div>
 		
@@ -294,7 +294,7 @@
 	<ul class="c-circle-menu__items">
 		
 		<li class="c-circle-menu__item">
-			<button type="button" onclick="QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()" class="c-circle-menu__link menu__link5">
+			<button type="button" onclick="fbq('track', 'clickInfoMemoz');QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()" class="c-circle-menu__link menu__link5">
 				<span class='menu-icon'><i class='fa fa-info'></i></span>
 				<span class='menu-caption'>Panduan</span>
 			</button>
@@ -302,7 +302,7 @@
 		<!-- end-item -->	
 
 		<li class="c-circle-menu__item">
-			<button type="button" onclick="QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="c-circle-menu__link menu__link4">
+			<button type="button" onclick="fbq('track', 'clickSettingMemoz');QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="c-circle-menu__link menu__link4">
 				<span class='menu-icon'><i class='fa fa-cog'></i></span>
 				<span class='menu-caption'>Setting</span>
 			</button>
@@ -310,7 +310,7 @@
 		<!-- end-item -->
 
 		<li class="c-circle-menu__item">
-			<a href="javascript:;" onclick="QuranJS.memozList()" class="c-circle-menu__link menu__link3">
+			<a href="javascript:;" onclick="fbq('track', 'clickDaftarHafalan');QuranJS.memozList()" class="c-circle-menu__link menu__link3">
 				<span class='menu-icon'><i class='fa fa-file-text'></i></span>
 				<span class='menu-caption'>Daftar Hafalan</span>
 			</a>
@@ -318,14 +318,14 @@
 		<!-- end-item -->	
 													
 		<li class="c-circle-menu__item">
-			<a  href="{{url('memoz')}}"  class="c-circle-menu__link menu__link2">
+			<a  href="{{url('memoz')}}"  class="c-circle-menu__link menu__link2" onclick="fbq('track', 'clickHafalanBaru');">
 				<span class='menu-icon'><i class='fa fa-plus'></i></span>
 				<span class='menu-caption'>Baru</span>
 			</a>
 		</li>
 
 		<li class="c-circle-menu__item">
-			<a type="button" onclick="QuranJS.formMemoModal('{{$memoDetail->id}}')" class="c-circle-menu__link menu__link1">
+			<a type="button" onclick="fbq('track', 'clickSimpanMemoz');QuranJS.formMemoModal('{{$memoDetail->id}}')" class="c-circle-menu__link menu__link1">
 				<span class='menu-icon'><i class='fa fa-floppy-o'></i></span>
 				<span class='menu-caption'>Simpan</span>
 			</a>

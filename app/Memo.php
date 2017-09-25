@@ -78,6 +78,7 @@ class Memo extends Model
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->where('id_user','!=',$id_user)
+                ->where('status','=',0)
                 ->offset($start)
                 ->limit($limit);
 

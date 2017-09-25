@@ -308,7 +308,8 @@ class MemozController extends Controller
         $dataRecord['date_end'] = $request->input('date_end');
         $dataRecord['note'] = $request->input('note');
         $dataRecord['id_user'] = $request->session()->get('sess_id');
-
+        $updated_at = (string) Carbon::now();
+        $dataRecord['updated_at'] = $updated_at;
         // saving to DB
         $Memo = new Memo;
         if(empty($dataRecord['id'])){
@@ -379,7 +380,9 @@ class MemozController extends Controller
 
         $dataRecord['id'] = $id;
         $dataRecord['status'] = $status;
-
+        $updated_at = (string) Carbon::now();
+        $dataRecord['updated_at'] = $updated_at;
+        
         $save = $MemoModel->edit($dataRecord);
         // send ajax response
         if($save){

@@ -1,7 +1,7 @@
 <div class="modal-spacing">
   <div class="container-segmented">
   <h4>Muratal</h4>
-    <select class="form-control" name="muratal" id="muratal" onchange="QuranJS.configMuratal(this.value)">
+    <select class="form-control" name="muratal" id="muratal" onchange="fbq('track', 'changeMuratal');QuranJS.configMuratal(this.value)">
       @foreach($arr_muratal_list as $key=>$val)
       <option value="{{$key}}" {{$key==$muratal?'selected':''}}>{{$val}}</option>
       @endforeach
@@ -16,10 +16,10 @@
       <input type="radio" name="sc-1-1" id="sc-1-1-4" {{$repeat==10?'checked':''}}>
       <input type="radio" name="sc-1-1" id="sc-1-1-6" {{$repeat==20?'checked':''}}>
 
-      <label for="sc-1-1-1" data-value="1x" onclick="$('.repeat').val(1)">1x</label>
-      <label for="sc-1-1-2" data-value="5x" onclick="$('.repeat').val(5)">5x</label>
-      <label for="sc-1-1-4" data-value="10x" onclick="$('.repeat').val(10)">10x</label>
-      <label for="sc-1-1-6" data-value="20x" onclick="$('.repeat').val(20)">20x</label>
+      <label for="sc-1-1-1" data-value="1x" onclick="fbq('track', 'clickRepeat1');$('.repeat').val(1)">1x</label>
+      <label for="sc-1-1-2" data-value="5x" onclick="fbq('track', 'clickRepeat2');$('.repeat').val(5)">5x</label>
+      <label for="sc-1-1-4" data-value="10x" onclick="fbq('track', 'clickRepeat3');$('.repeat').val(10)">10x</label>
+      <label for="sc-1-1-6" data-value="20x" onclick="fbq('track', 'clickRepeat4');$('.repeat').val(20)">20x</label>
     </div>
     <div class="container-segmented">
     <h4>Tampilkan warna tajwid</h4>
@@ -27,8 +27,8 @@
         <input type="radio" name="sc-1-4" id="sc-1-1-8" {{$tajwid=='true'?'checked':''}}>
         <input type="radio" name="sc-1-4" id="sc-1-1-9" {{$tajwid==''?'checked':''}}>
 
-        <label for="sc-1-1-8" data-value="Ya" onclick="QuranJS.showTajwid('true')">Ya</label>
-        <label for="sc-1-1-9" data-value="Tidak" onclick="QuranJS.showTajwid('false')">Tidak</label>
+        <label for="sc-1-1-8" data-value="Ya" onclick="fbq('track', 'clickWarnaYes');QuranJS.showTajwid('true')">Ya</label>
+        <label for="sc-1-1-9" data-value="Tidak" onclick="fbq('track', 'clickWarnaNo');QuranJS.showTajwid('false')">Tidak</label>
       </div>
       <div class="tajwid_modified" style="display:none"><a href="javascript:location.reload()" style="color:#00978A">Refresh</a> dahulu untuk merubah tampilan tajwid.</div>  
       <br>

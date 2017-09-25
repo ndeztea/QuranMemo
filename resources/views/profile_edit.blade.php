@@ -67,7 +67,7 @@
 													<input type="text" class="form-control" name="hp" id="hp" aria-label="No Handphone" placeholder="No Handphone" value="{{ $detailUser->hp}}"/>
 												</div>
 												<div class="form-group">
-													<button type="submit" class="btn btn-simpan">Simpan</button>
+													<button type="submit" class="btn btn-simpan" onclick="fbq('track', 'clickSimpanProfile');">Simpan</button>
 													<button type="button" class="btn btn-kembali" onclick="history.back()">Kembali</button>
 												</div>
 												<input type="hidden" name="action" value="post"/>
@@ -80,11 +80,11 @@
 										<div class="register_form clearfix" style="text-align: center;padding-top:20px">
 											<form class="form-horizontal" action="#" onsubmit="return false" method="post">
 												<input type="hidden" name="device_id" id="profile_edit" value=""/>
-												<img src="{{getAvatar($detailUser)}}" width="150" id="img_avatar"/>
-												<input class="input-file" type="file" name="avatar" id="avatar">
+												<img src="{{getAvatar($detailUser)}}" width="150" height="150" id="img_avatar" class="img-circle"/>
+												<input class="input-file" type="file" name="avatar" id="avatar" onclick="fbq('track', 'clickSelectPhoto');">
 												
 												<br/>
-												<input type="submit" value="Upload" id="btn-upload" class="btn btn-upload-img" onclick="QuranJS.uploadAvatar()"/>
+												<input type="submit" value="Upload" id="btn-upload" class="btn btn-upload-img" onclick="fbq('track', 'clickUploadAvatar');QuranJS.uploadAvatar()"/>
 											</form>
 										</div>
 									</div>

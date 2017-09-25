@@ -39,13 +39,13 @@
 						<div class="tabbed-nav">
 							<ul class="tabbed-nav-list list-unstyled">
 
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-library"></i>Daftar Hafalan</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Baca</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Daftar Hafalan</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="fbq('track', 'clickBaca');QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Baca</a></li>
 								
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="QuranJS.callModal('mushaf/juz')" ><i class="mdi mdi-bookmark"></i> Pilih Juz</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-target"></i> Summary Target</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) QuranJS.correctionList() @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white">New</sup></a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) location.href='{{url('profile/edit')}}' @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-account-edit"></i>Edit Profile</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickJuz');QuranJS.callModal('mushaf/juz')" ><i class="mdi mdi-bookmark"></i> Pilih Juz</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickSummaryTarget');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-target"></i> Summary Target</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList() @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white">New</sup></a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickEditProfile');@if(!empty(session('sess_id'))) location.href='{{url('profile/edit')}}' @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-account-edit"></i>Edit Profile</a></li>
 								
 
 							</ul>
@@ -80,8 +80,8 @@
 												<br>
 												<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 												<div class="koreksi-action">
-													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link">Koreksi</a>
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link">Hafalkan</a>
+													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickKoreksi');">Koreksi</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
 												</div>
 											</div>
 											<!--/koreksi-desc-->
@@ -89,7 +89,7 @@
 									</li>
 									@endforeach
 									</ul>
-									<a class="btn-green btn" href="javascript:void(0)" onclick="@if(!empty(session('sess_id'))) QuranJS.needCorrections(0)  @else QuranJS.callModal('auth/login') @endif">Lainnya</a>
+									<a class="btn-green btn" href="javascript:void(0)" onclick="fbq('track', 'clickMemozLain');@if(!empty(session('sess_id'))) QuranJS.needCorrections(0)  @else QuranJS.callModal('auth/login') @endif">Lainnya</a>
 								@endif
 						    </div>
 						    <div role="tabpanel" class="tab-pane" id="hafalan">
@@ -108,14 +108,14 @@
 												<br>
 												<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 												<div class="koreksi-action">
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link">Hafalkan</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
 												</div>
 											</div>
 										</div>
 									</li>
 									@endforeach
 									</ul>
-									<a href="javascript:void(0)" class="btn-green btn" onclick="@if(!empty(session('sess_id'))) QuranJS.memozOthers(0)  @else QuranJS.callModal('auth/login') @endif ">Lainnya</a>
+									<a href="javascript:void(0)" class="btn-green btn" onclick="fbq('track', 'clickHafalanLain');@if(!empty(session('sess_id'))) QuranJS.memozOthers('','')  @else QuranJS.callModal('auth/login') @endif ">Lainnya</a>
 								@endif
 						    </div>
 						  </div>

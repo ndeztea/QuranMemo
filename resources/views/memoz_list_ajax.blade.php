@@ -11,7 +11,7 @@
 					<span class="tr-label">hari lagi</span>
 				</div>
 				<!--/memoz-time-remaining(tr)-->
-				<div class="memoz-content"  onclick="location.href='{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}'">
+				<div class="memoz-content"  onclick="fbq('track', 'clickHafalkanTarget');location.href='{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}'">
 					<div class="memoz-content-top">
 						<a class="memoz-link-surah" href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">
 							{{$row->surah}} : {{$ayat_target}}
@@ -28,12 +28,12 @@
 				<!--/memoz-content-->
 				<div class="memoz-check-hafalan">
 					@if($row->status==0)
-					<a class="memoz-check-link" href="javascript:void(0)"  onclick="QuranJS.updateStatusMemoz('{{$row->id}}','1','Ayat di surah ini sudah hafal?')">
+					<a class="memoz-check-link" href="javascript:void(0)"  onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$row->id}}','1','Ayat di surah ini sudah hafal?')">
 						<span class="memoz-link-area"><i class="fa fa-circle-thin"></i></span>
 						<span class="check-label">Hafal</span>
 					</a>
 					@else
-					<a class="memoz-check-link" href="javascript:void(0)" onclick="QuranJS.updateStatusMemoz('{{$row->id}}','0','Hafalan ini belum di hafal dengan benar?')">
+					<a class="memoz-check-link" href="javascript:void(0)" onclick="fbq('track', 'clickLupa');QuranJS.updateStatusMemoz('{{$row->id}}','0','Hafalan ini belum di hafal dengan benar?')">
 						<span class="memoz-link-area"><i class="fa fa-circle"></i></span>
 						<span class="check-label">Lupa</span>
 					</a>
@@ -43,9 +43,9 @@
 			</div>
 			<!--/memoz-body-inner-->
 			<div class="memoz-action">
-				<a onclick="QuranJS.formMemoModal('{{$row->id}}')" href="javascript:void(0)" class="left"><i class="fa fa-edit" ></i>  Edit</a>
+				<a onclick="fbq('track', 'clickEditMemoz');QuranJS.formMemoModal('{{$row->id}}')" href="javascript:void(0)" class="left"><i class="fa fa-edit" ></i>  Edit</a>
 				&nbsp;
-				<a href="javascript:void(0)" onclick="QuranJS.deleteMemoz('{{$row->id}}')" class="right"><i class="fa fa-remove"></i> Hapus</a>
+				<a href="javascript:void(0)" onclick="fbq('track', 'clickHapusMemoz');QuranJS.deleteMemoz('{{$row->id}}')" class="right"><i class="fa fa-remove"></i> Hapus</a>
 				&nbsp;
 				<a href="javascript:void(0)"  class="right"><i class="fa fa-stop-circle"></i> Rekam</a>
 			</div>

@@ -109,6 +109,30 @@
         <link href="{{url('assets/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="{{url('assets/jplayer/dist/jplayer/jquery.jplayer.min.js')}}"></script>
         <script type="text/javascript" src="{{url('assets/jplayer/dist/add-on/jplayer.playlist.min.js')}}"></script>
+
+       <!-- Facebook Pixel Code -->
+        <script>
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '112999465995364');
+          fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=112999465995364&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
+
+         @if(Request::segment(1)=='memoz')
+        <script>
+          fbq('track', '{{$header_title}}');
+        </script>
+        @endif
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif">
 
@@ -166,7 +190,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
+                                        <button class="btn btn-search" type="submit" onclick="fbq('track', 'clickSearch')"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
                             </form>
@@ -177,17 +201,17 @@
                 <!--/navmenu-header-->
 
                 <ul class="nav navmenu-nav">
-                    <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard')}}"><i class="mdi mdi-bank"></i> Dashboard</a></li>
-                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}"><i class="mdi mdi-library"></i> Menghafal</a></li>
+                    <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
+                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
-                    <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant"></i> Baca</a>
+                    <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
                     </li>
-                    <li><a href="javascript:;" onclick="QuranJS.callModal('info')"><i class="mdi mdi-information"></i> Info</a></li>
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')"><i class="mdi mdi-information"></i> Info</a></li>
                     @if(empty(session('sess_id')))
                     <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i>  Login</a></li>
                     @else
-                    <li><a href="{{url('profile/edit')}}"><i class="mdi mdi-account-edit"></i> Edit Profile</a></li>
-                    <li><a href="{{url('auth/logout')}}"><i class="mdi mdi-lock-open"></i> Logout</a></li>
+                    <li><a href="{{url('profile/edit')}}" onclick="fbq('track', 'clickEditProfile')"><i class="mdi mdi-account-edit"></i> Edit Profile</a></li>
+                    <li><a href="{{url('auth/logout')}}" onclick="fbq('track', 'clickLogout')"><i class="mdi mdi-lock-open"></i> Logout</a></li>
                     @endif
                 </ul>
                 <!--/navmenu-nav-->

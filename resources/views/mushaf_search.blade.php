@@ -29,7 +29,7 @@ $prev_surah = '';
 										<div class="select-surah">
 											<form class="form-inline" method="post" action="{{url('mushaf/search')}}">
 												<div class="form-group">
-													<select class="selectpicker form-control" name="surah"  onchange="location.href='{{url('mushaf/searchKeyword?keyword='.$keyword.'&surah=')}}'+this.value">
+													<select class="selectpicker form-control" name="surah"  onchange="fbq('track', 'clickChangeSurahSources');location.href='{{url('mushaf/searchKeyword?keyword='.$keyword.'&surah=')}}'+this.value">
 														<option value="0">- Di semua surah - </option>
 														@foreach($surahs as $surah)
 														<option  {{ $selected_surah==$surah->surah?'selected':'' }} value="{{$surah->surah}}">{{ $surah->surah_name }} ( {{ $surah->count }} ayat )</option>

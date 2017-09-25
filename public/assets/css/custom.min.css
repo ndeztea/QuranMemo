@@ -12,3 +12,11 @@
 	    width: auto;
 	}
 }
+.koreksi-box .koreksi-avatar img {
+    width: 70px;
+    height: 70px;
+}
+.dash-profile-img.img-circle img{
+	height: 120px;
+	width: 120px;
+}

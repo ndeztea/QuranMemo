@@ -35,7 +35,7 @@ function getAvatar($data){
 		return url('assets/images/avatar/guest.png');
 	}
 	if(!is_file(public_path('assets/images/avatar/'.$data->avatar))){
-        $avatar = $data->gender=='M'?url('assets/images/avatar/default_female.png'):url('assets/images/avatar/default_male.png');
+        $avatar = $data->gender=='F'?url('assets/images/avatar/default_female.png'):url('assets/images/avatar/default_male.png');
     }else{
         $avatar = url('assets/images/avatar/'.$data->avatar);
     }
