@@ -425,18 +425,14 @@
              QuranJS.callModal('buku');
             }*/
 
-         if('{{Request::segment(2)}}'=='' && '{{Request::segment(1)}}'=='mushaf'){
-            if('{{@$_COOKIE['coo_promo_3_tafsir']}}'==''){
-                //QuranJS.callModal('buku');
+         var d = new Date();
+         var isFriday = d.getDay();
+         if('{{session('sess_id')}}'!='' && '{{Request::segment(1)}}'=='dashboard'){
+            if(isFriday==5){
+                QuranJS.callModal('alkahfi');
             }
 
-            /*if('{{@$_COOKIE['coo_promo']}}'==''){
-                QuranJS.callModal('promo');
-            }*/
-
-            /*if('{{@$_COOKIE['coo_muratal_new']}}'==''){
-                QuranJS.callModal('muratal');
-            }*/
+            vex.dialog.alert({ unsafeMessage: '<img src="{{url('assets/images/puasa_muharram.jpeg')}}" style="width:100%"/>' });
 
             
             if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
