@@ -432,7 +432,7 @@
                 QuranJS.callModal('alkahfi');
             }
 
-            vex.dialog.alert({ unsafeMessage: '<img src="{{url('assets/images/puasa_muharram.jpeg')}}" style="width:100%"/>' });
+            vex.dialog.alert({ unsafeMessage: '<h4>Puasa Sunnah Yuk..!</h4><a href="{{url('assets/images/puasa_muharram.jpeg')}}"><img src="{{url('assets/images/puasa_muharram.jpeg')}}" style="width:100%"/></a>' });
 
             
             if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
