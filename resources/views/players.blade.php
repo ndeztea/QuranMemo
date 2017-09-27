@@ -171,7 +171,8 @@ $(document).ready(function(){
 			window.goNext = false;
 
 			focusPlay = currentPlay - 1;
-			location.href='#play_'+focusPlay;
+			//location.href='#play_'+focusPlay;
+			$('html,body').animate({scrollTop: $("#play_"+focusPlay).offset().top},'slow');
 
 			// update play counter
 			var counter_play = $('.play_'+tmpcurrentPlay+' .counter_play').html();
