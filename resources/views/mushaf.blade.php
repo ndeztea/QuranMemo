@@ -198,7 +198,7 @@ $prev_surah = '';
 								
 								<div class="action-footer">
 					                <div class="btn-group">
-					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;"><i class="fa fa-play"></i> Putar</a>
+					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;" onclick="fbq('track', 'clickPutar');"><i class="fa fa-play"></i> Putar</a>
 					                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
 					                  <a class="btn btn-share-ayat" href="#" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
 					                  @if(!empty(session('sess_id'))) 
