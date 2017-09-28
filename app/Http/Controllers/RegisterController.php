@@ -42,11 +42,10 @@ class RegisterController extends Controller
         
         if ($validator->fails()) {
             $messageErrors = $validator->errors()->all();
-            $errorHtml = '<p>';
             foreach($messageErrors as $error){
-                $errorHtml .= $error.'<br>';
+                $errorHtml[] = $error;
             }
-            $errorHtml .= '</p>';
+            $errorHtml = implode($errorHtml, ", ");
 
             return redirect('register')->with('messageError',$errorHtml)->withInput();
         }
@@ -61,7 +60,7 @@ class RegisterController extends Controller
 
             mail('quranmemo.id@gmail.com', 'Daftar QuranMemo', $contentsEmail);
 
-            return redirect('register')->with('messageSuccess', 'Terima kasih telah berpartisipai, kami akan kontak Antum jika terpilih untuk mendapatkan buku pilihan QuranMemo. Jazakallah Khairan');
+            return redirect('register')->with('messageSuccess', 'Terima kasih telah berpartisipai, kami akan kontak Antum jika terpilih untuk mendapatkan T-Shirt Tematik QuranMemo. Jazakallah Khairan');
         }else{
             return redirect('register')->with('messageError', 'Email sudah di pakai, gunakan email yang lain')->withInput();
         }
@@ -88,6 +87,7 @@ class RegisterController extends Controller
             'city.required' => 'Kota harus di isi',
             'address.required' => 'Alamat lengkap harus diisi',
             'hp.required' => 'No handphone harus diisi',
+            'dob.required' => 'Tanggal lahir harus diisi',
         ];
         
         return Validator::make($data, [
@@ -99,6 +99,7 @@ class RegisterController extends Controller
             'city' => 'required',
             'address' => 'required',
             'hp' => 'required',
+            'dob' => 'required',
         ],$errorMessages);
     }
 
@@ -123,6 +124,7 @@ class RegisterController extends Controller
             'city'  => $data['city'],
             'address' => $data['address'],
             'hp'    => $data['hp'],
+            'dob'    => $data['dob'],
             //'id_ayat'   =>  $data['id_ayat'],
             //'id_surah'  =>  $data['id_surah'],
             'device_id' =>  $data['device_id'],

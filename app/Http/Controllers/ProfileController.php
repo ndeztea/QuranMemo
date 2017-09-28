@@ -46,6 +46,7 @@ class ProfileController extends Controller
             $dataProfile['address'] = $request->get('address');
             $dataProfile['gender'] = $request->get('gender');
             $dataProfile['hp'] = $request->get('hp');
+            $dataProfile['dob'] = $request->get('dob');
             $UsersModel->edit($dataProfile);
 
             return redirect('profile/edit')->with('messageSuccess', 'Profile berhasil disimpan')->withInput();

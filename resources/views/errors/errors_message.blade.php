@@ -1,24 +1,31 @@
 @if(!empty(session('messageError')))
-    <div class="alert alert-danger">
+    <script>
+        var messageDetail = "{{{session('messageError') }}}";
+        vex.dialog.alert({ unsafeMessage: '<h4>Anda memiliki error :</h4>'+messageDetail });
+    </script>
+    <!--div class="alert alert-danger">
         <strong>Anda memiliki error :</strong>
         <br>
     	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    	{!! session('messageError') !!}
-    </div>
+    	
+    </div-->
 @endif
 
 @if(!empty(session('messageSuccess')))
-    <div class="alert alert-success">
+    <script>
+        var messageDetail = "{{ session('messageSuccess') }}";
+        vex.dialog.alert({ unsafeMessage: messageDetail });
+    </script>
+    <!--div class="alert alert-success">
     	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    	{{ session('messageSuccess') }}
-    </div>
+    	
+    </div-->
 @endif
 
 @if(!empty($messageErrors))
-    <strong>Anda memiliki error :</strong>
-    <ul class="alert alert-danger">
-    @foreach ($messageErrors->all() as $messageError)
-        <li>{{ $messageError }}</li>
-    @endforeach
-    <ul>
+    <script>
+        var errorDetail = '';
+        errorDetail = '<?php echo implode($messageErrors->all(), ',')?> asdsa';
+        vex.dialog.alert({ unsafeMessage: '<h4>Anda memiliki error :</h4>'+errorDetail });
+    </script>
 @endif

@@ -22,8 +22,9 @@ class Users extends Model
     public $is_active;
     public $city;
     public $address;
+    public $dob;
 
-    protected $fillable = array('name', 'email', 'gender','password','city','address','hp','device_id');
+    protected $fillable = array('name', 'email', 'gender','password','city','address','hp','device_id','dob');
 
     public function login($data,$encyrpt=''){
     	// login code

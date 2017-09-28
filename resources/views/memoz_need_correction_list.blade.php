@@ -9,7 +9,7 @@
 				<img src="{{getAvatar($row)}}"  class="img-circle">
 			</div>
 			<div class="koreksi-desc">
-				<span class="username">{{$row->name}}</span>
+				<span class="username">{{$row->name}} <sup class="badge">{{getAge($row)}}</sup></span>
 				<span class="ayat-target">
 					<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
 					<span class="spacer1">&bullet;</span> 

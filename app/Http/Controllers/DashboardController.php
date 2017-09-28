@@ -41,6 +41,9 @@ class DashboardController extends Controller
         $data['body_class'] = 'dashboard';
         if(!empty($data['detailProfile'])){
             $data['detailProfile'] = $data['detailProfile'][0];
+            if(empty($data['detailProfile']->dob)){
+                return redirect('profile/edit')->with('messageError', 'Mohon lengkapi data tanggal lahir terlebih dahulu')->withInput();
+            }
         }
 
         return view('dashboard_index',$data);

@@ -55,6 +55,10 @@
 													</select>
 												</div>
 												<div class="form-group">
+													<label for="city" class="control-label sr-only">Tanggal Lahir</label>
+													<input type="text" class="form-control search_ayat" readonly="readonly" name="dob" id="register_dob" aria-label="Tanggal Lahir" placeholder="Tanggal Lahir" value="{{ $detailUser->dob}}"/>
+												</div>
+												<div class="form-group">
 													<label for="city" class="control-label sr-only">Kota</label>
 													<input type="text" class="form-control" name="city" id="register_city" aria-label="kota asal" placeholder="Kota Asal" value="{{ $detailUser->city}}"/>
 												</div>
@@ -102,4 +106,14 @@
 	<!-- main-content-wrap -->
 </div>
 <!-- wrap -->
+<script>
+$(document).ready(function(){
+	$('#register_dob').datepicker({
+            format: "yyyy-mm-dd",
+            clearBtn: true,
+            autoclose: true,
+            todayHighlight: true
+        });
+});
+</script>
 @endsection

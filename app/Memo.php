@@ -74,7 +74,7 @@ class Memo extends Model
 
     public function getAnotherList($id_user,$filter,$start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
-                ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar')
+                ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar','u.dob')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->where('id_user','!=',$id_user)
@@ -107,7 +107,7 @@ class Memo extends Model
 
     public function getNeedCorrection($start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
-                ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar')
+                ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar','u.dob')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('status',1)

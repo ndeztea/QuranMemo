@@ -42,3 +42,7 @@ function getAvatar($data){
 
     return $avatar;
 }
+
+function getAge($data){
+	return !empty($data->dob)?Carbon::parse($data->dob)->age.'thn':'';
+}
