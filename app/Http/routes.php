@@ -70,13 +70,13 @@ Route::post('auth/forgetProcess', 'Auth\AuthController@forgetProcess');
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');
 
-Route::get('memoz/', 'MemozController@index');
-Route::post('memoz/', 'MemozController@index');
-
 Route::get('dashboard','DashboardController@index');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('memoz/', 'MemozController@index');
+    Route::post('memoz/', 'MemozController@index');
+
 	Route::get('memoz/surah/{surah}', 'MemozController@index');
     Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');
     Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
