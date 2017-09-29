@@ -56,7 +56,7 @@
 												</div>
 												<div class="form-group">
 													<label for="city" class="control-label sr-only">Tanggal Lahir</label>
-													<input type="text" class="form-control search_ayat" readonly="readonly" name="dob" id="register_dob" aria-label="Tanggal Lahir" placeholder="Tanggal Lahir" value="{{ $detailUser->dob}}"/>
+													<input type="text" class="form-control search_ayat" readonly="readonly" name="dob" id="register_dob" aria-label="Tanggal Lahir" placeholder="Tanggal Lahir" value="{{ $detailUser->dob=='0000-00-00'?'':$detailUser->dob}}"/>
 												</div>
 												<div class="form-group">
 													<label for="city" class="control-label sr-only">Kota</label>

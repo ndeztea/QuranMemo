@@ -1028,7 +1028,7 @@ var QuranJS = {
 					email : $('#login_email').val(),
 				}, function (response){
 					if(response.return==true){
-						vex.dialog.alert('Password sudah dikirim ke email, silahkan cek.');
+						vex.dialog.alert('Password sudah dikirim ke email, silahkan cek Inbox email, jika tidak ada cek SPAM folder.');
 					}else{
 						vex.dialog.alert('Email tidak terdaftar, silahkan daftar terlebih dahulu');
 					}

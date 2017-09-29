@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Crypt;
+use Illuminate\Support\Facades\Hash;
 use File;
 
 class ProfileController extends Controller
@@ -31,7 +32,7 @@ class ProfileController extends Controller
             $password_confirmation = $request->get('password');
             if($password!=''){
                 if($password==$password_confirmation){
-                    $dataPass['password'] = $password;
+                    $dataPass['password'] = Hash::make($password);
                     $dataPass['id'] = session('sess_id');
                     $UsersModel->edit($dataPass);
                 }else{
