@@ -425,6 +425,13 @@
              QuranJS.callModal('buku');
             }*/
 
+         @if(!empty($_SERVER['HTTP_REFERER']))
+            //alert("{{parse_url($_SERVER['HTTP_REFERER'])['host']}}");
+            if("{{parse_url($_SERVER['HTTP_REFERER'])['host']}}"=="www.quranmemo.id"){
+                vex.dialog.alert({ unsafeMessage: '<h4>Download versi "QuranMemo Community"!</h4> <p>Antum masih menggunakan aplikasi "QuranMemo" lama dan akan kami non-aktifkan dalam waktu dekat ini, maka silahkan cari dan download versi terbaru lewat playstore "QuranMemo Community" untuk mendapatkan fitur-fitur terbaru menghafal Al-Quran, seperti merekam, koreksi, update avatar, dll.</p> <p>Dan dapatkan T-shirt Gratis dari kami, dengan design Tematik Al-Quran</p><br>Syukron' });
+            }
+            @endif
+
          var d = new Date();
          var isFriday = d.getDay();
          if('{{session('sess_id')}}'!='' && '{{Request::segment(1)}}'=='dashboard'){
@@ -432,7 +439,7 @@
                 QuranJS.callModal('alkahfi');
             }
 
-            vex.dialog.alert({ unsafeMessage: '<h4>Puasa Sunnah Yuk..!</h4><a href="{{url('assets/images/puasa_muharram.jpeg')}}"><img src="{{url('assets/images/puasa_muharram.jpeg')}}" style="width:100%"/></a>' });
+            //vex.dialog.alert({ unsafeMessage: '<h4>Puasa Sunnah Yuk..!</h4><a href="{{url('assets/images/puasa_muharram.jpeg')}}"><img src="{{url('assets/images/puasa_muharram.jpeg')}}" style="width:100%"/></a>' });
 
             
             if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
