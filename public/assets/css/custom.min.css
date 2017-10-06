@@ -20,3 +20,9 @@
 	height: 120px;
 	width: 120px;
 }
+.quran_recorder .button{
+	padding: 1px;
+}
+.quran_recorder{
+	padding: 0px;
+}
