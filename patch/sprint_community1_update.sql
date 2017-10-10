@@ -109,6 +109,9 @@ ALTER TABLE `users` ADD `gender` VARCHAR(1) NOT NULL AFTER `name`;
 
 ALTER TABLE `users` ADD `avatar` VARCHAR(100) NULL AFTER `hp`;
 
+ALTER TABLE `memo_target` ADD `in_progress` INT(1) NOT NULL AFTER `count_correction`;
+
+
 
 
 

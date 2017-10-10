@@ -4,6 +4,8 @@ namespace App;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+
 
 class Memo extends Model
 {
@@ -59,14 +61,14 @@ class Memo extends Model
         }
 
         if($filter==1){
-            $memoList = $memoList->orderby('updated_at','DESC')->get();
+            $memoList = $memoList->orderby('updated_at','DESC');
         }else{
-            $memoList = $memoList->orderby('date_end','asc')->get();
+            $memoList = $memoList->orderby('in_progress','desc')->orderby('date_end','asc');
         }
         
+        //dd($memoList->toSql());
 
-
-        return $memoList;
+        return $memoList->get();
     }
 
     public function getSummaryTargetMemo($id_user){
@@ -134,5 +136,14 @@ class Memo extends Model
                 ->get();
 
         return $memoList[0]->count;
+    }
+
+    public function setInProgress($id,$id_user){
+        $updated_at = (string) Carbon::now();
+        $dataRecord['updated_at'] = $updated_at;
+        $dataRecord['in_progress'] = 1;
+        DB::table($this->table)->where('id_user',$id_user)->update(array('in_progress'=>0));
+        return DB::table($this->table)->where('id_user',$id_user)->where('id',$id)->update($dataRecord);
+
     }
 }

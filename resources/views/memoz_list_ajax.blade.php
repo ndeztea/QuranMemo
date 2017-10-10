@@ -47,7 +47,11 @@
 				&nbsp;
 				<a href="javascript:void(0)" onclick="fbq('track', 'clickHapusMemoz');QuranJS.deleteMemoz('{{$row->id}}')" class="right"><i class="fa fa-remove"></i> Hapus</a>
 				&nbsp;
+				@if($row->status==0)
+				<a href="javascript:void(0)"  class="right" onclick="QuranJS.updateInProgress('{{$row->id}}')"><i class="fa fa-star{{$row->in_progress==0?'-o':''}}" ></i> In Progress</a>
+				@else
 				<a href="javascript:void(0)"  class="right"><i class="fa fa-stop-circle"></i> Rekam</a>
+				@endif
 			</div>
 			<!--/memoz-action-->
 		</div>

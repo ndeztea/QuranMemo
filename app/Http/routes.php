@@ -76,6 +76,7 @@ Route::get('dashboard','DashboardController@index');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/', 'MemozController@index');
     Route::post('memoz/', 'MemozController@index');
+    Route::post('memoz/inProgress', 'MemozController@inProgress');
 
 	Route::get('memoz/surah/{surah}', 'MemozController@index');
     Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');

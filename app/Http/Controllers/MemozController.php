@@ -549,5 +549,14 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function inProgress(Request $request){
+        $MemoModel = new Memo();
+        $id = $request->input('id');
+        $MemoModel->setInProgress($id,$request->session()->get('sess_id'));
+        $dataHTML['status'] = 1;
+        $dataHTML['id'] = $id;
+        return response()->json($dataHTML);
+    }
+
    
 }
