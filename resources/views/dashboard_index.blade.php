@@ -4,7 +4,6 @@
 
 @section('content')
 @include('errors.errors_message')
-
 <div class="main-content-wrap">
 	<div class="main-content">
 		<div class="backdrop">

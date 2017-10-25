@@ -257,10 +257,9 @@
 
 			@if(Request::segment(2)!='correction')
 			@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-			<a class="button" style="font-size: 34px;" onclick="fbq('track', 'clickStartRekam');vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
-			<!--a class="button" id="record" onclick=""><i class="fa fa-microphone" style="color:red"></i></a-->
+			<a class="button" style="font-size: 34px;" onclick="recordAudio();fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
 			@else
-			<a class="button" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a>
+			<a class="button" style="font-size: 34px;" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a>
 			@endif
 			<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
 			<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
@@ -277,7 +276,7 @@
 		</div>
 		
 		<div class="player">
-			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: none"></audio>
+			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: "></audio>
 		</div>
 		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%" style="display: none"></canvas>
@@ -346,11 +345,13 @@ function playAudio(){
 	jQuery('#audio').trigger('play');
 
 	endAudio();
+	jQuery('.ayat_arabic_memoz').removeClass('blur-ayat');
 }
 function pauseAudio(){
 	jQuery('#pause_audio').addClass('disabled');
 	jQuery('#play_audio').removeClass('disabled');
 	jQuery('#audio').trigger('pause');
+	QuranJS.showAyat('start');
 }
 
 function pad(val) {
@@ -499,6 +500,58 @@ $(document).ready(function(){
 	@else
 	QuranJS.stepMemoz('correction','{{Request::segment(6)}}');
 	@endif
+
+	function recordAudio(){
+		@if(!empty($memoDetail->id))
+		vex.dialog.confirm({
+		    message: "Batas maksimal merekam hanya 20 detik. Mulai merekam?",
+		    callback: function (value) {
+		    	window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
+		    }
+		})
+		
+		@else 
+		vex.dialog.confirm({
+		    message: "Simpan hafalan terlebih dahulu?",
+		    callback: function (value) {
+		    	QuranJS.formMemoModal('{{$memoDetail->id}}')
+		    }
+		})
+		
+		@endif
+	}
+
+
+	function getResponse(event){
+		var message = event.data;
+		if(message=='uploading'){
+			$('#preloader').show();
+			$('.loading').prepend('<div class="loading_file">File sedang di upload..<br></div>');
+
+		}else if(message=='uploaded'){
+			$('#preloader').hide();
+			$('.loading_file').remove();
+			vex.dialog.alert('File rekaman berhasil di upload, siap dikoreksi jika sudah hafal.');
+			$('#play_audio').show();
+			$('#play_audio').removeClass('disabled'); 
+			$('#pause_audio').addClass('disabled');
+			$('#audio').attr('src','{{url('recorded/'.$memoDetail->id)}}.mp3');
+			playAudio();
+		}else if(message=='upload_error'){
+			$('#preloader').hide();
+			$('.loading_file').remove();
+			vex.dialog.alert('File rekaman gagal di upload, coba ulangi kembali.');
+		}
+	}
+	
+
+	if (window.addEventListener) {
+		// For standards-compliant web browsers
+		window.addEventListener("message", getResponse, false);
+	}
+	else {
+		window.attachEvent("onmessage", getResponse);
+	}
 </script>
 <script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/Fr.voice.js')}}"></script>

@@ -454,6 +454,33 @@ class MemozController extends Controller
 
         }
         return response()->json($dataHTML);
+    }
+
+    public function uploadRecordedMobile($idMemo,Request $request ){
+        /*print_r($_FILES);
+        $file = '/Volumes/Jobs/www/QuranNote/public/debugUploader.txt';
+        $current = file_get_contents($file);
+        ob_start();
+        echo $idMemo;
+        print_r($_FILES);
+        print_r($_POST);*/
+        $fileName = $idMemo.'.mp3';
+        $dataRecord['record'] = "recorded/".$fileName;
+        $path = $request->file('file')->move(public_path('recorded/'), $fileName);
+
+        if(File::exists($path)){
+            $MemoModel = new Memo;
+            $updated_at = (string) Carbon::now();
+            $dataRecord['updated_at'] = $updated_at;
+            $dataRecord['id'] = $idMemo;
+            $MemoModel->edit($dataRecord);
+            echo 'YES';
+        }else{
+            echo 'NO';
+        }
+
+        /*$output = ob_get_clean();
+        file_put_contents($file, $output);*/
     }   
 
     /**
