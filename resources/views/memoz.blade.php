@@ -506,7 +506,9 @@ $(document).ready(function(){
 		vex.dialog.confirm({
 		    message: "Batas maksimal merekam hanya 20 detik. Mulai merekam?",
 		    callback: function (value) {
-		    	window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
+		    	if(value==true){
+		    		window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
+		    	}
 		    }
 		})
 		
@@ -514,7 +516,9 @@ $(document).ready(function(){
 		vex.dialog.confirm({
 		    message: "Simpan hafalan terlebih dahulu?",
 		    callback: function (value) {
-		    	QuranJS.formMemoModal('{{$memoDetail->id}}')
+		    	if(value==true){
+			    	QuranJS.formMemoModal('{{$memoDetail->id}}')
+			    }
 		    }
 		})
 		
@@ -532,15 +536,18 @@ $(document).ready(function(){
 			$('#preloader').hide();
 			$('.loading_file').remove();
 			vex.dialog.alert('File rekaman berhasil di upload, siap dikoreksi jika sudah hafal.');
-			$('#play_audio').show();
-			$('#play_audio').removeClass('disabled'); 
-			$('#pause_audio').addClass('disabled');
-			$('#audio').attr('src','{{url('recorded/'.$memoDetail->id)}}.mp3');
-			playAudio();
 		}else if(message=='upload_error'){
 			$('#preloader').hide();
 			$('.loading_file').remove();
 			vex.dialog.alert('File rekaman gagal di upload, coba ulangi kembali.');
+		}else{
+			//alert(QuranJS.siteUrl+'/'+message);
+			// this is file
+			$('#play_audio').show();
+			$('#play_audio').removeClass('disabled'); 
+			$('#pause_audio').addClass('disabled');
+			$('#audio').attr('src',QuranJS.siteUrl+'/'+message);
+			playAudio();
 		}
 	}
 	

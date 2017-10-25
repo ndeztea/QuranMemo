@@ -43,9 +43,19 @@ class MushafController extends Controller
                 $sql = "UPDATE quran SET text_arabic=".$arr3_3." WHERE surah=".@$arr3[4]." AND ayat=".@$arr3[5].";";
                 echo $sql.'<br>';
             }     
-        }
+        }*/
            
-        
+        /*$directory = '/Volumes/Jobs/www/QuranNote/quran_ustmani.json';
+        $contents = File::get($directory);
+        $arrArabics = json_decode($contents);
+        foreach ($arrArabics as $arrArabic) {
+             foreach ($arrArabic as $arabic) {
+                $sql = "UPDATE quran SET text_arabic='".$arabic->verse."' WHERE surah=".$arabic->surah." AND ayat=".$arabic->ayah.";";
+                echo $sql.'<br>';    
+       
+             }
+            
+        }
         die();*/
         // get pages mushaf quran
         $QuranModel = new Quran;
