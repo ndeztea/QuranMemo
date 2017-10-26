@@ -36,10 +36,23 @@ class MemoCorrection extends Model
                 ->select('u.name','u.email','memo.*')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->where('memo.id',$id)
+
                 ->first();
 
 
         return $memoDetail;
+    }
+
+    public function getCountNew($id_user){
+        $newCorrection = DB::table($this->table.' as memo')
+                ->selectRaw('count(*) as count')
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->join('memo_target as mt', 'mt.id', '=', 'memo.id_memo_target')
+                ->where('mt.id_user',$id_user)
+                ->where('memo.status',0)->first();
+        //        echo $id_user;
+        //       dd($newCorrection);*/
+        return $newCorrection;
     }
 
     public function getList($id_user){

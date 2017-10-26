@@ -118,8 +118,8 @@
 								
 								@if(!empty($correctionDetail))
 								<p>Detail koreksi</p>
-								<strong>Tester :</strong><br>
-								<i>{{$correctionDetail->name}} ({{$correctionDetail->email}}) </i><br>
+								<strong>Pengkoreksi :</strong><br>
+								<i>{{$correctionDetail->name}} </i><br>
 								<strong>Catatan :</strong><br>
 								<i>{{$correctionDetail->note}}</i>
 								@else
@@ -271,12 +271,12 @@
 			<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
 			@endif
 			@if(session('sess_id')!= @$memoDetail->id_user )
-				<a class="button" id="btn-correction" style="display:none" onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
+				<a class="btn btn-juz" id="btn-correction" style="display:none;float: none !important" onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
 			@endif
 		</div>
 		
 		<div class="player">
-			<audio controls src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: "></audio>
+			<audio  controls controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: "></audio>
 		</div>
 		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%" style="display: none"></canvas>

@@ -77,6 +77,11 @@ class MemozController extends Controller
             $correctionDetail = $MemoCorrection->getDetail($idCorrection);
             $correctionDetail->correction = json_decode($correctionDetail->correction);
             $data['correctionDetail'] = $correctionDetail;
+
+            // update already opened
+            $dataRecord['status'] = 1;
+            $dataRecord['id'] = $idCorrection;
+            $MemoCorrection->edit($dataRecord);
         }
         
 
@@ -515,6 +520,8 @@ class MemozController extends Controller
 
         $dataRecord['correction'] = array_filter(explode('|', $dataRecord['correction']));
         $dataRecord['correction'] = json_encode($dataRecord['correction']);
+        $date_updated = (string) Carbon::now();
+        $dataRecord['date_updated'] = $date_updated;
 
         // memo detail
         $MemoModel = new Memo;

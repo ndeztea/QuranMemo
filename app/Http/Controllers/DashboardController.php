@@ -7,6 +7,7 @@ use App\Notes;
 use App\Users;
 use App\Quran;
 use App\Memo;
+use App\MemoCorrection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
@@ -32,11 +33,14 @@ class DashboardController extends Controller
 
         $MemoModel = new Memo;
         $UsersModel = new Users;
+        $MemoCorrectionModel = new MemoCorrection;
+
 
         // get need correction memoz
         $data['needCorrections'] = $MemoModel->getNeedCorrection();
         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
+        $data['counterCorrection'] = $MemoCorrectionModel->getCountNew(session('sess_id'))->count;
         $data['starting'] = $starting;
         $data['body_class'] = 'dashboard';
         if(!empty($data['detailProfile'])){
