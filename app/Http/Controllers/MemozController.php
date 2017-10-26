@@ -195,7 +195,7 @@ class MemozController extends Controller
         $start = $request->input('start');
         $start = empty($start)?0:$start;
 
-        $data['list']  = $MemoModel->getAnotherList(session('sess_id'),0,$start,10);
+        $data['list']  = $MemoModel->getAnotherList(session('sess_id'),$filter,$start,10);
         $data['listCount'] = $MemoModel->getCountAnotherList(session('sess_id'));
 
         $data['filter'] = $filter;

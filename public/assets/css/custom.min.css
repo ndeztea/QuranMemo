@@ -26,3 +26,10 @@
 .quran_recorder{
 	padding: 0px;
 }
+
+.timeline-koreksi.filter .nav-tabs > li{
+	width: 33.33%;
+}
+.mushaf .ayat_section .action-footer .btn {
+	padding: 6px 7px;
+}

@@ -207,6 +207,7 @@ $prev_surah = '';
 										<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-play-ayat">
 										@endif
 					                  <i class="fa fa-plus"></i> Hafalkan</a>
+					                  <a class="btn btn-share-ayat" href="#" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-book"></i> Tafsir</a>
 					                  
 					                </div>
 					            </div>

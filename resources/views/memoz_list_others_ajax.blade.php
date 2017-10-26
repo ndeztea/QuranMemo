@@ -23,7 +23,7 @@
 	</ul>
 
 	@if($start==0 && $listCount>10)
-		<a href="javascript:void(0)" onclick="QuranJS.memozOthers(0,'next')" class="btn btn-green btn-loadmore">Selanjutnya</a>
+		<a href="javascript:void(0)" onclick="QuranJS.memozOthers('{{$filter}}','next')" class="btn btn-green btn-loadmore">Selanjutnya</a>
 	@endif
 @else
 	@if($start==0)

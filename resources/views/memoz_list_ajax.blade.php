@@ -50,7 +50,7 @@
 				@if($row->status==0)
 				<a href="javascript:void(0)"  class="right" onclick="QuranJS.updateInProgress('{{$row->id}}')"><i class="fa fa-star{{$row->in_progress==0?'-o':''}}" ></i> In Progress</a>
 				@else
-				<a href="javascript:void(0)"  class="right"><i class="fa fa-stop-circle"></i> Rekam</a>
+				<a href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}"  class="right"><i class="fa fa-stop-circle"></i> Rekam</a>
 				@endif
 			</div>
 			<!--/memoz-action-->

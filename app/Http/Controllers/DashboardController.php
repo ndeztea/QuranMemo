@@ -37,8 +37,9 @@ class DashboardController extends Controller
 
 
         // get need correction memoz
-        $data['needCorrections'] = $MemoModel->getNeedCorrection();
         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
+        $data['needCorrections'] = $MemoModel->getNeedCorrection();
+        $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1);
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
         $data['counterCorrection'] = $MemoCorrectionModel->getCountNew(session('sess_id'))->count;
         $data['starting'] = $starting;

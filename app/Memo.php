@@ -80,21 +80,24 @@ class Memo extends Model
         return $memoList;
     }
 
-    public function getAnotherList($id_user,$filter,$start=0,$limit=5){
+    public function getAnotherList($id_user,$filter=0,$start=0,$limit=5){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar','u.dob')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->where('id_user','!=',$id_user)
-                ->where('status','=',0)
                 ->offset($start)
                 ->limit($limit);
 
-        if($filter!='all'){
-            $memoList = $memoList->where('status',$filter);
+        if($filter===0 || $filter===1){
+            $memoList = $memoList->where('status','=',$filter);
         }
-        $memoList = $memoList->orderby('updated_at','desc')->get();
+        //echo $id_user.'-'.$filter;
+        //dd($memoList->toSql());
 
+
+        $memoList = $memoList->orderby('updated_at','desc')->get();
+        //dd(DB::getQueryLog());
 
         return $memoList;
     }
@@ -108,6 +111,7 @@ class Memo extends Model
         if($filter!='all'){
             $memoList = $memoList->where('status',$filter);
         }
+
         $memoList  = $memoList->get();
 
         return $memoList[0]->count;
@@ -118,7 +122,8 @@ class Memo extends Model
                 ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar','u.dob')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
-                ->where('status',1)
+                ->where('status','=',1)
+                ->where('record','!=','')
                 ->orderby('updated_at','desc')
                 ->offset($start)
                 ->limit($limit)
@@ -132,7 +137,7 @@ class Memo extends Model
                 ->select(DB::raw('count(*) as count'))
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
-                ->where('status',1)
+                ->where('status','=',1)
                 ->get();
 
         return $memoList[0]->count;
