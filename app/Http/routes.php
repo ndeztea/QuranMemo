@@ -35,6 +35,7 @@ Route::get('mushaf/page/{page}/{autoplay}', 'MushafController@index');
 Route::get('mushaf/changeSurah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}/{idsurah}', 'MushafController@surah');
+Route::get('mushaf/tafsir/{surah}/{idsurah}', 'MushafController@tafsir');
 Route::post('mushaf/search', 'MushafController@search');
 Route::get('mushaf/search', 'MushafController@search');
 Route::get('mushaf/searchKeyword', 'MushafController@searchKeyword');

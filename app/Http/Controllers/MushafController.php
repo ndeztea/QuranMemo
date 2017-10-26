@@ -447,5 +447,9 @@ class MushafController extends Controller
         return redirect('mushaf');
     }
 
+    public function tafsir($idSurah, $ayat){
+        die('blah');
+    }
+
     
 }
