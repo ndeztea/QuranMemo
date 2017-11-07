@@ -110,6 +110,22 @@ ALTER TABLE `users` ADD `gender` VARCHAR(1) NOT NULL AFTER `name`;
 ALTER TABLE `users` ADD `avatar` VARCHAR(100) NULL AFTER `hp`;
 
 ALTER TABLE `memo_target` ADD `in_progress` INT(1) NOT NULL AFTER `count_correction`;
+CREATE TABLE `tafsir` (
+  `id` int(11) NOT NULL,
+  `surah` int(11) NOT NULL,
+  `ayat` int(11) NOT NULL,
+  `tafsir` text NOT NULL,
+  `type` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `user_subscriptions` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `level` int(11) NOT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `expired_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 

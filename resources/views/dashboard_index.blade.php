@@ -4,6 +4,7 @@
 
 @section('content')
 @include('errors.errors_message')
+
 <div class="main-content-wrap">
 	<div class="main-content">
 		<div class="backdrop">
@@ -27,6 +28,10 @@
 								<h4 class="dash-profile-name">{{session('sess_name')?session('sess_name'):'Tamu'}}</h4>
 								<span class='qm-badge'>Level Muqamah</span>
 							</div>
+							<!--form name="uploadForm" method="post" enctype="multipart/form-data" action="{{url('memoz/uploadRecordedMobile/134')}}">
+							<p><input id="uploadInput" type="file"  name="file"> </p>
+							<p><input type="submit" value="Send file"></p>
+							</form-->
 							<button class="btn btn-trigger-dashboard" type="button" data-toggle="collapse" data-target="#dashboard-items" aria-expanded="false" aria-controls="dashboard-items">
 								<i class="fa fa-angle-up"></i>
 							</button>

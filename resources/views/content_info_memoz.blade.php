@@ -6,7 +6,7 @@
 			<ol>
 				<li>Hafalkan arabic dan terjemahan</li>
 				<li>Hafalkan FOKUS arabic nya saja</li>
-				<li>Hafalkan FOKUS artinya saja</li>
+				<li>Hafalkan FOKUS artinya, dan perdalam tafsirnya</li>
 			</ol>
 		</li>
 		<li>Rekaman, rekam target hafalan, dan koreksi mandiri dengan mengklik ayat-ayat yang dirasa salah, upload rekaman ke server dan akan di koreksi oleh penghafal yang lain</li>

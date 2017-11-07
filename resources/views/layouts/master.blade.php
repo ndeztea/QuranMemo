@@ -209,6 +209,8 @@
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
                     </li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')"><i class="mdi mdi-information"></i> Info</a></li>
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('contact')" onclick="fbq('track', 'clickContact')"><i class="mdi mdi-email"></i> Kontak</a></li>
+                     <li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li>
                     @if(empty(session('sess_id')))
                     <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i>  Login</a></li>
                     @else

@@ -462,18 +462,21 @@ class MemozController extends Controller
     }
 
     public function uploadRecordedMobile($idMemo,Request $request ){
-        /*print_r($_FILES);
-        $file = '/Volumes/Jobs/www/QuranNote/public/debugUploader.txt';
+       
+        $file = public_path('debugUploader.txt');
         $current = file_get_contents($file);
         ob_start();
-        echo $idMemo;
+         print_r($_FILES);
+        echo 'idmemo:'.$idMemo;
         print_r($_FILES);
-        print_r($_POST);*/
+        print_r($_POST);
         $MemoModel = new Memo;
         $fileName = $idMemo.'_'.uniqid('').'.mp3';
         $dataRecord['record'] = "recorded/".$fileName;
         $path = $request->file('file')->move(public_path('recorded/'), $fileName);
 
+        
+        
         // delete the old file
         $detailMemo = $MemoModel->getDetail($idMemo);
         $oldRecord = public_path($detailMemo->record);
@@ -492,8 +495,10 @@ class MemozController extends Controller
             echo 'no';
         }
 
-        /*$output = ob_get_clean();
-        file_put_contents($file, $output);*/
+         $output = ob_get_clean();
+        file_put_contents($file, $output);
+
+       
     }   
 
     /**
@@ -562,8 +567,11 @@ class MemozController extends Controller
             $data['list']  = $MemoCorrectionModel->getMemoCorrectionByUser($id_user,$start,10);
 
         }
+
+        $QuranModel = new Quran;
         $data['start'] = $start;
         $data['idMemo'] = $idMemo;
+        $data['QuranModel'] = $QuranModel;
         $dataHTML['modal_title'] = 'Daftar koreksi';
         $dataHTML['modal_body'] = view('memoz_correction_list',$data)->render();
        

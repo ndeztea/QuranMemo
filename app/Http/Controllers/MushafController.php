@@ -43,14 +43,16 @@ class MushafController extends Controller
                 $sql = "UPDATE quran SET text_arabic=".$arr3_3." WHERE surah=".@$arr3[4]." AND ayat=".@$arr3[5].";";
                 echo $sql.'<br>';
             }     
-        }*/
+        }
            
-        /*$directory = '/Volumes/Jobs/www/QuranNote/quran_ustmani.json';
+        $directory = '/Volumes/Jobs/www/QuranNote/tafsir_syihab.json';
         $contents = File::get($directory);
         $arrArabics = json_decode($contents);
+        
         foreach ($arrArabics as $arrArabic) {
              foreach ($arrArabic as $arabic) {
-                $sql = "UPDATE quran SET text_arabic='".$arabic->verse."' WHERE surah=".$arabic->surah." AND ayat=".$arabic->ayah.";";
+                $sql = "INSERT tafsir(`surah`,`ayat`,`tafsir`,`type`) 
+                    VALUES('".$arabic->surah."','".$arabic->ayah."','".addslashes($arabic->verse)."','al-misbah');";
                 echo $sql.'<br>';    
        
              }
@@ -447,8 +449,25 @@ class MushafController extends Controller
         return redirect('mushaf');
     }
 
-    public function tafsir($idSurah, $ayat){
-        die('blah');
+    public function tafsir($surah, $ayat){
+        // free for juz 30
+        if($surah<78){
+            $this->middleware('subscription:1');
+        }
+        
+        
+        $QuranModel = new Quran;
+        $tafsir = $QuranModel->getTafsir($surah,$ayat);
+        $surah = $QuranModel->getSurah($surah);
+        $data['tafsir'] = $tafsir;
+        $data['tafsir_header'] = $surah[0]->surah_name.' : '.$ayat;
+
+        $dataHTML['modal_title'] = 'Tafsir';
+        $dataHTML['modal_body'] = view('mushaf_tafsir',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+        
     }
 
     

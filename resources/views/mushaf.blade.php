@@ -85,10 +85,10 @@ $prev_surah = '';
 								</div>
 							</div>
 							
-							<button type="button" href="#"  onclick="fbq('track', 'clickSettingMushaf');QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-default btn-setting pull-right hidden-xs">
+							<button type="button" href="javascript:void()"  onclick="fbq('track', 'clickSettingMushaf');QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-default btn-setting pull-right hidden-xs">
 								<i class="fa fa-cog"></i> <span class="sr-only">Setting</span>
 							</button> 
-							<button type="button" href="#"  onclick="fbq('track', 'clickTerakhirBaca');QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="btn btn-default btn-bookmark pull-right btn-bookmark hidden-xs">
+							<button type="button" href="javascript:void()"  onclick="fbq('track', 'clickTerakhirBaca');QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="btn btn-default btn-bookmark pull-right btn-bookmark hidden-xs">
 								<i class="fa {{$bookmarked}}" id="bookmark"></i> <span class="hide-on-smalldesktop">Terakhir baca</span>
 							</button>
 							
@@ -98,14 +98,14 @@ $prev_surah = '';
 						@if(isset($selected_surah))
 						<div class="nav-top clearfix detail_top">
 							<h4>{{$selected_surah}} ayat {{$ayat}}</h4>
-							<a href="#"  class="btn btn-share-ayat" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{Request::url()}}')"><i class="fa fa-share-alt"></i> Bagikan</a>
+							<a href="javascript:void()"  class="btn btn-share-ayat" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{Request::url()}}')"><i class="fa fa-share-alt"></i> Bagikan</a>
 							@if(!empty(session('sess_id'))) 
 							<a href="{{url('memoz/surah/'.$id_surah.'/'.$ayat)}}" class="btn btn-share-ayat" onclick="fbq('track', 'clickHafalkanDariMushaf');">
 							 @else 
 							<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-share-ayat">
 							@endif
 							<i class="fa fa-plus"></i> Hafalkan</a>
-							<!--a href="#" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
+							<!--a href="javascript:void()" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
 							
 							<a href="{{url('mushaf/page/'.$ayats[0]->page)}}" class="btn btn-share-ayat" onclick="fbq('track', 'clickHalamanPenuh');"><i class="fa fa-arrow-right"></i> Halaman penuh</a>
 						</div>
@@ -200,14 +200,14 @@ $prev_surah = '';
 					                <div class="btn-group">
 					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;" onclick="fbq('track', 'clickPutar');"><i class="fa fa-play"></i> Putar</a>
 					                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
-					                  <a class="btn btn-share-ayat" href="#" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
+					                  <a class="btn btn-share-ayat" href="javascript:void()" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
 					                  @if(!empty(session('sess_id'))) 
 										<a class="btn btn-play-ayat" href="{{url('memoz/surah/'.$ayat->surah.'/'.$ayat->ayat)}}" onclick="fbq('track', 'clickHafalkanDariMushaf');">
 										 @else 
 										<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-play-ayat">
 										@endif
 					                  <i class="fa fa-plus"></i> Hafalkan</a>
-					                  <a class="btn btn-share-ayat" href="#" onclick="fbq('track', 'clickTafsir');QuranJS.callModal('{{'mushaf/tafsir/'.$ayat->surah.'/'.$ayat->ayat}}')"><i class="fa fa-book"></i> Tafsir</a>
+					                  <a class="btn btn-share-ayat" href="javascript:void()" onclick="fbq('track', 'clickTafsir');QuranJS.callModal('{{'mushaf/tafsir/'.$ayat->surah.'/'.$ayat->ayat}}')"><i class="fa fa-book"></i> Tafsir</a>
 					                  
 					                </div>
 					            </div>
@@ -223,13 +223,13 @@ $prev_surah = '';
 							<div class="surah-nav paging-footer">
 								<div class="input-group" role="group" aria-label="Navigasi">
 									<ul class="pagination">
-										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="1"><i class="fa fa-angle-double-left"> </i></a></li>
-										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"><i class="fa fa-angle-left"> </i> </a></li>
+										<li><a href="javascript:void()"  onclick="QuranJS.changePage(this)" data-value="1"><i class="fa fa-angle-double-left"> </i></a></li>
+										<li><a href="javascript:void()"  onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}"><i class="fa fa-angle-left"> </i> </a></li>
 										@foreach($pages as $page)
-										<li  class="{{$page->page==$curr_page?'active':''}}"><a  onclick="QuranJS.changePage(this)" href="#" data-value="{{$page->page}}">{{$page->page}}</a></li>
+										<li  class="{{$page->page==$curr_page?'active':''}}"><a  onclick="QuranJS.changePage(this)" href="javascript:void()" data-value="{{$page->page}}">{{$page->page}}</a></li>
 										<?php endforeach?>
-										<li><a href="#"  onclick="QuranJS.changePage(this)"  data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"> </i></a></li>
-										<li><a href="#"  onclick="QuranJS.changePage(this)" data-value="604"> <i class="fa fa-angle-double-right"> </i></a></li>
+										<li><a href="javascript:void()"  onclick="QuranJS.changePage(this)"  data-value="{{$curr_page+1}}"><i class="fa fa-angle-right"> </i></a></li>
+										<li><a href="javascript:void()"  onclick="QuranJS.changePage(this)" data-value="604"> <i class="fa fa-angle-double-right"> </i></a></li>
 										<!--li class="page_free_input">
 											<a href="javascript:;">
 											<form class="form-inline" id="paggingForm" onsubmit="return false">

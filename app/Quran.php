@@ -182,13 +182,18 @@ class Quran extends Model
          $juz = DB::table('juz')
                 ->select('*')
                 ->where('page','>=',$page)
-                ->where('page','<',$page);
-                //->get();
-                dd($juz->toSql());
+                ->where('page','<',$page)
+                ->get();
+                //dd($juz->toSql());
         return $juz[0]->id;
     }
 
-
-
-
+    public function getTafsir($surah,$ayat){
+        $juz = DB::table('tafsir')
+                ->select('tafsir')
+                ->where('surah','=',$surah)
+                ->where('ayat','=',$ayat)
+                ->get();
+        return  $juz[0]->tafsir;
+    }
 }

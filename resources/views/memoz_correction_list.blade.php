@@ -16,12 +16,16 @@
 					<!--/memoz-time-remaining(tr)-->
 					<div class="memoz-content" >
 						<div class="memoz-content-top">
+							<?php 
+								$surah_detail = $QuranModel->getSurah($row->surah_start);
+							?>
 							<a class="memoz-link-surah" href="#">
-								{{$row->name}}
+								{{$surah_detail[0]->surah_name}} {{$row->ayat_start}}-{{$row->ayat_end}}
 							</a>
 						</div>
 						<!--/memoz-content-top-->
 						<div class="memoz-content-bot">
+							<b>{{$row->name}}</b>
 							<p>{{str_limit($row->note,100,'...')}}</p>
 						</div>
 					</div>

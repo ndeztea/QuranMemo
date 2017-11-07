@@ -210,6 +210,7 @@
 					                  <!--a class="btn btn-share-ayat" href="#"  onclick="QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a-->
 					                  <a class="memozed btn-share-ayat btn" style="display:none" href="javascript:void(0)" onclick="QuranJS.memorized('section_{{$ayat->page}}_{{$ayat->surah}}_{{$ayat->ayat}}')"><i class="fa fa-thumbs-up"></i> Hafal</a>
 					                  <a class="btn-share-ayat btn counter_{{$a}}" href="javascript:void(0)" onclick="fbq('track', 'clickBacaCounter');QuranJS.updateCounter('counter_{{$a}}')"><i class="fa fa-volume-up"></i> Baca <span class="counter">0</span>x</a>
+					                  <a class="btn btn-share-ayat tafsir" href="#" onclick="fbq('track', 'clickTafsir');QuranJS.callModal('{{'mushaf/tafsir/'.$ayat->surah.'/'.$ayat->ayat}}')"><i class="fa fa-book"></i> Tafsir</a>
 					                </div>
 					            </div>
 					            @endif

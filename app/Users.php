@@ -5,6 +5,7 @@ namespace App;
 use DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 
 class Users extends Model
@@ -106,10 +107,23 @@ class Users extends Model
             return $newPassword;
         }else{
             return false;
+        }        
+    }
+
+    public function checkLevel($id_user){
+        $now = (string) Carbon::now();
+
+        $level = DB::table('user_subscriptions')
+                ->select('*')
+                ->where('id_user','=',$id_user)
+                ->where('expired_date','>',$now)
+                ->orderBy('id','asc')
+                ->get();
+
+        if(!empty($level)){
+            return $level->level;
         }
-        
-        
-        
+        return false;
     }
 
 }
