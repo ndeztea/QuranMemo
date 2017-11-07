@@ -503,26 +503,31 @@ $(document).ready(function(){
 	@endif
 
 	function recordAudio(){
-		@if(!empty($memoDetail->id))
-		vex.dialog.confirm({
-		    message: "Batas maksimal merekam hanya 20 detik. Mulai merekam?",
-		    callback: function (value) {
-		    	if(value==true){
-		    		window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
-		    	}
-		    }
-		})
-		
-		@else 
-		vex.dialog.confirm({
-		    message: "Simpan hafalan terlebih dahulu?",
-		    callback: function (value) {
-		    	if(value==true){
-			    	QuranJS.formMemoModal('{{$memoDetail->id}}')
+		@if($counterRecord<=2)
+			@if(!empty($memoDetail->id))
+			vex.dialog.confirm({
+			    message: "Batas maksimal merekam hanya 20 detik. Mulai merekam?",
+			    callback: function (value) {
+			    	if(value==true){
+			    		window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
+			    	}
 			    }
-		    }
-		})
-		
+			})
+			
+			@else 
+			vex.dialog.confirm({
+			    message: "Simpan hafalan terlebih dahulu?",
+			    callback: function (value) {
+			    	if(value==true){
+				    	QuranJS.formMemoModal('{{$memoDetail->id}}')
+				    }
+			    }
+			})
+			
+			@endif
+		@else 
+		alert('a');
+		QuranJS.callModal('subscription')
 		@endif
 	}
 

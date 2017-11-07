@@ -27,6 +27,16 @@ class ContentController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function subscription()
+    {
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Berlangganan';
+        $dataHTML['modal_body'] = view('subscription_info')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
     public function about()
     {
         $dataHTML['modal_class'] = '';

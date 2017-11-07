@@ -117,7 +117,7 @@ class Memo extends Model
         return $memoList[0]->count;
     }
 
-    public function getNeedCorrection($start=0,$limit=5){
+    public function getNeedCorrection($start=0,$limit=5,$id_user=''){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah','u.name','u.gender','u.avatar','u.dob')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
@@ -138,6 +138,16 @@ class Memo extends Model
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('status','=',1)
+                ->get();
+
+        return $memoList[0]->count;
+    }
+
+     public function getCountRecordedUser($id_user){
+         $memoList = DB::table($this->table.' as memo')
+                ->select(DB::raw('count(*) as count'))
+                ->where('record','!=','')
+                ->where('id_user','=',$id_user)
                 ->get();
 
         return $memoList[0]->count;

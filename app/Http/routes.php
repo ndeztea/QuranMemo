@@ -35,7 +35,7 @@ Route::get('mushaf/page/{page}/{autoplay}', 'MushafController@index');
 Route::get('mushaf/changeSurah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}', 'MushafController@changeSurah');
 Route::get('mushaf/surah/{surah}/{idsurah}', 'MushafController@surah');
-Route::get('mushaf/tafsir/{surah}/{idsurah}', 'MushafController@tafsir')->middleware('subscription:1');
+Route::get('mushaf/tafsir/{surah}/{idsurah}', 'MushafController@tafsir')->middleware('subscription:tafsir');
 Route::post('mushaf/search', 'MushafController@search');
 Route::get('mushaf/search', 'MushafController@search');
 Route::get('mushaf/searchKeyword', 'MushafController@searchKeyword');
@@ -60,6 +60,7 @@ Route::get('muratal', 'ContentController@muratal');
 Route::get('info', 'ContentController@info');
 Route::get('info_memoz', 'ContentController@info_memoz');
 Route::get('alkahfi', 'ContentController@alkahfi');
+Route::get('subscription', 'ContentController@subscription');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
@@ -86,8 +87,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/search', 'MemozController@search');
     Route::get('memoz/config', 'MemozController@config');
 
-    Route::get('memoz/form/{id}', 'MemozController@form');
-	Route::post('memoz/form', 'MemozController@form');
+    Route::get('memoz/form/{id}', 'MemozController@form')->middleware('subscription:save_memoz');
+	Route::post('memoz/form', 'MemozController@form')->middleware('subscription:save_memoz');
 	Route::post('memoz/save', 'MemozController@save');
 	Route::get('memoz/list', 'MemozController@listing');
     Route::post('memoz/list_ajax', 'MemozController@list_ajax');
@@ -96,8 +97,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::post('memoz/remove', 'MemozController@remove');
     Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
-    Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');
-    Route::get('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');
+    Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile')->middleware('subscription:record');
+    Route::get('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile')->middleware('subscription:record');
     Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}/{idCorrection}', 'MemozController@index');
     Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}', 'MemozController@index');
     Route::post('memoz/updateStatus','MemozController@updateStatus');

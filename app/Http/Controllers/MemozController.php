@@ -84,9 +84,11 @@ class MemozController extends Controller
             $MemoCorrection->edit($dataRecord);
         }
         
-
+        $sess_id_user = session('sess_id');
+        $counterRecord = $memoModel->getCountRecordedUser($sess_id_user);
         //$data['fill_ayat_end'] = $fill_ayat_end;
         $data['memoDetail'] = $memoDetail;
+        $data['counterRecord'] = $counterRecord;
         $data['ayats'] = $ayats;
         $data['idCorrection'] = $idCorrection;
         $data['id'] = $id;
@@ -266,6 +268,8 @@ class MemozController extends Controller
     *
     */
     public function form(Request $request){
+        $this->middleware('subscription:save_memoz');
+
         $data['surah_start'] = $request->input('surah_start');
         $data['ayat_start'] = $request->input('ayat_start');
         $data['ayat_end'] = $request->input('ayat_end');

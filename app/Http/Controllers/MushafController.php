@@ -450,12 +450,6 @@ class MushafController extends Controller
     }
 
     public function tafsir($surah, $ayat){
-        // free for juz 30
-        if($surah<78){
-            $this->middleware('subscription:1');
-        }
-        
-        
         $QuranModel = new Quran;
         $tafsir = $QuranModel->getTafsir($surah,$ayat);
         $surah = $QuranModel->getSurah($surah);
