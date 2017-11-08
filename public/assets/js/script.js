@@ -1064,6 +1064,11 @@ var QuranJS = {
 				$('#btn-upload').removeAttr("disabled");
 			}
 		});
+	},
+
+	submitMemoz : function(level){
+
+		jQuery('.form-inline').submit(); 
 	}
 
 	

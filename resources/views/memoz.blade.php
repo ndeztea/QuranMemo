@@ -26,7 +26,7 @@
 					<form class="form-inline" action="<?php echo url('memoz/search')?>" method="post">
 							<!--span class="search-title">Surah</span-->
 							<div class="form-group">
-								<select name="surah_start"  id="surah_start" class="selectpicker form-control surah_start_temp">
+								<select name="surah_start"  id="surah_start" class="form-control surah_start_temp">
 									@foreach($surahs as $surah)
 									<option {{$surah->id==$surah_start?'selected':''}} value="{{$surah->id}}">{{$surah->id}}. {{$surah->surah_name}} ({{$surah->type}} {{$surah->ayat}} ayat)</option>
 									@endforeach
@@ -39,7 +39,7 @@
 								  <input class="form-control search_ayat ayat_end_temp" id="ayat_end"  name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 								</div>
 							</div>
-							<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) jQuery('.form-inline').submit() @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
+							<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) QuranJS.submitMemoz('{{$level}}') @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
 								
 							@if(session('sess_id'))
 							<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarHafalanPage');QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>

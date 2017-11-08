@@ -35,7 +35,7 @@ $prev_surah = '';
 												<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
 												
 													<div class="form-group">
-														<select class="selectpicker form-control" name="surah">
+														<select class="form-control" name="surah">
 															@foreach($surahs as $surah)
 																<?php 
 																	$selectedSurah = '';

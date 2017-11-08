@@ -422,11 +422,17 @@ class MushafController extends Controller
     }
 
     public function config(){
+        $sess_id_user = session('sess_id');
+        
         $mushaf_layout = $_GET['mushaf_layout'];
         $automated_play = $_GET['automated_play'];
         $footer_action = $_GET['footer_action'];
         $muratal = $_GET['muratal'];
         $tajwid = $_GET['tajwid'];
+
+        $UsersModel = new Users;
+        $level = $UsersModel->checkLevel($sess_id_user);
+        $data['level'] = $level;
 
         $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
         $data['mushaf_layout'] = $mushaf_layout;

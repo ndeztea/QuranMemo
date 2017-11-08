@@ -121,9 +121,9 @@ class Users extends Model
                 ->get();
 
         if(!empty($level)){
-            return $level->level;
+            return $level[0]->level;
         }
-        return false;
+        return 0;
     }
 
 }

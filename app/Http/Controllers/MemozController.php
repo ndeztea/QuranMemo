@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Notes;
 use App\Quran;
+use App\Users;
 use App\Memo;
 use App\MemoCorrection;
 
@@ -63,11 +64,12 @@ class MemozController extends Controller
             
         }
 
+        $memoModel = new Memo;
+        $UsersModel = new Users;
         $memoDetail = new \stdClass();
         $memoDetail->id = '';
         if($id){
             // get detail memo
-            $memoModel = new Memo;
             $memoDetail = $memoModel->getDetail($id);
         }
 
@@ -86,7 +88,9 @@ class MemozController extends Controller
         
         $sess_id_user = session('sess_id');
         $counterRecord = $memoModel->getCountRecordedUser($sess_id_user);
+        $level = $UsersModel->checkLevel($sess_id_user);
         //$data['fill_ayat_end'] = $fill_ayat_end;
+        $data['level'] = $level;
         $data['memoDetail'] = $memoDetail;
         $data['counterRecord'] = $counterRecord;
         $data['ayats'] = $ayats;
@@ -133,9 +137,15 @@ class MemozController extends Controller
     }
 
      public function config(){
+        $sess_id_user = session('sess_id');
+
         $repeat = $_GET['repeat'];
         $muratal = $_GET['muratal'];
         $tajwid = $_GET['tajwid'];
+
+        $UsersModel = new Users;
+        $level = $UsersModel->checkLevel($sess_id_user);
+        $data['level'] = $level;
 
         $data['arr_muratal_list'] = \Config::get('custom.muratal_list');
         $data['muratal'] = $muratal;

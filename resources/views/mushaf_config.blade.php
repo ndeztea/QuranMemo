@@ -1,7 +1,7 @@
 <div class="modal-spacing">
 	<div class="container-segmented">
 		<h4>Muratal</h4>
-		<select class="form-control" name="muratal" id="muratal" onchange="fbq('track', 'clickChangeMuratal');QuranJS.configMuratal(this.value)">
+		<select class="form-control" name="muratal" id="muratal" onchange="fbq('track', 'clickChangeMuratal');QuranJS.configMuratal(this.value,{{$level}})">
 			@foreach($arr_muratal_list as $key=>$val)
 			<option value="{{$key}}" {{$key==$muratal?'selected':''}}>{{$val}}</option>
 			@endforeach
