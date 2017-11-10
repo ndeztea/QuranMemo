@@ -33,3 +33,29 @@
 .mushaf .ayat_section .action-footer .btn {
 	padding: 6px 7px;
 }
+.content-learning{
+	padding: 5px
+}
+.content-learning ul {
+	list-style: none;
+}
+.content-learning ul li{
+	font-size: 16px;
+	margin: 10px;
+}
+
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-full-screen{
+    z-index: 999999999;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}

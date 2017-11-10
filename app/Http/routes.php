@@ -76,6 +76,8 @@ Route::get('dashboard','DashboardController@index');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('content_learning','ContentController@learning');
+    Route::get('file_learning/{folder}','ContentController@file_learning');
     Route::get('memoz/', 'MemozController@index');
     Route::post('memoz/', 'MemozController@index');
     Route::post('memoz/inProgress', 'MemozController@inProgress');

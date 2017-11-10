@@ -13,7 +13,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">error 404 <br>Halaman tidak ada</div>
-                <a href="{{ url('mushaf/page/1') }}">Kembali ke Mushaf</a>
+                <a href="{{ url('dashboard') }}">Kembali ke Dashboard</a>
             </div>
         </div>
     </body>

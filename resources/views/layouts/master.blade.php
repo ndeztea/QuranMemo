@@ -208,12 +208,23 @@
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
                     </li>
+                    <li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
+                    </li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')"><i class="mdi mdi-information"></i> Info</a></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('contact')" onclick="fbq('track', 'clickContact')"><i class="mdi mdi-email"></i> Kontak</a></li>
                      <li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li>
                     @if(empty(session('sess_id')))
+                    <li></li>
+                    <li></li>
+                    <li></li>
                     <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i>  Login</a></li>
                     @else
+                    <li></li>
+                    <li></li>
+                    <li></li>
                     <li><a href="{{url('profile/edit')}}" onclick="fbq('track', 'clickEditProfile')"><i class="mdi mdi-account-edit"></i> Edit Profile</a></li>
                     <li><a href="{{url('auth/logout')}}" onclick="fbq('track', 'clickLogout')"><i class="mdi mdi-lock-open"></i> Logout</a></li>
                     @endif

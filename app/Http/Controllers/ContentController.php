@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Notes;
+use App\Users;
 use App\Quran;
+use App\Content;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -121,5 +124,39 @@ class ContentController extends Controller
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
+    }
+
+    public function learning(){
+        $data['header_top_title'] = $data['header_title'] = 'Konten';
+
+        $Users = new Users;
+        $level = $Users->checkLevel(session('sess_id'));
+
+        $contentModel = new Content;
+        $listFolder = $contentModel->getAssetsContent();
+        $data['listFolder'] = $listFolder;
+        $data['level'] = $level;
+        return view('content_learning',$data);
+    }
+
+    public function file_learning($folder){
+        $data['header_top_title'] = $data['header_title'] = ucfirst($folder);
+
+        $Users = new Users;
+        $level = $Users->checkLevel(session('sess_id'));
+
+        $contentModel = new Content;
+        $detail  = $contentModel->getAssetDetail($folder);
+        if($level<$detail->level){
+            return redirect('learning')->with('messageError', 'Tidak mempunyai akses')->withInput();
+        }
+
+        $directory = public_path('learning/'.$folder);
+        $listFiles = File::allFiles($directory);
+       
+        $data['listFiles'] = $listFiles;
+        $data['detail'] = $detail;
+        $data['folder'] = $folder;
+        return view('content_learning_file',$data);
     }
 }
