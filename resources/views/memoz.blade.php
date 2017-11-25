@@ -118,16 +118,16 @@
 								<a href="javascript:;" class="btn btn-random" onclick="fbq('track', 'clickAcak');QuranJS.showAyat('random')">Acak</a>
 							</div>
 							@else
-							<div class="alert alert-success">
-								
+							
 								@if(!empty($correctionDetail))
-								<p>Detail koreksi</p>
-								<strong>Pengkoreksi :</strong><br>
-								<i>{{$correctionDetail->name}} </i><br>
-								<strong>Catatan :</strong><br>
-								<i>{{$correctionDetail->note}}</i>
-								@else
-								<p> Dengarkan rekaman, dan bandingkan dengan ayat-ayat hafalan apakah betul atau salah, jika ada ayat yang salah klik ayatnya, dan kirimkan koreksi ke penghafal dengan catatan yang diperlukan</p>
+								<div class="correction-detail">
+									<strong>Pengkoreksi :</strong><br>
+									<p>{{$correctionDetail->name}} </p>
+									<strong>Catatan :</strong><br>
+									<p>{{$correctionDetail->note}}</p>
+									@else
+									<p> Dengarkan rekaman, dan bandingkan dengan ayat-ayat hafalan apakah betul atau salah, jika ada ayat yang salah klik ayatnya, dan kirimkan koreksi ke penghafal dengan catatan yang diperlukan</p>
+								</div>
 								@endif
 							</div>
 							@endif
@@ -243,8 +243,7 @@
 								<p>Jangan lupa untuk berdo'a kepada Allah Ta'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p-->
 
 							</div>
-						<?php endif?>		
-
+						<?php endif?>	
 					</div>
 				</div>
 

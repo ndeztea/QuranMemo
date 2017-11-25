@@ -117,6 +117,7 @@ class Users extends Model
                 ->select('*')
                 ->where('id_user','=',$id_user)
                 ->where('expired_date','>',$now)
+                ->where('active','=',1)
                 ->orderBy('id','asc')
                 ->get();
 

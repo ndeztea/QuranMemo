@@ -264,14 +264,14 @@ $prev_surah = '';
 			<ul class="c-circle-menu__items">
 				
 				<li class="c-circle-menu__item">
-					<button type="button" onclick="fbq('track', 'clickHidePlayer');QuranJS.hidePlayer();" aria-expanded="false" aria-controls="surah-collapse"  class="c-circle-menu__link menu__link5 player-hide">
-						<span class='menu-icon'><i class='fa fa-play'></i></span>
-						<span class='menu-caption'>Hide Player</span>
+					<button type="button" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')" aria-expanded="false" aria-controls="surah-collapse"  class="c-circle-menu__link menu__link5 player-hide">
+						<span class='menu-icon'><i class='fa fa-info'></i></span>
+						<span class='menu-caption'>Tanda Baca</span>
 					</button>
-					<button type="button" onclick="fbq('track', 'clickShowPlayer');QuranJS.showPlayer();" aria-expanded="false" aria-controls="surah-collapse"  class="c-circle-menu__link menu__link5 player-show">
+					<!--button type="button" onclick="fbq('track', 'clickShowPlayer');QuranJS.showPlayer();" aria-expanded="false" aria-controls="surah-collapse"  class="c-circle-menu__link menu__link5 player-show">
 						<span class='menu-icon'><i class='fa fa-play'></i></span>
 						<span class='menu-caption'>Show Player</span>
-					</button>
+					</button-->
 				</li>
 				<!-- end-item -->	
 

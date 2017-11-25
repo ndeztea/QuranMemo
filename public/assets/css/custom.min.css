@@ -59,3 +59,95 @@ video::-webkit-full-screen{
 video::-webkit-media-controls-panel {
     width: calc(100% + 30px); /* Adjust as needed */
 }
+
+.datepicker td, .datepicker th{
+	font-size: 22px !important;
+}
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left {
+    left: 10% !important;
+    top: 19% !important;
+}
+.datepicker-dropdown:after{
+	border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+}
+.datepicker-dropdown.datepicker-orient-bottom:before{
+	display: none;
+}
+.datepicker-days, 
+.datepicker-months, 
+.datepicker-years, 
+.datepicker-decades, 
+.datepicker-centuries,
+.datepicker-days table,
+.datepicker-months table,
+.datepicker-years table,
+.datepicker-decades table,
+.datepicker-centuries table
+{
+	width: 280px !important;
+}
+.show.collapse{
+	display: none;
+}
+
+.panel{
+	border:none !important;
+}
+.panel-body ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.panel.gratis{
+	background-color: #feffdb;
+}
+.panel.gratis .panel-heading{
+	background: #fff !important;
+    border-bottom: 2px solid #d1d46b;
+}
+.panel.islam{
+	background-color: #dbfff4;
+}
+.panel.islam .panel-heading{
+	background: #fff !important;
+    border-bottom: 2px solid #51b395;
+}
+.panel.iman{
+	background-color: #dcdbff;
+}
+.panel.iman .panel-heading{
+	background: #fff !important;
+    border-bottom: 2px solid #8987af;
+}
+.panel.ihsan{
+	background-color: #ffdbdb;
+}
+.panel.ihsan .panel-heading{
+	background: #fff !important;
+    border-bottom: 2px solid #ab373a;
+}
+
+.correction-detail{
+	border-bottom: 2px solid #ddd;
+	padding: 5px;
+	background-color: #feffda;
+}
+
+.order-detail{
+	border: 1px solid #ddd;
+    background-color: #eee;
+    padding: 15px;
+}
+.order-detail .price,.order-detail .rekening{
+	font-size: 27px;
+    border: 1px dashed #cbbda3;
+    background-color: #fff7e9;
+    text-align: center;
+    margin: 20px 0px;
+    padding: 5px;
+}
+hr{
+	border-top: 1px solid #848484;
+}

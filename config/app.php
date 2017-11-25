@@ -2,7 +2,8 @@
 
 return [
     
-    'mp3_url' => 'https://quranmemo.com/public/',
+    //'mp3_url' => 'https://quranmemo.com/public/',
+    'mp3_url' => 'http://localhost/QuranNote/public/',
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

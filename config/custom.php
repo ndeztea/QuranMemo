@@ -7,6 +7,7 @@ return [
     	"Ghamadi"	=>	"Saad Al-Ghamadi",
     	"Husary"	=>	"Mahmoud Khalil Al-Hussary",
     	"Menshawi"	=>	"Mohammed Siddiq Al-Minshawid",
+        "Warsh_AlDosary"  =>  "(Warsh) Ibrahim Al-Dosary",
     	"Indo_Anak"	=>	"Indonesia Anak",
     	"Indo_Dewasa "	=>	"Indonesia Dewasa"
     ],

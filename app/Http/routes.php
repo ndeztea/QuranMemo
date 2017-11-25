@@ -44,7 +44,6 @@ Route::get('mushaf/muqodimah', 'MushafController@muqodimah');
 Route::get('mushaf/muqodimah/{idsurah}', 'MushafController@muqodimah');
 Route::get('mushaf/set_muratal/{qori}', 'MushafController@set_muratal');
 
-
 Route::get('notes/', 'NotesController@index');
 
 Route::get('bookmarks/', 'BookmarksController@index');
@@ -61,6 +60,10 @@ Route::get('info', 'ContentController@info');
 Route::get('info_memoz', 'ContentController@info_memoz');
 Route::get('alkahfi', 'ContentController@alkahfi');
 Route::get('subscription', 'ContentController@subscription');
+Route::get('subscription/order/{level}', 'SubscriptionsController@order');
+Route::post('subscription/order/{level}', 'SubscriptionsController@order');
+Route::get('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
+Route::post('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
