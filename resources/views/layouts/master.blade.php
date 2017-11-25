@@ -79,6 +79,7 @@
         <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
         
         <script type="text/javascript">
+            location.href="https://quranmemo.com";
             QuranJS.siteUrl = '{{url()}}';
         </script>
 

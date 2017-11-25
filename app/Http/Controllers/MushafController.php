@@ -26,8 +26,8 @@ class MushafController extends Controller
      */
     public function index($page=1)
     {
-        header('location:https://www.quranmemo.com');
-        die('s');
+        //header('location:https://www.quranmemo.com');
+        //die('s');
         /*$directory = '/Volumes/Jobs/www/QuranNote/public/muqodimah/';
         $files = File::allFiles($directory);
         foreach ($files as $file)
