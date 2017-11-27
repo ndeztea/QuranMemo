@@ -123,5 +123,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('profile/edit', 'ProfileController@edit');
     Route::get('profile/edit', 'ProfileController@edit');
     Route::post('profile/uploadAvatar','ProfileController@uploadAvatar');
+    Route::get('subscription/listing', 'SubscriptionsController@listing');
+    Route::get('subscription/counter', 'SubscriptionsController@counter');
 
+});
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('subscription/approve/{id}', 'SubscriptionsController@approve');
 });

@@ -20,6 +20,7 @@ class SubscriptionsController extends Controller
 {
     var $price = array('islam'=>10000,'iman'=>20000,'ihsan'=>50000);
     var $level = array('islam'=>1,'iman'=>2,'ihsan'=>3);
+
     /**
      * Display a listing of the resource.
      *
@@ -53,11 +54,12 @@ class SubscriptionsController extends Controller
             $emailData['level'] = $level;
             $emailData['name'] = $dataUser->name;
             $emailData['email'] = $dataUser->email;
+            $emailData['active'] = 0;
             $emailData['price'] = $price+$uniqPrice;
-            $emailData['url'] = url('subscription/confirmaation/'.$subscriptions_id);
+            $emailData['url'] = url('subscription/confirmation/'.$subscriptions_id);
 
              Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
-                $m->from('info@quranmemo.id', 'QuranMemo');
+                $m->from('no-reply@quranmemo.com', 'QuranMemo');
                 $m->to($emailData['email'], $emailData['name'])->subject('Order QuranMemo');
                 $m->to('ndeztea@gmail.com','Admin QuranMemo')->subject('New Order QuranMemo');
             });
@@ -82,11 +84,11 @@ class SubscriptionsController extends Controller
       // upload file
         if(!empty($request->file('file'))){
           $fileName = uniqid('file-').'.'.$request->file('file')->extension();
-          $path = $request->file('file')->move(public_path('file'), $fileName);
+          $path = $request->file('file')->move(public_path('confirmation_file'), $fileName);
 
           // make sure upload sucess
             if(File::exists($path)){
-              $data['file'] = 'confirmation_file/'.$fileName;
+              $dataRecord['file'] = 'confirmation_file/'.$fileName;
             } 
         }
         $dataRecord['id'] = $subscriptions_id;
@@ -110,25 +112,71 @@ class SubscriptionsController extends Controller
        return view('subscriptions_order',$data);
     }
 
-    public function approve(){
-      $detail = $SubscriptionsModel->getDetail($subscriptions_id);
+    public function approve(Request $request){
+      $SubscriptionsModel = new Subscriptions();
+      $subscriptions_id = $request->segment(3);
+
+        $detail = $SubscriptionsModel->getDetail($subscriptions_id);
       // send email
         $objUsers = new Users;
-        $dataUser = $objUsers->getDetail($sess_id)[0];
+        $dataUser = $objUsers->getDetail($detail->id_user)[0];
         $emailData['level'] =  array_keys($this->level, $detail->level)[0];
         $emailData['name'] = $dataUser->name;
         $emailData['email'] = $dataUser->email;
         $emailData['price'] = $detail->price;
         $emailData['active'] = 1;
+        $emailData['url'] = '#';
         $dt = Carbon::now()->addDays(31);
-        $emailData['expired_date'] = $dt->format('%A, %d %B %Y');    
+        $emailData['expired_date'] = $dt->format('d-m-Y'); 
+        // update subscriptions
+        $dataRecord['id'] = $subscriptions_id;
+        $dataRecord['active'] = 1;
+        $dataRecord['expired_date'] = $dt->format('Y-m-d'); 
+        $isSuccess =  $SubscriptionsModel->edit($dataRecord);
+        if($isSuccess){
+            Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
+              $m->from('no-reply@quranmemo.com', 'QuranMemo');
+              $m->to($emailData['email'], $emailData['name'])->subject('Approval berlangganan QuranMemo berhasil');
+              $m->to('ndeztea@gmail.com','Admin QuranMemo')->subject('New Approval berlangganan QuranMemo berhasil');
+          });
+          return redirect('subscription/listing')->with('messageSuccess', 'Konfirmasi sukses');
+        }
+        
+        return redirect('subscription/listing')->with('messageError', 'Konfirmasi gagal');
+    }
 
-        Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
-            $m->from('info@quranmemo.id', 'QuranMemo');
-            $m->to($emailData['email'], $emailData['name'])->subject('Konfirmasi berlangganan QuranMemo berhasil');
-            $m->to('ndeztea@gmail.com','Admin QuranMemo')->subject('New Konfirmasi berlangganan QuranMemo berhasil');
-        });
+    public function listing(){
+        $SubscriptionsModel = new Subscriptions();
+        $sessRole = session('sess_role');
+        if($sessRole==1){
+          $orderList = $SubscriptionsModel->getAllPendingSubscriptions();
+        }else{
+          $orderList = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
+        }
 
+        $data['header_top_title'] = $data['header_title'] = 'Daftar Order';
+        
+        $data['orderList'] = $orderList;
+        $data['level'] = $this->level;
+        return view('subscriptions_list',$data);
+    }
+
+    public function counter(){
+      $SubscriptionsModel = new Subscriptions();
+      $sessRole = session('sess_role');
+      if($sessRole==1){
+        $counter = $SubscriptionsModel->getAllPendingSubscriptions();
+      }else{
+        $counter = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
+      }
+
+      $dataHTML['counter'] = 0;
+      if(count($counter)>0){
+        $dataHTML['counter'] = count($counter);
+      }
+
+      echo json_encode($dataHTML);
+      die();
     }
 
 }

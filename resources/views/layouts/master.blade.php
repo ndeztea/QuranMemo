@@ -203,6 +203,7 @@
                 <!--/navmenu-header-->
 
                 <ul class="nav navmenu-nav">
+
                     <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
                     <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
@@ -210,6 +211,7 @@
                     </li>
                     <li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
                     </li>
+                    <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
                     <!--li><a href="javascript:;" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')"><i class="mdi mdi-information"></i> Info</a></li-->
                     <li></li>
                     <li></li>
@@ -462,6 +464,14 @@
             }
          }
 
+         // get subscription information
+         $.getJSON('{{url('subscription/counter')}}',{},function(response){
+           if(response.counter>0){
+                $('#cart').attr('onclick','location.href="{{url('subscription/listing')}}"');
+                $('#cartCounter').html(response.counter);
+                $('#cartCounter').show();
+           }
+        });
             
 
         </script>

@@ -26,7 +26,10 @@
 							</div>
 							<div class="dash-profile-desc">
 								<h4 class="dash-profile-name">{{session('sess_name')?session('sess_name'):'Tamu'}}</h4>
-								<span class='label label-primary'>Level Muqamah</span>
+								@foreach($listSubscriptions as $subscription)
+								<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
+								<span class='label label-primary'>Paket {{ucfirst($level[$subscription->level])}} ( {{$daysLeft}} hari )</span>
+								@endforeach
 							</div>
 							<!--form name="uploadForm" method="post" enctype="multipart/form-data" action="{{url('memoz/uploadRecordedMobile/134')}}">
 							<p><input id="uploadInput" type="file"  name="file"> </p>

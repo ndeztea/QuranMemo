@@ -42,6 +42,43 @@ class Subscriptions extends Model
         return $memoDetail;
     }
 
+    public function getActiveSubscriptions($id_user){
+        $now = (string) Carbon::now();
+        $list = DB::table($this->table)
+                ->select('*')
+                ->where('id_user',$id_user)
+                ->where('active',1)
+                ->where('expired_date','>',$now)
+                ->get();
+
+
+        return $list;
+    }
+
+    public function getPendingSubscriptions($id_user){
+        $list = DB::table($this->table)
+                ->select('*')
+                ->where('id_user',$id_user)
+                ->where('active',0)
+                ->orderBy('id','desc')
+                ->get();
+
+
+        return $list;
+    }
+
+    public function getAllPendingSubscriptions(){
+        $list = DB::table($this->table.' as sub')
+                ->select('sub.*','user.name','user.hp')
+                ->join('users as user', 'user.id', '=', 'sub.id_user')
+                ->where('sub.active',0)
+                ->orderBy('sub.id','desc')
+                ->get();
+
+
+        return $list;
+    }
+
     
 
 }

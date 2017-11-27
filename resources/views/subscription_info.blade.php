@@ -25,7 +25,7 @@
 	    <div class="panel-heading" role="tab" id="headingIslam">
 	      <h4 class="panel-title">
 	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIslam" aria-expanded="true" aria-controls="levelIslam">
-	          Islam (Rp. 10.000/bulan) * 
+	          Paket Islam (Rp. 10.000/bulan) * 
 	        </a>
 	      </h4>
 	    </div>
@@ -47,7 +47,7 @@
 	    <div class="panel-heading" role="tab" id="headingIman">
 	      <h4 class="panel-title">
 	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIman" aria-expanded="false" aria-controls="levelIman">
-	          Iman (Rp. 20.000/bulan) *
+	          Paket Iman (Rp. 20.000/bulan) *
 	        </a>
 	      </h4>
 	    </div>
@@ -58,7 +58,7 @@
 	 			<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
 	 			<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
-	 			<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Tahsin) **</li>
+	 			<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Muratal MurQ) **</li>
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%" href="{{url('subscription/order/iman')}}" onclick="fbq('track', 'clickPesanIman')">Pesan sekarang!</a>
@@ -69,7 +69,7 @@
 	    <div class="panel-heading" role="tab" id="headingIhsan">
 	      <h4 class="panel-title">
 	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIhsan" aria-expanded="false" aria-controls="levelIhsan">
-	          Ihsan (Rp. 50.000/bulan) *
+	          Paket Ihsan (Rp. 50.000/bulan) *
 	        </a>
 	      </h4>
 	    </div>
@@ -78,7 +78,7 @@
 	        <ul>
 	        	<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
 	 			<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li
-	 			<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>>
+	 			<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Tahsin) **</li>
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
@@ -89,6 +89,6 @@
 	    </div>
 	  </div>
 	</div>
-	<small>*) Infak yang akan dipergunakan untuk operasional dakwah Al-Quran</small><br>
+	<small>*) Infak yang akan dipergunakan untuk operasional dakwah QuranMemo Community</small><br>
 	<small>**) Konten belajar akan diupdate setiap bulan. InsyaAllah</small>
 </div>

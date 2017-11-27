@@ -28,7 +28,7 @@
 					    	?>
 							<tr>
 						        <td><i class="fa fa-folder"></i> {{ucfirst($folder->folder)}}</a></td>
-						        <td>Video</td>
+						        <td>Folder</td>
 						        <td class="center"><a href="{{$link}}"><i class="fa fa-external-link"></i></a></td>
 						    </tr> 
 							@endforeach

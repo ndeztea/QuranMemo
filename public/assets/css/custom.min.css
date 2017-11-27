@@ -63,10 +63,11 @@ video::-webkit-media-controls-panel {
 .datepicker td, .datepicker th{
 	font-size: 22px !important;
 }
+/*
 .datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left {
     left: 10% !important;
     top: 19% !important;
-}
+}*/
 .datepicker-dropdown:after{
 	border-left: none !important;
     border-right: none !important;

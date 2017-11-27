@@ -67,6 +67,7 @@ class AuthController extends Controller
         $request->session()->forget('sess_id');
         $request->session()->forget('sess_email');
         $request->session()->forget('sess_name');
+        $request->session()->forget('sess_role');
         return redirect('dashboard?starting=yes')->withCookie(Cookie::forget('coo_quranmemo_email'))->withCookie(Cookie::forget('coo_quranmemo_password'));
     }
 
@@ -96,6 +97,7 @@ class AuthController extends Controller
             $request->session()->put('sess_id', $dataLogin->id);
             $request->session()->put('sess_email', $dataLogin->email);
             $request->session()->put('sess_name', $dataLogin->name);
+            $request->session()->put('sess_role', $dataLogin->role);
 
             // set cookie
             /*setcookie('coo_quranmemo_email',$dataLogin->email);
