@@ -8,6 +8,7 @@ use App\Quran;
 use App\Users;
 use App\Memo;
 use App\MemoCorrection;
+use App\Subscriptions;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -21,6 +22,9 @@ use Carbon\Carbon;
 
 class MemozController extends Controller
 {
+    public $recordType = 'user';
+    public $levelArr = array(1=>'islam',2=>'iman',3=>'ihsan');
+
     /**
      * Display a listing of the resource.
      *
@@ -71,6 +75,11 @@ class MemozController extends Controller
         if($id){
             // get detail memo
             $memoDetail = $memoModel->getDetail($id);
+            // get detail user penghafal
+            $userMemoz = $UsersModel->getDetail($memoDetail->id_user)[0];
+            $SubscriptionsModel = new Subscriptions();
+            $data['listSubscriptions'] = $SubscriptionsModel->getActiveSubscriptions($memoDetail->id_user);
+            $data['userMemoz'] = $userMemoz;
         }
 
         // if correction there
@@ -89,8 +98,11 @@ class MemozController extends Controller
         $sess_id_user = session('sess_id');
         $counterRecord = $memoModel->getCountRecordedUser($sess_id_user);
         $level = $UsersModel->checkLevel($sess_id_user);
+
+
         //$data['fill_ayat_end'] = $fill_ayat_end;
         $data['level'] = $level;
+        $data['levelArr'] = $this->levelArr;
         $data['memoDetail'] = $memoDetail;
         $data['counterRecord'] = $counterRecord;
         $data['ayats'] = $ayats;
@@ -475,21 +487,27 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
-    public function uploadRecordedMobile($idMemo,Request $request ){
-       
-        $file = public_path('debugUploader.txt');
-        $current = file_get_contents($file);
-        ob_start();
-         print_r($_FILES);
+    public function uploadRecordedMobile(Request $request ){
+        //$file = public_path('debugUploader.txt');
+
+        //$current = file_get_contents($file);
+        $idMemo = $request->segment(3);
+
+        /*ob_start();
+        print_r($_FILES);
         echo 'idmemo:'.$idMemo;
         print_r($_FILES);
-        print_r($_POST);
+        print_r($_POST);*/
         $MemoModel = new Memo;
         $fileName = $idMemo.'_'.uniqid('').'.mp3';
-        $dataRecord['record'] = "recorded/".$fileName;
-        $path = $request->file('file')->move(public_path('recorded/'), $fileName);
 
-        
+        $recordFolder = 'record';
+        if($this->recordType=='ustadz'){
+            $recordFolder = 'record_ustadz';
+        }
+
+        $dataRecord[$recordFolder] = $recordFolder."/".$fileName;
+        $path = $request->file('file')->move(public_path($recordFolder.'/'), $fileName);
         
         // delete the old file
         $detailMemo = $MemoModel->getDetail($idMemo);
@@ -498,22 +516,54 @@ class MemozController extends Controller
             File::delete($oldRecord);
         }
 
-        if(File::exists(public_path('recorded/'.$fileName))){
+        if(File::exists(public_path($recordFolder.'/'.$fileName))){
            
             $updated_at = (string) Carbon::now();
             $dataRecord['updated_at'] = $updated_at;
             $dataRecord['id'] = $idMemo;
-            $MemoModel->edit($dataRecord);
+            // dont save if file from ustadz, same from corrections
+            if($this->recordType!='ustadz'){
+                $MemoModel->edit($dataRecord);
+            }
             echo $dataRecord['record'];
         }else{
             echo 'no';
         }
 
-         $output = ob_get_clean();
-        file_put_contents($file, $output);
-
-       
+        //$output = ob_get_clean();
+        //file_put_contents($file, $output);
     }   
+
+    public function uploadRecordedUstadzMobile(Request $request){
+        //$file = public_path('debugUploader.txt');
+
+        //$current = file_get_contents($file);
+        $idMemo = $request->segment(3);
+
+        /*ob_start();
+        print_r($_FILES);
+        echo 'idmemo:'.$idMemo;
+        print_r($_FILES);
+        print_r($_POST);*/
+        $MemoModel = new Memo;
+        $fileName = $idMemo.'_'.session('sess_id').'_correction.mp3';
+
+        $recordFolder = 'record_ustadz';
+
+        $dataRecord[$recordFolder] = $recordFolder."/".$fileName;
+        $path = $request->file('file')->move(public_path($recordFolder.'/'), $fileName);
+        
+
+        if(File::exists(public_path($recordFolder.'/'.$fileName))){
+            echo 'correction_file';
+        }else{
+            echo 'no';
+        }
+
+        //$output = ob_get_clean();
+        //file_put_contents($file, $output);
+
+    }
 
     /**
     * for showing the correction form
@@ -536,12 +586,12 @@ class MemozController extends Controller
         $dataRecord['id_user'] = $request->session()->get('sess_id');
         $dataRecord['note'] = $request->input('note');
         $dataRecord['correction'] = $request->input('correction');
+        $dataRecord['record_file'] = $request->input('record_file');
 
         $dataRecord['correction'] = array_filter(explode('|', $dataRecord['correction']));
         $dataRecord['correction'] = json_encode($dataRecord['correction']);
         $date_updated = (string) Carbon::now();
         $dataRecord['date_updated'] = $date_updated;
-
         // memo detail
         $MemoModel = new Memo;
         $memoDetail = $MemoModel->getDetail($dataRecord['id_memo_target']);
@@ -555,6 +605,7 @@ class MemozController extends Controller
             $dataHTML['message'] = 'Koreksi berhasil di kirimkan';
             $countCorrection++;
 
+            $dataUpdate['updated_at'] = $date_updated;
             $dataUpdate['count_correction'] = $countCorrection;
             $dataUpdate['id'] = $dataRecord['id_memo_target'];
             // update stats

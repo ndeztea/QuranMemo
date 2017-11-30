@@ -5,11 +5,11 @@
 		<li>Linier, yang terdiri dari beberapa tahapan proses menghafal
 			<ol>
 				<li>Hafalkan arabic dan terjemahan</li>
-				<li>Hafalkan FOKUS arabic nya saja</li>
-				<li>Hafalkan FOKUS artinya, dan perdalam tafsirnya</li>
+				<li>Hafalkan untuk memfokuskan arabic nya saja</li>
+				<li>Hafalkan untuk memahami artinya dan pelajari tafsirnya</li>
 			</ol>
 		</li>
-		<li>Rekaman, rekam target hafalan, dan koreksi mandiri dengan mengklik ayat-ayat yang dirasa salah, upload rekaman ke server dan akan di koreksi oleh penghafal yang lain</li>
+		<li>Rekaman, Bacakan setiap kata yang dihilangkan. Jika sudah hafal mulai merekam untuk test hafalan, rekaman akan dikoreksi oleh penghafal lain tau oleh ustadz pilihan QuranMemo.</li>
 		<li>Puzzle, cocokan kata-kata target hafalan yang hilang secara berurutan</li>
 	</ul>
 	<br><p>Jangan lupa untuk berdo'a kepada Allah Ta'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p><p>Kunci untuk mengafal adalah <strong>ulangi dan terus ulangi</strong> membaca dan mendengarkan muratal.</p>

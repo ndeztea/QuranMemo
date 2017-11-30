@@ -5,6 +5,10 @@
 		<div class="form-group display-inline-block-xs">
 			<strong>Catatan untuk hafalan ini</strong>
 			<textarea class="form-control" id="note" placeholder="Masukan catatan yang di dapat ketika mengetes hafalan ini" name="note" style="height: 100px"></textarea>
+			@if(session('sess_role')==2)
+			<a class="btn" style="font-size: 16px;" onclick="recordAudio('ustadz');"><i class="fa fa-microphone" style="color:red"></i> Rekam audio koreksi</a>
+			<input type="text" name="record_file" id="record_file" value="" style="display: none"/>
+			@endif
 		</div>
 		
 		<button class="btn btn-cari-ayat btn-save-memoz" type="submit" name="btnSubmit" onclick="fbq('track', 'clickSimpanKoreksi');QuranJS.saveMemozCorrection();return false;">

@@ -8,7 +8,9 @@ return [
     	"Husary"	=>	"Mahmoud Khalil Al-Hussary",
     	"Menshawi"	=>	"Mohammed Siddiq Al-Minshawid",
         "Warsh_AlDosary"  =>  "(Warsh) Ibrahim Al-Dosary",
-    	"Indo_Anak"	=>	"Indonesia Anak",
-    	"Indo_Dewasa "	=>	"Indonesia Dewasa"
+        //"Warsh_AbdulBasit"  =>  "(Warsh) Abdul Basit",
+        "Warsh_Yassin_AlJazaery"  =>  "(Warsh) Yassin Al-Jazaery"
+    	//"Indo_Anak"	=>	"Indonesia Anak",
+    	//"Indo_Dewasa "	=>	"Indonesia Dewasa"
     ],
 ];

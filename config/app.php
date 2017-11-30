@@ -3,7 +3,7 @@
 return [
     
     //'mp3_url' => 'https://quranmemo.com/public/',
-    'mp3_url' => 'http://localhost/QuranNote/public/',
+    'mp3_url' => 'http://192.168.100.4/QuranNote/public/',
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

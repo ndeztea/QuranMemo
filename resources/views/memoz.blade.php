@@ -55,7 +55,7 @@
 			<input type="hidden" class="ayat_start_temp" value="{{$ayat_start}}"/>
 			<input type="hidden" class="ayat_end_temp" value="{{$ayat_end}}"/>
 			@endif
-			@if(!empty($memoDetail->id))	
+			@if(!empty($memoDetail->id) && $memoDetail->id_user == session('sess_id'))	
 				<div class="nav-top clearfix">				
 					<a style="display: none" class="memoz-0" href="javascript:;" onclick="fbq('track', 'clickBelumHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
 					<a style="display: none" class="memoz-1" href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
@@ -125,11 +125,27 @@
 									<p>{{$correctionDetail->name}} </p>
 									<strong>Catatan :</strong><br>
 									<p>{{$correctionDetail->note}}</p>
-									@else
-									<p> Dengarkan rekaman, dan bandingkan dengan ayat-ayat hafalan apakah betul atau salah, jika ada ayat yang salah klik ayatnya, dan kirimkan koreksi ke penghafal dengan catatan yang diperlukan</p>
+									@if($correctionDetail->record_file)
+									<audio  controls controlsList="nodownload" src="{{url($correctionDetail->record_file)}}"></audio>
+									@endif
+								</div>
+								@else
+								<div class="correction-detail">
+								<strong>Nama Penghafal :</strong><br>
+								<span>{{$userMemoz->name}} </span>
+								@if(session('sess_role')>0)
+									@foreach($listSubscriptions as $subscription)
+									<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
+									<span class='label label-primary'>Paket {{ucfirst($levelArr[$subscription->level])}} ( {{$daysLeft}} hari )</span>
+									@endforeach
+								@endif
+								<br><br>
+								<p> Dengarkan rekaman, dan bandingkan dengan ayat-ayat hafalan apakah betul atau salah, jika ada ayat yang salah klik ayatnya, dan kirimkan koreksi ke penghafal dengan catatan yang diperlukan</p>
 								</div>
 								@endif
-							</div>
+
+								
+								
 							@endif
 							<script>
 								QuranJS.totalAyat = {{count($ayats)}}
@@ -260,27 +276,31 @@
 		<div class="action">
 
 			@if(Request::segment(2)!='correction')
-			@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-			<a class="button" style="font-size: 34px;" onclick="recordAudio();fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+				@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
+				<a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+				@else
+				<a class="button" style="font-size: 34px;" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a>
+				@endif
+				<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
+				<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
+				<!--span class="button disabled one" id="sec_counter">recording...</span-->
+				<a class="button  @if(empty($memoDetail->record)) disabled @endif" id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
+				<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
+				
+				<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
+				<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
 			@else
-			<a class="button" style="font-size: 34px;" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a>
+				<a class="button"  id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
+				<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
 			@endif
-			<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
-			<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
-			<!--span class="button disabled one" id="sec_counter">recording...</span-->
-			<a class="button  @if(empty($memoDetail->record)) disabled @endif" id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
-			<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
-			
-			<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
-			<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
-			@endif
-			@if(session('sess_id')!= @$memoDetail->id_user )
-				<a class="btn btn-juz" id="btn-correction" style="display:none;float: none !important" onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Koreksi</a>
+
+			@if(session('sess_id')!= @$memoDetail->id_user && Request::segment(2)=='correction')
+				<a class="button" id="btn-correction"  onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Catatan</a>
 			@endif
 		</div>
 		
 		<div class="player">
-			<audio  controls controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: "></audio>
+			<audio  controls controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: none"></audio>
 		</div>
 		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%" style="display: none"></canvas>
@@ -505,63 +525,77 @@ $(document).ready(function(){
 	QuranJS.stepMemoz('correction','{{Request::segment(6)}}');
 	@endif
 
-	function recordAudio(){
-		@if(empty($level) && $counterRecord>=1)
-			QuranJS.callModal('subscription')
-			return false;
-		@elseif($level==1 &&  $counterRecord>=10)
-			QuranJS.callModal('subscription')
-			return false;
-		@endif
+	function recordAudio(typeRecord){
+		// record from user memoz
+		if(typeRecord=='user'){
+			@if(empty($level) && $counterRecord>=1)
+				QuranJS.callModal('subscription')
+				return false;
+			@elseif($level==1 &&  $counterRecord>=10)
+				QuranJS.callModal('subscription')
+				return false;
+			@endif
 
-		@if(!empty($memoDetail->id))
-		/*vex.dialog.confirm({
-		    message: "Batas maksimal merekam hanya 20 detik. Mulai merekam?",
-		    callback: function (value) {
-		    	if(value==true){
-		    		window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
-		    	}
-		    }
-		})*/
-		window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
-		@else 
-		vex.dialog.confirm({
-		    message: "Simpan hafalan terlebih dahulu?",
-		    callback: function (value) {
-		    	if(value==true){
-			    	QuranJS.formMemoModal('{{$memoDetail->id}}')
+			@if(!empty($memoDetail->id))
+			/*vex.dialog.confirm({
+			    message: "Batas maksimal merekam hanya 20 detik. Mulai merekam?",
+			    callback: function (value) {
+			    	if(value==true){
+			    		window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
+			    	}
 			    }
-		    }
-		})
-		
-		@endif
+			})*/
+			window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
+			@else 
+			vex.dialog.confirm({
+			    message: "Simpan hafalan terlebih dahulu?",
+			    callback: function (value) {
+			    	if(value==true){
+				    	QuranJS.formMemoModal('{{$memoDetail->id}}')
+				    }
+			    }
+			})
+			@endif
+		}else{
+			// record from ustadz correction
+			window.parent.postMessage("audioUstadz|{{$memoDetail->id}}", "*");
+		}
+
 	
 	}
 
 
 	function getResponse(event){
 		var message = event.data;
+
 		if(message=='uploading'){
 			$('#preloader').show();
 			$('.loading').prepend('<div class="loading_file">File sedang di upload..<br></div>');
 
 		}else if(message=='uploaded'){
+			location.reload();
+			//$('#preloader').hide();
+			//$('.loading_file').remove();
+			//vex.dialog.alert('File rekaman berhasil di upload, siap dikoreksi jika sudah hafal.');
+
+			/*$('#play_audio').show();
+			$('#play_audio').removeClass('disabled'); 
+			$('#pause_audio').addClass('disabled');
+			$('#audio').attr('src',QuranJS.siteUrl+'/'+message);
+			playAudio();*/
+		}else if(message=='correction_file'){
 			$('#preloader').hide();
-			$('.loading_file').remove();
-			vex.dialog.alert('File rekaman berhasil di upload, siap dikoreksi jika sudah hafal.');
+			$('#record_file').show();
+			$('#record_file').val('record_ustadz/{{$memoDetail->id}}_{{session('sess_id')}}_correction.mp3');
 		}else if(message=='upload_error'){
 			$('#preloader').hide();
 			$('.loading_file').remove();
 			vex.dialog.alert('File rekaman gagal di upload, coba ulangi kembali.');
-		}else{
+		}/*else{
 			//alert(QuranJS.siteUrl+'/'+message);
 			// this is file
-			$('#play_audio').show();
-			$('#play_audio').removeClass('disabled'); 
-			$('#pause_audio').addClass('disabled');
-			$('#audio').attr('src',QuranJS.siteUrl+'/'+message);
-			playAudio();
-		}
+			
+		}*/
 	}
 	
 

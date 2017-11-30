@@ -75,6 +75,7 @@ class SubscriptionsController extends Controller
 
   public function confirmation(Request $request){
       $sess_id = $request->session()->get('sess_id');
+      $paid = $request->input('paid');
       $SubscriptionsModel = new Subscriptions();
       $subscriptions_id = $request->segment(3);
        
@@ -93,6 +94,7 @@ class SubscriptionsController extends Controller
         }
         $dataRecord['id'] = $subscriptions_id;
         $dataRecord['status'] = 1;
+        $dataRecord['paid'] = $paid;
         $dataRecord['active'] = 0;
         $dataRecord['expired_date'] = (string) Carbon::now()->addDays(31);
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);

@@ -102,8 +102,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::post('memoz/remove', 'MemozController@remove');
     Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
-    Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile')->middleware('subscription:record');
-    Route::get('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile')->middleware('subscription:record');
+    Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
+    Route::get('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
+    Route::post('memoz/uploadRecordedUstadzMobile/{idMemo}','MemozController@uploadRecordedUstadzMobile');
+    Route::get('memoz/uploadRecordedUstadzMobile/{idMemo}','MemozController@uploadRecordedUstadzMobile');
+
     Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}/{idCorrection}', 'MemozController@index');
     Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}', 'MemozController@index');
     Route::post('memoz/updateStatus','MemozController@updateStatus');
