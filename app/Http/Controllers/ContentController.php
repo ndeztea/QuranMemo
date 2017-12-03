@@ -63,7 +63,7 @@ class ContentController extends Controller
     public function promo()
     {
         $dataHTML['modal_class'] = '';
-        $dataHTML['modal_title'] = 'Tahfidz Gratis';
+        $dataHTML['modal_title'] = 'Promo';
         $dataHTML['modal_body'] = view('content_promo')->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 

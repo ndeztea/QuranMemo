@@ -32,6 +32,10 @@ class Subscriptions extends Model
         return DB::table($this->table)->where('id',$data['id'])->update($data);
     }
 
+    public function remove($id){
+        return DB::table($this->table)->where('id',$id)->delete();
+    }
+
      public function getDetail($id){
         $memoDetail = DB::table($this->table)
                 ->select('*')
@@ -72,7 +76,34 @@ class Subscriptions extends Model
                 ->select('sub.*','user.name','user.hp')
                 ->join('users as user', 'user.id', '=', 'sub.id_user')
                 ->where('sub.active',0)
+                ->where('sub.status',0)
                 ->orderBy('sub.id','desc')
+                ->get();
+
+
+        return $list;
+    }
+
+    public function getAllApprovalSubscriptions(){
+        $list = DB::table($this->table.' as sub')
+                ->select('sub.*','user.name','user.hp')
+                ->join('users as user', 'user.id', '=', 'sub.id_user')
+                ->where('sub.active',0)
+                ->where('sub.status',1)
+                ->orderBy('sub.id','desc')
+                ->get();
+
+
+        return $list;
+    }
+
+    public function getAllActiveSubscriptions(){
+        $now = (string) Carbon::now();
+        $list =DB::table($this->table.' as sub')
+                ->select('sub.*','user.name','user.hp')
+                ->join('users as user', 'user.id', '=', 'sub.id_user')
+                ->where('sub.active',1)
+                ->where('sub.expired_date','>',$now)
                 ->get();
 
 

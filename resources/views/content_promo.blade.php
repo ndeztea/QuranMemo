@@ -1,5 +1,5 @@
 <div class="modal-spacing">
-<p>Rumah Tahfizh Fahim Quran (RTFQ) masih membuka kesempatan bagi bbrp orang santriwati minimal usia SMP, untuk  :</p>
+<!--p>Rumah Tahfizh Fahim Quran (RTFQ) masih membuka kesempatan bagi bbrp orang santriwati minimal usia SMP, untuk  :</p>
 
 <p><strong>dibimbing menjadi penghafal AlQuran 30 juz mutqin :</strong></p>
 <ul>
@@ -34,5 +34,8 @@ Segera daftarkan putri anda. via SMS atau WA ke nomor 08161123811 dengan format 
 <p>RTFQ#nama putri anda#asal daerah#no HP yg bisa kami hubungi.#TTL#jumlah hafalan</p>
 
 
-<p>‼Segera, karena kuota terbatas.</p>
+<p>‼Segera, karena kuota terbatas.</p-->
+<img src="{{url('assets/images/Semangat.jpg')}}" width="100%">
+<br>
+<button class="btn btn-green" style="font-size: 16px;margin-top: 10px;" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')">Berlangganan sekarang!!!</button>
 </div>

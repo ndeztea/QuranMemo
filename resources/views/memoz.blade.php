@@ -44,7 +44,7 @@
 									
 								@if(session('sess_id'))
 								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarHafalanPage');QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
-								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarKoreksiPage');QuranJS.correctionList()" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
+								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarKoreksiPage');QuranJS.correctionList('','')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
 								@endif
 						</form>
 					</div>
@@ -274,7 +274,9 @@
 <div class="quran_recorder_cont">
 	<div class="quran_recorder" style="display:none">
 		<div class="action">
-
+			<div class="player">
+				<audio  controls controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
+			</div>
 			@if(Request::segment(2)!='correction')
 				@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
 				<a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
@@ -284,24 +286,22 @@
 				<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
 				<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
 				<!--span class="button disabled one" id="sec_counter">recording...</span-->
-				<a class="button  @if(empty($memoDetail->record)) disabled @endif" id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
+				<a class="button  @if(empty($memoDetail->record)) disabled @endif"  id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
 				<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
 				
 				<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
 				<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
 			@else
-				<a class="button"  id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
+				<a class="button"  id="play_audio" style="display:none !important"  onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
 				<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
 			@endif
 
 			@if(session('sess_id')!= @$memoDetail->id_user && Request::segment(2)=='correction')
-				<a class="button" id="btn-correction"  onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Catatan</a>
+				<a class="btn btn-warning" style="margin: 5px;" id="btn-correction"  onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Catatan</a>
 			@endif
 		</div>
 		
-		<div class="player">
-			<audio  controls controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio" style="display: none"></audio>
-		</div>
+		
 		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%" style="display: none"></canvas>
 		<input id="base64Decode" type="hidden" value="">

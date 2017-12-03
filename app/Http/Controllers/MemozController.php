@@ -33,6 +33,21 @@ class MemozController extends Controller
     public function index($surah_start='',$ayat_range='',$id='',$idCorrection='')
     {   
 
+        $sess_id_user = session('sess_id');
+        $UsersModel = new Users;
+        $level = $UsersModel->checkLevel($sess_id_user);
+        // check subs
+        if($surah_start!=''){
+            if($level<1){
+                if($surah_start < 78 && $surah_start !=1){
+                    return redirect('dashboard?action=berlangganan');
+                }
+            }
+        }
+        
+        
+
+
         $messageErrors = $ayats = '';
         // get data hafalan
         $QuranModel = new Quran;

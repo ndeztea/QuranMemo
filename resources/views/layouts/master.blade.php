@@ -5,7 +5,7 @@
         <title>{{ isset($header_title)?$header_title:''}} - QuranMemo</title>
 
         <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -451,7 +451,11 @@
 
          var d = new Date();
          var isFriday = d.getDay();
+
          if('{{session('sess_id')}}'!='' && '{{Request::segment(1)}}'=='dashboard'){
+            // promo 212
+            //QuranJS.callModal('promo');
+
             if(isFriday==5){
                 QuranJS.callModal('alkahfi');
             }
@@ -472,7 +476,11 @@
                 $('#cartCounter').show();
            }
         });
-            
+        
+        @if(Request::get('action')=='berlangganan')
+        vex.dialog.alert('Menghafal juz 1 sampai juz 29 harus berlangganan terlebih dahulu.');
+        QuranJS.callModal('subscription');
+        @endif
 
         </script>
     @include('layouts.analytics') 

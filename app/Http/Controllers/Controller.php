@@ -36,6 +36,7 @@ abstract class Controller extends BaseController
                 $request->session()->put('sess_id', $dataLogin->id);
                 $request->session()->put('sess_email', $dataLogin->email);
                 $request->session()->put('sess_name', $dataLogin->name);
+                $request->session()->put('sess_role', $dataLogin->role);
             }
         }
     }

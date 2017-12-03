@@ -76,13 +76,13 @@
 	    <div id="levelIhsan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 	      <div class="panel-body">
 	        <ul>
+	        <li><i class="fa fa-check-square"></i> INTENSIF koreksi hafalan/tahsin/tajwid oleh ustad pilihan QuranMemo</li>
 	        	<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
-	 			<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li
+	 			<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
 	 			<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Tahsin) **</li>
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
-	 			<li><i class="fa fa-check-square"></i> INTENSIF koreksi hafalan oleh ustad pilihan QuranMemo</li>
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%" href="{{url('subscription/order/ihsan')}}" onclick="fbq('track', 'clickPesanIhsan')">Pesan sekarang!</a>
 	      </div>

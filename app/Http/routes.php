@@ -64,6 +64,7 @@ Route::get('subscription/order/{level}', 'SubscriptionsController@order');
 Route::post('subscription/order/{level}', 'SubscriptionsController@order');
 Route::get('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
 Route::post('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
+Route::get('subscription/cancel/{id}', 'SubscriptionsController@cancel');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
@@ -133,4 +134,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('subscription/approve/{id}', 'SubscriptionsController@approve');
+    Route::get('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
 });

@@ -59,9 +59,9 @@ class SubscriptionsController extends Controller
             $emailData['url'] = url('subscription/confirmation/'.$subscriptions_id);
 
              Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
-                $m->from('no-reply@quranmemo.com', 'QuranMemo');
+                $m->from('info@quranmemo.id', 'QuranMemo');
                 $m->to($emailData['email'], $emailData['name'])->subject('Order QuranMemo');
-                $m->to('ndeztea@gmail.com','Admin QuranMemo')->subject('New Order QuranMemo');
+                $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Order QuranMemo');
             });
 
 
@@ -92,6 +92,20 @@ class SubscriptionsController extends Controller
               $dataRecord['file'] = 'confirmation_file/'.$fileName;
             } 
         }
+
+        $detail = $SubscriptionsModel->getDetail($subscriptions_id);
+        // send email
+        $objUsers = new Users;
+        $dataUser = $objUsers->getDetail($detail->id_user)[0];
+        $emailData['level'] =  array_keys($this->level, $detail->level)[0];
+        $emailData['name'] = $dataUser->name;
+        $emailData['email'] = $dataUser->email;
+        $emailData['price'] = $detail->price;
+        $emailData['active'] = 1;
+        $emailData['url'] = '#';
+        $dt = Carbon::now()->addDays(30);
+        $emailData['expired_date'] = $dt->format('d-m-Y'); 
+
         $dataRecord['id'] = $subscriptions_id;
         $dataRecord['status'] = 1;
         $dataRecord['paid'] = $paid;
@@ -99,6 +113,11 @@ class SubscriptionsController extends Controller
         $dataRecord['expired_date'] = (string) Carbon::now()->addDays(31);
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);
         if($isSuccess){
+          Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
+              $m->from('info@quranmemo.id', 'QuranMemo');
+              $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Butuh Approval berlangganan QuranMemo');
+          });
+
           return redirect('subscription/confirmation/'.$subscriptions_id)->with('messageSuccess', 'Konfirmasi berhasil, kami akan cek Konfirmasi dalam 1x24 jam');
         }
        }
@@ -128,7 +147,7 @@ class SubscriptionsController extends Controller
         $emailData['price'] = $detail->price;
         $emailData['active'] = 1;
         $emailData['url'] = '#';
-        $dt = Carbon::now()->addDays(31);
+        $dt = Carbon::now()->addDays(30);
         $emailData['expired_date'] = $dt->format('d-m-Y'); 
         // update subscriptions
         $dataRecord['id'] = $subscriptions_id;
@@ -137,9 +156,9 @@ class SubscriptionsController extends Controller
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);
         if($isSuccess){
             Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
-              $m->from('no-reply@quranmemo.com', 'QuranMemo');
+              $m->from('info@quranmemo.id', 'QuranMemo');
               $m->to($emailData['email'], $emailData['name'])->subject('Approval berlangganan QuranMemo berhasil');
-              $m->to('ndeztea@gmail.com','Admin QuranMemo')->subject('New Approval berlangganan QuranMemo berhasil');
+              $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Approval berlangganan QuranMemo berhasil');
           });
           return redirect('subscription/listing')->with('messageSuccess', 'Konfirmasi sukses');
         }
@@ -147,11 +166,65 @@ class SubscriptionsController extends Controller
         return redirect('subscription/listing')->with('messageError', 'Konfirmasi gagal');
     }
 
-    public function listing(){
+    public function notvalid(Request $request){
+      $SubscriptionsModel = new Subscriptions();
+      $subscriptions_id = $request->segment(3);
+
+        $detail = $SubscriptionsModel->getDetail($subscriptions_id);
+      // send email
+        // update subscriptions
+        $dataRecord['id'] = $subscriptions_id;
+        $dataRecord['active'] = 0;
+        $dataRecord['status'] = 0;
+        $isSuccess =  $SubscriptionsModel->edit($dataRecord);
+        if($isSuccess){
+          return redirect('subscription/listing')->with('messageSuccess', 'Update ke notvalid berhasil');
+        }
+        
+        return redirect('subscription/listing')->with('messageError', 'Update ke notvalid gagal');
+    }
+
+    public function cancel(Request $request){
+      $SubscriptionsModel = new Subscriptions();
+      $subscriptions_id = $request->segment(3);
+
+        $detail = $SubscriptionsModel->getDetail($subscriptions_id);
+
+        if($detail->id_user == session('sess_id') || session('sess_role')==1){
+          $isSuccess =  $SubscriptionsModel->remove($subscriptions_id);
+          if($isSuccess){
+            return redirect('subscription/listing')->with('messageSuccess', 'Pesanan berhasil di cancel');
+          }
+          
+          return redirect('subscription/listing')->with('messageError', 'Pesanan gagal di cancel');
+        }
+
+        return redirect('subscription/listing')->with('messageError', 'Tidak punya akses');
+      // send email
+        // update subscriptions
+        $dataRecord['id'] = $subscriptions_id;
+        $dataRecord['active'] = 0;
+        $dataRecord['status'] = 0;
+        $isSuccess =  $SubscriptionsModel->edit($dataRecord);
+        if($isSuccess){
+          return redirect('subscription/listing')->with('messageSuccess', 'Update ke notvalid berhasil');
+        }
+        
+        return redirect('subscription/listing')->with('messageError', 'Update ke notvalid gagal');
+    }
+
+    public function listing(Request $request){
         $SubscriptionsModel = new Subscriptions();
         $sessRole = session('sess_role');
         if($sessRole==1){
-          $orderList = $SubscriptionsModel->getAllPendingSubscriptions();
+          if($request->input('status')=='approval'){
+            $orderList = $SubscriptionsModel->getAllApprovalSubscriptions();
+          }elseif($request->input('status')=='active'){
+            $orderList = $SubscriptionsModel->getAllActiveSubscriptions();
+          }else{
+            $orderList = $SubscriptionsModel->getAllPendingSubscriptions();
+          }
+          
         }else{
           $orderList = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
         }
