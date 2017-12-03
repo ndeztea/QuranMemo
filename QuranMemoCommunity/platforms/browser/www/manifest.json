@@ -1,0 +1,18 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "QuranMemo Community",
+  "short_name": "QuranMemo Community",
+  "version": "com.ndeztea.quranmemocommunity",
+  "description": "Komunitas Penghafal Al-Quran Online dan tools untuk menghafal Al-Quran Mandiri",
+  "author": "Team QuranMemo.id",
+  "icons": [
+    {
+      "src": "www/icon/icon-xhdpi.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "orientation": "portrait",
+  "start_url": "index.html"
+}

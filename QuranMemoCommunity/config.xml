@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ndeztea.quranmemocommunity" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>QuranMemo Community</name>
+    <description>Komunitas Penghafal Al-Quran Online dan tools untuk menghafal Al-Quran Mandiri</description>
+    <author email="quranmemo.id@gmail.com" href="http://quranmemo.id">Team QuranMemo.id</author>
+    <content src="index.html" />
+    <preference name="orientation" value="portrait" />
+    <icon src="www/icon/icon-xhdpi.png" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <allow-navigation href="http://dev.quranmemo.com/*" />
+    <engine name="android" spec="^6.3.0" />
+    <engine name="browser" spec="^5.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-file" spec="^5.0.0" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.0" />
+    <plugin name="cordova-plugin-media" spec="^4.0.0" />
+    <plugin name="cordova-plugin-media-capture" spec="^2.0.0" />
+    <plugin name="cordova-plugin-dialogs" spec="^1.3.4" />
+</widget>
