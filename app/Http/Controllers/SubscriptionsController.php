@@ -103,7 +103,7 @@ class SubscriptionsController extends Controller
         $emailData['price'] = $detail->price;
         $emailData['active'] = 1;
         $emailData['url'] = '#';
-        $dt = Carbon::now()->addDays(30);
+        $dt = Carbon::now()->addDays(31);
         $emailData['expired_date'] = $dt->format('d-m-Y'); 
 
         $dataRecord['id'] = $subscriptions_id;
@@ -147,7 +147,7 @@ class SubscriptionsController extends Controller
         $emailData['price'] = $detail->price;
         $emailData['active'] = 1;
         $emailData['url'] = '#';
-        $dt = Carbon::now()->addDays(30);
+        $dt = Carbon::now()->addDays(31);
         $emailData['expired_date'] = $dt->format('d-m-Y'); 
         // update subscriptions
         $dataRecord['id'] = $subscriptions_id;

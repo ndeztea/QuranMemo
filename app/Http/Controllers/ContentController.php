@@ -7,6 +7,7 @@ use App\Notes;
 use App\Users;
 use App\Quran;
 use App\Content;
+use App\Subscriptions;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -62,11 +63,16 @@ class ContentController extends Controller
 
     public function promo()
     {
+        $SubscriptionsModel = new Subscriptions();
+        $sessRole = session('sess_role');
+        $counter = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
+          
+        $data['havePending'] = count($counter)>=1?true:false;
+        
         $dataHTML['modal_class'] = '';
         $dataHTML['modal_title'] = 'Promo';
-        $dataHTML['modal_body'] = view('content_promo')->render();
+        $dataHTML['modal_body'] = view('content_promo',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
-
         return response()->json($dataHTML);
     }
 

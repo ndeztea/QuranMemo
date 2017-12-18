@@ -135,4 +135,5 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'admin'], function () {
     Route::get('subscription/approve/{id}', 'SubscriptionsController@approve');
     Route::get('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
+    Route::post('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
 });

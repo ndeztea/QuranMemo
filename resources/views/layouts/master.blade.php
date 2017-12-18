@@ -455,6 +455,7 @@
          if('{{session('sess_id')}}'!='' && '{{Request::segment(1)}}'=='dashboard'){
             // promo 212
             //QuranJS.callModal('promo');
+            //vex.dialog.alert({unsafeMessage: '<h3 class="center" style="margin:0px 0px 10px 0px">Promo</h3><img src="{{url('assets/images/171217.jpg')}}" width="100%"><br><button class="btn btn-green" id="actionPromo" style="font-size: 16px;margin-top: 10px;" onclick="fbq(\'track\', \'clickBerlanggananPromo\');QuranJS.callModal(\'subscription\')">Berlangganan sekarang!</button></div>'})
 
             if(isFriday==5){
                 QuranJS.callModal('alkahfi');
@@ -474,6 +475,8 @@
                 $('#cart').attr('onclick','location.href="{{url('subscription/listing')}}"');
                 $('#cartCounter').html(response.counter);
                 $('#cartCounter').show();
+                $('#actionPromo').attr('onclick','');
+                $('#actionPromo').attr('onclick',"fbq('track', 'clickBerlanggananPromo');location.href='{{url('subscription/listing')}}'");
            }
         });
         

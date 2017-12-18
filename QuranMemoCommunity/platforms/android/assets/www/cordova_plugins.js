@@ -298,7 +298,8 @@ module.exports.metadata =
   "cordova-plugin-file-transfer": "1.7.0",
   "cordova-plugin-media": "4.0.0",
   "cordova-plugin-media-capture": "2.0.0",
-  "cordova-plugin-dialogs": "1.3.4"
+  "cordova-plugin-dialogs": "1.3.4",
+  "cordova-plugin-crosswalk-webview": "2.3.0"
 };
 // BOTTOM OF METADATA
 });

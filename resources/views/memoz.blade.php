@@ -278,11 +278,13 @@
 				<audio  controls controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
 			</div>
 			@if(Request::segment(2)!='correction')
-				@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
 				<a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+				@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
+				<!--a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a-->
 				@else
-				<a class="button" style="font-size: 34px;" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a>
+				<!--a class="button" style="font-size: 34px;" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a-->
 				@endif
+
 				<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
 				<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
 				<!--span class="button disabled one" id="sec_counter">recording...</span-->

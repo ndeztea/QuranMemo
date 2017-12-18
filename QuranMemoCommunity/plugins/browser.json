@@ -24,6 +24,9 @@
     },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.ndeztea.quranmemocommunity"
+    },
+    "cordova-plugin-crosswalk-webview": {
+      "PACKAGE_NAME": "com.ndeztea.quranmemocommunity"
     }
   },
   "dependent_plugins": {}

@@ -30,20 +30,28 @@ class MemozController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($surah_start='',$ayat_range='',$id='',$idCorrection='')
+    public function index(request $request)
     {   
+       // $surah_start='',$ayat_range='',$id='',$idCorrection=''
+        $surah_start = $request->segment(3);
+        $ayat_range = $request->segment(4);
+        $id = $request->segment(5);
+        $idCorrection = $request->segment(6);
 
         $sess_id_user = session('sess_id');
         $UsersModel = new Users;
         $level = $UsersModel->checkLevel($sess_id_user);
         // check subs
-        if($surah_start!=''){
-            if($level<1){
-                if($surah_start < 78 && $surah_start !=1){
-                    return redirect('dashboard?action=berlangganan');
+        if($request->segment(2)!='correction'){
+            if($surah_start!=''){
+                if($level<1){
+                    if($surah_start < 78 && $surah_start !=1){
+                        return redirect('dashboard?action=berlangganan');
+                    }
                 }
             }
         }
+        
         
         
 

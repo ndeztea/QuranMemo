@@ -35,7 +35,7 @@ Segera daftarkan putri anda. via SMS atau WA ke nomor 08161123811 dengan format 
 
 
 <p>‼Segera, karena kuota terbatas.</p-->
-<img src="{{url('assets/images/Semangat.jpg')}}" width="100%">
+<img src="{{url('assets/images/171217.jpg')}}" width="100%">
 <br>
 <button class="btn btn-green" style="font-size: 16px;margin-top: 10px;" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')">Berlangganan sekarang!!!</button>
 </div>
