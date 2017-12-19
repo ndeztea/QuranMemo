@@ -52,10 +52,6 @@ class MemozController extends Controller
             }
         }
         
-        
-        
-
-
         $messageErrors = $ayats = '';
         // get data hafalan
         $QuranModel = new Quran;
@@ -113,9 +109,12 @@ class MemozController extends Controller
             $data['correctionDetail'] = $correctionDetail;
 
             // update already opened
-            $dataRecord['status'] = 1;
-            $dataRecord['id'] = $idCorrection;
-            $MemoCorrection->edit($dataRecord);
+            if($correctionDetail->id_user==$sess_id_user){
+                $dataRecord['status'] = 1;
+                $dataRecord['id'] = $idCorrection;
+                $MemoCorrection->edit($dataRecord);
+            }
+            
         }
         
         $sess_id_user = session('sess_id');
