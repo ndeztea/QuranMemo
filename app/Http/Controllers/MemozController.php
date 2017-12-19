@@ -676,13 +676,23 @@ class MemozController extends Controller
         $start = $request->input('start',0);
         
         $MemoModel = new Memo();
-        $data['list']  = $MemoModel->getNeedCorrection($start,10);
+        $SubscriptionsModel = new Subscriptions();
+        $listCorrections  = $MemoModel->getNeedCorrection($start,10);
         $data['listCount']  = $MemoModel->getCountNeedCorrection();
-        
+        $a=0;
+        if(!empty($listCorrections)){
+            foreach ($listCorrections as $correction) {
+                $listCorrections[$a]->listSubscriptions = $SubscriptionsModel->getActiveSubscriptions($correction->id_user);
+                $a++;
+            }
+        }
+        $data['list']  = $listCorrections;
         $data['start'] = $start;
+        $data['level'] = $this->levelArr;
         $dataHTML['html'] = view('memoz_need_correction_list',$data)->render();
         $dataHTML['start'] = $start;
         $dataHTML['count'] = count($data['list']);
+        
         
         return response()->json($dataHTML);
     }

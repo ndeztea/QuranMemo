@@ -9,7 +9,15 @@
 				<img src="{{getAvatar($row)}}"  class="img-circle">
 			</div>
 			<div class="koreksi-desc">
-				<span class="username">{{$row->name}} <sup class="badge">{{getAge($row)}}</sup></span>
+				<span class="username">{{$row->name}} 
+					<sup class="badge">{{getAge($row)}}</sup>
+					@if(session('sess_role')==1 || session('sess_role')==2)
+						@foreach($row->listSubscriptions as $subscription)
+						<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
+						<sup class='label label-primary'>Paket {{ucfirst($level[$subscription->level])}} ( {{$daysLeft}} hari ) </sup>
+						@endforeach
+					@endif
+				</span>
 				<span class="ayat-target">
 					<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
 					<span class="spacer1">&bullet;</span> 

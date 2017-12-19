@@ -44,7 +44,6 @@ class DashboardController extends Controller
 
         // get need correction memoz
         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
-        $data['needCorrections'] = $MemoModel->getNeedCorrection();
         $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1);
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
         $data['counterCorrection'] = $MemoCorrectionModel->getCountNew(session('sess_id'))->count;
@@ -57,6 +56,17 @@ class DashboardController extends Controller
                 return redirect('profile/edit')->with('messageError', 'Mohon lengkapi data tanggal lahir terlebih dahulu')->withInput();
             }
         }
+
+        $listCorrections = $MemoModel->getNeedCorrection();
+        // get correction user subscriptions
+        $a=0;
+        if(!empty($listCorrections)){
+            foreach ($listCorrections as $correction) {
+                $listCorrections[$a]->listSubscriptions = $SubscriptionsModel->getActiveSubscriptions($correction->id_user);
+                $a++;
+            }
+        }
+        $data['needCorrections'] = $listCorrections;
 
         return view('dashboard_index',$data);
     }
