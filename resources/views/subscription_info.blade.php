@@ -39,7 +39,7 @@
 	 			<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran (Makroj) **</li>
 	 			<li><i class="fa fa-check-square"></i> 10x simpan rekaman</li>
 	        </ul>
-	        <a class="btn btn-green" style="width: 100%" href="{{url('subscription/order/islam')}}" onclick="fbq('track', 'clickPesanIslam')">Pesan sekarang!</a>
+	        <a class="btn btn-green" style="width: 100%" href="javascript:void(0)" onclick="fbq('track', 'clickPesanIslam');purchase('subs_paket_islam')">Pesan sekarang!</a>
 	      </div>
 	    </div>
 	  </div>
@@ -61,7 +61,7 @@
 	 			<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Muratal MurQ) **</li>
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
 	        </ul>
-	        <a class="btn btn-green" style="width: 100%" href="{{url('subscription/order/iman')}}" onclick="fbq('track', 'clickPesanIman')">Pesan sekarang!</a>
+	        <a class="btn btn-green" style="width: 100%" href="javascript:void(0)" onclick="fbq('track', 'clickPesanIman');purchase('subs_paket_iman')">Pesan sekarang!</a>
 	      </div>
 	    </div>
 	  </div>
@@ -84,7 +84,7 @@
 	 			<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Tahsin) **</li>
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
 	        </ul>
-	        <a class="btn btn-green" style="width: 100%" href="{{url('subscription/order/ihsan')}}" onclick="fbq('track', 'clickPesanIhsan')">Pesan sekarang!</a>
+	        <a class="btn btn-green" style="width: 100%" href="javascript:void(0)" onclick="fbq('track', 'clickPesanIhsan');purchase('subs_paket_ihsan')">Pesan sekarang!</a>
 	      </div>
 	    </div>
 	  </div>

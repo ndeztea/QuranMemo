@@ -485,6 +485,9 @@
         QuranJS.callModal('subscription');
         @endif
 
+        function purchase(productId){
+            window.parent.postMessage("purchase|"+productId, "*");
+        }
         </script>
     @include('layouts.analytics') 
 
