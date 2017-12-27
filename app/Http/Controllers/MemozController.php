@@ -91,6 +91,7 @@ class MemozController extends Controller
         $UsersModel = new Users;
         $memoDetail = new \stdClass();
         $memoDetail->id = '';
+        $memoDetail->id_user = '';
         if($id){
             // get detail memo
             $memoDetail = $memoModel->getDetail($id);
