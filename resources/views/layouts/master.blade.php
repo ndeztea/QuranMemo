@@ -88,6 +88,10 @@
         <script src="{{url('assets/js/script.min.js')}}"></script>
         <script type="text/javascript">
             QuranJS.siteUrl = '{{url('')}}';
+            /*loadingText = ['Subhanallah','Alhamdulillah','Lailahaillalah','Allahuakbar','La hawla wala quwwata illa billah',' Hasbunallah Wanikmal Wakil'];
+            randomInt = Math.floor(Math.random() * loadingText.length);
+            $('.loading > span').html(loadingText[randomInt]);
+            alert(loadingText[randomInt]);*/
         </script>
 
         <script src="{{url('assets/js/vex.combined.min.js')}}"></script>
@@ -154,8 +158,9 @@
 
         <!-- pre loader-->
         <div id="preloader">
-            <div class="loading">Mohon tunggu...<br>
-            <img src="{{url('assets/images/loading.svg')}}" alt="loading"/></div>
+            <div class="loading">
+            <img src="{{url('assets/images/96.gif')}}" alt="loading"/><br><br>
+        <span>Mohon tunggu...</span></div>
         </div>
         @section('sidebar')
            <!-- This is the master sidebar. -->
@@ -477,6 +482,10 @@
                 $('#cartCounter').show();
                 $('#actionPromo').attr('onclick','');
                 $('#actionPromo').attr('onclick',"fbq('track', 'clickBerlanggananPromo');location.href='{{url('subscription/listing')}}'");
+
+                @if(Request::segment(1)=='dashboard')
+                vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
+                @endif
            }
         });
         
@@ -487,6 +496,11 @@
 
         function purchase(productId){
             window.parent.postMessage("purchase|"+productId, "*");
+
+        }
+        function checkPurchase(productId){
+            window.parent.postMessage("checkPurchase|"+productId, "*");
+
         }
         </script>
     @include('layouts.analytics') 

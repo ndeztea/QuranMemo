@@ -40,11 +40,11 @@
 									  <input class="form-control search_ayat ayat_end_temp" id="ayat_end"  name="ayat_end" id="ayat_end" placeholder="Ayat" aria-label="Ayat"  value="{{$ayat_end?$ayat_end:''}}">
 									</div>
 								</div>
-								<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) QuranJS.submitMemoz('{{$level}}') @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"><i class="fa fa-search"></i> Hafalkan Ayat</a>
+								<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) QuranJS.submitMemoz('{{$level}}') @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"  style="width: 100% !important"><i class="fa fa-search"></i> Hafalkan Ayat</a>
 									
 								@if(session('sess_id'))
-								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarHafalanPage');QuranJS.memozList()" href="javascript:void(0)"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
-								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarKoreksiPage');QuranJS.correctionList('','')" href="javascript:void(0)"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
+								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarHafalanPage');QuranJS.memozList()" href="javascript:void(0)" style="width: 49% !important"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
+									<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarKoreksiPage');QuranJS.correctionList('','')" href="javascript:void(0)"  style="width: 49% !important"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
 								@endif
 						</form>
 					</div>
@@ -61,7 +61,9 @@
 					<a style="display: none" class="memoz-0" href="javascript:;" onclick="fbq('track', 'clickBelumHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
 					<a style="display: none" class="memoz-1" href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
 					@endif
+					@if(!empty($memoDetail->id))
 					<a onclick="fbq('track', 'clickDaftarKoreksiMemoz');QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
+					@endif
 				</div>
 			@endif
 			<input type="hidden" name="repeat" class="repeat" value="1" />

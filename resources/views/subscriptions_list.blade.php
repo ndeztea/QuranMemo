@@ -75,6 +75,8 @@
 						 	<td>
 						 		<label class="label label-{{$statusClass}}">{{$status}}</label><br>
 						 		<a href="{{url('subscription/cancel/'.$order->id)}}" style="font-size:20px"><label class="label label-danger">Cancel!</a>
+						 		<a href="javascript:void(0)" onclick="checkPurchase('subs_paket_{{strtolower(array_keys($level,$order->level)[0])}}')" style="font-size:20px"><label class="label label-danger">Cek Langganan</a>
+						 		
 						 		@if($status=='Pending' && session('sess_role')!=1)
 						 		<br>
 						 		<a href="{{url('subscription/confirmation/'.$order->id)}}" style="font-size:20px"><label class="label label-primary">Konfirmasi Bayar</label></a>

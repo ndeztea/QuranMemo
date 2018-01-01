@@ -24,13 +24,15 @@
 							@else
 							<div class="price">Rp. {{number_format($detail->price,2,',','.')}} *</div>
 							@endif
-							<small>*) transfer sampai digit terakhir untuk memudahkan verifikasi</small><br>
 							@if($detail->active==0)
-							<p>Transfer melalui rekening Bank Muamalat  :
+							<p>Bayar Potong Pulsa / Debit / Kredit Card <br><sup>(Hanya untuk "QuranMemo Community" versi > 1.4.0)</sup></p>
+							<div class="rekening"><button type="button" onclick="purchase('subs_paket_{{strtolower($detail->level)}}')" class="btn btn-green">Bayar Sekarang</button></div>
+							<p>Atau Transfer melalui rekening Bank Muamalat  :
 							<div class="rekening">1460000303 <br>an <br>Dimas Tekad Santosa</div>
 							<hr>
 							<strong>Konfirmasi Pembayaran</strong>
 							<input type="text" class="form-control" name="paid" id="paid" aria-label="paid" placeholder="Jumlah yang dibayar" value="{{ old('paid')}}" />
+							<small>*) transfer sampai digit terakhir untuk memudahkan verifikasi</small><br>
 							<br>
 							<strong>Bukti Pembayaran</strong>
 							<input type="file" class="form-control" name="file" id="file"><br>

@@ -60,11 +60,6 @@ Route::get('info', 'ContentController@info');
 Route::get('info_memoz', 'ContentController@info_memoz');
 Route::get('alkahfi', 'ContentController@alkahfi');
 Route::get('subscription', 'ContentController@subscription');
-Route::get('subscription/order/{level}', 'SubscriptionsController@order');
-Route::post('subscription/order/{level}', 'SubscriptionsController@order');
-Route::get('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
-Route::post('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
-Route::get('subscription/cancel/{id}', 'SubscriptionsController@cancel');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
@@ -129,6 +124,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('profile/uploadAvatar','ProfileController@uploadAvatar');
     Route::get('subscription/listing', 'SubscriptionsController@listing');
     Route::get('subscription/counter', 'SubscriptionsController@counter');
+
+    
+    Route::get('subscription/order/{level}', 'SubscriptionsController@order');
+    Route::post('subscription/order/{level}', 'SubscriptionsController@order');
+    Route::get('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
+    Route::post('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
+    Route::get('subscription/cancel/{id}', 'SubscriptionsController@cancel');
 
 });
 
