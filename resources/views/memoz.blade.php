@@ -129,7 +129,7 @@
 									<strong>Catatan :</strong><br>
 									<p>{{$correctionDetail->note}}</p>
 									@if($correctionDetail->record_file)
-									<audio  controls controlsList="nodownload" src="{{url($correctionDetail->record_file)}}"></audio>
+									<audio  style="width:100%" controls controlsList="nodownload" src="{{url($correctionDetail->record_file)}}"></audio>
 									@endif
 								</div>
 								@else
@@ -278,7 +278,7 @@
 	<div class="quran_recorder" style="display:none">
 		<div class="action">
 			<div class="player">
-				<audio  controls controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
+				<audio  controls style="width:100%" controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
 			</div>
 			@if(Request::segment(2)!='correction')
 				<a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
@@ -302,11 +302,11 @@
 			@endif
 
 			@if(session('sess_id')!= @$memoDetail->id_user && Request::segment(2)=='correction')
-				<a class="btn btn-warning" style="margin: 5px;" id="btn-correction"  onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionModal()"><i class="fa fa-wrench" ></i> Kirim Catatan</a>
+				<a class="btn btn-warning note" style="margin: 5px;"  onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionShow()"><i class="fa fa-wrench" ></i> Kirim Catatan</a>
+				<a class="btn btn-danger  btn-close" style="margin: 5px; display: none" onclick="QuranJS.formMemoCorrectionClose()"><i class="fa fa-close" ></i> Close</a>
 			@endif
 		</div>
-		
-		
+		<div class="action-footer" style="display: none"> @include('memoz_correction_form')</div>
 		@if(Request::segment(2)!='correction')
 		<canvas id="level" height="50" width="100%" style="display: none"></canvas>
 		<input id="base64Decode" type="hidden" value="">

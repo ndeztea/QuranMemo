@@ -11,7 +11,7 @@
 			@endif
 		</div>
 		
-		<button class="btn btn-cari-ayat btn-save-memoz" type="submit" name="btnSubmit" onclick="fbq('track', 'clickSimpanKoreksi');QuranJS.saveMemozCorrection();return false;">
+		<button class="btn btn-cari-ayat btn-save-memoz btn-green" type="submit" name="btnSubmit" onclick="fbq('track', 'clickSimpanKoreksi');QuranJS.saveMemozCorrection();return false;">
 		<span class="label-save"><i class="fa fa-send"></i><span class="sr-only"></span> Kirim</span>
 		<i class="fa fa-spinner fa-spin fa-3x fa-fw label-loading" style="display:none"></i>
 		</button>
