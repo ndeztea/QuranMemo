@@ -83,18 +83,17 @@ class ProfileController extends Controller
                     $dataProfile['avatar'] = $fileName;
                     $dataProfile['id'] = session('sess_id');
                     $UsersModel->edit($dataProfile);
-
+                    return redirect('profile/edit')->with('messageSuccess', 'Profile avatar berhasil disimpan')->withInput();
                 }else{
-                    return 'false';
+                    return redirect('profile/edit')->with('messageError', 'Profile avatar gagal disimpan')->withInput();
                 }
             }else{
-                return 'false';
+                return redirect('profile/edit')->with('messageError', 'Profile avatar gagal disimpan')->withInput();
             }
         }else{
-            return 'false';
+            return redirect('profile/edit')->with('messageError', 'Profile avatar gagal disimpan')->withInput();
         }
         
-        return url('assets/images/avatar/'.$fileName);
     }
 
     
