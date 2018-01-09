@@ -126,8 +126,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('subscription/counter', 'SubscriptionsController@counter');
 
     
-    Route::get('subscription/order/{level}', 'SubscriptionsController@order');
-    Route::post('subscription/order/{level}', 'SubscriptionsController@order');
+    Route::get('subscription/order/{level}/{length}', 'SubscriptionsController@order');
+    Route::post('subscription/order/{level}/{length}', 'SubscriptionsController@order');
     Route::get('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
     Route::post('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
     Route::get('subscription/cancel/{id}', 'SubscriptionsController@cancel');

@@ -31,6 +31,7 @@ class SubscriptionsController extends Controller
 
        // save record
        $level =  $request->segment(3);
+       $length =  $request->segment(4);
        if($level){
             $sess_id = $request->session()->get('sess_id');
 
