@@ -18,7 +18,27 @@ use Mail;
 
 class SubscriptionsController extends Controller
 {
-    var $price = array('islam'=>10000,'iman'=>20000,'ihsan'=>50000);
+    var $price = array(
+      'islam'=> array(
+        '31'  => 10000,
+        '90'  => 25000,
+        '180' => 50000,
+        '360' => 100000,
+        ),
+      'iman'=> array(
+        '31'  => 20000,
+        '90'  => 50000,
+        '180' => 100000,
+        '360' => 150000,
+        ),
+      'ihsan'=> array(
+        '31'  => 50000,
+        '90'  => 130000,
+        '180' => 250000,
+        '360' => 450000,
+        ),
+    );
+
     var $level = array('islam'=>1,'iman'=>2,'ihsan'=>3);
 
     /**
@@ -37,7 +57,7 @@ class SubscriptionsController extends Controller
 
             $created_date = (string) Carbon::now();
             
-            $price = $this->price[$level];
+            $price = $this->price[$level][$length];
             $uniqPrice =  rand(100, 999);
 
             $SubscriptionsModel = new Subscriptions();
@@ -46,6 +66,7 @@ class SubscriptionsController extends Controller
             $data = array('id_user' => $sess_id,
                 'level' => $levelId,
                 'created_date' => $created_date,
+                'length' => $length,
                 'price' =>  $price+$uniqPrice);
             $subscriptions_id = $SubscriptionsModel->store($data);
 
@@ -104,14 +125,14 @@ class SubscriptionsController extends Controller
         $emailData['price'] = $detail->price;
         $emailData['active'] = 1;
         $emailData['url'] = '#';
-        $dt = Carbon::now()->addDays(31);
+        $dt = Carbon::now()->addDays($detail->length);
         $emailData['expired_date'] = $dt->format('d-m-Y'); 
 
         $dataRecord['id'] = $subscriptions_id;
         $dataRecord['status'] = 1;
         $dataRecord['paid'] = $paid;
         $dataRecord['active'] = 0;
-        $dataRecord['expired_date'] = (string) Carbon::now()->addDays(31);
+        $dataRecord['expired_date'] = (string) Carbon::now()->addDays($detail->length);
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);
         if($isSuccess){
           Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
@@ -148,7 +169,7 @@ class SubscriptionsController extends Controller
         $emailData['price'] = $detail->price;
         $emailData['active'] = 1;
         $emailData['url'] = '#';
-        $dt = Carbon::now()->addDays(31);
+        $dt = Carbon::now()->addDays($detail->length);
         $emailData['expired_date'] = $dt->format('d-m-Y'); 
         // update subscriptions
         $dataRecord['id'] = $subscriptions_id;

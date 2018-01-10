@@ -41,10 +41,10 @@
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Islam')">Pesan Sekarang!</a>
 	        <div class="IslamButtons" style="display: none">
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/1bln')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 10.000/bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/3bln')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 25.000/3bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/6bln')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 50.000/6bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/12bln')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 100.000/12bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/31')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 10.000/bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/90')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 25.000/3bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/180')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 50.000/6bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/360')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 100.000/12thn</a>
 		    </div>
 	      </div>
 	    </div>
@@ -69,10 +69,10 @@
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Iman')">Pesan Sekarang!</a>
 	        <div class="ImanButtons" style="display: none">
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/1bln')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 20.000/bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/3bln')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 50.000/3bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/6bln')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 100.000/6bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/12bln')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 150.000/12bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/31')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 20.000/bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/90')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 50.000/3bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/180')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 100.000/6bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/360')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 150.000/12bln</a>
 		    </div>
 	      </div>
 	    </div>
@@ -98,10 +98,10 @@
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Ihsan')">Pesan Sekarang!</a>
 	        <div class="IhsanButtons" style="display: none">
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/Ihsan/1bln')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 50.000/bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/3bln')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 120.000/3bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/6bln')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 250.000/6bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/12bln')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 450.000/12bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/31')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 50.000/bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/90')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 120.000/3bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/180')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 250.000/6bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/360')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 450.000/12bln</a>
 	        </div>
 	      </div>
 	    </div>

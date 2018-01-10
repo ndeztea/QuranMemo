@@ -60,7 +60,7 @@ class RegisterController extends Controller
 
             mail('quranmemo.id@gmail.com', 'Daftar QuranMemo', $contentsEmail);
 
-            return redirect('register')->with('messageSuccess', 'Terima kasih telah berpartisipai, kami akan kontak Antum jika terpilih untuk mendapatkan T-Shirt Tematik QuranMemo. Jazakallah Khairan');
+            return redirect('register')->with('messageSuccess', 'Terima kasih telah berpartisipai.');
         }else{
             return redirect('register')->with('messageError', 'Email sudah di pakai, gunakan email yang lain')->withInput();
         }

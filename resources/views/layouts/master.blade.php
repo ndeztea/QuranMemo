@@ -475,7 +475,7 @@
          }
 
          // get subscription information
-         /*$.getJSON('{{url('subscription/counter')}}',{},function(response){
+         $.getJSON('{{url('subscription/counter')}}',{},function(response){
            if(response.counter>0){
                 $('#cart').attr('onclick','location.href="{{url('subscription/listing')}}"');
                 $('#cartCounter').html(response.counter);
@@ -487,7 +487,7 @@
                 vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
                 @endif
            }
-        });*/
+        });
         
         @if(Request::get('action')=='berlangganan')
         vex.dialog.alert('Menghafal juz 1 sampai juz 29 harus berlangganan terlebih dahulu.');

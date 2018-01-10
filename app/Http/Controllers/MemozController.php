@@ -540,9 +540,10 @@ class MemozController extends Controller
         }
 
         if(File::exists(public_path($recordFolder.'/'.$fileName))){
-           
-            $updated_at = (string) Carbon::now();
-            $dataRecord['updated_at'] = $updated_at;
+           if($detailMemo->status==1 || $detailMemo->status==2){
+                $updated_at = (string) Carbon::now();
+                $dataRecord['updated_at'] = $updated_at;
+           }
             $dataRecord['id'] = $idMemo;
             // dont save if file from ustadz, same from corrections
             if($this->recordType!='ustadz'){

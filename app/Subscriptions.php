@@ -21,8 +21,9 @@ class Subscriptions extends Model
     public $status;
     public $price;
     public $paid;
+    public $length;
 
-    protected $fillable = array('id_user','level', 'created_date', 'expired_date','status','price','paid');
+    protected $fillable = array('id_user','level', 'created_date', 'expired_date','status','price','paid','length');
 
     public function store($data){
         return DB::table($this->table)->insertGetId($data);

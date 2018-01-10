@@ -1,8 +1,8 @@
-<form class="form-inline" style="padding:10px">
+<form style="padding:0px 10px">
 		<!--div class="form-group display-inline-block-xs">
 			<strong>Yang test : </strong> {{session('sess_name')}} ({{session('sess_email')}})
 		</div-->
-		<div class="form-group display-inline-block-xs">
+		<div >
 			<strong>Catatan untuk hafalan ini</strong>
 			<textarea class="form-control" id="note" placeholder="Masukan catatan yang di dapat ketika mengetes hafalan ini" name="note" style="height: 100px"></textarea>
 			@if(session('sess_role')==2)
