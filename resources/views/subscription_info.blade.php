@@ -70,9 +70,12 @@
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Iman')">Pesan Sekarang!</a>
 	        <div class="ImanButtons" style="display: none">
 		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/31')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 20.000/bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/90')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 50.000/3bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px;background-color: #f54d4d;
+    font-size: 23px;" href="{{url('subscription/order/iman/90')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 50.000/3bln *</a>
 		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/180')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 100.000/6bln</a>
 		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/360')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 150.000/12bln</a>
+		        <br>
+		        *) Paket Special
 		    </div>
 	      </div>
 	    </div>
