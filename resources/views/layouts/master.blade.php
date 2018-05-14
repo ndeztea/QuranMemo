@@ -66,6 +66,18 @@
             top:1px;
             left: 2px;
         }
+        .ads-middle{
+            font-size: 14px;
+            background-color: #333333;
+            color: #FFF;
+            padding: 10px;
+            text-align: center
+        }
+        .ads-middle img{
+            width: 40px;
+            float: left;
+            margin-left:10px;
+        }
         </style>
 
         <!-- Optional theme -->
@@ -127,7 +139,7 @@
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '112999465995364');
-          fbq('track', 'PageView');
+          //fbq('track', 'PageView');
         </script>
         <noscript><img height="1" width="1" style="display:none"
           src="https://www.facebook.com/tr?id=112999465995364&ev=PageView&noscript=1"
@@ -222,7 +234,8 @@
                     <li></li>
                     <li></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('contact')" onclick="fbq('track', 'clickContact')"><i class="mdi mdi-email"></i> Kontak</a></li>
-                     <li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li>
+                    <!--!li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li-->
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li>
                     @if(empty(session('sess_id')))
                     <li></li>
                     <li></li>

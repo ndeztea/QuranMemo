@@ -61,6 +61,16 @@ class ContentController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function partners()
+    {
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Partners QuranMemo';
+        $dataHTML['modal_body'] = view('content_partners')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
     public function promo()
     {
         $SubscriptionsModel = new Subscriptions();

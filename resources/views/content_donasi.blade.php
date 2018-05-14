@@ -1,16 +1,23 @@
 <div class="modal-spacing">
-<h4>Pembangunan dan Renovasi Mesjid Al-Islah</h4>
-<p>Alamat mesjid terletak di Komp. Soreang Indah Blok J, Kabupaten Bandung, Jawa Barat</p>
-<img src="{{url('assets/images/al-islah1.png')}}" style="width:100%"><br>
-<img src="{{url('assets/images/al-islah2.png')}}" style="width:100%"><br>
-<br>
 <p>
-Donasi, Infaq dan Sodaqah di transfer ke :<br>
-<br>
-<b>Bank Muamalat No. Rekening  1460000303 an Dimas Tekad Santosa</b>
-<br>
-<br>
-Konfirmasi donasi ke email quranmemo.id@gmail.com atau SMS/WA/Telp 085956331813
+Pengguna QuranMemo yang terhormat, kita mempunyai program baru yaitu : <br>
+<strong>"Gerakan bangun pesantren 5000! "</strong>
+</p>
+<p>
+Dengan semangat Ramadhan yuk kita sisihkan sedikit penghasilan kita untuk membangun rumah-rumah Allah Ta'ala di dunia ini, insyaAllah kita akan dibangun satu rumah semisal di surga, ingat janji Allah Ta'ala melalui sabda Rosulullah ﷺ : 
+</p>
+<p>
+<i>
+"Siapa yang membangun masjid karena Allah, maka Allah akan membangun baginya semisal itu di surga." (HR. Bukhari, no. 450; Muslim, no. 533)</i>
+</p>
+<p>Untuk program sekarang kami sedang membangun Yayasan Pasantren Fahim Quran yang terletak kaki Gunung Salak Bogor, untuk informasi Pasantren Fahim Quran kunjungi laman <a target="_blank" href="http://www.fahimquran.com">http://www.fahimquran.com</a></p>
+
+<p>
+Yang ingin berkontribusi transfer ke
+<div class="order-detail center" >
+ Bank Syariah Mandiri <br>a/n Yayasan Fahim Quran Plus <br>
+ No rekening 7118570868
+</div>
 </p>
 <p>
 	Jazakallah Khair

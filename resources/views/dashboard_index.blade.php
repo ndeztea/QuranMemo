@@ -61,6 +61,8 @@
 					</div>
 			  	</div>
 				  <!-- /dash-profile -->
+				  <div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div>
+						<span class="clear"></span>
 				  <div class="timeline-koreksi filter">
 				  		<ul class="nav nav-tabs" role="tablist">
 
