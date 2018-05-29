@@ -9,7 +9,7 @@
 			<input type="email" class="form-control" name="login_email" id="login_email" aria-label="email" placeholder="Email" />
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-default btn-masuk" onclick="fbq('track', 'clickForgotPassword');QuranJS.forgetProcess()">
+			<button type="submit" class="btn btn-default btn-masuk" onclick="fbq('track', 'clickForgotPassword');">
 			  	<span class="label-masuk">Kirim ke Email</span>
 			  	<i class="fa fa-spinner fa-spin fa-3x fa-fw label-loading" style="display:none"></i>
 			</button>

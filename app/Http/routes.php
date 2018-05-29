@@ -61,6 +61,8 @@ Route::get('info_memoz', 'ContentController@info_memoz');
 Route::get('alkahfi', 'ContentController@alkahfi');
 Route::get('subscription', 'ContentController@subscription');
 Route::get('partners', 'ContentController@partners');
+Route::get('faq', 'ContentController@faq');
+
 
 Route::get('auth/login', 'Auth\AuthController@login');
 Route::get('auth/logout', 'Auth\AuthController@logout');

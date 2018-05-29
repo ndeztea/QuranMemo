@@ -233,6 +233,7 @@
                     <li></li>
                     <li></li>
                     <li></li>
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('faq')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-help-circle"></i> FAQ</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('contact')" onclick="fbq('track', 'clickContact')"><i class="mdi mdi-email"></i> Kontak</a></li>
                     <!--!li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li-->
                     <li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li>

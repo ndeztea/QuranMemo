@@ -11,6 +11,14 @@ Dengan semangat Ramadhan yuk kita sisihkan sedikit penghasilan kita untuk memban
 "Siapa yang membangun masjid karena Allah, maka Allah akan membangun baginya semisal itu di surga." (HR. Bukhari, no. 450; Muslim, no. 533)</i>
 </p>
 <p>Untuk program sekarang kami sedang membangun Yayasan Pasantren Fahim Quran yang terletak kaki Gunung Salak Bogor, untuk informasi Pasantren Fahim Quran kunjungi laman <a target="_blank" href="http://www.fahimquran.com">http://www.fahimquran.com</a></p>
+<p>
+	<img src="{{url('assets/images/fahim_1.jpg')}}" style="width: 300px;padding: 5px"><br>
+	<img src="{{url('assets/images/fahim_2.jpg')}}" style="width: 300px;padding: 5px"><br>
+	<img src="{{url('assets/images/fahim_3.jpg')}}" style="width: 300px;padding: 5px"><br>
+	<img src="{{url('assets/images/fahim_4.jpg')}}" style="width: 300px;padding: 5px"><br>
+	<img src="{{url('assets/images/fahim_5.jpg')}}" style="width: 300px;padding: 5px"><br>
+	<img src="{{url('assets/images/fahim_6.jpg')}}" style="width: 300px;padding: 5px"><br>
+</p>
 
 <p>
 Yang ingin berkontribusi transfer ke
