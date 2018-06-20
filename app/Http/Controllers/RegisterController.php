@@ -50,7 +50,8 @@ class RegisterController extends Controller
             return redirect('register')->with('messageError',$errorHtml)->withInput();
         }
 
-        if($this->create($request->all())){
+        $registeredData = $this->create($request->all());
+        if($registeredData){
             // send email
             $data = $request->all();
             $contentsEmail = '';
@@ -59,8 +60,16 @@ class RegisterController extends Controller
             }
 
             mail('quranmemo.id@gmail.com', 'Daftar QuranMemo', $contentsEmail);
+            
+            $UsersModel = new Users();
+            $lastRecord = $UsersModel->checkEmail($request->all());
 
-            return redirect('register')->with('messageSuccess', 'Terima kasih telah berpartisipai.');
+            $request->session()->put('sess_id', $lastRecord->id);
+            $request->session()->put('sess_email', $request->input('email'));
+            $request->session()->put('sess_name', $request->input('name'));
+            $request->session()->put('sess_role', 3);
+
+            return redirect('dashboard')->with('messageSuccess', 'Terima kasih telah berpartisipai.');
         }else{
             return redirect('register')->with('messageError', 'Email sudah di pakai, gunakan email yang lain')->withInput();
         }
