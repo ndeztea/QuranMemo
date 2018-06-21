@@ -69,7 +69,7 @@ class RegisterController extends Controller
             $request->session()->put('sess_name', $request->input('name'));
             $request->session()->put('sess_role', 3);
 
-            return redirect('dashboard')->with('messageSuccess', 'Terima kasih telah berpartisipai.');
+            return redirect('dashboard')->with('messageSuccess', 'Ahlah wa sahlan di Majelis Penghafal Al-Quran - QuranMemo Community.');
         }else{
             return redirect('register')->with('messageError', 'Email sudah di pakai, gunakan email yang lain')->withInput();
         }
