@@ -160,3 +160,28 @@ hr{
 	font-size: 15px !important;
 	top:2% !important;
 }
+.qm-navbar .qm-brand{
+	height: 120px;
+    padding: 15px 0;
+    margin-bottom: 25px;
+}
+@media (max-width: 767px) and (min-width: 270px) {
+	.qm-navbar .navbar-nav form {
+	    padding: 10px 10px 0px 10px;
+	}
+
+	.login-nav {
+	    width: 100%;
+	    text-align: center;
+	}
+}
+.btn-login {
+    background-color: #ff3535 !important;
+    color: #fff !important;
+    border: solid 1px #ff3535 !important;
+}
+.btn-register {
+    background-color: #ff8c35 !important;
+    color: #fff !important;
+    border: solid 1px #ff8c35 !important;
+}

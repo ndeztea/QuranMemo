@@ -214,6 +214,17 @@
                                 </div>
                             </form>
                         </div>
+                        <div class="login-nav">
+                            <div class="btn-group" role="group" aria-label="...">
+                                @if(empty(session('sess_id')))
+                                      <a class="btn btn-login login-trigger" href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i> Login </a>
+                                      <a  class="btn btn-register" href="{{url('register')}}">Register <i class="mdi mdi-account"></i>  </a>
+                                </div>
+                                @else
+                                    <a class="btn btn-login"  href="{{url('auth/logout')}}"><i class="mdi mdi-lock-open"></i> Logout </a>
+                                      <a  class="btn btn-register" href="{{url('profile/edit')}}">Edit Profile <i class="mdi mdi-account-edit"></i>  </a>
+                                @endif
+                        </div>
                     </div>
                     <!--/navmenu-overlay-->
                 </div>
@@ -237,18 +248,6 @@
                     <li><a href="javascript:;" onclick="QuranJS.callModal('contact')" onclick="fbq('track', 'clickContact')"><i class="mdi mdi-email"></i> Kontak</a></li>
                     <!--!li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li-->
                     <li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li>
-                    @if(empty(session('sess_id')))
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li><a class='login-trigger' href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i>  Login</a></li>
-                    @else
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li><a href="{{url('profile/edit')}}" onclick="fbq('track', 'clickEditProfile')"><i class="mdi mdi-account-edit"></i> Edit Profile</a></li>
-                    <li><a href="{{url('auth/logout')}}" onclick="fbq('track', 'clickLogout')"><i class="mdi mdi-lock-open"></i> Logout</a></li>
-                    @endif
                 </ul>
                 <!--/navmenu-nav-->
 
