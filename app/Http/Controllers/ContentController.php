@@ -61,6 +61,17 @@ class ContentController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function umroh()
+    {
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Program Umroh';
+        $dataHTML['modal_body'] = view('content_umroh')->render();
+        $dataHTML['modal_footer'] = '<a href="https://api.whatsapp.com/send?phone=6285956331813&text=Assalamu\'alaikum%20wr%20wb,%20mau%20tanya%20perihal%20umroh" class="btn btn-green-small" style="font-size: 16px;margin-top: 10px;" target="_blank" onclick="fbq(\'track\', \'clickTanyaUmroh\');">Tanya via WA
+    085956331813</a> ';
+
+        return response()->json($dataHTML);
+    }
+
     public function partners()
     {
         $dataHTML['modal_class'] = '';

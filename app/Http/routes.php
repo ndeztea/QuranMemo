@@ -62,6 +62,7 @@ Route::get('alkahfi', 'ContentController@alkahfi');
 Route::get('subscription', 'ContentController@subscription');
 Route::get('partners', 'ContentController@partners');
 Route::get('faq', 'ContentController@faq');
+Route::get('umroh', 'ContentController@umroh');
 
 
 Route::get('auth/login', 'Auth\AuthController@login');
