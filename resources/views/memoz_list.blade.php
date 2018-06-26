@@ -9,3 +9,4 @@
 </div>
 <i class="fa fa-spinner fa-spin fa-3x fa-fw memoz-loading" style="display: none"></i>
 <div class="memoz-list"></div>
+<div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div>
