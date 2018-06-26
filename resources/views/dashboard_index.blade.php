@@ -15,7 +15,7 @@
 			<!--div class="page-title">
 				<h2>Dashboard</h2>
 			</div-->
-
+			<div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div>
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
 
