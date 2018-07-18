@@ -182,7 +182,7 @@ class SubscriptionsController extends Controller
               $m->to($emailData['email'], $emailData['name'])->subject('Approval berlangganan QuranMemo berhasil');
               $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Approval berlangganan QuranMemo berhasil');
           });
-          return redirect('subscription/listing')->with('messageSuccess', 'Konfirmasi sukses');
+          return redirect('subscription/listing?status=approval')->with('messageSuccess', 'Konfirmasi sukses');
         }
         
         return redirect('subscription/listing')->with('messageError', 'Konfirmasi gagal');
@@ -200,10 +200,10 @@ class SubscriptionsController extends Controller
         $dataRecord['status'] = 0;
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);
         if($isSuccess){
-          return redirect('subscription/listing')->with('messageSuccess', 'Update ke notvalid berhasil');
+          return redirect('subscription/listing?status=approval')->with('messageSuccess', 'Update ke notvalid berhasil');
         }
         
-        return redirect('subscription/listing')->with('messageError', 'Update ke notvalid gagal');
+        return redirect('subscription/listing?status=approval')->with('messageError', 'Update ke notvalid gagal');
     }
 
     public function cancel(Request $request){
