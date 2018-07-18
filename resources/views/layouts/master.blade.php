@@ -497,7 +497,13 @@
                 $('#actionPromo').attr('onclick',"fbq('track', 'clickBerlanggananPromo');location.href='{{url('subscription/listing')}}'");
 
                 @if(Request::segment(1)=='dashboard')
-                vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
+                <?php 
+                    $approvalLink = '';
+                    if(session('sess_role')==1){
+                        $approvalLink = '?status=approval';
+                    }
+                ?>
+                vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}{{$approvalLink}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
                 @endif
            }
         });
