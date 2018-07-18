@@ -18,7 +18,7 @@ class MushafController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($page=1)
+    public function index($page=1, Request $request)
     {
         /*$directory = '/Volumes/Jobs/www/QuranNote/public/quran-uthmani.sql';
         $contents = File::get($directory);
@@ -104,8 +104,18 @@ class MushafController extends Controller
         }
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
 
+        // for REST API output
+        $restAPI = $request->input('restAPI');
+        if($restAPI=='JSON'){
+            header('Access-Control-Allow-Origin: *');
+            $output['ayats'] = $ayats;
+            $output['pages'] = $pages;
+            $output['curr_page'] = $page;
+            return json_encode($output);
+        }
         // show view template
        return view('mushaf',$data);
+        
     }
 
     public function surah($id_surah,$ayat){
