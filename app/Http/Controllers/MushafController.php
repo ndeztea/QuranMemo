@@ -18,7 +18,7 @@ class MushafController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($page=1, Request $request)
+    public function index(Request $request, $page=1)
     {
         /*$directory = '/Volumes/Jobs/www/QuranNote/public/quran-uthmani.sql';
         $contents = File::get($directory);
@@ -103,7 +103,7 @@ class MushafController extends Controller
             setcookie('coo_promo_3_tafsir',1);
         }
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
-
+        
         // for REST API output
         $restAPI = $request->input('restAPI');
         if($restAPI=='JSON'){
@@ -111,6 +111,10 @@ class MushafController extends Controller
             $output['ayats'] = $ayats;
             $output['pages'] = $pages;
             $output['curr_page'] = $page;
+            $output['next_page'] = $page+1;
+            $output['prev_page'] = $page-1;
+            $output['juz'] = $ayats[0]->juz;
+            $output['surah'] = $ayats[0]->surah_name;
             return json_encode($output);
         }
         // show view template
@@ -254,7 +258,7 @@ class MushafController extends Controller
     * select juz
     *
     */
-    public function juz(){
+    public function juz(Request $request){
         $QuranModel = new Quran;
         $juzs = $QuranModel->getJuz();
 
@@ -263,6 +267,17 @@ class MushafController extends Controller
         $dataHTML['modal_body'] = view('mushaf_juz',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
+        $restAPI = $request->input('restAPI');
+        if($restAPI=='JSON'){
+            header('Access-Control-Allow-Origin: *');
+            foreach ($juzs as $juz) {
+                echo "<pre>";
+                echo "{ juz: '".$juz->juz_arabic."', juz_latin: '".$juz->juz_indo."', number: '".$juz->id."',number_arabic:'".arabicNum($juz->id)."' },<br>";
+            }
+            die();
+            //return json_encode($output);
+        }
+
         return response()->json($dataHTML);
     }
 
@@ -270,7 +285,7 @@ class MushafController extends Controller
     * select juz
     *
     */
-    public function juzPage($juz){
+    public function juzPage(Request $request,$juz){
         $QuranModel = new Quran;
         $pages = $QuranModel->getJuzPage($juz);
         $page = $pages[0]->page;
@@ -311,6 +326,20 @@ class MushafController extends Controller
 
         $data['cookies'] = getCookie();
         $data['bookmarked'] = @$_COOKIE['coo_mushaf_bookmark_url']==$_SERVER['REQUEST_URI']?'fa-bookmark':'fa-bookmark-o';
+
+        // for REST API output
+        $restAPI = $request->input('restAPI');
+        if($restAPI=='JSON'){
+            header('Access-Control-Allow-Origin: *');
+            $output['ayats'] = $ayats;
+            $output['pages'] = $pages;
+            $output['curr_page'] = $page;
+            $output['next_page'] = $page+1;
+            $output['prev_page'] = $page-1;
+            $output['juz'] = $ayats[0]->juz;
+            $output['surah'] = $ayats[0]->surah_name;
+            return json_encode($output);
+        }
 
         // show view template
        return view('mushaf',$data);
