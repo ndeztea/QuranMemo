@@ -46,7 +46,12 @@ class MemozController extends Controller
             if($surah_start!=''){
                 if($level<1){
                     if($surah_start < 78 && $surah_start !=1){
-                        return redirect('dashboard?action=berlangganan');
+                        if($surah_start=='23' && $ayat_range=='12-15'){
+                            
+                        }else{
+                            return redirect('dashboard?action=berlangganan');
+                        }
+                        
                     }
                 }
             }

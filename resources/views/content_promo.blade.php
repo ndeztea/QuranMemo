@@ -35,7 +35,9 @@ Segera daftarkan putri anda. via SMS atau WA ke nomor 08161123811 dengan format 
 
 
 <p>‼Segera, karena kuota terbatas.</p-->
-<img src="{{url('assets/images/171217.jpg')}}" width="100%">
+<p><strong>Surah Al Mu'minun : 12-15</strong> adalah ayat yang sangat agung menjelaskan penciptaan manusia dari dalam rahim, mari kita berdakwah melalui yang kita pakai dan mengenalkan ayat yang mulia ini.</p>
+<img src="{{url('assets/images/tshirt_womb.png')}}" width="100%">
 <br>
-<button class="btn btn-green" style="font-size: 16px;margin-top: 10px;" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')">Berlangganan sekarang!!!</button>
+<strong>*) T-Shirt Pre-Order sampai 17 Agustus 2018</strong>
+<!--button class="btn btn-green" style="font-size: 16px;margin-top: 10px;" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')">Berlangganan sekarang!!!</button-->
 </div>

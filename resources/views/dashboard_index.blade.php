@@ -15,7 +15,8 @@
 			<!--div class="page-title">
 				<h2>Dashboard</h2>
 			</div-->
-			<div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div>
+			<!--div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div-->
+			<div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><label class="label label-danger">New</label> Promo T-Shirt QuranMemo<br> <span style="font-size: 17px"><strong>Tema Womb</strong> </span></div>
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
 
@@ -182,10 +183,12 @@
 </div>
 <script>
 $(document).ready(function(){
-   
-    if('{{$starting}}'=='yes' && '{{session('sess_id')}}'==''){
+   	// show promo or not
+   	if('{{$starting}}'=='yes' && '{{session('sess_id')}}'==''){
         QuranJS.callModal('auth/login')
-    }
+    }else if('{{@$_GET['promo']}}'!='hide'){
+   		QuranJS.callModal('promo')
+   	}
 });
 $('.btn-trigger-dashboard').click(function() {
 	$(".fa",this).toggleClass("fa-angle-up fa-angle-down");

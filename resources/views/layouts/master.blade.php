@@ -232,10 +232,12 @@
 
                 <ul class="nav navmenu-nav">
 
-                    <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
+                    <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard?promo=hide')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
                     <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
+                    </li>
+                    <li><a href="javascript:;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><i class="mdi mdi-alert-decagram"></i> Promo <label class="label label-danger">New</label></a></li>
                     </li>
                     <li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
                     </li>
@@ -463,13 +465,13 @@
          @if(!empty($_SERVER['HTTP_REFERER']))
             //alert("{{parse_url($_SERVER['HTTP_REFERER'])['host']}}");
             if("{{parse_url($_SERVER['HTTP_REFERER'])['host']}}"=="www.quranmemo.id" || "{{parse_url($_SERVER['HTTP_REFERER'])['host']}}"=="quranmemo.id"){
-                vex.dialog.alert({ unsafeMessage: '<h4>Download versi "QuranMemo Community"!</h4> <p>Antum masih menggunakan aplikasi "QuranMemo" lama dan akan kami non-aktifkan dalam waktu dekat ini, maka silahkan cari dan download versi terbaru lewat playstore "QuranMemo Community" untuk mendapatkan fitur-fitur terbaru menghafal Al-Quran, seperti merekam, koreksi, update avatar, dll.</p> <p>Dan dapatkan T-shirt Gratis dari kami, dengan design Tematik Al-Quran</p><br>Syukron' });
+                vex.dialog.alert({ unsafeMessage: '<h4>Download versi "QuranMemo Community"!</h4> <p>Antum masih menggunakan aplikasi "QuranMemo" lama dan akan kami non-aktifkan dalam waktu dekat ini, maka silahkan cari dan download versi terbaru lewat playstore "QuranMemo Community" atau <a href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemocommunity">click disni untuk install</a> untuk mendapatkan fitur-fitur terbaru menghafal Al-Quran, seperti merekam, koreksi, update avatar, dll.</p> <p>Dan dapatkan T-shirt Gratis dari kami, dengan design Tematik Al-Quran</p><br>Syukron' });
             }
             @endif
 
          var d = new Date();
          var isFriday = d.getDay();
-
+         
          if('{{session('sess_id')}}'!='' && '{{Request::segment(1)}}'=='dashboard'){
             // promo 212
             //QuranJS.callModal('promo');

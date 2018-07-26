@@ -84,16 +84,17 @@ class ContentController extends Controller
 
     public function promo()
     {
-        $SubscriptionsModel = new Subscriptions();
+        /*$SubscriptionsModel = new Subscriptions();
         $sessRole = session('sess_role');
         $counter = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
           
-        $data['havePending'] = count($counter)>=1?true:false;
+        $data['havePending'] = count($counter)>=1?true:false;*/
         
         $dataHTML['modal_class'] = '';
         $dataHTML['modal_title'] = 'Promo';
-        $dataHTML['modal_body'] = view('content_promo',$data)->render();
-        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+        $dataHTML['modal_body'] = view('content_promo')->render();
+        $dataHTML['modal_footer'] = '<a href="https://api.whatsapp.com/send?phone=6285956331813" class="btn btn-green-small"  target="_blank" onclick="fbq(\'track\', \'clickContactTShirtWomb\');">Pesan via WA
+    085956331813</a> <a href="'.url('memoz/surah/23/12-15').'" class="btn btn-green-small">Hafalkan ayat ini</a>';
         return response()->json($dataHTML);
     }
 
