@@ -5,7 +5,7 @@
 		<div >
 			<strong>Catatan untuk hafalan ini</strong>
 			<textarea class="form-control" id="note" placeholder="Masukan catatan yang di dapat ketika mengetes hafalan ini" name="note" style="height: 100px"></textarea>
-			@if(session('sess_role')==2)
+			@if(session('sess_role')==2 || session('sess_role')==1)
 			<a class="btn" style="font-size: 16px;" onclick="recordAudio('ustadz');"><i class="fa fa-microphone" style="color:red"></i> Rekam audio koreksi</a>
 			<input type="text" name="record_file" id="record_file" value="" style="display: none"/>
 			@endif
