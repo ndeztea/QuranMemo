@@ -47,7 +47,7 @@
 						<div class="tabbed-nav">
 							<ul class="tabbed-nav-list list-unstyled">
 							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) location.href='{{url('memoz')}}' @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-file"></i>Hafalan Baru</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Daftar Hafalan</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Daftar Hafalan <sup class="text-white label label-danger">{{$counterMurajaah>0?$counterMurajaah:''}}</sup></a>  </li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white label label-danger">{{$counterCorrection>0?$counterCorrection.' new ':''}}</sup></a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickSummaryTarget');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-target"></i> Statistik</a></li>
 								

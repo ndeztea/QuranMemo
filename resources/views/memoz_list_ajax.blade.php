@@ -5,15 +5,38 @@
 	<div class="memoz-item memoz-{{$row->id}}">
 		<div class="memoz-body">
 			<div class="memoz-body-inner">
-				<div class="memoz-tr">
-					<?php $days = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($row->date_end)),false)?>
-					<span class="tr-days">{{$days>0?$days:0}}</span>
-					<span class="tr-label">hari lagi</span>
-				</div>
+				
+					@if ($filter==3)
+					<?php 
+						$days_murajaah = 0;
+						if (!empty($row->murajaah_date)){
+							$days_murajaah = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($row->murajaah_date)),false);
+						}
+						?>
+						
+						@if ($days_murajaah == 0)
+						<div class="memoz-tr tr-murajaah">
+							<span class="tr-label">Belum Pernah Murajaah {{$days_murajaah}}</span>
+						</div>
+						@else
+						<div class="memoz-tr">
+							<span class="tr-label">Murajaah</span>
+							<span class="tr-days" style="line-height: 25px;">{{str_replace('-','',$days_murajaah)}}</span>
+							<span class="tr-label">hari lalu</span>
+						</div>
+						@endif
+					@else
+					<div class="memoz-tr">
+						<?php $days = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($row->date_end)),false)?>
+						<span class="tr-days">{{$days>0?$days:0}}</span>
+						<span class="tr-label">hari lagi</span>
+					</div>
+					@endif
+				
 				<!--/memoz-time-remaining(tr)-->
-				<div class="memoz-content"  onclick="fbq('track', 'clickHafalkanTarget');location.href='{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}'">
+				<div class="memoz-content"  onclick="fbq('track', 'clickHafalkanTarget');location.href='{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id.'?filter='.$filter)}}'">
 					<div class="memoz-content-top">
-						<a class="memoz-link-surah" href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">
+						<a class="memoz-link-surah" href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id.'?filter='.$filter)}}">
 							{{$row->surah}} : {{$ayat_target}}
 						</a>
 						<span class="memoz-status"> 
@@ -27,16 +50,23 @@
 				</div>
 				<!--/memoz-content-->
 				<div class="memoz-check-hafalan">
-					@if($row->status==0)
-					<a class="memoz-check-link" href="javascript:void(0)"  onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$row->id}}','1','Ayat di surah ini sudah hafal?')">
-						<span class="memoz-link-area"><i class="fa fa-circle-thin"></i></span>
-						<span class="check-label">Hafal</span>
-					</a>
+					@if($filter==3)
+						<a class="memoz-check-link" href="javascript:void(0)"  onclick="fbq('track', 'clickSkipMurajaah');QuranJS.updateStatusMemoz('{{$row->id}}','3','Lewati murajaah hafalan ini?')">
+							<span class="memoz-link-area"><i class="fa fa-forward"></i></span>
+							<span class="check-label">Lewati</span>
+						</a>
 					@else
-					<a class="memoz-check-link" href="javascript:void(0)" onclick="fbq('track', 'clickLupa');QuranJS.updateStatusMemoz('{{$row->id}}','0','Hafalan ini belum di hafal dengan benar?')">
-						<span class="memoz-link-area"><i class="fa fa-circle"></i></span>
-						<span class="check-label">Lupa</span>
-					</a>
+						@if($row->status==0)
+						<a class="memoz-check-link" href="javascript:void(0)"  onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$row->id}}','1','Ayat di surah ini sudah hafal?')">
+							<span class="memoz-link-area"><i class="fa fa-circle-thin"></i></span>
+							<span class="check-label">Hafal</span>
+						</a>
+						@else
+						<a class="memoz-check-link" href="javascript:void(0)" onclick="fbq('track', 'clickLupa');QuranJS.updateStatusMemoz('{{$row->id}}','0','Hafalan ini belum di hafal dengan benar?')">
+							<span class="memoz-link-area"><i class="fa fa-circle"></i></span>
+							<span class="check-label">Lupa</span>
+						</a>
+						@endif
 					@endif
 				</div>
 				<!--/memoz-check-hafalan-->

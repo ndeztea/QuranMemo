@@ -38,6 +38,9 @@ class MemozController extends Controller
         $id = $request->segment(5);
         $idCorrection = $request->segment(6);
 
+        $memoModel = new Memo;
+        $UsersModel = new Users;
+
         $sess_id_user = session('sess_id');
         $UsersModel = new Users;
         $level = $UsersModel->checkLevel($sess_id_user);
@@ -79,7 +82,7 @@ class MemozController extends Controller
         $data['header_top_title'] = $data['header_title'] = 'Menghafal';
         $data['body_class'] = 'body-memo';
         $data['on_memo'] = true;
-
+        
         // data header
         if(!empty($ayats)){
             if(request()->segment(2)=='correction'){
@@ -92,14 +95,20 @@ class MemozController extends Controller
             
         }
 
-        $memoModel = new Memo;
-        $UsersModel = new Users;
+        
         $memoDetail = new \stdClass();
         $memoDetail->id = '';
         $memoDetail->id_user = '';
         if($id){
             // get detail memo
             $memoDetail = $memoModel->getDetail($id);
+
+            $memoDetail->visitor++;
+            // counter for opened correction
+            $dataVisitor['id'] = $id;
+            $dataVisitor['visitor'] = $memoDetail->visitor++;
+            $memoModel->edit($dataVisitor);
+
             // get detail user penghafal
             $userMemoz = $UsersModel->getDetail($memoDetail->id_user)[0];
             $SubscriptionsModel = new Subscriptions();
@@ -205,9 +214,9 @@ class MemozController extends Controller
     */
     public function listing(Request $request){
         $MemoModel = new Memo();
-
+        $dataHTML['counterMurajaah'] = $MemoModel->getCountList(session('sess_id'),3);
         $dataHTML['modal_title'] = 'Daftar Hafalan';
-        $dataHTML['modal_body'] = view('memoz_list')->render();
+        $dataHTML['modal_body'] = view('memoz_list',$dataHTML)->render();
         $dataHTML['site_url'] = url('');
         $dataHTML['modal_footer'] = '<a class="btn btn-green-small info" href="'.url('memoz').'"><i class="fa fa-file"></i> Hafalan Baru</a> <button class="btn btn-green-small info" data-dismiss="modal"><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display: none;"></i>  Tutup</button>';
 
@@ -438,10 +447,16 @@ class MemozController extends Controller
         $dataHTML['id'] = $id;
 
         $dataRecord['id'] = $id;
-        $dataRecord['status'] = $status;
-        $updated_at = (string) Carbon::now();
-        $dataRecord['updated_at'] = $updated_at;
         
+        if($status==3){
+            $murajaah_date = (string) Carbon::now();
+            $dataRecord['murajaah_date'] = $murajaah_date;
+        }else{
+            $dataRecord['status'] = $status;
+            $updated_at = (string) Carbon::now();
+            $dataRecord['updated_at'] = $updated_at;
+        }
+
         $save = $MemoModel->edit($dataRecord);
         // send ajax response
         if($save){

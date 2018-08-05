@@ -60,6 +60,9 @@
 					@if($memoDetail->id_user == session('sess_id'))			
 					<a style="display: none" class="memoz-0" href="javascript:;" onclick="fbq('track', 'clickBelumHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Ayat di surah ini sudah hafal?')"><i class="mdi mdi-lightbulb-outline label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Belum hafal</a>
 					<a style="display: none" class="memoz-1" href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Hafalan ini belum di hafal dengan benar?')"><i class="mdi mdi-lightbulb-on label-status-save"></i><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> Sudah hafal</a>
+					@if($_GET['filter']==3)
+					<a class="btn" href="javascript:;" onclick="fbq('track', 'clickMurajaahSelesai');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','3','Murajaah sudah selesai?')"><i class="fa fa-check-square"></i></i> Muraja'ah</a>
+					@endif
 					@endif
 					@if(!empty($memoDetail->id))
 					<a onclick="fbq('track', 'clickDaftarKoreksiMemoz');QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>

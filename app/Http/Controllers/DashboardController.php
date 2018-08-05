@@ -47,6 +47,7 @@ class DashboardController extends Controller
         $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1);
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
         $data['counterCorrection'] = $MemoCorrectionModel->getCountNew(session('sess_id'))->count;
+        $data['counterMurajaah'] = $MemoModel->getCountList(session('sess_id'),3);
         $data['starting'] = $starting;
         $data['body_class'] = 'dashboard';
         $data['level'] = $this->level;

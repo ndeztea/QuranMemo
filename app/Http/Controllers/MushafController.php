@@ -253,7 +253,7 @@ class MushafController extends Controller
     * select juz
     *
     */
-    public function muqodimah($surah){
+    public function muqodimah(Request $request,$surah){
         $QuranModel = new Quran;
         $surahs = $QuranModel->getSurah($surah);
         
@@ -261,6 +261,15 @@ class MushafController extends Controller
         $dataHTML['modal_title'] = 'Muqodimah Surah '.$surahs[0]->surah_name;
         $dataHTML['modal_body'] = view('mushaf_muqodimah',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        // for REST API output
+        $restAPI = $request->input('restAPI');
+        if($restAPI=='JSON'){
+            header('Access-Control-Allow-Origin: *');
+            $output['surah'] = $surahs[0]->surah_name;
+            $output['muqodimah'] = $surahs[0]->muqodimah;
+            return json_encode($output);
+        }
 
         return response()->json($dataHTML);
     }
@@ -375,6 +384,21 @@ class MushafController extends Controller
             $data['selected_surah'] = $surah;
             $header_description_add = '\''.$keyword.'\' ditemukan dalam '.$count_search.' ayat. ';
         }
+        // for REST API output
+        $restAPI = $request->input('restAPI');
+        if($restAPI=='JSON'){
+            header('Access-Control-Allow-Origin: *');
+            $output['search_result'] = 0;
+            $output['search_count'] = 0;
+            $output['page'] = 1;
+            if(!empty($search_result)){
+                $output['search_result'] = $search_result;
+                $output['total_result'] = count($search_result);
+                $output['search_count'] = $count_search;
+                $output['page'] = $page + 1;
+            }
+            return json_encode($output);
+        }
 
         if(empty($surahs)){
             if(empty($keyword)){
@@ -387,15 +411,6 @@ class MushafController extends Controller
         $data['pages'] = $pages;
         $data['header_top_title'] = $data['header_title'] = 'Cari Kata \''.$keyword.'\'';
         $data['header_description'] = $header_description_add.'Cari kata dalam Al-Quran dan Tafsir Al-Quran';
-
-        // for REST API output
-        $restAPI = $request->input('restAPI');
-        if($restAPI=='JSON'){
-            header('Access-Control-Allow-Origin: *');
-            $output['search_result'] = $search_result;
-            $output['search_count'] = $count_search;
-            return json_encode($output);
-        }
 
         return view('mushaf_search',$data);
     }
@@ -503,12 +518,22 @@ class MushafController extends Controller
         return redirect('mushaf');
     }
 
-    public function tafsir($surah, $ayat){
+    public function tafsir(Request $request,$surah, $ayat){
         $QuranModel = new Quran;
         $tafsir = $QuranModel->getTafsir($surah,$ayat);
         $surah = $QuranModel->getSurah($surah);
         $data['tafsir'] = $tafsir;
         $data['tafsir_header'] = $surah[0]->surah_name.' : '.$ayat;
+
+         // for REST API output
+        $restAPI = $request->input('restAPI');
+        if($restAPI=='JSON'){
+            header('Access-Control-Allow-Origin: *');
+            $output['tafsir'] = $tafsir;
+            $output['tafsir_header'] = $surah[0]->surah_name.' : '.$ayat;
+            
+            return json_encode($output);
+        }
 
         $dataHTML['modal_title'] = 'Tafsir';
         $dataHTML['modal_body'] = view('mushaf_tafsir',$data)->render();

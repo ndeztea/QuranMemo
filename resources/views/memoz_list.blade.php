@@ -4,6 +4,8 @@
 	    <!--li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" onclick="QuranJS.memozFilter('all')">Semua</a></li-->
 	    <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" onclick="fbq('track', 'clickBelumHafal');QuranJS.memozFilter(0,'')">Belum Hafal</a></li>
 	    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"onclick="fbq('track', 'clickSudahHafal');QuranJS.memozFilter(1,'')">Sudah Hafal</a></li>
+	    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"onclick="fbq('track', 'clickMurajaah');QuranJS.memozFilter(3,'')">Muraja'ah <sup class="text-white label label-danger">{{$counterMurajaah>0?$counterMurajaah:''}}</sup></a></li>
+	    
 	    <!--<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"onclick="QuranJS.memozFilter(2)">Koreksi</a></li>-->
 	  </ul>
 </div>
