@@ -58,7 +58,14 @@ class Memo extends Model
                 ->limit($limit);
 
         if($filter!='all'){
-            $memoList = $memoList->where('status',$filter);
+            // murajaah query
+            if($filter==3){
+                $expDate = Carbon::now()->subDays(14);
+                $memoList = $memoList->whereRaw('(status=1 AND (murajaah_date is null or DATEDIFF(current_date,murajaah_date) >= 14))');
+            }else{
+                $memoList = $memoList->where('status',$filter);
+            }
+            
         }
 
         if($filter==1){
@@ -66,10 +73,29 @@ class Memo extends Model
         }else{
             $memoList = $memoList->orderby('in_progress','desc')->orderby('date_end','asc');
         }
-        
+        //echo $id_user;
         //dd($memoList->toSql());
 
         return $memoList->get();
+    }
+
+    public function getCountList($id_user,$filter){
+        $memoList = DB::table($this->table.' as memo')
+                ->selectRaw('count(*) as counter')
+                ->join('surah as s', 's.id', '=', 'memo.surah_start')
+                ->where('id_user',$id_user);
+        if($filter!='all'){
+            // murajaah query
+            if($filter==3){
+                $expDate = Carbon::now()->subDays(14);
+                $memoList = $memoList->whereRaw('(status=1 AND (murajaah_date is null or DATEDIFF(current_date,murajaah_date) >= 14))');
+            }else{
+                $memoList = $memoList->where('status',$filter);
+            }
+            
+        }
+
+        return $memoList->get()[0]->counter;
     }
 
     public function getSummaryTargetMemo($id_user){
