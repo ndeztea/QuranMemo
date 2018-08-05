@@ -3,7 +3,7 @@ var QuranJS = {
 	totalAyatSpaces : [''],
 	totalAyat : 0,
 	headSurah : 0,
-	loadingText : ['"Hai orang-orang yang beriman. Bersabarlah kamu, dan kuatkanlah kesabaranmu dan tetaplah bersiaga-siaga (diperbatasan negrimu) dan bertaqwalah kepada Allah supaya kamu beruntung." (Ali-Imran 200).','"Tetapi orang yang bersabar dan memaafkan sesungguhnya (perbuatan) yang demikian itu termasuk hal-hal yang diutamakan" (Asy-Syuura 43)','"Sesengguhnya kesabaran itu hanyalah pada pukulan yang pertama dari bala" (Hadist Muttafaq\'alaih)'],
+	loadingText : ['"Hai orang-orang yang beriman. Bersabarlah kamu, dan kuatkanlah kesabaranmu dan tetaplah bersiaga-siaga (diperbatasan negrimu) dan bertaqwalah kepada Allah supaya kamu beruntung." (Ali-Imran 200).','"Tetapi orang yang bersabar dan memaafkan sesungguhnya (perbuatan) yang demikian itu termasuk hal-hal yang diutamakan" (Asy-Syuura 43)','"Sesungguhnya kesabaran itu hanyalah pada pukulan yang pertama dari bala" (Hadist Muttafaq\'alaih)'],
 
 	modalLoading : function(){
 		randomInt = Math.floor(Math.random() * (3 - 1)) + 1;
@@ -282,12 +282,35 @@ var QuranJS = {
 		document.cookie = 'coo_footer_action='+show+';visited=true;path=/;';
 	},
 
-	configMuratal : function (val){
+	configMuratal : function (val,level){
+		// check level subs
+		if(val=='Al_Afasy'){
+			this.refreshMuratal(val);
+			return true;
+		}else if(val=='Ali_Jaber' || val=='As_Sudais' || val=='Ghamadi' || val=='Husary' || val=='Menshawi'){
+			if(level<1){
+				this.callModal('subscription');
+				return true;
+			}
+			this.refreshMuratal(val);
+			return true;
+		}else if(val=='Warsh_AlDosary' || val=='Warsh_AbdulBasit' || val=='Warsh_Yassin_AlJazaery'){
+			if(level<2){
+				this.callModal('subscription');
+				return true;
+			}
+			this.refreshMuratal(val);
+			return true;
+		}
+		return true;
+	},
+
+	refreshMuratal : function(val){
+		//alert(val);
+		//location.href=siteUrl+'/mushaf/set_muratal/'+val;
 		$('.muratal').val(val);
 		document.cookie = 'coo_sound='+val+';visited=true;path=/;';
 		$('.muratal_modified').show();
-		//alert(val);
-		//location.href=siteUrl+'/mushaf/set_muratal/'+val;
 	},
 
 	showMushaf : function (mushaf){
@@ -580,7 +603,7 @@ var QuranJS = {
 			jQuery('.arabic,.steps').show();
 		}else if(steps==3){
 			jQuery('.steps,.action-footer,.quran_player').show();
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Fokuskan hafalan terjemahannya saja');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Fokuskan hafalan terjemahannya dan pelajari tafsir ayatnya');
 			jQuery('.jp-stop').click();
 			jQuery('.memoz_nav').hide();
 			jQuery('.puzzle').hide();
@@ -595,7 +618,7 @@ var QuranJS = {
 		}else if(steps==4 || steps=='correction'){
 			//jQuery('.trans').removeClass('puff').removeClass('go');
 			//jQuery('.arabic').removeClass('puff').removeClass('go');
-			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> TEST...!! Bacakan setiap kata yang di hilangkan.');
+			jQuery('.steps_desc p').html('<i class="fa fa-info-circle"></i> Bacakan setiap kata yang dihilangkan. Jika sudah hafal mulai merekam untuk test hafalan, rekaman akan dikoreksi oleh penghafal lain tau oleh ustadz pilihan QuranMemo.');
 			jQuery('.jp-stop').click();
 			jQuery('.memoz_player,.memozed').show();
 			jQuery('.memoz_nav').show();
@@ -790,8 +813,8 @@ var QuranJS = {
 		$('.modal-footer').html('<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>');*/
 	},
 	
-	formMemoCorrectionModal : function (id){
-		$('.label-loading').show();
+	formMemoCorrectionShow : function (id){
+		/*$('.label-loading').show();
 		$('#QuranModal').modal('show');
 		$('.modal-title').html('Kirim Koreksi');
 		$.post(this.siteUrl+'/memoz/formCorrection',{
@@ -802,7 +825,16 @@ var QuranJS = {
 					$('.modal-body').html(response.modal_body);
 					$('.modal-footer').html(response.modal_footer);
 				}
-			);
+			);*/
+		$('.note').hide();
+		$('.btn-close').show();
+		$('.action-footer').slideToggle();
+	},
+
+	formMemoCorrectionClose : function (){
+		$('.note').show();
+		$('.btn-close').hide();
+		$('.action-footer').slideToggle();
 	},
 
 	saveMemozCorrection : function(){
@@ -815,6 +847,7 @@ var QuranJS = {
 		$.post(this.siteUrl+'/memoz/saveCorrection',{
 					id_memo_target : id,
 					note : $('#note').val(),
+					record_file : $('#record_file').val(),
 					correction : correction,
 				}, function (response){
 					$('.label-loading').hide();
@@ -952,7 +985,7 @@ var QuranJS = {
 			}else{
 				$('.arabic_'+line+' .per_words_'+id).removeClass('wrong');
 			}
-			$('#btn-correction').hide();
+			//$('#btn-correction').hide();
 			$( ' .wrong' ).each(function( index ) {
 			  console.log( index + ": " + $( this ).data('css') );
 			  $('#btn-correction').show();
@@ -1066,9 +1099,39 @@ var QuranJS = {
 		});
 	},
 
-	submitMemoz : function(level){
+	updateInProgress:function(id){
+		$('.label-status-loading').show();
+		$.post(this.siteUrl+'/memoz/inProgress',{
+					id : id,
+				}, function (response){
+					if(response.status==1){
+						$('.memoz-item.memoz-'+response.id).detach().prependTo('.memoz_filter_0').hide().slideDown();
+						$('.memoz-item i.fa-star').removeClass('fa-star').addClass('fa-star-o');
+						$('.memoz-item.memoz-'+response.id+' i.fa-star-o').addClass('fa-star').removeClass('fa-star-o');
+						vex.dialog.alert('Berhasil di update');
+					}else{
+						vex.dialog.alert('Gagal di update');
+					}
+					$('.label-status-loading').hide();
+				}
+			);
+	},
 
-		jQuery('.form-inline').submit(); 
+	submitMemoz : function(level){
+		surah = $('#surah_start').val();
+		if(surah==1 || surah>=78){
+			jQuery('.form-inline').submit(); 
+			return true;
+		}else{
+			if(level>=1){
+				jQuery('.form-inline').submit(); 
+				return true;
+			}
+		}
+		
+		this.callModal('subscription');
+		return true;
+		
 	}
 
 	
