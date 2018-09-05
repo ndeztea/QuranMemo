@@ -25,7 +25,7 @@
 	    <div class="panel-heading" role="tab" id="headingIslam">
 	      <h4 class="panel-title">
 	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIslam" aria-expanded="true" aria-controls="levelIslam">
-	          Paket Islam  (Rp. 10.000/bulan) *
+	          Paket Islam  (Infak Rp. 10.000/bulan) *
 	        </a>
 	      </h4>
 	    </div>
@@ -40,11 +40,13 @@
 	 			<li><i class="fa fa-check-square"></i> 10x simpan rekaman</li>
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Islam')">Pesan Sekarang!</a>
+	         <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank" onclick="fbq('track', 'clickGratis');">Ingin Gratis? Japri ke <br><i style="font-size: 14px" class="fa fa fa-whatsapp"> </i> 085956331813
+		        </a>
 	        <div class="IslamButtons" style="display: none">
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/31')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 10.000/bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/90')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 25.000/3bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/180')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 50.000/6bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/360')}}" onclick="fbq('track', 'clickPesanIslam');">Rp. 100.000/12thn</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/31')}}" onclick="fbq('track', 'clickPesanIslam');">Infak Rp. 10.000/bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/90')}}" onclick="fbq('track', 'clickPesanIslam');">Infak Rp. 25.000/3bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/180')}}" onclick="fbq('track', 'clickPesanIslam');">Infak Rp. 50.000/6bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/islam/360')}}" onclick="fbq('track', 'clickPesanIslam');">Infak Rp. 100.000/12thn</a>
 		    </div>
 	      </div>
 	    </div>
@@ -53,7 +55,7 @@
 	    <div class="panel-heading" role="tab" id="headingIman">
 	      <h4 class="panel-title">
 	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIman" aria-expanded="false" aria-controls="levelIman">
-	          Paket Iman (Rp. 20.000/bulan) *
+	          Paket Iman (Infak Rp. 20.000/bulan) *
 	        </a>
 	      </h4>
 	    </div>
@@ -68,12 +70,14 @@
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Iman')">Pesan Sekarang!</a>
+	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank" onclick="fbq('track', 'clickGratis');">Ingin Gratis? Japri ke <br><i style="font-size: 14px" class="fa fa fa-whatsapp"></i>  085956331813
+		        </a>
 	        <div class="ImanButtons" style="display: none">
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/31')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 20.000/bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/31')}}" onclick="fbq('track', 'clickPesanIman');">Infak Rp. 20.000/bln</a>
 		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px;background-color: #f54d4d;
-    font-size: 23px;" href="{{url('subscription/order/iman/90')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 50.000/3bln *</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/180')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 100.000/6bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/360')}}" onclick="fbq('track', 'clickPesanIman');">Rp. 150.000/12bln</a>
+    font-size: 23px;" href="{{url('subscription/order/iman/90')}}" onclick="fbq('track', 'clickPesanIman');">Infak Rp. 50.000/3bln *</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/180')}}" onclick="fbq('track', 'clickPesanIman');">Infak Rp. 100.000/6bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/iman/360')}}" onclick="fbq('track', 'clickPesanIman');">Infak Rp. 150.000/12bln</a>
 		        <br>
 		        *) Paket Special
 		    </div>
@@ -84,8 +88,9 @@
 	    <div class="panel-heading" role="tab" id="headingIhsan">
 	      <h4 class="panel-title">
 	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIhsan" aria-expanded="false" aria-controls="levelIhsan">
-	          Paket Ihsan (Rp. 50.000/bulan) *
+	          Paket Ihsan (Infak Rp. 50.000/bulan) *
 	        </a>
+	        
 	      </h4>
 	    </div>
 	    <div id="levelIhsan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -100,11 +105,13 @@
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Ihsan')">Pesan Sekarang!</a>
+	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank" onclick="fbq('track', 'clickGratis');">Ingin Gratis? Japri ke <br><i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813
+		        </a>
 	        <div class="IhsanButtons" style="display: none">
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/31')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 50.000/bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/90')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 120.000/3bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/180')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 250.000/6bln</a>
-		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/360')}}" onclick="fbq('track', 'clickPesanIhsan');">Rp. 450.000/12bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/31')}}" onclick="fbq('track', 'clickPesanIhsan');">Infak Rp. 50.000/bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/90')}}" onclick="fbq('track', 'clickPesanIhsan');">Infak Rp. 120.000/3bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/180')}}" onclick="fbq('track', 'clickPesanIhsan');">Infak Rp. 250.000/6bln</a>
+		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/360')}}" onclick="fbq('track', 'clickPesanIhsan');">Infak Rp. 450.000/12bln</a>
 	        </div>
 	      </div>
 	    </div>

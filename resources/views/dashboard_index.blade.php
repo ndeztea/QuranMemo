@@ -16,7 +16,7 @@
 				<h2>Dashboard</h2>
 			</div-->
 			<!--div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div-->
-			<div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><label class="label label-danger">New</label> Promo T-Shirt QuranMemo<br> <span style="font-size: 17px"><strong>Tema Womb</strong> </span></div>
+			<div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank"><label class="label label-danger">Promo</label><a href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank"> Akses semua konten gratis <label class="label label-danger">Promo</label><br> <span style="font-size: 17px"><strong>Japri via WA  <i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813</strong></span></a></div>
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
 
@@ -31,6 +31,9 @@
 								<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
 								<span class='label label-primary'>Paket {{ucfirst($level[$subscription->level])}} ( {{$daysLeft}} hari )</span>
 								@endforeach
+								@if(session('sess_name'))
+								<h2 class='label label-success'>Points : {{$total_points}}</h2>
+								@endif
 							</div>
 							<!--form name="uploadForm" method="post" enctype="multipart/form-data" action="{{url('memoz/uploadRecordedMobile/134')}}">
 							<p><input id="uploadInput" type="file"  name="file"> </p>
@@ -49,7 +52,7 @@
 							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) location.href='{{url('memoz')}}' @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-file"></i>Hafalan Baru</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Hafalan <sup class="text-white label label-danger">{{$counterMurajaah>0?$counterMurajaah:''}}</sup></a>  </li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white label label-danger">{{$counterCorrection>0?$counterCorrection.' new ':''}}</sup></a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickSummaryTarget');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-target"></i> Statistik</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickSummaryTarget');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-target"></i> Target</a></li>
 								
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="fbq('track', 'clickBaca');QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Baca </a></li>
 								
@@ -62,7 +65,38 @@
 					</div>
 			  	</div>
 				  <!-- /dash-profile -->
-				  <div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div>
+				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
+				  <div class="ads-middle" style="height: 110px">
+				  	<strong>Hafalan pilihan</strong>
+				  	<div id="recommendation-memoz">
+					    <ul>
+					    	<?php $recNo = 0?>
+					    	@foreach($listRecommendation as $recommendation)
+					    	<?php $recNo++;?>
+						      <li class="{{count($listRecommendation)==$recNo?'last':''}} dragend-page">
+						      	<div class="recommendation">
+							    	<div class="recommendation-header"><strong>{{$recommendation->surah}} : {{$recommendation->ayat_start==$recommendation->ayat_end?$recommendation->ayat_start:$recommendation->ayat_start.' - '.$recommendation->ayat_end}}</strong>
+							    	</div>
+							    	<div class="recommendation-body">
+							    		{{$recommendation->note}}
+							    	</div>
+							    </div>
+						    	<div class="recommendation-action">
+						    		<a href="{{url('memoz/surah/'.$recommendation->surah_start.'/'.$recommendation->ayat_start.'-'.$recommendation->ayat_end)}}" onclick="fbq('track', 'clickMemozRecommendation');"><i class="fa fa-arrow-circle-right"></i> </a>
+						    	</div>
+						      </li>
+					    
+					    	@endforeach
+					    </ul>
+				  		<!--ul class="nav">
+				  			<?php $recNo = 0;?>
+				  			@foreach($listRecommendation as $recommendation)
+				  			<?php $recNo++;?>
+						    <li data-page="{{$recNo}}" class="active">{{$recNo}}</li>
+						    @endforeach
+					  	</ul-->
+					  </div>
+				  </div>
 						<span class="clear"></span>
 				  <div class="timeline-koreksi filter">
 				  		<ul class="nav nav-tabs" role="tablist">
@@ -187,8 +221,24 @@ $(document).ready(function(){
    	if('{{$starting}}'=='yes' && '{{session('sess_id')}}'==''){
         QuranJS.callModal('auth/login')
     }else if('{{@$_GET['promo']}}'!='hide'){
-   		QuranJS.callModal('promo')
+   		//QuranJS.callModal('promo')
    	}
+
+   	$(function() {
+   	  $("#recommendation-memoz").dragend();
+
+     
+      $(".nav").click(function() {
+        var page = $(event.target).data("page");
+        $("#recommendation-memoz").dragend({
+          scrollToPage: page
+        });
+
+        $(event.target).addClass("active");
+
+      })
+
+    });
 });
 $('.btn-trigger-dashboard').click(function() {
 	$(".fa",this).toggleClass("fa-angle-up fa-angle-down");
@@ -197,5 +247,6 @@ $('.btn-trigger-dashboard').click(function() {
 <script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/Fr.voice.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/record.js')}}"></script>
+<script type="text/javascript" src="{{url('assets/js/dragend.min.js')}}"></script>
 
 @endsection

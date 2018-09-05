@@ -30,13 +30,13 @@ class Subscription
 
         /// role tafsir
         switch ($role) {
-            case 'tafsir':
+            /*case 'tafsir':
                 if($url3<78){
                     if($level<=0 || empty($level)){
                         return $this->showSubscriptions();
                     }
                 }
-                break;
+                break;*/
             case 'save_memoz':
                 $MemoModel = new Memo;
                 $list = $MemoModel->getList($sess_id_user,'all');

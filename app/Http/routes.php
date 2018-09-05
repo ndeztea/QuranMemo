@@ -75,6 +75,7 @@ Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');
 
 Route::get('dashboard','DashboardController@index');
+Route::get('profile/top_user', 'ProfileController@top_user');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {

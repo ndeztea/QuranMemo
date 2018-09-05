@@ -1,4 +1,6 @@
 <?php 
+use App\Libraries\Points;
+
 function arabicNum($str){
 	$western_arabic = array('0','1','2','3','4','5','6','7','8','9');
 	$eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
@@ -45,4 +47,39 @@ function getAvatar($data){
 
 function getAge($data){
 	return !empty($data->dob)?Carbon::parse($data->dob)->age.'thn':'';
+}
+
+function memoz_status_result($result){
+	if($result>0){
+		$star = '';
+		for ($i=0; $i < $result; $i++) { 
+			$star .= '<i class="fa fa-star"></i>';
+		}
+		switch ($result) {
+			case 1:
+				$style = 'btn-warning';
+				break;
+			case 2:
+				$style = 'btn-primary';
+				break;
+			case 3:
+				$style = 'btn-success';
+				break;
+			
+		}
+		return '<button class="btn '.$style.'">'.$star.'</button>';
+	}
+	return '<button class="btn btn-danger" disabled><i class="fa fa-refresh"></i></button>';
+}
+
+function assignPoints($id_user,$action){
+	$objPoints = new Points();
+    $objPoints->assignPoints($id_user,$action);
+        
+}
+
+function addPoints($id_user,$action,$point){
+	$objPoints = new Points();
+    $objPoints->addPoints($id_user,$action,$point);
+        
 }

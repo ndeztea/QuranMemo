@@ -127,4 +127,19 @@ class Users extends Model
         return 0;
     }
 
+    public function topUser($days=0){
+        $list = DB::table('users as u')
+                ->selectRaw('u.name,u.avatar,u.gender,sum(up.points) as points')
+                ->join('user_points as up', 'up.id_user', '=', 'u.id')
+                ->orderBy('points','desc')
+                ->groupBy('up.id_user')
+                ->offset(0)->limit(10);
+
+        if($days!=''){
+            $list->whereRaw('date > NOW() - INTERVAL '.$days.' DAY');
+        }
+
+        return $list->get();
+    }
+
 }

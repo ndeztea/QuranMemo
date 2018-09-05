@@ -200,3 +200,11 @@ hr{
     background-color: #009689;
     color: #FFF;
 }
+.status_memoz {
+    border: 1px dashed #00978a;
+    background: #dbf0ee;
+    color: #00978a;
+    width: 100%;
+    min-width: 300px;
+    font-weight: 700;
+}

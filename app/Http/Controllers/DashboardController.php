@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Crypt;
 use File;
 use Carbon\Carbon;
+use App\Libraries\Points;
 
 
 class DashboardController extends Controller
@@ -69,7 +70,14 @@ class DashboardController extends Controller
         }
         $data['needCorrections'] = $listCorrections;
 
-        return view('dashboard_index',$data);
+        $data['listRecommendation'] = $MemoModel->getMemoRecommendation();
+
+        $objPoints = new Points();
+        $total_points = $objPoints->totalPoints(session('sess_id'),'all');
+        $data['total_points'] = $total_points;
+        
+
+         return view('dashboard_index',$data);
     }
 
     

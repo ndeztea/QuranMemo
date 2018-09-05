@@ -45,11 +45,11 @@ class Memo extends Model
                 ->where('id',$id)
                 ->first();
 
-
+        
         return $memoDetail;
     }
 
-    public function getList($id_user,$filter,$start=0,$limit=5){
+    public function getList($id_user,$filter,$start=0,$limit=5,$otherQuery=''){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
@@ -61,7 +61,7 @@ class Memo extends Model
             // murajaah query
             if($filter==3){
                 $expDate = Carbon::now()->subDays(14);
-                $memoList = $memoList->whereRaw('(status=1 AND (murajaah_date is null or DATEDIFF(current_date,murajaah_date) >= 14))');
+                $memoList = $memoList->whereRaw('(status=1 AND (murajaah_date is null or DATEDIFF(current_date,murajaah_date) >= 7)) '.$otherQuery);
             }else{
                 $memoList = $memoList->where('status',$filter);
             }
@@ -187,5 +187,16 @@ class Memo extends Model
         DB::table($this->table)->where('id_user',$id_user)->update(array('in_progress'=>0));
         return DB::table($this->table)->where('id_user',$id_user)->where('id',$id)->update($dataRecord);
 
+    }
+
+    public function getMemoRecommendation(){
+        $memoList = DB::table('memo_target_recommendation as mtr')
+                ->select('mtr.*','s.name_indonesia as surah')
+                ->join('surah as s','s.id','=','mtr.surah_start')
+                ->where('is_active','=',1)
+                ->orderBy(DB::raw('RAND()'))
+                ->get();
+
+        return $memoList;
     }
 }

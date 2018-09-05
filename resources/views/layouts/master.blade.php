@@ -70,13 +70,65 @@
             font-size: 14px;
             background-color: #333333;
             color: #FFF;
-            padding: 10px;
-            text-align: center
+            padding: 10px 0px;
+            text-align: center;
         }
         .ads-middle img{
             width: 40px;
             float: left;
             margin-left:10px;
+        }
+
+        .no_ayat_arabic{
+            background: url('{{url('assets/images/ayah_sign.png')}}');
+            border: 0px !important;
+            background-repeat: no-repeat;
+            background-size: 42px 41px;
+            background-position-y: 4px;
+            background-position-x: 2px;
+        }
+        .recommendation{
+            float:left;
+            min-width: 200px;
+            width: 75%;
+        }
+        .recommendation-header,.recommendation-body{
+            text-align: left;
+        }
+        .recommendation-action{
+            text-align: right;
+            padding-right:30px;
+            font-size:50px;
+        }
+
+        #recommendation-memoz {
+          bottom: 50px;
+          right: 50px;
+          padding: 18px;
+          color: #fff;
+          border-radius: 3px;
+          font-size: 15px;
+        }
+        li.dragend-page{
+            max-height: 200px;
+        }
+        li.dragend-page.last{
+            display: none !important;
+        }
+
+        .top_user img{
+            width: 50px;
+        }
+        .list_top_user .no_top_user{
+            font-size: 32px;
+        }
+        .list_top_user .border_points{
+            padding: 10px 28px;
+            background-color: #ddefd4;
+        }
+        .choose-type li{
+            padding: 10px;
+            font-size: 19px;
         }
         </style>
 
@@ -237,8 +289,10 @@
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
                     </li>
-                    <li><a href="javascript:;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><i class="mdi mdi-alert-decagram"></i> Promo <label class="label label-danger">New</label></a></li>
+                    <!--li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri <label class="label label-danger">New</label></a></li-->
                     </li>
+                    <!--li><a href="javascript:;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><i class="mdi mdi-alert-decagram"></i> Promo <label class="label label-danger">New</label></a></li>
+                    </li-->
                     <li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
                     </li>
                     <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>

@@ -49,6 +49,7 @@ class ProfileController extends Controller
             $dataProfile['hp'] = $request->get('hp');
             $dataProfile['dob'] = $request->get('dob');
             $UsersModel->edit($dataProfile);
+            assignPoints(session('sess_id'),'profile.edit');
 
             return redirect('profile/edit')->with('messageSuccess', 'Profile berhasil disimpan')->withInput();
 
@@ -83,6 +84,7 @@ class ProfileController extends Controller
                     $dataProfile['avatar'] = $fileName;
                     $dataProfile['id'] = session('sess_id');
                     $UsersModel->edit($dataProfile);
+                    assignPoints(session('sess_id'),'profile.avatar');
                     return redirect('profile/edit')->with('messageSuccess', 'Profile avatar berhasil disimpan')->withInput();
                 }else{
                     return redirect('profile/edit')->with('messageError', 'Profile avatar gagal disimpan')->withInput();
@@ -94,6 +96,23 @@ class ProfileController extends Controller
             return redirect('profile/edit')->with('messageError', 'Profile avatar gagal disimpan')->withInput();
         }
         
+    }
+
+    public function top_user(Request $request){
+        $type = $request->input('type','mingguan');
+
+        $data['header_top_title'] = $data['header_title'] = 'Top Santri';
+        $data['body_class'] = 'body-editprofile';
+        $UsersModel = new Users;
+        $arrType = array('mingguan'=>7,'bulanan'=>30,'tahunan'=>356);
+        $days = '';
+        if($type!='seluruhnya'){
+            $days = $arrType[$type];
+        }
+        $data['list'] = $UsersModel->topUser($days);
+        $data['type'] = $type;
+
+        return view('profile_top',$data);
     }
 
     
