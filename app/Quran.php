@@ -63,6 +63,18 @@ class Quran extends Model
         return $ayats->get();
     }
 
+    public function getAyatSurah($surah,$limit=''){
+        $ayats =  DB::table('quran')
+                     ->selectRaw('*');
+        if(is_array($surah)){
+            $ayats->whereIn('surah',$surah)->limit(3)->orderByRaw('RAND()');
+
+        }else{
+            $ayats->where('surah',$surah);
+        }
+        return $ayats->get();
+    }
+
     /**
     * get range surah for hafalan
     *
@@ -195,5 +207,19 @@ class Quran extends Model
                 ->where('ayat','=',$ayat)
                 ->get();
         return  $juz[0]->tafsir;
+    }
+
+    public function getQuranLine($surah_start,$ayat_start,$ayat_end){
+        $line = DB::table('quran_line')->select('halaman','baris')
+                ->where('id_surah',$surah_start)
+                ->groupBy('halaman')
+                ->groupBy('baris');
+        if($ayat_end==0){
+            $line = $line->where('id_ayat',$ayat_start);
+        }else{
+            $line = $line->where('id_ayat','>=',$ayat_start)
+                 ->where('id_ayat','<=',$ayat_end);
+        }
+        return count($line->get());
     }
 }

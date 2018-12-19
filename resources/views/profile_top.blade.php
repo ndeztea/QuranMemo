@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Daftar QuranMemo')
+@section('title', 'Top Santri')
 @section('content')
 @include('errors.errors_message')
 
@@ -13,7 +13,7 @@
 	                <span class="caret"></span>
 	              </button>
 	              <ul class="dropdown-menu choose-type" aria-labelledby="dropdownMenu2" style="width:100%;min-width: 300px">
-	                <li><a href="{{url('profile/top_user?type=mingguan')}}">Mingguan</a></li>
+	                <li><a href="{{url('profile/top_user?type=mingguan')}}">Pekanan</a></li>
 	                <li><a href="{{url('profile/top_user?type=bulanan')}}">Bulanan</a></li>
 	                <li><a href="{{url('profile/top_user?type=tahunan')}}">Tahunan </a></li>
 	                <li><a href="{{url('profile/top_user?type=seluruhnya')}}">Seluruhnya</a></li>
@@ -25,7 +25,11 @@
 			<?php $no++?>
 			<tr class="list_top_user">
 				<td class="no_top_user" width="50">#{{$no}}</td>
-				<td class="detail"><img src="{{getAvatar($row)}}" class="avatar"><span class="name">{{$row->name}}</span></td>
+				<td class="detail"><img src="{{getAvatar($row)}}" class="avatar img-circle"> <span class="name">{{$row->name}}</span>
+				@if(session('sess_role')==1)
+					<br><a href="https://api.whatsapp.com/send?phone={{$row->hp}}" target="_blank" class="label label-success"><i class="fa fa-whatsapp"></i> {{$row->hp}}</a> 
+					@endif
+				</td>
 				<td class="no_top_user" align="center"><span class="border_points img-circle">{{$row->points}}</span></td>
 			</tr>
 			@endforeach

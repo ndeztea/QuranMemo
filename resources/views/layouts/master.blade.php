@@ -289,8 +289,10 @@
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
                     </li>
-                    <!--li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri <label class="label label-danger">New</label></a></li-->
-                    </li>
+                    <li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('buku')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-book-open"></i> Gratis Buku <label class="label label-danger">New</label></a> </li>
+                     
+                    
                     <!--li><a href="javascript:;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><i class="mdi mdi-alert-decagram"></i> Promo <label class="label label-danger">New</label></a></li>
                     </li-->
                     <li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
@@ -577,6 +579,10 @@
             window.parent.postMessage("checkPurchase|"+productId, "*");
 
         }
+        $( ".jp-video-play-icon" ).click(function() {
+          location.reload();
+        });
+        
         </script>
     @include('layouts.analytics') 
 

@@ -33,6 +33,7 @@
 	      <div class="panel-body">
 	        <ul>
 	        	<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
+	        	<li><i class="fa fa-check-square"></i> Akses Quiz tak terbatas</li>
 	 			<li><i class="fa fa-check-square"></i> Semua muratal kecuali Warsh</li>
 	 			<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
@@ -63,6 +64,7 @@
 	      <div class="panel-body">
 	        <ul>
 	        	<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
+	        	<li><i class="fa fa-check-square"></i> Akses Quiz tak terbatas</li>
 	 			<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
 	 			<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
@@ -98,6 +100,7 @@
 	        <ul>
 	        <li><i class="fa fa-check-square"></i> INTENSIF koreksi hafalan/tahsin/tajwid oleh ustad pilihan QuranMemo</li>
 	        	<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
+	        	<li><i class="fa fa-check-square"></i> Akses Quiz tak terbatas</li>
 	 			<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
 	 			<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
 	 			<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>

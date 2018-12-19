@@ -129,11 +129,12 @@ class Users extends Model
 
     public function topUser($days=0){
         $list = DB::table('users as u')
-                ->selectRaw('u.name,u.avatar,u.gender,sum(up.points) as points')
+                ->selectRaw('u.name,u.avatar,u.gender,sum(up.points) as points,u.hp')
                 ->join('user_points as up', 'up.id_user', '=', 'u.id')
                 ->orderBy('points','desc')
                 ->groupBy('up.id_user')
-                ->offset(0)->limit(10);
+                ->where('u.role','=',0)
+                ->offset(0)->limit(20);
 
         if($days!=''){
             $list->whereRaw('date > NOW() - INTERVAL '.$days.' DAY');

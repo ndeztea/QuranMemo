@@ -136,6 +136,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
     Route::get('subscription/cancel/{id}', 'SubscriptionsController@cancel');
 
+    Route::get('quiz/form', 'QuizController@form')->middleware('subscription:quiz_form');;
+    Route::post('quiz/start', 'QuizController@number');
+    Route::post('quiz/number', 'QuizController@number');
+    Route::get('quiz/number/{number}', 'QuizController@number');
+    Route::post('quiz/number/{number}', 'QuizController@number');
+    Route::post('quiz/save', 'QuizController@save');
+
 });
 
 Route::group(['middleware' => 'admin'], function () {

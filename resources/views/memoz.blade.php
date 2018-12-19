@@ -305,7 +305,7 @@
 				<audio  controls style="width:100%" controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
 			</div>
 			@if(Request::segment(2)!='correction')
-				<a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a>
+				<a class="button" style="font-size: 34px;" onclick="optionsRecord()"><i class="fa fa-microphone" style="color:red"></i></a>
 				@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
 				<!--a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a-->
 				@else
@@ -320,6 +320,10 @@
 				
 				<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
 				<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
+				<form  enctype="multipart/form-data" id="upload-form" method="post" action="{{url('memoz/uploadRecorded')}}">
+	          		<input type="file" name="file" id="record_file" onchange="$('#upload-form').submit()" style="display:none">
+	          		<input type="hidden" name="id" value="{{$memoDetail->id}}"/>
+	          	</form>
 			@else
 				<a class="button"  id="play_audio" style="display:none !important"  onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
 				<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
@@ -389,6 +393,12 @@
 </nav>
 @endif
 <script type="text/javascript">
+function optionsRecord(){
+	string =  '<a class="btn btn-primary" style="font-size: 24px;width:100%" onclick="recordAudio(\'user\');fbq(\'track\', \'clickStartRekam\');"><i class="fa fa-microphone" style="color:red"></i> Rekam Sekarang</a><br><br>';
+
+	string += '<a href="javascript:;" class="btn btn-success" style="font-size: 24px;width:100%" onclick="$(\'#record_file\').trigger(\'click\')"><i class="fa fa-upload" ></i> Upload file rekaman</a>';
+	vex.dialog.alert({unsafeMessage:string});
+}
 function endAudio(){
 	$('#audio').bind("ended", function(){ jQuery('#play_audio').removeClass('disabled'); jQuery('#pause_audio').addClass('disabled'); });
 }

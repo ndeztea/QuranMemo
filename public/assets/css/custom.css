@@ -208,3 +208,46 @@ hr{
     min-width: 300px;
     font-weight: 700;
 }
+
+
+ul.choose-class li {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    background-color: #FFF;
+    border: 1px solid #d6d6d6
+}
+
+
+.quiz_detail .text {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px
+}
+
+.quiz_detail .answer .text {
+    text-align: right
+}
+
+.quiz_detail .actions {
+    padding: 10px
+}
+
+.quiz_detail label {
+    display: inline;
+    font-weight: 500;
+}
+
+.quiz_detail .answer .arabic {
+    border-bottom: 1px dashed #999
+}
+
+.quiz_detail .answer>.ayat_section>.text {
+    background-color: #f6f6f6;
+    border-bottom: 1px dashed #999
+}
+
+.quiz_detail .answer>.ayat_section>.text>.content_ayat.text {
+    text-align: left
+}

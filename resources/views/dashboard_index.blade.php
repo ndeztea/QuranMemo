@@ -16,7 +16,12 @@
 				<h2>Dashboard</h2>
 			</div-->
 			<!--div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div-->
-			<div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank"><label class="label label-danger">Promo</label><a href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank"> Akses semua konten gratis <label class="label label-danger">Promo</label><br> <span style="font-size: 17px"><strong>Japri via WA  <i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813</strong></span></a></div>
+			<!--div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
+				<label class="label label-danger">Promo</label><a href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank"> Akses semua konten gratis <label class="label label-danger">Promo</label><br> <span style="font-size: 17px"><strong>Japri via WA  <i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813</strong></span></a>
+			</div-->
+			<div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
+				<a href="javascript:QuranJS.callModal('promo')"> Mau 1 Bundle pahala ?<br> ~ T-Shirt Dakwah+Berinfak+Menghafal Al-Qu'ran ~ <br><label class="label label-danger">Promo</label><strong> Mau? Klik Disini</strong> <label class="label label-danger">Promo</label></a>
+			</div>
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
 
@@ -57,7 +62,7 @@
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="fbq('track', 'clickBaca');QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Baca </a></li>
 								
 								<!--li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickJuz');QuranJS.callModal('mushaf/juz')" ><i class="mdi mdi-bookmark"></i> Pilih Juz</a></li-->
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickEditProfile');@if(!empty(session('sess_id'))) location.href='{{url('profile/edit')}}' @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-account-edit"></i>Edit Profile</a></li>
+								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('quiz/form') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-help-circle"></i> Quiz </a></li>
 								
 
 							</ul>
@@ -66,6 +71,9 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
+				  <div class="ads-middle" style="background: #fbd47c;color: #000;;font-size: 20px" target="_blank">
+					<a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a>
+				</div>
 				  <div class="ads-middle" style="height: 110px">
 				  	<strong>Hafalan pilihan</strong>
 				  	<div id="recommendation-memoz">
@@ -128,7 +136,7 @@
 												<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 												<div class="koreksi-action">
 													<!--a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickKoreksi');">Koreksi</a-->
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
 												</div>
 											</div>
 											<!--/koreksi-desc-->
@@ -169,7 +177,7 @@
 					<i class="mdi mdi-book-open-variant"></i> {{empty($row->visitor)?0:$row->visitor}}</span>
 												<div class="koreksi-action">
 													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickKoreksi');">Koreksi</a>
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
 												</div>
 											</div>
 											<!--/koreksi-desc-->
@@ -196,7 +204,7 @@
 												<br>
 												<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 												<div class="koreksi-action">
-													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
+													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
 												</div>
 											</div>
 										</div>

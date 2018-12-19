@@ -16,15 +16,15 @@ class Points
 
 				"memoz.create" => 5,
 				"memoz.delete" => -2,
-				"memoz.done" => 10,
-				"memoz.murajaah" => 15,
+				"memoz.done" => 5,
+				"memoz.murajaah" => 5,
 				"memoz.good"	=> 30,
 				"memoz.ok"		=> 20,
 				"memoz.enough"	=> 10,
 				"memoz.bad"		=> 0,
-				"memoz.setor"	=> 20,
-				"memoz.record"	=> 10,
-				"memoz.correction" => 15,
+				"memoz.setor"	=> 7,
+				"memoz.record"	=> 5,
+				"memoz.correction" => 10,
 
 				"memoz.alkahfi"	=> 10,
 
@@ -32,7 +32,7 @@ class Points
 				"profile.avatar"=> 5,
 
 				"read.alkahfi"	=> 10,
-				"read.quran"	=> 5,
+				"read.quran"	=> 1,
 			);
 	}
 

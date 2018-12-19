@@ -519,23 +519,40 @@ class MemozController extends Controller
     */
     public function uploadRecorded(Request $request){
         $audio = $request->input('audioBase64');
+        $file = $request->file('file');
         $id = $request->input('id');
         $MemoModel = new Memo();
         $memoDetail = $MemoModel->getDetail($id);
 
-        $audio = str_replace('data:audio/wav;base64,', '', $audio);
-        $decoded = base64_decode($audio);
         $uniqfile = uniqid('rec_');
-        $fileName = $uniqfile.'_'.$request->session()->get('sess_id').'_'.$id.'.wav';
-        $dataRecord['record'] = "recorded/".$fileName;
+        
+        $userRecFolder = public_path('recorded').'/'.session('sess_id');
+        if(!File::exists($userRecFolder)){
+            File::makeDirectory($userRecFolder);
+        }
 
+        if(!empty($audio)){
+            $fileName = $uniqfile.'_'.$id.'.wav';
+            $dataRecord['record'] = "recorded/".session('sess_id').'/'.$fileName;
+            $audio = str_replace('data:audio/wav;base64,', '', $audio);
+            $decoded = base64_decode($audio);
+            $saveAudio = file_put_contents($fileName, $decoded);
+        }else{
+            // upload manually
+            if(!empty($file)){
+                $fileName = $uniqfile.'_'.$id.'.mp3';
+                $dataRecord['record'] = 'recorded/'.session('sess_id').'/'.$fileName;
+                $saveAudio = $file->move(public_path('recorded/'.session('sess_id')), $fileName);
+            }
+        }
+        
         //$dataRecord['record'] = $fileName;    
 
         $fileName = public_path($dataRecord['record']);
         $dataHTML['status'] = false;
         $dataHTML['message'] = 'Hasil rekaman gagal di upload.';
 
-        $saveAudio = file_put_contents($fileName, $decoded);
+        
         if($saveAudio){
             $dataRecord['id'] = $id;
             $save = $MemoModel->edit($dataRecord);
@@ -543,23 +560,34 @@ class MemozController extends Controller
                 $dataHTML['status'] = true;
                 $dataHTML['message'] = 'Hasil rekaman berhasil di upload';
 
-                // convert to mp3
-                $fileNameMp3 =  str_replace('wav', 'mp3', $dataRecord['record']);
-                $convert = FFMPEG::convert()->input($fileName)->output($fileNameMp3)->go();
+                if(!empty($audio)){
+                    // convert to mp3
+                    $fileNameMp3 =  str_replace('wav', 'mp3', $dataRecord['record']);
+                    $convert = FFMPEG::convert()->input($fileName)->output($fileNameMp3)->go();
+                }
                 
                 $dataRecord['record'] = str_replace('wav', 'mp3', $dataRecord['record']);
-                $MemoModel->edit($dataRecord);
+                $editSuccess = $MemoModel->edit($dataRecord);
 
                 File::delete(public_path($fileName));
                 
 
                 // remove the old file
-                File::delete(public_path($memoDetail->record));
+                if($editSuccess){
+                    File::delete(public_path($memoDetail->record));
+                }
+                
                 assignPoints(session('sess_id'),'memoz.record');
             }
 
         }
-        return response()->json($dataHTML);
+        if(!empty($audio)){
+            return response()->json($dataHTML);
+        }else{
+            return redirect()->back()->with('messageSuccess', $dataHTML['message']);
+
+
+        }
     }
 
     public function uploadRecordedMobile(Request $request ){

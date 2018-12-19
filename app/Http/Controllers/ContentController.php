@@ -93,8 +93,8 @@ class ContentController extends Controller
         $dataHTML['modal_class'] = '';
         $dataHTML['modal_title'] = 'Promo';
         $dataHTML['modal_body'] = view('content_promo')->render();
-        $dataHTML['modal_footer'] = '<a href="https://api.whatsapp.com/send?phone=6285956331813" class="btn btn-green-small"  target="_blank" onclick="fbq(\'track\', \'clickContactTShirtWomb\');">Pesan via WA
-    085956331813</a> <a href="'.url('memoz/surah/23/12-15').'" class="btn btn-green-small">Hafalkan ayat ini</a>';
+        $dataHTML['modal_footer'] = '<a href="https://api.whatsapp.com/send?phone=6285956331813" class="btn btn-green-small"  target="_blank" onclick="fbq(\'track\', \'clickContactTShirtBanana\');">Pesan via WA
+    085956331813 Gratis paket Iman 3</a>';
         return response()->json($dataHTML);
     }
 

@@ -29,3 +29,19 @@
         vex.dialog.alert({ unsafeMessage: '<h4>Anda memiliki error :</h4>'+errorDetail });
     </script>
 @endif
+
+
+@if(!empty($messageError))
+    <script>
+        var errorDetail = '';
+        vex.dialog.alert({ unsafeMessage: '{{$messageError}}' });
+    </script>
+@endif
+
+
+@if(!empty($messageSuccess))
+    <script>
+        var errorDetail = '';
+        vex.dialog.alert({ unsafeMessage: '{{$messageSuccess}}' });
+    </script>
+@endif
