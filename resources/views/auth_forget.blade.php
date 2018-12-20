@@ -1,6 +1,8 @@
 <div class="login-brand">
-	<img class='qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-	<img class='qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+	<a class="qm-brand" href="{{url('')}}">
+            <img class='hires qmc-logo' style="width:130px" src="{{url('assets/images/logo.png')}}" alt="Logo QuranMemo">
+            <img class='hires qmc-title' style="width:80px" src="{{url('assets/images/logo-text-black.png')}}" alt="Logo QuranMemo">
+        </a>
 </div>
 <div class="login_form">
 	<form class="form-horizontal" action="" onsubmit="QuranJS.forgetProcess();return false" method="post">

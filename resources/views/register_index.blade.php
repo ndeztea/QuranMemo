@@ -15,8 +15,10 @@
 						<div class="register-block">
 							<div class="register-backdrop">
 								<div class="login-brand">
-									<img class='qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-									<img class='qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+									<a class="qm-brand" href="{{url('')}}">
+							            <img class='hires qmc-logo' style="width:130px" src="{{url('assets/images/logo.png')}}" alt="Logo QuranMemo">
+							            <img class='hires qmc-title' style="width:80px" src="{{url('assets/images/logo-text-black.png')}}" alt="Logo QuranMemo">
+							        </a>
 								</div>
 								<!-- /login-form -->
 								<!--div class="page-title clearfix">
@@ -26,8 +28,8 @@
 									<div class="register-intro pull-left">
 										<div class="clearfix">
 											<div class="promo-txt">
-												<h3>Mari kita bersilahturami dengan para penghafal Al-Quran</h3>
-												<p>Memudahkan mengkontrol hafalan antum, berkenalan dengan penghafal yang lain, saling setor hafalan, dll...</p>
+												<h3>Ahlan Wasahlan Calon Santri {{config('app.app_name')}}</h3>
+												<p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p>
 											</div>
 										</div>
 									</div>

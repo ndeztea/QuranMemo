@@ -34,7 +34,7 @@ class ContentController extends Controller
     public function subscription()
     {
         $dataHTML['modal_class'] = '';
-        $dataHTML['modal_title'] = 'Berlangganan';
+        $dataHTML['modal_title'] = 'Daftar Santri Aktif';
         $dataHTML['modal_body'] = view('subscription_info')->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
@@ -75,7 +75,7 @@ class ContentController extends Controller
     public function partners()
     {
         $dataHTML['modal_class'] = '';
-        $dataHTML['modal_title'] = 'Partners QuranMemo';
+        $dataHTML['modal_title'] = 'Partners';
         $dataHTML['modal_body'] = view('content_partners')->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
@@ -91,10 +91,10 @@ class ContentController extends Controller
         $data['havePending'] = count($counter)>=1?true:false;*/
         
         $dataHTML['modal_class'] = '';
-        $dataHTML['modal_title'] = 'Promo';
+        $dataHTML['modal_title'] = 'News';
         $dataHTML['modal_body'] = view('content_promo')->render();
-        $dataHTML['modal_footer'] = '<a href="https://api.whatsapp.com/send?phone=6285956331813" class="btn btn-green-small"  target="_blank" onclick="fbq(\'track\', \'clickContactTShirtBanana\');">Pesan via WA
-    085956331813 Gratis paket Iman 3</a>';
+        $dataHTML['modal_footer'] = '<a href="https://api.whatsapp.com/send?phone=6285956331813" class="btn btn-green-small"  target="_blank" onclick="fbq(\'track\', \'clickContactTShirtWomb\');">Contact via WA
+    085956331813</a> ';
         return response()->json($dataHTML);
     }
 

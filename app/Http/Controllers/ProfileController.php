@@ -35,6 +35,7 @@ class ProfileController extends Controller
                     $dataPass['password'] = Hash::make($password);
                     $dataPass['id'] = session('sess_id');
                     $UsersModel->edit($dataPass);
+                    
                 }else{
                     return redirect('profile/edit')->with('messageError', 'Password tidak sama')->withInput();
                 }
@@ -50,7 +51,6 @@ class ProfileController extends Controller
             $dataProfile['dob'] = $request->get('dob');
             $UsersModel->edit($dataProfile);
             assignPoints(session('sess_id'),'profile.edit');
-
             return redirect('profile/edit')->with('messageSuccess', 'Profile berhasil disimpan')->withInput();
 
         }
@@ -98,19 +98,99 @@ class ProfileController extends Controller
         
     }
 
+    public function listing(Request $request){
+        $data['header_top_title'] = $data['header_title'] = 'Daftar Santri';
+        $data['body_class'] = 'body-editprofile';
+
+        $UsersModel = new Users;
+        $id_class = $request->input('id_class');
+        $keyword = $request->input('keyword');
+        $gender = $request->input('gender','m');
+        $page = $request->input('page',1);
+        
+        $listClasses = $UsersModel->getClass();
+        $listUsers = $classDetail =  array();
+        $countTotalUsers = $UsersModel->getCountList();
+        $countUsers = 0;
+        if($id_class){
+            $listUsers = $UsersModel->getList($id_class,$gender,$keyword,$page);
+            $countUsers = $UsersModel->getCountList($id_class,$gender,$keyword);
+            $classDetail = $UsersModel->getClassDetail($id_class);
+
+            if(is_int($countUsers)){
+                $pages = round($countUsers / 10);
+                $data['pages'] = $pages;
+                $data['page'] = $page;
+            }  
+        }
+
+        $rolesManual = array('Adab','Ahlak','LA','Keaktifan','Lainnya');
+
+        $data['no'] = (($page-1)*10)+1;
+        $data['id_class'] = $id_class;
+        $data['keyword'] = $keyword;
+        $data['classDetail'] = $classDetail;
+        $data['listUsers'] = $listUsers;
+        $data['listClasses'] = $listClasses;
+        $data['rolesManual'] = $rolesManual;
+        $data['countUsers'] = $countUsers;
+        $data['countTotalUsers'] = $countTotalUsers;
+        $data['gender'] = $gender;
+
+        return view('profile_list',$data);
+    }
+
+    public function addPointsManual(Request $request){
+        $id_users = $request->input('id_users');
+        $action = $request->input('action');
+        $points = $request->input('points');
+
+        if(!empty($id_users) && !empty($points) && !empty($action)){
+            foreach ($id_users as $id_user) {
+                addPoints($id_user,$action,$points);
+            }
+            return redirect()->back()->with('messageSuccess', 'Points berhasil ditambahkan')->withInput();
+        }
+        return redirect()->back()->with('messageError', 'Points gagal ditambahkan')->withInput();
+
+        
+
+    }
+
+    public function updateClass(Request $request){
+        $id_users = $request->input('id_users');
+        $id_class_target = $request->input('id_class_target');
+        $id_class = $request->input('id_class');
+
+        if(!empty($id_users) && !empty($id_class_target)){
+            $UsersModel = new Users;
+            foreach ($id_users as $id_user) {
+                $data['id'] = $id_user;
+                $data['id_class'] = $id_class_target;
+
+                $UsersModel->edit($data);
+            }
+        }
+
+
+        return redirect()->back()->with('messageSuccess', 'Data berhasil diupdate');
+    }
+
     public function top_user(Request $request){
-        $type = $request->input('type','mingguan');
+        $type = $request->input('type','pekanan');
+        $gender = $request->input('gender','');
 
         $data['header_top_title'] = $data['header_title'] = 'Top Santri';
         $data['body_class'] = 'body-editprofile';
         $UsersModel = new Users;
-        $arrType = array('mingguan'=>7,'bulanan'=>30,'tahunan'=>356);
+        $arrType = array('pekanan'=>7,'bulanan'=>30,'tahunan'=>356);
         $days = '';
         if($type!='seluruhnya'){
             $days = $arrType[$type];
         }
-        $data['list'] = $UsersModel->topUser($days);
+        $data['list'] = $UsersModel->topUser($days,$gender);
         $data['type'] = $type;
+        $data['gender'] = $gender;
 
         return view('profile_top',$data);
     }

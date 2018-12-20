@@ -27,9 +27,14 @@
 						@endif
 					@else
 					<div class="memoz-tr">
+						@if($filter==2)
+						<span class="tr-days">{{$row->count_correction}}</span>
+						<span class="tr-label">Koreksi</span>
+						@else
 						<?php $days = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($row->date_end)),false)?>
 						<span class="tr-days">{{$days>0?$days:0}}</span>
 						<span class="tr-label">hari lagi</span>
+						@endif
 					</div>
 					@endif
 				
@@ -56,7 +61,7 @@
 							<span class="check-label">Lewati</span>
 						</a>
 					@else
-						@if($row->status==0)
+						@if($row->status==0 || $row->status==2)
 						<a class="memoz-check-link" href="javascript:void(0)"  onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$row->id}}','1','Ayat di surah ini sudah hafal?')">
 							<span class="memoz-link-area"><i class="fa fa-circle-thin"></i></span>
 							<span class="check-label">Hafal</span>

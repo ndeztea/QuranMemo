@@ -12,7 +12,7 @@ class Points
 	public function __construct(){
 		$this->roles = array(
 				"auth.login" => 2,
-				"auth.logout" => -1,
+				"auth.logout" => 0,
 
 				"memoz.create" => 5,
 				"memoz.delete" => -2,
@@ -33,6 +33,9 @@ class Points
 
 				"read.alkahfi"	=> 10,
 				"read.quran"	=> 1,
+
+				"quiz.correct"	=> 4,
+				"quiz.wrong"	=> -2
 			);
 	}
 

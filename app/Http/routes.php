@@ -95,11 +95,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('memoz/form/{id}', 'MemozController@form')->middleware('subscription:save_memoz');
 	Route::post('memoz/form', 'MemozController@form')->middleware('subscription:save_memoz');
 	Route::post('memoz/save', 'MemozController@save');
-	Route::get('memoz/list', 'MemozController@listing');
+	Route::get('memoz/murajaah', 'MemozController@list_murajaah_ajax');
+    Route::post('memoz/murajaah', 'MemozController@list_murajaah_ajax');
+    Route::get('memoz/list', 'MemozController@listing');
     Route::post('memoz/list_ajax', 'MemozController@list_ajax');
     Route::post('memoz/list_others_ajax', 'MemozController@list_others_ajax');
     Route::post('memoz/list_need_corrections_ajax', 'MemozController@list_need_corrections_ajax');
-
+    
 	Route::post('memoz/remove', 'MemozController@remove');
     Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
     Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
@@ -124,6 +126,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('notes/save', 'NotesController@save');
 
     Route::post('profile/edit', 'ProfileController@edit');
+    Route::post('profile/addPointsManual', 'ProfileController@addPointsManual');
     Route::get('profile/edit', 'ProfileController@edit');
     Route::post('profile/uploadAvatar','ProfileController@uploadAvatar');
     Route::get('subscription/listing', 'SubscriptionsController@listing');
@@ -136,17 +139,24 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');
     Route::get('subscription/cancel/{id}', 'SubscriptionsController@cancel');
 
-    Route::get('quiz/form', 'QuizController@form')->middleware('subscription:quiz_form');;
+    Route::get('quiz/form', 'QuizController@form');
     Route::post('quiz/start', 'QuizController@number');
     Route::post('quiz/number', 'QuizController@number');
     Route::get('quiz/number/{number}', 'QuizController@number');
     Route::post('quiz/number/{number}', 'QuizController@number');
     Route::post('quiz/save', 'QuizController@save');
-
+    Route::get('dashboard/setClass', 'DashboardController@setClass');
 });
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('subscription/approve/{id}', 'SubscriptionsController@approve');
     Route::get('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
     Route::post('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
+
+    Route::get('profile/list', 'ProfileController@listing');
+    Route::post('profile/list', 'ProfileController@listing');
+
+    Route::post('profile/updateClass', 'ProfileController@updateClass');
+
+    #Route::get('dashboard/setClass', 'DashboardController@setClass');
 });

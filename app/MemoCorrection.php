@@ -63,8 +63,6 @@ class MemoCorrection extends Model
                 ->orderby('date_end','asc')
                 ->get();
 
-
-
         return $memoList;
     }
 
@@ -96,5 +94,17 @@ class MemoCorrection extends Model
 
 
         return $memoList;
+    }
+
+
+    public function checkCorrection($checkParam){
+        $listCorrection = DB::table($this->table.' as memo')
+                ->select('*')
+                ->where('id_memo_target',$checkParam['id_memo_target'])
+                ->where('id_user',$checkParam['id_user'])
+                ->where('note',$checkParam['note'])
+                ->get();
+
+        return $listCorrection;
     }
 }

@@ -25,7 +25,22 @@ class Users extends Model
     public $address;
     public $dob;
 
+    public $sess_role;
+    public $sess_gender;
+    public $sess_id_class;
+
     protected $fillable = array('name', 'email', 'gender','password','city','address','hp','device_id','dob');
+
+
+    public function __construct(){
+        $this->sess_role = session('sess_role');
+        $this->sess_gender = session('sess_gender');
+        $this->sess_id_class = session('sess_id_class');
+    }
+
+    public function store($data){
+        return DB::table($this->table)->insertGetId($data);
+    }
 
     public function login($data,$encyrpt=''){
     	// login code
@@ -41,14 +56,14 @@ class Users extends Model
                 if(Hash::check($data['password'],$user->password))
                     return $user;
             }
-            
+
         }
         return false;
     }
 
     public function checkEmail($data){
         // login code
-         $user = DB::table($this->table)
+        $user = DB::table($this->table)
                 ->select('*')
                 ->where('email','=',$data['email'])
                 ->first();
@@ -57,6 +72,43 @@ class Users extends Model
             return $user;
         }
         return false;
+    }
+
+    public function getList($id_class='',$gender='',$keyword='',$page=''){
+        $skip = $page==1?0:($page - 1) *50;
+        $users = DB::table($this->table)
+                ->select('*')->where('id_class','=',$id_class)->where('role','!=',1);
+
+        if($keyword){
+            $users->where('name','like','%'.$keyword.'%');
+        }
+        if($gender){
+            $users->where('gender','=',$gender);
+        }
+
+        $users->skip($skip)->take(50);
+        $users->orderBy('name','asc');
+
+        return $users->get();
+
+    }
+
+    public function getCountList($id_class='',$gender='',$keyword=''){
+        $users = DB::table($this->table)
+                ->select('*')->where('role','!=',1);
+
+        if($keyword){
+            $users->where('name','like','%'.$keyword.'%');
+        }
+        if($id_class){
+            $users->where('id_class','=',$id_class);
+        }
+        if($gender){
+            $users->where('gender','=',$gender);
+        }
+
+        return $users->count();
+
     }
 
     public function getUsersDevicetId($deviceId){
@@ -76,7 +128,7 @@ class Users extends Model
 
     /**
     * get detail data
-    */ 
+    */
     public function getDetail($id){
         $detailUser = DB::table($this->table)
                 ->select('*')
@@ -107,10 +159,31 @@ class Users extends Model
             return $newPassword;
         }else{
             return false;
-        }        
+        }
+    }
+
+    public function getClass($active=1){
+        $classes = DB::table('class')
+                ->select('*')
+                ->where('active',1)
+                ->orderBy('class','asc')
+                ->get();
+
+        return $classes;
+    }
+
+    public function getClassDetail($id_class){
+        $classes = DB::table('class')
+                ->select('*')
+                ->where('id',$id_class)
+                ->orderBy('id','asc')
+                ->get()[0];
+
+        return $classes;
     }
 
     public function checkLevel($id_user){
+        return 3;
         $now = (string) Carbon::now();
 
         $level = DB::table('user_subscriptions')
@@ -127,14 +200,19 @@ class Users extends Model
         return 0;
     }
 
-    public function topUser($days=0){
+
+    public function topUser($days=0,$gender=''){
         $list = DB::table('users as u')
                 ->selectRaw('u.name,u.avatar,u.gender,sum(up.points) as points,u.hp')
                 ->join('user_points as up', 'up.id_user', '=', 'u.id')
                 ->orderBy('points','desc')
                 ->groupBy('up.id_user')
-                ->where('u.role','=',0)
-                ->offset(0)->limit(20);
+                //->where('u.role','=',0)
+                ->offset(0)->limit(30);
+
+        if($gender!=''){
+            $list->where('u.gender','=',$gender);
+        }
 
         if($days!=''){
             $list->whereRaw('date > NOW() - INTERVAL '.$days.' DAY');
@@ -142,5 +220,6 @@ class Users extends Model
 
         return $list->get();
     }
+
 
 }

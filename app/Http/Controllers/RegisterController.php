@@ -50,8 +50,8 @@ class RegisterController extends Controller
             return redirect('register')->with('messageError',$errorHtml)->withInput();
         }
 
-        $registeredData = $this->create($request->all());
-        if($registeredData){
+        $lastId = $this->create($request->all());
+        if($lastId){
             // send email
             $data = $request->all();
             $contentsEmail = '';
@@ -59,17 +59,19 @@ class RegisterController extends Controller
                 $contentsEmail .= $key.'='.$value.'<br>';
             }
 
-            mail('quranmemo.id@gmail.com', 'Daftar QuranMemo', $contentsEmail);
+            mail('quranmemo.id@gmail.com', 'Daftar '.config('app.app_name'), $contentsEmail);
             
             $UsersModel = new Users();
-            $lastRecord = $UsersModel->checkEmail($request->all());
+            #$lastRecord = $UsersModel->checkEmail($request->all());
 
-            $request->session()->put('sess_id', $lastRecord->id);
+            $request->session()->put('sess_id', $lastId);
             $request->session()->put('sess_email', $request->input('email'));
             $request->session()->put('sess_name', $request->input('name'));
             $request->session()->put('sess_role', 3);
+            $request->session()->put('sess_gender', $request->input('gender'));
+            $request->session()->put('sess_id_class', 1);
 
-            return redirect('dashboard')->with('messageSuccess', 'Ahlah wa sahlan di Majelis Penghafal Al-Quran - QuranMemo Community.');
+            return redirect('dashboard')->with('messageSuccess', 'Ahlah wa sahlan di '.config('app.app_name'));
         }else{
             return redirect('register')->with('messageError', 'Email sudah di pakai, gunakan email yang lain')->withInput();
         }
@@ -125,6 +127,23 @@ class RegisterController extends Controller
         }
         //print_r($data);
         //die();
+        $dataRecord = array(
+            'name' => $data['name'],
+            'gender' => $data['gender'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'city'  => $data['city'],
+            'address' => $data['address'],
+            'hp'    => $data['hp'],
+            'dob'    => $data['dob'],
+            //'id_ayat'   =>  $data['id_ayat'],
+            //'id_surah'  =>  $data['id_surah'],
+            'device_id' =>  $data['device_id'],
+            'is_active' =>  0);
+        $objUsers = new Users();
+        $lastId = $objUsers->store($dataRecord);
+        return $lastId;
+        /*
         return Users::create([
             'name' => $data['name'],
             'gender' => $data['gender'],
@@ -138,6 +157,6 @@ class RegisterController extends Controller
             //'id_surah'  =>  $data['id_surah'],
             'device_id' =>  $data['device_id'],
             'is_active' =>  0
-        ]);
+        ]);*/
     }
 }

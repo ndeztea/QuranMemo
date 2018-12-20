@@ -44,7 +44,9 @@
 									
 								@if(session('sess_id'))
 								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarHafalanPage');QuranJS.memozList()" href="javascript:void(0)" style="width: 49% !important"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
-									<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarKoreksiPage');QuranJS.correctionList('','')" href="javascript:void(0)"  style="width: 49% !important"><i class="fa fa-check-square-o"></i> Daftar Koreksi</a>
+									@if(session('sess_role')==1 || session('sess_role')==2 || session('sess_id')==$memoDetail->id_user)
+									<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarKoreksiPage');QuranJS.correctionList('','')" href="javascript:void(0)"  style="width: 49% !important"><i class="fa fa-check-squarequare-o"></i> Daftar Koreksi</a>
+									@endif
 								@endif
 						</form>
 					</div>
@@ -69,22 +71,23 @@
 			              <button class="dropdown-toggle status_memoz" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status : <span class="text_status_memoz">{{$text_status}}</span>
 			                <span class="caret"></span>
 			              </button>
-			              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="width:100%;min-width: 300px">
+			              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="width:100%;min-width: 300px;font-size: 24px">
 			              	<li><a  href="javascript:;" onclick="fbq('track', 'clickBelumHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Target hafalan ini belum hafal?')"><i class="mdi mdi-lightbulb-outline"></i> Belum hafal</a>
 			              	</li>
 			              	@if(!empty($memoDetail->record))
-			              	<!--li><a  href="javascript:;" onclick="fbq('track', 'clickButuhKoreksi');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','2','Pastikan kualitas rekaman bagus untuk memudahkan asatidz kami mengkoreksi hafalanmu, setor hafalan sekarang?')"><i class="mdi mdi-send"></i> Setorkan hafalan</a>
-			              	</li-->
+			              	<li><a  href="javascript:;" onclick="fbq('track', 'clickButuhKoreksi');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','2','Pastikan kualitas rekaman bagus untuk memudahkan asatidz kami mengkoreksi hafalanmu, setor hafalan sekarang?')"><i class="mdi mdi-send"></i> Setorkan hafalan</a>
+			              	</li>
 			              	@endif
-			              	<li><a  href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Target hafalan ini sudah hafal? Dan jika sudah merekam hafalan maka hafalan akan dikoreksi.')"><i class="mdi mdi-lightbulb-on "></i> Sudah hafal</a>
+			              	<li><a  href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Target hafalan ini sudah hafal?')"><i class="mdi mdi-lightbulb-on "></i> Sudah hafal</a>
 			              	</li>
 			              </ul>
 			            </div>	
 						
 						@endif
 					@endif
+					<a  href="javascript:void(0)" class="btn" style="font-weight: bold"><i class="mdi mdi-library"></i> {{$memoDetail->id}}</a>
 					<i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> 
-					@if(!empty($memoDetail->id))
+					@if(!empty($memoDetail->id) && (session('sess_role')==1 || session('sess_role')==2 || session('sess_id')==$memoDetail->id_user))
 					<a onclick="fbq('track', 'clickDaftarKoreksiMemoz');QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
 					@endif
 				</div>
@@ -147,27 +150,45 @@
 							
 								@if(!empty($correctionDetail))
 								<div class="correction-detail">
-									<strong>Pengkoreksi :</strong><br>
-									<p>{{$correctionDetail->name}} </p>
-									<strong>Catatan :</strong><br>
-									<p>{{$correctionDetail->note}}</p>
+									<div class="koreksi-avatar img-circle">
+										<img src="{{getAvatar($userCorrector)}}"  class="img-circle">
+									</div>
+									<span>{{$userCorrector->name}} </span>
+									<br>
+									<span><i class="mdi mdi-clock"></i> {{Carbon::createFromTimeStamp((strtotime($correctionDetail->date_updated)))->diffForHumans()}}</span>
+									@if($correctionDetail->status_memoz_correction===0 || $correctionDetail->status_memoz_correction>1)
+									<span class="status_memoz_result">
+										{!! memoz_status_result($correctionDetail->status_memoz_correction) !!}
+									</span>									
+									<div class="status_memoz clearfix" style="text-align: center;font-size:18px">
+										{{$correctionDetail->points}} Points
+									</div>
+									@endif
+									<br class="clearfix">
+									<p> {{$correctionDetail->note}}</p>
+									
 									@if($correctionDetail->record_file)
 									<audio  style="width:100%" controls controlsList="nodownload" src="{{url($correctionDetail->record_file)}}"></audio>
 									@endif
 								</div>
 								@else
 								<div class="correction-detail">
-								<strong>Nama Penghafal :</strong><br>
-								<span>{{$userMemoz->name}} </span>
-								@if(session('sess_role')>0)
-									@foreach($listSubscriptions as $subscription)
-									<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
-									<span class='label label-primary'>Paket {{ucfirst($levelArr[$subscription->level])}} ( {{$daysLeft}} hari )</span>
-									@endforeach
-								@endif
-								<br><br>
-								<p> Dengarkan rekaman, dan bandingkan dengan ayat-ayat hafalan apakah betul atau salah, jika ada ayat yang salah klik ayatnya, dan kirimkan koreksi ke penghafal dengan catatan yang diperlukan</p>
-								</div>
+									<!--strong>Nama Penghafal :</strong><br-->
+									<div class="koreksi-avatar img-circle">
+										<img src="{{getAvatar($userMemoz)}}"  class="img-circle">
+									</div>
+									<span>{{$userMemoz->name}} </span>
+									@if(session('sess_role')>0)
+										@foreach($listSubscriptions as $subscription)
+										<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
+										<span class='label label-primary'>Paket {{ucfirst($levelArr[$subscription->level])}} ( {{$daysLeft}} hari )</span>
+										@endforeach
+									@endif
+									<br>
+									<span><i class="mdi mdi-clock"></i> {{Carbon::createFromTimeStamp((strtotime($memoDetail->updated_at)))->diffForHumans()}}</span>
+									<br class="clearfix">
+									<p> Dengarkan rekaman, dan bandingkan dengan ayat-ayat hafalan apakah betul atau salah, jika ada ayat yang salah klik ayatnya, dan kirimkan koreksi ke penghafal dengan catatan yang diperlukan.</p>
+									</div>
 								@endif
 
 								
@@ -285,7 +306,7 @@
 								<p>Jangan lupa untuk berdo'a kepada Allah Ta'ala untuk di mudahkan dalam penghafalan dan pemahaman terhadap target hafalan antum.</p-->
 
 							</div>
-							<div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div>
+							<!--div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div-->
 						<?php endif?>	
 					</div>
 				</div>
@@ -302,24 +323,32 @@
 	<div class="quran_recorder" style="display:none">
 		<div class="action">
 			<div class="player">
-				<audio  controls style="width:100%" controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
+				<audio  controls  controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
 			</div>
 			@if(Request::segment(2)!='correction')
-				<a class="button" style="font-size: 34px;" onclick="optionsRecord()"><i class="fa fa-microphone" style="color:red"></i></a>
-				@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
-				<!--a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a-->
-				@else
-				<!--a class="button" style="font-size: 34px;" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a-->
-				@endif
+				<div class="action-record">
+					  <!--button class="dropdown-toggle record_audio" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="font-size: 34px;background: none;border: 0px"><i class="fa fa-microphone" style="color:red"></i></span>
+		                <span class="caret"></span>
+		              </button-->
+		              <!--button class="record_audio" type="button" aria-haspopup="true" aria-expanded="true" style="font-size: 34px;background: none;border: 0px" onclick="optionsRecord()"><i class="fa fa-microphone" style="color:red"></i></span>
+		                <span class="caret"></span>
+		              </button-->
+		              <a class="button" style="font-size: 34px;" onclick="optionsRecord()"><i class="fa fa-microphone" style="color:red"></i></a>
+					@if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']))
+					<!--a class="button" style="font-size: 34px;" onclick="recordAudio('user');fbq('track', 'clickStartRekam');//vex.dialog.alert('Fitur dalam pengembangan, jika ingin mencoba rekaman bisa lewat browser chrome dan buka url https://quranmemo.com');"><i class="fa fa-microphone" style="color:red"></i></a-->
+					@else
+					<!--a class="button" style="font-size: 34px;" id="record" onclick="fbq('track', 'clickStartRekam');"><i class="fa fa-microphone" style="color:red"></i></a-->
+					@endif
 
-				<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
-				<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
-				<!--span class="button disabled one" id="sec_counter">recording...</span-->
-				<a class="button  @if(empty($memoDetail->record)) disabled @endif"  id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
-				<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
-				
-				<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
-				<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
+					<a class="button disabled one" id="stop" onclick="fbq('track', 'clickStopRekam');"><i class="fa fa-remove"></i></a>
+					<!--span class="button disabled one" id="sec_counter"><span id="minutes">00</span>:<span id="seconds">00</span></i></span-->
+					<!--span class="button disabled one" id="sec_counter">recording...</span-->
+					<a class="button  @if(empty($memoDetail->record)) disabled @endif"  id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
+					<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
+					
+					<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
+					<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
+				</div>
 				<form  enctype="multipart/form-data" id="upload-form" method="post" action="{{url('memoz/uploadRecorded')}}">
 	          		<input type="file" name="file" id="record_file" onchange="$('#upload-form').submit()" style="display:none">
 	          		<input type="hidden" name="id" value="{{$memoDetail->id}}"/>
@@ -329,7 +358,7 @@
 				<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
 			@endif
 
-			@if(session('sess_id')!= @$memoDetail->id_user && Request::segment(2)=='correction')
+			@if(session('sess_id')!= @$memoDetail->id_user && Request::segment(2)=='correction' && empty($correctionDetail))
 				<a class="btn btn-warning note" style="margin: 5px;"  onclick="fbq('track', 'clickKirimKoreksi');QuranJS.formMemoCorrectionShow()"><i class="fa fa-wrench" ></i> Kirim Catatan</a>
 				<a class="btn btn-danger  btn-close" style="margin: 5px; display: none" onclick="QuranJS.formMemoCorrectionClose()"><i class="fa fa-close" ></i> Close</a>
 			@endif
@@ -395,7 +424,7 @@
 <script type="text/javascript">
 function optionsRecord(){
 	string =  '<a class="btn btn-primary" style="font-size: 24px;width:100%" onclick="recordAudio(\'user\');fbq(\'track\', \'clickStartRekam\');"><i class="fa fa-microphone" style="color:red"></i> Rekam Sekarang</a><br><br>';
-
+	
 	string += '<a href="javascript:;" class="btn btn-success" style="font-size: 24px;width:100%" onclick="$(\'#record_file\').trigger(\'click\')"><i class="fa fa-upload" ></i> Upload file rekaman</a>';
 	vex.dialog.alert({unsafeMessage:string});
 }

@@ -12,7 +12,7 @@
 				<span class="username">{{$row->name}} <sup class="badge">{{getAge($row)}}</sup></span>
 				<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>	
 				<br>
-				<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
+				<span class="jumlah-koreksi"><i class="mdi mdi-clock"></i> {{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 				<div class="koreksi-action">
 					<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalakan');">Hafalkan</a>
 				</div>

@@ -117,6 +117,7 @@ class MushafController extends Controller
             $output['surah'] = $ayats[0]->surah_name;
             return json_encode($output);
         }
+
         assignPoints(session('sess_id'),'read.quran');
         // show view template
        return view('mushaf',$data);
@@ -170,7 +171,7 @@ class MushafController extends Controller
         if($id_surah==17){
             assignPoints(session('sess_id'),'read.alkahfi');
         }
-
+        
         // for REST API output
         $restAPI = $request->input('restAPI');
         if($restAPI=='JSON'){
@@ -181,7 +182,7 @@ class MushafController extends Controller
             return json_encode($output);
         }
 
-
+        
         return view('mushaf',$data);
     }
 
@@ -547,6 +548,5 @@ class MushafController extends Controller
         return response()->json($dataHTML);
         
     }
-
     
 }

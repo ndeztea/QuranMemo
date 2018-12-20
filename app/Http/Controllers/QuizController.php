@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
-use Image; 
+use Image;
 use App\Users;
 use App\Quran;
 use App\Quiz;
@@ -29,7 +29,7 @@ class QuizController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function form(Request $request)
-    {   
+    {
         $QuranModel = new Quran();
         $listSurah = $QuranModel->getSurah();
 
@@ -42,7 +42,7 @@ class QuizController extends Controller
     }
 
     public function number(Request $request,$number=1)
-    { 
+    {
         Carbon::setLocale('id');
 
         $data['header_top_title'] = $data['header_title'] = 'Quiz';
@@ -82,8 +82,8 @@ class QuizController extends Controller
             }else{
                 $data['messageSuccess'] = 'Afwan, jawaban antum salah';
                 $points = -2;
-                addPoints(session('sess_id'),'quiz.wrong',$points);  
-                $right_answer = $request->session()->get('sess_right_answer');  
+                addPoints(session('sess_id'),'quiz.wrong',$points);
+                $right_answer = $request->session()->get('sess_right_answer');
                 $right_answer = empty($right_answer)?0:$right_answer;
             }
 
@@ -121,14 +121,14 @@ class QuizController extends Controller
         #get random surah to be quiz-ed
         $randomSurah = array_rand($idSurahs,1);
         $surah = $idSurahs[$randomSurah];
-        
+
         $data['surah_detail'] = $QuranModel->getSurah($surah);
-        
+
         $QuizLib = new QuizLib();
         #get random ayat to be quiz-ed
         $type = 'next';
         $QAyats = $QuizLib->getQuestions($surah,$type);
-        
+
         $data['question_offset'] = $QAyats['question_offset'] < 0? str_replace('-', '', $data['question_offset']) :$QAyats['question_offset'];
         $data['question_text'] = $type=='next'?'setelah':'sesudah';
         $data['question'] = $QAyats['question'];
@@ -139,6 +139,7 @@ class QuizController extends Controller
         $choices = $QuizLib->getChoices($idSurahs);
         $choices[3] = $data['answer'];
         shuffle($choices);
+
         $data['list_answers'] = $choices;
         $data['total_questions'] = $this->total_questions;
         $data['number'] = $number;
@@ -152,5 +153,5 @@ class QuizController extends Controller
 
     }
 
-    
+
 }

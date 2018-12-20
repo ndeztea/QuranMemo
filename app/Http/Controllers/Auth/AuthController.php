@@ -47,7 +47,7 @@ class AuthController extends Controller
         $dataHTML['modal_class'] = 'login-mode';
         $dataHTML['modal_title'] = 'Login';
         $dataHTML['modal_body'] = view('auth_login',$data)->render();
-        $dataHTML['modal_footer'] = '<a class=\'forgot-pass-link\' href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Pernah register di Quranmemo?  minta password baru!';
+        $dataHTML['modal_footer'] = '<a class=\'forgot-pass-link\' href="javascript:;" onclick="QuranJS.callModal(\'auth/forget\')">Pernah register di '.config('app.app_name').'?  minta password baru!';
 
         return response()->json($dataHTML);
     }
@@ -64,11 +64,14 @@ class AuthController extends Controller
 
     public function logout(Request $request){
         assignPoints(session('sess_id'),'auth.logout');
+        
         // remove all sessions
         $request->session()->forget('sess_id');
         $request->session()->forget('sess_email');
         $request->session()->forget('sess_name');
         $request->session()->forget('sess_role');
+        $request->session()->forget('sess_gender');
+        $request->session()->forget('sess_id_class');
         return redirect('dashboard?starting=yes')->withCookie(Cookie::forget('coo_quranmemo_email'))->withCookie(Cookie::forget('coo_quranmemo_password'));
     }
 
@@ -99,6 +102,8 @@ class AuthController extends Controller
             $request->session()->put('sess_email', $dataLogin->email);
             $request->session()->put('sess_name', $dataLogin->name);
             $request->session()->put('sess_role', $dataLogin->role);
+            $request->session()->put('sess_gender', $dataLogin->gender);
+            $request->session()->put('sess_id_class', $dataLogin->id_class);
 
             // set cookie
             /*setcookie('coo_quranmemo_email',$dataLogin->email);
@@ -106,6 +111,7 @@ class AuthController extends Controller
             Cookie::forever('coo_quranmemo_email', $dataLogin->email);
             Cookie::forever('coo_quranmemo_password', $dataLogin->password);*/
             assignPoints($dataLogin->id,'auth.logout');
+        
 
         }else{
             $dataHTML['login'] = false;
@@ -137,8 +143,8 @@ class AuthController extends Controller
             $dataHTML['newPassword'] = $newPassword;
 
              Mail::send('emails.forget_password', ['emailData' => $emailData], function ($m) use ($emailData) {
-                $m->from('info@quranmemo.id', 'QuranMemo');
-                $m->to($emailData['email'], $emailData['name'])->subject('Password baru QuranMemo!');
+                $m->from('onlinetahfidz@gmail.com', 'Kang ATO');
+                $m->to($emailData['email'], $emailData['name'])->subject('Password baru '.config('app.app_name').'!');
             });
 
         }else{

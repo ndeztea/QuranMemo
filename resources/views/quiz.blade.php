@@ -33,8 +33,10 @@
 									<div class="content_ayat">
 										<?php 
 											$ayatMp3 = str_pad($question->surah, 3, "0", STR_PAD_LEFT).str_pad($question->ayat, 3, "0", STR_PAD_LEFT).'.mp3';
+											$coo_muratal = isset($_COOKIE['coo_sound'])?$_COOKIE['coo_sound']:'Al_Afasy';
+
 										?>
-										<audio controls="" controlslist="nodownload" src="{{urlMp3('sound/Al_Afasy/'.$ayatMp3)}}" class="" id="audio"></audio>
+										<audio controls="" controlslist="nodownload" src="{{urlMp3('sound/'.$coo_muratal.'/'.$ayatMp3)}}" class="" id="audio"></audio>
 									</div>
 								</div>
 							@endif

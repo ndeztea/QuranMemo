@@ -19,9 +19,9 @@
 			<!--div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
 				<label class="label label-danger">Promo</label><a href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank"> Akses semua konten gratis <label class="label label-danger">Promo</label><br> <span style="font-size: 17px"><strong>Japri via WA  <i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813</strong></span></a>
 			</div-->
-			<div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
+			<!--div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
 				<a href="javascript:QuranJS.callModal('promo')"> Mau 1 Bundle pahala ?<br> ~ T-Shirt Dakwah+Berinfak+Menghafal Al-Qu'ran ~ <br><label class="label label-danger">Promo</label><strong> Mau? Klik Disini</strong> <label class="label label-danger">Promo</label></a>
-			</div>
+			</div-->
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
 
@@ -54,17 +54,15 @@
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
 							<ul class="tabbed-nav-list list-unstyled">
-							<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) location.href='{{url('memoz')}}' @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-file"></i>Hafalan Baru</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Hafalan <sup class="text-white label label-danger">{{$counterMurajaah>0?$counterMurajaah:''}}</sup></a>  </li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white label label-danger">{{$counterCorrection>0?$counterCorrection.' new ':''}}</sup></a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickSummaryTarget');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-target"></i> Target</a></li>
-								
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) location.href='{{url('memoz')}}' @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-file"></i>Ziyadah</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Hafalan</a>  </li>
+								<!--li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif"><i class="mdi mdi-checkbox-multiple-marked-circle"></i> Koreksi <sup class="text-white label label-danger">{{$counterCorrection>0?$counterCorrection.' new ':''}}</sup></a></li-->
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/murajaah') @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-refresh"></i>Muraja'ah <sup class="text-white label label-danger">{{$counterMurajaah>0?$counterMurajaah:''}}</sup></a>  </li>
+								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('quiz/form') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-help-circle"></i> Quiz <sup class="text-white label label-danger">New</sup></a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="fbq('track', 'clickBaca');QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Baca </a></li>
-								
-								<!--li class="tabbed-nav-list-item"><a class="tabbed-nav-link" onclick="fbq('track', 'clickJuz');QuranJS.callModal('mushaf/juz')" ><i class="mdi mdi-bookmark"></i> Pilih Juz</a></li-->
-								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('quiz/form') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-help-circle"></i> Quiz </a></li>
-								
-
+								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('content_learning')}}" ><i class="mdi mdi-image-filter-drama"></i> E-Learning</a></li>
+								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('profile/top_user')}}" ><i class="mdi mdi-account-network"></i> Top Santri</a></li>
+								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-target"></i> Pencapaian</a></li>
 							</ul>
 						</div>
 					</div>
@@ -93,7 +91,7 @@
 						    		<a href="{{url('memoz/surah/'.$recommendation->surah_start.'/'.$recommendation->ayat_start.'-'.$recommendation->ayat_end)}}" onclick="fbq('track', 'clickMemozRecommendation');"><i class="fa fa-arrow-circle-right"></i> </a>
 						    	</div>
 						      </li>
-					    
+
 					    	@endforeach
 					    </ul>
 				  		<!--ul class="nav">
@@ -120,7 +118,7 @@
 								<ul class="correction-list list-unstyled">
 								@foreach($listDone as $row)
 									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
-									<li class="correction-list-item memoid-{{$row->id}}"">
+									<li class="correction-list-item memoid-{{$row->id}}">
 										<div class="koreksi-box">
 											<div class="koreksi-avatar img-circle">
 												<img src="{{getAvatar($row)}}"  class="img-circle">
@@ -129,7 +127,7 @@
 												<span class="username">{{$row->name}}  <sup class="badge">{{getAge($row)}}</sup></span>
 												<span class="ayat-target">
 													<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
-													<!--span class="spacer1">&bullet;</span> 
+													<!--span class="spacer1">&bullet;</span>
 													<span class="jumlah-koreksi"><i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</span-->
 												</span>
 												<br>
@@ -158,7 +156,7 @@
 												<img src="{{getAvatar($row)}}"  class="img-circle">
 											</div>
 											<div class="koreksi-desc">
-												<span class="username">{{$row->name}} 
+												<span class="username">{{$row->name}}
 													<sup class="badge">{{getAge($row)}}</sup>
 													@if(session('sess_role')==1 || session('sess_role')==2)
 														@foreach($row->listSubscriptions as $subscription)
@@ -167,7 +165,7 @@
 														@endforeach
 													@endif
 												</span>
-												
+
 												<span class="ayat-target">
 													<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
 												</span>
@@ -193,14 +191,14 @@
 									<ul class="correction-list list-unstyled">
 										@foreach($listMemoz as $row)
 									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
-									<li class="correction-list-item memoid-{{$row->id}}"">
+									<li class="correction-list-item memoid-{{$row->id}}">
 										<div class="koreksi-box">
 											<div class="koreksi-avatar img-circle">
 												<img src="{{getAvatar($row)}}"  class="img-circle">
 											</div>
 											<div class="koreksi-desc">
 												<span class="username">{{$row->name}}  <sup class="badge">{{getAge($row)}}</sup></span>
-												<span class="ayat-target"><a class="ayat-target-link" href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>	
+												<span class="ayat-target"><a class="ayat-target-link" href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
 												<br>
 												<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 												<div class="koreksi-action">
@@ -215,13 +213,13 @@
 								@endif
 						    </div>
 						  </div>
-			  	
+
 			  </div>
 		<!-- end single-column-->
 		</div>
-	<!-- end main main-content -->	
+	<!-- end main main-content -->
 	</div>
-<!-- end main main-content-wrap -->	
+<!-- end main main-content-wrap -->
 </div>
 <script>
 $(document).ready(function(){
@@ -235,7 +233,7 @@ $(document).ready(function(){
    	$(function() {
    	  $("#recommendation-memoz").dragend();
 
-     
+
       $(".nav").click(function() {
         var page = $(event.target).data("page");
         $("#recommendation-memoz").dragend({

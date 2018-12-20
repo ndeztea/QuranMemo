@@ -8,32 +8,21 @@
 @include('errors.errors_message')
 
 <div class="wrap">
-	<div class="main-content-wrap">
+	<div class="main-content-wrap"  style="padding-bottom: 121px;">
 		<div class="main-content">
 			<div class="single-column">
 				<div class="container-fluid">
 					<div class="content-learning">
-						<table class="table table-striped">
-					    <thead>
-					      <tr>
-					        <th class="center">Name</th>
-					        <th class="center">Type</th>
-					        <th class="center">Open</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-					    	@foreach ($listFolder as $folder)
-					    	<?php 
+						<ul style="padding:0px !important">
+				    	@foreach ($listFolder as $folder)
+				    		<?php 
 					    		$link = $level>=$folder->level?url('file_learning/'.$folder->folder):"javascript:QuranJS.callModal('subscription')";
 					    	?>
-							<tr>
-						        <td><i class="fa fa-folder"></i> {{ucfirst($folder->folder)}}</a></td>
-						        <td>Folder</td>
-						        <td class="center"><a href="{{$link}}"><i class="fa fa-external-link"></i></a></td>
-						    </tr> 
-							@endforeach
-							</tbody>
-					  </table>
+						  <li style="text-align:center;border: 1px solid #7bb1ad;width: 31%;float:left !important;margin: 3px;background: #b6dcd9;padding: 5px"><a href="{{$link}}">
+					        <i class="fa fa-folder" style="font-size:34px"></i><br><small>{{ucfirst($folder->name)}}</small></a>
+					      </li>
+				      	@endforeach
+				    	</ul>
 					</div>
 				</div>
 			</div>

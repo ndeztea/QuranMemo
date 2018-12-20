@@ -8,35 +8,24 @@
 @include('errors.errors_message')
 
 <div class="wrap">
-	<div class="main-content-wrap">
+	<div class="main-content-wrap"  style="padding-bottom: 121px;">
 		<div class="main-content">
 			<div class="single-column">
 				<div class="container-fluid">
 					<div class="content-learning">
-						<table class="table table-striped">
-					    <thead>
-					      <tr>
-					        <th class="center">Name</th>
-					        <th class="center">Type</th>
-					        <th class="center">Open</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-					    	@foreach ($listFiles as $file)
-					    	<?php 
+						<ul  style="padding:0px !important">
+				    	@foreach ($listFiles as $file)
+				    		<?php 
 					    		$link = "";
 					    		$filename = $file?pathinfo($file):'';
 					    		$urlFile = url('learning/'.$folder.'/'.$filename['filename'].'.'.$filename['extension']);
 					    		//$embed = '<video src="'.$urlFile.'"></video>';
 					    	?>
-							<tr>
-						        <td><i class="fa fa-play"></i> {{ucfirst($filename['filename'])}}</a></td>
-						        <td>Video</td>
-						        <td class="center"><a href="javascript:playVideo('{{ucfirst($filename['filename'])}}','{{$urlFile}}')"><i class="fa fa-external-link"></i></a></td>
-						    </tr> 
-							@endforeach
-							</tbody>
-					  </table>
+						  <li style="text-align:center;border: 1px solid #7bb1ad;width: 45%;float:left !important;margin: 3px;background: #b6dcd9;padding: 5px"><a href="javascript:playVideo('{{ucfirst($filename['filename'])}}','{{$urlFile}}')">
+					        <i class="fa fa-file" style="font-size:34px"></i><br><small>{{ucfirst($filename['filename'])}}</small></a>
+					      </li>
+				      	@endforeach
+				    	</ul>
 					</div>
 				</div>
 			</div>

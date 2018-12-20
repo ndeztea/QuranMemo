@@ -19,12 +19,12 @@
 					@endif
 				</span>
 				<span class="ayat-target">
-					<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
+					<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a> <sup class='label label-primary'><i class="mdi mdi-library"></i> {{$row->id}}</sup>
 					<br>
 					<span class="jumlah-koreksi"></span>
 				</span>
 				<br>
-				<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}} &bullet; <i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}}
+				<span class="jumlah-koreksi"><i class="mdi mdi-clock"></i> {{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}} &bullet; <i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}}
 					&bullet;
 					<i class="mdi mdi-book-open-variant"></i> {{empty($row->visitor)?0:$row->visitor}}</span>
 				<div class="koreksi-action">

@@ -1,5 +1,6 @@
 <?php 
 use App\Libraries\Points;
+use App\Quran;
 
 function arabicNum($str){
 	$western_arabic = array('0','1','2','3','4','5','6','7','8','9');
@@ -82,4 +83,11 @@ function addPoints($id_user,$action,$point){
 	$objPoints = new Points();
     $objPoints->addPoints($id_user,$action,$point);
         
+}
+
+function countLine($surah_start,$ayat_start,$ayat_end){
+	#get points by count ayat
+	$QuranModel = new Quran;
+    $countLine = $QuranModel->getQuranLine($surah_start,$ayat_start,$ayat_end);
+    return $countLine;
 }

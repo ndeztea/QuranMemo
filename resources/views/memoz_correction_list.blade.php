@@ -26,7 +26,7 @@
 						<!--/memoz-content-top-->
 						<div class="memoz-content-bot">
 							<b>{{$row->name}}</b>
-							<p>{{str_limit($row->note,100,'...')}}</p>
+							<p>{{$row->note}}</p>
 						</div>
 					</div>
 					<!--/memoz-content-->

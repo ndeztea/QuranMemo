@@ -9,7 +9,6 @@ use App\Users;
 use App\Memo;
 use App\MemoCorrection;
 use App\Subscriptions;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
@@ -19,6 +18,7 @@ use File;
 use FFMPEG;
 use Carbon\Carbon;
 use Mail;
+
 
 class MemozController extends Controller
 {
@@ -33,6 +33,7 @@ class MemozController extends Controller
      */
     public function index(request $request)
     {   
+        Carbon::setLocale('id');
        // $surah_start='',$ayat_range='',$id='',$idCorrection=''
         $surah_start = $request->segment(3);
         $ayat_range = $request->segment(4);
@@ -49,7 +50,7 @@ class MemozController extends Controller
         // check subs
         if($request->segment(2)!='correction'){
             if($surah_start!=''){
-                if($level<1){
+               /*if($level<1){
                     if($surah_start < 78 && $surah_start !=1){
                         if($surah_start=='23' && $ayat_range=='12-15'){
                             
@@ -57,6 +58,15 @@ class MemozController extends Controller
                             return redirect('dashboard?action=berlangganan');
                         }
                         
+                    }
+                }*/
+                // tahfidz online rule
+                $sess_id_class = session('sess_id_class');
+                $sess_role = session('sess_role');
+                
+                if($surah_start != 1 && $surah_start !=89){
+                    if(($sess_id_class<=1 || empty($sess_id_class)) && ($sess_role==0 || $sess_role==3)){
+                        return redirect('dashboard?action=berlangganan');
                     }
                 }
             }
@@ -71,7 +81,7 @@ class MemozController extends Controller
             $ayatArr = explode('-', $ayat_range);
             $ayats = $QuranModel->getRangeAyat($surah_start,$ayatArr[0],$surah_start,$ayatArr[1]);
             $ayat_start = $ayatArr[0];
-            $ayat_end = $ayatArr[1];
+            $ayat_end = $ayatArr[1];    
         }else{
             $ayats = $QuranModel->getOneAyat($surah_start,$ayat_range);
             $ayat_start = $ayat_range;
@@ -104,6 +114,7 @@ class MemozController extends Controller
             if(request()->segment(2)=='correction'){
                 $data['header_title'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
                 $data['header_description'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+
                 // get detail memo
                 $memoDetail = $memoModel->getDetail($id);
 
@@ -124,8 +135,8 @@ class MemozController extends Controller
         $memoDetail->id = '';
         $memoDetail->id_user = '';
         if($id){
-            // get detail memo
             $memoDetail = $memoModel->getDetail($id);
+
             // get detail user penghafal
             $userMemoz = $UsersModel->getDetail($memoDetail->id_user)[0];
             $SubscriptionsModel = new Subscriptions();
@@ -141,6 +152,8 @@ class MemozController extends Controller
             $correctionDetail->correction = json_decode($correctionDetail->correction);
             $data['correctionDetail'] = $correctionDetail;
 
+            $userCorrector = $UsersModel->getDetail($correctionDetail->id_user)[0];
+            $data['userCorrector'] = $userCorrector;
             // update already opened
             if($memoDetail->id_user==$sess_id_user){
                 $dataRecord['status'] = 1;
@@ -154,8 +167,6 @@ class MemozController extends Controller
         $counterRecord = $memoModel->getCountRecordedUser($sess_id_user);
         $level = $UsersModel->checkLevel($sess_id_user);
 
-
-
         //$data['fill_ayat_end'] = $fill_ayat_end;
         $data['level'] = $level;
         $data['levelArr'] = $this->levelArr;
@@ -168,6 +179,7 @@ class MemozController extends Controller
         $data['surah_start'] = $surah_start;
         $data['ayat_start'] = $ayat_start;
         $data['ayat_range'] = $ayat_range;
+
         //$data['surah_end'] = $surah_end;
         $data['ayat_end'] = $ayat_end;
         $data['curr_page'] = 0;
@@ -193,12 +205,27 @@ class MemozController extends Controller
             }
         }
 
+
         if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
-            setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
+            #checking line
+            $countLine = countLine($surah_start,$ayat_start,$ayat_end);   
+            if ($countLine>=3){
+                setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
+                return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
+            }else{
+                return redirect('memoz')->with('messageError', 'Jumlah baris hafalan '.$countLine.', antum harus menghafal minimal 3 baris hafalan. ');
+            }
+            
         }elseif($surah_start && !empty($ayat_start)){
-            setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
-            return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
+            #checking line
+            $countLine = countLine($surah_start,$ayat_start,$ayat_start);  
+            if ($countLine>=3){
+                setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
+                return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
+            }else{
+                return redirect('memoz')->with('messageError', 'Jumlah baris hafalan '.$countLine.', antum harus menghafal minimal 3 baris hafalan. ');
+            }
+            
         }else{
             return redirect('memoz');
         }
@@ -248,11 +275,11 @@ class MemozController extends Controller
     */
     public function list_ajax(Request $request){
         $MemoModel = new Memo();
-        $sess_user_id = $request->session()->get('sess_id');
+        $sess_user_id = session('sess_id');
         $filter = $request->input('filter');
         $start = $request->input('start');
         $start = empty($start)?0:$start;
-
+        
         $data['list']  = $MemoModel->getList($sess_user_id,$filter,$start,10);
         $data['filter'] = $filter;
         $data['start'] = $start;
@@ -262,6 +289,36 @@ class MemozController extends Controller
         $dataHTML['count'] = count($data['list']);
 
         return response()->json($dataHTML);
+    }
+
+    /**
+    * show memoz list via ajax
+    *
+    */
+    public function list_murajaah_ajax(Request $request){
+        $MemoModel = new Memo();
+        $sess_user_id = session('sess_id');
+        $filter = 3;
+        $start = $request->input('start');
+        $start = empty($start)?0:$start;
+        
+        $data['list']  = $MemoModel->getList($sess_user_id,$filter,$start,10);
+        $data['filter'] = $filter;
+        $data['start'] = $start;
+
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Muraja\'ah';
+        $dataHTML['modal_body'] = view('memoz_murajaah_ajax',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+        /*
+        $dataHTML['html'] = view('memoz_list_ajax',$data)->render();
+        $dataHTML['start'] = $start;
+        $dataHTML['count'] = count($data['list']);
+        
+        return response()->json($dataHTML);
+        */
     }
 
      /**
@@ -401,7 +458,9 @@ class MemozController extends Controller
         $Memo = new Memo;
         if(empty($dataRecord['id'])){
             $save = $Memo->store($dataRecord);
-            assignPoints(session('sess_id'),'memoz.create');
+
+            $countLine = countLine($dataRecord['surah_start'],$dataRecord['ayat_start'],$dataRecord['ayat_end']);   
+            addPoints(session('sess_id'),'memoz.create',$countLine);
             if($dataRecord['surah_start']==17){
                 assignPoints(session('sess_id'),'memoz.alkahfi');
             }
@@ -489,14 +548,19 @@ class MemozController extends Controller
 
         $save = $MemoModel->edit($dataRecord);
         // send ajax response
+
         if($save){
             $dataHTML['message'] = 'Status berhasil di update';
             $dataHTML['status'] = true;
-            $dataHTML['status_memoz'] = $memoDetail->status;
-            $dataHTML['text_status'] = $this->memozStatus[$status];
+            if($status==3){
+                $dataHTML['text_status'] = 'Murajaah dilewati';
+            }else{
+                $dataHTML['text_status'] = $this->memozStatus[$status];
+            }
+            
         }
 
-        switch ($dataHTML['status_memoz']) {
+        /*switch ($dataHTML['status_memoz']) {
             case 1:
                 $dataHTML['text_confirm'] = 'Hafalan ini sudah hafal? dan ingin dipublikasikan untuk di test oleh pengguna lain?';
                 break;
@@ -509,7 +573,7 @@ class MemozController extends Controller
                 # code...
                 break;
         }
-
+        */
         return response()->json($dataHTML);
     }
 
@@ -569,6 +633,7 @@ class MemozController extends Controller
                 $dataRecord['record'] = str_replace('wav', 'mp3', $dataRecord['record']);
                 $editSuccess = $MemoModel->edit($dataRecord);
 
+
                 File::delete(public_path($fileName));
                 
 
@@ -576,8 +641,10 @@ class MemozController extends Controller
                 if($editSuccess){
                     File::delete(public_path($memoDetail->record));
                 }
-                
-                assignPoints(session('sess_id'),'memoz.record');
+
+                $countLine = countLine($memoDetail->surah_start,$memoDetail->ayat_start,$memoDetail->ayat_end);  
+                addPoints(session('sess_id'),'memoz.record',$countLine);
+                //assignPoints(session('sess_id'),'memoz.record');
             }
 
         }
@@ -687,10 +754,12 @@ class MemozController extends Controller
     */
     public function saveCorrection(Request $request){
         $dataRecord['id_memo_target'] = $request->input('id_memo_target');
-        $dataRecord['id_user'] = $request->session()->get('sess_id');
+        $dataRecord['id_user'] = session('sess_id');
         $dataRecord['note'] = $request->input('note');
         $dataRecord['correction'] = $request->input('correction');
         $dataRecord['record_file'] = $request->input('record_file');
+        $dataRecord['status_memoz_correction'] = $request->input('status_memoz_correction');
+        $dataRecord['points'] = $request->input('points');
 
         $dataRecord['correction'] = array_filter(explode('|', $dataRecord['correction']));
         $dataRecord['correction'] = json_encode($dataRecord['correction']);
@@ -702,42 +771,54 @@ class MemozController extends Controller
         $countCorrection = $memoDetail->count_correction;
 
         $MemoCorrection = new MemoCorrection;
-        $save = $MemoCorrection->store($dataRecord);
-        if($save){
-            $dataHTML['id'] = $save;
-            $dataHTML['status'] = true;
-            $dataHTML['message'] = 'Koreksi berhasil di kirimkan';
-            $countCorrection++;
+        
+        $duplicateContent = $MemoCorrection->checkCorrection($dataRecord);
 
-            $dataUpdate['updated_at'] = $date_updated;
-            $dataUpdate['count_correction'] = $countCorrection;
-            $dataUpdate['id'] = $dataRecord['id_memo_target'];
-            // update stats
-            $MemoModel->edit($dataUpdate);
+        $dataHTML['id'] = '';
+        $dataHTML['status'] = false;
+        $dataHTML['message'] = 'Koreksi gagal  di kirimkan';
+        if(empty($duplicateContent)){
+            $save = $MemoCorrection->store($dataRecord);
+            if($save){
+                $dataHTML['id'] = $save;
+                $dataHTML['status'] = true;
+                $dataHTML['message'] = 'Koreksi berhasil di kirimkan';
+                $countCorrection++;
 
-            // send email
-            $QuranModel = new Quran;
-            $objUsers = new Users;
-            $dataUser = $objUsers->getDetail(session('sess_id'))[0];
-            $dataUserTarget = $objUsers->getDetail($memoDetail->id_user)[0];
+                //$dataUpdate['updated_at'] = $date_updated;
+                $dataUpdate['count_correction'] = $countCorrection;
+                $dataUpdate['id'] = $dataRecord['id_memo_target'];
+                //$dataUpdate['status'] = $memoDetail->status;
+                // update stats
+                //print_r($dataUpdate);
+                $MemoModel->edit($dataUpdate);
 
-            $emailData['name_corrector'] = $dataUser->name;
-            $emailData['name_target'] = $dataUserTarget->name;
-            $emailData['email_target'] = $dataUserTarget->email;
-            $emailData['memoDetail'] = $memoDetail;
-            $emailData['surah_start'] = $QuranModel->getSurah($memoDetail->surah_start)[0];
-            
-            Mail::send('emails.memoz_correction', ['emailData' => $emailData], function ($m) use ($emailData) {
-              $m->from('no-reply@quranmemo.id', 'QuranMemo');
-              $m->to($emailData['email_target'], $emailData['name_target'])->subject('[QuranMemo] Hafalan antum sudah dikoreksi');
-              $m->to('quranmemo.id@gmail.com','Quranmemo')->subject('[QuranMemo] Hafalan antum sudah dikoreksi');
-          });
+                // send email
+                $QuranModel = new Quran;
+                $objUsers = new Users;
+                $dataUser = $objUsers->getDetail(session('sess_id'))[0];
+                $dataUserTarget = $objUsers->getDetail($memoDetail->id_user)[0];
 
-            assignPoints(session('sess_id'),'memoz.correction');
-        }else{
-            $dataHTML['id'] = '';
-            $dataHTML['status'] = false;
-            $dataHTML['message'] = 'Koreksi gagal  di kirimkan';
+                $emailData['name_corrector'] = $dataUser->name;
+                $emailData['name_target'] = $dataUserTarget->name;
+                $emailData['email_target'] = $dataUserTarget->email;
+                $emailData['memoDetail'] = $memoDetail;
+                $emailData['surah_start'] = $QuranModel->getSurah($memoDetail->surah_start)[0];
+                
+                Mail::send('emails.memoz_correction', ['emailData' => $emailData], function ($m) use ($emailData) {
+                      $m->from('onlinetahfidz@gmail.com', 'Kang ATO');
+                      $m->to($emailData['email_target'], $emailData['name_target'])->subject('[Kang ATO] Hafalan antum sudah dikoreksi');
+                      //$m->to('quranmemo.id@gmail.com','Quranmemo')->subject('[Kang ATO] Hafalan antum sudah dikoreksi');
+                  });
+                if(session('sess_role') > 0){
+                    assignPoints(session('sess_id'),'memoz.correction');
+                }
+                
+
+                if($dataRecord['points']){
+                    addPoints($dataUserTarget->id,'memoz.correction.manually',$dataRecord['points']);
+                }
+            }
         }
 
          return response()->json($dataHTML);

@@ -20,7 +20,7 @@
         <meta property="og:description"   content="{{ isset($header_description)?$header_description:'Membaca Al-Quran Online, menghafal Al-Quran Mandiri, Tafsir Al-Quran, Berbagi catatan Al-Quran dan Hadist-Hadist pilihan, Quran Memo, Quran memorize application. Quran App'}}" />
         <meta property="og:tag"   content="Quran, Al-Quran, Memo, Al-Quran Memo, menghafal Al-Quran mandiri, menghafal Quran, menghafal Al-Quran,tafsir Al-Quran, Al-Quran Online, Membaca Al-Quran, Membaca, , Quran Memo, Quran memorize application. Quran App, Online, menghafal online, hadist, arbain, hadist Muslim, hadist al-bukhari" />
         <meta property="og:image"         content="https://www.quranmemo.com/public/assets/images/cover.jpg" />
-        
+
         <link rel="apple-touch-icon" sizes="57x57" href="{{url('assets/images/ico/apple-icon-60x60.png')}}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{url('assets/images/ico/apple-icon-60x60.png')}}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{url('assets/images/ico/apple-icon-72x72.png')}}">
@@ -143,10 +143,12 @@
         <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
+
+        <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
-        
+
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{url('assets/js/jquery-1.11.3.min.js')}}"></script>
         <script src="{{url('assets/js/script.min.js')}}"></script>
@@ -163,7 +165,7 @@
 
         <!--script type="text/javascript" src="{{url('assets/js/jquery.mobile-1.4.5.min.js')}}"></script-->
         <script type="text/javascript" src="{{url('assets/js/jquery.touchSwipe.min.js')}}"></script>
-        
+
         @if(session('searchSurah'))
         <script>
             $(document).ready(function(){
@@ -234,7 +236,7 @@
             <a href="#" class="btn btn-toggle-player btn-hide-player" id="btn-toggle-player" data-toggle="tooltip" data-placement="top" title="Show / Hide Player"><i class="fa fa-play-circle"></i></a>
         </div> -->
         <!-- /toggle-player -->
-        
+
         <div id="main-nav">
             <ul>
                 <li><a href="<?php echo url('mushaf')?>">{{trans('trans.mushaf')}}</a></li>
@@ -242,13 +244,13 @@
                 <li><a href="<?php echo url('memoz')?>">{{trans('trans.memo')}}</a></li>
             </ul>
 
-            
+
         </div>
 
         <nav class="navmenu navmenu-default offcanvas navmenu-fixed-left qm-navbar" id="qm-navbar" role="navigation">
-            
+
                 <div class="navmenu-header">
-                    <div class="navmenu-overlay"> 
+                    <div class="navmenu-overlay">
                         <a class="qm-brand" href="{{url('')}}">
                             <img class='hires qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
                             <img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
@@ -291,8 +293,8 @@
                     </li>
                     <li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('buku')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-book-open"></i> Gratis Buku <label class="label label-danger">New</label></a> </li>
-                     
-                    
+
+
                     <!--li><a href="javascript:;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><i class="mdi mdi-alert-decagram"></i> Promo <label class="label label-danger">New</label></a></li>
                     </li-->
                     <li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
@@ -309,7 +311,7 @@
                 </ul>
                 <!--/navmenu-nav-->
 
-            
+
 
         </nav>
         <!--/navmenu-->
@@ -321,6 +323,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+            </button>
+            <?php $counterCorrection = 1?>
+            <button type="button" class="navbar-toggle notif"data-target="#qm-navbar" data-canvas="body"
+            onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif">
+                <i class="mdi mdi-bell-ring"></i>
+                <sup class="text-white label label-danger">{{$counterCorrection>0?$counterCorrection:''}}</sup>
             </button>
         </div>
 
@@ -346,7 +354,7 @@
             @include('players')
         </div>
         @endif
-        
+
         <!-- Button trigger modal -->
     <!-- Modal -->
     <div class="modal fade" id="QuranModal" tabindex="-1" role="dialog" aria-labelledby="QuranModalLabel">
@@ -372,7 +380,7 @@
     <script src="{{url('assets/js/select2.min.js')}}"></script>
     <script src="{{url('assets/js/circleMenu.js')}}"></script>
 
-    
+
 
     <script type="text/javascript">
           $(document).ready(function(){
@@ -412,11 +420,11 @@
 
             function hasScrolled() {
                 var st = $(this).scrollTop();
-                
+
                 // Make sure they scroll more than delta
                 if(Math.abs(lastScrollTop - st) <= delta)
                     return;
-                
+
                 // If they scrolled down and are past the navbar, add class .nav-up.
                 // This is necessary so you never see what is "behind" the navbar.
                 if (st > lastScrollTop && st > navbarHeight){
@@ -428,7 +436,7 @@
                         $('.qm-nav').removeClass('navi-up').addClass('navi-down');
                     }
                 }
-                
+
                 lastScrollTop = st;
             }
 
@@ -479,7 +487,7 @@
         });
 
         function setModalMaxHeight(element) {
-            this.$element     = $(element);  
+            this.$element     = $(element);
             this.$content     = this.$element.find('.modal-content');
             var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
             var dialogMargin  = $(window).width() < 768 ? 20 : 60;
@@ -491,7 +499,7 @@
             this.$content.css({
                 'overflow': 'hidden'
             });
-            
+
             this.$element
                 .find('.modal-body').css({
                 'max-height': maxHeight,
@@ -527,7 +535,7 @@
 
          var d = new Date();
          var isFriday = d.getDay();
-         
+
          if('{{session('sess_id')}}'!='' && '{{Request::segment(1)}}'=='dashboard'){
             // promo 212
             //QuranJS.callModal('promo');
@@ -539,7 +547,7 @@
 
             //vex.dialog.alert({ unsafeMessage: '<h4>Puasa Sunnah Yuk..!</h4><a href="{{url('assets/images/puasa_muharram.jpeg')}}"><img src="{{url('assets/images/puasa_muharram.jpeg')}}" style="width:100%"/></a>' });
 
-            
+
             if('{{@$_COOKIE['coo_mushaf_bookmark_title']}}'!='' && '{{@$_COOKIE['coo_muratal_desc']}}'!=''){
                QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')
             }
@@ -555,7 +563,7 @@
                 $('#actionPromo').attr('onclick',"fbq('track', 'clickBerlanggananPromo');location.href='{{url('subscription/listing')}}'");
 
                 @if(Request::segment(1)=='dashboard')
-                <?php 
+                <?php
                     $approvalLink = '';
                     if(session('sess_role')==1){
                         $approvalLink = '?status=approval';
@@ -565,7 +573,7 @@
                 @endif
            }
         });
-        
+
         @if(Request::get('action')=='berlangganan')
         vex.dialog.alert('Menghafal juz 1 sampai juz 29 harus berlangganan terlebih dahulu.');
         QuranJS.callModal('subscription');
@@ -582,9 +590,9 @@
         $( ".jp-video-play-icon" ).click(function() {
           location.reload();
         });
-        
+
         </script>
-    @include('layouts.analytics') 
+    @include('layouts.analytics')
 
     </body>
 </html>

@@ -1,42 +1,85 @@
 <div class="modal-spacing">
-<!--p>Rumah Tahfizh Fahim Quran (RTFQ) masih membuka kesempatan bagi bbrp orang santriwati minimal usia SMP, untuk  :</p>
-
-<p><strong>dibimbing menjadi penghafal AlQuran 30 juz mutqin :</strong></p>
-<ul>
-	<li>Dengan strategi sabak, sabki, manzil, tilawah. </li>
-
-	<li>Dengan lessonplan menghafal mandiri, menghafal cluster, dan menghafal bersama. </li>
-
-	<li>Dengan bantuan tools menghafal yang beraneka, mulai dari mushaf Quran biasa, peta Quran, slide mindmaping Quran, sampai penggunaan teknologi khusus (Computerized) untuk menghafal (aplikasi Quran Academy Suite)</li>
-</ul>
-
-<p><strong>Treatment pembentuk karakter Qurani. dengan Quran Character Building (QCB) :</strong></p>
-<ul>
-	<li>Yakni sebuah silabus (hasil riset selama 3 thn) yang disusun dengan tujuan untuk menanam ayat2 Quran pilihan ke level intelektual dan emosional santri, agar menjadi pilar pembentuk kepribadian mereka.</li>
-	<li>Target hafalan QCB meliputi ayat2 pilihan yg mesti dihafal dengan terjemahnya tafsir salaf kholaf lengkap dengan tadabur faktualnya.</li>
-	<li>QCB bukan aktivitas hafalan biasa, ia adalah sebuah treatment yang mendalam, meliputi ; instalasi persepsi positif, konstruksi mindset dan behaviour otomation.</li>
-</ul>
-
-<p>insyaAllah putri anda berada dalam pola pengasuhan yg Qurani, sungguh-sungguh, dan ikhlash... dan.....GRATIS !</p>
-
-
-<p><strong>dengan fasilitas :</strong></p>
-<ul>
-	<li>Bangunan yg memadai.</li>
-	<li>Asrama dengan satu ranjang dan lemari pribadi.</li>
-	<li>Berada di kawasan perumahan yang sangat islami, di peruman VILLA BINTARO REGENCY.</li>
-	<li>Makan 3 kali sehari dengan menu harian yg diperhitungkan kualitas nutrisinya.</li>
-</ul>
-
+<p>Sibuk?
+Gak punya waktu untuk mondok?
+Jauh dari komunitas ngafal Qur’an??
+Atau berada di luar negeri dan pengen ngafal?
+</p>
 <p>
-Segera daftarkan putri anda. via SMS atau WA ke nomor 08161123811 dengan format : </p>
-
-<p>RTFQ#nama putri anda#asal daerah#no HP yg bisa kami hubungi.#TTL#jumlah hafalan</p>
-
-
-<p>‼Segera, karena kuota terbatas.</p-->
-<p><strong>Isi surah Al-Wa'qiah</strong> salah satu nya adalah gambaran syurga, dan apa yang ada didalamnya, tahukan bahwa <strong>Pisang</strong> adalah salah satu makanan syurga yang terpatri dalam wahyu surah Al-Waqi'ah ayat 29</p>
-<img src="{{url('assets/images/banana.png')}}" width="100%">
+YUK NGAFAL QUR’AN TANPA MONDOK BERSAMA TAHFIDZ ONLINE...
+</p>
+<p>
+Daftar dan Langsung Tes ❗❗
+</p>
+<p> 
+Santri akan ngafal dengan menggunakan <strong>#AplikasiTahfidzOnline </strong>
+Selain ngafal, kalian juga bisa : <br>
+- Benerin bacaan, <br>
+- Tadabbur Al Qur'an, <br>
+- Denger murottal Qori Internasional, <br>
+- Memperindah langgam bacaan, <br>
+- Nonton video motivasi Qur'an, <br>
+- Hafalan terkontrol, <br>
+- Evaluasi hafalan melalui games seru.
+</p>
+<p>
+Semuanya ada di #aplikasitahfidzonline. Satu Aplikasi semuanya dalam genggaman
 <br>
-<!--button class="btn btn-green" style="font-size: 16px;margin-top: 10px;" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')">Berlangganan sekarang!!!</button-->
+Daftar dan Langsung Tes ❗❗
+<p>
+Syaratnya : 
+<br>
+
+1. Usia minimal 18 tahun.
+<br>
+
+2. Registrasi dan langsung tes ke salah satu penguji via akun WA untuk mengikuti tes bacaan surah Al Fajr 1 halaman (boleh dibaca/dihafal).
+<br>
+
+3. Format daftar dan Tes : TO 19 - Nama - Domisili - Pilihan Juz (30 atau 1)
+<br>
+
+4. Me-like fanpage Tahfidz Online : <a href="https://www.facebook.com/RumahBerkahFoundation" target="_blank">www.facebook.com/RumahBerkahFoundation</a>
+dan  Mem-follow Instagram Tahfidz Online : <a href="https://www.instagram.com/tahfidz_online" target="_blank">www.instagram.com/tahfidz_online</a>
+<br>
+</p>
+<p>
+<strong>✍ Penguji </strong><br>
+👳‍♀ Ikhwan :
+<br>
++62 822-7713-9373 (Ustadz Sofian Arisyandi)
+<br>
+🧕Akhwat :<br>
+💐+62 878-4906-4017
+(Ustadzah Nurul Sri) 
+<br>
+💐+62 838-5626-0262
+(Ustadzah Ananur)
+<br>
+💐+62 858-7656-3565
+(Ustadzah Qonita) 
+<br>
+<p>
+🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻<br>
+Setelah dinyatakan lulus, silakan ikuti alur berikut :
+<br>
+1. Download Appstahfidzonline di Playstore <br>
+2. register via Appstahfidzonline <br>
+3. Request jadi santri dan Infaq 50k (Sebagai bentuk komitmen dan pengembangan aplikasi) <br>
+4. Konfirmasi via <a href="https://api.whatsapp.com/send?phone=6289638571389">WA 089638571389</a> <br>
+5. Masuk ke Halaqah dan bebas akses ke Aplikasi Tahfidz Online<br>
+</p>
+<p>
+خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ “Sebaik-baik kalian adalah orang yang mempelajari al Qur’an dan mengajarkannya”.
+</p>
+<p>
+Narahubung<br>
+<a href="https://api.whatsapp.com/send?phone=6289638571389">089638571389</a>
+<br>
+
+Satu Aplikasi semuanya dalam genggaman
+<br>
+
+Silakan Share 😊
+</p>
+.
 </div>
