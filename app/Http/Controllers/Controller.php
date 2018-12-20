@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Users;
+use App\MemoCorrection;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -41,5 +42,9 @@ abstract class Controller extends BaseController
                 $request->session()->put('sess_id_class', $dataLogin->id_class);
             }
         }
+
+        $MemoCorrectionModel = new MemoCorrection;
+        $counterCorrection = $MemoCorrectionModel->getCountNew(session('sess_id'))->count;
+        $request->session()->put('sess_counter_correction', $counterCorrection);
     }
 }

@@ -225,8 +225,9 @@
         <!-- pre loader-->
         <div id="preloader">
             <div class="loading">
-            <img src="{{url('assets/images/96.gif')}}" alt="loading"/><br><br>
-        <span>Mohon tunggu...</span></div>
+            <img src="{{url('assets/images/loading.svg')}}" alt="loading" width="50"/><br><br>
+        <!--span>Mohon tunggu...</span=-->
+      </div>
         </div>
         @section('sidebar')
            <!-- This is the master sidebar. -->
@@ -287,7 +288,7 @@
                 <ul class="nav navmenu-nav">
 
                     <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard?promo=hide')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
-                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
+                    <!--li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
                     </li>
@@ -297,7 +298,7 @@
 
                     <!--li><a href="javascript:;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><i class="mdi mdi-alert-decagram"></i> Promo <label class="label label-danger">New</label></a></li>
                     </li-->
-                    <li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
+                    <!--li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
                     </li>
                     <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
                     <!--li><a href="javascript:;" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')"><i class="mdi mdi-information"></i> Info</a></li-->
@@ -324,11 +325,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <?php $counterCorrection = 1?>
             <button type="button" class="navbar-toggle notif"data-target="#qm-navbar" data-canvas="body"
             onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif">
                 <i class="mdi mdi-bell-ring"></i>
-                <sup class="text-white label label-danger">{{$counterCorrection>0?$counterCorrection:''}}</sup>
+                <sup class="text-white label label-danger">{{session('sess_counter_correction')>0?$counterCorrection:''}}</sup>
             </button>
         </div>
 

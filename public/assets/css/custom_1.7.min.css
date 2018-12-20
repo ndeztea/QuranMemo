@@ -10,7 +10,7 @@
   box-shadow: 2px 4px 9px 1px #e6e6e6;
     border-radius: 19px;
     line-height: 33px;
-    width: 20%;
+    width: 19%;
     margin: 7px 15px;
     background: #FFF;
 }
@@ -77,4 +77,8 @@ button.navbar-toggle.notif {
     font-size: 10px;
     position: absolute;
     top: 10px;
+}
+#preloader {
+    top: -50px;
+    background-color: rgba(222, 243, 241, 0.95)!important;
 }

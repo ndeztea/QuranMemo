@@ -37,7 +37,7 @@ class DashboardController extends Controller
 
         $MemoModel = new Memo;
         $UsersModel = new Users;
-        $MemoCorrectionModel = new MemoCorrection;
+        
 
         // get active subscritption information
         $SubscriptionsModel = new Subscriptions();
@@ -49,7 +49,6 @@ class DashboardController extends Controller
         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
         $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1);
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
-        $data['counterCorrection'] = $MemoCorrectionModel->getCountNew(session('sess_id'))->count;
         $data['counterMurajaah'] = $MemoModel->getCountList(session('sess_id'),3);
         $data['starting'] = $starting;
         $data['body_class'] = 'dashboard';
