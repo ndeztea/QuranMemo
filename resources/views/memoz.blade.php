@@ -17,9 +17,9 @@
 				@if(empty($_SERVER['HTTP_X_REQUESTED_WITH']))
     			<a class="pull-right gp-link" target="_blank"  href="https://play.google.com/store/apps/details?id=com.ndeztea.quranmemo"><img src="{{url('assets/images/button-google-play.png')}}"  alt="Download di Google Play" width="150"></a>
     			@endif
-				
+
 			</div-->
-			
+
 			@if (empty($ayats))
 			<div class="nav-top clearfix">
 				<div style="display:{{!empty($ayats)?'none':''}}">
@@ -41,7 +41,7 @@
 									</div>
 								</div>
 								<a class="btn btn-cari-ayat" onclick="@if(!empty(session('sess_id'))) QuranJS.submitMemoz('{{$level}}') @else QuranJS.callModal('auth/login') @endif" href="javascript:void(0)"  style="width: 100% !important"><i class="fa fa-search"></i> Hafalkan Ayat</a>
-									
+
 								@if(session('sess_id'))
 								<a class="btn btn-cari-ayat btn-last-memoz" onclick="fbq('track', 'clickDaftarHafalanPage');QuranJS.memozList()" href="javascript:void(0)" style="width: 49% !important"><i class="fa fa-file-text"></i> Daftar Hafalan</a>
 									@if(session('sess_role')==1 || session('sess_role')==2 || session('sess_id')==$memoDetail->id_user)
@@ -57,16 +57,16 @@
 			<input type="hidden" class="ayat_start_temp" value="{{$ayat_start}}"/>
 			<input type="hidden" class="ayat_end_temp" value="{{$ayat_end}}"/>
 			@endif
-			@if(!empty($memoDetail->id) && $memoDetail->id_user == session('sess_id') || (session('sess_role')==1 || session('sess_role'))==2)	
-				<div class="nav-top clearfix">	
-					@if($memoDetail->id_user == session('sess_id'))	
+			@if(!empty($memoDetail->id) && ($memoDetail->id_user == session('sess_id') || (session('sess_role')==1 || session('sess_role'))==2))
+				<div class="nav-top clearfix">
+					@if($memoDetail->id_user == session('sess_id'))
 						@if($murajaahSection)
 							<a class="btn" href="javascript:;" onclick="fbq('track', 'clickMurajaahSelesai');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','3','Murajaah sudah selesai?')"><i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> <i class="fa fa-check-square"></i></i> Selesai</a>
 							@if($linkNextMurajaah!='')
 								<a class="btn" href="{{$linkNextMurajaah}}"><i class="fa fa-step-forward"></i></i> Selanjutnya</a>
 							@endif
-						@else	
-						
+						@else
+
 						<div class="dropdown">
 			              <button class="dropdown-toggle status_memoz" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status : <span class="text_status_memoz">{{$text_status}}</span>
 			                <span class="caret"></span>
@@ -81,14 +81,19 @@
 			              	<li><a  href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Target hafalan ini sudah hafal?')"><i class="mdi mdi-lightbulb-on "></i> Sudah hafal</a>
 			              	</li>
 			              </ul>
-			            </div>	
-						
+			            </div>
+
 						@endif
 					@endif
-					<a  href="javascript:void(0)" class="btn" style="font-weight: bold"><i class="mdi mdi-library"></i> {{$memoDetail->id}}</a>
-					<i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i> 
+					<!--a  href="javascript:void(0)" class="btn" style="font-weight: bold"><i class="mdi mdi-library"></i> {{$memoDetail->id}}</a-->
+					<i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i>
 					@if(!empty($memoDetail->id) && (session('sess_role')==1 || session('sess_role')==2 || session('sess_id')==$memoDetail->id_user))
 					<a onclick="fbq('track', 'clickDaftarKoreksiMemoz');QuranJS.correctionList('','{{$memoDetail->id}}')" href="javascript:void(0)" class="btn"><i class="fa fa-check-square-o"></i> Daftar koreksi</a>
+					@endif
+					@if (!empty($memoDetail->record) && (Request::segment(2)!='correction'))
+					<div class="player">
+						<audio  controls  controlsList="nodownload" src="@if(!empty($memoDetail->record)){{ @url($memoDetail->record)}} @endif" class="@if(empty($memoDetail->record)) disabled @endif" id="audio"></audio>
+					</div>
 					@endif
 				</div>
 			@endif
@@ -96,7 +101,7 @@
 			<input type="hidden" name="muratal" class="muratal" value="1" />
 			<input type="hidden" name="tajwid" class="tajwid" value=""/>
 
-			
+
 			<!-- /nav-top -->
 			<input type="hidden" name="puzzle_ayat" id="puzzle_ayat" value="">
 			<input type="hidden" name="puzzle_word" id="puzzle_word" value="">
@@ -110,7 +115,7 @@
 							<div class="timeline-koreksi memoz-filter filter">
 						  		<ul class="nav nav-tabs" role="tablist">
 								    <li role="presentation" class="active"><a  onclick="fbq('track', 'clickLinier');QuranJS.stepMemoz('1',this);"><i class="fa fa-chevron-circle-right"></i> Linier</a></li>
-								    <li role="presentation"><a  onclick="fbq('track', 'clickRekam');QuranJS.stepMemoz('4',this);QuranJS.showAyat('start')" style="color:red"><i class="fa fa-microphone"></i>  Rekam</a></li>
+								    <li role="presentation" ><a  onclick="fbq('track', 'clickRekam');optionsRecord()" style="color:red"><i class="fa fa-microphone"></i>  Rekam</a></li>
 								    <li role="presentation"><a  onclick="fbq('track', 'clickPuzzle');QuranJS.stepMemoz('5',this);" ><i class="fa fa-puzzle-piece"></i> Puzzle</a></li>
 								</ul>
 							</div>
@@ -126,7 +131,7 @@
 									<a href="javascript:void(0)" onclick="QuranJS.stepMemoz('5');" class="btn btn-default steps_5"># 5</a-->
 								</div>
 							</div>
-							
+
 							<!-- /step-wrap -->
 							<!--div class="pull-right hafalan-actions">
 								<button class="btn"  data-toggle="modal" data-target="#QuranModal" onclick="QuranJS.callModal('memoz/create')">Simpan Hafalan</button>
@@ -139,7 +144,7 @@
 									<p> Hafalkan dengan teliti target hafalan arabic dan terjemahannya, ulangi muratal sebanyak-banyaknya sampai hafal</p>
 								</div>
 							</div>
-							<div class="memoz_nav" style="display: none">
+							<div class="memoz_nav">
 								<a href="javascript:;" class="btn btn-start" onclick="fbq('track', 'clickBacaAwal');QuranJS.showAyat('start')">Awal</a>
 								<a href="javascript:;" class="btn btn-middle" onclick="fbq('track', 'clickBacaTengah');QuranJS.showAyat('middle')">Tengah</a>
 								<a href="javascript:;" class="btn btn-end" onclick="fbq('track', 'clickBacaAkhir');QuranJS.showAyat('end')">Akhir</a>
@@ -147,7 +152,7 @@
 								<a href="javascript:;" class="btn btn-random" onclick="fbq('track', 'clickAcak');QuranJS.showAyat('random')">Acak</a>
 							</div>
 							@else
-							
+
 								@if(!empty($correctionDetail))
 								<div class="correction-detail">
 									<div class="koreksi-avatar img-circle">
@@ -159,14 +164,14 @@
 									@if($correctionDetail->status_memoz_correction===0 || $correctionDetail->status_memoz_correction>1)
 									<span class="status_memoz_result">
 										{!! memoz_status_result($correctionDetail->status_memoz_correction) !!}
-									</span>									
+									</span>
 									<div class="status_memoz clearfix" style="text-align: center;font-size:18px">
 										{{$correctionDetail->points}} Points
 									</div>
 									@endif
 									<br class="clearfix">
 									<p> {{$correctionDetail->note}}</p>
-									
+
 									@if($correctionDetail->record_file)
 									<audio  style="width:100%" controls controlsList="nodownload" src="{{url($correctionDetail->record_file)}}"></audio>
 									@endif
@@ -191,13 +196,13 @@
 									</div>
 								@endif
 
-								
-								
+
+
 							@endif
 							<script>
 								QuranJS.totalAyat = {{count($ayats)}}
 							</script>
-							
+
 							<?php  $a=0; ?>
 							@foreach($ayats as $ayat)
 							@if(($prev_surah!=$ayat->surah && $ayat->surah!=1 && $prev_surah!='') || ($prev_surah=='' && $ayat->ayat==1 && $ayat->surah!=1 ) || ($ayat->surah==1 && $ayat->ayat==1))
@@ -214,7 +219,7 @@
 									</div>
 									<script>QuranJS.headSurah=1;</script>
 									<?php endif?>
-								@else 
+								@else
 								<?php $a++; ?>
 								@endif
 								<div class="clearfix"></div>
@@ -222,7 +227,7 @@
 							<!-- /ayat-section -->
 							<?php $a++;?>
 							@endif
-							
+
 							@if($ayat->surah==1 && $ayat->ayat==1)
 							<?php $a--;?>
 							@endif
@@ -232,10 +237,10 @@
 								<div id="play_{{$a}}"></div>
 								@endif
 								<div class="arabic arabic_{{$a}}">
-									
+
 									<span class="content_ayat clearfix">
 										<?php $arr_ayats = (explode(' ', trim($ayat->text)));$per=0;
-										$countSpaces = count($arr_ayats); 
+										$countSpaces = count($arr_ayats);
 										?>
 										<script>
 											QuranJS.totalAyatSpaces[{{$a}}] = {{$countSpaces}}
@@ -249,9 +254,9 @@
 
 										<span class="no_ayat_arabic">
 											<!--img src="{{url('assets/images/frame-ayat.png')}}"  alt="ayat"-->
-											<span>{{arabicNum($ayat->ayat)}}</span> 
+											<span>{{arabicNum($ayat->ayat)}}</span>
 										</span>
-									</span> 
+									</span>
 
 								</div>
 								<!-- PUZZLE -->
@@ -266,9 +271,9 @@
 								</div>
 								<!-- END -->
 
-								<div class="trans trans_{{$a}}"> 
-									<!--span class="no_ayat"></span--> 
-									<span class="content_ayat">( {{$ayat->ayat}} ) {{$ayat->text_indo}}</span> 
+								<div class="trans trans_{{$a}}">
+									<!--span class="no_ayat"></span-->
+									<span class="content_ayat">( {{$ayat->ayat}} ) {{$ayat->text_indo}}</span>
 								</div>
 								@if(Request::segment(2)!='correction')
 								<div class="action-footer">
@@ -286,7 +291,7 @@
 							<?php $prev_surah = $ayat->surah; $tempCountSpaces = $countSpaces?>
 							<?php $a++;?>
 							@endforeach
-						
+
 						</div>
 						<!-- /mushaf -->
 
@@ -307,16 +312,16 @@
 
 							</div>
 							<!--div class="ads-middle" style="background: #ffffff;color: #000;" onclick="fbq('track', 'clickUmrohSutanFatih');QuranJS.callModal('umroh')"><img src="{{url('assets/images/sutanfatih_logo.png')}}">Umroh Murah Sutan Fatih Tour and Travel<br> <span style="font-size: 17px"><strong>Mulai dari 18,5jt!</strong></span></div-->
-						<?php endif?>	
+						<?php endif?>
 					</div>
 				</div>
 
 			</div>
 		<!-- end single-column-->
 		</div>
-	<!-- end main main-content -->	
+	<!-- end main main-content -->
 	</div>
-<!-- end main main-content-wrap -->	
+<!-- end main main-content-wrap -->
 </div>
 <input type="hidden" name="id" id="id" value="{{$id}}"/>
 <div class="quran_recorder_cont">
@@ -345,7 +350,7 @@
 					<!--span class="button disabled one" id="sec_counter">recording...</span-->
 					<a class="button  @if(empty($memoDetail->record)) disabled @endif"  id="play_audio" onclick="fbq('track', 'clickPutarRekam');playAudio()"><i class="fa fa-play-circle"></i></a>
 					<a class="button  disabled" id="pause_audio" onclick="fbq('track', 'clickPauseRekam');pauseAudio()"><i class="fa fa-pause-circle"></i></a>
-					
+
 					<a class="button disabled one" id="play"><i class="fa fa-stop-circle"></i></a>
 					<a class="button disabled upload" id="save" onclick="fbq('track', 'clickUploadRekam');"><i class="fa fa-upload btn-upload"></i></a>
 				</div>
@@ -377,14 +382,14 @@
 		<span>Toggle</span>
 	</button>
 	<ul class="c-circle-menu__items">
-		
+
 		<li class="c-circle-menu__item">
 			<button type="button" onclick="fbq('track', 'clickInfoMemoz');QuranJS.showInfoMemoz();$('.info').html('Lanjutkan menghafal');$('.cont_hide_memoz_info').hide()" class="c-circle-menu__link menu__link5">
 				<span class='menu-icon'><i class='fa fa-info'></i></span>
 				<span class='menu-caption'>Panduan</span>
 			</button>
 		</li>
-		<!-- end-item -->	
+		<!-- end-item -->
 
 		<li class="c-circle-menu__item">
 			<button type="button" onclick="fbq('track', 'clickSettingMemoz');QuranJS.callModal('memoz/config?repeat='+$('.repeat').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="c-circle-menu__link menu__link4">
@@ -400,8 +405,8 @@
 				<span class='menu-caption'>Daftar Hafalan</span>
 			</a>
 		</li>
-		<!-- end-item -->	
-													
+		<!-- end-item -->
+
 		<li class="c-circle-menu__item">
 			<a  href="{{url('memoz')}}"  class="c-circle-menu__link menu__link2" onclick="fbq('track', 'clickHafalanBaru');">
 				<span class='menu-icon'><i class='fa fa-plus'></i></span>
@@ -424,7 +429,7 @@
 <script type="text/javascript">
 function optionsRecord(){
 	string =  '<a class="btn btn-primary" style="font-size: 24px;width:100%" onclick="recordAudio(\'user\');fbq(\'track\', \'clickStartRekam\');"><i class="fa fa-microphone" style="color:red"></i> Rekam Sekarang</a><br><br>';
-	
+
 	string += '<a href="javascript:;" class="btn btn-success" style="font-size: 24px;width:100%" onclick="$(\'#record_file\').trigger(\'click\')"><i class="fa fa-upload" ></i> Upload file rekaman</a>';
 	vex.dialog.alert({unsafeMessage:string});
 }
@@ -473,7 +478,7 @@ $(document).ready(function(){
        $('.c-circle-menu__toggle').removeClass('is-active');
        $('.c-circle-menu__mask').removeClass('is-active');
     });
-    @endif 
+    @endif
 	QuranJS.fillAyatEnd();
 	@if(!empty($memoDetail))
 		jQuery('.memoz-1,.memoz-0').hide();
@@ -499,7 +504,7 @@ $(document).ready(function(){
 			// $('.openThis').hide();
 			// $('.btn-toggle-player').click(function() {
 			//     $('.quran_player').slideToggle( function() {
-			//     	$('.openThis').show();						
+			//     	$('.openThis').show();
 			// 	});
 			//     return false;
 			// });
@@ -524,7 +529,7 @@ $(document).ready(function(){
 
 				if (vpw <= 767) {
 						$('#surah-collapse').removeClass('in');
-						
+
 					}
 					else {
 						$('#surah-collapse').addClass('in');
@@ -545,9 +550,9 @@ $(document).ready(function(){
 			scroll = $(window).scrollTop();
 
 			if (scroll > stickyOffset) {
-					$(sticky).addClass('fixed'); 
-				}	
-			else 
+					$(sticky).addClass('fixed');
+				}
+			else
 				{
 					$(sticky).removeClass('fixed');
 					$('.navbar-nav li.active').removeClass('active');
@@ -614,7 +619,7 @@ $(document).ready(function(){
 			    }
 			})*/
 			window.parent.postMessage("audio|{{$memoDetail->id}}", "*");
-			@else 
+			@else
 			vex.dialog.confirm({
 			    message: "Simpan hafalan terlebih dahulu?",
 			    callback: function (value) {
@@ -629,7 +634,7 @@ $(document).ready(function(){
 			window.parent.postMessage("audioUstadz|{{$memoDetail->id}}", "*");
 		}
 
-	
+
 	}
 
 
@@ -647,7 +652,7 @@ $(document).ready(function(){
 			//vex.dialog.alert('File rekaman berhasil di upload, siap dikoreksi jika sudah hafal.');
 
 			/*$('#play_audio').show();
-			$('#play_audio').removeClass('disabled'); 
+			$('#play_audio').removeClass('disabled');
 			$('#pause_audio').addClass('disabled');
 			$('#audio').attr('src',QuranJS.siteUrl+'/'+message);
 			playAudio();*/
@@ -662,10 +667,10 @@ $(document).ready(function(){
 		}/*else{
 			//alert(QuranJS.siteUrl+'/'+message);
 			// this is file
-			
+
 		}*/
 	}
-	
+
 
 	if (window.addEventListener) {
 		// For standards-compliant web browsers

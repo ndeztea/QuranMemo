@@ -6,10 +6,10 @@
 	<li class="correction-list-item">
 		<div class="koreksi-box">
 			<div class="koreksi-avatar img-circle">
-				<img src="{{getAvatar($row)}}"  class="img-circle">
+				<a href="{{url('profile/detail/'.$row->id_user)}}"><img src="{{getAvatar($row)}}"  class="img-circle"></a>
 			</div>
 			<div class="koreksi-desc">
-				<span class="username">{{$row->name}} 
+					<a href="{{url('profile/detail/'.$row->id_user)}}"><span class="username">{{$row->name}}</a>
 					<sup class="badge">{{getAge($row)}}</sup>
 					@if(session('sess_role')==1 || session('sess_role')==2)
 						@foreach($row->listSubscriptions as $subscription)

@@ -6,7 +6,7 @@
 
 <div class="wrap">
 	<div class="main-content-wrap">
-		<div class="main-content edit-profile-block">
+		<div class="main-content edit-profile-block" style="background:none !important">
 			<div class="edit-profile-form">
 				<div class="dropdown">
 		              <button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;min-width: 300px;background: none;border: 0px;font-weight: bold;font-size: 20px">
@@ -31,9 +31,11 @@
 				<?php $no++?>
 				<tr class="list_top_user">
 					<td class="no_top_user" width="50">#{{$no}}</td>
-					<td class="detail"><img src="{{getAvatar($row)}}" class="avatar img-circle"> <span class="name">{{$row->name}}</span>
+					<td class="detail">
+						<a href="{{url('profile/detail/'.$row->id)}}"><img src="{{getAvatar($row)}}" class="avatar img-circle"> <span class="name">{{$row->name}}</span>
+						</a>
 					@if(session('sess_role')==1)
-					<br><a href="https://api.whatsapp.com/send?phone={{$row->hp}}" target="_blank" class="label label-success"><i class="fa fa-whatsapp"></i> {{$row->hp}}</a> 
+					<br><a href="https://api.whatsapp.com/send?phone={{$row->hp}}" target="_blank" class="label label-success"><i class="fa fa-whatsapp"></i> {{$row->hp}}</a>
 					@endif
 					</td>
 					<td class="no_top_user" align="center"><span class="border_points img-circle">{{$row->points}}</span></td>

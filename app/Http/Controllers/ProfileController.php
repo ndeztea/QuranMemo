@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use DB;
-use Image; 
+use Image;
 use App\Users;
+use App\Memo;
+use App\Libraries\Points;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
@@ -15,13 +17,34 @@ use File;
 
 class ProfileController extends Controller
 {
+
+    public function detail(Request $request){
+      $UsersModel = new Users;
+      $MemoModel = new Memo;
+      $id_user = $request->segment(3);
+      $data['header_top_title'] = $data['header_title'] = 'Profile Hafizh';
+      $data['detailProfile'] = $UsersModel->getDetail($id_user)[0];
+
+      $classDetail = $UsersModel->getClassDetail($data['detailProfile']->id_class);
+      $data['classDetail'] = $classDetail;
+      $data['needCorrections'] = $MemoModel->getNeedCorrection(0,20,$id_user);
+      $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0,0,20,$id_user);
+      $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1,0,20,$id_user);
+
+      $objPoints = new Points();
+      $total_points = $objPoints->totalPoints($id_user,'all');
+      $data['countMemoz'] = $MemoModel->getCountList($id_user,'all');
+      $data['countPoints'] = $total_points;
+      return view('profile_detail',$data);
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request)
-    {   
+    {
         $data['header_top_title'] = $data['header_title'] = 'Edit Profile';
         $data['body_class'] = 'body-editprofile';
         $UsersModel = new Users;
@@ -35,7 +58,7 @@ class ProfileController extends Controller
                     $dataPass['password'] = Hash::make($password);
                     $dataPass['id'] = session('sess_id');
                     $UsersModel->edit($dataPass);
-                    
+
                 }else{
                     return redirect('profile/edit')->with('messageError', 'Password tidak sama')->withInput();
                 }
@@ -95,7 +118,7 @@ class ProfileController extends Controller
         }else{
             return redirect('profile/edit')->with('messageError', 'Profile avatar gagal disimpan')->withInput();
         }
-        
+
     }
 
     public function listing(Request $request){
@@ -107,7 +130,7 @@ class ProfileController extends Controller
         $keyword = $request->input('keyword');
         $gender = $request->input('gender','m');
         $page = $request->input('page',1);
-        
+
         $listClasses = $UsersModel->getClass();
         $listUsers = $classDetail =  array();
         $countTotalUsers = $UsersModel->getCountList();
@@ -121,7 +144,7 @@ class ProfileController extends Controller
                 $pages = round($countUsers / 10);
                 $data['pages'] = $pages;
                 $data['page'] = $page;
-            }  
+            }
         }
 
         $rolesManual = array('Adab','Ahlak','LA','Keaktifan','Lainnya');
@@ -153,7 +176,7 @@ class ProfileController extends Controller
         }
         return redirect()->back()->with('messageError', 'Points gagal ditambahkan')->withInput();
 
-        
+
 
     }
 
@@ -195,5 +218,5 @@ class ProfileController extends Controller
         return view('profile_top',$data);
     }
 
-    
+
 }

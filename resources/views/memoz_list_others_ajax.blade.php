@@ -6,11 +6,11 @@
 	<li class="correction-list-item">
 		<div class="koreksi-box">
 			<div class="koreksi-avatar img-circle">
-				<img src="{{getAvatar($row)}}"  class="img-circle">
+				<a href="{{url('profile/detail/'.$row->id_user)}}"><img src="{{getAvatar($row)}}"  class="img-circle"></a>
 			</div>
 			<div class="koreksi-desc">
-				<span class="username">{{$row->name}} <sup class="badge">{{getAge($row)}}</sup></span>
-				<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>	
+				<span class="username"><a href="{{url('profile/detail/'.$row->id_user)}}">{{$row->name}} <sup class="badge">{{getAge($row)}}</sup></a></span>
+				<span class="ayat-target"><a href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
 				<br>
 				<span class="jumlah-koreksi"><i class="mdi mdi-clock"></i> {{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 				<div class="koreksi-action">

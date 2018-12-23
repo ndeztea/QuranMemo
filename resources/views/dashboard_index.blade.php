@@ -22,9 +22,26 @@
 			<!--div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
 				<a href="javascript:QuranJS.callModal('promo')"> Mau 1 Bundle pahala ?<br> ~ T-Shirt Dakwah+Berinfak+Menghafal Al-Qu'ran ~ <br><label class="label label-danger">Promo</label><strong> Mau? Klik Disini</strong> <label class="label label-danger">Promo</label></a>
 			</div-->
+
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
-
+						<div class="ads-middle" style="background-color: #54b7ac;">
+							@if(session('sess_id'))
+							<div class="dropdown">
+								<button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;min-width: 300px;background: none;border: 0px;font-weight: bold;">
+									{{empty($classDetail->class)?'Pilih Kelas  Halaqah':$classDetail->class}}
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu choose-class" aria-labelledby="dropdownMenu2" style="width:100%;min-width: 300px">
+									@foreach($listClasses as $class)
+									<li><a href="{{url('dashboard/setClass?id_class='.$class->id)}}">{{$class->class}}</a></li>
+									@endforeach
+								</ul>
+							</div>
+							@else
+							<strong>{{!empty($classDetail)?$classDetail->class:'Belum ada kelas'}}</strong>
+							@endif
+						</div>
 			  		<div class="dash-profile-detail-wrap">
 					  	<div class="dash-profile-detail">
 							<div class="dash-profile-img img-circle">
@@ -40,6 +57,7 @@
 								<h2 class='label label-success'>Points : {{$total_points}}</h2>
 								@endif
 							</div>
+
 							<!--form name="uploadForm" method="post" enctype="multipart/form-data" action="{{url('memoz/uploadRecordedMobile/134')}}">
 							<p><input id="uploadInput" type="file"  name="file"> </p>
 							<p><input type="submit" value="Send file"></p>
@@ -57,7 +75,7 @@
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) location.href='{{url('memoz')}}' @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-file"></i>Ziyadah</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Hafalan</a>  </li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/murajaah') @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-refresh"></i>Muraja'ah <sup class="text-white label label-danger">{{$counterMurajaah>0?$counterMurajaah:''}}</sup></a>  </li>
-								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('quiz/form') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-help-circle"></i> Quiz <sup class="text-white label label-danger">New</sup></a></li>
+								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('quiz/form') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-help-circle"></i> Quiz</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="fbq('track', 'clickBaca');QuranJS.bookmarkModal('{{@$_COOKIE['coo_mushaf_bookmark_title']}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Al-Qur'an</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('content_learning')}}" ><i class="mdi mdi-image-filter-drama"></i> E-Learning</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('profile/top_user')}}" ><i class="mdi mdi-account-network"></i> Top Santri</a></li>
@@ -69,8 +87,9 @@
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
 				  <div class="ads-middle" style="background: #fbd47c;color: #000;;font-size: 20px" target="_blank">
-					<a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a>
-				</div>
+						<!--a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a-->
+						<a href="javascript:QuranJS.callModal('buku')">Fitur-fitur terbaru <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a>
+					</div>
 				  <div class="ads-middle" style="height: 110px">
 				  	<strong>Hafalan pilihan</strong>
 				  	<div id="recommendation-memoz">
@@ -117,13 +136,13 @@
 								<ul class="correction-list list-unstyled">
 								@foreach($listDone as $row)
 									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
-									<li class="correction-list-item memoid-{{$row->id}}">
+									<li class="correction-list-item memoid-{{$row->id_user}}">
 										<div class="koreksi-box">
 											<div class="koreksi-avatar img-circle">
-												<img src="{{getAvatar($row)}}"  class="img-circle">
+												<a href="{{url('profile/detail/'.$row->id_user)}}"><img src="{{getAvatar($row)}}"  class="img-circle"></a>
 											</div>
 											<div class="koreksi-desc">
-												<span class="username">{{$row->name}}  <sup class="badge">{{getAge($row)}}</sup></span>
+												<span class="username"><a href="{{url('profile/detail/'.$row->id_user)}}">{{$row->name}}  <sup class="badge">{{getAge($row)}}</sup></a></span>
 												<span class="ayat-target">
 													<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
 													<!--span class="spacer1">&bullet;</span>
@@ -149,13 +168,13 @@
 								<ul class="correction-list list-unstyled">
 								@foreach($needCorrections as $row)
 									<?php $ayat_target = $row->ayat_end==0?$row->ayat_start:$row->ayat_start.'-'.$row->ayat_end?>
-									<li class="correction-list-item memoid-{{$row->id}}">
+									<li class="correction-list-item memoid-{{$row->id_user}}">
 										<div class="koreksi-box">
 											<div class="koreksi-avatar img-circle">
-												<img src="{{getAvatar($row)}}"  class="img-circle">
+												<a href="{{url('profile/detail/'.$row->id_user)}}"><img src="{{getAvatar($row)}}"  class="img-circle"></a>
 											</div>
 											<div class="koreksi-desc">
-												<span class="username">{{$row->name}}
+													<a href="{{url('profile/detail/'.$row->id_user)}}"><span class="username">{{$row->name}}
 													<sup class="badge">{{getAge($row)}}</sup>
 													@if(session('sess_role')==1 || session('sess_role')==2)
 														@foreach($row->listSubscriptions as $subscription)
@@ -164,6 +183,7 @@
 														@endforeach
 													@endif
 												</span>
+											</a>
 
 												<span class="ayat-target">
 													<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
@@ -193,11 +213,12 @@
 									<li class="correction-list-item memoid-{{$row->id}}">
 										<div class="koreksi-box">
 											<div class="koreksi-avatar img-circle">
-												<img src="{{getAvatar($row)}}"  class="img-circle">
+												<a href="{{url('profile/detail/'.$row->id_user)}}"><img src="{{getAvatar($row)}}"  class="img-circle"></a>
 											</div>
 											<div class="koreksi-desc">
-												<span class="username">{{$row->name}}  <sup class="badge">{{getAge($row)}}</sup></span>
+												<a href="{{url('profile/detail/'.$row->id_user)}}"><span class="username">{{$row->name}}  <sup class="badge">{{getAge($row)}}</sup></span>
 												<span class="ayat-target"><a class="ayat-target-link" href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a></span>
+											</a>
 												<br>
 												<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}}</span>
 												<div class="koreksi-action">

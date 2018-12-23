@@ -151,7 +151,7 @@ class Memo extends Model
         return $memoList;
     }
 
-    public function getAnotherList($id_user,$filter=0,$start=0,$limit=5){
+    public function getAnotherList($id_user,$filter=0,$start=0,$limit=5,$id_user_detail=''){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah','u.name','gender','u.avatar','u.dob')
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
@@ -170,7 +170,9 @@ class Memo extends Model
 
         //echo $id_user.'-'.$filter;
         //dd($memoList->toSql());
-
+        if($id_user_detail){
+          $memoList = $memoList->where('u.id',$id_user_detail);
+        }
 
         $memoList = $memoList->orderby('updated_at','desc');
         //dd(DB::getQueryLog());
@@ -220,6 +222,9 @@ class Memo extends Model
             $memoList->where('gender','=',$this->sess_gender);
         }
 
+        if($id_user){
+          $memoList->where('u.id','=',$id_user);
+        }
 
         if($this->sess_id_class){
             $memoList = $memoList->where('id_class',$this->sess_id_class);

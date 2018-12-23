@@ -130,6 +130,9 @@
             padding: 10px;
             font-size: 19px;
         }
+        .modal-spacing ul.choose-class li {
+            width: 50%;
+        }
         </style>
 
         <!-- Optional theme -->
@@ -288,11 +291,12 @@
                 <ul class="nav navmenu-nav">
 
                     <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard?promo=hide')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
-                    <!--li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
+                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
-                    <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca</a>
+                    <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca Al-Qur'an</a>
                     </li>
-                    <li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
+                    <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
+                    <!--li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('buku')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-book-open"></i> Gratis Buku <label class="label label-danger">New</label></a> </li>
 
 
@@ -319,6 +323,9 @@
 
         <div class="qm-nav navbar navbar-default navbar-fixed-top navi-down">
             <!--a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a-->
+            @if(Request::segment(1)!='dashboard')
+            <a class="navbar-brand nav-back"  href="javascript:void(0)" onclick="history.back()"><i class="mdi mdi-arrow-left"></i></a>
+            @endif
             <a class="navbar-brand title"  href="{{url('')}}"><h1>{{$header_top_title}}</h1></a>
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body">
                 <span class="icon-bar"></span>
@@ -328,7 +335,7 @@
             <button type="button" class="navbar-toggle notif"data-target="#qm-navbar" data-canvas="body"
             onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif">
                 <i class="mdi mdi-bell-ring"></i>
-                <sup class="text-white label label-danger">{{session('sess_counter_correction')>0?$counterCorrection:''}}</sup>
+                <sup class="text-white label label-danger">{{session('sess_counter_correction')>0?session('sess_counter_correction'):''}}</sup>
             </button>
         </div>
 

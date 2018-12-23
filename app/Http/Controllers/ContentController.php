@@ -87,9 +87,9 @@ class ContentController extends Controller
         /*$SubscriptionsModel = new Subscriptions();
         $sessRole = session('sess_role');
         $counter = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
-          
+
         $data['havePending'] = count($counter)>=1?true:false;*/
-        
+
         $dataHTML['modal_class'] = '';
         $dataHTML['modal_title'] = 'News';
         $dataHTML['modal_body'] = view('content_promo')->render();
@@ -119,7 +119,7 @@ class ContentController extends Controller
     }
 
     public function buku(Request $request)
-    {   
+    {
         $email = $request->input('email');
         $clientId = $request->input('clientId');
         if(!empty($email)){
@@ -129,7 +129,8 @@ class ContentController extends Controller
         }
 
         $dataHTML['modal_class'] = '';
-        $dataHTML['modal_title'] = 'Berbagi Buku';
+        //$dataHTML['modal_title'] = 'Berbagi Buku';
+        $dataHTML['modal_title'] = 'Fitur-fitur terbaru';
         $dataHTML['modal_body'] = view('content_buku')->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
@@ -155,7 +156,7 @@ class ContentController extends Controller
     }
 
     public function muratal(Request $request)
-    {   
+    {
         $dataHTML['modal_class'] = '';
         $dataHTML['modal_title'] = 'Fitur Muratal';
         $dataHTML['modal_body'] = view('content_muratal')->render();
@@ -191,7 +192,7 @@ class ContentController extends Controller
 
         $directory = public_path('learning/'.$folder);
         $listFiles = File::allFiles($directory);
-       
+
         $data['listFiles'] = $listFiles;
         $data['detail'] = $detail;
         $data['folder'] = $folder;

@@ -76,6 +76,7 @@ Route::post('register/process', 'RegisterController@process');
 
 Route::get('dashboard','DashboardController@index');
 Route::get('profile/top_user', 'ProfileController@top_user');
+Route::get('profile/detail/{id_user}', 'ProfileController@detail');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
@@ -101,7 +102,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('memoz/list_ajax', 'MemozController@list_ajax');
     Route::post('memoz/list_others_ajax', 'MemozController@list_others_ajax');
     Route::post('memoz/list_need_corrections_ajax', 'MemozController@list_need_corrections_ajax');
-    
+
 	Route::post('memoz/remove', 'MemozController@remove');
     Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
     Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
@@ -117,11 +118,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('memoz/saveCorrection','MemozController@saveCorrection');
     Route::post('memoz/correction/list', 'MemozController@listCorrection');
     Route::get('memoz/summary', 'MemozController@summary');
-   
+
     Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');
     Route::get('notes/create/{surah}/{idsurah}', 'NotesController@create');
-    
+
 
     Route::post('notes/save', 'NotesController@save');
 
@@ -132,7 +133,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('subscription/listing', 'SubscriptionsController@listing');
     Route::get('subscription/counter', 'SubscriptionsController@counter');
 
-    
+
     Route::get('subscription/order/{level}/{length}', 'SubscriptionsController@order');
     Route::post('subscription/order/{level}/{length}', 'SubscriptionsController@order');
     Route::get('subscription/confirmation/{id}', 'SubscriptionsController@confirmation');

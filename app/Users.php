@@ -203,7 +203,7 @@ class Users extends Model
 
     public function topUser($days=0,$gender=''){
         $list = DB::table('users as u')
-                ->selectRaw('u.name,u.avatar,u.gender,sum(up.points) as points,u.hp')
+                ->selectRaw('u.name,u.avatar,u.gender,sum(up.points) as points,u.hp,u.id')
                 ->join('user_points as up', 'up.id_user', '=', 'u.id')
                 ->orderBy('points','desc')
                 ->groupBy('up.id_user')

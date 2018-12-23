@@ -37,7 +37,7 @@ class DashboardController extends Controller
 
         $MemoModel = new Memo;
         $UsersModel = new Users;
-        
+
 
         // get active subscritption information
         $SubscriptionsModel = new Subscriptions();
@@ -91,7 +91,7 @@ class DashboardController extends Controller
         $sess_id_class = session('sess_id_class');
         // set session
         $request->session()->put('sess_id_class', $id_class);
-        if(($sess_role==3 || $sess_role==0)){
+        if(session('sess_id')){
             // save for temp action
             $dataUser['id'] = session('sess_id');
             $dataUser['id_class'] = $id_class;

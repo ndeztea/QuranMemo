@@ -1,9 +1,11 @@
 <?php
 
 return [
-    
+
     'mp3_url' => 'https://quranmemo.com/public/',
     //'mp3_url' => 'http://192.168.100.4/QuranNote/public/',
+    'app_name' => 'QuranMemo Community',
+    'app_email' => 'quranmemo.id@gmail.com',
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
