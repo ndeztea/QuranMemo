@@ -25,7 +25,7 @@
 
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
-						<div class="ads-middle" style="background-color: #54b7ac;">
+						<!--div class="ads-middle" style="background-color: #54b7ac;">
 							@if(session('sess_id'))
 							<div class="dropdown">
 								<button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;min-width: 300px;background: none;border: 0px;font-weight: bold;">
@@ -41,7 +41,7 @@
 							@else
 							<strong>{{!empty($classDetail)?$classDetail->class:'Belum ada kelas'}}</strong>
 							@endif
-						</div>
+						</div-->
 			  		<div class="dash-profile-detail-wrap">
 					  	<div class="dash-profile-detail">
 							<div class="dash-profile-img img-circle">

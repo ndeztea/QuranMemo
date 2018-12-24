@@ -147,7 +147,7 @@
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
 
-        <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom_mim.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
@@ -256,8 +256,8 @@
                 <div class="navmenu-header">
                     <div class="navmenu-overlay">
                         <a class="qm-brand" href="{{url('')}}">
-                            <img class='hires qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-                            <img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+                            <img class='hires qmc-logo' style="width:150px" src="{{url('assets/images/partners/mim.png')}}" alt="Logo QuranMemo">
+                            <!--img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo"-->
                         </a>
 
                         <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
