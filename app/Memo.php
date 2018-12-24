@@ -95,18 +95,19 @@ class Memo extends Model
 
         }
 
-        if($this->sess_role!=1){
-            $memoList->where('gender','=',$this->sess_gender);
-        }
-
         if($filter==1){
             $memoList = $memoList->orderby('updated_at','DESC');
         }else{
             $memoList = $memoList->orderby('in_progress','desc')->orderby('date_end','asc');
         }
 
-        if($this->sess_id_class){
-            $memoList = $memoList->where('id_class',$this->sess_id_class);
+        if(session('id_user')){
+          if($this->sess_id_class){
+              $memoList = $memoList->where('id_class',$this->sess_id_class);
+          }
+          if($this->sess_role!=1){
+              $memoList->where('gender','=',$this->sess_gender);
+          }
         }
         //echo $id_user;
         //dd($memoList->toSql());
@@ -131,12 +132,15 @@ class Memo extends Model
 
         }
 
-        if($this->sess_role!=1){
-            $memoList->where('gender','=',$this->sess_gender);
-        }
 
-        if($this->sess_id_class){
-            $memoList = $memoList->where('id_class',$this->sess_id_class);
+
+        if(session('id_user')){
+          if($this->sess_id_class){
+              $memoList = $memoList->where('id_class',$this->sess_id_class);
+          }
+          if($this->sess_role!=1){
+              $memoList->where('gender','=',$this->sess_gender);
+          }
         }
 
         return $memoList->get()[0]->counter;
@@ -164,21 +168,23 @@ class Memo extends Model
             $memoList = $memoList->where('status','=',$filter);
         //}
 
-        if($this->sess_role!=1){
-            $memoList->where('gender','=',$this->sess_gender);
-        }
-
         //echo $id_user.'-'.$filter;
         //dd($memoList->toSql());
-        if($id_user_detail){
-          $memoList = $memoList->where('u.id',$id_user_detail);
-        }
+
 
         $memoList = $memoList->orderby('updated_at','desc');
         //dd(DB::getQueryLog());
 
-        if($this->sess_id_class){
-            $memoList = $memoList->where('id_class',$this->sess_id_class);
+        if(session('id_user')){
+          if($this->sess_id_class){
+              $memoList = $memoList->where('id_class',$this->sess_id_class);
+          }
+          if($id_user_detail){
+            $memoList = $memoList->where('u.id',$id_user_detail);
+          }
+          if($this->sess_role!=1){
+              $memoList->where('gender','=',$this->sess_gender);
+          }
         }
 
         return $memoList->get();
@@ -194,12 +200,15 @@ class Memo extends Model
             $memoList = $memoList->where('status',$filter);
         }
 
-        if($this->sess_role!=1){
-            $memoList->where('gender','=',$this->sess_gender);
-        }
 
-        if($this->sess_id_class){
-            $memoList = $memoList->where('id_class',$this->sess_id_class);
+
+        if(session('id_user')){
+          if($this->sess_id_class){
+              $memoList = $memoList->where('id_class',$this->sess_id_class);
+          }
+          if($this->sess_role!=1){
+              $memoList->where('gender','=',$this->sess_gender);
+          }
         }
 
         $memoList  = $memoList->get();
@@ -218,16 +227,20 @@ class Memo extends Model
                 ->offset($start)
                 ->limit($limit);
 
-        if($this->sess_role!=1){
-            $memoList->where('gender','=',$this->sess_gender);
-        }
 
-        if($id_user){
-          $memoList->where('u.id','=',$id_user);
-        }
 
-        if($this->sess_id_class){
-            $memoList = $memoList->where('id_class',$this->sess_id_class);
+
+
+        if(session('id_user')){
+          if($this->sess_id_class){
+              $memoList = $memoList->where('id_class',$this->sess_id_class);
+          }
+          if($id_user){
+            $memoList->where('u.id','=',$id_user);
+          }
+          if($this->sess_role!=1){
+              $memoList->where('gender','=',$this->sess_gender);
+          }
         }
 
         //dd($memoList->toSql());
@@ -243,13 +256,16 @@ class Memo extends Model
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('status','=',2);
 
-        if($this->sess_role!=1){
-            $memoList->where('gender','=',$this->sess_gender);
-        }
 
 
-        if($this->sess_id_class){
-            $memoList = $memoList->where('id_class',$this->sess_id_class);
+
+        if(session('id_user')){
+          if($this->sess_id_class){
+              $memoList = $memoList->where('id_class',$this->sess_id_class);
+          }
+          if($this->sess_role!=1){
+              $memoList->where('gender','=',$this->sess_gender);
+          }
         }
 
         $memoList = $memoList->get();

@@ -28,61 +28,57 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        Carbon::setLocale('id');
-        $data['header_top_title'] = $data['header_title'] = 'Dashboard';
+     public function index(Request $request)
+     {
+         Carbon::setLocale('id');
+         $data['header_top_title'] = $data['header_title'] = 'Dashboard';
 
-        $starting = $request->input('starting');
+         $starting = $request->input('starting');
 
-        $MemoModel = new Memo;
-        $UsersModel = new Users;
+         $MemoModel = new Memo;
+         $UsersModel = new Users;
+         $MemoCorrectionModel = new MemoCorrection;
+
+         // get active subscritption information
+         $SubscriptionsModel = new Subscriptions();
+         $data['listSubscriptions'] = $SubscriptionsModel->getActiveSubscriptions(session('sess_id'));
+
+         // get need correction memoz
+         $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
+         $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1);
+         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
+         $data['counterCorrection'] = $MemoCorrectionModel->getCountNew(session('sess_id'))->count;
+         $data['counterMurajaah'] = $MemoModel->getCountList(session('sess_id'),3);
+         $data['starting'] = $starting;
+         $data['body_class'] = 'dashboard';
+         $data['level'] = $this->level;
+         if(!empty($data['detailProfile'])){
+             $data['detailProfile'] = $data['detailProfile'][0];
+             if(empty($data['detailProfile']->dob) || $data['detailProfile']->dob=='0000-00-00'){
+                 return redirect('profile/edit')->with('messageError', 'Mohon lengkapi data tanggal lahir terlebih dahulu')->withInput();
+             }
+         }
+
+         $listCorrections = $MemoModel->getNeedCorrection();
+         // get correction user subscriptions
+         $a=0;
+         if(!empty($listCorrections)){
+             foreach ($listCorrections as $correction) {
+                 $listCorrections[$a]->listSubscriptions = $SubscriptionsModel->getActiveSubscriptions($correction->id_user);
+                 $a++;
+             }
+         }
+         $data['needCorrections'] = $listCorrections;
+
+         $data['listRecommendation'] = $MemoModel->getMemoRecommendation();
+
+         $objPoints = new Points();
+         $total_points = $objPoints->totalPoints(session('sess_id'),'all');
+         $data['total_points'] = $total_points;
 
 
-        // get active subscritption information
-        $SubscriptionsModel = new Subscriptions();
-        $data['listSubscriptions'] = $SubscriptionsModel->getActiveSubscriptions(session('sess_id'));
-
-        $data['listClasses'] = $UsersModel->getClass();
-
-        // get need correction memoz
-        $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
-        $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1);
-        $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
-        $data['counterMurajaah'] = $MemoModel->getCountList(session('sess_id'),3);
-        $data['starting'] = $starting;
-        $data['body_class'] = 'dashboard';
-        $data['level'] = $this->level;
-        if(!empty($data['detailProfile'])){
-            $data['detailProfile'] = $data['detailProfile'][0];
-            if(empty($data['detailProfile']->dob) || $data['detailProfile']->dob=='0000-00-00'){
-                return redirect('profile/edit')->with('messageError', 'Mohon lengkapi data tanggal lahir terlebih dahulu')->withInput();
-            }
-        }
-
-        $listCorrections = $MemoModel->getNeedCorrection();
-        // get correction user subscriptions
-        $a=0;
-        if(!empty($listCorrections)){
-            foreach ($listCorrections as $correction) {
-                $listCorrections[$a]->listSubscriptions = $SubscriptionsModel->getActiveSubscriptions($correction->id_user);
-                $a++;
-            }
-        }
-        $data['needCorrections'] = $listCorrections;
-        $data['listRecommendation'] = $MemoModel->getMemoRecommendation();
-
-        if(!empty(session('sess_id_class'))){
-            $classDetail = $UsersModel->getClassDetail(session('sess_id_class'));
-            $data['classDetail'] = $classDetail;
-        }
-
-        $objPoints = new Points();
-        $total_points = $objPoints->totalPoints(session('sess_id'),'all');
-        $data['total_points'] = $total_points;
-
-        return view('dashboard_index',$data);
-    }
+          return view('dashboard_index',$data);
+     }
 
 
     public function setClass(Request $request){
@@ -102,5 +98,6 @@ class DashboardController extends Controller
         return redirect('dashboard');
 
     }
+
 
 }

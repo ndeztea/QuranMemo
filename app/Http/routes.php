@@ -76,10 +76,11 @@ Route::post('register/process', 'RegisterController@process');
 
 Route::get('dashboard','DashboardController@index');
 Route::get('profile/top_user', 'ProfileController@top_user');
-Route::get('profile/detail/{id_user}', 'ProfileController@detail');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
+  Route::get('profile/detail/{id_user}', 'ProfileController@detail');
+
     Route::get('content_learning','ContentController@learning');
     Route::get('file_learning/{folder}','ContentController@file_learning');
     Route::get('memoz/', 'MemozController@index');
