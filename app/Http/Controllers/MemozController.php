@@ -354,9 +354,11 @@ class MemozController extends Controller
         $QuranModel = new Quran();
 
         $sess_user_id = $request->session()->get('sess_id');
-
+        $id_user = $request->segment(3);
         $listSurah  = $QuranModel->getSurah();
-        $summaryTargetMemo = $MemoModel->getSummaryTargetMemo($sess_user_id);
+
+        $id_user = empty($id_user)?$sess_user_id:$id_user;
+        $summaryTargetMemo = $MemoModel->getSummaryTargetMemo($id_user);
 
         // get progress
         if(!empty($summaryTargetMemo)){

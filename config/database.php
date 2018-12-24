@@ -55,7 +55,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'db_quranmemo',
+            'database'  => 'db_quranmemo_to',
             'username'  => 'root',
             'password'  => 'root',
             'charset'   => 'utf8',

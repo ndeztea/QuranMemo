@@ -43,7 +43,7 @@
 									<div class="stats-number">{{$countPoints}}</div>
 									<div class="stats-text">Points</div>
 								</li>
-								<li class="tabbed-nav-list-item">
+								<li class="tabbed-nav-list-item" onclick="QuranJS.callModal('memoz/summary/{{$detailProfile->id}}')">
 									<div class="stats-number">{{$countMemoz}}</div>
 									<div class="stats-text">Hafalan</div>
 								</li>
