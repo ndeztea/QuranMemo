@@ -74,7 +74,7 @@ Route::post('auth/forgetProcess', 'Auth\AuthController@forgetProcess');
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');
 
-Route::get('dashboard','DashboardController@index');
+Route::get('dashboard','EventController@index');
 Route::get('profile/top_user', 'ProfileController@top_user');
 Route::get('profile/detail/{id_user}', 'ProfileController@detail');
 
