@@ -101,7 +101,7 @@ class Memo extends Model
             $memoList = $memoList->orderby('in_progress','desc')->orderby('date_end','asc');
         }
 
-        if(session('id_user')){
+        if($this->sess_id){
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
@@ -134,7 +134,7 @@ class Memo extends Model
 
 
 
-        if(session('id_user')){
+        if($this->sess_id){
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
@@ -169,14 +169,14 @@ class Memo extends Model
         //}
 
         //echo $id_user.'-'.$filter;
-        //dd($memoList->toSql());
+
 
 
         $memoList = $memoList->orderby('updated_at','desc');
         //dd(DB::getQueryLog());
 
-        if(session('id_user')){
-          if($this->sess_id_class){
+        if($this->sess_id){
+          if($this->sess_id_class && empty($id_user_detail)){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
           if($id_user_detail){
@@ -202,7 +202,7 @@ class Memo extends Model
 
 
 
-        if(session('id_user')){
+        if($this->sess_id){
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
@@ -216,7 +216,7 @@ class Memo extends Model
         return $memoList[0]->count;
     }
 
-    public function getNeedCorrection($start=0,$limit=5,$id_user=''){
+    public function getNeedCorrection($start=0,$limit=5,$id_user_detail=''){
         $memoList = DB::table($this->table.' as memo')
                 ->select('memo.*','s.name_indonesia as surah','u.name','gender','u.avatar','u.dob')
                 ->join('users as u', 'u.id', '=', 'memo.id_user')
@@ -231,12 +231,12 @@ class Memo extends Model
 
 
 
-        if(session('id_user')){
-          if($this->sess_id_class){
+        if($this->sess_id){
+          if($this->sess_id_class && empty($id_user_detail)){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
-          if($id_user){
-            $memoList->where('u.id','=',$id_user);
+          if($id_user_detail){
+            $memoList->where('u.id','=',$id_user_detail);
           }
           if($this->sess_role!=1){
               $memoList->where('gender','=',$this->sess_gender);
@@ -259,7 +259,7 @@ class Memo extends Model
 
 
 
-        if(session('id_user')){
+        if($this->sess_id){
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
