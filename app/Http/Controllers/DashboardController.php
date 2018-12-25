@@ -31,6 +31,7 @@ class DashboardController extends Controller
      public function index(Request $request)
      {
          Carbon::setLocale('id');
+         
          $data['header_top_title'] = $data['header_title'] = 'Dashboard';
 
          $starting = $request->input('starting');
