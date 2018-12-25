@@ -31,161 +31,150 @@ class MemozController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(request $request)
-    {
-        Carbon::setLocale('id');
-       // $surah_start='',$ayat_range='',$id='',$idCorrection=''
-        $surah_start = $request->segment(3);
-        $ayat_range = $request->segment(4);
-        $id = $request->segment(5);
-        $idCorrection = $request->segment(6);
-        $filter = $request->input('filter');
+     public function index(request $request)
+     {
+        // $surah_start='',$ayat_range='',$id='',$idCorrection=''
+         $surah_start = $request->segment(3);
+         $ayat_range = $request->segment(4);
+         $id = $request->segment(5);
+         $idCorrection = $request->segment(6);
+         $filter = $request->input('filter');
 
-        $memoModel = new Memo;
-        $UsersModel = new Users;
+         $memoModel = new Memo;
+         $UsersModel = new Users;
 
-        $sess_id_user = session('sess_id');
-        $UsersModel = new Users;
-        $level = $UsersModel->checkLevel($sess_id_user);
-        // check subs
-        if($request->segment(2)!='correction'){
-            if($surah_start!=''){
-               if($level<1){
-                    if($surah_start < 78 && $surah_start !=1){
-                        if($surah_start=='23' && $ayat_range=='12-15'){
+         $sess_id_user = session('sess_id');
+         $UsersModel = new Users;
+         $level = $UsersModel->checkLevel($sess_id_user);
+         // check subs
+         if($request->segment(2)!='correction'){
+             if($surah_start!=''){
+                  if($level<1){
+                     if($surah_start < 78 && $surah_start !=1){
+                         if($surah_start=='23' && $ayat_range=='12-15'){
 
-                        }else{
-                            return redirect('dashboard?action=berlangganan');
-                        }
+                         }else{
+                             return redirect('dashboard?action=berlangganan');
+                         }
 
-                    }
-                }
-                // tahfidz online rule
-                /*$sess_id_class = session('sess_id_class');
-                $sess_role = session('sess_role');
+                     }
+                 }
+             }
+         }
 
-                if($surah_start != 1 && $surah_start !=89){
-                    if(($sess_id_class<=1 || empty($sess_id_class)) && ($sess_role==0 || $sess_role==3)){
-                        return redirect('dashboard?action=berlangganan');
-                    }
-                }*/
-            }
-        }
+         $messageErrors = $ayats = '';
+         // get data hafalan
+         $QuranModel = new Quran;
+         $ayat_start = '';
+         $ayat_end = '';
+         if(strpos($ayat_range,'-')!==false){
+             $ayatArr = explode('-', $ayat_range);
+             $ayats = $QuranModel->getRangeAyat($surah_start,$ayatArr[0],$surah_start,$ayatArr[1]);
+             $ayat_start = $ayatArr[0];
+             $ayat_end = $ayatArr[1];
+         }else{
+             $ayats = $QuranModel->getOneAyat($surah_start,$ayat_range);
+             $ayat_start = $ayat_range;
+         }
 
-        $messageErrors = $ayats = '';
-        // get data hafalan
-        $QuranModel = new Quran;
-        $ayat_start = '';
-        $ayat_end = '';
-        if(strpos($ayat_range,'-')!==false){
-            $ayatArr = explode('-', $ayat_range);
-            $ayats = $QuranModel->getRangeAyat($surah_start,$ayatArr[0],$surah_start,$ayatArr[1]);
-            $ayat_start = $ayatArr[0];
-            $ayat_end = $ayatArr[1];
-        }else{
-            $ayats = $QuranModel->getOneAyat($surah_start,$ayat_range);
-            $ayat_start = $ayat_range;
-        }
+         // get surah
+         $surahs = $QuranModel->getSurah();
 
-        // get surah
-        $surahs = $QuranModel->getSurah();
+         // data header
+         $data['header_top_title'] = $data['header_title'] = 'Menghafal';
+         $data['body_class'] = 'body-memo';
+         $data['on_memo'] = true;
 
-        // data header
-        $data['header_top_title'] = $data['header_title'] = 'Menghafal';
-        $data['body_class'] = 'body-memo';
-        $data['on_memo'] = true;
+         #filter 3 is murajaah page
+         $data['murajaahSection'] = false;
+         if($filter=='3'){
+             $data['header_top_title'] = $data['header_title'] = 'Muraja\'ah';
+             $data['murajaahSection'] = true;
+             $nextMurajaah  = $memoModel->getList($sess_id_user,$filter,0,1," AND memo.id!='$id'");
 
-        #filter 3 is murajaah page
-        $data['murajaahSection'] = false;
-        if($filter=='3'){
-            $data['header_top_title'] = $data['header_title'] = 'Muraja\'ah';
-            $data['murajaahSection'] = true;
-            $nextMurajaah  = $memoModel->getList($sess_id_user,$filter,0,1," AND memo.id!='$id'");
+             $data['linkNextMurajaah'] = '';
+             if(!empty($nextMurajaah)){
+                 $nextMurajaah = $nextMurajaah[0];
+                 $data['linkNextMurajaah'] = url("memoz/surah/$nextMurajaah->surah_start/$nextMurajaah->ayat_start-$nextMurajaah->ayat_end/$nextMurajaah->id?filter=3");
+             }
+         }
 
-            $data['linkNextMurajaah'] = '';
-            if(!empty($nextMurajaah)){
-                $nextMurajaah = $nextMurajaah[0];
-                $data['linkNextMurajaah'] = url("memoz/surah/$nextMurajaah->surah_start/$nextMurajaah->ayat_start-$nextMurajaah->ayat_end/$nextMurajaah->id?filter=3");
-            }
-        }
+         // data header
+         if(!empty($ayats)){
+             if(request()->segment(2)=='correction'){
+                 $data['header_title'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
+                 $data['header_description'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+                 // get detail memo
+                 $memoDetail = $memoModel->getDetail($id);
 
-        // data header
-        if(!empty($ayats)){
-            if(request()->segment(2)=='correction'){
-                $data['header_title'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
-                $data['header_description'] = 'Koreksi hafalan Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+                 $memoDetail->visitor++;
+                 // counter for opened correction
+                 $dataVisitor['id'] = $id;
+                 $dataVisitor['visitor'] = $memoDetail->visitor++;
+                 $memoModel->edit($dataVisitor);
+             }else{
+                 $data['header_title'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
+                 $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
+             }
 
-                // get detail memo
-                $memoDetail = $memoModel->getDetail($id);
-
-                $memoDetail->visitor++;
-                // counter for opened correction
-                $dataVisitor['id'] = $id;
-                $dataVisitor['visitor'] = $memoDetail->visitor++;
-                $memoModel->edit($dataVisitor);
-            }else{
-                $data['header_title'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range;
-                $data['header_description'] = 'Menghafal Surah '. $ayats[0]->surah_name.' : '.$ayat_range.' '.$ayats[0]->text_indo;
-            }
-
-        }
+         }
 
 
-        $memoDetail = new \stdClass();
-        $memoDetail->id = '';
-        $memoDetail->id_user = '';
-        if($id){
-            $memoDetail = $memoModel->getDetail($id);
+         $memoDetail = new \stdClass();
+         $memoDetail->id = '';
+         $memoDetail->id_user = '';
+         if($id){
+             // get detail memo
+             $memoDetail = $memoModel->getDetail($id);
+             // get detail user penghafal
+             $userMemoz = $UsersModel->getDetail($memoDetail->id_user)[0];
+             $SubscriptionsModel = new Subscriptions();
+             $data['listSubscriptions'] = $SubscriptionsModel->getActiveSubscriptions($memoDetail->id_user);
+             $data['userMemoz'] = $userMemoz;
+             $data['text_status'] = $this->memozStatus[$memoDetail->status];
+         }
 
-            // get detail user penghafal
-            $userMemoz = $UsersModel->getDetail($memoDetail->id_user)[0];
-            $SubscriptionsModel = new Subscriptions();
-            $data['listSubscriptions'] = $SubscriptionsModel->getActiveSubscriptions($memoDetail->id_user);
-            $data['userMemoz'] = $userMemoz;
-            $data['text_status'] = $this->memozStatus[$memoDetail->status];
-        }
+         // if correction there
+         if($idCorrection){
+             $MemoCorrection = new MemoCorrection;
+             $correctionDetail = $MemoCorrection->getDetail($idCorrection);
+             $correctionDetail->correction = json_decode($correctionDetail->correction);
+             $data['correctionDetail'] = $correctionDetail;
 
-        // if correction there
-        if($idCorrection){
-            $MemoCorrection = new MemoCorrection;
-            $correctionDetail = $MemoCorrection->getDetail($idCorrection);
-            $correctionDetail->correction = json_decode($correctionDetail->correction);
-            $data['correctionDetail'] = $correctionDetail;
+             // update already opened
+             if($memoDetail->id_user==$sess_id_user){
+                 $dataRecord['status'] = 1;
+                 $dataRecord['id'] = $idCorrection;
+                 $MemoCorrection->edit($dataRecord);
+             }
 
-            $userCorrector = $UsersModel->getDetail($correctionDetail->id_user)[0];
-            $data['userCorrector'] = $userCorrector;
-            // update already opened
-            if($memoDetail->id_user==$sess_id_user){
-                $dataRecord['status'] = 1;
-                $dataRecord['id'] = $idCorrection;
-                $MemoCorrection->edit($dataRecord);
-            }
+         }
 
-        }
+         $sess_id_user = session('sess_id');
+         $counterRecord = $memoModel->getCountRecordedUser($sess_id_user);
+         $level = $UsersModel->checkLevel($sess_id_user);
 
-        $sess_id_user = session('sess_id');
-        $counterRecord = $memoModel->getCountRecordedUser($sess_id_user);
-        $level = $UsersModel->checkLevel($sess_id_user);
 
-        //$data['fill_ayat_end'] = $fill_ayat_end;
-        $data['level'] = $level;
-        $data['levelArr'] = $this->levelArr;
-        $data['memoDetail'] = $memoDetail;
-        $data['counterRecord'] = $counterRecord;
-        $data['ayats'] = $ayats;
-        $data['idCorrection'] = $idCorrection;
-        $data['id'] = $id;
-        $data['surahs'] = $surahs;
-        $data['surah_start'] = $surah_start;
-        $data['ayat_start'] = $ayat_start;
-        $data['ayat_range'] = $ayat_range;
 
-        //$data['surah_end'] = $surah_end;
-        $data['ayat_end'] = $ayat_end;
-        $data['curr_page'] = 0;
+         //$data['fill_ayat_end'] = $fill_ayat_end;
+         $data['level'] = $level;
+         $data['levelArr'] = $this->levelArr;
+         $data['memoDetail'] = $memoDetail;
+         $data['counterRecord'] = $counterRecord;
+         $data['ayats'] = $ayats;
+         $data['idCorrection'] = $idCorrection;
+         $data['id'] = $id;
+         $data['surahs'] = $surahs;
+         $data['surah_start'] = $surah_start;
+         $data['ayat_start'] = $ayat_start;
+         $data['ayat_range'] = $ayat_range;
+         //$data['surah_end'] = $surah_end;
+         $data['ayat_end'] = $ayat_end;
+         $data['curr_page'] = 0;
 
-        return view('memoz',$data);
-    }
+         return view('memoz',$data);
+     }
+
 
 
     public function search(Request $request){

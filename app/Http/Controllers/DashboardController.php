@@ -43,6 +43,8 @@ class DashboardController extends Controller
          $SubscriptionsModel = new Subscriptions();
          $data['listSubscriptions'] = $SubscriptionsModel->getActiveSubscriptions(session('sess_id'));
 
+         $data['listClasses'] = $UsersModel->getClass();
+
          // get need correction memoz
          $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0);
          $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1);
