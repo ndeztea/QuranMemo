@@ -76,3 +76,23 @@ ul.tabbed-nav-list.list-unstyled {
 .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(2), .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(3), .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(5), .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(6) {
     margin-left: 0px;
 }
+li.tabbed-full.left {
+    text-align: left;
+}
+li.tabbed-full img{
+  width: 100%;
+  max-width: 300px
+}
+.action_footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: #ffe0054f;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #ffe44c;
+    text-align: center;
+}
+.action_footer button {
+    font-size: 19px;
+    width: 200px;
+}

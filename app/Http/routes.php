@@ -78,6 +78,11 @@ Route::get('dashboard','EventController@index');
 Route::get('profile/top_user', 'ProfileController@top_user');
 Route::get('profile/detail/{id_user}', 'ProfileController@detail');
 
+Route::get('event/kssm/', 'EventController@detail');
+Route::get('event', 'EventController@list');
+
+
+
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
     Route::get('content_learning','ContentController@learning');

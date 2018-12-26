@@ -38,7 +38,7 @@
     						<li class="tabbed-full">Kode Voucher <br> <strong>1234539</strong></li>
 							</ul>
 							<ul class="tabbed-nav-list list-unstyled">
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan'); QuranJS.callModal('auth/login') "><i class="mdi mdi-calendar-check"></i>KSSM</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="location.href='{{url('event/kssm')}}'"><i class="mdi mdi-calendar-check"></i>KSSM</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah'); QuranJS.callModal('auth/login') "><i class="mdi mdi-calendar"></i>Kajian<sup class="text-white label label-danger"></sup></a>  </li>
 						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah'); QuranJS.callModal('auth/login') "><i class="mdi mdi-cash-100"></i>Donasi<sup class="text-white label label-danger"></sup></a>  </li>
 						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah'); QuranJS.callModal('auth/login') "><i class="mdi mdi-book-open"></i>Baca Al-Qur'an<sup class="text-white label label-danger"></sup></a>  </li>

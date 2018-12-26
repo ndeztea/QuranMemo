@@ -33,5 +33,19 @@ class EventController extends Controller
         return view('events.event_index',$data);
     }
 
+    public function detail(Request $request)
+    {
+        Carbon::setLocale('id');
+        $data['header_top_title'] = $data['header_title'] = 'Event Detail';
+        $id_event = $request->segment(2);
+        if($id_event=='kssm'){
+          // get KSSM event
+        }else{
+          //get event based on idea
+        }
+
+        return view('events.event_detail',$data);
+    }
+
 
 }
