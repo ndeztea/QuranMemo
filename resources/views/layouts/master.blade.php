@@ -563,7 +563,11 @@
          // get subscription information
          $.getJSON('{{url('subscription/counter')}}',{},function(response){
            if(response.counter>0){
+                @if(session('sess_role')==1)
+                $('#cart').attr('onclick','location.href="{{url('subscription/listing?status=approval')}}"');
+                @else
                 $('#cart').attr('onclick','location.href="{{url('subscription/listing')}}"');
+                @endif
                 $('#cartCounter').html(response.counter);
                 $('#cartCounter').show();
                 $('#actionPromo').attr('onclick','');
@@ -576,7 +580,9 @@
                         $approvalLink = '?status=approval';
                     }
                 ?>
-                vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}{{$approvalLink}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
+                  @if(session('sess_role')!=1)
+                  vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}{{$approvalLink}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
+                  @endif
                 @endif
            }
         });
