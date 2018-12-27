@@ -1,4 +1,4 @@
-<?php 
+<?php
 use App\Libraries\Points;
 use App\Quran;
 
@@ -53,7 +53,7 @@ function getAge($data){
 function memoz_status_result($result){
 	if($result>0){
 		$star = '';
-		for ($i=0; $i < $result; $i++) { 
+		for ($i=0; $i < $result; $i++) {
 			$star .= '<i class="fa fa-star"></i>';
 		}
 		switch ($result) {
@@ -66,7 +66,7 @@ function memoz_status_result($result){
 			case 3:
 				$style = 'btn-success';
 				break;
-			
+
 		}
 		return '<button class="btn '.$style.'">'.$star.'</button>';
 	}
@@ -76,16 +76,19 @@ function memoz_status_result($result){
 function assignPoints($id_user,$action){
 	$objPoints = new Points();
     $objPoints->assignPoints($id_user,$action);
-        
+
 }
 
 function addPoints($id_user,$action,$point){
 	$objPoints = new Points();
     $objPoints->addPoints($id_user,$action,$point);
-        
+
 }
 
 function countLine($surah_start,$ayat_start,$ayat_end){
+	if($surah_start>=103){
+		return 3;
+	}
 	#get points by count ayat
 	$QuranModel = new Quran;
     $countLine = $QuranModel->getQuranLine($surah_start,$ayat_start,$ayat_end);
