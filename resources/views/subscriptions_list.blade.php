@@ -33,7 +33,7 @@
 						 <?php $a=1?>
 
 						 @foreach($orderList as $order)
-						 <?php 
+						 <?php
 						 	/*if($order->active==1){
 						 		if(strtotime($order->expired_date) < strtotime(now())){
 						 			$status = 'Expired';
@@ -73,31 +73,34 @@
 						 	</td>
 						 	<td>Rp. {{number_format($order->price,0,',','.')}}</td>
 						 	<td>
-						 		<label class="label label-{{$statusClass}}">{{$status}}</label><br>
-						 		<a href="{{url('subscription/cancel/'.$order->id)}}" style="font-size:20px"><label class="label label-danger">Cancel!</a>
-						 		<a href="javascript:void(0)" onclick="checkPurchase('subs_paket_{{strtolower(array_keys($level,$order->level)[0])}}')" style="font-size:20px"><label class="label label-danger">Cek Langganan</a>
-						 		
-						 		@if($status=='Pending' && session('sess_role')!=1)
-						 		<br>
-						 		<a href="{{url('subscription/confirmation/'.$order->id)}}" style="font-size:20px"><label class="label label-primary">Konfirmasi Bayar</label></a>
-						 		@endif
-
-						 		@if(session('sess_role')==1 && $status=='Approval')
-							 		<br>
-							 		Rp. {{number_format($order->paid,0,',','.')}}<br>
-							 		@if($order->file)
-							 			<a href="{{url($order->file)}}"><i class="fa fa-download"></i>Download</a><br>
-							 		@endif
-							 		@if(Request::input('status')=='active')
-							 			<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($order->expired_date)),false)?>
-										<span class='label label-primary'>{{$daysLeft}} hari </span>
-							 		@else
-							 			<a href="{{url('subscription/approve/'.$order->id)}}" style="font-size:20px"><label class="label label-primary">Approve!</a>
-							 			<a href="javascript:void(0)" onclick="notvalid('{{url('subscription/notvalid/'.$order->id)}}')" style="font-size:20px"><label class="label label-warning">Not Valid!</a>
-							 		@endif
-						 		@endif
+						 		<label class="label label-{{$statusClass}}">{{$status}}</label>
 						 	</td>
 						 </tr>
+						 <tr>
+							 	<td colspan="4">
+									<a href="{{url('subscription/cancel/'.$order->id)}}" style="font-size:20px"><label class="label label-danger">Cancel!</a>
+							 		<a href="javascript:void(0)" onclick="checkPurchase('subs_paket_{{strtolower(array_keys($level,$order->level)[0])}}')" style="font-size:20px"><label class="label label-danger">Cek Langganan</a>
+
+							 		@if($status=='Pending' && session('sess_role')!=1)
+							 		<a href="{{url('subscription/confirmation/'.$order->id)}}" style="font-size:20px"><label class="label label-primary">Konfirmasi Bayar</label></a>
+							 		@endif
+
+							 		@if(session('sess_role')==1 && $status=='Approval')
+										<br>
+								 		@if($order->file)
+								 			<a href="{{url($order->file)}}" style="font-size:20px"><label class="label label-primary"><i class="fa fa-download"></i>Pembayaran</label></a>
+								 		@endif
+								 		@if(Request::input('status')=='active')
+								 			<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($order->expired_date)),false)?>
+											<span class='label label-success'>Aktif {{$daysLeft}} hari  </span>&nbsp;
+								 		@else
+								 			<a href="{{url('subscription/approve/'.$order->id)}}" style="font-size:20px"><label class="label label-primary">Approve!</a>
+								 			<a href="javascript:void(0)" onclick="notvalid('{{url('subscription/notvalid/'.$order->id)}}')" style="font-size:20px"><label class="label label-warning">Not Valid!</a>
+								 		@endif
+										<span class='label label-success'>Rp. {{number_format($order->paid,0,',','.')}}</span>
+							 		@endif
+								<td>
+							 <tr>
 						 @endforeach
 						 </tbody>
 					 	</table>
@@ -124,6 +127,6 @@
 		})
 		$('.vex-dialog-prompt-input').val('Bismillah..Apakah  sudah di transfer? saya lihat konfirmasi sudah masuk tapi transferan belum masuk. Syukron');
 	}
-	
+
 </script>
 @endsection
