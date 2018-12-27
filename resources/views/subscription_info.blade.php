@@ -108,8 +108,8 @@
 	 			<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
 	        </ul>
 	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="javascript:void(0)" onclick="showPackageButton('Ihsan')">Pesan Sekarang!</a>
-	        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank" onclick="fbq('track', 'clickGratis');">Ingin Gratis? Japri ke <br><i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813
-		        </a>
+	        <!--a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank" onclick="fbq('track', 'clickGratis');">Ingin Gratis? Japri ke <br><i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813
+					</a-->
 	        <div class="IhsanButtons" style="display: none">
 		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/31')}}" onclick="fbq('track', 'clickPesanIhsan');">Infak Rp. 50.000/bln</a>
 		        <a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="{{url('subscription/order/ihsan/90')}}" onclick="fbq('track', 'clickPesanIhsan');">Infak Rp. 120.000/3bln</a>
