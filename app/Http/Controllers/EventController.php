@@ -33,6 +33,15 @@ class EventController extends Controller
         return view('events.event_index',$data);
     }
 
+    public function listing(Request $request)
+    {
+        Carbon::setLocale('id');
+        $data['header_top_title'] = $data['header_title'] = 'Jadwal Kajian';
+
+
+        return view('events.event_list',$data);
+    }
+
     public function detail(Request $request)
     {
         Carbon::setLocale('id');

@@ -79,7 +79,7 @@ Route::get('profile/top_user', 'ProfileController@top_user');
 Route::get('profile/detail/{id_user}', 'ProfileController@detail');
 
 Route::get('event/kssm/', 'EventController@detail');
-Route::get('event', 'EventController@list');
+Route::get('event', 'EventController@listing');
 
 
 
