@@ -14,7 +14,7 @@
 		                <span class="caret"></span>
 		              </button>
 		              <ul class="dropdown-menu choose-type" aria-labelledby="dropdownMenu2" style="width:100%;min-width: 300px">
-		                <li><a href="{{url('profile/top_user?type=mingguan')}}">Pekanan</a></li>
+		                <li><a href="{{url('profile/top_user?type=pekanan')}}">Pekanan</a></li>
 		                <li><a href="{{url('profile/top_user?type=bulanan')}}">Bulanan</a></li>
 		                <li><a href="{{url('profile/top_user?type=tahunan')}}">Tahunan </a></li>
 		                <li><a href="{{url('profile/top_user?type=seluruhnya')}}">Seluruhnya</a></li>
