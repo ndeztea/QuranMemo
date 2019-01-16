@@ -46,7 +46,7 @@
 <!-- end main main-content-wrap -->
 </div>
 <div class="action_footer">
-	<button class="btn btn-primary" onclick="QuranJS.callModal('event/absent/10')"><i class="mdi mdi-directions"></i> Arah Lokasi</button>
-	<button class="btn btn-success" onclick="QuranJS.callModal('event/absent/10')"><i class="mdi mdi-calendar-check"></i> Hadir</button>
+	<a class="btn btn-primary" href="https://www.google.com/maps?q=Al%20Kautsar%20Mosque%20bandung" target="_blank" ><i class="mdi mdi-directions"></i> Arah Lokasi</a>
+	<a class="btn btn-success" href="javascript:void()" onclick="QuranJS.callModal('event/join/10')"><i class="mdi mdi-calendar-check"></i> Hadir</a>
 </div>
 @endsection

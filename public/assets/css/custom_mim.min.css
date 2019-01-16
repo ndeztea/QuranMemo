@@ -94,7 +94,7 @@ li.tabbed-full img{
     padding: 10px;
     border-top: 1px solid #ffe44c;
     text-align: center;
-    z-index: 9999;
+    z-index: 10;
 }
 .action_footer button {
     font-size: 19px;

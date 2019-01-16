@@ -56,5 +56,28 @@ class EventController extends Controller
         return view('events.event_detail',$data);
     }
 
+    public function join(Request $request){
+      $id_event = $request->segment(3);
+      //  process the event here
+
+      $dataHTML['modal_title'] = 'Kode akses';
+      $dataHTML['modal_body'] = view('events.event_join_code',$dataHTML)->render();
+      $dataHTML['modal_footer'] = ' <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+
+      return response()->json($dataHTML);
+    }
+
+    public function join_code(Request $request){
+      $id_event = $request->segment(3);
+      //  process the event here
+      $dataHTML['modal_title'] = 'Kode akses';
+      $dataHTML['modal_body'] = view('events.event_join_code',$dataHTML)->render();
+      $dataHTML['modal_footer'] = ' <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+
+
+      return response()->json($dataHTML);
+    }
+
 
 }
