@@ -133,7 +133,7 @@ class Memo extends Model
         }
 
 
-
+        /*
         if($this->sess_id){
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
@@ -141,7 +141,7 @@ class Memo extends Model
           if($this->sess_role!=1){
               $memoList->where('gender','=',$this->sess_gender);
           }
-        }
+        }*/
 
         return $memoList->get()[0]->counter;
     }
