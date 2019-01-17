@@ -15,25 +15,25 @@
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
     					<ul class="tabbed-nav-list list-unstyled">
-    						<li class="tabbed-full"><img src="{{url('assets/images/flayer/mim.png')}}"></li>
+    						<li class="tabbed-full"><img src="{{url('events/'.$event->image)}}"></li>
 							</ul>
 							<ul class="tabbed-nav-list list-unstyled">
 								<li class="tabbed-full left event">
-									<i class="mdi mdi-pencil"></i> | Muslim Parenting
+									<i class="mdi mdi-pencil"></i> | {{$event->event}}
 								</li>
 								<li class="tabbed-full left event">
-									<i class="mdi mdi-account-circle"></i> | Ustadz Hasan Faruqi
+									<i class="mdi mdi-account-circle"></i> | {{$event->speaker}}
 								</li>
 								<li class="tabbed-full left event">
-									<i class="mdi mdi-calendar"></i> | Sabtu, 1 Jan 2019 16.00 - 18.00
+									<i class="mdi mdi-calendar"></i> | {{$event->date}} {{$event->time}}
 								</li>
 								<li class="tabbed-full left event">
-									<i class="mdi mdi-map"></i> | Masjid Al-Kautsar Bandung
+									<i class="mdi mdi-map"></i> | {{$event->location}}
 								</li>
 							</ul>
 							<ul class="tabbed-nav-list list-unstyled">
 	  						<li class="tabbed-full left">
-									<iframe style="width:100%;height:300px" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Masjid Al-Kautsar Bandung&amp;key=AIzaSyBI1Pm7HmAYs4MhYJgFO2MfjBMwOrYWtJE" allowfullscreen="">Memuat peta..</iframe>
+									<iframe style="width:100%;height:300px" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q={{$event->location}}&amp;key=AIzaSyBI1Pm7HmAYs4MhYJgFO2MfjBMwOrYWtJE" allowfullscreen="">Memuat peta..</iframe>
 								</li>
 							</ul>
 					</div>

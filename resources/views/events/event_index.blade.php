@@ -40,10 +40,10 @@
 							<ul class="tabbed-nav-list list-unstyled">
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="location.href='{{url('event/kssm')}}'"><i class="mdi mdi-calendar-check"></i>KSSM</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="location.href='{{url('event')}}'"><i class="mdi mdi-calendar"></i>Kajian<sup class="text-white label label-danger"></sup></a>  </li>
-						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah'); QuranJS.callModal('auth/login') "><i class="mdi mdi-cash-100"></i>Donasi<sup class="text-white label label-danger"></sup></a>  </li>
-						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah'); QuranJS.callModal('auth/login') "><i class="mdi mdi-book-open"></i>Baca Al-Qur'an<sup class="text-white label label-danger"></sup></a>  </li>
-						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan'); QuranJS.callModal('auth/login') "><i class="mdi mdi-library"></i>Tahfidz</a>  </li>
-						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan'); QuranJS.callModal('auth/login') "><i class="mdi mdi-video"></i>Media</a>  </li>
+						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:QuranJS.callModal('donasi')"><i class="mdi mdi-cash-100"></i>Donasi<sup class="text-white label label-danger"></sup></a>  </li>
+						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('mushaf')}}"><i class="mdi mdi-book-open"></i>Baca Al-Qur'an<sup class="text-white label label-danger"></sup></a>  </li>
+						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('memoz')}}"><i class="mdi mdi-library"></i>Tahfidz</a>  </li>
+						    <li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="https://www.youtube.com/channel/UCB3Jl0v2oXOqaeXfKI8T-cQ" target="_blank"><i class="mdi mdi-video"></i>Media</a>  </li>
 							</ul>
 							<br class="clearfix">
 

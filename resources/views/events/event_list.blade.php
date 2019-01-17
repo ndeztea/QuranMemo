@@ -15,10 +15,9 @@
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
     					<ul class="tabbed-nav-list list-unstyled two-row">
-    						<li class="tabbed-full"><img src="{{url('assets/images/flayer/mim.png')}}"></li>
-								<li class="tabbed-full"><img src="{{url('assets/images/flayer/mim.png')}}"></li>
-								<li class="tabbed-full"><img src="{{url('assets/images/flayer/mim.png')}}"></li>
-								<li class="tabbed-full"><img src="{{url('assets/images/flayer/mim.png')}}"></li>
+								<?php foreach ($events as $event): ?>
+									<li class="tabbed-full"><a href="{{url('event/'.$event->id)}}"><img src="{{url('events/'.$event->image)}}"></a></li>
+								<?php endforeach; ?>
 							</ul>
 					</div>
 				</div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
-use App\Notes;
+use App\Events;
 use App\Users;
 use App\Subscriptions;
 use App\Libraries\Points;
@@ -29,7 +29,6 @@ class EventController extends Controller
         Carbon::setLocale('id');
         $data['header_top_title'] = $data['header_title'] = 'Event Dashboard';
 
-
         return view('events.event_index',$data);
     }
 
@@ -37,7 +36,10 @@ class EventController extends Controller
     {
         Carbon::setLocale('id');
         $data['header_top_title'] = $data['header_title'] = 'Jadwal Kajian';
+        $eventsModel = new Events();
 
+        $events = $eventsModel->getList(true);
+        $data['events'] = $events;
 
         return view('events.event_list',$data);
     }
@@ -47,10 +49,20 @@ class EventController extends Controller
         Carbon::setLocale('id');
         $data['header_top_title'] = $data['header_title'] = 'Event Detail';
         $id_event = $request->segment(2);
+        $eventsModel = new Events();
+
         if($id_event=='kssm'){
           // get KSSM event
+          $event = $eventsModel->getList(true,true);
+
+          if(empty($event)){
+            return redirect('dashboard')->with('messageError','Tidak ada kajian TSSM');
+          }
+          $data['event'] = $event[0];
         }else{
           //get event based on idea
+          $event = $eventsModel->getDetail($id_event);
+          $data['event'] = $event;
         }
 
         return view('events.event_detail',$data);
