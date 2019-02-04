@@ -16,9 +16,9 @@
 							<div class="register-backdrop">
 								<div class="login-brand">
 									<a class="qm-brand" href="{{url('')}}">
-										<img class='hires qmc-logo'  src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-										<img class='hires qmc-title'  src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
-							        </a>
+										<img class='hires qmc-logo' style="width:150px" src="{{url('assets/images/logo-mim.png')}}" alt="Logo QuranMemo">
+										<img class='hires qmc-title' style="width:90px" src="{{url('assets/images/logo-text.png')}}" alt="Logo QuranMemo">
+								      </a>
 								</div>
 								<!-- /login-form -->
 								<!--div class="page-title clearfix">
@@ -28,8 +28,9 @@
 									<div class="register-intro pull-left">
 										<div class="clearfix">
 											<div class="promo-txt">
-												<h3>Ahlan Wasahlan Calon Santri {{config('app.app_name')}}</h3>
-												<p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p>
+												<br><br>
+												<h3>Ahlan Wasahlan di {{config('app.app_name')}}</h3>
+												<!--p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p-->
 											</div>
 										</div>
 									</div>

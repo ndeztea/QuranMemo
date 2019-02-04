@@ -28,7 +28,9 @@ class EventController extends Controller
     {
         Carbon::setLocale('id');
         $data['header_top_title'] = $data['header_title'] = 'Event Dashboard';
-
+        $UsersModel = new Users();
+        $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
+        $data['detailProfile'] = empty($data['detailProfile'])?null:$data['detailProfile'][0];
         return view('events.event_index',$data);
     }
 
@@ -70,8 +72,26 @@ class EventController extends Controller
 
     public function join(Request $request){
       $id_event = $request->segment(3);
+      $Events = new Events();
       //  process the event here
+      $id_user = session('sess_id');
+      if($id_user){
+        $myAttend = $Events->myAttend($id_event,$id_user);
 
+        if(empty($myAttend)){
+          $code_access = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 5)), 0, 5);
+          $dataSave['id_event'] = $id_event;
+          $dataSave['id_user'] = $id_user;
+          $dataSave['date'] = (string) Carbon::now();
+          $dataSave['code_access'] = strtoupper($code_access);
+
+          $Events->joinEvent($dataSave);
+        }else{
+          $code_access = $myAttend[0]->code_access;
+        }
+      }
+
+      $dataHTML['code_access'] = strtoupper($code_access);
       $dataHTML['modal_title'] = 'Kode akses';
       $dataHTML['modal_body'] = view('events.event_join_code',$dataHTML)->render();
       $dataHTML['modal_footer'] = ' <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';

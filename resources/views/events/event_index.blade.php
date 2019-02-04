@@ -19,10 +19,10 @@
 			  		<div class="dash-profile-detail-wrap">
 					  	<div class="dash-profile-detail">
 							<div class="dash-profile-img img-circle">
-								<img src="http://localhost/QuranMemo/public/assets/images/avatar/guest.png">
+								<img src="{{getAvatar($detailProfile)}}">
 							</div>
 							<div class="dash-profile-desc">
-								<h4 class="dash-profile-name">Tamu</h4>
+								<h4 class="dash-profile-name">{{session('sess_name')}}</h4>
 							</div>
 
 							<button class="btn btn-trigger-dashboard" type="button" data-toggle="collapse" data-target="#dashboard-items" aria-expanded="false" aria-controls="dashboard-items">
@@ -34,9 +34,9 @@
 					<!--/dash-profile-detail-wrap -->
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
-    					<ul class="tabbed-nav-list list-unstyled">
+    					<!--ul class="tabbed-nav-list list-unstyled">
     						<li class="tabbed-full">Kode Voucher <br> <strong>1234539</strong></li>
-							</ul>
+							</ul-->
 							<ul class="tabbed-nav-list list-unstyled">
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="location.href='{{url('event/kssm')}}'"><i class="mdi mdi-calendar-check"></i>KSSM</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="location.href='{{url('event')}}'"><i class="mdi mdi-calendar"></i>Kajian<sup class="text-white label label-danger"></sup></a>  </li>

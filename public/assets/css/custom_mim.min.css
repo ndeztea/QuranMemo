@@ -63,7 +63,7 @@ ul.two-row{
   color: #565656 !important;
 }
 .navmenu-header .navmenu-overlay {
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(102, 111, 75, 0.37);
   }
   li.tabbed-full{
     text-align: center;
@@ -110,4 +110,26 @@ ul.list-unstyled.two-row > li{
   width: 42.999%;
   float: left;
   margin: 10px;
+}
+.register-block .register-backdrop, .edit-profile-block .register-backdrop, .edit-profile-block .edit-profile-backdrop{
+  background-color: rgba(102, 111, 75, 0.75);
+}
+.navmenu-header{
+  height: 300px;
+}
+.qm-navbar .qm-brand .qmc-title{
+  width: 100px;
+}
+.modal.login-mode .modal-dialog{
+  background-color: rgba(4, 4, 4, 0.67);
+}
+
+.code_access{
+  text-align: center;
+    text-shadow:  1px 2px 3px #ded798;
+    border: 1px dashed #6b633e;
+    background-color: #353728;
+    color: #FFF;
+    padding: 10px 0px;
+    letter-spacing: 26px;
 }
