@@ -105,7 +105,7 @@ class Memo extends Model
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
-          if($this->sess_role!=1){
+          if($this->sess_role<1){
               $memoList->where('gender','=',$this->sess_gender);
           }
         }
@@ -138,7 +138,7 @@ class Memo extends Model
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
-          if($this->sess_role!=1){
+          if($this->sess_role<1){
               $memoList->where('gender','=',$this->sess_gender);
           }
         }*/
@@ -182,7 +182,7 @@ class Memo extends Model
           if($id_user_detail){
             $memoList = $memoList->where('u.id',$id_user_detail);
           }
-          if($this->sess_role!=1){
+          if($this->sess_role<1){
               $memoList->where('gender','=',$this->sess_gender);
           }
         }
@@ -206,7 +206,7 @@ class Memo extends Model
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
-          if($this->sess_role!=1){
+          if($this->sess_role<1){
               $memoList->where('gender','=',$this->sess_gender);
           }
         }
@@ -238,7 +238,7 @@ class Memo extends Model
           if($id_user_detail){
             $memoList->where('u.id','=',$id_user_detail);
           }
-          if($this->sess_role!=1){
+          if($this->sess_role<1){
               $memoList->where('gender','=',$this->sess_gender);
           }
         }
@@ -263,7 +263,7 @@ class Memo extends Model
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
           }
-          if($this->sess_role!=1){
+          if($this->sess_role<1){
               $memoList->where('gender','=',$this->sess_gender);
           }
         }
