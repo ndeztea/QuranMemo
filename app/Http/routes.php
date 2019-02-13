@@ -157,6 +157,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('event/join/{id_event}', 'EventController@join');
     Route::get('event/join_code/{id_event}', 'EventController@join_code');
 
+    Route::get('event/attend/{id}', 'EventController@attend');
+    Route::post('event/attend/{id}', 'EventController@attend');
+    Route::get('event/absent/{id}', 'EventController@absent');
+    Route::get('event/cancelAbsent/{id}', 'EventController@cancelAbsent');
+    Route::get('event/cancelAttend/{id}', 'EventController@cancelAttend');
+
 });
 
 Route::group(['middleware' => 'admin'], function () {
@@ -168,6 +174,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('profile/list', 'ProfileController@listing');
 
     Route::post('profile/updateClass', 'ProfileController@updateClass');
+
 
     #Route::get('dashboard/setClass', 'DashboardController@setClass');
 });

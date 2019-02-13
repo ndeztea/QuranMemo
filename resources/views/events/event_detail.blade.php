@@ -48,5 +48,8 @@
 <div class="action_footer">
 	<a class="btn btn-primary" href="https://www.google.com/maps?q=Al%20Kautsar%20Mosque%20bandung" target="_blank" ><i class="mdi mdi-directions"></i> Arah Lokasi</a>
 	<a class="btn btn-success" href="javascript:void()" onclick="QuranJS.callModal('{{ session('sess_id')?'event/join/'.$event->id:'auth/login'}}')"><i class="mdi mdi-calendar-check"></i> Hadir</a>
+	@if(session('sess_role')>=1)
+	<a class="btn btn-danger" href="{{url('event/attend/'.$event->id)}}"><i class="mdi mdi-format-list-checks"></i> Daftar Hadir</a>
+	@endif
 </div>
 @endsection

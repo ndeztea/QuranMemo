@@ -23,6 +23,7 @@
 							</div>
 							<div class="dash-profile-desc">
 								<h4 class="dash-profile-name">{{session('sess_name')}}</h4>
+								<small class="badge badge-primary">Points : {{$total_points}}</small>
 							</div>
 
 							<button class="btn btn-trigger-dashboard" type="button" data-toggle="collapse" data-target="#dashboard-items" aria-expanded="false" aria-controls="dashboard-items">

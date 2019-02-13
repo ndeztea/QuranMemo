@@ -14,11 +14,13 @@
 			  <div id="content" class="boxcontent">
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
-    					<ul class="tabbed-nav-list list-unstyled two-row">
-								<?php foreach ($events as $event): ?>
-									<li class="tabbed-full"><a href="{{url('event/'.$event->id)}}"><img src="{{url('events/'.$event->image)}}"></a></li>
-								<?php endforeach; ?>
-							</ul>
+  						<?php foreach ($events as $event): ?>
+								<ul class="tabbed-nav-list list-unstyled">
+	    						<li class="tabbed-full">
+										<a href="{{url('event/'.$event->id)}}"><img src="{{url('events/'.$event->image)}}"></a>
+									</li>
+								</ul>
+							<?php endforeach; ?>
 					</div>
 				</div>
 		</div>

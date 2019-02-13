@@ -29,8 +29,14 @@ class EventController extends Controller
         Carbon::setLocale('id');
         $data['header_top_title'] = $data['header_title'] = 'Event Dashboard';
         $UsersModel = new Users();
+
+        $objPoints = new Points();
+        $total_points = $objPoints->totalPoints(session('sess_id'),'all');
+        $data['total_points'] = $total_points;
+
         $data['detailProfile'] = $UsersModel->getDetail(session('sess_id'));
         $data['detailProfile'] = empty($data['detailProfile'])?null:$data['detailProfile'][0];
+        $data['total_points'] = $total_points;
         return view('events.event_index',$data);
     }
 
@@ -85,13 +91,35 @@ class EventController extends Controller
           $dataSave['date'] = (string) Carbon::now();
           $dataSave['code_access'] = strtoupper($code_access);
 
-          $Events->joinEvent($dataSave);
+          assignPoints(session('sess_id'),'events.attend');
+          $id = $Events->joinEvent($dataSave);
         }else{
           $code_access = $myAttend[0]->code_access;
+          $id = $myAttend[0]->id;
         }
       }
 
+      $eventDetail = $Events->getDetail($id_event);
+      $attendList = $Events->getAttend($id_event);
+      $sortID = $Events->sortAttend($id_event,$id);
+
+      $dataHTML['sortID'] = $sortID;
+      $dataHTML['attendList'] = $attendList;
+      $dataHTML['eventDetail'] = $eventDetail;
       $dataHTML['code_access'] = strtoupper($code_access);
+      $dataHTML['modal_title'] = 'Kode akses';
+      $dataHTML['modal_body'] = view('events.event_join_code',$dataHTML)->render();
+      $dataHTML['modal_footer'] = '<a class="btn btn-warning info" href="'.url('event/cancelAttend/'.$id_event.'?code_access='.$code_access).'">Batal Hadir</a>  <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button> ';
+
+
+
+      return response()->json($dataHTML);
+    }
+
+    public function join_code(Request $request){
+      $id_event = $request->segment(3);
+
+      //  process the event here
       $dataHTML['modal_title'] = 'Kode akses';
       $dataHTML['modal_body'] = view('events.event_join_code',$dataHTML)->render();
       $dataHTML['modal_footer'] = ' <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
@@ -100,15 +128,54 @@ class EventController extends Controller
       return response()->json($dataHTML);
     }
 
-    public function join_code(Request $request){
+    public function attend(Request $request){
+      $code_access = $request->input('code_access','');
+      $gender = $request->input('gender','');
+
       $id_event = $request->segment(3);
-      //  process the event here
-      $dataHTML['modal_title'] = 'Kode akses';
-      $dataHTML['modal_body'] = view('events.event_join_code',$dataHTML)->render();
-      $dataHTML['modal_footer'] = ' <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+      $eventsModel = new Events();
+
+      $event = $eventsModel->getDetail($id_event);
+      $data['event'] = $event;
+      $data['header_top_title'] = $data['header_title'] = 'Attend';
+      $data['attendList'] = $eventsModel->getAttend($id_event,$code_access,$gender);
+      $data['code_access'] = $code_access;
+      $data['gender'] = $gender;
 
 
-      return response()->json($dataHTML);
+      return view('events.event_attend',$data);
+    }
+
+    public function absent(Request $request){
+      $code_access = $request->segment(3);
+      $eventsModel = new Events();
+      $detailAttend = $eventsModel->attendDetail($code_access);
+
+      $eventsModel->attendEvent($code_access,1);
+
+      assignPoints($detailAttend->id_user,'events.absent');
+
+      return redirect('event/attend/'.$detailAttend->id_event)->with('messageSuccess', 'Absensi berhasil');
+    }
+
+    public function cancelAbsent(Request $request){
+      $code_access = $request->segment(3);
+      $eventsModel = new Events();
+      $detailAttend = $eventsModel->attendDetail($code_access);
+
+      $eventsModel->attendEvent($code_access,0);
+
+      return redirect('event/attend/'.$detailAttend->id_event);
+    }
+
+    public function cancelAttend(Request $request){
+      $code_access = $request->input('code_access','');
+      $eventsModel = new Events();
+      $detailAttend = $eventsModel->attendDetail($code_access);
+      $eventsModel->removeAttend($code_access);
+      assignPoints($detailAttend->id_user,'events.decline');
+
+      return redirect()->back();
     }
 
 

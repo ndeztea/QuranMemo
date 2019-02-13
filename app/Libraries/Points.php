@@ -1,10 +1,10 @@
-<?php 
+<?php
 namespace App\Libraries;
 
 use DB;
 use Carbon\Carbon;
 
-class Points 
+class Points
 {
 	var $roles;
 	var $table = 'user_points';
@@ -35,7 +35,11 @@ class Points
 				"read.quran"	=> 1,
 
 				"quiz.correct"	=> 4,
-				"quiz.wrong"	=> -2
+				"quiz.wrong"	=> -2,
+
+				"events.absent" => 5,
+				"events.decline" => -5,
+				"events.attend"	=> 2
 			);
 	}
 
@@ -48,7 +52,7 @@ class Points
         $dataRecord['action'] = $action;
         $dataRecord['points'] = $this->roles[$action];
         $dataRecord['id_user'] = $id;
-       
+
         return DB::table($this->table)->insertGetId($dataRecord);
 	}
 
@@ -58,12 +62,12 @@ class Points
         $dataRecord['action'] = $action;
         $dataRecord['points'] = $points;
         $dataRecord['id_user'] = $id;
-       
+
         return DB::table($this->table)->insertGetId($dataRecord);
 	}
 
 	public function totalPoints($id_user,$type='all'){
-		
+
 		switch ($type) {
 			case 'all':
 				$totalPoints =  DB::table($this->table)
@@ -71,12 +75,12 @@ class Points
 	                ->where('id_user',$id_user)
 	                ->first();
 				break;
-			
+
 			default:
 				# code...
 				break;
 		}
-		
+
 		return empty($totalPoints)?0:$totalPoints->points;
 	}
 }
