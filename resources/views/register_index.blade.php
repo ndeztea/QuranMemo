@@ -29,7 +29,7 @@
 										<div class="clearfix">
 											<div class="promo-txt">
 												<br><br>
-												<h3>Ahlan Wasahlan di {{config('app.app_name')}}</h3>
+												<!--h3>Ahlan Wasahlan di {{config('app.app_name')}}</h3-->
 												<!--p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p-->
 											</div>
 										</div>

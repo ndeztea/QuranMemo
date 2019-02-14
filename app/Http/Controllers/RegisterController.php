@@ -25,7 +25,7 @@ class RegisterController extends Controller
    public function index(){
         $data['header_top_title']  = $data['header_title'] = 'Daftar';
         $data['body_class'] = 'body-register';
-        
+
         return view('register_index',$data);
     }
 
@@ -39,7 +39,7 @@ class RegisterController extends Controller
         $validator = $this->validator($request->all());
 
         // validation
-        
+
         if ($validator->fails()) {
             $messageErrors = $validator->errors()->all();
             foreach($messageErrors as $error){
@@ -60,18 +60,18 @@ class RegisterController extends Controller
             }
 
             mail('quranmemo.id@gmail.com', 'Daftar '.config('app.app_name'), $contentsEmail);
-            
+
             $UsersModel = new Users();
             #$lastRecord = $UsersModel->checkEmail($request->all());
 
             $request->session()->put('sess_id', $lastId);
             $request->session()->put('sess_email', $request->input('email'));
             $request->session()->put('sess_name', $request->input('name'));
-            $request->session()->put('sess_role', 3);
+            $request->session()->put('sess_role', 0);
             $request->session()->put('sess_gender', $request->input('gender'));
             $request->session()->put('sess_id_class', 1);
 
-            return redirect('dashboard')->with('messageSuccess', 'Ahlah wa sahlan di '.config('app.app_name'));
+            return redirect('dashboard');//->with('messageSuccess', 'Ahlah wa sahlan di '.config('app.app_name'));
         }else{
             return redirect('register')->with('messageError', 'Email sudah di pakai, gunakan email yang lain')->withInput();
         }
@@ -84,8 +84,8 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {  
-        
+    {
+
         $errorMessages = [
             'name.required' => 'Nama harus diisi',
             'email.unique' => 'Email sudah dipakai, gunakan email yang lain',
@@ -100,7 +100,7 @@ class RegisterController extends Controller
             'hp.required' => 'No handphone harus diisi',
             'dob.required' => 'Tanggal lahir harus diisi',
         ];
-        
+
         return Validator::make($data, [
             'name' => 'required',
             'email' => 'required|email|unique:users',

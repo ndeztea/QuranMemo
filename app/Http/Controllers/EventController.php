@@ -73,6 +73,12 @@ class EventController extends Controller
           $data['event'] = $event;
         }
 
+        $id_user = session('sess_id');
+        $myAttend = $eventsModel->myAttend($id_event,$id_user);
+        $data['myAttend'] = $myAttend;
+
+        $mytime = Carbon::now();
+        $data['timenow'] = intVal($mytime->format('H'));
         return view('events.event_detail',$data);
     }
 
