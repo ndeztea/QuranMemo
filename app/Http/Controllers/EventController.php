@@ -74,7 +74,7 @@ class EventController extends Controller
         }
 
         $id_user = session('sess_id');
-        $myAttend = $eventsModel->myAttend($id_event,$id_user);
+        $myAttend = $eventsModel->myAttend($data['event']->id,$id_user);
         $data['myAttend'] = $myAttend;
 
         $mytime = Carbon::now();
