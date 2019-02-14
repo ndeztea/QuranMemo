@@ -427,7 +427,6 @@
 
             function hasScrolled() {
                 var st = $(this).scrollTop();
-
                 // Make sure they scroll more than delta
                 if(Math.abs(lastScrollTop - st) <= delta)
                     return;
@@ -437,10 +436,14 @@
                 if (st > lastScrollTop && st > navbarHeight){
                     // Scroll Down
                     $('.qm-nav').removeClass('navi-down').addClass('navi-up');
+                    $('.bookmark-sign').addClass('bookmark-sticky');
                 } else {
                     // Scroll Up
                     if(st + $(window).height() < $(document).height()) {
                         $('.qm-nav').removeClass('navi-up').addClass('navi-down');
+                    }
+                    if(st==0){
+                      $('.bookmark-sign').removeClass('bookmark-sticky');
                     }
                 }
 

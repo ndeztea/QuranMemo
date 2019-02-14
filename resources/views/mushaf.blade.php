@@ -2,13 +2,13 @@
 
 @section('title', 'Mushaf')
 
-<?php 
+<?php
 // predefined
-$prev_surah = ''; 
+$prev_surah = '';
 ?>
 @section('content')
-	
-	
+
+
 	@include('errors.errors_message')
 
 		<div class="main-content-wrap">
@@ -18,7 +18,7 @@ $prev_surah = '';
 				</div>
 				<!-- /backdrop -->
 				<div class="single-column">
-					
+
 
 					<div class="nav-top clearfix">
 						<div class="container-fluid">
@@ -26,18 +26,18 @@ $prev_surah = '';
 							  <i class="fa fa-search"></i> <span>Cari</span>
 							</button>
 							<a href="javascript:;" onclick="QuranJS.callModal('mushaf/juz')"  class="btn pull-right btn-juz hidden-xs hidden-lg hidden-md"  ><i class="fa fa-book"></i> <span>Juz</span></a>
-							
+
 							<div class="hidden-xs" id="surah-collapse">
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="select-surah">
 											<div class="modal-spacing">
 												<form class="form-inline" method="post" action="<?php echo url('mushaf/search')?>">
-												
+
 													<div class="form-group">
 														<select class="form-control" name="surah">
 															@foreach($surahs as $surah)
-																<?php 
+																<?php
 																	$selectedSurah = '';
 																	if(session('searchSurah')==$surah->id){
 																		$selectedSurah = 'selected';
@@ -64,13 +64,13 @@ $prev_surah = '';
 													</div> -->
 													<button class="btn btn-search"  onclick="fbq('track', 'clickCariSurah');QuranJS.changeSurah(this)" ><i class="fa fa-search"></i></button>
 													<a href="javascript:;"  class="btn btn-juz" onclick="fbq('track', 'clickJuz');QuranJS.callModal('mushaf/juz')" ><i class="fa fa-book"></i><span class="hidden-xs"> Juz</span></a>
-							
+
 											</form>
 </div>
 										</div>
 										<!-- /select-surah -->
 
-										
+
 
 									</div>
 									<div class="memoz_options">
@@ -84,14 +84,14 @@ $prev_surah = '';
 									</div>
 								</div>
 							</div>
-							
+
 							<button type="button" href="javascript:void()"  onclick="fbq('track', 'clickSettingMushaf');QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="btn btn-default btn-setting pull-right hidden-xs">
 								<i class="fa fa-cog"></i> <span class="sr-only">Setting</span>
-							</button> 
+							</button>
 							<button type="button" href="javascript:void()"  onclick="fbq('track', 'clickTerakhirBaca');QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="btn btn-default btn-bookmark pull-right btn-bookmark hidden-xs">
 								<i class="fa {{$bookmarked}}" id="bookmark"></i> <span class="hide-on-smalldesktop">Terakhir baca</span>
 							</button>
-							
+
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -99,14 +99,14 @@ $prev_surah = '';
 						<div class="nav-top clearfix detail_top">
 							<h4>{{$selected_surah}} ayat {{$ayat}}</h4>
 							<a href="javascript:void()"  class="btn btn-share-ayat" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{Request::url()}}')"><i class="fa fa-share-alt"></i> Bagikan</a>
-							@if(!empty(session('sess_id'))) 
+							@if(!empty(session('sess_id')))
 							<a href="{{url('memoz/surah/'.$id_surah.'/'.$ayat)}}" class="btn btn-share-ayat" onclick="fbq('track', 'clickHafalkanDariMushaf');">
-							 @else 
+							 @else
 							<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-share-ayat">
 							@endif
 							<i class="fa fa-plus"></i> Hafalkan</a>
 							<!--a href="javascript:void()" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
-							
+
 							<a href="{{url('mushaf/page/'.$ayats[0]->page)}}" class="btn btn-share-ayat" onclick="fbq('track', 'clickHalamanPenuh');"><i class="fa fa-arrow-right"></i> Halaman penuh</a>
 						</div>
 					@endif
@@ -126,6 +126,7 @@ $prev_surah = '';
 
 							<?php  $a=0;?>
 							<div class="mushaf_header clearfix">
+								<img src="{{url('assets/images/bookmark.png')}}" class="bookmark-sign" style="{{$bookmarked!='fa-bookmark'?'display:none':''}}">
 							@if(!isset($selected_surah))
 								@if($curr_page!=1)
 								<a class="btn btn-default pull-left" role="button" onclick="QuranJS.changePage(this)" data-value="{{$curr_page-1}}">
@@ -179,40 +180,40 @@ $prev_surah = '';
 								<div id="play_{{$a}}"></div>
 								<div id="surah_{{$ayat->surah}}_{{$ayat->ayat}}"></div>
 								<?php endif?>
-								<div class="{{$ayat->juz_header!=0?'juz_head ':''}}arabic arabic_{{$a}}"> 
-									
-									<span class="content_ayat" > 
+								<div class="{{$ayat->juz_header!=0?'juz_head ':''}}arabic arabic_{{$a}}">
+
+									<span class="content_ayat" >
 										<span class="ayat_arabic">
 											{{$ayat->text}}
 										</span>
 										<span class="no_ayat_arabic">
 											<!--<img src="{{url('assets/images/frame-ayat.png')}}" alt="ayat">-->
-											<span>{{arabicNum($ayat->ayat)}}</span> 
+											<span>{{arabicNum($ayat->ayat)}}</span>
 										</span>
-									</span> 
+									</span>
 								</div>
-								<div class="trans trans_{{$a}}"> 
-									<!--span class="no_ayat"></span--> 
-									<span class="content_ayat"> ( {{$ayat->ayat}} ) {{$ayat->text_indo}}</span> 
+								<div class="trans trans_{{$a}}">
+									<!--span class="no_ayat"></span-->
+									<span class="content_ayat"> ( {{$ayat->ayat}} ) {{$ayat->text_indo}}</span>
 								</div>
-								
+
 								<div class="action-footer">
 					                <div class="btn-group">
 					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;" onclick="fbq('track', 'clickPutar');"><i class="fa fa-play"></i> Putar</a>
 					                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
 					                  <a class="btn btn-share-ayat" href="javascript:void()" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
-					                  @if(!empty(session('sess_id'))) 
+					                  @if(!empty(session('sess_id')))
 										<a class="btn btn-play-ayat" href="{{url('memoz/surah/'.$ayat->surah.'/'.$ayat->ayat)}}" onclick="fbq('track', 'clickHafalkanDariMushaf');">
-										 @else 
+										 @else
 										<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-play-ayat">
 										@endif
 					                  <i class="fa fa-plus"></i> Hafalkan</a>
 					                  <a class="btn btn-share-ayat" href="javascript:void()" onclick="fbq('track', 'clickTafsir');QuranJS.callModal('{{'mushaf/tafsir/'.$ayat->surah.'/'.$ayat->ayat}}')"><i class="fa fa-book"></i> Tafsir</a>
-					                  
+
 					                </div>
 					            </div>
 
-								
+
 							</div>
 							<?php $prev_surah = $ayat->surah?>
 							<?php $a++;?>
@@ -262,7 +263,7 @@ $prev_surah = '';
 				<span>Toggle</span>
 			</button>
 			<ul class="c-circle-menu__items">
-				
+
 				<li class="c-circle-menu__item">
 					<button type="button" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')" aria-expanded="false" aria-controls="surah-collapse"  class="c-circle-menu__link menu__link5 player-hide">
 						<span class='menu-icon'><i class='fa fa-info'></i></span>
@@ -273,7 +274,7 @@ $prev_surah = '';
 						<span class='menu-caption'>Show Player</span>
 					</button-->
 				</li>
-				<!-- end-item -->	
+				<!-- end-item -->
 
 				<li class="c-circle-menu__item">
 					<button type="button" onclick="fbq('track', 'clickSettingMushaf');QuranJS.callModal('mushaf/config?mushaf_layout='+jQuery('.mushaf_layout').val()+'&automated_play='+jQuery('.automated_play').val()+'&footer_action='+jQuery('.footer_action').val()+'&muratal='+jQuery('.muratal').val()+'&tajwid='+jQuery('.tajwid').val())" class="c-circle-menu__link menu__link4">
@@ -281,12 +282,12 @@ $prev_surah = '';
 						<span class='menu-caption'>Setting</span>
 					</button>
 				</li>
-				<!-- end-item -->	
+				<!-- end-item -->
 
 				<li class="c-circle-menu__item">
-					<button type="button" onclick="fbq('track', 'clickTerakhirBaca');QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{$ayats[0]->surah_name}}','{{$_SERVER['REQUEST_URI']}}')" class="c-circle-menu__link menu__link3">
-						<span class='menu-icon'><i class='fa fa-bookmark-o'></i></span>
-						<span class='menu-caption'>Terakhir Baca</span>
+					<button type="button" onclick="fbq('track', 'clickTerakhirBaca');QuranJS.setBookmark('Halaman {{$curr_page}}, Juz {{$ayats[0]->juz}} Surah {{addslashes($ayats[0]->surah_name)}}','{{$_SERVER['REQUEST_URI']}}')" class="c-circle-menu__link menu__link3">
+						<span class='menu-icon'><i class='fa {{$bookmarked}}' id="bookmark"></i></span>
+						<span class='menu-caption' style="">Terakhir Baca</span>
 					</button>
 				</li>
 				<!-- end-item -->
@@ -297,8 +298,8 @@ $prev_surah = '';
 						<span class='menu-caption'>Juz</span>
 					</a>
 				</li>
-				<!-- end-item -->	
-															
+				<!-- end-item -->
+
 				<li class="c-circle-menu__item">
 					<button onclick="fbq('track', 'clickCari');QuranJS.showSearch();" type="button" aria-expanded="false" aria-controls="surah-collapse" class="c-circle-menu__link menu__link1">
 						<span class='menu-icon'><i class='fa fa-search'></i></span>
@@ -325,7 +326,7 @@ $prev_surah = '';
         });
 
 		var jQuerywindow = jQuery(window);
-		
+
 		//resizeDiv();
 
 		$('.dropdown-menu').on('click', function(event) {
@@ -348,7 +349,7 @@ $prev_surah = '';
 
 			if (vpw <= 767) {
 				$('#surah-collapse').removeClass('in');
-				
+
 			}
 			else {
 				$('#surah-collapse').addClass('in');
@@ -365,9 +366,9 @@ $prev_surah = '';
 			scroll = $(window).scrollTop();
 
 			if (scroll > stickyOffset) {
-					$(sticky).addClass('fixed'); 
-				}	
-			else 
+					$(sticky).addClass('fixed');
+				}
+			else
 				{
 					$(sticky).removeClass('fixed');
 					$('.navbar-nav li.active').removeClass('active');
@@ -380,7 +381,7 @@ $prev_surah = '';
 		// $('.btn-toggle-player').click(function() {
 		//     $('.quran_player').slideToggle( function() {
 		//     	$('.openThis').show();
-					
+
 		// 	});
 		//     return false;
 		// });

@@ -76,10 +76,10 @@ video::-webkit-media-controls-panel {
 .datepicker-dropdown.datepicker-orient-bottom:before{
     display: none;
 }
-.datepicker-days, 
-.datepicker-months, 
-.datepicker-years, 
-.datepicker-decades, 
+.datepicker-days,
+.datepicker-months,
+.datepicker-years,
+.datepicker-decades,
 .datepicker-centuries,
 .datepicker-days table,
 .datepicker-months table,
@@ -250,4 +250,8 @@ ul.choose-class li {
 
 .quiz_detail .answer>.ayat_section>.text>.content_ayat.text {
     text-align: left
+}
+
+.surah-nav .pagination > li > a{
+  padding: 5px 11px !important;
 }
