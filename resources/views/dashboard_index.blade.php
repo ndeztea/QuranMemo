@@ -76,7 +76,14 @@
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarhafalan');@if(!empty(session('sess_id'))) QuranJS.memozList() @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-library"></i>Hafalan</a>  </li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="fbq('track', 'clickDaftarMurajaah');@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/murajaah') @else QuranJS.callModal('auth/login') @endif" ><i class="mdi mdi-refresh"></i>Muraja'ah <sup class="text-white label label-danger">{{$counterMurajaah>0?$counterMurajaah:''}}</sup></a>  </li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('quiz/form') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-help-circle"></i> Quiz</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)"onclick="fbq('track', 'clickBaca');QuranJS.bookmarkModal('{{addslashes(@$_COOKIE['coo_mushaf_bookmark_title'])}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')"><i class="mdi mdi-book-open-variant"></i>Al-Qur'an</a></li>
+								<li class="tabbed-nav-list-item quran-menu">
+									<a class="tabbed-nav-link" href="javascript:void(0)"onclick="fbq('track', 'clickBaca');QuranJS.bookmarkModal('{{addslashes(@$_COOKIE['coo_mushaf_bookmark_title'])}}','{{@$_COOKIE['coo_mushaf_bookmark_url']}}')">
+										<i class="mdi mdi-book-open-variant"></i>Al-Qur'an
+										@if(@$_COOKIE['coo_mushaf_bookmark_title'])
+										<i class="mdi mdi-bookmark bookmark-sign-menu"></i>
+										@endif
+									</a>
+								</li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('content_learning')}}" ><i class="mdi mdi-image-filter-drama"></i> E-Learning</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('profile/top_user')}}" ><i class="mdi mdi-account-network"></i> Top Santri</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-target"></i> Pencapaian</a></li>

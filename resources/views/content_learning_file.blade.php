@@ -13,15 +13,15 @@
 			<div class="single-column">
 				<div class="container-fluid">
 					<div class="content-learning">
-						<ul  style="padding:0px !important">
+						<ul>
 				    	@foreach ($listFiles as $file)
-				    		<?php 
+				    		<?php
 					    		$link = "";
 					    		$filename = $file?pathinfo($file):'';
 					    		$urlFile = url('learning/'.$folder.'/'.$filename['filename'].'.'.$filename['extension']);
 					    		//$embed = '<video src="'.$urlFile.'"></video>';
 					    	?>
-						  <li style="text-align:center;border: 1px solid #7bb1ad;width: 45%;float:left !important;margin: 3px;background: #b6dcd9;padding: 5px"><a href="javascript:playVideo('{{ucfirst($filename['filename'])}}','{{$urlFile}}')">
+						  <li><a href="javascript:playVideo('{{ucfirst($filename['filename'])}}','{{$urlFile}}')">
 					        <i class="fa fa-file" style="font-size:34px"></i><br><small>{{ucfirst($filename['filename'])}}</small></a>
 					      </li>
 				      	@endforeach

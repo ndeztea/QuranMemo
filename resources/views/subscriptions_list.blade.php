@@ -11,7 +11,7 @@
 		<div class="main-content">
 			<div class="single-column">
 				<div class="container-fluid">
-					<div class="content-learning">
+					<div class="">
 					@if(session('sess_role')==1)
 					<div class="timeline-koreksi filter">
 					<ul class="nav nav-tabs" role="tablist">
