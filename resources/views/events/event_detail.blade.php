@@ -46,7 +46,7 @@
 <!-- end main main-content-wrap -->
 </div>
 <div class="action_footer">
-	<a class="btn btn-primary" href="https://www.google.com/maps?q=Al%20Kautsar%20Mosque%20bandung" target="_blank" ><i class="mdi mdi-directions"></i> Arah Lokasi</a>
+	<a class="btn btn-primary" href="https://www.google.com/maps?q={{$event->location}}" target="_blank" ><i class="mdi mdi-directions"></i> Arah Lokasi</a>
 	@if (($timenow >= 5 && $timenow < 15) || !empty($myAttend))
 	<a class="btn btn-success" href="javascript:void()" onclick="QuranJS.callModal('{{ session('sess_id')?'event/join/'.$event->id:'auth/login'}}')"><i class="mdi mdi-calendar-check"></i> Hadir</a>
 	@else
