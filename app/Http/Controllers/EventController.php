@@ -40,6 +40,44 @@ class EventController extends Controller
         return view('events.event_index',$data);
     }
 
+    public function form(Request $request){
+      $id_event = $request->segment(3);
+      $eventsModel = new Events();
+      $data['header_top_title'] = $data['header_title'] = 'Kajian Baru';
+      if($id_event){
+        $event = $eventsModel->getDetail($id_event);
+        $data['event'] = $event;
+        $data['header_top_title'] = $data['header_title'] = 'Edit Kajian';
+      }
+
+      return view('events.event_form',$data);
+    }
+
+    public function stored(Request $request){
+      $eventsModel = new Events();
+      $data['id'] = $request->input('id_event');
+      $data['event'] = $request->input('event');
+      $data['location'] = $request->input('location');
+      $data['speaker'] = $request->input('speaker');
+      $data['time'] = $request->input('time');
+      $data['is_special'] = $request->input('is_special');
+      $data['image'] = $request->file('image')->store('assets/images/event');
+      $data['quota'] = $request->input('quota');
+
+
+      if(empty($data['id_event'])){
+        $data['id'] = $eventsModel->store($data);
+      }else{
+        $eventsModel->edit($data);
+      }
+
+      return redirect('event/detail/'.$data['id'])->with('messageSuccess', 'Data berhasil disimpan');
+    }
+
+    public function remove(Request $request){
+      return redirect('dashboard')->with('messageSuccess', 'Data berhasil dihapus');
+    }
+
     public function listing(Request $request)
     {
         Carbon::setLocale('id');
@@ -78,7 +116,9 @@ class EventController extends Controller
         $data['myAttend'] = $myAttend;
 
         $mytime = Carbon::now();
+        $eventDate = new Carbon($data['event']->date);
         $data['timenow'] = intVal($mytime->format('H'));
+        $data['dateDiff'] = $eventDate->diff($mytime)->days;
         return view('events.event_detail',$data);
     }
 

@@ -47,10 +47,10 @@
 </div>
 <div class="action_footer">
 	<a class="btn btn-primary" href="https://www.google.com/maps?q={{$event->location}}" target="_blank" ><i class="mdi mdi-directions"></i> Arah Lokasi</a>
-	@if (($timenow >= 5 && $timenow < 15) || !empty($myAttend))
+	@if (($timenow >= 5 && $timenow < 15 && $dateDiff==0) || !empty($myAttend))
 	<a class="btn btn-success" href="javascript:void()" onclick="QuranJS.callModal('{{ session('sess_id')?'event/join/'.$event->id:'auth/login'}}')"><i class="mdi mdi-calendar-check"></i> Hadir</a>
 	@else
-	<a class="btn btn-success" href="javascript:void()" onclick="vex.dialog.alert('Pendaftaran dibuka pada jam 05.00 s.d 15.00');"><i class="mdi mdi-calendar-check"></i> Hadir</a>
+	<a class="btn btn-success" href="javascript:void()" onclick="vex.dialog.alert('Mohon maaf, pendaftaran Bukber KSSM hanya dilakukan pada H+0 jam 5:00 s/d jam 15:00');"><i class="mdi mdi-calendar-check"></i> Hadir</a>
 	@endif
 	@if(session('sess_role')>=1)
 	<a class="btn btn-danger" href="{{url('event/attend/'.$event->id)}}"><i class="mdi mdi-format-list-checks"></i> Daftar Hadir</a>

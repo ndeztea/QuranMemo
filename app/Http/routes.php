@@ -175,6 +175,11 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::post('profile/updateClass', 'ProfileController@updateClass');
 
+    Route::get('admin/event/form', 'EventController@form');
+    Route::get('admin/event/form/{id}', 'EventController@form');
+    Route::get('admin/event/delete/{id}', 'EventController@delete');
+    Route::post('admin/event/stored', 'EventController@stored');
+
 
     #Route::get('dashboard/setClass', 'DashboardController@setClass');
 });

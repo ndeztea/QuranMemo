@@ -133,3 +133,12 @@ ul.list-unstyled.two-row > li{
     padding: 10px 0px;
     letter-spacing: 26px;
 }
+.input-group {
+  float: unset;
+  margin: 10px 0px;
+  width: 100%;
+}
+.input-group input{
+  font-size: 20px;
+  height: 30px;
+}

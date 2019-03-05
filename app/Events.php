@@ -29,11 +29,17 @@ class Events extends Model
         return DB::table($this->table)->where('id',$data['id'])->update($data);
     }
 
+    public function remove($data){
+        return DB::table($this->table)->where('id',$data['id'])->update($data);
+    }
+
     public function getDetail($id){
         $quiz = DB::table($this->table)
                 ->select('*')->where('id',$id);
 
-        return $quiz->get()[0];
+        $detail = $quiz->get();
+
+        return !empty($detail)?$detail[0]:'';
     }
 
     public function getList($activeOnly=true,$isSpecial=false){

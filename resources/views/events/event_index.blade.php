@@ -35,9 +35,11 @@
 					<!--/dash-profile-detail-wrap -->
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
-    					<!--ul class="tabbed-nav-list list-unstyled">
-    						<li class="tabbed-full">Kode Voucher <br> <strong>1234539</strong></li>
-							</ul-->
+							@if(session('sess_role')==1)
+    					<ul class="tabbed-nav-list list-unstyled">
+    						<li class="tabbed-full"><a href="{{url('admin/event/form')}}" class="btn btn-primary" style="width:100%">Buat Jadwal Kajian</a></li>
+							</ul>
+							@endif
 							<ul class="tabbed-nav-list list-unstyled">
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="location.href='{{url('event/kssm')}}'"><i class="mdi mdi-calendar-check"></i>KSSM</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="javascript:void(0)" onclick="location.href='{{url('event')}}'"><i class="mdi mdi-calendar"></i>Kajian<sup class="text-white label label-danger"></sup></a>  </li>
