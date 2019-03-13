@@ -25,7 +25,10 @@
 									<i class="mdi mdi-account-circle"></i> | {{$event->speaker}}
 								</li>
 								<li class="tabbed-full left event">
-									<i class="mdi mdi-calendar"></i> | {{$event->date}} {{$event->time}}
+									<i class="mdi mdi-calendar"></i> | {{$event->date}}
+								</li>
+								<li class="tabbed-full left event">
+									<i class="mdi mdi-clock"></i> | {{$event->time}}
 								</li>
 								<li class="tabbed-full left event">
 									<i class="mdi mdi-map"></i> | {{$event->location}}

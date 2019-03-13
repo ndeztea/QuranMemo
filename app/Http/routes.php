@@ -163,7 +163,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('event/cancelAbsent/{id}', 'EventController@cancelAbsent');
     Route::get('event/cancelAttend/{id}', 'EventController@cancelAttend');
 
+    Route::get('admin/event/form', 'EventController@form');
+    Route::get('admin/event/form/{id}', 'EventController@form');
+    Route::get('admin/event/remove/{id}', 'EventController@remove');
+    Route::post('admin/event/stored', 'EventController@stored');
+
 });
+
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('subscription/approve/{id}', 'SubscriptionsController@approve');
@@ -175,10 +181,7 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::post('profile/updateClass', 'ProfileController@updateClass');
 
-    Route::get('admin/event/form', 'EventController@form');
-    Route::get('admin/event/form/{id}', 'EventController@form');
-    Route::get('admin/event/delete/{id}', 'EventController@delete');
-    Route::post('admin/event/stored', 'EventController@stored');
+
 
 
     #Route::get('dashboard/setClass', 'DashboardController@setClass');

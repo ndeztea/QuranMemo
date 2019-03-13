@@ -35,7 +35,7 @@
 					<!--/dash-profile-detail-wrap -->
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
-							@if(session('sess_role')==1)
+							@if (session('sess_role')>0)
     					<ul class="tabbed-nav-list list-unstyled">
     						<li class="tabbed-full"><a href="{{url('admin/event/form')}}" class="btn btn-primary" style="width:100%">Buat Jadwal Kajian</a></li>
 							</ul>

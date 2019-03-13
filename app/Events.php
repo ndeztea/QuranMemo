@@ -21,7 +21,7 @@ class Events extends Model
 
     protected $fillable = array('event','location','speaker','date','time','image','is_special');
 
-    public function store($data){
+    public function stored($data){
         return DB::table($this->table)->insertGetId($data);
     }
 
@@ -29,8 +29,8 @@ class Events extends Model
         return DB::table($this->table)->where('id',$data['id'])->update($data);
     }
 
-    public function remove($data){
-        return DB::table($this->table)->where('id',$data['id'])->update($data);
+    public function remove($id){
+        return DB::table($this->table)->where('id',$id)->delete();
     }
 
     public function getDetail($id){
@@ -42,16 +42,17 @@ class Events extends Model
         return !empty($detail)?$detail[0]:'';
     }
 
-    public function getList($activeOnly=true,$isSpecial=false){
+    public function getList($type=''){
         $quiz = DB::table($this->table)
                 ->select('*');
-        if($activeOnly==true){
-          $date_now = \Carbon\Carbon::now()->format('Y-m-d');
-          $quiz->whereRaw('date>='.$date_now);
-        }
-        if($isSpecial==true){
+
+        if($type=='kssm'){
           $quiz->where('is_special',1);
+        }elseif($type=='upcoming'){
+          $date_now = \Carbon\Carbon::now()->format('Y-m-d');
+          $quiz->whereRaw("date>='$date_now'");
         }
+
         return $quiz->get();
     }
 
@@ -82,6 +83,11 @@ class Events extends Model
 
     public function removeAttend($code_access){
       return DB::table('events_join')->where('code_access',$code_access)->delete();
+    }
+
+    function resetSpecialExcept($id){
+      $data['is_special'] = 0;
+      return DB::table('events')->where('id','!=',$id)->update($data);
     }
 
     public function myAttend($id_event,$id_user){

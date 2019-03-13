@@ -41,7 +41,7 @@ class EventController extends Controller
     }
 
     public function form(Request $request){
-      $id_event = $request->segment(3);
+      $id_event = $request->segment(4);
       $eventsModel = new Events();
       $data['header_top_title'] = $data['header_title'] = 'Kajian Baru';
       if($id_event){
@@ -60,33 +60,48 @@ class EventController extends Controller
       $data['location'] = $request->input('location');
       $data['speaker'] = $request->input('speaker');
       $data['time'] = $request->input('time');
+      $data['date'] = $request->input('date');
       $data['is_special'] = $request->input('is_special');
-      $data['image'] = $request->file('image')->store('assets/images/event');
       $data['quota'] = $request->input('quota');
 
+      if(!empty($request->file('image'))){
+        $fileName = uniqid('event').'.jpg';
+        $path = $request->file('image')->move(public_path('events'), $fileName);
+        $data['image'] = $fileName;
+      }
 
-      if(empty($data['id_event'])){
-        $data['id'] = $eventsModel->store($data);
+
+
+      if(empty($data['id'])){
+        $data['id'] = $eventsModel->stored($data);
       }else{
         $eventsModel->edit($data);
       }
 
-      return redirect('event/detail/'.$data['id'])->with('messageSuccess', 'Data berhasil disimpan');
+      if($data['is_special']){
+        $eventsModel->resetSpecialExcept($data['id']);
+      }
+
+      return redirect('event/'.$data['id'])->with('messageSuccess', 'Data berhasil disimpan');
     }
 
     public function remove(Request $request){
+      $id_event = $request->segment(4);
+      $eventsModel = new Events();
+
+      $eventsModel->remove($id_event);
       return redirect('dashboard')->with('messageSuccess', 'Data berhasil dihapus');
     }
 
     public function listing(Request $request)
     {
         Carbon::setLocale('id');
+        $type = $request->input('type','upcoming');
         $data['header_top_title'] = $data['header_title'] = 'Jadwal Kajian';
         $eventsModel = new Events();
-
-        $events = $eventsModel->getList(true);
+        $events = $eventsModel->getList($type);
         $data['events'] = $events;
-
+        $data['type'] = $type;
         return view('events.event_list',$data);
     }
 
@@ -99,7 +114,7 @@ class EventController extends Controller
 
         if($id_event=='kssm'){
           // get KSSM event
-          $event = $eventsModel->getList(true,true);
+          $event = $eventsModel->getList('kssm');
 
           if(empty($event)){
             return redirect('dashboard')->with('messageError','Tidak ada kajian TSSM');
@@ -115,10 +130,14 @@ class EventController extends Controller
         $myAttend = $eventsModel->myAttend($data['event']->id,$id_user);
         $data['myAttend'] = $myAttend;
 
+        Carbon::setLocale('id');
         $mytime = Carbon::now();
         $eventDate = new Carbon($data['event']->date);
+        $data['event']->date = $eventDate->format('l, d F Y');
+        $data['event'] = $data['event'];
+
         $data['timenow'] = intVal($mytime->format('H'));
-        $data['dateDiff'] = $eventDate->diff($mytime)->days;
+        $data['dateDiff'] = $mytime->format('Y-m-d')==$data['event']->date?0:1;
         return view('events.event_detail',$data);
     }
 
