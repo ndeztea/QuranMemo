@@ -210,7 +210,7 @@
         </script>
         @endif
     </head>
-    <body class="@if(isset($body_class)) {{$body_class}} @endif">
+    <body class="@if(isset($body_class)) {{$body_class}} @endif" style="overflow:hidden">
 
         <!--div id='splash-body' class='splash-body'>
             <div id='splash' class='splash-inner'>
@@ -338,6 +338,10 @@
                 <i class="mdi mdi-bell-ring"></i>
                 <sup class="text-white label label-danger">{{session('sess_counter_correction')>0?session('sess_counter_correction'):''}}</sup>
             </button>
+            <button type="button" class="navbar-toggle search"
+            onclick="fbq('track', 'clickCari');QuranJS.showSearchForm();">
+                <i class="mdi mdi-magnify"></i>
+            </button>
         </div>
 
         <div class="wrap">
@@ -394,7 +398,7 @@
           $(document).ready(function(){
                 $('#preloader').hide();
                 QuranJS.redHightlight();
-
+                $('body').attr('style','');
                 $('.selectpicker').select2();
 
 
@@ -532,6 +536,7 @@
 
          $(window).bind('beforeunload', function(){
            $('#preloader').show();
+           $('body').attr('style','overlay:hidden');
          });
         /* if('{{Request::segment(3)}}'=='593'){
              QuranJS.callModal('buku');

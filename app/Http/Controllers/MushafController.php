@@ -42,21 +42,21 @@ class MushafController extends Controller
 
                 $sql = "UPDATE quran SET text_arabic=".$arr3_3." WHERE surah=".@$arr3[4]." AND ayat=".@$arr3[5].";";
                 echo $sql.'<br>';
-            }     
+            }
         }
-           
+
         $directory = '/Volumes/Jobs/www/QuranNote/tafsir_syihab.json';
         $contents = File::get($directory);
         $arrArabics = json_decode($contents);
-        
+
         foreach ($arrArabics as $arrArabic) {
              foreach ($arrArabic as $arabic) {
-                $sql = "INSERT tafsir(`surah`,`ayat`,`tafsir`,`type`) 
+                $sql = "INSERT tafsir(`surah`,`ayat`,`tafsir`,`type`)
                     VALUES('".$arabic->surah."','".$arabic->ayah."','".addslashes($arabic->verse)."','al-misbah');";
-                echo $sql.'<br>';    
-       
+                echo $sql.'<br>';
+
              }
-            
+
         }
         die();*/
         // get pages mushaf quran
@@ -75,14 +75,14 @@ class MushafController extends Controller
 
         // showing paging
         if($page<=4){
-            $pages = array_slice($pages, 0, 4); 
+            $pages = array_slice($pages, 0, 4);
         }elseif($page>4 && $page<=592){
             $pages = array_slice($pages, $page - 3,5);
         }else{
             $pages = array_slice($pages, $page-3 , 5);
         }
 
-        // send to view 
+        // send to view
         $data['surahs'] = $surahs;
         $data['ayats'] = $ayats;
         $data['pages'] = $pages;
@@ -121,7 +121,7 @@ class MushafController extends Controller
         assignPoints(session('sess_id'),'read.quran');
         // show view template
        return view('mushaf',$data);
-        
+
     }
 
     public function surah(Request $request,$id_surah,$ayat){
@@ -133,7 +133,7 @@ class MushafController extends Controller
         }else{
             $ayats = $QuranModel->getOneAyat($id_surah,$ayat);
         }
-        
+
 
         if($id_surah=='' || $ayat=='' || empty($ayats)){
             return redirect('mushaf')->with('messageError', 'Data tidak ada!');
@@ -147,7 +147,7 @@ class MushafController extends Controller
 
         $data['body_class'] = 'body-mushaf';
 
-        
+
         $data['surahs'] = $surahs;
         $data['selected_surah'] = $surah[0]->surah_name;
         $data['ayats'] = $ayats;
@@ -171,7 +171,7 @@ class MushafController extends Controller
         if($id_surah==17){
             assignPoints(session('sess_id'),'read.alkahfi');
         }
-        
+
         // for REST API output
         $restAPI = $request->input('restAPI');
         if($restAPI=='JSON'){
@@ -182,7 +182,7 @@ class MushafController extends Controller
             return json_encode($output);
         }
 
-        
+
         return view('mushaf',$data);
     }
 
@@ -199,7 +199,7 @@ class MushafController extends Controller
     }
 
     /**
-    * search surah 
+    * search surah
     *
     */
     public function search(Request $request){
@@ -255,6 +255,18 @@ class MushafController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function search_form(){
+        $QuranModel = new Quran;
+        $surahs = $QuranModel->getSurah();
+
+        $data['surahs'] = $surahs;
+        $dataHTML['modal_title'] = 'Cari Ayat';
+        $dataHTML['modal_body'] = view('mushaf_search_form',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
+    }
+
     /**
     * select juz
     *
@@ -262,7 +274,7 @@ class MushafController extends Controller
     public function muqodimah(Request $request,$surah){
         $QuranModel = new Quran;
         $surahs = $QuranModel->getSurah($surah);
-        
+
         $data['muqodimah'] = $surahs[0]->muqodimah;
         $dataHTML['modal_title'] = 'Muqodimah Surah '.$surahs[0]->surah_name;
         $dataHTML['modal_body'] = view('mushaf_muqodimah',$data)->render();
@@ -319,14 +331,14 @@ class MushafController extends Controller
 
         // showing paging
         if($page<=4){
-            $pages = array_slice($pages, 0, 4); 
+            $pages = array_slice($pages, 0, 4);
         }elseif($page>4 && $page<=592){
             $pages = array_slice($pages, $page - 3,5);
         }else{
             $pages = array_slice($pages, $page-3 , 5);
         }
 
-        // send to view 
+        // send to view
         $data['surahs'] = $surahs;
         $data['ayats'] = $ayats;
         $data['pages'] = $pages;
@@ -355,7 +367,7 @@ class MushafController extends Controller
             $output['surah'] = $ayats[0]->surah_name;
             return json_encode($output);
         }
-        
+
         // show view template
        return view('mushaf',$data);
     }
@@ -382,7 +394,7 @@ class MushafController extends Controller
                 $pages = round($count_search / 10);
                 $data['pages'] = $pages;
                 $data['page'] = $page;
-            }  
+            }
 
             // list surah
             $surahs = $QuranModel->surahSearchKeyword($keyword,$surah);
@@ -413,7 +425,7 @@ class MushafController extends Controller
             return redirect('mushaf')->with('messageError', 'Data tidak ditemukan!');
         }
         $data['keyword'] = $keyword;
-        
+
         $data['pages'] = $pages;
         $data['header_top_title'] = $data['header_title'] = 'Cari Kata \''.$keyword.'\'';
         $data['header_description'] = $header_description_add.'Cari kata dalam Al-Quran dan Tafsir Al-Quran';
@@ -444,7 +456,7 @@ class MushafController extends Controller
                     echo 'No.HP :'.$dataUsers[0]->hp;
                     echo '<hr>';
                 }
-                
+
             }
             fclose($handle);
         }
@@ -479,20 +491,20 @@ class MushafController extends Controller
                      $arrTmpFile[] = $file[8];
                 }
             }
-          
+
         }
-        
+
         foreach($arrTmpFile as $tmpFile){
             $a++;
             echo '$surahMuratal['.$a.'] = "'.$tmpFile.'";';
             echo '<br>';
         }*/
-        
+
     }
 
     public function config(){
         $sess_id_user = session('sess_id');
-        
+
         $mushaf_layout = $_GET['mushaf_layout'];
         $automated_play = $_GET['automated_play'];
         $footer_action = $_GET['footer_action'];
@@ -513,7 +525,7 @@ class MushafController extends Controller
         $dataHTML['modal_title'] = 'Setting Mushaf';
         $dataHTML['modal_body'] = view('mushaf_config',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
-        
+
         return response()->json($dataHTML);
     }
 
@@ -537,7 +549,7 @@ class MushafController extends Controller
             header('Access-Control-Allow-Origin: *');
             $output['tafsir'] = $tafsir;
             $output['tafsir_header'] = $surah[0]->surah_name.' : '.$ayat;
-            
+
             return json_encode($output);
         }
 
@@ -546,7 +558,7 @@ class MushafController extends Controller
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
-        
+
     }
-    
+
 }

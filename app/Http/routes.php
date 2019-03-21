@@ -40,6 +40,8 @@ Route::post('mushaf/search', 'MushafController@search');
 Route::get('mushaf/search', 'MushafController@search');
 Route::get('mushaf/searchKeyword', 'MushafController@searchKeyword');
 Route::get('mushaf/config', 'MushafController@config');
+Route::get('mushaf/search_form', 'MushafController@search_form');
+
 Route::get('mushaf/muqodimah', 'MushafController@muqodimah');
 Route::get('mushaf/muqodimah/{idsurah}', 'MushafController@muqodimah');
 Route::get('mushaf/set_muratal/{qori}', 'MushafController@set_muratal');

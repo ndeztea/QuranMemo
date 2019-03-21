@@ -1,0 +1,56 @@
+.bookmark-sign{
+  width: 47px;
+  position: absolute;
+  right: 3px;
+  top: -2px;
+  z-index: 9;
+}
+.bookmark-sign.bookmark-sticky {
+    position: fixed;
+}
+.bookmark-sign-menu {
+    position: absolute;
+    color: #e26767;
+    top: -5px;
+    right: -8px;
+    font-size: 30px;
+}
+.tabbed-nav-list-item{
+  position: relative;
+}
+.tabbed-nav-list-item .label-danger{
+  position: absolute;
+}
+.tabbed-nav-list-item .label-danger {
+    position: absolute;
+    top: 0px;
+    padding: 6px;
+    font-size: 12px;
+    right: 0px;
+    border-radius: 1px 8px 0px 3px;
+    background: #f35d62;
+}
+.content-learning ul{
+  padding: 0px !important
+}
+.content-learning ul li {
+    border: 1px solid #dafcf8;
+    width: 100%;
+    float: left !important;
+    margin: 3px;
+    background-image: linear-gradient(to right, #b6f5ee,#fff);
+    padding: 11px;
+}
+.content-learning .i.fa.fa-folder{
+  font-size: 26px;
+}
+button.navbar-toggle.search{
+  font-size: 23px;
+    position: absolute;
+    right: 65px;
+    top: -8px;
+    color: #FFF;
+}
+#preloader{
+  height: 5000px !important;
+}
