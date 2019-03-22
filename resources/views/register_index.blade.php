@@ -28,8 +28,9 @@
 									<div class="register-intro pull-left">
 										<div class="clearfix">
 											<div class="promo-txt">
-												<h3>Ahlan Wasahlan Calon Santri {{config('app.app_name')}}</h3>
-												<p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p>
+												<!--h3>Ahlan Wasahlan Calon Santri {{config('app.app_name')}}</h3>
+												<p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p-->
+												<br>
 											</div>
 										</div>
 									</div>
