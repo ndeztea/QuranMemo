@@ -55,7 +55,9 @@ class DashboardController extends Controller
          $data['starting'] = $starting;
          $data['body_class'] = 'dashboard';
          $data['level'] = $this->level;
-         $data['classDetail'] = $UsersModel->getClassDetail( session('sess_id_class'));
+         if(session('sess_id_class')){
+           $data['classDetail'] = $UsersModel->getClassDetail( session('sess_id_class'));
+         }
          if(!empty($data['detailProfile'])){
              $data['detailProfile'] = $data['detailProfile'][0];
              if(empty($data['detailProfile']->dob) || $data['detailProfile']->dob=='0000-00-00'){
