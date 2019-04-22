@@ -76,8 +76,12 @@ Route::post('auth/forgetProcess', 'Auth\AuthController@forgetProcess');
 Route::get('register', 'RegisterController@index');
 Route::post('register/process', 'RegisterController@process');
 
-Route::get('dashboard','DashboardController@index');
+Route::get('dashboard','CategoryController@index');
 Route::get('profile/top_user', 'ProfileController@top_user');
+
+Route::get('category', 'CategoryController@index');
+Route::get('category/{id}', 'CategoryController@categoryContent');
+Route::get('content/{id}', 'CategoryController@detailContent');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {

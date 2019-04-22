@@ -290,6 +290,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
     );
 
     public static $classMap = array (
+        'App\\Categories' => __DIR__ . '/../..' . '/app/Categories.php',
         'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Content' => __DIR__ . '/../..' . '/app/Content.php',
@@ -298,6 +299,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
         'App\\Http\\Controllers\\Auth\\PasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordController.php',
         'App\\Http\\Controllers\\BookmarksController' => __DIR__ . '/../..' . '/app/Http/Controllers/BookmarksController.php',
+        'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\ContentController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',

@@ -15,9 +15,11 @@
 						<div class="register-block">
 							<div class="register-backdrop">
 								<div class="login-brand">
+									<br>
 									<a class="qm-brand" href="{{url('')}}">
-										<img class='hires qmc-logo'  src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-										<img class='hires qmc-title'  src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+										<!--img class='hires qmc-logo'  src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
+										<img class='hires qmc-title'  src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo"-->
+										<img class='hires qmc-title'  src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo">
 							        </a>
 								</div>
 								<!-- /login-form -->
@@ -27,11 +29,11 @@
 								<div class="register_form clearfix">
 									<div class="register-intro pull-left">
 										<div class="clearfix">
-											<div class="promo-txt">
-												<!--h3>Ahlan Wasahlan Calon Santri {{config('app.app_name')}}</h3>
-												<p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p-->
+											<!--div class="promo-txt">
+												<h3>Ahlan Wasahlan Calon Santri {{config('app.app_name')}}</h3>
+												<p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an</p>
 												<br>
-											</div>
+											</div-->
 										</div>
 									</div>
 									<form class="form-horizontal pull-right" action="{{url('register/process')}}" method="post">

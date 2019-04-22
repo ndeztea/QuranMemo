@@ -1,7 +1,9 @@
 <div class="login-brand">
 	<a class="qm-brand" href="{{url('')}}">
-            <img class='hires qmc-logo'  src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-            <img class='hires qmc-title'  src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+		<br>
+            <!--img class='hires qmc-logo'  src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
+            <img class='hires qmc-title'  src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo"-->
+						<img class='hires qmc-title'  src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo">
         </a>
 </div>
 <div class="login_form">

@@ -34,6 +34,9 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/images/ico/favicon-32x32.png')}}">
         <link rel="icon" type="image/png" sizes="96x96" href="{{url('assets/images/ico/favicon-96x96.png')}}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/ico/favicon-16x16.png')}}">
+        <link href="https://fonts.googleapis.com/css?family=Germania+One|Roboto+Condensed" rel="stylesheet">
+
+
         <link rel="manifest" href="{{url('assets/images/ico/manifest.json')}}">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="{{url('assets/images/ico/ms-icon-144x144.png')}}">
@@ -49,6 +52,7 @@
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Scheherazade:400,700&subset=latin,arabic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/jasny-bootstrap.min.css')}}">
@@ -138,9 +142,8 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="{{url('assets/css/vendors/vex.css')}}" />
         <link rel="stylesheet" href="{{url('assets/css/vendors/vex-theme-os.css')}}" />
-        <link rel="stylesheet" href="{{url('assets/css/vendors/font-awesome.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/ionicons.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/vendors/materialdesignicons.min.css')}}">
+        <link rel="stylesheet" href="//cdn.materialdesignicons.com/3.5.95/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-theme.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/animate.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
@@ -148,7 +151,7 @@
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
 
         <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/custom_wasathia.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom_md.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
@@ -229,7 +232,7 @@
         <!-- pre loader-->
         <div id="preloader">
             <div class="loading">
-            <img src="{{url('assets/images/loading.svg')}}" alt="loading" width="50"/><br><br>
+            <img src="{{url('assets/images/loading2.svg')}}" alt="loading" width="50"/><br><br>
         <!--span>Mohon tunggu...</span=-->
       </div>
         </div>
@@ -257,8 +260,8 @@
                 <div class="navmenu-header">
                     <div class="navmenu-overlay">
                         <a class="qm-brand" href="{{url('')}}">
-                            <img class='hires qmc-logo' src="{{url('assets/images/qmc-logo.png')}}" alt="Logo QuranMemo">
-                            <img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo">
+                            <img class='hires qmc-logo' src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo">
+                            <!--img class='hires qmc-title' src="{{url('assets/images/qmc-title.png')}}" alt="Logo QuranMemo"-->
                         </a>
 
                         <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
@@ -324,7 +327,7 @@
 
         <div class="qm-nav navbar navbar-default navbar-fixed-top navi-down">
             <!--a class="navbar-brand" href="{{url('')}}"><img class='hires' width="200" src="{{url('assets/images/main_logo.png')}}" alt="Logo QuranMemo"></a-->
-            @if(Request::segment(1)!='dashboard')
+            @if($header_title!='Dashboard')
             <a class="navbar-brand nav-back"  href="javascript:void(0)" onclick="history.back()"><i class="mdi mdi-arrow-left"></i></a>
             @endif
             <a class="navbar-brand title"  href="{{url('')}}"><h1>{{$header_top_title}}</h1></a>
@@ -333,7 +336,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <button type="button" class="navbar-toggle notif"data-target="#qm-navbar" data-canvas="body"
+            <!--button type="button" class="navbar-toggle notif"data-target="#qm-navbar" data-canvas="body"
             onclick="fbq('track', 'clickKoreksi');@if(!empty(session('sess_id'))) QuranJS.correctionList('','') @else QuranJS.callModal('auth/login') @endif">
                 <i class="mdi mdi-bell-ring"></i>
                 <sup class="text-white label label-danger">{{session('sess_counter_correction')>0?session('sess_counter_correction'):''}}</sup>
@@ -341,7 +344,7 @@
             <button type="button" class="navbar-toggle search"
             onclick="fbq('track', 'clickCari');QuranJS.showSearchForm();">
                 <i class="mdi mdi-magnify"></i>
-            </button>
+            </button-->
         </div>
 
         <div class="wrap">

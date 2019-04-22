@@ -4,7 +4,7 @@ return [
 
     'mp3_url' => 'https://quranmemo.com/public/',
     //'mp3_url' => 'http://192.168.100.4/QuranNote/public/',
-    'app_name' => 'Rumah Wasathia',
+    'app_name' => 'Daily Muamalah',
     'app_email' => 'quranmemo.id@gmail.com',
     /*
     |--------------------------------------------------------------------------
