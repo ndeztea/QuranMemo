@@ -23,8 +23,10 @@ class RegisterController extends Controller
      * @return \Illuminate\Http\Response
      */
    public function index(){
+        $UsersModel = new Users;
         $data['header_top_title']  = $data['header_title'] = 'Daftar';
         $data['body_class'] = 'body-register';
+        $data['listClasses'] = $UsersModel->getClass();
 
         return view('register_index',$data);
     }
@@ -69,7 +71,7 @@ class RegisterController extends Controller
             $request->session()->put('sess_name', $request->input('name'));
             $request->session()->put('sess_role', 0);
             $request->session()->put('sess_gender', $request->input('gender'));
-            $request->session()->put('sess_id_class', 1);
+            $request->session()->put('sess_id_class', $request->input('id_class'));
 
             return redirect('dashboard')->with('messageSuccess', 'Ahlah wa sahlan di '.config('app.app_name'));
         }else{
@@ -87,6 +89,7 @@ class RegisterController extends Controller
     {
 
         $errorMessages = [
+            'id_class.required' => 'Kelas harus diisi',
             'name.required' => 'Nama harus diisi',
             'email.unique' => 'Email sudah dipakai, gunakan email yang lain',
             'email.email' => 'Email yang di masukan salah',
@@ -102,6 +105,7 @@ class RegisterController extends Controller
         ];
 
         return Validator::make($data, [
+            'id_class' => 'required',
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
@@ -128,6 +132,7 @@ class RegisterController extends Controller
         //print_r($data);
         //die();
         $dataRecord = array(
+            'id_class' => $data['id_class'],
             'name' => $data['name'],
             'gender' => $data['gender'],
             'email' => $data['email'],

@@ -26,7 +26,7 @@
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
 						<div class="ads-middle" style="background-color: #54b7ac;">
-							@if(session('sess_id'))
+							@if(session('sess_role')>0)
 							<div class="dropdown">
 								<button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;min-width: 300px;background: none;border: 0px;font-weight: bold;">
 									{{empty($classDetail->class)?'Pilih Kelas  Halaqah':$classDetail->class}}
@@ -93,10 +93,7 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-				  <div class="ads-middle" style="background: #fbd47c;color: #000;;font-size: 20px" target="_blank">
-						<!--a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a-->
-						<a href="javascript:QuranJS.callModal('buku')">Fitur-fitur terbaru <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a>
-					</div>
+
 				  <div class="ads-middle" style="height: 110px">
 				  	<strong>Hafalan pilihan</strong>
 				  	<div id="recommendation-memoz">

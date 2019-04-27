@@ -36,6 +36,15 @@
 									<form class="form-horizontal pull-right" action="{{url('register/process')}}" method="post">
 										<input type="hidden" name="device_id" id="register_device_id" value=""/>
 										<div class="form-group">
+											<label for="gender" class="control-label sr-only">Pilih Kelas</label>
+											<select class="form-control" name="id_class" id="id_class">
+												<option value="">-Pilih Kelas-</option>
+												@foreach($listClasses as $class)
+												<option value="{{$class->id}}" {{$class->id==old('id_class')?'selected':''}}>{{$class->class}}</option>
+												@endforeach
+											</select>
+										</div>
+										<div class="form-group">
 											<label for="name" class="control-label sr-only">Full Name</label>
 											<input type="name" class="form-control" name="name" id="name" aria-label="Full Name" placeholder="Nama Lengkap Antum" value="{{ old('name')}}"/>
 										</div>
