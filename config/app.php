@@ -4,7 +4,7 @@ return [
 
     'mp3_url' => 'https://quranmemo.com/public/',
     //'mp3_url' => 'http://192.168.100.4/QuranNote/public/',
-    'app_name' => 'Tahfidz Syifa Budi',
+    'app_name' => 'Mahad Tahfidz Tafaqquh',
     'app_email' => 'quranmemo.id@gmail.com',
     /*
     |--------------------------------------------------------------------------

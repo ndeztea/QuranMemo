@@ -25,7 +25,7 @@
 
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
-						<div class="ads-middle" style="background-color: #54b7ac;">
+						<div class="ads-middle">
 							@if(session('sess_role')>0)
 							<div class="dropdown">
 								<button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;min-width: 300px;background: none;border: 0px;font-weight: bold;">
