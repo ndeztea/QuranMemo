@@ -58,7 +58,7 @@ button.navbar-toggle.search{
 
 /*COLORING*/
 .tabbed-nav{background:0 0!important;padding:0 0 10px}
-.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item i{font-size:33px}.tabbed-nav .tabbed-nav-list{padding-left:0}.dash-profile-detail .btn-trigger-dashboard{display:none}.dash-profile{background-image:linear-gradient(#6db9b0,#fff)}.dash-profile-detail,.dash-profile-detail-wrap{background:0 0!important}.dash-profile-detail{padding:0}.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(6){margin-left:0}.dash-profile-detail .dash-profile-img{width:70px;height:120px}.dash-profile-img.img-circle img{width:70px;height:70px}.navbar-default{background:#000000}button.navbar-toggle.notif{font-size:23px;position:absolute;right:45px;top:-8px;color:#FFF}.notif .label-danger{font-size:10px;position:absolute;top:10px}ul.choose-class li{width:100%}.record-right-top{position:absolute;right:10px;top:-8px;font-size:63px}.correction-detail{border-bottom:2px solid #ddd;padding:5px;background-color:#e0e8ef}.correction-detail img{width:70px;height:70px;float:left}.correction-detail p{background:#feffda;padding:5px;border-radius:11px;font-size:12px;margin:0}span.status_memoz_result{float:right}
+.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item i{font-size:33px}.tabbed-nav .tabbed-nav-list{padding-left:0}.dash-profile-detail .btn-trigger-dashboard{display:none}.dash-profile{background-image:linear-gradient(#6db9b0,#fff)}.dash-profile-detail,.dash-profile-detail-wrap{background:0 0!important}.dash-profile-detail{padding:0}.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(6){margin-left:0}.dash-profile-detail .dash-profile-img{width:70px;height:120px}.dash-profile-img.img-circle img{width:70px;height:70px}.navbar-default{background:#3D8DBC}button.navbar-toggle.notif{font-size:23px;position:absolute;right:45px;top:-8px;color:#FFF}.notif .label-danger{font-size:10px;position:absolute;top:10px}ul.choose-class li{width:100%}.record-right-top{position:absolute;right:10px;top:-8px;font-size:63px}.correction-detail{border-bottom:2px solid #ddd;padding:5px;background-color:#e0e8ef}.correction-detail img{width:70px;height:70px;float:left}.correction-detail p{background:#feffda;padding:5px;border-radius:11px;font-size:12px;margin:0}span.status_memoz_result{float:right}
 #preloader{top:-50px;background-color:rgba(255, 255, 255, 0.9)!important}
 .navbar-default .navbar-brand.title {
     font-size: 23px;
@@ -96,14 +96,14 @@ div#content.boxcontent {
     background-image: rgba(0, 151, 138, 0.41);
     width: 100%;
     height: 430px;
-    background-image: linear-gradient(#333, #FFF);
+    background-image: linear-gradient(#3D8DBC, #FFF);
     box-shadow: 0px 11px 19px 3px #efefef;
 }
 
 
 .navmenu-default .navmenu-nav > .active > a, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a, .navmenu-default .navmenu-nav > .active > a:hover, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:hover, .navmenu-default .navmenu-nav > .active > a:focus, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:focus {
     color: #fff !important;
-    background: #000000 !important;
+    background: #3D8DBC !important;
 }
 .navmenu-default .navmenu-nav > li > a, .navbar-default .navbar-offcanvas .navmenu-nav > li > a{
   color: #565656 !important;
@@ -111,7 +111,7 @@ div#content.boxcontent {
 .navmenu-header .navmenu-overlay {
     background: rgba(255, 255, 255, 0.83);
   }
-  li.tabbed-full{
+  li.tabbed-full{F
     text-align: center;
   }
   li.tabbed-full strong {
@@ -162,7 +162,7 @@ ul.list-unstyled.two-row > li{
   width: 100px;
 }
 .modal.login-mode .modal-dialog{
-  background-color: rgba(95, 95, 95, 0.81);
+  background-color: rgba(19, 19, 19, 0.21);
 }
 
 .code_access{
@@ -214,20 +214,20 @@ a{
   border-color: #3c3c3c;
 }
 .filter .nav-tabs > li.active > a, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a, .filter .nav-tabs > li.active > a:focus, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:focus, .filter .nav-tabs > li.active > a:hover, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:hover{
-  color: #ea0000;
+  color: #3D8DBC;
 }
 .filter .nav-tabs > li.active > a, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a, .filter .nav-tabs > li.active > a:focus, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:focus, .filter .nav-tabs > li.active > a:hover, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:hover{
-  border-color: #ea0000;
+  border-color: #3D8DBC;
 }
 .select-surah .form-inline .btn, .qm-navbar .navbar-nav .navbar-form .btn-search, .btn-green{
-  background-color:  #bb0000;
+  background-color:  #9da3b6;
 }
 .modal .modal-header h4, .memoz-check-link{
-  color: #bb0000;
+  color: #9da3b6;
 }
 .btn-green-small{
-  background-color: #ea0000 !important;
-  border: solid 1px #ea0000 !important;
+  background-color: #3D8DBC !important;
+  border: solid 1px #3D8DBC !important;
 }
 .modal .modal-header .close{
   color: #000;
@@ -236,4 +236,13 @@ a{
   border: 1px dashed #ececec;
   background: #525252;
   color: #ffffff;
+}
+.ads-middle{
+  background-color: #9da3b6;
+}
+.login-brand{
+  margin: 0 auto 22px;
+}
+.qm-navbar .qm-brand{
+  margin-bottom: 50px;
 }

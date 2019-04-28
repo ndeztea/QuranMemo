@@ -28,7 +28,7 @@
 									<div class="register-intro pull-left">
 										<div class="clearfix">
 											<div class="promo-txt">
-												<h3>Ahlan Wasahlan Alumni {{config('app.app_name')}}</h3>
+												<h3>Ahlan Wasahlan {{config('app.app_name')}}</h3>
 												<p>Semakin Terdepan Membantu Para Penghafal Al-Qur'an dalam Muraja'ah dan Ziyadah</p>
 											</div>
 										</div>
