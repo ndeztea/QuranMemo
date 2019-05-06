@@ -183,6 +183,7 @@ class Users extends Model
     }
 
     public function checkLevel($id_user){
+       return 2;
         $now = (string) Carbon::now();
 
         $level = DB::table('user_subscriptions')
