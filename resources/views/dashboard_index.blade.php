@@ -93,9 +93,12 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-				  <div class="ads-middle" style="background: #fbd47c;color: #000;;font-size: 20px" target="_blank">
+					<div class="ads-middle" style="color: #2d2d2d;font-size: 20px;background: transparent url('https://png.pngtree.com/element_our/md/20180428/md_5ae458c89759c.png');background-size: 189px;background-position-y: -58px;border-top: 5px #e2fffc;" target="_blank">
 						<!--a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a-->
-						<a href="javascript:QuranJS.callModal('buku')">Fitur-fitur terbaru <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a>
+						<a href="javascript:;" style="text-shadow: 0px 1px 1px #e0e0e0;background-color: #f2fffffc;padding: 4px;">Marhaban ya Ramadhan<sup class="text-white label label-danger" style="font-size: 10px"></sup></a><br>
+						<div style="
+						    font-size: 15px;
+						">Semoga kita bisa makin membumikan Al-Qur'an di bulan yang mulia.</div>
 					</div>
 				  <div class="ads-middle" style="height: 110px">
 				  	<strong>Hafalan pilihan</strong>
