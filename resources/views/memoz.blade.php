@@ -2,7 +2,9 @@
 
 @section('title', 'Menghafal Al-Quran')
 
-<?php $prev_surah = $tempCountSpaces = $countSpaces = '';  ?>
+<?php $prev_surah = $tempCountSpaces = $countSpaces = '';
+$level=2;
+?>
 @section('content')
 @include('errors.errors_message')
 <div class="main-content-wrap">
