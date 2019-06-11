@@ -130,7 +130,7 @@ class ContentController extends Controller
 
         $dataHTML['modal_class'] = '';
         //$dataHTML['modal_title'] = 'Berbagi Buku';
-        $dataHTML['modal_title'] = 'Fitur-fitur terbaru';
+        $dataHTML['modal_title'] = 'Program Buku';
         $dataHTML['modal_body'] = view('content_buku')->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 

@@ -1,3 +1,6 @@
+<?php
+header('location:https://quranmemo.com');
+?>
 <!DOCTYPE html>
 <html>
     <head>

@@ -93,12 +93,14 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-					<div class="ads-middle" style="color: #2d2d2d;font-size: 20px;background: transparent url('https://png.pngtree.com/element_our/md/20180428/md_5ae458c89759c.png');background-size: 189px;background-position-y: -58px;border-top: 5px #e2fffc;" target="_blank">
+					<div class="ads-middle" style="color: #2d2d2d;font-size: 20px;background: #feffff url(http://www.transparentpng.com/thumb/ketupat/3qEPSX-ketupat-transparent-image.png);background-size: 41px;background-position-y: 8px;border-top: 5px #e2fffc;background-repeat: no-repeat;padding-left: 40px;" target="_blank">
 						<!--a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a-->
-						<a href="javascript:;" style="text-shadow: 0px 1px 1px #e0e0e0;background-color: #f2fffffc;padding: 4px;">Marhaban ya Ramadhan<sup class="text-white label label-danger" style="font-size: 10px"></sup></a><br>
+						<span style="text-shadow: 0px 1px 1px #292929;background-color: rgb(50, 165, 93);padding: 3px;color: #FFF !important;border-radius: 1px 16px;text-align: center;/* width: 121px; */"><a href="javascript:QuranJS.callModal('buku')" style="
+    color: #FFF;
+">~ Eid Mubarak ~<sup class="text-white label label-danger" style="font-size: 10px"></sup></a></span><br>
 						<div style="
 						    font-size: 15px;
-						">Semoga kita bisa makin membumikan Al-Qur'an di bulan yang mulia.</div>
+						"><strong>Taqabbalallahu minna wa minkum</strong><br>Semoga semua amal ibadah kita di bulan Ramadhan di terima oleh Allah Ta'ala <strong></strong></div>
 					</div>
 				  <div class="ads-middle" style="height: 110px">
 				  	<strong>Hafalan pilihan</strong>
