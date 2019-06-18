@@ -230,6 +230,7 @@
         <div id="preloader">
             <div class="loading">
             <img src="{{url('assets/images/loading.svg')}}" alt="loading" width="50"/><br><br>
+            <div class="dzikir-loading" style="color:#2b2b2b">Sambil nunggu baca dzikir yuk : <div class="dzikir" style="font-size:24px">Subhanallah Walhamdulillah Lailahaillalah Allahuakbar...</div></div>
         <!--span>Mohon tunggu...</span=-->
       </div>
         </div>
