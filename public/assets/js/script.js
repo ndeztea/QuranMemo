@@ -241,7 +241,7 @@ var QuranJS = {
             ayat_end: $("#ayat_end").val(),
             date_start: $("#date_start").val(),
             date_end: $("#date_end").val(),
-            note: $("#note").val()
+            note: $("#note_memoz").val()
         }, function(a) {
             vex.dialog.alert(a.message), $(".label-loading").hide(), $(".label-save").show(), $("#id").val(a.id), 1 == a.status && (location.href = a.siteUrl + "/memoz/surah/" + a.surah_start + "/" + a.ayat_start + "-" + a.ayat_end + "/" + a.id)
         })

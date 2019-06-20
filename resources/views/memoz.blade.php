@@ -84,6 +84,7 @@
 			            </div>
 
 						@endif
+
 					@endif
 					<!--a  href="javascript:void(0)" class="btn" style="font-weight: bold"><i class="mdi mdi-library"></i> {{$memoDetail->id}}</a-->
 					<i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading " style="display:none"></i>
@@ -121,6 +122,12 @@
 							</div>
 							@endif
 							<div class="clearfix surah_title head_surah_1 center">{{$header_title}}</div>
+							@if(session('sess_id')==$memoDetail->id_user && $memoDetail->note!='')
+								<div class="correction-detail">
+									<p>{!! nl2br($memoDetail->note) !!}</p>
+								</div>
+							@endif
+
 							@if(Request::segment(2)!='correction')
 							<div class="step-wrap">
 								<div class="steps clearfix btn-group btn-breadcrumb" role="group" aria-label="steps">
@@ -170,7 +177,7 @@
 									</div>
 									@endif
 									<br class="clearfix">
-									<p> {{$correctionDetail->note}}</p>
+									<p> {!! nl2br($correctionDetail->note) !!}</p>
 
 									@if($correctionDetail->record_file)
 									<audio  style="width:100%" controls controlsList="nodownload" src="{{url($correctionDetail->record_file)}}"></audio>
