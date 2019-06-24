@@ -229,8 +229,13 @@
         <!-- pre loader-->
         <div id="preloader">
             <div class="loading">
-            <img src="{{url('assets/images/loading.svg')}}" alt="loading" width="50"/><br><br>
-            <div class="dzikir-loading" style="color:#2b2b2b">Sambil nunggu baca dzikir yuk : <div class="dzikir" style="font-size:24px">Subhanallah Walhamdulillah Lailahaillalah Allahuakbar...</div></div>
+                <div class="loading-inner">
+                <img src="{{url('assets/images/loading.svg')}}" alt="loading" width="50"/><br><br>
+                <div class="dzikir-loading" style="color:#2b2b2b">
+                <p>Sambil nunggu baca dzikir yuk :</p>
+                <p class="dzikir" style="font-size:24px">Subhanallah Walhamdulillah Lailahaillalah Allahuakbar...</p>
+                </div>
+            </div>
         <!--span>Mohon tunggu...</span=-->
       </div>
         </div>
@@ -402,6 +407,11 @@
                 $('body').attr('style','');
                 $('.selectpicker').select2();
 
+                $("#preloader").on("show", function () {
+                    $("body").addClass("modal-open");
+                }).on("hidden", function () {
+                    $("body").removeClass("modal-open")
+                });
 
             });
 
@@ -459,6 +469,7 @@
             //var vph = $(window).height();
             //$('body').css('height',vph/2).css('overflow','hidden');
             //$('.splash-body').css('height',vph);
+
 
             function changeBg(){
                 var mainColor = 'rgba(77,181,120,1)';
