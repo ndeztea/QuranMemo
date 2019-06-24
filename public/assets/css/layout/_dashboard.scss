@@ -2,7 +2,15 @@
     .boxcontent{
         padding: 0;
         .dash-profile{
-            
+            #dashboard-items{
+                .tabbed-nav{
+                    .tabbed-nav-list {
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-around;
+                    }
+                }
+            }
         }
     }
 
