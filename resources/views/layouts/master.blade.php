@@ -147,8 +147,8 @@
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
 
-        <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}">
+        <!-- <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}"> -->
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->

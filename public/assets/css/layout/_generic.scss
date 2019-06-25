@@ -146,9 +146,19 @@ ul {
 	}
 }
 
+a.navbar-brand.nav-back {
+    font-size: 31px;
+    position: relative;
+    top: 3px;
+}
+
+.stats-number {
+    font-size: 45px;
+}
+
 .navbar-default {
 	background-image: none;
-	background: $main-color;
+	background: $color_1_8_2;
 	border-radius: 0;
 	border: none;
 	z-index: 3;
@@ -172,14 +182,15 @@ ul {
 		text-shadow: none;
 		font-weight: 700;
 		transition: color 1s ease;
-		padding: 13px;
+        padding: 13px;
+        &.title {
+            font-size: 23px;
+            padding-left: 13px;
+        }
 		&:hover,
 		&:focus {
 			opacity: .7;
 			// color: darken($main-color-hover,5%);
-		}
-		&.title{
-			font-size: 23px;
 		}
 	}
 	.navbar-nav {
@@ -671,12 +682,12 @@ input[type="number"] {
 
 #preloader {
 	width: 100%;
-	height: 100vh;
+	height: 5000px !important;
 	z-index: 100000;
 	position: absolute;
 	top:-50px;
 	overflow: overlay;
-	background-color: rgba($main-color, .93);
+	background-color:rgba(222,243,241,.95);
 	text-align: center;
 	overflow: hidden;
 	.loading {
@@ -687,7 +698,16 @@ input[type="number"] {
         width: 100%;
         height: 100vh;
         display: flex;
-        align-items: center;   
+        align-items: center;
+        justify-content: center;
+        .dzikir-loading {
+            text-align: center;
+            .dzikir {
+                font-size: 46px;
+                font-family: "Scheherazade";
+                color: #2a5b56;
+            }
+        }
 	}
 }
 
