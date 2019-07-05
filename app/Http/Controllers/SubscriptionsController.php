@@ -11,7 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use File;
 
-use Carbon\Carbon;
+use Carbon\Carbon
 use Mail;
 
 
@@ -48,7 +48,7 @@ class SubscriptionsController extends Controller
      */
     public function order(Request $request)
     {
-
+      die('a');
        // save record
        $level =  $request->segment(3);
        $length =  $request->segment(4);
@@ -56,7 +56,7 @@ class SubscriptionsController extends Controller
             $sess_id = $request->session()->get('sess_id');
 
             $created_date = (string) Carbon::now();
-            
+
             $price = $this->price[$level][$length];
             $uniqPrice =  rand(100, 999);
 
@@ -80,10 +80,10 @@ class SubscriptionsController extends Controller
             $emailData['price'] = $price+$uniqPrice;
             $emailData['url'] = url('subscription/confirmation/'.$subscriptions_id);
 
-             Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
+            #Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
                 $m->from('info@quranmemo.id', 'QuranMemo');
                 $m->to($emailData['email'], $emailData['name'])->subject('Order QuranMemo');
-                $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Order QuranMemo');
+                #$m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Order QuranMemo');
             });
 
 
@@ -92,15 +92,16 @@ class SubscriptionsController extends Controller
 
        return redirect('dashboard')->with('messageError', 'Pesanan gagal di proses');
 
-      
+
     }
 
   public function confirmation(Request $request){
+    die('a');
       $sess_id = $request->session()->get('sess_id');
       $paid = $request->input('paid');
       $SubscriptionsModel = new Subscriptions();
       $subscriptions_id = $request->segment(3);
-       
+
      $data['header_top_title'] = $data['header_title'] = 'Konfirmasi  Pembayaran';
 
      if($request->input('action')){
@@ -112,7 +113,7 @@ class SubscriptionsController extends Controller
           // make sure upload sucess
             if(File::exists($path)){
               $dataRecord['file'] = 'confirmation_file/'.$fileName;
-            } 
+            }
         }
 
         $detail = $SubscriptionsModel->getDetail($subscriptions_id);
@@ -126,7 +127,7 @@ class SubscriptionsController extends Controller
         $emailData['active'] = 1;
         $emailData['url'] = '#';
         $dt = Carbon::now()->addDays($detail->length);
-        $emailData['expired_date'] = $dt->format('d-m-Y'); 
+        $emailData['expired_date'] = $dt->format('d-m-Y');
 
         $dataRecord['id'] = $subscriptions_id;
         $dataRecord['status'] = 1;
@@ -144,13 +145,13 @@ class SubscriptionsController extends Controller
         }
        }
 
-       
+
        $detail = $SubscriptionsModel->getDetail($subscriptions_id);
        if(empty($detail) || $detail->id_user != $sess_id){
             return redirect('dashboard')->with('messageError', 'Order tidak ditemukan');
        }
        $detail->level = array_keys($this->level, $detail->level)[0];
-            
+
        $data['detail'] = $detail;
        return view('subscriptions_order',$data);
     }
@@ -170,11 +171,11 @@ class SubscriptionsController extends Controller
         $emailData['active'] = 1;
         $emailData['url'] = '#';
         $dt = Carbon::now()->addDays($detail->length);
-        $emailData['expired_date'] = $dt->format('d-m-Y'); 
+        $emailData['expired_date'] = $dt->format('d-m-Y');
         // update subscriptions
         $dataRecord['id'] = $subscriptions_id;
         $dataRecord['active'] = 1;
-        $dataRecord['expired_date'] = $dt->format('Y-m-d'); 
+        $dataRecord['expired_date'] = $dt->format('Y-m-d');
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);
         if($isSuccess){
             Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
@@ -184,7 +185,7 @@ class SubscriptionsController extends Controller
           });
           return redirect('subscription/listing?status=approval')->with('messageSuccess', 'Konfirmasi sukses');
         }
-        
+
         return redirect('subscription/listing')->with('messageError', 'Konfirmasi gagal');
     }
 
@@ -202,7 +203,7 @@ class SubscriptionsController extends Controller
         if($isSuccess){
           return redirect('subscription/listing?status=approval')->with('messageSuccess', 'Update ke notvalid berhasil');
         }
-        
+
         return redirect('subscription/listing?status=approval')->with('messageError', 'Update ke notvalid gagal');
     }
 
@@ -217,7 +218,7 @@ class SubscriptionsController extends Controller
           if($isSuccess){
             return redirect('subscription/listing')->with('messageSuccess', 'Pesanan berhasil di cancel');
           }
-          
+
           return redirect('subscription/listing')->with('messageError', 'Pesanan gagal di cancel');
         }
 
@@ -231,7 +232,7 @@ class SubscriptionsController extends Controller
         if($isSuccess){
           return redirect('subscription/listing')->with('messageSuccess', 'Update ke notvalid berhasil');
         }
-        
+
         return redirect('subscription/listing')->with('messageError', 'Update ke notvalid gagal');
     }
 
@@ -246,13 +247,13 @@ class SubscriptionsController extends Controller
           }else{
             $orderList = $SubscriptionsModel->getAllPendingSubscriptions();
           }
-          
+
         }else{
           $orderList = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
         }
 
         $data['header_top_title'] = $data['header_title'] = 'Daftar Order';
-        
+
         $data['orderList'] = $orderList;
         $data['level'] = $this->level;
         return view('subscriptions_list',$data);

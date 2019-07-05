@@ -59,7 +59,7 @@ class RegisterController extends Controller
                 $contentsEmail .= $key.'='.$value.'<br>';
             }
 
-            mail('quranmemo.id@gmail.com', 'Daftar '.config('app.app_name'), $contentsEmail);
+            #mail('quranmemo.id@gmail.com', 'Daftar '.config('app.app_name'), $contentsEmail);
 
             $UsersModel = new Users();
             #$lastRecord = $UsersModel->checkEmail($request->all());
