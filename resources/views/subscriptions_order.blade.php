@@ -13,7 +13,7 @@
 				<div class="container-fluid">
 					<div class="content-learning">
 					 <form class="form-horizontal" action="{{url('subscription/confirmation/'.$detail->id)}}" method="post" enctype="multipart/form-data">
-						<div class="order-detail">
+						<div class="order-detail" style="background: #e1ffeb;border: 1px solid #e1ffeb;">
 							@if($detail->status==1)
 							<p style="text-align: center;">Menunggu approvisasi</p>
 							@endif
@@ -24,15 +24,18 @@
 							@else
 							<div class="price">Rp. {{number_format($detail->price,2,',','.')}} *</div>
 							@endif
+						</div>
+						<br>
+						<div class="order-detail">
 							@if($detail->active==0)
 							<p>Bayar Potong Pulsa / Debit / Kredit Card <br><sup>(Hanya untuk "QuranMemo Community" versi > 1.4.0)</sup></p>
-							<?php 
+							<?php
 								$detail->length = $detail->length==0?31:$detail->length;
 								$subsPrefix = 'subs_';
 								$length = '';
 								if($detail->length>31){
 									$subsPrefix = '';
-								} 
+								}
 								switch ($detail->length) {
 									case '90':
 										$length = '_3bulan';
@@ -46,6 +49,9 @@
 								}
 							?>
 							<div class="rekening"><button type="button" onclick="purchase('{{$subsPrefix}}paket_{{strtolower($detail->level)}}{{$length}}')" class="btn btn-green">Bayar Sekarang</button></div>
+						</div>
+						<br>
+						<div class="order-detail">
 							<p>Atau Transfer melalui rekening Bank Muamalat  :
 							<div class="rekening">1460000303 <br>an <br>Dimas Tekad Santosa</div>
 							<hr>
@@ -64,7 +70,7 @@
 							@endif
 						</div>
 						<input type="hidden" name="action" value="post"/>
-					</form>	
+					</form>
 					</div>
 				</div>
 			</div>
