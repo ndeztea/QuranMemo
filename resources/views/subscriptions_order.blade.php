@@ -54,8 +54,10 @@
 						<div class="order-detail">
 							<p>Atau Transfer melalui rekening Bank Muamalat  :
 							<div class="rekening">1460000303 <br>an <br>Dimas Tekad Santosa</div>
-							<hr>
-							<strong>Konfirmasi Pembayaran</strong>
+						</div>
+						<br>
+						<div class="order-detail" style="background-color: #ffd381;border: 1px solid #dea433;">
+							<strong>Konfirmasi Pembayaran (Transfer Manual atau Potong Pulsa / Debit / Kredit Card )</strong>
 							<input type="text" class="form-control" name="paid" id="paid" aria-label="paid" placeholder="Jumlah yang dibayar" value="{{ old('paid')}}" />
 							<small>*) transfer sampai digit terakhir untuk memudahkan verifikasi</small><br>
 							<br>
