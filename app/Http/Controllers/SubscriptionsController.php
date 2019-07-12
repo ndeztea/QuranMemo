@@ -80,11 +80,11 @@ class SubscriptionsController extends Controller
             $emailData['price'] = $price+$uniqPrice;
             $emailData['url'] = url('subscription/confirmation/'.$subscriptions_id);
 
-             Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
+            /* Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
                 $m->from('info@quranmemo.id', 'QuranMemo');
                 $m->to($emailData['email'], $emailData['name'])->subject('Order QuranMemo');
                 $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Order QuranMemo');
-            });
+            });*/
 
 
             return redirect('subscription/confirmation/'.$subscriptions_id);
@@ -135,10 +135,10 @@ class SubscriptionsController extends Controller
         $dataRecord['expired_date'] = (string) Carbon::now()->addDays($detail->length);
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);
         if($isSuccess){
-          Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
+          /*Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
               $m->from('info@quranmemo.id', 'QuranMemo');
               $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Butuh Approval berlangganan QuranMemo');
-          });
+          });*/
 
           return redirect('subscription/confirmation/'.$subscriptions_id)->with('messageSuccess', 'Konfirmasi berhasil, kami akan cek Konfirmasi dalam 1x24 jam');
         }
@@ -177,11 +177,11 @@ class SubscriptionsController extends Controller
         $dataRecord['expired_date'] = $dt->format('Y-m-d');
         $isSuccess =  $SubscriptionsModel->edit($dataRecord);
         if($isSuccess){
-            Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
+          /*  Mail::send('emails.subscriptions_order', ['emailData' => $emailData], function ($m) use ($emailData) {
               $m->from('info@quranmemo.id', 'QuranMemo');
               $m->to($emailData['email'], $emailData['name'])->subject('Approval berlangganan QuranMemo berhasil');
               $m->to('quranmemo.id@gmail.com','Admin QuranMemo')->subject('New Approval berlangganan QuranMemo berhasil');
-          });
+          });*/
           return redirect('subscription/listing?status=approval')->with('messageSuccess', 'Konfirmasi sukses');
         }
 

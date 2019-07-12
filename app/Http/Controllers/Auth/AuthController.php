@@ -64,7 +64,7 @@ class AuthController extends Controller
 
     public function logout(Request $request){
         assignPoints(session('sess_id'),'auth.logout');
-        
+
         // remove all sessions
         $request->session()->forget('sess_id');
         $request->session()->forget('sess_email');
@@ -111,7 +111,7 @@ class AuthController extends Controller
             Cookie::forever('coo_quranmemo_email', $dataLogin->email);
             Cookie::forever('coo_quranmemo_password', $dataLogin->password);*/
             assignPoints($dataLogin->id,'auth.logout');
-        
+
 
         }else{
             $dataHTML['login'] = false;
@@ -143,7 +143,7 @@ class AuthController extends Controller
             $dataHTML['newPassword'] = $newPassword;
 
              Mail::send('emails.forget_password', ['emailData' => $emailData], function ($m) use ($emailData) {
-                $m->from('onlinetahfidz@gmail.com', 'Kang ATO');
+                $m->from('quranmemo.id@gmail.com', 'QuranMemo');
                 $m->to($emailData['email'], $emailData['name'])->subject('Password baru '.config('app.app_name').'!');
             });
 
@@ -179,5 +179,5 @@ class AuthController extends Controller
         return response()->json($dataHTML);
     }
 
-    
+
 }

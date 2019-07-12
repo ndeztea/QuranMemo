@@ -800,9 +800,9 @@ class MemozController extends Controller
                 $emailData['surah_start'] = $QuranModel->getSurah($memoDetail->surah_start)[0];
 
                 Mail::send('emails.memoz_correction', ['emailData' => $emailData], function ($m) use ($emailData) {
-                      $m->from('onlinetahfidz@gmail.com', 'Kang ATO');
-                      $m->to($emailData['email_target'], $emailData['name_target'])->subject('[Kang ATO] Hafalan antum sudah dikoreksi');
-                      //$m->to('quranmemo.id@gmail.com','Quranmemo')->subject('[Kang ATO] Hafalan antum sudah dikoreksi');
+                      $m->from('onlinetahfidz@gmail.com', 'QuranMemo');
+                      $m->to($emailData['email_target'], $emailData['name_target'])->subject('[QuranMemo] Hafalan antum sudah dikoreksi');
+                      //$m->to('quranmemo.id@gmail.com','Quranmemo')->subject('[QuranMemo] Hafalan antum sudah dikoreksi');
                   });
                 if(session('sess_role') > 0){
                     assignPoints(session('sess_id'),'memoz.correction');
