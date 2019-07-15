@@ -28,14 +28,14 @@ class Content extends Model
     public function getAssetsContent(){
         $memoList = DB::table($this->table)
                 ->select('*');
-                
+
         return $memoList->get();
     }
 
     public function getAssetDetail($folder){
         $memoList = DB::table($this->table)
                 ->select('*')->where('folder','=',$folder);
-                
+
         return $memoList->first();
     }
 

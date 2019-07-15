@@ -25,6 +25,7 @@
           <ul class="category">
           <?php $a = 1;?>
           @foreach($categories as $category)
+						<?php $a = $a > 7 ? 1 : $a ;?>
             <li class="style{{$a}}" onclick="location.href='{{url('category/'.$category->id)}}'">
               <i class="{{$category->icon}}"></i><br>
               <div>{{$category->category}}</div>

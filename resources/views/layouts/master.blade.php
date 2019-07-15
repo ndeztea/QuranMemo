@@ -330,7 +330,7 @@
             @if($header_title!='Dashboard')
             <a class="navbar-brand nav-back"  href="javascript:void(0)" onclick="history.back()"><i class="mdi mdi-arrow-left"></i></a>
             @endif
-            <a class="navbar-brand title"  href="{{url('')}}"><h1>{{$header_top_title}}</h1></a>
+            <a class="navbar-brand"  href="{{url('')}}"><strong>{{$header_top_title}}</strong></a>
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>

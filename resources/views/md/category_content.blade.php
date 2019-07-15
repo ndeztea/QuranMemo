@@ -13,13 +13,16 @@
           <ul class="category_content">
           <?php $a = 1;?>
             @foreach($listContent as $content)
+
               <li class="style{{$a}}" onclick="location.href='{{url('content/'.$content->id)}}'">
                 <span class="counter"><i class="mdi mdi-eye"></i><br>{{$content->counter}}</span>
                 <span class="title">{{$content->title}} <br> <i>Kategori : {{$content->category}}</i></span>
                 <span  class="type"><i class="mdi mdi-{{$content->type}}"></i></span>
                 <div class="clear"></div>
               </li>
-              <?php  $a++;?>
+              <?php
+							$a++;
+							?>
             @endforeach
           </ul>
           @else

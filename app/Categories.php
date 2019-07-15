@@ -30,6 +30,23 @@ class Categories extends Model
         return !empty($detail)?$detail[0]:null;
     }
 
+    public function storeContentCategory($data){
+        return DB::table('category_content')->insertGetId($data);
+    }
+
+    public function storeCategory($data){
+        return DB::table('category')->insertGetId($data);
+    }
+
+    public function getDetailByName($name=0){
+      $detail = DB::table('category')
+          ->select('*')->where('category',$name)
+          ->get();
+
+
+        return !empty($detail)?$detail[0]:null;
+    }
+
     public function categoryContent($id_category){
       $datas = DB::table('category_content')
           ->select('category_content.*','category.category')

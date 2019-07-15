@@ -82,6 +82,7 @@ Route::get('profile/top_user', 'ProfileController@top_user');
 Route::get('category', 'CategoryController@index');
 Route::get('category/{id}', 'CategoryController@categoryContent');
 Route::get('content/{id}', 'CategoryController@detailContent');
+Route::get('generator/content', 'GeneratorController@content');
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {

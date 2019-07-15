@@ -195,7 +195,7 @@ ul.category li div {
   font-weight: bold;
   text-shadow: 1px 1px 0px #999;
   font-family: 'Roboto Condensed';
-  max-width: 57px;
+  max-width: 80px;
 }
 
 ul.category_content span.counter {
@@ -212,6 +212,7 @@ ul.category_content span.title {
   top: 12px;
   text-shadow: 1px 1px #dedede;
   position: relative;
+  z-index: 999;
 }
 ul.category_content span.type {
   float: right;
@@ -226,25 +227,25 @@ ul.category_content span.type {
 
 
 ul.category li.style1{
-  background-color: #93d2b8 !important;
+  background-color: #48ad83 !important;
 }
 ul.category li.style2{
-  background-color: #ffd69f;
+  background-color: #ffab3a;
 }
 ul.category li.style3{
-  background-color: #ffc49a;
+  background-color: #b1805e;
 }
 ul.category li.style4{
-  background-color: #eabcbc;
+  background-color: #ec7e7e;
 }
 ul.category li.style5{
-  background-color: #cad491;
+  background-color: #848e4a;
 }
 ul.category li.style6{
-  background-color: #c9e4f1;
+  background-color: #66add0;
 }
 ul.category li.style7{
-  background-color: #cacaca;
+  background-color: #9e8b8b;
 }
 .content_error{
   font-size: 22px;
@@ -265,10 +266,13 @@ ul.category li.style7{
   color: #0f00ef5e;
 }
 .mdi-audiobook{
-  color:#1fffb763;
+  color:#1fffb7de;
 }
 .mdi-video{
-  color:#ff00002e;
+  color:#ff0000a3;
+}
+i.mdi.mdi-library-books {
+    color: #b5a1ff;
 }
 
 .dash-profile-detail, .dash-profile-detail-wrap {
@@ -291,7 +295,7 @@ ul.category li.style7{
   top: 65px;
   position: absolute;
   right: -9px;
-  width: 135px;
+  width: 155px;
   box-shadow: 5px 5px 3px #DDD;
   color: #656565;
   text-align: right;

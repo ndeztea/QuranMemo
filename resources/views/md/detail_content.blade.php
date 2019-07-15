@@ -23,7 +23,12 @@
 					<h4><i class="mdi mdi-book-open-page-variant"></i> Penjelasan</h4>
 					<div class="content_detail">
 						@if ($content->type=='video')
-							<iframe style="width:100%" src="{{$content->content}}?controls=0&autohide=2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<video src="{{url($content->content)}}" style="width:100%" controls></video>
+						@elseif($content->type=='audiobook')
+							<audio src="{{url($content->content)}}" style="width:100%" controls></audio>
+						@else
+						<embed src="{{url($content->content)}}" type="application/pdf" width="100%" height="600px" />
+
 						@endif
 					</div>
 				</div>
