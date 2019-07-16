@@ -303,6 +303,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'App\\Http\\Controllers\\ContentController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
+        'App\\Http\\Controllers\\GeneratorController' => __DIR__ . '/../..' . '/app/Http/Controllers/GeneratorController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MemozController' => __DIR__ . '/../..' . '/app/Http/Controllers/MemozController.php',
         'App\\Http\\Controllers\\MushafController' => __DIR__ . '/../..' . '/app/Http/Controllers/MushafController.php',

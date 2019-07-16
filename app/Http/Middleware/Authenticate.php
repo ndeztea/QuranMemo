@@ -45,10 +45,10 @@ class Authenticate
                 }
             }
         }
-        
+
 
         if (empty($request->session()->get('sess_id'))) {
-            return redirect('dashboard')->with('messageError', 'Tidak bisa akses, harus login dahulu');
+            //return redirect('dashboard')->with('messageError', 'Tidak bisa akses, harus login dahulu');
         }
 
         return $next($request);

@@ -143,7 +143,7 @@ class MemozController extends Controller
 
              $userCorrector = $UsersModel->getDetail($correctionDetail->id_user)[0];
              $data['userCorrector'] = $userCorrector;
-             
+
              // update already opened
              if($memoDetail->id_user==$sess_id_user){
                  $dataRecord['status'] = 1;

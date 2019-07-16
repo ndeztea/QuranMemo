@@ -32,6 +32,8 @@ class CategoryController extends Controller
 
         $objCategories = new Categories();
         $objUsers = new Users();
+        $data['contentNewest'] = $objCategories->getContentOrder('id','desc');
+        $data['contentVisitor'] = $objCategories->getContentOrder('counter','desc');
         $data['categories'] = $objCategories->getAll();
         $detailProfile = $objUsers->getDetail(session('sess_id'));
         $data['detailProfile'] = empty($detailProfile)?null:$detailProfile[0];
@@ -51,12 +53,25 @@ class CategoryController extends Controller
         return view('md.category_content',$data);
      }
 
+     public function searchContent(Request $request)
+     {
+        $keyword = $request->input('keyword');
+
+        $objCategories = new Categories();
+        $data['header_top_title'] = $data['header_title'] = 'Pencarian';
+        $data['listContent'] = $objCategories->searchContent($keyword);
+        $data['keyword'] = $keyword;
+
+        return view('md.category_content',$data);
+     }
+
      public function detailContent(Request $request){
        $id = $request->segment(2);
 
        $objCategories = new Categories();
        $data['header_top_title'] = $data['header_title'] = 'Detail';
        $data['content'] = $objCategories->contentDetail($id);
+       $objCategories->counter($id);
 
        return view('md.detail_content',$data);
      }

@@ -9,6 +9,9 @@
 		<div class="single-column dashboard-wrap">
       <div id="content" class="boxcontent">
         <div class="">
+					@if(isset($keyword))
+					<div class="alert alert-success">Kata kunci : <strong>{{$keyword}}</strong></div>
+					@endif
           @if (!empty($listContent))
           <ul class="category_content">
           <?php $a = 1;?>

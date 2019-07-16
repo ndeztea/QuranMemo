@@ -267,7 +267,7 @@
                         <a href="#" class="close-navi" data-toggle="offcanvas" data-target="#qm-navbar" data-canvas="body"><i class="ion-close-round"></i></a>
 
                         <div class="navbar-nav qm-cari-kata">
-                            <form class="navbar-form" role="search" method="get" action="{{url('mushaf/searchKeyword')}}">
+                            <form class="navbar-form" role="search" method="post" action="{{url('content/search')}}">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Cari kata" name="keyword">
                                     <div class="input-group-btn">
@@ -277,7 +277,7 @@
                             </form>
                         </div>
                         <div class="login-nav">
-                            <div class="btn-group" role="group" aria-label="...">
+                            <!--div class="btn-group" role="group" aria-label="...">
                                 @if(empty(session('sess_id')))
                                       <a class="btn btn-login login-trigger" href="javascript:;" onclick="QuranJS.callModal('auth/login')"><i class="mdi mdi-lock"></i> Login </a>
                                       <a  class="btn btn-register" href="{{url('register')}}">Register <i class="mdi mdi-account"></i>  </a>
@@ -286,7 +286,7 @@
                                     <a class="btn btn-login"  href="{{url('auth/logout')}}"><i class="mdi mdi-lock-open"></i> Logout </a>
                                       <a  class="btn btn-register" href="{{url('profile/edit')}}">Edit Profile <i class="mdi mdi-account-edit"></i>  </a>
                                 @endif
-                        </div>
+                        </div-->
                     </div>
                     <!--/navmenu-overlay-->
                 </div>
@@ -295,11 +295,12 @@
                 <ul class="nav navmenu-nav">
 
                     <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard?promo=hide')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
-                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca Al-Qur'an</a>
                     </li>
-                    <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
+                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal Al-Qur'an</a></li>
+
+                    <!--li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
                     <!--li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('buku')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-book-open"></i> Gratis Buku <label class="label label-danger">New</label></a> </li>
 
@@ -313,10 +314,10 @@
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li><a href="javascript:;" onclick="QuranJS.callModal('faq')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-help-circle"></i> FAQ</a></li>
+                    <!--li><a href="javascript:;" onclick="QuranJS.callModal('faq')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-help-circle"></i> FAQ</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('contact')" onclick="fbq('track', 'clickContact')"><i class="mdi mdi-email"></i> Kontak</a></li>
                     <!--!li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li-->
-                    <li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li>
+                    <!--li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li-->
                 </ul>
                 <!--/navmenu-nav-->
 

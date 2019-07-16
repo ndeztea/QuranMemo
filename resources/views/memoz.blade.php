@@ -1,3 +1,6 @@
+<script>
+	location.href = 'https://play.google.com/store/apps/details?id=com.ndeztea.quranmemocommunity'
+</script>
 @extends('layouts.master')
 
 @section('title', 'Menghafal Al-Quran')

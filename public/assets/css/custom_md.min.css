@@ -168,12 +168,12 @@ ul.category,ul.category_content {
     padding-left: 0px;
 }
 ul.category li {
-    width: 30%;
+    width: 22%;
     float: left;
 
     border-radius: 4px;
     margin: 4px;
-    height: 96px;
+    height: 67px;
     padding: 5px;
     box-shadow: 1px 2px 4px 0px #afafaf;
 }
@@ -185,17 +185,17 @@ ul.category_content li{
     position: relative;
 }
 ul.category li i.mdi {
-    font-size: 31px;
+    font-size: 18px;
     color: #ffffff;
     opacity: 0.5;
 }
 ul.category li div {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: bold;
-  text-shadow: 1px 1px 0px #999;
-  font-family: 'Roboto Condensed';
-  max-width: 80px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 0px 0px #676767;
+    font-family: 'Roboto Condensed';
+    max-width: 80px;
 }
 
 ul.category_content span.counter {
@@ -266,10 +266,10 @@ ul.category li.style7{
   color: #0f00ef5e;
 }
 .mdi-audiobook{
-  color:#1fffb7de;
+  color:#55FFC1;
 }
 .mdi-video{
-  color:#ff0000a3;
+  color:#FF736C;
 }
 i.mdi.mdi-library-books {
     color: #b5a1ff;
@@ -317,4 +317,9 @@ i.mdi.mdi-library-books {
 .dash-profile-detail div.sub_title {
     font-family: 'Roboto Condensed';
     font-size: 12px;
+}
+.see_all{
+  color: #b1b1b1;
+    float: right;
+    margin-right: 13px;
 }

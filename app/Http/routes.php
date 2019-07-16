@@ -83,52 +83,55 @@ Route::get('category', 'CategoryController@index');
 Route::get('category/{id}', 'CategoryController@categoryContent');
 Route::get('content/{id}', 'CategoryController@detailContent');
 Route::get('generator/content', 'GeneratorController@content');
+Route::post('content/search', 'CategoryController@searchContent');
 
+
+Route::get('memoz/', 'MemozController@index');
+Route::post('memoz/', 'MemozController@index');
+Route::post('memoz/inProgress', 'MemozController@inProgress');
+
+Route::get('memoz/surah/{surah}', 'MemozController@index');
+Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');
+Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
+Route::post('memoz/search', 'MemozController@search');
+Route::get('memoz/search', 'MemozController@search');
+Route::get('memoz/config', 'MemozController@config');
+
+Route::get('memoz/form/{id}', 'MemozController@form')->middleware('subscription:save_memoz');
+Route::post('memoz/form', 'MemozController@form')->middleware('subscription:save_memoz');
+Route::post('memoz/save', 'MemozController@save');
+Route::get('memoz/murajaah', 'MemozController@list_murajaah_ajax');
+Route::post('memoz/murajaah', 'MemozController@list_murajaah_ajax');
+Route::get('memoz/list', 'MemozController@listing');
+Route::post('memoz/list_ajax', 'MemozController@list_ajax');
+Route::post('memoz/list_others_ajax', 'MemozController@list_others_ajax');
+Route::post('memoz/list_need_corrections_ajax', 'MemozController@list_need_corrections_ajax');
+
+Route::post('memoz/remove', 'MemozController@remove');
+Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
+Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
+Route::get('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
+Route::post('memoz/uploadRecordedUstadzMobile/{idMemo}','MemozController@uploadRecordedUstadzMobile');
+Route::get('memoz/uploadRecordedUstadzMobile/{idMemo}','MemozController@uploadRecordedUstadzMobile');
+
+Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}/{idCorrection}', 'MemozController@index');
+Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}', 'MemozController@index');
+Route::post('memoz/updateStatus','MemozController@updateStatus');
+
+Route::post('memoz/formCorrection','MemozController@formCorrection');
+Route::post('memoz/saveCorrection','MemozController@saveCorrection');
+Route::post('memoz/correction/list', 'MemozController@listCorrection');
+Route::get('memoz/summary', 'MemozController@summary');
+Route::get('memoz/summary/{id_user}', 'MemozController@summary');
+
+Route::get('memoz/create', 'MemozController@create');
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
   Route::get('profile/detail/{id_user}', 'ProfileController@detail');
 
     Route::get('content_learning','ContentController@learning');
     Route::get('file_learning/{folder}','ContentController@file_learning');
-    Route::get('memoz/', 'MemozController@index');
-    Route::post('memoz/', 'MemozController@index');
-    Route::post('memoz/inProgress', 'MemozController@inProgress');
 
-	Route::get('memoz/surah/{surah}', 'MemozController@index');
-    Route::get('memoz/surah/{surah}/{idsurah}', 'MemozController@index');
-    Route::get('memoz/surah/{surah}/{idsurah}/{message}', 'MemozController@index');
-    Route::post('memoz/search', 'MemozController@search');
-    Route::get('memoz/search', 'MemozController@search');
-    Route::get('memoz/config', 'MemozController@config');
-
-    Route::get('memoz/form/{id}', 'MemozController@form')->middleware('subscription:save_memoz');
-	Route::post('memoz/form', 'MemozController@form')->middleware('subscription:save_memoz');
-	Route::post('memoz/save', 'MemozController@save');
-	Route::get('memoz/murajaah', 'MemozController@list_murajaah_ajax');
-    Route::post('memoz/murajaah', 'MemozController@list_murajaah_ajax');
-    Route::get('memoz/list', 'MemozController@listing');
-    Route::post('memoz/list_ajax', 'MemozController@list_ajax');
-    Route::post('memoz/list_others_ajax', 'MemozController@list_others_ajax');
-    Route::post('memoz/list_need_corrections_ajax', 'MemozController@list_need_corrections_ajax');
-
-	Route::post('memoz/remove', 'MemozController@remove');
-    Route::post('memoz/uploadRecorded','MemozController@uploadRecorded');
-    Route::post('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
-    Route::get('memoz/uploadRecordedMobile/{idMemo}','MemozController@uploadRecordedMobile');//->middleware('subscription:record');
-    Route::post('memoz/uploadRecordedUstadzMobile/{idMemo}','MemozController@uploadRecordedUstadzMobile');
-    Route::get('memoz/uploadRecordedUstadzMobile/{idMemo}','MemozController@uploadRecordedUstadzMobile');
-
-    Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}/{idCorrection}', 'MemozController@index');
-    Route::get('memoz/correction/{surah}/{idsurah}/{idmemo}', 'MemozController@index');
-    Route::post('memoz/updateStatus','MemozController@updateStatus');
-
-    Route::post('memoz/formCorrection','MemozController@formCorrection');
-    Route::post('memoz/saveCorrection','MemozController@saveCorrection');
-    Route::post('memoz/correction/list', 'MemozController@listCorrection');
-    Route::get('memoz/summary', 'MemozController@summary');
-    Route::get('memoz/summary/{id_user}', 'MemozController@summary');
-
-    Route::get('memoz/create', 'MemozController@create');
     Route::get('notes/create', 'NotesController@create');
     Route::get('notes/create/{surah}/{idsurah}', 'NotesController@create');
 

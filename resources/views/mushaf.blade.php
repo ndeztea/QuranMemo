@@ -104,7 +104,7 @@ $prev_surah = '';
 							 @else
 							<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-share-ayat">
 							@endif
-							<i class="fa fa-plus"></i> Hafalkan</a>
+							<!i class="fa fa-plus"></i> Hafalkan</a>
 							<!--a href="javascript:void()" data-toggle="modal" data-target="#QuranModal" class="btn btn-share-ayat" onclick="QuranJS.callModal('<?php echo 'notes/create/'.$id_surah.'/'.$ayat ?>')"><i class="fa fa-plus-circle"></i> Note</a-->
 
 							<a href="{{url('mushaf/page/'.$ayats[0]->page)}}" class="btn btn-share-ayat" onclick="fbq('track', 'clickHalamanPenuh');"><i class="fa fa-arrow-right"></i> Halaman penuh</a>
@@ -202,12 +202,7 @@ $prev_surah = '';
 					                  <a class="btn btn-play-ayat play_{{$a}}" href="javascript:;" onclick="fbq('track', 'clickPutar');"><i class="fa fa-play"></i> Putar</a>
 					                  <!--a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat) )?>" target="_blank"><i class="fa fa-share-alt"></i></a-->
 					                  <a class="btn btn-share-ayat" href="javascript:void()" onclick="fbq('track', 'clickShare');QuranJS.callModal('bookmarks?url={{url('mushaf/surah/'.$ayat->surah.'/'.$ayat->ayat)}}')"><i class="fa fa-share-alt"></i> Berbagi</a>
-					                  @if(!empty(session('sess_id')))
-										<a class="btn btn-play-ayat" href="{{url('memoz/surah/'.$ayat->surah.'/'.$ayat->ayat)}}" onclick="fbq('track', 'clickHafalkanDariMushaf');">
-										 @else
-										<a href="javascript:void()" onclick="QuranJS.callModal('auth/login')" class="btn btn-play-ayat">
-										@endif
-					                  <i class="fa fa-plus"></i> Hafalkan</a>
+					                  
 					                  <a class="btn btn-share-ayat" href="javascript:void()" onclick="fbq('track', 'clickTafsir');QuranJS.callModal('{{'mushaf/tafsir/'.$ayat->surah.'/'.$ayat->ayat}}')"><i class="fa fa-book"></i> Tafsir</a>
 
 					                </div>

@@ -24,7 +24,7 @@
 			</div-->
 
 			  <div id="content" class="boxcontent">
-			  	<div class="dash-profile">
+					<div class="dash-profile">
 						<div class="ads-middle" style="background-color: #54b7ac;">
 							@if(session('sess_id'))
 							<div class="dropdown">
