@@ -300,24 +300,11 @@
                     </li>
                     <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal Al-Qur'an</a></li>
 
-                    <!--li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
-                    <!--li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
-                    <li><a href="javascript:;" onclick="QuranJS.callModal('buku')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-book-open"></i> Gratis Buku <label class="label label-danger">New</label></a> </li>
-
-
-                    <!--li><a href="javascript:;" onclick="fbq('track', 'clickPromoTShirtWomb');QuranJS.callModal('promo');"><i class="mdi mdi-alert-decagram"></i> Promo <label class="label label-danger">New</label></a></li>
-                    </li-->
-                    <!--li><a href="<?php echo url('content_learning')?>"><i class="mdi mdi-folder-lock" onclick="fbq('track', 'clickBaca')"></i> Konten Belajar Quran</a></li>
-                    </li>
-                    <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
-                    <!--li><a href="javascript:;" onclick="QuranJS.callModal('info')" onclick="fbq('track', 'clickInfo')"><i class="mdi mdi-information"></i> Info</a></li-->
                     <li></li>
                     <li></li>
                     <li></li>
-                    <!--li><a href="javascript:;" onclick="QuranJS.callModal('faq')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-help-circle"></i> FAQ</a></li>
-                    <li><a href="javascript:;" onclick="QuranJS.callModal('contact')" onclick="fbq('track', 'clickContact')"><i class="mdi mdi-email"></i> Kontak</a></li>
-                    <!--!li><a href="https://ubkplus.org" onclick="fbq('track', 'clickUBKPlus')"><i class="mdi mdi-domain"></i> Pasantren UBKPlus</a></li-->
-                    <!--li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li-->
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('promo');fbq('track', 'clickPartners')"><i class="mdi mdi-account-circle"></i> Biodata Pengasuh</a></li>
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li>
                 </ul>
                 <!--/navmenu-nav-->
 
