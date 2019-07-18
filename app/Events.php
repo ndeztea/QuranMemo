@@ -19,7 +19,7 @@ class Events extends Model
     public $params = '';
     public $date = '';
 
-    protected $fillable = array('event','location','speaker','date','time','image','is_special');
+    protected $fillable = array('event','location','speaker','date','time','image','is_special','quota');
 
     public function stored($data){
         return DB::table($this->table)->insertGetId($data);

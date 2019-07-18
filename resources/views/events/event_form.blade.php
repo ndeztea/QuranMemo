@@ -34,6 +34,10 @@
 									    <input id="time" type="text" class="form-control" name="time" value="{{isset($event->time)?$event->time:''}}" placeholder="Waktu kajian">
 									  </div>
 										<div class="input-group">
+									    <span class="input-group-addon"><i class="mdi mdi-account-circle"></i></span>
+									    <input id="quota" type="text" class="form-control" name="quota" value="{{isset($event->quota)?$event->quota:''}}" placeholder="Quota Makanan">
+									  </div>
+										<div class="input-group">
 									    <span class="input-group-addon"><i class="mdi mdi-map"></i></span>
 									    <input id="location" type="text" class="form-control" name="location" value="{{isset($event->location)?$event->location:''}}" placeholder="Alamat kajian">
 									  </div>
