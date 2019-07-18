@@ -57,6 +57,7 @@ Route::get('buku', 'ContentController@buku');
 Route::post('buku', 'ContentController@buku');
 Route::get('buku', 'ContentController@buku');
 Route::get('promo', 'ContentController@promo');
+Route::get('biodata', 'ContentController@biodata');
 Route::get('muratal', 'ContentController@muratal');
 Route::get('info', 'ContentController@info');
 Route::get('info_memoz', 'ContentController@info_memoz');

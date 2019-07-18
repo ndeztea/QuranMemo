@@ -82,19 +82,12 @@ class ContentController extends Controller
         return response()->json($dataHTML);
     }
 
-    public function promo()
+    public function biodata()
     {
-        /*$SubscriptionsModel = new Subscriptions();
-        $sessRole = session('sess_role');
-        $counter = $SubscriptionsModel->getPendingSubscriptions(session('sess_id'));
-
-        $data['havePending'] = count($counter)>=1?true:false;*/
-
         $dataHTML['modal_class'] = '';
-        $dataHTML['modal_title'] = 'News';
-        $dataHTML['modal_body'] = view('content_promo')->render();
-        $dataHTML['modal_footer'] = '<a href="https://api.whatsapp.com/send?phone=6285956331813" class="btn btn-green-small"  target="_blank" onclick="fbq(\'track\', \'clickContactTShirtWomb\');">Contact via WA
-    085956331813</a> ';
+        $dataHTML['modal_title'] = 'Biodata';
+        $dataHTML['modal_body'] = view('content_biodata')->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
         return response()->json($dataHTML);
     }
 

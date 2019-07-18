@@ -303,7 +303,7 @@
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li><a href="javascript:;" onclick="QuranJS.callModal('promo');fbq('track', 'clickPartners')"><i class="mdi mdi-account-circle"></i> Biodata Pengasuh</a></li>
+                    <li><a href="javascript:;" onclick="QuranJS.callModal('biodata');fbq('track', 'clickPartners')"><i class="mdi mdi-account-circle"></i> Biodata</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('partners');fbq('track', 'clickPartners')"><i class="mdi mdi-group"></i> Partners</a></li>
                 </ul>
                 <!--/navmenu-nav-->
