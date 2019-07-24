@@ -15,6 +15,7 @@ class Categories extends Model
     public function getAll(){
     	$datas = DB::table('category')
     			->select('*')
+          ->orderby('position','asc')
                 ->get();
         return $datas;
     }
@@ -49,8 +50,9 @@ class Categories extends Model
       $datas = DB::table('category_content')
           ->select('category_content.*','category.category')
           ->join('category','category.id','=','category_content.id_category')
-          ->where('type','!=','library-books')
+          //->where('type','!=','library-books')
           ->where('id_category',$id_category)
+          ->orderby('title','asc')
           ->get();
 
         return $datas;
@@ -60,7 +62,7 @@ class Categories extends Model
       $datas = DB::table('category_content')
           ->select('category_content.*','category.category')
           ->join('category','category.id','=','category_content.id_category')
-          ->where('type','!=','library-books')
+          //->where('type','!=','library-books')
           ->where('title','like','%'.$keyword.'%')
           ->get();
 
@@ -71,7 +73,7 @@ class Categories extends Model
       $datas = DB::table('category_content')
           ->select('category_content.*','category.category')
           ->join('category','category.id','=','category_content.id_category')
-          ->where('type','!=','library-books')
+          //->where('type','!=','library-books')
           ->orderby($sorting,$by)
           ->limit(5)
           ->get();

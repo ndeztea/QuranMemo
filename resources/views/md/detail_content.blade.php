@@ -22,20 +22,21 @@
 				<div  style="padding:10px">
 					<h4><i class="mdi mdi-book-open-page-variant"></i> Penjelasan</h4>
 					<div class="content_detail">
-						<div class="center" style="margin:10px">
+						<!--div class="center" style="margin:10px">
 							<a href="javascript:window.open('{{url($content->content)}}', '_system')" class="btn btn-success" ><i class="mdi mdi-download"></i> Download file</a>
-						</div>
+						</div-->
 						@if ($content->type=='video')
 							<video src="{{url($content->content)}}" style="width:100%" controls></video>
 						@elseif($content->type=='audiobook')
 							<audio src="{{url($content->content)}}" style="width:100%" controls></audio>
 						@else
-						<iframe width="240"
-src="{{url($content->content)}}" frameborder="0"
-allowfullscreen>
-</iframe>
-						<embed src="{{url($content->content)}}" type="application/pdf" width="100%" height="600px" />
-
+							<?php
+								$arr = json_decode($content->content);
+								//print_r($arr);
+							?>
+							@foreach($arr as $file)
+								<img src="{{url('content/infografis/'.$content->title.'/'.$file)}}" style="width:100%"/>
+							@endforeach
 						@endif
 					</div>
 				</div>

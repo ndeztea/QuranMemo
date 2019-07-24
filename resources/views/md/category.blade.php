@@ -108,6 +108,31 @@
 						</div>
 
 					</div>
+					<div class="">
+						<strong style="padding: 5px;color: #afafaf;">Ikuti kami</strong>
+						<ul class="category">
+							<li style="width:16%" class="style1 <?php //echo $b > 6?'hide':'' ?>" onclick="window.open('https://t.me/OniSahronii','_blank')">
+	              <i class="mdi mdi-telegram" style="font-size:32px"></i><br>
+	              <!--div>Muamalah Daily</div-->
+	            </li>
+							<li style="width:16%" class="style1  <?php //echo $b > 6?'hide':'' ?>" onclick="window.open('https://www.instagram.com/muamalah_daily/','_blank')">
+	              <i class="mdi mdi-instagram"  style="font-size:32px"></i><br>
+	              <!--div>Muamalah_Daily</div-->
+	            </li>
+							<li style="width:16%" class="style1  <?php //echo $b > 6?'hide':'' ?>" onclick="window.open('https://www.youtube.com/channel/UCASOyLs8Br4wJuu5giq41-w','_blank')">
+	              <i class="mdi mdi-youtube"  style="font-size:32px"></i><br>
+	              <!--div>Muamalah Daily</div-->
+	            </li>
+							<li style="width:16%" class="style1  <?php //echo $b > 6?'hide':'' ?>" onclick="window.open('https://www.facebook.com/onisahronii2','_blank')">
+	              <i class="mdi mdi-facebook-box"  style="font-size:32px"></i><br>
+	              <!--div>Oni Sahroni</div-->
+	            </li>
+							<li style="width:16%" class="style1  <?php //echo $b > 6?'hide':'' ?>" onclick="window.open('http://www.rumahwasathia.com','_blank')">
+	              <i class="mdi mdi-earth"  style="font-size:32px"></i><br>
+	              <!--div>rumahwasathia.com</div-->
+	            </li>
+						</ul>
+					</div>
       </div>
     </div>
   </div>

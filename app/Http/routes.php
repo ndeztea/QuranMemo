@@ -20,6 +20,7 @@ Route::get('note/manage', ['middleware' => 'auth', function () {
 }]);
 
 Route::get('home', 'HomeController@index');
+Route::get('generator', 'GeneratorController@content');
 
 
 Route::get('mushaf/generate', 'MushafController@generate');

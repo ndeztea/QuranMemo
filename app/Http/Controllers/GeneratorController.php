@@ -22,7 +22,7 @@ class GeneratorController extends Controller
 {
 
     var $mainPath = '/Users/dimas/Works/www/QuranMemo';
-    var $targetPath = '/content';
+    var $targetPath = 'content';
      public function content(Request $request)
      {
 
@@ -51,20 +51,62 @@ class GeneratorController extends Controller
 
           foreach ($arrContents as $keyContent => $valueContent) {
             $directoryAudio = $this->mainPath.'/public/generate_data/'.$value.'/'.$valueContent;
-            $audios = array_map('basename',File::files($directoryAudio));
-            echo '<br>'.$data['id_category'].'==>';
-            foreach ($audios as $valueAudio) {
-              $data['title'] = preg_replace('/\\.[^.\\s]{3,4}$/', '', $valueAudio);
-              $data['content'] = $this->targetPath.'/'.$keyContent.'/'.$valueAudio;
-              $data['is_active'] = 1;
-              $data['type'] = $keyContent;
-              //echo $directoryAudio;
-              //echo file_exists($directoryAudio.'/'.$valueAudio);die();
-              $isMoving = rename($directoryAudio.'/'.$valueAudio,
-                $this->mainPath.'/'.$this->targetPath.'/'.$keyContent.'/'.$valueAudio);
-              if($isMoving){
-                $Categories->storeContentCategory($data);
+            if ($valueContent=='Infografis'){
+              $infos = array_map('basename',File::directories($directoryAudio));
+
+              foreach ($infos as $keyInfo => $valInfo) {
+                $fileInfos = array_map('basename',File::files($directoryAudio.'/'.$valInfo));
+                $newFolder = $this->mainPath.'/public/'.$this->targetPath.'/'.$keyContent.'/'.$valInfo;
+                if(!File::exists($newFolder)) {
+                  File::makeDirectory($newFolder);
+                }
+
+                $data['title'] = preg_replace('/\\.[^.\\s]{3,4}$/', '', $valInfo);
+                $data['content'] = '';
+                $data['is_active'] = 1;
+                $data['type'] = 'library-books';
+
+                // get images
+                $fileImages = array_map('basename',File::files($directoryAudio.'/'.$valInfo));
+                $filesSave = array();
+                $a = 0;
+                foreach ($fileImages as $fileImage) {
+                  $isMoving = rename($directoryAudio.'/'.$valInfo.'/'.$fileImage,
+                    $newFolder.'/'.$fileImage);
+                  $filesSave[$a] = $fileImage;
+                  $a++;
+
+                }
+                $data['content'] = json_encode($filesSave);
+                if(!empty($data['content'])){
+                  $Categories->storeContentCategory($data);
+                }
+
               }
+            }else{
+              $audios = array_map('basename',File::files($directoryAudio));
+              foreach ($audios as $valueAudio) {
+                $data['title'] = preg_replace('/\\.[^.\\s]{3,4}$/', '', $valueAudio);
+                $data['content'] = $this->targetPath.'/'.$keyContent.'/'.$valueAudio;
+                $data['is_active'] = 1;
+                $data['type'] = $keyContent;
+                //echo $directoryAudio;
+                //echo file_exists($directoryAudio.'/'.$valueAudio);die();
+                echo $valueContent;
+                if ($valueContent=='Infografis'){
+                  $images = array_map('basename',File::directories($this->mainPath.'/'.$this->targetPath.'/'.$keyContent));
+                  print_r($images);
+                }else{
+                  $isMoving = rename($directoryAudio.'/'.$valueAudio,
+                    $this->mainPath.'/'.$this->targetPath.'/'.$keyContent.'/'.$valueAudio);
+                  if($isMoving){
+                    $Categories->storeContentCategory($data);
+                  }
+                }
+            }
+
+
+
 
 
               print_r($data);

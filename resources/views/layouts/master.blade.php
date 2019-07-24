@@ -233,6 +233,7 @@
         <div id="preloader">
             <div class="loading">
             <img src="{{url('assets/images/loading2.svg')}}" alt="loading" width="50"/><br><br>
+            <img src="{{url('assets/images/main_logo@2x.png')}}" width="200">
         <!--span>Mohon tunggu...</span=-->
       </div>
         </div>
