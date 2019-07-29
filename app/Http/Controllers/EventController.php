@@ -68,6 +68,7 @@ class EventController extends Controller
         $fileName = uniqid('event').'.jpg';
         $path = $request->file('image')->move(public_path('events'), $fileName);
         $data['image'] = $fileName;
+        //die();
       }
 
 
@@ -132,12 +133,16 @@ class EventController extends Controller
 
         Carbon::setLocale('id');
         $mytime = Carbon::now();
+
+
         $eventDate = new Carbon($data['event']->date);
+        $data['dateDiff'] = $mytime->format('Y-m-d')==$data['event']->date?0:1;
+
         $data['event']->date = $eventDate->format('l, d F Y');
         $data['event'] = $data['event'];
 
         $data['timenow'] = intVal($mytime->format('H'));
-        $data['dateDiff'] = $mytime->format('Y-m-d')==$data['event']->date?0:1;
+
         return view('events.event_detail',$data);
     }
 
