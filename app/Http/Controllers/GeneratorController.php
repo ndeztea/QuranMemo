@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Storage;
 class GeneratorController extends Controller
 {
 
-    var $mainPath = '/Users/dimas/Works/www/QuranMemo';
+    var $mainPath = '..';
     var $targetPath = 'content';
      public function content(Request $request)
      {
@@ -78,7 +78,7 @@ class GeneratorController extends Controller
 
                 }
                 $data['content'] = json_encode($filesSave);
-                if(!empty($data['content'])){
+                if(!empty($filesSave)){
                   $Categories->storeContentCategory($data);
                 }
 
