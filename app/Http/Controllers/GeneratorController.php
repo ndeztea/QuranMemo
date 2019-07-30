@@ -79,6 +79,8 @@ class GeneratorController extends Controller
                 }
                 $data['content'] = json_encode($filesSave);
                 if(!empty($filesSave)){
+                  echo "Save data : <br>";
+                  print_r($data);
                   $Categories->storeContentCategory($data);
                 }
 
@@ -92,7 +94,6 @@ class GeneratorController extends Controller
                 $data['type'] = $keyContent;
                 //echo $directoryAudio;
                 //echo file_exists($directoryAudio.'/'.$valueAudio);die();
-                echo $valueContent;
                 if ($valueContent=='Infografis'){
                   $images = array_map('basename',File::directories($this->mainPath.'/'.$this->targetPath.'/'.$keyContent));
                   print_r($images);
@@ -100,17 +101,13 @@ class GeneratorController extends Controller
                   $isMoving = rename($directoryAudio.'/'.$valueAudio,
                     $this->mainPath.'/'.$this->targetPath.'/'.$keyContent.'/'.$valueAudio);
                   if($isMoving){
+                    echo "Save data : <br>";
+                    print_r($data);
                     $Categories->storeContentCategory($data);
                   }
                 }
             }
-
-
-
-
-
-              print_r($data);
-              echo '<hr>';
+            echo '<hr>';
             }
           }
         }
