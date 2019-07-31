@@ -93,13 +93,13 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-					<div class="" style="color: #2d2d2d;font-size: 20px;background: #feffff url(http://icons.iconarchive.com/icons/martz90/hex/512/warning-icon.png);background-size: 56px;background-position-y: 16px;border-top: 0px #e2fffc;background-repeat: no-repeat;padding: 0px 9px 0px 56px;text-align: left;height: 74px;" target="_blank">
+					<div class="" style="color: #2d2d2d;font-size: 20px;background: #feffff url(https://i.pinimg.com/originals/60/9f/20/609f20eaf19c87453bf789b6f189a5a5.jpg);background-size: 56px;background-position-y: 16px;border-top: 0px #e2fffc;background-repeat: no-repeat;padding: 0px 9px 0px 64px;text-align: left;height: 112px;" target="_blank">
 						<!--a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a-->
 
 						<div style="
 						    font-size: 15px;
 						    padding-left: -2px;
-						"><br><strong>Server Maintenance </strong>App tidak akan bisa diakses sementara per tgl 2-4  Juli 2019. <br></div>
+						"><br><strong></strong>Kami sudah migrasi ke server baru, semua santri yang berlangganan akan mendapatkan tambahan selama 30 hari per tanggal 30 Juli 2019<br></div>
 					</div>
 				  <div class="ads-middle" style="height: 110px">
 				  	<strong>Hafalan pilihan</strong>
