@@ -203,7 +203,7 @@ class ProfileController extends Controller
         $type = $request->input('type','pekanan');
         $gender = $request->input('gender','');
 
-        $data['header_top_title'] = $data['header_title'] = 'Top Santri';
+        $data['header_top_title'] = $data['header_title'] = 'Ranking';
         $data['body_class'] = 'body-editprofile';
         $UsersModel = new Users;
         $arrType = array('pekanan'=>7,'bulanan'=>30,'tahunan'=>356);

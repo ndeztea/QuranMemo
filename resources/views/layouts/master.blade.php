@@ -291,6 +291,7 @@
                 <ul class="nav navmenu-nav">
 
                     <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard?promo=hide')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
+                    <li class="{{Request::segment(1)=='profile'?'active':''}}"><a href="{{url('profile/top_user')}}"><i class="mdi mdi-chart-line"></i> Ranking Points <small class="badge badge-alert">New</small></a></li>
                     <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Tahfidz</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca Al-Qur'an</a>
