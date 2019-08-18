@@ -89,12 +89,23 @@ class DashboardController extends Controller
 
     public function setClass(Request $request){
         $id_class = $request->input('id_class');
-        $sess_role = session('sess_role');
-        $sess_id_class = session('sess_id_class');
-        // set session
-        $request->session()->put('sess_id_class', $id_class);
+        $lock_key = $request->input('lock_key');
+
         if(session('sess_id')){
             // save for temp action
+            if(!empty($lock_key)){
+              $UsersModel = new Users;
+              $classDetail = $UsersModel->getClassDetail($id_class);
+              if($lock_key!=$classDetail->lock_key){
+                return redirect('dashboard')->with('messageError', 'Ganti halaqah gagal! Password halaqah salah.');
+              }
+            }
+            $sess_role = session('sess_role');
+            $sess_id_class = session('sess_id_class');
+            // set session
+            $request->session()->put('sess_id_class', $id_class);
+
+
             $dataUser['id'] = session('sess_id');
             $dataUser['id_class'] = $id_class;
             $UserModel = new Users();
@@ -102,8 +113,24 @@ class DashboardController extends Controller
         }
 
         return redirect('dashboard');
+    }
+
+    public function confirmClass(Request $request){
+        $id_class = $request->input('id_class');
+        $UsersModel = new Users;
+        $classDetail = $UsersModel->getClassDetail($id_class);
+
+        $dataHTML['modal_class'] = '';
+        $dataHTML['modal_title'] = 'Halaqah '.$classDetail->class;
+        $data['urlAction'] = url('dashboard/setClass?id_class='.$id_class.'&islock=true');
+        $data['id_class'] = $id_class;
+        $dataHTML['modal_body'] = view('class_change',$data)->render();
+        $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+        return response()->json($dataHTML);
 
     }
+
 
 
 }

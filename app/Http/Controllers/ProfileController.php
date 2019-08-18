@@ -194,8 +194,6 @@ class ProfileController extends Controller
                 $UsersModel->edit($data);
             }
         }
-
-
         return redirect()->back()->with('messageSuccess', 'Data berhasil diupdate');
     }
 

@@ -34,7 +34,7 @@
 								</button>
 								<ul class="dropdown-menu choose-class" aria-labelledby="dropdownMenu2" style="width:100%;min-width: 300px">
 									@foreach($listClasses as $class)
-									<li><a href="{{url('dashboard/setClass?id_class='.$class->id)}}">{{$class->class}}</a></li>
+									<li><a href="{{$class->lock_key?'javascript:QuranJS.callModal("dashboard/confirmClass?id_class='.$class->id.'")':url('dashboard/setClass?id_class='.$class->id)}}">{{$class->class}} {!!$class->lock_key?'<i style="color:#ff8b33" class="mdi mdi-octagram"></i>':''!!}</a></li>
 									@endforeach
 								</ul>
 							</div>

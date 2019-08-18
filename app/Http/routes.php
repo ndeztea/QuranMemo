@@ -151,6 +151,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('quiz/number/{number}', 'QuizController@number');
     Route::post('quiz/save', 'QuizController@save');
     Route::get('dashboard/setClass', 'DashboardController@setClass');
+    Route::post('dashboard/setClass', 'DashboardController@setClass');
+    Route::get('dashboard/confirmClass', 'DashboardController@confirmClass');
 });
 
 Route::group(['middleware' => 'admin'], function () {
