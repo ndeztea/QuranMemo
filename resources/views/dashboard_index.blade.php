@@ -93,16 +93,31 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-					<div class="" style="color: #2d2d2d;font-size: 20px;background: #feffff url(https://i.pinimg.com/originals/60/9f/20/609f20eaf19c87453bf789b6f189a5a5.jpg);background-size: 56px;background-position-y: 16px;border-top: 0px #e2fffc;background-repeat: no-repeat;padding: 0px 9px 0px 64px;text-align: left;height: 112px;" target="_blank">
-						<!--a href="javascript:QuranJS.callModal('buku')">Program berbagi buku gratis <sup class="text-white label label-danger" style="font-size: 10px">New</sup></a-->
-
+					<div class="" style="background: rgb(0,0,0);/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;background-image: url(&quot;http://community.quranmemo.com/public/assets/images/winingcup.png&quot;);width: 97%;height: 99px;background-size: 44%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;" target="_blank">
 						<div style="
-						    font-size: 15px;
-						    padding-left: -2px;
-						"><br><strong></strong>Kami sudah migrasi ke server baru, semua santri yang berlangganan akan mendapatkan tambahan selama 30 hari per tanggal 30 Juli 2019<br></div>
+    float: right;
+    width: 268px;
+    color: #FFF;
+    padding: 8px;
+"><span style="font-family: 'Fira+Sans';
+    text-shadow: 1px 1px 1px #e3b955;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;">Mau buku Islami tiap bulan?</span><span style="
+    font-size: 12px;
+"><br>Syaratnya setorkan hafalanmu disini!</span><button onclick="location.href='{{url('profile/top_user')}}'" class="" style="
+    border-radius: 22px;
+    color: #95750c;
+    background-color: #ffffffd1;
+    padding: 7px;
+    width: 70%;
+    font-weight: 700;
+    border-color: #ffffff00;
+">Lihat Leaderboard</button></div>
+
 					</div>
-				  <div class="ads-middle" style="height: 110px">
-				  	<strong>Hafalan pilihan</strong>
+				  <div class="ads-middle" style="height: 110px;background:#00978a;border-radius: 10px 10px 0px 0px;">
+				  	<!--strong>Hafalan pilihan</strong-->
 				  	<div id="recommendation-memoz">
 					    <ul>
 					    	<?php $recNo = 0?>
