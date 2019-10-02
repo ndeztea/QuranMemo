@@ -60,6 +60,9 @@
         <link rel="stylesheet" href="{{url('assets/css/vendors/circle-menu.min.css')}}">
 
         <style>
+        #content .input-group{
+          padding: 10px;
+        }
         .tanwin1:nth-letter(1){
             position: relative;
             top:-15px;

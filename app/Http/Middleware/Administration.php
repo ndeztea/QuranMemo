@@ -35,16 +35,17 @@ class Administration
      */
     public function handle($request, Closure $next)
     {
-        
-        $sess_id = $request->session()->get('sess_id');
-        $usersModel = new Users;
-        $dataAdmin = $usersModel->getDetail($sess_id);
-        if(!empty($dataAdmin)){
-            if ($dataAdmin[0]->role!=1) {
+
+        $sess_token_key = $request->session()->get('sess_token_key');
+
+        //$usersModel = new Users;
+        //$dataAdmin = $usersModel->getDetail($sess_id);
+        if(empty($sess_token_key)){
+            #if ($dataAdmin[0]->role!=1) {
                 return redirect('dashboard');
-            }
+            #}
         }
-        
+
 
         return $next($request);
     }

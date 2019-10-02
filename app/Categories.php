@@ -53,6 +53,7 @@ class Categories extends Model
           //->where('type','!=','library-books')
           ->where('id_category',$id_category)
           ->orderby('title','asc')
+          ->where('category_content.is_active',1)
           ->get();
 
         return $datas;
@@ -64,6 +65,7 @@ class Categories extends Model
           ->join('category','category.id','=','category_content.id_category')
           //->where('type','!=','library-books')
           ->where('title','like','%'.$keyword.'%')
+          ->where('category_content.is_active',1)
           ->get();
 
         return $datas;
@@ -75,6 +77,7 @@ class Categories extends Model
           ->join('category','category.id','=','category_content.id_category')
           //->where('type','!=','library-books')
           ->orderby($sorting,$by)
+          ->where('category_content.is_active',1)
           ->limit(5)
           ->get();
 
@@ -86,6 +89,7 @@ class Categories extends Model
           ->select('category_content.*','category.category')
           ->join('category','category.id','=','category_content.id_category')
           ->where('category_content.id',$id)
+          ->where('category_content.is_active',1)
           ->get();
 
         return $datas[0];

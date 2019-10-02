@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Storage;
 class GeneratorController extends Controller
 {
 
-    var $mainPath = '..';
-    var $targetPath = 'content';
+    var $mainPath = '/home/quranmem/md.quranmemo.id';
+    var $targetPath = '/public/content';
      public function content(Request $request)
      {
 
@@ -56,7 +56,7 @@ class GeneratorController extends Controller
 
               foreach ($infos as $keyInfo => $valInfo) {
                 $fileInfos = array_map('basename',File::files($directoryAudio.'/'.$valInfo));
-                $newFolder = $this->mainPath.'/public/'.$this->targetPath.'/'.$keyContent.'/'.$valInfo;
+                $newFolder = $this->mainPath.$this->targetPath.'/'.$keyContent.'/'.$valInfo;
                 if(!File::exists($newFolder)) {
                   File::makeDirectory($newFolder);
                 }
@@ -91,7 +91,7 @@ class GeneratorController extends Controller
                 $data['title'] = preg_replace('/\\.[^.\\s]{3,4}$/', '', $valueAudio);
                 $data['content'] = $this->targetPath.'/'.$keyContent.'/'.$valueAudio;
                 $data['is_active'] = 1;
-                $data['type'] = $keyContent;
+                $data['type'] = $keyContent=='audio'?'audiobook':$keyContent;
                 //echo $directoryAudio;
                 //echo file_exists($directoryAudio.'/'.$valueAudio);die();
                 if ($valueContent=='Infografis'){

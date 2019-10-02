@@ -162,7 +162,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('quiz/save', 'QuizController@save');
     Route::get('dashboard/setClass', 'DashboardController@setClass');
 });
-
+Route::get('admin/set_token', 'AdminController@set_token');
+Route::get('admin/unset_token', 'AdminController@unset_token');
 Route::group(['middleware' => 'admin'], function () {
     Route::get('subscription/approve/{id}', 'SubscriptionsController@approve');
     Route::get('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
@@ -172,6 +173,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('profile/list', 'ProfileController@listing');
 
     Route::post('profile/updateClass', 'ProfileController@updateClass');
+
+    Route::get('admin/form', 'AdminController@form');
+    Route::post('admin/save', 'AdminController@post_save');
 
     #Route::get('dashboard/setClass', 'DashboardController@setClass');
 });
