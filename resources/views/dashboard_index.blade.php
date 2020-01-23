@@ -93,6 +93,39 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
+					<div class="" style="background: #2b6888;/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;/* background-image: url(&quot;http://md.quranmemo.id/public/assets/images/qmc-logo.png&quot;); */width: 97%;height: 75px;background-size: 14%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;background-position: 96% -14%;" target="_blank">
+						<div style="
+    float: left;
+    width: 71%;
+    color: #FFF;
+    padding: 7px;
+"><span style="
+    /* font-family: 'Fira+Sans'; */
+    text-shadow: 1px 1px 4px #353535;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    ">Muamalah Daily</span><span style="
+    font-size: 12px;
+"><br>Download app fiqh muamalah sehari-hari dikelola oleh Ustadz DR. Oni Syahroni, MA. </span></div>
+<div style="
+    position: absolute;
+    right: -19px;
+"><a href="https://play.google.com/store/apps/details?id=com.muamalah.daily&hl=en" target="_blank" style="
+    font-size: 23px;
+    color: #fff;
+    /* border: 1px solid; */
+    /* border-radius: 27px; */
+    padding: 2px;
+    padding-right: 27px;
+    /* text-align: center; */
+" class="btn"><img src="https://www.freepnglogos.com/uploads/google-play-png-logo/google-play-icon-png-logo--14.png" style="
+    width: 31px;
+">
+<img src="http://md.quranmemo.id/public/assets/images/qmc-logo.png" style="width: 70px;"></a></div>
+
+					</div>
+
 					<div class="" style="background: rgb(0,0,0);/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;background-image: url(&quot;http://community.quranmemo.com/public/assets/images/winingcup.png&quot;);width: 97%;height: 99px;background-size: 44%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;" target="_blank">
 						<div style="
     float: right;
