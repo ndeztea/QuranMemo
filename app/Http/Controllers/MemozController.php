@@ -153,11 +153,14 @@ class MemozController extends Controller
 
          }
 
+
+
          $sess_id_user = session('sess_id');
          $counterRecord = $memoModel->getCountRecordedUser($sess_id_user);
          $level = $UsersModel->checkLevel($sess_id_user);
 
-
+        #check if setor hafalan masih banyak belum di koreksi
+        $data['countNeedCorrection'] = $memoModel->getCountNeedCorrectionUser();
 
          //$data['fill_ayat_end'] = $fill_ayat_end;
          $data['level'] = $level;

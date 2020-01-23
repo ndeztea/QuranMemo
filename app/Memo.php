@@ -256,9 +256,6 @@ class Memo extends Model
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('status','=',2);
 
-
-
-
         if($this->sess_id){
           if($this->sess_id_class){
               $memoList = $memoList->where('id_class',$this->sess_id_class);
@@ -268,6 +265,18 @@ class Memo extends Model
           }
         }
 
+        $memoList = $memoList->get();
+        return $memoList[0]->count;
+    }
+
+    public function getCountNeedCorrectionUser(){
+         $memoList = DB::table($this->table.' as memo')
+                ->select(DB::raw('count(*) as count'))
+                ->join('users as u', 'u.id', '=', 'memo.id_user')
+                ->join('surah as s', 's.id', '=', 'memo.surah_start')
+                ->where('status','=',2);
+        $memoList = $memoList->where('memo.id_user',$this->sess_id);
+        
         $memoList = $memoList->get();
         return $memoList[0]->count;
     }
