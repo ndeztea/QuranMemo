@@ -19,7 +19,15 @@
 						</div>
 					</div>
 				</div>
-				<a class="submit-q" href="https://api.whatsapp.com/send?phone=6281231234073&text=Assalamu'alaikum%20wr%20wb,Saya%20ingin%20bertanya"><!--i class="mdi mdi-help-box"></i-->Kirim Pertanyaan</a>
+				<img src="{{url('assets/images/ustadz_oni.png')}}" style="
+				    position: absolute;
+				    top: -9px;
+				    /* width: 160px; */
+				    left: 254px;
+				    height: 106px;
+				    transform: scaleX(-1);
+							"/>
+				<a class="submit-q" href="https://api.whatsapp.com/send?phone=6281289105575&text=Assalamu'alaikum%20wr%20wb,%20Saya%20ingin%20bertanya"><!--i class="mdi mdi-help-box"></i-->Kirim Pertanyaan</a>
 				<br>
         <div class="">
 										<strong style="padding: 5px;color: #afafaf;">Category</strong>

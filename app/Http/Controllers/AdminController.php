@@ -47,7 +47,7 @@ class AdminController extends Controller
       $dataHtml['listCategories'] = $listCategories;
       $dataHtml['listTypes'] = array('video'=>'Video','audiobook'=>'Audio','library-books'=>'Image');
 
-      return view('admin.form',$dataHtml);
+      return view('md.admin.form',$dataHtml);
     }
 
     public function post_save(Request $request){
@@ -55,24 +55,33 @@ class AdminController extends Controller
       $title = $request->input('title');
       $id_category = $request->input('id_category');
       $file = $request->file('file');
+      $yotube_link = $request->input('yotube_link');
       $is_active = $request->input('is_active');
       $type = $request->input('type');
-
       if($title){
         if($type=='audiobook'){
           $ext = '.mp3';
           $folder = 'audios';
+          $fileName = uniqid($type).$ext;
+          $filePath = $file->move(public_path('assets/media/'.$folder), $fileName);
+          $content = $filePath?'assets/media/'.$folder.'/'.$fileName:'';
+        }
+        elseif($type=='library-books'){
+          $contens = array();
+          foreach ($file as $oneFile) {
+            $folder = 'images';
+            $fileName = uniqid($type).'.jpg';
+            $filePath = $oneFile->move(public_path('assets/media/'.$folder), $fileName);
+            $contents[] = $filePath?'assets/media/'.$folder.'/'.$fileName:'';
+          }
+          $content = json_encode($contents);
         }elseif($type=='video'){
-          $ext = '.mp4';
-          $folder = 'videos';
+          $content = $yotube_link;
         }
 
-        $fileName = uniqid($type).$ext;
-        $filePath = $file->move(public_path('assets/media/'.$folder), $fileName);
-
-        if($filePath){
+        if($content!=''){
             $data['title'] = $title;
-            $data['content'] = 'assets/media/'.$folder.'/'.$fileName;
+            $data['content'] = $content;
             $data['is_active'] = $is_active;
             $data['type'] = $type;
             $data['id_category'] = $id_category;

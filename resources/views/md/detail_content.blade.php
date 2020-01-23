@@ -26,7 +26,11 @@
 							<a href="javascript:window.open('{{url($content->content)}}', '_system')" class="btn btn-success" ><i class="mdi mdi-download"></i> Download file</a>
 						</div-->
 						@if ($content->type=='video')
-							<video src="{{url($content->content)}}" style="width:100%" controls></video>
+							@if (filter_var($content->content,FILTER_VALIDATE_URL))
+								<iframe width="100%" height="315" src="{{$content->content}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							@else
+								<video src="{{url($content->content)}}" style="width:100%" controls></video>
+							@endif
 						@elseif($content->type=='audiobook')
 							<audio src="{{url($content->content)}}" style="width:100%" controls></audio>
 						@else
@@ -35,7 +39,11 @@
 								//print_r($arr);
 							?>
 							@foreach($arr as $file)
+								@if(strpos($file,'library'))
+								<img src="{{url($file)}}" style="width:100%"/>
+								@else
 								<img src="{{url('content/infografis/'.$content->title.'/'.$file)}}" style="width:100%"/>
+								@endif
 							@endforeach
 						@endif
 					</div>

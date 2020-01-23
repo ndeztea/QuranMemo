@@ -12,6 +12,7 @@ return array(
     'App\\Content' => $baseDir . '/app/Content.php',
     'App\\Events\\Event' => $baseDir . '/app/Events/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Auth/AuthController.php',
     'App\\Http\\Controllers\\Auth\\PasswordController' => $baseDir . '/app/Http/Controllers/Auth/PasswordController.php',
     'App\\Http\\Controllers\\BookmarksController' => $baseDir . '/app/Http/Controllers/BookmarksController.php',
