@@ -34,6 +34,7 @@ class CategoryController extends Controller
         $objUsers = new Users();
         $data['contentNewest'] = $objCategories->getContentOrder('id','desc');
         $data['contentVisitor'] = $objCategories->getContentOrder('counter','desc');
+        $data['contentRandom'] = $objCategories->getContentOrder('RAND()','');
         $data['categories'] = $objCategories->getAll();
         $detailProfile = $objUsers->getDetail(session('sess_id'));
         $data['detailProfile'] = empty($detailProfile)?null:$detailProfile[0];

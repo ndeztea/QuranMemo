@@ -76,7 +76,7 @@ class Categories extends Model
           ->select('category_content.*','category.category')
           ->join('category','category.id','=','category_content.id_category')
           //->where('type','!=','library-books')
-          ->orderby($sorting,$by)
+          ->orderByRaw("$sorting $by")
           ->where('category_content.is_active',1)
           ->limit(5)
           ->get();
