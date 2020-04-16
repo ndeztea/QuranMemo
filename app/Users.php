@@ -90,7 +90,24 @@ class Users extends Model
         $users->orderBy('name','asc');
 
         return $users->get();
+    }
+    public function getListFromSubClass($id_sub_class='',$gender='',$keyword='',$page=''){
+      $skip = $page==1?0:($page - 1) *50;
+      $users = DB::table($this->table)
+              ->select('*')->where('id_sub_class','=',$id_sub_class)->where('role','!=',1);
 
+      if($keyword){
+          $users->where('name','like','%'.$keyword.'%');
+      }
+      if($gender){
+          $users->where('gender','=',$gender);
+      }
+
+      $users->skip($skip)->take(50);
+      $users->orderBy('role','desc');
+      $users->orderBy('name','asc');
+
+      return $users->get();
     }
 
     public function getCountList($id_class='',$gender='',$keyword=''){
@@ -102,6 +119,24 @@ class Users extends Model
         }
         if($id_class){
             $users->where('id_class','=',$id_class);
+        }
+        if($gender){
+            $users->where('gender','=',$gender);
+        }
+
+        return $users->count();
+
+    }
+
+    public function getCountFromSubClass($id_sub_class='',$gender='',$keyword=''){
+        $users = DB::table($this->table)
+                ->select('*')->where('role','!=',1);
+
+        if($keyword){
+            $users->where('name','like','%'.$keyword.'%');
+        }
+        if($id_sub_class){
+            $users->where('id_sub_class','=',$id_sub_class);
         }
         if($gender){
             $users->where('gender','=',$gender);
@@ -166,6 +201,29 @@ class Users extends Model
         $classes = DB::table('class')
                 ->select('*')
                 ->where('active',1)
+                ->where('id_parent_class',0)
+                ->orderBy('class','asc')
+                ->get();
+
+        return $classes;
+    }
+
+    public function getSubClass($id_parent_class){
+      $classes = DB::table('class')
+              ->select('*')
+              ->where('id_parent_class',$id_parent_class)
+              ->orderBy('class','asc')
+              ->get();
+
+      return $classes;
+    }
+
+    public function getPublicClass(){
+        $classes = DB::table('class')
+                ->select('*')
+                ->where('active',1)
+                ->where('lock_key','=','')
+                ->where('id_parent_class','=',0)
                 ->orderBy('class','asc')
                 ->get();
 
@@ -173,13 +231,13 @@ class Users extends Model
     }
 
     public function getClassDetail($id_class){
+
         $classes = DB::table('class')
                 ->select('*')
                 ->where('id',$id_class)
                 ->orderBy('id','asc')
-                ->get()[0];
-
-        return $classes;
+                ->get();
+        return $classes[0];
     }
 
     public function checkLevel($id_user){
