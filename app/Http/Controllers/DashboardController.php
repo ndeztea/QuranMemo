@@ -81,6 +81,9 @@ class DashboardController extends Controller
          $objPoints = new Points();
          $total_points = $objPoints->totalPoints(session('sess_id'),'all');
          $data['total_points'] = $total_points;
+         if(session('sess_id_sub_class')){
+           $data['subClassDetail'] = $UsersModel->getClassDetail( session('sess_id_sub_class'));
+         }
 
 
           return view('dashboard_index',$data);

@@ -26,6 +26,9 @@ class RegisterController extends Controller
         $data['header_top_title']  = $data['header_title'] = 'Daftar';
         $data['body_class'] = 'body-register';
 
+        $UsersModel = new Users;
+        $listClasses = $UsersModel->getPublicClass();
+        $data['listClasses'] = $listClasses;
         return view('register_index',$data);
     }
 
@@ -69,7 +72,7 @@ class RegisterController extends Controller
             $request->session()->put('sess_name', $request->input('name'));
             $request->session()->put('sess_role', 0);
             $request->session()->put('sess_gender', $request->input('gender'));
-            $request->session()->put('sess_id_class', 1);
+            $request->session()->put('sess_id_class', $request->input('id_class'));
 
             return redirect('dashboard')->with('messageSuccess', 'Ahlah wa sahlan di '.config('app.app_name'));
         }else{
@@ -139,6 +142,7 @@ class RegisterController extends Controller
             //'id_ayat'   =>  $data['id_ayat'],
             //'id_surah'  =>  $data['id_surah'],
             'device_id' =>  $data['device_id'],
+            'id_class' => $data['id_class'],
             'is_active' =>  0);
         $objUsers = new Users();
         $lastId = $objUsers->store($dataRecord);

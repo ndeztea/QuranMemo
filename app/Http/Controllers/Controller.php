@@ -40,6 +40,7 @@ abstract class Controller extends BaseController
                 $request->session()->put('sess_role', $dataLogin->role);
                 $request->session()->put('sess_gender', $dataLogin->gender);
                 $request->session()->put('sess_id_class', $dataLogin->id_class);
+                $request->session()->put('sess_id_sub_class', $dataLogin->id_sub_class);
             }
         }
 

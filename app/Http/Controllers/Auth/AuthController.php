@@ -72,6 +72,8 @@ class AuthController extends Controller
         $request->session()->forget('sess_role');
         $request->session()->forget('sess_gender');
         $request->session()->forget('sess_id_class');
+        $request->session()->forget('sess_city');
+        $request->session()->forget('sess_id_sub_class');
         return redirect('dashboard?starting=yes')->withCookie(Cookie::forget('coo_quranmemo_email'))->withCookie(Cookie::forget('coo_quranmemo_password'));
     }
 
@@ -104,6 +106,8 @@ class AuthController extends Controller
             $request->session()->put('sess_role', $dataLogin->role);
             $request->session()->put('sess_gender', $dataLogin->gender);
             $request->session()->put('sess_id_class', $dataLogin->id_class);
+            $request->session()->put('sess_id_sub_class', $dataLogin->id_sub_class);
+            $request->session()->put('sess_city', $dataLogin->city);
 
             // set cookie
             /*setcookie('coo_quranmemo_email',$dataLogin->email);
