@@ -23,6 +23,7 @@
 							<div class="dash-profile-desc">
 								<h4 class="dash-profile-name">{{$detailProfile->name}} <sup class="badge">{{getAge($detailProfile)}}</sup></h4>
 								<h2 class="label label-success">{{$classDetail->class}}</h2>
+								{!!isset($subClassDetail)?'<h2 class="label label-danger">Kelas : '.$subClassDetail->class.'</a>':''!!}
 							</div>
 
 							<!--form name="uploadForm" method="post" enctype="multipart/form-data" action="http://localhost/QuranMemo/public/memoz/uploadRecordedMobile/134">

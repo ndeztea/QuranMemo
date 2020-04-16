@@ -53,9 +53,13 @@
 								<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
 								<span class='label label-primary'>Paket {{ucfirst($level[$subscription->level])}} ( {{$daysLeft}} hari )</span>
 								@endforeach
+								@if(session('sess_id_class') && !empty($subClassDetail))
+								<h2 class='label label-danger'>Kelas : {{$subClassDetail->class}}</h2>
+								@endif
 								@if(session('sess_name'))
 								<h2 class='label label-success'>Points : {{$total_points}}</h2>
 								@endif
+
 							</div>
 
 							<!--form name="uploadForm" method="post" enctype="multipart/form-data" action="{{url('memoz/uploadRecordedMobile/134')}}">
@@ -87,6 +91,20 @@
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('content_learning')}}" ><i class="mdi mdi-image-filter-drama"></i> E-Learning</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('profile/top_user')}}" ><i class="mdi mdi-account-network"></i> Top Santri</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-target"></i> Pencapaian</a></li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('todo')}}"><i class="mdi mdi-calendar-check"></i> AmalanYaumi
+									<sup class="text-white label label-danger">New</sup>
+								</a>
+								</li>
+								<li class="tabbed-nav-list-item">
+									<a class="tabbed-nav-link" href="javascript:;" onclick="vex.dialog.alert('Akan hadir di bulan Ramadhan nanti. In Sya Allah');"><i class="mdi mdi-clock"></i> Al-Matsurats
+									<sup class="text-white label label-danger" style="background:#5cb85c">Next</sup>
+								</a>
+								@if((session('sess_role')==1 || session('sess_role')==2) && (session('sess_id_sub_class')))
+                  <li class="tabbed-nav-list-item" style="background-color:#ffdbdb">
+                      <a class="tabbed-nav-link" href="<?php echo url('profile/list')?>"><i class="mdi mdi-file-document" ></i> Laporan</a>
+                  @endif
+								</li>
+
 							</ul>
 						</div>
 					</div>

@@ -43,6 +43,17 @@
 													<input type="password" class="form-control" name="password_confirmation" id="password_confirmation" aria-label="password" placeholder="Tulis ulang password" />
 												</div>
 												<h3 class="form-heading">Data Profile</h3>
+												@if (!empty($listSubClasses))
+												<div class="form-group">
+													<label for="name" class="control-label sr-only">Kelas</label>
+													<select class="form-control"  name="id_sub_class" style="height: 42px">
+										  	  		<option value="">-Pilih Kelas-</option>
+										  	  		@foreach($listSubClasses as $class)
+											    		<option value="{{$class->id}}" {{$detailUser->id_sub_class==$class->id?'selected':'' }}>{{$class->class}}</option>
+											    		@endforeach
+										  	  </select>
+												</div>
+												@endif
 												<div class="form-group">
 													<label for="name" class="control-label sr-only">Full Name</label>
 													<input type="name" class="form-control" name="name" id="name" aria-label="Full Name" placeholder="Nama Lengkap Antum" value="{{ $detailUser->name}}"/>
@@ -75,7 +86,7 @@
 													<button type="button" class="btn btn-kembali" onclick="history.back()">Kembali</button>
 												</div>
 												<input type="hidden" name="action" value="post"/>
-											</form>	
+											</form>
 											<!-- /register-form -->
 										</div>
 
@@ -86,7 +97,7 @@
 												<input type="hidden" name="device_id" id="profile_edit" value=""/>
 												<img src="{{getAvatar($detailUser)}}" width="150" height="150" id="img_avatar" class="img-circle"/>
 												<input class="input-file" type="file" name="avatar" id="avatar" onclick="fbq('track', 'clickSelectPhoto');">
-												
+
 												<br/>
 												<input type="submit" value="Upload" id="btn-upload" class="btn btn-upload-img" onclick="fbq('track', 'clickUploadAvatar');"/>
 											</form>
@@ -95,7 +106,7 @@
 								</div>
 							</div>
 						</div>
-					
+
 					</div>
 				</div>
 			</div>
