@@ -31,6 +31,10 @@ class ProfileController extends Controller
       $data['listMemoz'] = $MemoModel->getAnotherList(session('sess_id'),0,0,20,$id_user);
       $data['listDone'] = $MemoModel->getAnotherList(session('sess_id'),1,0,20,$id_user);
 
+      if($data['detailProfile']->id_sub_class){
+        $data['subClassDetail'] = $UsersModel->getClassDetail($data['detailProfile']->id_sub_class);
+      }
+
       $objPoints = new Points();
       $total_points = $objPoints->totalPoints($id_user,'all');
       $data['countMemoz'] = $MemoModel->getCountList($id_user,'all');
@@ -57,6 +61,7 @@ class ProfileController extends Controller
                 if($password==$password_confirmation){
                     $dataPass['password'] = Hash::make($password);
                     $dataPass['id'] = session('sess_id');
+                    $request->session()->put('sess_id_sub_class', $request->get('id_sub_class'));
                     $UsersModel->edit($dataPass);
 
                 }else{
@@ -72,6 +77,7 @@ class ProfileController extends Controller
             $dataProfile['gender'] = $request->get('gender');
             $dataProfile['hp'] = $request->get('hp');
             $dataProfile['dob'] = $request->get('dob');
+            $dataProfile['id_sub_class'] = $request->get('id_sub_class');
             $UsersModel->edit($dataProfile);
             assignPoints(session('sess_id'),'profile.edit');
             return redirect('profile/edit')->with('messageSuccess', 'Profile berhasil disimpan')->withInput();
@@ -80,7 +86,7 @@ class ProfileController extends Controller
 
         // avatar
         $data['detailUser'] = $UsersModel->getDetail(session('sess_id'))[0];
-
+        $data['listSubClasses'] = $UsersModel->getSubClass(session('sess_id_class'));
 
         return view('profile_edit',$data);
     }
@@ -122,22 +128,27 @@ class ProfileController extends Controller
     }
 
     public function listing(Request $request){
-        $data['header_top_title'] = $data['header_title'] = 'Daftar Santri';
+
+        $data['header_top_title'] = $data['header_title'] = 'Daftar Siswa';
         $data['body_class'] = 'body-editprofile';
 
         $UsersModel = new Users;
-        $id_class = $request->input('id_class');
+        $id_class = session('sess_id_class');
+        $id_sub_class = empty($request->input('id_sub_class'))?session('sess_id_sub_class'):$request->input('id_sub_class');
         $keyword = $request->input('keyword');
-        $gender = $request->input('gender','m');
+        $gender = $request->input('gender','');
+        // show all
+        $gender = '';
         $page = $request->input('page',1);
 
-        $listClasses = $UsersModel->getClass();
+        $listSubClasses = $UsersModel->getSubClass(session('sess_id_class'));
         $listUsers = $classDetail =  array();
         $countTotalUsers = $UsersModel->getCountList();
         $countUsers = 0;
         if($id_class){
-            $listUsers = $UsersModel->getList($id_class,$gender,$keyword,$page);
-            $countUsers = $UsersModel->getCountList($id_class,$gender,$keyword);
+
+            $listUsers = $UsersModel->getListFromSubClass($id_sub_class,$gender,$keyword,$page);
+            $countUsers = $UsersModel->getCountFromSubClass($id_sub_class,$gender,$keyword);
             $classDetail = $UsersModel->getClassDetail($id_class);
 
             if(is_int($countUsers)){
@@ -148,19 +159,29 @@ class ProfileController extends Controller
         }
 
         $rolesManual = array('Adab','Ahlak','LA','Keaktifan','Lainnya');
-
+        //die($id_sub_class);
+        $data['detailSubClass'] = $UsersModel->getClassDetail($id_sub_class);
         $data['no'] = (($page-1)*10)+1;
         $data['id_class'] = $id_class;
         $data['keyword'] = $keyword;
         $data['classDetail'] = $classDetail;
         $data['listUsers'] = $listUsers;
-        $data['listClasses'] = $listClasses;
+        $data['listSubClasses'] = $listSubClasses;
         $data['rolesManual'] = $rolesManual;
         $data['countUsers'] = $countUsers;
         $data['countTotalUsers'] = $countTotalUsers;
         $data['gender'] = $gender;
 
         return view('profile_list',$data);
+    }
+
+    public function resetPassword(Request $request){
+      $UsersModel = new Users;
+      $id_user = $request->segment(3);
+      $dataPass['password'] = Hash::make('password');
+      $dataPass['id'] = $id_user;
+      $UsersModel->edit($dataPass);
+      return redirect('profile/list')->with('messageError', 'Password sudah direset');
     }
 
     public function addPointsManual(Request $request){

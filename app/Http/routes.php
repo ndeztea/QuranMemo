@@ -20,6 +20,9 @@ Route::get('note/manage', ['middleware' => 'auth', function () {
 }]);
 
 Route::get('home', 'HomeController@index');
+Route::get('todo','TodoController@index');
+Route::get('todo/{subDays}','TodoController@index');
+
 
 
 Route::get('mushaf/generate', 'MushafController@generate');
@@ -153,17 +156,41 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard/setClass', 'DashboardController@setClass');
     Route::post('dashboard/setClass', 'DashboardController@setClass');
     Route::get('dashboard/confirmClass', 'DashboardController@confirmClass');
+
+    // amalan Yaummi
+    Route::get('todo', 'TodoController@index');
+    Route::get('todo/{subDays}', 'TodoController@index');
+    Route::get('todo/{subDays}/{iduser}', 'TodoController@index');
+    Route::get('todo/get_all_data', 'TodoController@get_all_data');
+    Route::post('todo/save', 'TodoController@save');
+    Route::get('todo/form_wajib/{todo}/{date}', 'TodoController@form_wajib');
+    Route::get('todo/form_sunnah/{todo}/{date}', 'TodoController@form_wajib');
+    Route::get('setClass', 'TodoController@set_class');
+    Route::get('todo_range/{idUser}','TodoController@summary_ranges_personal');
+    Route::post('todo_range/{idUser}','TodoController@summary_ranges_personal');
+    Route::get('mytodo/stars/{idUser}','TodoController@summary_stars');
+
+    Route::get('profile/list', 'ProfileController@listing');
+    Route::post('profile/list', 'ProfileController@listing');
+
+    Route::post('profile/updateClass', 'ProfileController@updateClass');
+    Route::post('profile/edit/{id}', 'ProfileController@edit');
+    Route::post('profile/addPointsManual', 'ProfileController@addPointsManual');
+    Route::get('profile/edit/{id}', 'ProfileController@edit');
+    Route::get('profile/delete/{id}', 'ProfileController@delete');
+    Route::get('profile/resetPassword/{id}', 'ProfileController@resetPassword');
 });
+
+
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('subscription/approve/{id}', 'SubscriptionsController@approve');
     Route::get('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
     Route::post('subscription/notvalid/{id}', 'SubscriptionsController@notvalid');
 
-    Route::get('profile/list', 'ProfileController@listing');
-    Route::post('profile/list', 'ProfileController@listing');
+    //Route::get('profile/list', 'ProfileController@listing');
+    //Route::post('profile/list', 'ProfileController@listing');
 
-    Route::post('profile/updateClass', 'ProfileController@updateClass');
 
     #Route::get('dashboard/setClass', 'DashboardController@setClass');
 });
