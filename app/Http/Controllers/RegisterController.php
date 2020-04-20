@@ -73,6 +73,7 @@ class RegisterController extends Controller
             $request->session()->put('sess_role', 0);
             $request->session()->put('sess_gender', $request->input('gender'));
             $request->session()->put('sess_id_class', $request->input('id_class'));
+            $request->session()->put('sess_city', $request->input('city'));
 
             return redirect('dashboard')->with('messageSuccess', 'Ahlah wa sahlan di '.config('app.app_name'));
         }else{
