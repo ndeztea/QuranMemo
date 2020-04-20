@@ -885,5 +885,25 @@ class MemozController extends Controller
         return response()->json($dataHTML);
     }
 
+    public function listCorrectionIhsan(){
+      $data['header_top_title'] = $data['header_title'] = 'Koreksi Ihsan';
+      $data['body_class'] = 'body-memo';
+      $MemoModel = new Memo();
+      $listCorrections = $MemoModel->getNeedCorrectionIhsan();
+
+      // get correction user subscriptions
+      $a=0;
+      if(!empty($listCorrections)){
+          $SubscriptionsModel = new Subscriptions();
+          foreach ($listCorrections as $correction) {
+              $listCorrections[$a]->listSubscriptions = $SubscriptionsModel->getActiveSubscriptions($correction->id_user);
+              $a++;
+          }
+      }
+      $data['needCorrections'] = $listCorrections;
+
+      return view('memoz_correction',$data);
+    }
+
 
 }

@@ -179,6 +179,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile/edit/{id}', 'ProfileController@edit');
     Route::get('profile/delete/{id}', 'ProfileController@delete');
     Route::get('profile/resetPassword/{id}', 'ProfileController@resetPassword');
+
+    Route::get('memoz/correction_ihsan', 'MemozController@listCorrectionIhsan');
+
 });
 
 

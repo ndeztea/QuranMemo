@@ -269,6 +269,31 @@ class Memo extends Model
         return $memoList[0]->count;
     }
 
+    public function getNeedCorrectionIhsan(){
+        $now = (string) Carbon::now();
+         $memoList = DB::table($this->table.' as memo')
+                 ->select('memo.*','s.name_indonesia as surah','u.name','gender','u.avatar','u.dob')
+                 ->join('users as u', 'u.id', '=', 'memo.id_user')
+                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
+                 ->join('user_subscriptions as us', 'u.id', '=', 'us.id_user')
+                 ->where('memo.status','=',2)
+                 ->where('record','!=','')
+                 ->where('level',3)
+                 ->where('us.active',1)
+                 ->where('us.expired_date','>',$now)
+                 ->orderby('updated_at','desc');
+
+        if($this->sess_id){
+          if($this->sess_id_class){
+              $memoList = $memoList->where('id_class',$this->sess_id_class);
+          }
+        }
+
+        $memoList = $memoList->get();
+
+        return $memoList;
+    }
+
     public function getCountNeedCorrectionUser(){
          $memoList = DB::table($this->table.' as memo')
                 ->select(DB::raw('count(*) as count'))
@@ -276,7 +301,7 @@ class Memo extends Model
                 ->join('surah as s', 's.id', '=', 'memo.surah_start')
                 ->where('status','=',2);
         $memoList = $memoList->where('memo.id_user',$this->sess_id);
-        
+
         $memoList = $memoList->get();
         return $memoList[0]->count;
     }
