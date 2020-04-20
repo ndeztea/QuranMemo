@@ -100,10 +100,14 @@
 									<sup class="text-white label label-danger" style="background:#5cb85c">Next</sup>
 								</a>
 								@if((session('sess_role')==1 || session('sess_role')==2) && (session('sess_id_sub_class')))
-                  <li class="tabbed-nav-list-item" style="background-color:#ffdbdb">
-                      <a class="tabbed-nav-link" href="<?php echo url('profile/list')?>"><i class="mdi mdi-file-document" ></i> Laporan</a>
-                  @endif
+                  <li class="tabbed-nav-list-item" style="background-color:#ffdbdb;color:#000">
+                      <a style="color:#000"  class="tabbed-nav-link" href="<?php echo url('profile/list')?>"><i class="mdi mdi-file-document" ></i> Laporan</a>
+
 								</li>
+								@endif
+								@if(session('sess_role')==1 || session('sess_role')==2)
+								<li  class="tabbed-nav-list-item" style="background-color:#ffdbdb;"><a style="color:#000" class="tabbed-nav-link" href="{{url('memoz/correction_ihsan')}}"><i class="mdi mdi-arrow-up-box"></i> Koreksi Ihsan</a></li>
+								@endif
 
 							</ul>
 						</div>
@@ -111,7 +115,7 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-					<div class="" style="background: #2b6888;/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;/* background-image: url(&quot;http://md.quranmemo.id/public/assets/images/qmc-logo.png&quot;); */width: 97%;height: 75px;background-size: 14%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;background-position: 96% -14%;" target="_blank">
+					<a target="_blank" href="https://play.google.com/store/apps/details?id=com.muamalah.daily&hl=en"><div class="" style="background: #2b6888;/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;/* background-image: url(&quot;http://md.quranmemo.id/public/assets/images/qmc-logo.png&quot;); */width: 97%;height: 75px;background-size: 14%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;background-position: 96% -14%;" target="_blank">
 						<div style="
     float: left;
     width: 71%;
@@ -125,7 +129,7 @@
     text-align: center;
     ">Muamalah Daily</span><span style="
     font-size: 12px;
-"><br>Download app fiqh muamalah sehari-hari dikelola oleh Ustadz DR. Oni Syahroni, MA. </span></div>
+"><br>Download app fiqh muamalah sehari-hari dikelola oleh Ustadz DR. Oni Sahroni, MA. </span></div>
 <div style="
     position: absolute;
     right: -19px;
@@ -142,7 +146,7 @@
 ">
 <img src="http://md.quranmemo.id/public/assets/images/qmc-logo.png" style="width: 70px;"></a></div>
 
-					</div>
+</div></a>
 
 					<div class="" style="background: rgb(0,0,0);/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;background-image: url(&quot;http://community.quranmemo.com/public/assets/images/winingcup.png&quot;);width: 97%;height: 99px;background-size: 44%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;" target="_blank">
 						<div style="

@@ -220,11 +220,14 @@
                 <ul class="nav navmenu-nav">
 
                     <li class="{{Request::segment(1)=='dashboard'?'active':''}}"><a href="{{url('dashboard?promo=hide')}}" onclick="fbq('track', 'clickDashboard')"><i class="mdi mdi-bank"></i> Dashboard</a></li>
-                    <li class="{{Request::segment(1)=='memoz'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
+                    <li class="{{Request::segment(1)=='memoz' && Request::segment(2)!='correction_ihsan'?'active':''}}"><a href="{{url('memoz')}}" onclick="fbq('track', 'clickMenghafal')"><i class="mdi mdi-library"></i> Menghafal</a></li>
                     <li class="{{Request::segment(1)=='mushaf' || Request::segment(1)==''?'active':''}}">
                     <a href="<?php echo url('mushaf')?>"><i class="mdi mdi-book-open-variant" onclick="fbq('track', 'clickBaca')"></i> Baca Al-Qur'an</a>
                     </li>
                     <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Berlangganan <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
+                    @if(session('sess_role')==1 || session('sess_role')==2)
+                    <li class="{{Request::segment(2)=='correction_ihsan'?'active':''}}"><a href="{{url('memoz/correction_ihsan')}}"><i class="mdi mdi-arrow-up-box"></i> Koreksi Ihsan</a></li>
+                    @endif
                     <!--li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('buku')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-book-open"></i> Gratis Buku <label class="label label-danger">New</label></a> </li>
 

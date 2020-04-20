@@ -27,7 +27,7 @@
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="editprofile">
 										<div class="register_form clearfix">
-											<form class="form-horizontal" action="{{url('profile/edit')}}" method="post">
+											<form class="form-horizontal" action="{{url('profile/edit/'.$detailUser->id)}}" method="post">
 												<h3 class="form-heading">Data Login</h3>
 												<div class="form-group">
 													<label for="email" class="control-label sr-only">Email</label>
