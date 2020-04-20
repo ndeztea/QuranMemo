@@ -151,6 +151,7 @@ class TodoController extends Controller
         $UsersModel = new Users();
         $data['detailProfile'] = $UsersModel->getDetail($this->idUser);
         $data['idUser'] = $idUser;
+        $data['idUserChecklist'] = $this->idUser;
         if(!empty($data['detailProfile'])){
             $data['detailProfile'] = $data['detailProfile'][0];
         }
