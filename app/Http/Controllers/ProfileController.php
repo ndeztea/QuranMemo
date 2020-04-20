@@ -49,6 +49,8 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
+        $userId = $request->segment(3)?$request->segment(3):session('sess_id');
+        $addUrl = $request->segment(3)?'/'.$request->segment(3):'';
         $data['header_top_title'] = $data['header_title'] = 'Edit Profile';
         $data['body_class'] = 'body-editprofile';
         $UsersModel = new Users;
@@ -60,7 +62,7 @@ class ProfileController extends Controller
             if($password!=''){
                 if($password==$password_confirmation){
                     $dataPass['password'] = Hash::make($password);
-                    $dataPass['id'] = session('sess_id');
+                    $dataPass['id'] = $userId;
                     $request->session()->put('sess_id_sub_class', $request->get('id_sub_class'));
                     $UsersModel->edit($dataPass);
 
@@ -70,7 +72,7 @@ class ProfileController extends Controller
             }
 
             // change profile data
-            $dataProfile['id'] = session('sess_id');
+            $dataProfile['id'] = $userId;
             $dataProfile['name'] = $request->get('name');
             $dataProfile['city'] = $request->get('city');
             $dataProfile['address'] = $request->get('address');
@@ -85,11 +87,23 @@ class ProfileController extends Controller
         }
 
         // avatar
-        $data['detailUser'] = $UsersModel->getDetail(session('sess_id'))[0];
+        $data['detailUser'] = $UsersModel->getDetail($userId)[0];
         $data['listSubClasses'] = $UsersModel->getSubClass(session('sess_id_class'));
 
         return view('profile_edit',$data);
     }
+
+    public function delete(Request $request)
+    {
+      $UsersModel = new Users;
+      $userId = $request->segment(3);
+      $data['detailUser'] = $UsersModel->getDetail($userId)[0];
+      $UsersModel->remove($userId);
+
+      return redirect('profile/list?id_class='.$data['detailUser']->id_class)->with('messageSuccess', 'Profile berhasil dihapus')->withInput();
+
+    }
+
 
     public function uploadAvatar(Request $request){
         $UsersModel = new Users;

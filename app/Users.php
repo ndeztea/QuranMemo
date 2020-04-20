@@ -278,5 +278,9 @@ class Users extends Model
         return $list->get();
     }
 
+    public function remove($id){
+        return DB::table($this->table)->where('id',$id)->delete();
+    }
+
 
 }
