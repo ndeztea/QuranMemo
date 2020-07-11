@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "linkthrow/ffmpeg": "dev-master",
         "intervention/image": "^2.3",
-        "nesbot/carbon": "~1.18"
+        "nesbot/carbon": "~1.18",
+        "ixudra/curl": "^6.19"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -25,7 +26,7 @@
             "App\\": "app/"
         },
         "files": [
-            "app/Support/Helpers.php" 
+            "app/Support/Helpers.php"
         ]
     },
     "autoload-dev": {

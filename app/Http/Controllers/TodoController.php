@@ -91,7 +91,8 @@ class TodoController extends Controller
           #print_r($response);
 
           $c = curl_init();
-          curl_setopt($c, CURLOPT_URL, 'http://muslimsalat.com/'.$this->city.'/daily.json?key=d6062423a1d68dc9b9560c021572fac5&jsoncallback=?');
+          //curl_setopt($c, CURLOPT_URL, 'http://muslimsalat.com/'.$this->city.'/daily.json?key=d6062423a1d68dc9b9560c021572fac5&jsoncallback=?');
+          curl_setopt($c, CURLOPT_URL, 'https://api.pray.zone/v2/times/day.json?city='.$this->city.'&date='.$this->date);
           curl_setopt($c, CURLOPT_HEADER, 0);
           curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
           $response = curl_exec($c);
@@ -110,11 +111,21 @@ class TodoController extends Controller
           $response = str_replace(';', '', $response);
           $response = str_replace('})', '}', $response);
           $objResponse = json_decode($response);
-          $data['subuh'] = date('H:i', strtotime($objResponse->items[0]->fajr));
+          //echo '<pre>';
+          //print_r($objResponse);
+          /*$data['subuh'] = date('H:i', strtotime($objResponse->items[0]->fajr));
           $data['dzuhur'] = date('H:i',strtotime($objResponse->items[0]->dhuhr));
           $data['ashar'] = date('H:i',strtotime($objResponse->items[0]->asr));
           $data['maghrib'] = date('H:i',strtotime($objResponse->items[0]->maghrib));
-          $data['isya'] = date('H:i',strtotime($objResponse->items[0]->isha));
+          $data['isya'] = date('H:i',strtotime($objResponse->items[0]->isha));*/
+
+          $data['subuh'] = $objResponse->results->datetime[0]->times->Imsak;
+          $data['dzuhur'] = $objResponse->results->datetime[0]->times->Dhuhr;
+          $data['ashar'] = $objResponse->results->datetime[0]->times->Asr;
+          $data['maghrib'] = $objResponse->results->datetime[0]->times->Maghrib;
+          $data['isya'] = $objResponse->results->datetime[0]->times->Isha;
+          //die();
+
           $data['date'] = $this->date;
           $data['location'] = $this->city;
           $SholatModel->store($data);

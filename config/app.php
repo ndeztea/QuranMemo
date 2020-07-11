@@ -2,8 +2,8 @@
 
 return [
 
-    'mp3_url' => 'http://localhost/QuranMemo/public/',
-    //'mp3_url' => 'http://192.168.100.4/QuranNote/public/',
+    #'mp3_url' => 'http://localhost/QuranMemo/public/',
+    'mp3_url' => 'https://quranmemo.com/public/',
     'app_name' => 'QuranMemo Community',
     'app_email' => 'quranmemo.id@gmail.com',
     /*
@@ -43,7 +43,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Bangkok',
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'id',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,9 +150,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
-
-
+        Intervention\Image\ImageServiceProvider::class,
+        Ixudra\Curl\CurlServiceProvider::class,
     ],
 
     /*
@@ -203,7 +202,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'FFMPEG'    => LinkThrow\Ffmpeg\Facade\FfmpegFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
-        'Carbon'     => Carbon\Carbon::class
+        'Carbon'     => Carbon\Carbon::class,
+        'Curl'          => Ixudra\Curl\Facades\Curl::class,
     ],
 
 ];

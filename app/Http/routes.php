@@ -20,6 +20,7 @@ Route::get('note/manage', ['middleware' => 'auth', function () {
 }]);
 
 Route::get('home', 'HomeController@index');
+Route::get('dzikir', 'DzikirController@index');
 Route::get('todo','TodoController@index');
 Route::get('todo/{subDays}','TodoController@index');
 

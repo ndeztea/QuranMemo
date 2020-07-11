@@ -91,13 +91,10 @@
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('content_learning')}}" ><i class="mdi mdi-image-filter-drama"></i> E-Learning</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('profile/top_user')}}" ><i class="mdi mdi-account-network"></i> Top Santri</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-target"></i> Pencapaian</a></li>
-								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('todo')}}"><i class="mdi mdi-calendar-check"></i> AmalanYaumi
-									<sup class="text-white label label-danger">New</sup>
-								</a>
-								</li>
+								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('todo')}}"><i class="mdi mdi-calendar-check"></i> AmalanYaumi</a></li>
 								<li class="tabbed-nav-list-item">
-									<a class="tabbed-nav-link" href="javascript:;" onclick="vex.dialog.alert('Akan hadir di bulan Ramadhan nanti. In Sya Allah');"><i class="mdi mdi-clock"></i> Al-Matsurats
-									<sup class="text-white label label-danger" style="background:#5cb85c">Next</sup>
+									<a class="tabbed-nav-link" href="{{url('dzikir')}}"><i class="mdi mdi-clock"></i> Al-Matsurats
+									<sup class="text-white label label-danger">New</sup>
 								</a>
 								@if((session('sess_role')==1 || session('sess_role')==2) && (session('sess_id_sub_class')))
                   <li class="tabbed-nav-list-item" style="background-color:#ffdbdb;color:#000">
@@ -177,7 +174,7 @@
 					    <ul>
 					    	<?php $recNo = 0?>
 					    	@foreach($listRecommendation as $recommendation)
-					    	<?php $recNo++;?>
+					    		<?php $recNo++;?>
 						      <li class="{{count($listRecommendation)==$recNo?'last':''}} dragend-page">
 						      	<div class="recommendation">
 							    	<div class="recommendation-header"><strong>{{$recommendation->surah}} : {{$recommendation->ayat_start==$recommendation->ayat_end?$recommendation->ayat_start:$recommendation->ayat_start.' - '.$recommendation->ayat_end}}</strong>

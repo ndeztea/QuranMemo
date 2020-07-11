@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
 {
     public static $files = array (
-        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'bff52a3d045f6ed95efdf1337f0dd5a3' => __DIR__ . '/..' . '/linkthrow/ffmpeg/src/Classes/FFMPEG.php',
@@ -71,6 +71,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         ),
         'I' => 
         array (
+            'Ixudra\\Curl\\' => 12,
             'Intervention\\Image\\' => 19,
             'Illuminate\\' => 11,
         ),
@@ -102,8 +103,8 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -201,6 +202,10 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
+        'Ixudra\\Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ixudra/curl/src',
+        ),
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
@@ -293,6 +298,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Content' => __DIR__ . '/../..' . '/app/Content.php',
+        'App\\Dzikir' => __DIR__ . '/../..' . '/app/Dzikir.php',
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
@@ -301,6 +307,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'App\\Http\\Controllers\\ContentController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
+        'App\\Http\\Controllers\\DzikirController' => __DIR__ . '/../..' . '/app/Http/Controllers/DzikirController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MemozController' => __DIR__ . '/../..' . '/app/Http/Controllers/MemozController.php',
         'App\\Http\\Controllers\\MushafController' => __DIR__ . '/../..' . '/app/Http/Controllers/MushafController.php',
@@ -309,6 +316,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'App\\Http\\Controllers\\QuizController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuizController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Controllers\\SubscriptionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubscriptionsController.php',
+        'App\\Http\\Controllers\\TodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TodoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Administration' => __DIR__ . '/../..' . '/app/Http/Middleware/Administration.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -333,7 +341,9 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Quiz' => __DIR__ . '/../..' . '/app/Quiz.php',
         'App\\Quran' => __DIR__ . '/../..' . '/app/Quran.php',
+        'App\\Sholat' => __DIR__ . '/../..' . '/app/Sholat.php',
         'App\\Subscriptions' => __DIR__ . '/../..' . '/app/Subscriptions.php',
+        'App\\Todo' => __DIR__ . '/../..' . '/app/Todo.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Users' => __DIR__ . '/../..' . '/app/Users.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -646,6 +656,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'Faker\\Provider\\ko_KR\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ko_KR/Internet.php',
         'Faker\\Provider\\ko_KR\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ko_KR/Person.php',
         'Faker\\Provider\\ko_KR\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ko_KR/PhoneNumber.php',
+        'Faker\\Provider\\ko_KR\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ko_KR/Text.php',
         'Faker\\Provider\\lt_LT\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/lt_LT/Address.php',
         'Faker\\Provider\\lt_LT\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/lt_LT/Company.php',
         'Faker\\Provider\\lt_LT\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/lt_LT/Internet.php',
@@ -1565,6 +1576,10 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'Intervention\\Image\\Point' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Point.php',
         'Intervention\\Image\\Response' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Response.php',
         'Intervention\\Image\\Size' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Size.php',
+        'Ixudra\\Curl\\Builder' => __DIR__ . '/..' . '/ixudra/curl/src/Builder.php',
+        'Ixudra\\Curl\\CurlService' => __DIR__ . '/..' . '/ixudra/curl/src/CurlService.php',
+        'Ixudra\\Curl\\CurlServiceProvider' => __DIR__ . '/..' . '/ixudra/curl/src/CurlServiceProvider.php',
+        'Ixudra\\Curl\\Facades\\Curl' => __DIR__ . '/..' . '/ixudra/curl/src/Facades/Curl.php',
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',

@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a749ccba36bb471e85c413496864526f",
+    "content-hash": "8e10e60545b10a6d42c4e271d45d62ec",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -286,6 +286,60 @@
                 "watermark"
             ],
             "time": "2017-04-23T18:45:36+00:00"
+        },
+        {
+            "name": "ixudra/curl",
+            "version": "6.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ixudra/curl.git",
+                "reference": "08cb70241ae9ce26f5cb3e4f18366d11fa8a279b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ixudra/curl/zipball/08cb70241ae9ce26f5cb3e4f18366d11fa8a279b",
+                "reference": "08cb70241ae9ce26f5cb3e4f18366d11fa8a279b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "illuminate/support": ">=4.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ixudra\\Curl\\CurlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Curl": "Ixudra\\Curl\\Facades\\Curl"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ixudra\\Curl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Oris",
+                    "email": "jan.oris@ixudra.be"
+                }
+            ],
+            "description": "Custom PHP Curl library for the Laravel 5 framework - developed by Ixudra",
+            "homepage": "http://ixudra.be",
+            "keywords": [
+                "Ixudra",
+                "curl",
+                "laravel"
+            ],
+            "time": "2020-03-03T19:08:05+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -822,6 +876,7 @@
                 "cron",
                 "schedule"
             ],
+            "abandoned": "dragonmantank/cron-expression",
             "time": "2016-01-26T21:23:30+00:00"
         },
         {
@@ -2175,12 +2230,12 @@
             "version": "0.9.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/4db079511a283e5aba1b3c2fb19037c645e70fc2",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/4db079511a283e5aba1b3c2fb19037c645e70fc2",
                 "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2",
                 "shasum": ""
             },
