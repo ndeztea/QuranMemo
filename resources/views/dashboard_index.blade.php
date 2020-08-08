@@ -92,10 +92,10 @@
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="{{url('profile/top_user')}}" ><i class="mdi mdi-account-network"></i> Top Santri</a></li>
 								<li  class="tabbed-nav-list-item"><a class="tabbed-nav-link"  href="javascript:;" onclick="@if(!empty(session('sess_id'))) QuranJS.callModal('memoz/summary') @else QuranJS.callModal('auth/login') @endif;fbq('track', 'clickQuizForm')"><i class="mdi mdi-target"></i> Pencapaian</a></li>
 								<li class="tabbed-nav-list-item"><a class="tabbed-nav-link" href="{{url('todo')}}"><i class="mdi mdi-calendar-check"></i> AmalanYaumi</a></li>
-								<li class="tabbed-nav-list-item">
+								<!--li class="tabbed-nav-list-item">
 									<a class="tabbed-nav-link" href="{{url('dzikir')}}"><i class="mdi mdi-clock"></i> Al-Matsurats
 									<sup class="text-white label label-danger">New</sup>
-								</a>
+								</a-->
 								@if((session('sess_role')==1 || session('sess_role')==2) && (session('sess_id_sub_class')))
                   <li class="tabbed-nav-list-item" style="background-color:#ffdbdb;color:#000">
                       <a style="color:#000"  class="tabbed-nav-link" href="<?php echo url('profile/list')?>"><i class="mdi mdi-file-document" ></i> Laporan</a>
