@@ -89,10 +89,10 @@ class TodoController extends Controller
 
           #$response = file_get_contents('http://muslimsalat.com/'.$this->city.'/daily.json?key=d6062423a1d68dc9b9560c021572fac5&jsoncallback=?');
           #print_r($response);
-
+          
           $c = curl_init();
           //curl_setopt($c, CURLOPT_URL, 'http://muslimsalat.com/'.$this->city.'/daily.json?key=d6062423a1d68dc9b9560c021572fac5&jsoncallback=?');
-          curl_setopt($c, CURLOPT_URL, 'https://api.pray.zone/v2/times/day.json?city='.$this->city.'&date='.$this->date);
+          curl_setopt($c, CURLOPT_URL, 'https://api.pray.zone/v2/times/day.json?city=bandung&date='.$this->date);
           curl_setopt($c, CURLOPT_HEADER, 0);
           curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
           $response = curl_exec($c);

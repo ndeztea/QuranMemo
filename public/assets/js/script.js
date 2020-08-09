@@ -3,7 +3,7 @@ var QuranJS = {
     totalAyatSpaces: [""],
     totalAyat: 0,
     headSurah: 0,
-    loadingText: ['<div class="dzikir-loading">Sambil nunggu baca dzikir yuk : <div class="dzikir">Subhanallah...</div></div>', '<div class="dzikir-loading">Sambil nunggu baca dzikir yuk : <div class="dzikir">Alhamdulillah...</div></div>', '<div class="dzikir-loading">Sambil nunggu baca dzikir yuk : <div class="dzikir">Allahuakbar...</div></div>', '<div class="dzikir-loading">Sambil nunggu baca dzikir yuk : <div class="dzikir">Lailahaillalah...</div></div>'],
+    loadingText: ['Sambil nunggu baca dzikir yuk : Subhanallah...', 'Sambil nunggu baca dzikir yuk : Alhamdulillah...', 'Sambil nunggu baca dzikir yuk : Allahuakbar...', 'Sambil nunggu baca dzikir yuk : Lailahaillalah...'],
     modalLoading: function() {
         randomInt = Math.floor(2 * Math.random()) + 1, $(".modal-title").html('<img src="'+this.siteUrl+'/assets/images/loading.svg" alt="loading" width="50">'), $(".modal-body").html(this.loadingText[randomInt]), $(".modal-header button,.modal-footer").hide()
     },
@@ -241,7 +241,7 @@ var QuranJS = {
             ayat_end: $("#ayat_end").val(),
             date_start: $("#date_start").val(),
             date_end: $("#date_end").val(),
-            note: $("#note_memoz").val()
+            note: $("#note").val()
         }, function(a) {
             vex.dialog.alert(a.message), $(".label-loading").hide(), $(".label-save").show(), $("#id").val(a.id), 1 == a.status && (location.href = a.siteUrl + "/memoz/surah/" + a.surah_start + "/" + a.ayat_start + "-" + a.ayat_end + "/" + a.id)
         })

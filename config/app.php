@@ -2,9 +2,9 @@
 
 return [
 
-    #'mp3_url' => 'http://localhost/QuranMemo/public/',
-    'mp3_url' => 'https://quranmemo.com/public/',
-    'app_name' => 'QuranMemo Community',
+    'mp3_url' => 'http://localhost/QuranMemo/public/',
+    #'mp3_url' => 'https://quranmemo.com/public/',
+    'app_name' => 'Kelas Hijrah',
     'app_email' => 'quranmemo.id@gmail.com',
     /*
     |--------------------------------------------------------------------------

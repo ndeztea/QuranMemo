@@ -1,0 +1,247 @@
+.bookmark-sign{
+  width: 47px;
+  position: absolute;
+  right: 3px;
+  top: -2px;
+  z-index: 9;
+}
+.bookmark-sign.bookmark-sticky {
+    position: fixed;
+}
+.bookmark-sign-menu {
+    position: absolute;
+    color: #e26767;
+    top: -5px;
+    right: -8px;
+    font-size: 30px;
+}
+.tabbed-nav-list-item{
+  position: relative;
+}
+.tabbed-nav-list-item .label-danger{
+  position: absolute;
+}
+.tabbed-nav-list-item .label-danger {
+    position: absolute;
+    top: 0px;
+    padding: 6px;
+    font-size: 12px;
+    right: 0px;
+    border-radius: 1px 8px 0px 3px;
+    background: #f35d62;
+}
+.content-learning ul{
+  padding: 0px !important
+}
+.content-learning ul li {
+    border: 1px solid #dafcf8;
+    width: 100%;
+    float: left !important;
+    margin: 3px;
+    background-image: linear-gradient(to right, #b6f5ee,#fff);
+    padding: 11px;
+}
+.content-learning .i.fa.fa-folder{
+  font-size: 26px;
+}
+button.navbar-toggle.search{
+  font-size: 23px;
+    position: absolute;
+    right: 85px;
+    top: -8px;
+    color: #FFF;
+}
+#preloader{
+  height: 5000px !important;
+}
+
+
+/*COLORING*/
+.tabbed-nav{background:0 0!important;padding:0 0 10px}
+.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item i{font-size:33px}.tabbed-nav .tabbed-nav-list{padding-left:0}.dash-profile-detail .btn-trigger-dashboard{display:none}.dash-profile{background-image:linear-gradient(#3e8cbc,#fff)}.dash-profile-detail,.dash-profile-detail-wrap{background:0 0!important}.dash-profile-detail{padding:0}.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(6){margin-left:0}.dash-profile-detail .dash-profile-img{width:70px;height:120px}.dash-profile-img.img-circle img{width:70px;height:70px}.navbar-default{background:#3D8DBC}button.navbar-toggle.notif{font-size:23px;position:absolute;right:45px;top:-8px;color:#FFF}.notif .label-danger{font-size:10px;position:absolute;top:10px}ul.choose-class li{width:100%}.record-right-top{position:absolute;right:10px;top:-8px;font-size:63px}.correction-detail{border-bottom:2px solid #ddd;padding:5px;background-color:#e0e8ef}.correction-detail img{width:70px;height:70px;float:left}.correction-detail p{background:#feffda;padding:5px;border-radius:11px;font-size:12px;margin:0}span.status_memoz_result{float:right}
+#preloader{top:-50px;background-color:rgba(255, 255, 255, 0.9)!important}
+.navbar-default .navbar-brand.title {
+    font-size: 23px;
+    padding-left: 13px;
+}
+a.navbar-brand.nav-back {
+    font-size: 31px;
+    position: relative;
+    top: 3px;
+}
+.tabbed-nav .tabbed-nav-list-profile .tabbed-nav-list-item {
+    box-shadow: 1px 1px 4px 0 #a5a5a5;
+    border-radius: 19px;
+    line-height: 33px;
+    width: 45%;
+    margin: 7px 8px;
+    background: #FFF;
+    padding: 10px;
+    text-align: center;
+    float: left;
+}
+.stats-number {
+    font-size: 45px;
+}
+
+div#content.boxcontent {
+    background: none;
+}
+.main-content-wrap .main-content .backdrop{
+  background: none;
+}
+.main-content-wrap .main-content .backdrop .backdrop-inner {
+    background-image: rgba(0, 151, 138, 0.41);
+    width: 100%;
+    height: 430px;
+    background-image: linear-gradient(#3D8DBC, #FFF);
+    box-shadow: 0px 11px 19px 3px #efefef;
+}
+
+
+.navmenu-default .navmenu-nav > .active > a, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a, .navmenu-default .navmenu-nav > .active > a:hover, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:hover, .navmenu-default .navmenu-nav > .active > a:focus, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:focus {
+    color: #fff !important;
+    background: #3D8DBC !important;
+}
+.navmenu-default .navmenu-nav > li > a, .navbar-default .navbar-offcanvas .navmenu-nav > li > a{
+  color: #565656 !important;
+}
+.navmenu-header .navmenu-overlay {
+    background: rgba(255, 255, 255, 0.83);
+  }
+  li.tabbed-full{F
+    text-align: center;
+  }
+  li.tabbed-full strong {
+      font-size: 68px;
+      text-shadow: 1px 2px 3px #ded798;
+  }
+.close-navi{
+  color: #000;
+}
+
+
+li.tabbed-full img{
+  width: 100%;
+  max-width: 350px
+}
+.action_footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: #ffe005cf;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #ffe44c;
+    text-align: center;
+    z-index: 10;
+}
+.action_footer button {
+    font-size: 19px;
+    width: 200px;
+}
+.tabbed-full.left.event{
+  font-size: 20px;
+}
+.action_footer button{
+  width: 40%;
+}
+ul.list-unstyled.two-row > li{
+  width: 42.999%;
+  float: left;
+  margin: 10px;
+}
+.register-block .register-backdrop, .edit-profile-block .register-backdrop, .edit-profile-block .edit-profile-backdrop{
+  background-color: rgba(239, 239, 239, 0.92);
+}
+.navmenu-header{
+  height: 300px;
+}
+.qm-navbar .qm-brand .qmc-title{
+  width: 100px;
+}
+.modal.login-mode .modal-dialog{
+  background-color: rgb(96 141 172 / 92%);
+
+}
+
+.code_access{
+  text-align: center;
+    text-shadow:  1px 2px 3px #ded798;
+    border: 1px dashed #6b633e;
+    background-color: #353728;
+    color: #FFF;
+    padding: 10px 0px;
+    letter-spacing: 26px;
+}
+.input-group {
+  float: unset;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.qm-navbar .qm-brand .qmc-logo{
+  width: 123px;
+}
+.correction-list .correction-list-item,.nav-tabs {
+    background: #FFF;
+}
+.navbar-nav.qm-cari-kata input {
+    height: 36px;
+}
+.login-brand .qmc-logo{
+  width:116px;
+}
+.login-brand .qmc-title{
+  width: 110px;
+}
+.register_form .register-intro .promo-txt h3, .promo-txt{
+  color: #000 !important;
+}
+.promo-txt {
+    margin-top: 19px;
+}
+button.btn.btn-masuk {
+    color: #333;
+}
+.koreksi-box .koreksi-desc .username{
+  color: #313131;
+}
+a{
+  color: #3c3c3c
+}
+.koreksi-box .koreksi-desc .koreksi-action .koreksi-action-link{
+  border-color: #3c3c3c;
+}
+.filter .nav-tabs > li.active > a, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a, .filter .nav-tabs > li.active > a:focus, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:focus, .filter .nav-tabs > li.active > a:hover, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:hover{
+  color: #3D8DBC;
+}
+.filter .nav-tabs > li.active > a, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a, .filter .nav-tabs > li.active > a:focus, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:focus, .filter .nav-tabs > li.active > a:hover, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a:hover{
+  border-color: #3D8DBC;
+}
+.select-surah .form-inline .btn, .qm-navbar .navbar-nav .navbar-form .btn-search, .btn-green{
+  background-color:  #9da3b6;
+}
+.modal .modal-header h4, .memoz-check-link{
+  color: #9da3b6;
+}
+.btn-green-small{
+  background-color: #3D8DBC !important;
+  border: solid 1px #3D8DBC !important;
+}
+.modal .modal-header .close{
+  color: #000;
+}
+.status_memoz {
+  border: 1px dashed #ececec;
+  background: #525252;
+  color: #ffffff;
+}
+.ads-middle{
+  background-color: #9da3b6;
+}
+.login-brand{
+  margin: 0 auto 22px;
+}
+.qm-navbar .qm-brand{
+  margin-bottom: 50px;
+}

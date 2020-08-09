@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="google-site-verification" content="hXTmvIk3V_yZywNDwJlIFWrS1DQOcNV7UDLCBQUEUv0" />
-        <title>{{ isset($header_title)?$header_title:''}} - QuranMemo</title>
+        <title>{{ isset($header_title)?$header_title:''}} - Kelas Hijrah</title>
 
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
@@ -67,9 +67,10 @@
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
 
-        <!-- <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}"> -->
-        <link rel="stylesheet" href="{{url('assets/css/custom_1.9.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
+        <!--link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}">>
+        <!--link rel="stylesheet" href="{{url('assets/css/custom_1.9.min.css')}}"-->
+        <link rel="stylesheet" href="{{url('assets/css/custom_kelas_hijrah.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/todo.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
 
@@ -108,29 +109,91 @@
         <script type="text/javascript" src="{{url('assets/jplayer/dist/jplayer/jquery.jplayer.min.js')}}"></script>
         <script type="text/javascript" src="{{url('assets/jplayer/dist/add-on/jplayer.playlist.min.js')}}"></script>
 
-       <!-- Facebook Pixel Code -->
-        <script>
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '112999465995364');
-          //fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-          src="https://www.facebook.com/tr?id=112999465995364&ev=PageView&noscript=1"
-        /></noscript>
-        <!-- End Facebook Pixel Code -->
 
          @if(Request::segment(1)=='memoz')
         <script>
           fbq('track', '{{$header_title}}');
         </script>
         @endif
+        <style>
+        .tanwin1:nth-letter(1){
+            position: relative;
+            top:-15px;
+            left: 2px;
+        }
+        .tanwin2:nth-letter(1){
+            position: relative;
+            top:1px;
+            left: 2px;
+        }
+        .ads-middle{
+            font-size: 14px;
+            background-color: #333333;
+            color: #FFF;
+            padding: 10px 0px;
+            text-align: center;
+        }
+        .ads-middle img{
+            width: 40px;
+            float: left;
+            margin-left:10px;
+        }
+
+        .no_ayat_arabic{
+            background: url('http://alazharsyifabudi-pku2.sch.id/qm/public/assets/images/ayah_sign.png');
+            border: 0px !important;
+            background-repeat: no-repeat;
+            background-size: 42px 41px;
+            background-position-y: 4px;
+            background-position-x: 2px;
+        }
+        .recommendation{
+            float:left;
+            min-width: 200px;
+            width: 75%;
+        }
+        .recommendation-header,.recommendation-body{
+            text-align: left;
+        }
+        .recommendation-action{
+            text-align: right;
+            padding-right:30px;
+            font-size:50px;
+        }
+
+        #recommendation-memoz {
+          bottom: 50px;
+          right: 50px;
+          padding: 18px;
+          color: #fff;
+          border-radius: 3px;
+          font-size: 15px;
+        }
+        li.dragend-page{
+            max-height: 200px;
+        }
+        li.dragend-page.last{
+            display: none !important;
+        }
+
+        .top_user img{
+            width: 50px;
+        }
+        .list_top_user .no_top_user{
+            font-size: 32px;
+        }
+        .list_top_user .border_points{
+            padding: 10px 28px;
+            background-color: #ddefd4;
+        }
+        .choose-type li{
+            padding: 10px;
+            font-size: 19px;
+        }
+        .modal-spacing ul.choose-class li {
+            width: 50%;
+        }
+        </style>
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif" style="overflow:hidden">
 

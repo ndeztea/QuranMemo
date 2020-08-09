@@ -237,7 +237,7 @@ class Users extends Model
                 ->where('id',$id_class)
                 ->orderBy('id','asc')
                 ->get();
-        return $classes[0];
+        return !empty($classes)?$classes[0]:"Belum ada kelas";
     }
 
     public function checkLevel($id_user){

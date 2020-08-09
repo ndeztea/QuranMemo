@@ -1,2 +1,2980 @@
-@font-face{font-family:"Scheherazade","Traditional Arabic"}.no-content-center{text-align:center}.list-unstyled{list-style:none;margin:0;padding:0}.spacer1{display:inline-block;padding:0 5px}.fa-3{font-size:4em}.display-inline-block-xs{margin:10px 5px 10px 0}.clearfix{clear:both}.wrap .alert{width:80.6%;margin:20px auto 5px;transition:all 1s ease;text-align:center;position:relative;z-index:2}.dropdown-backdrop{position:static}.wrap .steps_desc .alert{width:100%;margin:0 0 10px}.modal.canvas-slid{left:0 !important;right:0 !important}.center{text-align:center}.highlight{background-color:#B0FF33;color:#007763 !important;font-weight:bold;padding:1px 4px}.highlight-red{color:#FF0037}.highlight-orange{color:#fdb300}.highlight-green{color:#00978A}.highlight-blue{color:#312994}.highlight-gray{color:#ff0}.tanwin1::before{content:'\200D'}.navi-up{top:-60px}.navbar-toggle{display:block !important;float:right !important}.navbar-brand{float:left !important}.navbar-brand h1{font-size:23px !important;margin:0}.qm-navbar{background:#fff}.qm-navbar .qm-brand{display:block;margin:0 auto;text-align:center;width:195px;height:150px;padding:35px 0;margin-bottom:25px}.qm-navbar .qm-brand .qmc-logo{display:inline-block;margin-bottom:10px;width:70px}.qm-navbar .qm-brand .qmc-title{width:150px}.qm-navbar .navbar-nav .navbar-form{border-top:none !important;border-bottom:none !important;box-shadow:none;margin:11px 0}.qm-navbar .navbar-nav .navbar-form .btn-search{background-color:#20b2aa;color:#fff}.qm-navbar .qm-cari-kata{width:100%;float:none !important;margin:7.5px 0 15px !important}.navmenu-header{background:url("../images/MJcELpDoO7w.jpg") no-repeat center center;background-size:cover;width:100%;height:250px}.navmenu-header .navmenu-overlay{background:rgba(0,151,138,0.5);height:100%}.navmenu-default .navmenu-nav>li{border-bottom:solid 1px #efefef}.navmenu-default .navmenu-nav>li.active{border-bottom:none}.navmenu-default .navmenu-nav>li>a,.navbar-default .navbar-offcanvas .navmenu-nav>li>a{color:#00978A;font-size:16px;padding:15px 30px}.navmenu-default .navmenu-nav>.active>a,.navbar-default .navbar-offcanvas .navmenu-nav>.active>a,.navmenu-default .navmenu-nav>.active>a:hover,.navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover,.navmenu-default .navmenu-nav>.active>a:focus,.navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus{color:#fff !important;background:#20b2aa !important}.navmenu-default,.navbar-default .navbar-offcanvas{border:none !important}.close-navi{position:absolute;top:10px;right:10px;color:#fff;font-size:18px;padding:5px}.btn-green-small{background-color:#00978A !important;color:#fff !important;border:solid 1px #007763 !important}.btn-green-small:hover,.btn-green-small:focus{background:#00cab9 !important}.btn-green-small-darker{background-color:#25835B !important;color:#fff !important}.btn-breadcrumb .btn:not(:last-child):after{content:" ";display:block;width:0;height:0;border-top:17px solid transparent;border-bottom:17px solid transparent;border-left:10px solid white;position:absolute;top:50%;margin-top:-17px;left:100%;z-index:3}.btn-breadcrumb .btn:not(:last-child):before{content:" ";display:block;width:0;height:0;border-top:17px solid transparent;border-bottom:17px solid transparent;border-left:10px solid #00978A;position:absolute;top:50%;margin-top:-17px;margin-left:1px;left:100%;z-index:3}.btn-breadcrumb .btn{padding:6px 12px 6px 24px;box-shadow:none}.btn-breadcrumb .btn:first-child{padding:6px 6px 6px 10px}.btn-breadcrumb .btn:last-child{padding:6px 18px 6px 24px}.btn-breadcrumb .btn.btn-default.selected:not(:last-child):after{border-left:10px solid #00978A}.btn-breadcrumb .btn.btn-default:not(:last-child):after{border-left:10px solid #fff}.btn-breadcrumb .btn.btn-default:not(:last-child):before{border-left:10px solid #00978A}.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after{border-left:10px solid #00978A}.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before{border-left:10px solid #fff}.btn-green{background-color:#00978A;color:#fff;font-size:14px;margin-left:3px}@media (max-width: 480px) and (min-width: 320px){.btn-green{width:100%;display:block;margin-left:0}}.btn-green:hover,.btn-green:focus{background-color:#007763}.btn-search-surah,.btn-juz,.btn-bookmark{margin-left:10px;border-width:1px;border-color:#00978A;border-style:solid;background-color:#00978A;color:#fff;background-image:none;text-shadow:none}.btn-search-surah:hover,.btn-search-surah:focus,.btn-search-surah.selected,.btn-juz:hover,.btn-juz:focus,.btn-juz.selected,.btn-bookmark:hover,.btn-bookmark:focus,.btn-bookmark.selected{background-color:#007763;border:solid 1px #007763;color:#fff}@media (max-width: 767px) and (min-width: 320px){.btn-search-surah,.btn-juz,.btn-bookmark{margin:5px}}@media (max-width: 767px) and (min-width: 320px){.btn-juz,.btn-bookmark{float:left !important}}.btn-setting{margin-left:10px;border-width:1px;border-color:#00978A;border-style:solid;background-color:#00978A;color:#fff;background-image:none;text-shadow:none}.btn-setting:hover,.btn-setting:focus,.btn-setting.selected{background-color:#007763;border:solid 1px #007763;color:#fff}@media (max-width: 767px) and (min-width: 320px){.btn-setting{float:right !important;width:40px;margin:5px 0}}@media (max-width: 767px) and (min-width: 320px){.btn-setting.btn-juz{margin-left:6px;float:left !important}}.vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary{background:#00978A}.modal{text-align:center;padding:0 !important}.modal .modal-header{background-color:transparent}.modal .modal-header h4{color:rgba(0,151,138,0.8);font-size:20px;text-transform:uppercase}.modal .modal-header .close{color:rgba(0,151,138,0.8);opacity:.6}.modal .modal-header .close:hover,.modal .modal-header .close:focus{opacity:1}.modal .modal-body{padding:0}.modal .modal-body .btn-juz,.modal .modal-body .btn-last-memoz{display:none !important}.modal .modal-body .input-group{float:none;width:101%}.modal .modal-body .btn-search,.modal .modal-body .btn-cari-ayat{border-width:1px;border-color:#00978A;border-style:solid;color:#fff;background-image:none;text-shadow:none;width:100%;margin-top:10px;font-size:21px}.modal .modal-body .form-inline .form-group,.modal .modal-body .form-inline .form-control{width:100%}.modal.content-mode .modal-header{background-color:rgba(0,151,138,0.8)}.modal.content-mode .modal-header h4{color:#fff;font-size:20px;text-transform:uppercase}.modal.content-mode .modal-header .close{color:#fff;opacity:.6}.modal.content-mode .modal-header .close:hover,.modal.content-mode .modal-header .close:focus{opacity:1}.modal.content-mode .modal-body a{color:#00978A}.modal.content-mode .modal-body a:hover,.modal.content-mode .modal-body a:focus{color:#007763}.modal.share-mode .modal-header{background-color:rgba(0,151,138,0.8)}.modal.share-mode .modal-header h4{color:#fff;font-size:20px;text-transform:uppercase}.modal.share-mode .modal-header .close{color:#fff;opacity:.6}.modal.share-mode .modal-header .close:hover,.modal.share-mode .modal-header .close:focus{opacity:1}.modal.share-mode .modal-body a{width:33.3%;position:relative;display:block;float:left;padding:10px;color:#fff}@media (max-width: 439px) and (min-width: 320px){.modal.share-mode .modal-body a{float:none;width:100%}}.modal.share-mode .modal-body a:before,.modal.share-mode .modal-body a:after{position:absolute}.modal.share-mode .modal-body a:before{top:11px;left:65px}.modal.share-mode .modal-body a:after{bottom:15px;left:65px;padding:5px 8px;border-radius:7px}.modal.share-mode .modal-body a:hover,.modal.share-mode .modal-body a:focus{opacity:.85}.modal.share-mode .modal-body a:nth-child(1){background-color:#3b5998}.modal.share-mode .modal-body a:nth-child(1):before{content:"Facebook"}.modal.share-mode .modal-body a:nth-child(1):after{content:"Share";background-color:#2d4373}.modal.share-mode .modal-body a:nth-child(2){background-color:#55acee}.modal.share-mode .modal-body a:nth-child(2):before{content:"Twitter"}.modal.share-mode .modal-body a:nth-child(2):after{content:"Share";background-color:#2795e9}.modal.share-mode .modal-body a:nth-child(3){background-color:#d34836}.modal.share-mode .modal-body a:nth-child(3):before{content:"Google Plus"}.modal.share-mode .modal-body a:nth-child(3):after{content:"Share";background-color:#b03626}.modal.content-mode .modal-dialog{width:10%;margin-left:auto;margin-right:auto}.modal .modal-dialog{width:500px;display:inline-block;text-align:left;vertical-align:middle}@media (max-width: 767px) and (min-width: 320px){.modal .modal-dialog{width:100%;margin-left:auto;margin-right:auto}}.modal .modal-dialog .modal-content{border-radius:7px}.modal .modal-header{border-bottom:none;text-transform:capitalize;text-align:center;border-top-left-radius:7px;border-top-right-radius:7px}.modal .modal-footer{border-top:none}.modal:before{content:'';display:inline-block;height:100%;vertical-align:middle;margin-right:-4px}.modal.login-mode{background:url("../images/vot1mpfUwZA.jpg") no-repeat center center;width:100%;height:100%}.modal.login-mode .modal-dialog{width:100%;height:100%;margin:0 !important;background-color:rgba(0,151,138,0.7)}.modal.login-mode .modal-dialog .modal-content{background-color:transparent;border:none;box-shadow:none}.modal.login-mode .modal-header{height:50px}.modal.login-mode .modal-header .modal-title{display:none}.modal.login-mode .modal-header .close{color:#fff;text-shadow:none}.modal.login-mode .modal-footer{background-color:transparent;color:#fff;border-top:none !important;margin-top:-13px}.modal.register-mode .modal-dialog{background:url("../images/cal1.png") no-repeat center center/cover}.modal.register-mode .modal-dialog .modal-content{background-color:rgba(255,255,255,0.9)}.modal.register-mode .modal-footer{background:#00cab9;color:#fff}.filter .nav-tabs>li,.edit-profile-block .edit-profile-form .nav-tabs>li{width:33.333%}.filter .nav-tabs>li>a,.edit-profile-block .edit-profile-form .nav-tabs>li>a{margin-right:0;border-radius:0;margin-bottom:0;color:#adadad;border:solid transparent;border-width:3px 0;outline:0 none;font-weight:600;text-align:center}.filter .nav-tabs>li.active>a,.edit-profile-block .edit-profile-form .nav-tabs>li.active>a,.filter .nav-tabs>li.active>a:focus,.edit-profile-block .edit-profile-form .nav-tabs>li.active>a:focus,.filter .nav-tabs>li.active>a:hover,.edit-profile-block .edit-profile-form .nav-tabs>li.active>a:hover{color:#00978A;border-bottom:solid 3px #00978A}.filter .nav>li>a:focus,.edit-profile-block .edit-profile-form .nav>li>a:focus,.filter .nav>li>a:hover,.edit-profile-block .edit-profile-form .nav>li>a:hover{background-color:transparent;color:#00978A;border:solid transparent;border-width:3px 0;border-bottom:solid 3px #00978A;border-radius:0;margin-bottom:0}.memoz-list{overflow-y:auto;overflow-x:hidden;max-height:425px}.memoz-loading{padding:40px 0;display:block;text-align:center;width:100%}.memoz-list .memoz-item{border-left:solid 1px #ddd;border-right:solid 1px #ddd;border-bottom:solid 1px #ddd;margin:0;padding:0}.memoz-list .memoz-item:nth-child(even){background:#fcfcfc}.memoz-list .memoz-item p{color:#aaa;margin:0}.memoz-list .memoz-item .memoz-body{display:flex;padding:0;align-items:center;flex-direction:column}.memoz-list .memoz-item .memoz-body .memoz-body-inner{width:100%;display:flex;align-items:center}.memoz-list .memoz-item .memoz-body .memoz-tr{width:20%}.memoz-list .memoz-item .memoz-body .memoz-tr .tr-days{font-size:30px;font-weight:bold;display:block;overflow:hidden;text-align:center;text-overflow:ellipsis;width:55px}.memoz-list .memoz-item .memoz-body .memoz-content{width:75%;padding:5px 10px}.memoz-list .memoz-item .memoz-body .memoz-link-surah{display:inline-block;margin-right:5px;font-weight:bold}.memoz-list .memoz-item .memoz-action{width:100%;padding:10px 0 5px;margin-top:5px;text-align:center;display:flex;border-top:dashed 1px #ddd}.memoz-list .memoz-item .memoz-action a{width:33.33%;font-size:12px;color:#aaa;text-transform:uppercase}.modal-contentbody{overflow-y:auto;overflow-x:hidden;max-height:425px}.modal-spacing{padding:20px}@media (min-width: 769px){.modal-spacing{padding:0}}.container-segmented{margin-bottom:15px}.login-brand{width:100%;height:140px;margin:0 auto 5px}.login-brand .qmc-logo{display:block;margin:0 auto 10px;width:55px;height:auto}.login-brand .qmc-title{display:block;width:130px;margin:auto}ul.juz-list{list-style:none;padding:10px 3px 0 10px}.juz-list li{float:left;width:31.3%;margin-bottom:10px;background-color:rgba(112,195,147,0.14);padding:5px;margin-right:7px;text-align:center}.juz-list li strong{font-size:24px}.juz-list li a .juz-indo{font-size:12px}.arabic.juz_head{background-color:rgba(0,151,138,0.28) !important;border-bottom:2px dashed rgba(57,144,94,0.31)}.juz-indo-head{color:#aaa}.juz_head{text-align:center;background-color:#9FCFB3}.input-group{width:100%}@media (max-width: 767px) and (min-width: 585px){.input-group{width:90%;float:left;margin-right:20px}}@media (max-width: 584px) and (min-width: 481px){.input-group{width:85%;float:left;margin-right:20px}}@media (max-width: 480px) and (min-width: 320px){.input-group{width:80%;float:left;margin-right:20px}}@media (max-width: 767px) and (min-width: 320px){.form-group{margin-bottom:0px}}.form-horizontal .form-group{margin:0 -15px 7px}.form-horizontal .form-group .form-control{border-radius:6px;height:auto;padding:12px}.login_form{width:80%;margin:0 auto}.login_form .form-control{border:solid 1px #fff;border-bottom:dashed 1px #fff;box-shadow:none;margin-bottom:5px;border-radius:6px !important}.login_form .form-control:focus{border-bottom:solid 2px #00978A}.login_form .btn-masuk,.login_form .edit-profile-block .edit-profile-form .btn-kembali,.edit-profile-block .edit-profile-form .login_form .btn-kembali{padding:12px;width:100%;border-radius:6px;color:#00978A;font-size:20px;background:#fff;border:solid 1px #fff;box-shadow:none !important}.login_form .btn-masuk:hover,.login_form .edit-profile-block .edit-profile-form .btn-kembali:hover,.edit-profile-block .edit-profile-form .login_form .btn-kembali:hover,.login_form .btn-masuk:focus,.login_form .edit-profile-block .edit-profile-form .btn-kembali:focus,.edit-profile-block .edit-profile-form .login_form .btn-kembali:focus,.login_form .btn-masuk.selected,.login_form .edit-profile-block .edit-profile-form .selected.btn-kembali,.edit-profile-block .edit-profile-form .login_form .selected.btn-kembali{color:#cc0}.login_form .btn-daftar,.login_form .edit-profile-block .edit-profile-form .btn-simpan,.edit-profile-block .edit-profile-form .login_form .btn-simpan,.login_form .edit-profile-block .edit-profile-form .btn-upload-img,.edit-profile-block .edit-profile-form .login_form .btn-upload-img{color:#fff;font-size:16px;margin:15px auto 0;display:block;text-align:center;background:none;width:100%}.register_form{padding:0 45px 45px;margin:20px auto 0;background:transparent}.register_form .btn-group .btn{width:50%;border-radius:6px}.register_form .register-intro{width:45%;height:333px;position:relative;overflow:hidden}.register_form .register-intro .promo-txt{padding:10px;position:relative;z-index:2;height:333px;color:#fff;padding:10px 0;font-size:16px}.register_form .register-intro .promo-txt h3{text-align:center;color:#fff;font-weight:600;margin-bottom:20px;font-size:20px;line-height:28px}.register_form .register-intro .promo-txt p{font-size:17px;line-height:24px}@media (max-width: 767px) and (min-width: 320px){.register_form .register-intro .promo-txt{height:auto}}@media (max-width: 767px) and (min-width: 320px){.register_form .register-intro{width:100%;float:none !important;margin-bottom:15px;height:auto}}.register_form form{width:50%;margin-top:15px}@media (max-width: 767px) and (min-width: 320px){.register_form form{width:90%;float:none !important;margin:0 auto}}.register_form .btn-daftar,.register_form .edit-profile-block .edit-profile-form .btn-simpan,.edit-profile-block .edit-profile-form .register_form .btn-simpan,.register_form .edit-profile-block .edit-profile-form .btn-upload-img,.edit-profile-block .edit-profile-form .register_form .btn-upload-img{display:block;padding:12px;width:100%;border-radius:6px;color:#00978A;font-size:20px;background:#fff;border:solid 1px #fff;margin-bottom:10px;box-shadow:none !important}.register_form .btn-daftar:hover,.register_form .edit-profile-block .edit-profile-form .btn-simpan:hover,.edit-profile-block .edit-profile-form .register_form .btn-simpan:hover,.register_form .edit-profile-block .edit-profile-form .btn-upload-img:hover,.edit-profile-block .edit-profile-form .register_form .btn-upload-img:hover,.register_form .btn-daftar:focus,.register_form .edit-profile-block .edit-profile-form .btn-simpan:focus,.edit-profile-block .edit-profile-form .register_form .btn-simpan:focus,.register_form .edit-profile-block .edit-profile-form .btn-upload-img:focus,.edit-profile-block .edit-profile-form .register_form .btn-upload-img:focus,.register_form .btn-daftar.selected,.register_form .edit-profile-block .edit-profile-form .selected.btn-simpan,.edit-profile-block .edit-profile-form .register_form .selected.btn-simpan,.register_form .edit-profile-block .edit-profile-form .selected.btn-upload-img,.edit-profile-block .edit-profile-form .register_form .selected.btn-upload-img{color:#cc0}.register_form .btn-masuk,.register_form .edit-profile-block .edit-profile-form .btn-kembali,.edit-profile-block .edit-profile-form .register_form .btn-kembali{color:#fff;font-size:16px;margin:15px auto 0;display:block;text-align:center;background:none;width:100%;border:none}.login-link,.forgot-pass-link{display:block;text-align:center;padding:10px 0;font-size:14px;color:#fff}.register-block,.edit-profile-block{background:url("../images/vot1mpfUwZA.jpg") no-repeat center center;width:100%;height:100%;overflow-y:auto;margin-top:-15px;position:relative}.register-block .register-backdrop,.edit-profile-block .register-backdrop,.edit-profile-block .edit-profile-backdrop{background-color:rgba(0,151,138,0.7);width:100%;height:100%;margin:auto}.register-block .login-brand,.edit-profile-block .login-brand{padding:40px 0;margin:0 auto}.edit-profile-block .edit-profile-form{padding-top:15px}.edit-profile-block .edit-profile-form .nav{background:#fff}.edit-profile-block .edit-profile-form .form-heading{color:#fff}.edit-profile-block .edit-profile-form .input-file{color:#fff;width:80%;text-align:center !important;padding:10px 25px;display:block;border:solid 1px #fff;margin:20px auto 0}.edit-profile-block .edit-profile-form .input-file:before{color:#fff}.quran-player{margin:auto;left:0;right:0;position:fixed;bottom:0;background-color:rgba(255,255,255,0.8);z-index:99}@media (min-width: 1200px){.quran-player{width:80%}}@media (min-width: 1024px) and (max-width: 1199px){.quran-player{width:90%}}@media (max-width: 1023px) and (min-width: 801px){.quran-player{width:95%}}@media (min-width: 768px) and (max-width: 800px){.quran-player{width:100%}}@media (max-width: 767px) and (min-width: 320px){.quran-player{width:100% !important}}.quran_player{height:50px;background:transparent;z-index:99}@media (min-width: 1200px){.quran_player{width:100%}}@media (min-width: 1024px) and (max-width: 1200px){.quran_player{width:90%}}@media (max-width: 380px) and (min-width: 320px){.quran_player{width:320px}}@media (max-width: 1023px) and (min-width: 801px){.quran_player{width:95%}}@media (min-width: 768px) and (max-width: 800px){.quran_player{width:100%}}.quran_player .jp-video{background:transparent;margin:0 auto}@media (min-width: 1200px){.quran_player .jp-video{width:100%}}@media (min-width: 1024px) and (max-width: 1200px){.quran_player .jp-video{width:90%}}@media (max-width: 1023px) and (min-width: 801px){.quran_player .jp-video{width:95%}}@media (min-width: 768px) and (max-width: 800px){.quran_player .jp-video{width:100%}}@media (max-width: 380px) and (min-width: 320px){.quran_player .jp-video{width:320px}}@media (max-width: 767px) and (min-width: 381px){.quran_player .jp-video{width:100%}}.quran_player .jp-video .jp-progress{height:3px;background-color:#7efff4 !important}.quran_player .jp-video .jp-current-time{margin-left:0}.quran_player .jp-video .jp-duration{margin-right:0}.quran_player .jp-controls-holder{top:-12px;left:-45px}@media (min-width: 1200px){.quran_player .jp-controls-holder{width:100% !important}}@media (min-width: 1024px) and (max-width: 1200px){.quran_player .jp-controls-holder{width:90% !important}}@media (max-width: 1023px) and (min-width: 801px){.quran_player .jp-controls-holder{width:95% !important}}@media (min-width: 768px) and (max-width: 800px){.quran_player .jp-controls-holder{width:100% !important}}@media (max-width: 380px) and (min-width: 320px){.quran_player .jp-controls-holder{width:320px !important;top:-12px;left:0}}@media (max-width: 767px) and (min-width: 381px){.quran_player .jp-controls-holder{width:100% !important}}@media (max-width: 767px) and (min-width: 270px){.quran_player .jp-controls-holder{left:0 !important;width:100% !important}}.quran_player .jp-audio,.quran_player .jp-audio-stream,.quran_player .jp-video{border:none}@media (max-width: 767px) and (min-width: 270px){.quran_player .jp-video{margin:0;width:100%}}.quran_player .jp-video .jp-type-playlist .jp-controls{margin:auto;float:none}@media (max-width: 400px) and (min-width: 320px){.quran_player .jp-video .jp-type-playlist .jp-controls{margin-left:185px}}@media (max-width: 767px) and (min-width: 270px){.quran_player .jp-video .jp-type-playlist .jp-controls{margin:auto}}.quran_player .jp-interface{border:none !important;background-color:transparent}.quran_player .jp-play-bar{background:#00978A !important}@media (max-width: 767px) and (min-width: 270px){.quran_player .jp-volume-controls{display:none}}.quran_recorder{margin:auto;left:0;right:0;position:fixed;bottom:0;background-color:rgba(255,255,255,0.8);z-index:99;width:100%;border-top:2px solid #cae6c0;text-align:center;padding:10px 0px}.quran_recorder .action{float:left}@media (max-width: 480px) and (min-width: 320px){.quran_recorder .action{float:none;width:90%;margin:0 auto}}.quran_recorder .button{box-shadow:none;border:0px;background-color:transparent;color:#000}.quran_recorder .button.disable{opacity:0.7}.quran_recorder .button.stop{color:#FF0062}.quran_recorder .player{float:right}@media (max-width: 480px) and (min-width: 320px){.quran_recorder .player{float:none;width:90%;margin:0 auto}}.button{display:inline-block;vertical-align:middle;margin:0px 5px;padding:5px 12px;cursor:pointer;outline:none;font-size:13px;text-decoration:none !important;text-align:center;color:#fff;background-color:#4D90FE;background-image:linear-gradient(top, #4D90FE, #4787ED);background-image:-ms-linear-gradient(top, #4D90FE, #4787ED);background-image:-o-linear-gradient(top, #4D90FE, #4787ED);background-image:linear-gradient(top, #4D90FE, #4787ED);border:1px solid #4787ED;box-shadow:0 1px 3px #BFBFBF}a.button{color:#fff}.button:hover{box-shadow:inset 0px 1px 1px #8C8C8C}.quran_recorder_cont{width:80%}.quran_recorder a.disable{opacity:0.2}#level{position:fixed;top:0px;left:0px;width:100%;height:50px;opacity:0.9}.fa-spin{font-size:15px}.step-4 .ayat_arabic_memoz{cursor:pointer}.wrong{color:#ff9100}.blur-ayat.wrong{color:transparent}.select2-container--default .select2-selection--single{height:32px}.select2-container--default .select2-selection--single .select2-selection__rendered{color:#999}.filter .nav-tabs>li,.edit-profile-block .edit-profile-form .nav-tabs>li{width:50%}.mushaf-hafalan .step-wrap .steps .btn{width:33.3333%}ul.goal{list-style-type:none;padding:10px}ul.goal .progress{margin-bottom:10px}ul.goal strong{color:#323639}.main-content-wrap .main-content{padding:0px !important}.register_form{margin-top:0px}.koreksi-desc{padding:0px 10px}.koreksi-box .koreksi-avatar img{width:80%;height:80%}#record,#stop,#play,#play_audio,#pause_audio{font-size:34px}#save{font-size:24px}.quran_recorder .disabled,#audio .disabled{display:none}#sec_counter{border:3px solid #f00;border-radius:35px;padding:0px;color:red;width:160px;font-size:23px}@media (max-width: 767px) and (min-width: 320px){.c-circle-menu__item{width:36px !important;height:36px !important}}@media (min-width: 768px){.c-circle-menu__item,.c-circle-menu__toggle{width:48px !important;height:48px !important}}.c-circle-menu__link{background-color:#00b1a1;position:relative}.c-circle-menu__link .menu-caption{color:#fff !important;font-size:14px;position:absolute}.menu-icon{background-color:#00978A}.menu-icon .fa{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;font-size:20px;color:#fff;width:32px;height:22px;text-align:center}.menu__link1 .menu-caption{top:-20px;left:-19px}.menu__link2 .menu-caption{top:-9px;left:-25px}.menu__link3 .menu-caption{top:1px;left:-95px}.menu__link4 .menu-caption{top:6px;left:-54px}.menu__link5 .menu-caption{top:9px;left:-82px}html,body{width:100%;height:100%;position:relative;user-select:text !important;padding-top:50px}@font-face{font-family:'me_quran';src:url(../fonts/me_quran.ttf)}body{background:#fff;font-family:"Fira Sans",sans-serif}@media (max-width: 659px) and (min-width: 320px){body{padding-top:0}}a{color:#00978A;text-decoration:none}a:hover,a:focus,a:active{outline:none 0;text-decoration:underline}a:hover,a:focus{text-decoration:none !important;outline:0 none;cursor:pointer;color:#007763}ol,ul{padding-left:20px}::-moz-selection{background:#00978A !important;color:#fff !important}::-webkit-selection{background:#00978A !important;color:#fff !important}::selection{background:#00978A !important;color:#fff !important}.splash-body{position:relative;z-index:1001;background:#000;transition:all 2s ease;display:block;width:100%}.splash-body .splash-inner{background:url("../images/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center/cover;width:100%;height:100%;opacity:0;transition:opacity 1s ease;animation-delay:.5s;display:block}.splash-body .splash{width:100%;height:100%;background-color:rgba(77,181,120,0.9);-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;transform-style:preserve-3d}.splash-body .splash .holder{position:relative;top:45%;transform:translateY(-45%);width:100%;margin:auto;text-align:center;padding:0}.splash-body .splash-text{animation-delay:4s}.splash-body .splash-text span{display:block;text-align:center;padding:40px;vertical-align:middle}.splash-body .splash-text img{padding-top:60px;display:inline-block}.splash-body .start{width:125px;margin:20px auto;text-align:center;animation-delay:5s;display:block;padding:13px 0;background-color:#007763;border:none;color:#fff}.splash-body .start:hover,.splash-body .start:focus,.splash-body .start.selected{color:#000;background-color:#00cab9}.arabic,.head_surah{font-family:'me_quran';font-size:33px;word-spacing:0px}.arabic{font-size:23px;word-spacing:5px}.navbar{transition:top 0.2s ease-in-out;margin-bottom:0}.navbar.fixed{position:fixed;top:0;left:0;width:100%}a.navbar-brand.nav-back{font-size:31px;position:relative;top:3px}.stats-number{font-size:45px}.navbar-default{background-image:none;background:#6bc4ba;border-radius:0;border:none;z-index:3}.navbar-default .navbar-toggle{border-color:transparent}.navbar-default .navbar-toggle .icon-bar{background-color:#fff}.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#00978A}.navbar-default .navbar-collapse,.navbar-default .navbar-form{box-shadow:none;border-color:transparent}.navbar-default .navbar-brand{color:#fff;text-shadow:none;font-weight:700;transition:color 1s ease;padding:13px}.navbar-default .navbar-brand.title{font-size:23px;padding-left:13px}.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{opacity:.7}.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.open>a{background-image:none}.navbar-default .navbar-nav>li>a{color:#fff;text-shadow:none}.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{background-color:#007763;color:#fff}@media (max-width: 767px) and (min-width: 320px){.navbar-default .navbar-nav{margin:0}}#main-nav{display:none}.nav-top{position:relative;border-bottom:solid 1px #ddd;padding:10px 10px;background-color:#f6f6f6;z-index:999}@media (max-width: 768px) and (min-width: 320px){.nav-top{padding:5px 10px}}.nav-top .btn-surah-trigger{width:100%;background-color:#00978A;color:#fff}.nav-top .btn-surah-trigger:hover,.nav-top .btn-surah-trigger:focus{background-color:#007763}@media (max-width: 480px) and (min-width: 320px){.nav-top #surah-collapse{margin-top:15px}}.nav-top .memoz_options{position:absolute;top:11px;right:9px;z-index:5}@media (min-width: 320px) and (max-width: 767px){.nav-top .memoz_options{top:6px}}.nav-top .memoz_options .btn{background:transparent;border:none;box-shadow:none;text-shadow:none;color:#999}.nav-top .memoz_options .btn:hover,.nav-top .memoz_options .btn:focus{background-color:transparent;color:#00978A}.nav-top .memoz_options .dropdown-menu{padding:10px 15px}@media (min-width: 320px) and (max-width: 767px){.nav-top .memoz_options .dropdown-menu{left:auto;right:0}}.nav-top .memoz_options .dropdown-menu li{padding:10px 0}.nav-top .memoz_options .dropdown-menu li.divider{padding:0}input[type="number"]{text-align:center}@media (min-width: 320px) and (max-width: 767px){.select-surah{padding-top:0}}.select-surah .form-inline{margin-bottom:0}.select-surah .form-inline .form-group{margin:0 5px 0 0}.select-surah .form-inline .form-group .form-control.search_ayat{width:75px}@media (min-width: 320px) and (max-width: 767px){.select-surah .form-inline .form-group .form-control.search_ayat{width:100%}}.select-surah .form-inline .form-group .input-group-addon{border-left:none;border-right:none}@media (max-width: 767px) and (min-width: 320px){.select-surah .form-inline .form-group{margin-bottom:10px}}.select-surah .form-inline .btn{background-color:#00978A;color:#fff;font-size:14px;margin-left:3px}.select-surah .form-inline .btn span{color:#fff;padding-left:10px}@media (max-width: 480px) and (min-width: 320px){.select-surah .form-inline .btn{width:100%;display:block;margin-left:0}}.select-surah .form-inline .btn:hover,.select-surah .form-inline .btn:focus{background-color:#007763}@media (min-width: 768px) and (max-width: 931px){.select-surah .form-inline select{width:150px}}.select-surah .checkbox,.select-surah .form-control,.select-surah span{color:#999}@media (min-width: 320px) and (max-width: 767px){.select-surah .search-title{margin-bottom:10px;display:block}}.select-surah .search_ayat{width:67px;text-align:center}.surah-nav{width:100%;margin:auto;text-align:center}.surah-nav .input-group{margin:auto}.surah-nav .input-group .btn{background-color:#00978A;border-color:#00978A;color:#fff;text-shadow:none}.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{background-color:#00978A;border-color:#00978A}.pagination>li>a,.pagination>li>span{color:#bbb;border:solid 1px #bbb;background:transparent}.pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover{background-color:#00978A;border-color:#00978A;color:#fff}.pagination .page_free_input form{margin:0px}.pagination .page_free_input a{padding:0px !important}.pagination .page_free_input a:hover,.pagination .page_free_input a:focus{background-color:transparent}.pagination .page_free_input .form-group{height:28px}.pagination .page_free_input .form-group .input-group-addon{background-color:transparent;border:none;border-left:solid 1px #bbb;height:28px;transition:background .5s ease}.pagination .page_free_input .form-group .input-group-addon:hover{background:#00978A;color:#fff}.pagination .page_free_input .form-group input{border:0px;width:50px;text-align:center;height:26px;border-radius:0}.pagination .page_free_input .form-group button{height:0;padding:0px;margin:-7px 0;background-color:transparent;border:none}.surah-action{text-align:right;margin:7px 0 0}@media (max-width: 480px) and (min-width: 320px){.surah-action{text-align:center;float:none !important;width:100%}}.surah-action .auto-play{margin-right:10px;color:#fff}@media (max-width: 480px) and (min-width: 320px){.surah-action .auto-play{text-align:center;margin:20px 0;display:block}}.surah-action #playnow{color:#999}.body-memo .main-content-wrap,.body-mushaf .main-content-wrap{padding-bottom:120px}.body-register .main-content-wrap,.dashboard .main-content-wrap{padding-bottom:0}.main-content-wrap{width:100%;margin:0;display:block;position:relative;min-height:500px}@media (max-width: 768px){.main-content-wrap{padding-bottom:60px}}.main-content-wrap .main-content{padding:20px 0}.main-content-wrap .main-content .backdrop{background:url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center/cover;width:100%;height:400px;position:fixed;top:0;left:0;z-index:1}.main-content-wrap .main-content .backdrop .backdrop-inner{background-color:rgba(0,151,138,0.85);width:100%;height:100%}.main-content-wrap .main-content .single-column{width:80%;margin:0 auto;position:relative;z-index:2}@media (min-width: 1200px){.main-content-wrap .main-content .single-column{width:80%}}@media (min-width: 1024px) and (max-width: 1200px){.main-content-wrap .main-content .single-column{width:90%}}@media (max-width: 1023px) and (min-width: 768px){.main-content-wrap .main-content .single-column{width:95%}}@media (min-width: 768px) and (max-width: 800px){.main-content-wrap .main-content .single-column{width:100%}}@media (max-width: 767px) and (min-width: 320px){.main-content-wrap .main-content .single-column{width:100%}}.main-content-wrap .main-content .single-column .page-title{position:relative}@media (max-width: 767px) and (min-width: 320px){.main-content-wrap .main-content .single-column .page-title h1{margin:0 0 0 40px !important}}.main-content-wrap .main-content .single-column .page-title h2{margin:0 0 20px;color:#fff}@media (max-width: 767px) and (min-width: 480px){.main-content-wrap .main-content .single-column .page-title h2{text-align:center;float:none !important;width:100%;margin:0 !important}}@media (max-width: 478px) and (min-width: 320px){.main-content-wrap .main-content .single-column .page-title h2{text-align:left}}.main-content-wrap .main-content .single-column .page-title .gp-link{margin-top:-7px}@media (max-width: 767px) and (min-width: 320px){.main-content-wrap .main-content .single-column .page-title .gp-link{position:absolute;top:-5px;right:5px;float:none !important;width:auto}}@media (min-width: 1234px){.main-content-wrap .main-content .single-column .nav-top #surah-collapse{width:73%;float:left}}@media (min-width: 1201px) and (max-width: 1233px){.main-content-wrap .main-content .single-column .nav-top #surah-collapse{width:75%;float:left}}@media (min-width: 1098px) and (max-width: 1200px){.main-content-wrap .main-content .single-column .nav-top #surah-collapse{width:73%;float:left}}@media (min-width: 932px) and (max-width: 1097px){.main-content-wrap .main-content .single-column .nav-top #surah-collapse{width:78%;float:left}}@media (min-width: 768px) and (max-width: 931px){.main-content-wrap .main-content .single-column .nav-top #surah-collapse{width:82%;float:left}}.nav-top-collapse{display:block;height:auto !important;overflow:visible !important;padding-bottom:0}.toggle-player{position:fixed;bottom:-10px;right:0;z-index:999;padding:10px 0}.toggle-player .btn-toggle-player{border:solid 1px #00978A;color:#00978A;text-align:center;background:#fff;border-radius:0}.toggle-player .btn-toggle-player:hover,.toggle-player .btn-toggle-player:focus{background-color:#00978A;color:#333}.detail_top{text-align:center;color:#1C9A71 !important;background-color:#cafffa}.detail_top .btn{margin:0;background-color:#00978A;color:#fff;border-left:solid 1px #00978A}.detail_top .btn:hover,.detail_top .btn:focus{background-color:#00cab9;color:#fff}.no_ayat_arabic{font-size:20px}.surah_title{background-color:rgba(0,151,138,0.15);color:#20b2aa;padding-bottom:10px}.surah_title .surah_name,.surah_title .head_surah{text-align:center}.surah_title .surah_name{margin-bottom:10px}.surah_title .surah_name strong{font-size:16px}.footer{text-align:center;width:100%;position:relative;margin-bottom:30px}.footer ul{list-style:none}.footer ul li{display:inline-block;margin-right:10px}.footer ul li span{color:#00645b}.footer ul li a{color:#00978A}.footer ul li a:hover,.footer ul li a:focus{color:#00cab9}#preloader{width:100%;height:5000px !important;z-index:100000;position:absolute;top:-50px;overflow:overlay;background-color:rgba(222,243,241,0.95);text-align:center;overflow:hidden}#preloader .loading{font-size:24px;color:#fff;position:fixed;text-align:center;width:100%;height:100vh;display:flex;align-items:center;justify-content:center}#preloader .loading .dzikir-loading{text-align:center}#preloader .loading .dzikir-loading .dzikir{font-size:46px;font-family:"Scheherazade";color:#2a5b56}body.canvas-slid #preloader,body.canvas-slid .loading{left:-300px}.loading.canvas-slid{left:-600px}.search-result .search-item p{padding:10px 20px;margin:0;color:#a2a2a2}.search-result .search-item .search-footer{padding:5px 20px;background-color:#eee}.search-result .search-item .search-footer .fa,.search-result .search-item .search-footer a{color:#00978A}.juz-list li{float:left;width:33.3%;margin-bottom:10px}.juz-list li a{display:block}.juz-list li a .juz-arabic{font-weight:bold}.juz-list li a .juz-indo{display:block;color:#aaa}.juz-list li a:hover,.juz-list li a:focus,.juz-list li a:hover .juz-indo,.juz-list li a:focus .juz-indo{color:#00978A;text-decoration:none}.boxcontent{padding:35px}.boxcontent-label{margin-top:0}.btn:hover,.btn:focus,.btn:active{outline:none 0}.modal-open .modal{display:block !important}@media (min-width: 769px) and (max-width: 931px){.hide-on-smalldesktop{display:none}}@media (max-width: 767px) and (min-width: 270px){.container-fluid{padding-right:0;padding-left:0}}.tanwin1:nth-letter(1){position:relative;top:-15px;left:2px}.tanwin2:nth-letter(1){position:relative;top:1px;left:2px}.ads-middle{font-size:14px;background-color:#333333;color:#FFF;padding:10px 0px;text-align:center}.ads-middle img{width:40px;float:left;margin-left:10px}.no_ayat_arabic{background:url("../../images/ayah_sign.png");border:0px !important;background-repeat:no-repeat;background-size:42px 41px;background-position-y:4px;background-position-x:2px}.recommendation{float:left;min-width:200px;width:75%}.recommendation .recommendation-header,.recommendation .recommendation-body{text-align:left}.recommendation .recommendation-action{text-align:right;padding-right:30px;font-size:50px}#recommendation-memoz{bottom:50px;right:50px;padding:18px;color:#fff;border-radius:3px;font-size:15px}li.dragend-page{max-height:200px}li.dragend-page.last{display:none !important}.top_user img{width:50px}.list_top_user .no_top_user{font-size:32px}.list_top_user .border_points{padding:10px 28px;background-color:#ddefd4}.choose-type li{padding:10px;font-size:19px}.modal-spacing ul.choose-class li{width:50%}.mushaf_header{background-color:#efefef;width:100%;margin:0 auto;padding:6px 0;position:relative;border-bottom:solid 1px #ddd}.mushaf_header .btn{position:absolute;top:5px;background:transparent;color:#999;text-shadow:none;box-shadow:none;border:solid 1px #ccc;border-radius:0}.mushaf_header .btn:hover,.mushaf_header .btn:focus{background-color:#00978A;color:#fff;border:1px solid transparent}@media (max-width: 767px) and (min-width: 320px){.mushaf_header .btn{top:5px}}.mushaf_header .btn:first-child{left:0;border-left:none}.mushaf_header .btn:last-child{right:0;border-right:none}.mushaf_header .mids{width:50%;margin:0 auto;text-align:center}@media (max-width: 767px) and (min-width: 320px){.mushaf_header .mids{width:100%}}.mushaf_header .mids span{border:solid 1px #ccc;padding:5px 25px;display:inline-block;color:#999;margin:0 -2px}@media (max-width: 767px) and (min-width: 320px){.mushaf_header .mids span{padding:5px 10px}}.mushaf,.boxcontent{position:relative;margin:0 auto;background-color:#fff;box-shadow:0 2px 5px 0 rgba(0,0,0,0.26);right:0}@media (max-width: 767px) and (min-width: 270px){.mushaf,.boxcontent{box-shadow:none}}.mushaf .mushaf_display,.boxcontent .mushaf_display{margin:0 auto;text-align:center;position:relative;display:block;width:100%}.mushaf .mushaf_display .btn-group,.boxcontent .mushaf_display .btn-group{display:block;width:100.3%}.mushaf .mushaf_display .btn-group .btn,.boxcontent .mushaf_display .btn-group .btn{border-color:#00978A;color:#00978A;width:33.3%;border-radius:0;border:none;padding:13px 0;font-size:16px}.mushaf .mushaf_display .btn-group .btn.active,.boxcontent .mushaf_display .btn-group .btn.active,.mushaf .mushaf_display .btn-group .btn:active,.boxcontent .mushaf_display .btn-group .btn:active{background-color:#00978A;border-color:#00978A;color:#fff;text-shadow:none;background-image:none;box-shadow:none}.mushaf .mushaf_display .btn-group .btn:hover,.boxcontent .mushaf_display .btn-group .btn:hover,.mushaf .mushaf_display .btn-group .btn:focus,.boxcontent .mushaf_display .btn-group .btn:focus{background-color:#00978A;color:#fff}.mushaf .ayat_section,.boxcontent .ayat_section{border-bottom:dashed 1px #ddd;position:relative;overflow:hidden;transition:all 1s ease}@media (max-width: 767px) and (min-width: 320px){.mushaf .ayat_section,.boxcontent .ayat_section{transition:height .35s ease}}.mushaf .ayat_section:last-child,.boxcontent .ayat_section:last-child{border-bottom:none}.mushaf .ayat_section.playing.playing .arabic,.boxcontent .ayat_section.playing.playing .arabic{background-color:#97fff6 !important;color:#00312d}.mushaf .ayat_section.playing.playing .trans,.boxcontent .ayat_section.playing.playing .trans{background-color:#b1fff8 !important;color:#00312d}.mushaf .ayat_section.playing.playing .action-footer,.boxcontent .ayat_section.playing.playing .action-footer{border-top:dashed 2px #00978A}.mushaf .ayat_section.playing.playing .action-footer,.boxcontent .ayat_section.playing.playing .action-footer,.mushaf .ayat_section.playing.playing .action-footer .btn,.boxcontent .ayat_section.playing.playing .action-footer .btn{background-color:#b1fff8 !important;color:#00312d;border-left-color:#00978A}.mushaf .ayat_section .head_surah,.boxcontent .ayat_section .head_surah{text-align:center;padding-bottom:10px}@media (max-width: 767px) and (min-width: 320px){.mushaf .ayat_section .head_surah,.boxcontent .ayat_section .head_surah{font-size:30px;padding:0px}}.mushaf .ayat_section .surah_name,.boxcontent .ayat_section .surah_name{padding:10px}.mushaf .ayat_section.playing,.boxcontent .ayat_section.playing{background-color:rgba(255,255,255,0.8);border-top:dashed 2px #00978A;border-bottom:dashed 2px #00978A}.mushaf .ayat_section .arabic,.boxcontent .ayat_section .arabic{text-align:right;color:#0d4643;width:100%;line-height:65px;-moz-animation-duration:1s;-webkit-animation-duration:1s;transition:all 1s ease;background-color:#f6f6f6;padding:10px;position:relative;opacity:1}@media (max-width: 767px) and (min-width: 320px){.mushaf .ayat_section .arabic,.boxcontent .ayat_section .arabic{font-size:33px;padding:20px 10px 20px 0;transition:height .35s ease}}.mushaf .ayat_section .arabic .content_ayat,.boxcontent .ayat_section .arabic .content_ayat{display:inline-block;padding:0 15px;line-height:50px;direction:rtl}.mushaf .ayat_section .arabic .no_ayat_arabic,.boxcontent .ayat_section .arabic .no_ayat_arabic{display:inline-block;text-align:center;font-family:"Lateef";width:46px;height:46px;font-size:18px;letter-spacing:-2px;position:relative;border:solid 2px #2B4538;border-radius:100%;padding:0}.mushaf .ayat_section .arabic .no_ayat_arabic img,.boxcontent .ayat_section .arabic .no_ayat_arabic img{position:absolute;top:-9px;left:-12px}.mushaf .ayat_section .arabic .no_ayat_arabic.visible-xs,.boxcontent .ayat_section .arabic .no_ayat_arabic.visible-xs{display:inline}.mushaf .ayat_section .arabic .no_ayat_arabic_memoz,.boxcontent .ayat_section .arabic .no_ayat_arabic_memoz{display:inline-block !important;text-align:center;width:37px;height:46px;font-size:14px;letter-spacing:-2;position:relative;margin-right:10px}.mushaf .ayat_section .arabic .no_ayat_arabic_memoz img,.boxcontent .ayat_section .arabic .no_ayat_arabic_memoz img{position:absolute;top:5px;left:2px}.mushaf .ayat_section .arabic .no_ayat_arabic_memoz.visible-xs,.boxcontent .ayat_section .arabic .no_ayat_arabic_memoz.visible-xs{display:inline-block}.mushaf .ayat_section .arabic .ayat_arabic,.boxcontent .ayat_section .arabic .ayat_arabic{padding-left:10px}.mushaf .ayat_section .arabic .ayat_arabic_memoz,.boxcontent .ayat_section .arabic .ayat_arabic_memoz{padding-left:0}.mushaf .ayat_section .arabic .ayat_arabic_memoz:last-child,.boxcontent .ayat_section .arabic .ayat_arabic_memoz:last-child{padding-left:0px}.mushaf .ayat_section .trans,.boxcontent .ayat_section .trans{text-align:left;color:rgba(43,69,56,0.7);font-size:16px;width:100%;line-height:24px;-moz-animation-duration:1s;-webkit-animation-duration:1s;transition:all 1s ease;background-color:#fefefe;padding:10px;position:relative;opacity:1}@media (max-width: 767px) and (min-width: 320px){.mushaf .ayat_section .trans,.boxcontent .ayat_section .trans{font-size:15px;padding:20px 0px 20px 10px;transition:height .35s ease}}.mushaf .ayat_section .trans .no_ayat,.boxcontent .ayat_section .trans .no_ayat,.mushaf .ayat_section .trans .content_ayat,.boxcontent .ayat_section .trans .content_ayat{display:inline-block}.mushaf .ayat_section .trans .trans_content,.boxcontent .ayat_section .trans .trans_content{padding:0 15px}.mushaf .ayat_section .puff,.boxcontent .ayat_section .puff{z-index:1;height:0 !important;padding:0;opacity:0}.mushaf .ayat_section .go,.boxcontent .ayat_section .go{height:100%;z-index:2;padding:20px 10px 40px}.mushaf .ayat_section .action-footer,.boxcontent .ayat_section .action-footer{position:relative;width:100%;height:35px;z-index:5;background-color:#eee;display:flex;align-items:center;justify-content:center}.mushaf .ayat_section .action-footer .btn,.boxcontent .ayat_section .action-footer .btn{margin:0;background-color:#eee;color:#aaa;border-left:solid 1px #ddd;border-radius:0;padding:7px 20px}.mushaf .ayat_section .action-footer .btn:first-child,.boxcontent .ayat_section .action-footer .btn:first-child{border-left:none}.mushaf .ayat_section .action-footer .btn:hover,.boxcontent .ayat_section .action-footer .btn:hover,.mushaf .ayat_section .action-footer .btn:focus,.boxcontent .ayat_section .action-footer .btn:focus{background-color:#00978A;color:#fff}.mushaf_display a.selected,.steps a.selected{font-weight:bold}.pagination .page_free_input .form-group button{margin:-11px 0 !important}.surah-nav .pagination>li>a,.surah-nav .pagination>li>span{padding:5px 15px;font-size:16px;border:none !important}.surah-nav .pagination>li>a{color:#00978A}.surah-nav .pagination>li.active>a{color:#fff;border-radius:8px}.header_juz:hover,.header_page:hover{background-color:#00978A;cursor:pointer;color:#fff !important;border:1px solid #00978A}.muqodimah b{font-size:16px;margin-bottom:10px}.mushaf-hafalan.mushaf .ayat_section .arabic .no_ayat_arabic,.mushaf-hafalan.boxcontent .ayat_section .arabic .no_ayat_arabic{height:59px !important}.pagination .fa{padding:3px}.arabic a{text-decoration:none;padding:0 3px}.main-content-wrap .main-content .single-column .page-title h1{margin:0 0 20px;color:#fff;font-size:30px}.select2-container--default .select2-results>.select2-results__options{max-height:350px}@media (max-width: 767px) and (min-width: 270px){.mushaf-hafalan .surah_title{padding-top:10px}}@media (max-width: 767px) and (min-width: 270px){.arabic,.head_surah{font-family:"me_quran","Lateef", "Traditional Arabic";padding-bottom:0}}@media (max-width: 767px) and (min-width: 270px){.select-surah .form-inline .btn,.select-surah .form-inline .btn-last-memoz{font-size:22px !important}.select2-container{width:100% !important}.select2-results__option{font-size:18px}.select2-container--default .select2-selection--single{height:50px !important}.select2-container--default .select2-selection--single .select2-selection__rendered{color:#999;line-height:28px;font-size:20px;padding:9px}.select2-container--default .select2-selection--single .select2-selection__arrow{padding:23px 14px}.select-surah input,.select-surah select,.modal-body input,.modal-body select{height:50px;font-size:19px}.mushaf .ayat_section .arabic,.boxcontent .ayat_section .arabic{font-size:25px}.main-content-wrap .main-content .single-column .page-title h1.pull-left{margin:-10px 10px 10px 10px !important}.mushaf .ayat_section .arabic,.boxcontent .ayat_section .arabic{padding:0 !important}.main-content-wrap .main-content .single-column .page-title h2{margin-left:20px;margin-bottom:12px !important}.nav-top .memoz_options .btn{position:relative;left:-5px}.qm-navbar .navbar-nav form{padding:10px 26px}.juz-list li{float:left;width:47.4% !important}.mushaf .ayat_section .trans,.boxcontent .ayat_section .trans{padding-bottom:4px;padding-top:4px}.main-content-wrap .main-content .single-column .page-title h2{margin-left:9px}ul.navbar-nav li{margin-left:0}.navbar-nav .navbar-form .input-group{float:none;width:95%;margin:0 auto}.navbar-collapse{background-color:#00978A}.memoz-form{width:100%}.select-surah .search-title{margin-bottom:0;font-size:14pt}.btn-cari-ayat,.btn-last-memoz{margin-top:7px;display:inline-block !important}#qm-navbar-collapse{margin:7.5px -15px !important}.navbar-default .navbar-nav>li>a{border-bottom:1px solid #00978A}.paging-footer .input-group{width:100%;display:inline}.paging-footer .input-group-addon{width:13px}}.count-search{display:block;text-align:center;margin:10px auto 5px}.count-search .badge{background-color:#B0FF33;color:#007763}.memoz_nav{width:98%;margin:0 auto 10px}@media (max-width: 480px) and (min-width: 320px){.memoz_nav{width:88%}}.memoz_nav .btn{color:#00978A;border:solid 1px #00978A;display:inline-block;width:19.7%}.memoz_nav .btn:hover,.memoz_nav .btn:focus{color:#fff;background:#007763}@media (max-width: 1279px) and (min-width: 481px){.memoz_nav .btn{width:18.7%}}@media (max-width: 480px) and (min-width: 320px){.memoz_nav .btn{width:auto;padding:4px 5px}}.body-memo .nav-top .select-surah{width:100%}body.body-memo .mushaf,body.body-memo .boxcontent{padding-top:1px}.puzzle{background-color:#DDD}.puzzle .content_ayat{display:inline-block}.puzzle .content_ayat .arabic-puzzle{float:left;width:auto;padding:5px !important;margin:2px;border:dotted 1px #333}.puzzle .content_ayat .arabic-puzzle:empty{padding:0 !important;border:none}.memoz_player{padding:5px 20px;margin:15px 0}.steps_desc{color:#999;font-size:16px;padding:0 10px}.mushaf-hafalan .step-wrap{width:100%;margin:7px 0}.mushaf-hafalan .step-wrap .steps{padding:0 10px;margin:10px 0;display:block}.mushaf-hafalan .step-wrap .steps .btn{border-width:1px;border-color:#00978A;border-style:solid;background-color:transparent;color:#00978A;background-image:none;text-shadow:none;width:20%}.mushaf-hafalan .step-wrap .steps .btn:hover,.mushaf-hafalan .step-wrap .steps .btn:focus,.mushaf-hafalan .step-wrap .steps .btn.selected{border-width:1px;border-color:#00978A;border-style:solid;background-color:#00978A;color:#fff;background-image:none;text-shadow:none}.hafalan-actions{margin:7px 0}.memoz-check-link{color:#00978A;text-align:center;display:block}.memoz-link-area{display:inline-block;font-size:40px;margin-bottom:-20px}.memoz-status{display:none;visibility:hidden}.puzzle{padding:0 25px}.mushaf-hafalan.mushaf .puzzle .arabic-puzzle,.mushaf-hafalan.boxcontent .puzzle .arabic-puzzle{font-family:"me_quran","Lateef", "Traditional Arabic";padding:0 2px 2px !important}.mushaf-hafalan.mushaf .puzzle .arabic-puzzle:end-child,.mushaf-hafalan.boxcontent .puzzle .arabic-puzzle:end-child{padding:0 2px 2px 22px !important}.puzzle .arabic-puzzle a{background-color:#DDD;text-decoration:none;padding:0 7px}.memoz-filter ul li{width:33.3333% !important}.memoz-options.open>.dropdown-menu{width:100%}.memoz-options .dropdown-menu>li>a{font-size:16px}.memoz-list .memoz-item .memoz-body{cursor:pointer}.memoz-list .memoz-item strong{margin:0px;color:#70C393;font-size:14px}.memoz-list .memoz-item .memoz-target{color:#adadad;font-size:11px}.blur-ayat,.blur-ayat .highlight-red,.blur-ayat .highlight-green,.blur-ayat .highlight-orange,.blur-ayat .highlight-blue{color:transparent;text-shadow:0 0 17px rgba(0,0,0,0.5)}.modal-body>form>a.btn-last-memoz{display:none}.form-inline a.btn-setting,.btn-last-memoz{font-size:14px !important}.form-inline .btn.btn-setting span.hidden-xs,.btn-last-memoz{padding-left:0 !important}.btn-last-memoz{padding-left:5px !important}.puzzle_q{visibility:hidden}.puzzle_border{border:1px dotted #333}.puzzle_no_border{border:0 !important}.puzzle .ayat_arabic_memoz{visibility:show !important}.puzzle{font-size:23px}.segmented-control{position:relative;display:inline-block;border:1px solid currentColor;font-style:normal;font-weight:400;text-decoration:none;overflow:hidden;margin:.8em auto;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;-moz-user-select:-moz-none;-ms-user-select:none;-webkit-user-select:none;user-select:none;-moz-transition-duration:.8s;-o-transition-duration:.8s;-webkit-transition-duration:.8s;transition-duration:.8s;-moz-transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);-o-transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);-webkit-transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);-webkit-tap-highlight-color:transparent}.segmented-control>input{position:absolute;left:-10000px;opacity:0}.segmented-control>input[type='checkbox'] ~ label{-moz-transition-duration:0;-o-transition-duration:0;-webkit-transition-duration:0;transition-duration:0}.segmented-control>input[type='checkbox'] ~ label:before{opacity:0}.segmented-control>input:disabled:nth-child(1) ~ label:nth-of-type(1){opacity:.3;cursor:not-allowed}.segmented-control>input:nth-child(1):checked ~ label:nth-of-type(1):after,.segmented-control>input:nth-child(1):checked ~ label:nth-of-type(1):before{opacity:1}.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1):after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1):before,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1) ~ label:after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1) ~ label:before{left:0}.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2):after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2):before,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:before{left:0}.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3):after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3):before,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before{left:0}.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4):after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4):before,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,.segmented-control>input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before{left:0}.segmented-control>input:disabled:nth-child(2) ~ label:nth-of-type(2){opacity:.3;cursor:not-allowed}.segmented-control>input:nth-child(2):checked ~ label:nth-of-type(2):after,.segmented-control>input:nth-child(2):checked ~ label:nth-of-type(2):before{opacity:1}.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2):after,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2):before,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:after,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:before{left:50%}.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3):after,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3):before,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before{left:33.33333%}.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4):after,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4):before,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,.segmented-control>input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before{left:25%}.segmented-control>input:disabled:nth-child(3) ~ label:nth-of-type(3){opacity:.3;cursor:not-allowed}.segmented-control>input:nth-child(3):checked ~ label:nth-of-type(3):after,.segmented-control>input:nth-child(3):checked ~ label:nth-of-type(3):before{opacity:1}.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3):after,.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3):before,.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before{left:66.66667%}.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4):after,.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4):before,.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,.segmented-control>input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before{left:50%}.segmented-control>input:disabled:nth-child(4) ~ label:nth-of-type(4){opacity:.3;cursor:not-allowed}.segmented-control>input:nth-child(4):checked ~ label:nth-of-type(4):after,.segmented-control>input:nth-child(4):checked ~ label:nth-of-type(4):before{opacity:1}.segmented-control>input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4):after,.segmented-control>input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4):before,.segmented-control>input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,.segmented-control>input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before{left:75%}.segmented-control>label{display:inline-block;padding:0 .71em;cursor:pointer;float:left;line-height:3em;font-style:inherit;font-weight:inherit;text-decoration:inherit;-moz-transition-property:none;-o-transition-property:none;-webkit-transition-property:none;transition-property:none;-moz-transition-duration:inherit;-o-transition-duration:inherit;-webkit-transition-duration:inherit;transition-duration:inherit;-moz-transition-timing-function:inherit;-o-transition-timing-function:inherit;-webkit-transition-timing-function:inherit;transition-timing-function:inherit}.segmented-control>label:before,.segmented-control>label:after{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}.segmented-control>label:after{color:#fff;content:attr(data-value);text-align:center;padding:inherit;z-index:10;font-style:inherit;text-decoration:inherit;font-weight:inherit;opacity:0;-moz-transition-property:opacity, left;-o-transition-property:opacity, left;-webkit-transition-property:opacity, left;transition-property:opacity, left;-moz-transition-duration:inherit;-o-transition-duration:inherit;-webkit-transition-duration:inherit;transition-duration:inherit;-moz-transition-timing-function:inherit;-o-transition-timing-function:inherit;-webkit-transition-timing-function:inherit;transition-timing-function:inherit}.segmented-control>label:after,.segmented-control>label{text-align:center;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}.segmented-control>label:before{content:'';color:inherit;background:currentColor;-moz-transition-property:left;-o-transition-property:left;-webkit-transition-property:left;transition-property:left;-moz-transition-duration:inherit;-o-transition-duration:inherit;-webkit-transition-duration:inherit;transition-duration:inherit;-moz-transition-timing-function:inherit;-o-transition-timing-function:inherit;-webkit-transition-timing-function:inherit;transition-timing-function:inherit}.segmented-control>label:first-of-type:nth-last-of-type(1),.segmented-control>label:first-of-type:nth-last-of-type(1):after,.segmented-control>label:first-of-type:nth-last-of-type(1):before,.segmented-control>label:first-of-type:nth-last-of-type(1) ~ label,.segmented-control>label:first-of-type:nth-last-of-type(1) ~ label:after,.segmented-control>label:first-of-type:nth-last-of-type(1) ~ label:before{width:100%}.segmented-control>label:first-of-type:nth-last-of-type(2),.segmented-control>label:first-of-type:nth-last-of-type(2):after,.segmented-control>label:first-of-type:nth-last-of-type(2):before,.segmented-control>label:first-of-type:nth-last-of-type(2) ~ label,.segmented-control>label:first-of-type:nth-last-of-type(2) ~ label:after,.segmented-control>label:first-of-type:nth-last-of-type(2) ~ label:before{width:50%}.segmented-control>label:first-of-type:nth-last-of-type(3),.segmented-control>label:first-of-type:nth-last-of-type(3):after,.segmented-control>label:first-of-type:nth-last-of-type(3):before,.segmented-control>label:first-of-type:nth-last-of-type(3) ~ label,.segmented-control>label:first-of-type:nth-last-of-type(3) ~ label:after,.segmented-control>label:first-of-type:nth-last-of-type(3) ~ label:before{width:33.33333%}.segmented-control>label:first-of-type:nth-last-of-type(4),.segmented-control>label:first-of-type:nth-last-of-type(4):after,.segmented-control>label:first-of-type:nth-last-of-type(4):before,.segmented-control>label:first-of-type:nth-last-of-type(4) ~ label,.segmented-control>label:first-of-type:nth-last-of-type(4) ~ label:after,.segmented-control>label:first-of-type:nth-last-of-type(4) ~ label:before{width:25%}.segmented-control.italic,.segmented-control .italic{font-style:italic}.segmented-control.bold,.segmented-control .bold{font-weight:700}.segmented-control.underline,.segmented-control .underline{text-decoration:underline}.segmented-control.line-through,.segmented-control .line-through{text-decoration:line-through}.memorized{opacity:0.15}.container-segmented h4{margin:0;font-size:14px}.memoz-message.alert-warning{text-align:left}.pause-marks{position:relative;top:8px}.btn-bookmark{margin-right:5px}.memoz_nav .btn.active{color:#fff;background:#00978A}@media (max-width: 480px) and (min-width: 320px){.select-surah{padding:7px 0 !important}}@media (max-width: 480px) and (min-width: 320px){.select-surah .form-inline .btn-cari-ayat{width:32.33% !important;font-size:12px !important;padding:10px 7px !important;margin-top:7px !important}}.dashboard-wrap .boxcontent{padding:0}.dashboard-wrap .boxcontent .dash-profile{background-image:linear-gradient(#6db9b0, #fff)}.dashboard-wrap .boxcontent .dash-profile #dashboard-items .tabbed-nav .tabbed-nav-list{display:flex;flex-flow:row wrap;justify-content:space-around}.dash-profile-detail,.dash-profile-detail-wrap{background:0 0 !important}.dash-profile-detail-wrap{width:100%;height:100%;background-size:cover}.dash-profile-detail{display:flex;flex-direction:row;align-items:center;position:relative;padding:0}.dash-profile-detail .btn-trigger-dashboard{display:none}.dash-profile-detail .dash-profile-img{width:70px;height:120px;position:relative;overflow:hidden;margin:0 15px}.dash-profile-detail .dash-profile-img img{width:100%;height:auto;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto}.dash-profile-detail .dash-profile-img.img-circle img{width:70px;height:70px}.dash-profile-detail .dash-profile-name{margin-bottom:5px;color:#fff;font-size:18px}.dash-profile-detail .dash-profile-name .fa{position:relative;color:#001815;font-size:25px}.dash-profile-detail .dash-profile-name .fa span{position:absolute;text-align:center;color:#fff;top:0;left:0;right:0;bottom:0;margin:auto;font-size:15px;width:10px;height:17px;font-weight:bold}.dash-profile-detail .btn-trigger-dashboard{position:absolute;bottom:-15px;right:10px;border-radius:100%;border:solid 1px #fff;background:#ff8d35;color:#fff;z-index:99;font-size:16px}.dash-profile-detail .qm-badge{display:none}.tabbed-nav{width:100%;background:0 0 !important;padding:0 0 10px}.tabbed-nav .tabbed-nav-list-profile .tabbed-nav-list-item{box-shadow:1px 1px 4px 0 #a5a5a5;border-radius:19px;line-height:33px;width:45%;margin:7px 8px;background:#FFF;padding:10px;text-align:center;float:left}.tabbed-nav .tabbed-nav-list{padding-left:0}.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item{display:inline-block;box-shadow:1px 1px 4px 0 #a5a5a5;border-radius:8px;line-height:33px;width:21%;margin:7px 0;background:#fff;padding:0 2px}.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item i{display:block;text-align:center;font-size:33px}.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link{color:#414f4f;font-size:9px;font-weight:800;padding:7px 5px;text-align:center;display:block}.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:active,.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:hover,.tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:focus{color:#00978A}.timeline-koreksi .boxcontent-label{text-align:center}.correction-list .correction-list-item{border-bottom:solid 1px #eee}.correction-list .correction-list-item:nth-child(even){background-color:#fafafa}.correction-list .correction-list-item:last-child{border-bottom:none}.koreksi-box{display:flex;position:relative;flex-direction:row;align-items:center;padding:17px}.koreksi-box .koreksi-avatar{width:75px;height:75px;position:relative;overflow:hidden}.koreksi-box .koreksi-avatar img{width:100%;height:auto;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto}.koreksi-box .koreksi-desc{width:80%}.koreksi-box .koreksi-desc .username{font-size:18px;display:block;color:#00978A;font-weight:bold}.koreksi-box .koreksi-desc .ayat-target{display:inline-block}.koreksi-box .koreksi-desc .ayat-target .ayat-target-link{font-size:17px}.koreksi-box .koreksi-desc .jumlah-koreksi{color:#999}.koreksi-box .koreksi-desc .koreksi-action{padding:7px 0 0}.koreksi-box .koreksi-desc .koreksi-action .koreksi-action-link{display:inline-block;text-align:center;padding:7px 15px;background-color:#fff;border:solid 1px #00978A;margin-right:7px;border-radius:4px}.correction-detail{border-bottom:2px solid #ddd;padding:5px;background-color:#e0e8ef}.correction-detail img{width:70px;height:70px;float:left}.correction-detail p{background:#feffda;padding:5px;border-radius:11px;font-size:12px;margin:0}.tab-pane .btn-green{border-radius:0}.bookmark-sign{width:47px;position:absolute;right:3px;top:-2px;z-index:9}.bookmark-sign.bookmark-sticky{position:fixed}.bookmark-sign-menu{position:absolute;color:#e26767;top:-5px;right:-8px;font-size:30px}.tabbed-nav-list-item{position:relative}.tabbed-nav-list-item .label-danger{position:absolute;top:0px;padding:6px;font-size:12px;right:0px;border-radius:1px 8px 0px 3px;background:#f35d62}.content-learning ul{padding:0px !important li;padding-border:1px solid #dafcf8;padding-width:100%;padding-float:left !important;padding-margin:3px;padding-background-image:linear-gradient(to right, #b6f5ee, #fff);padding-padding:11px}.content-learning .i.fa.fa-folder{font-size:26px}button.navbar-toggle.notif{font-size:23px;position:absolute;right:32px;top:-8px;color:#FFF}button.navbar-toggle.search{font-size:23px;position:absolute;right:65px;top:-8px;color:#FFF}.notif .label-danger{font-size:10px;position:absolute;top:10px}ul.choose-class li{width:100%}.record-right-top{position:absolute;right:10px;top:-8px;font-size:63px}span.status_memoz_result{float:right}.c-circle-menu{position:fixed;bottom:12px;right:12px;z-index:1000;width:48px;height:48px;border-radius:24px}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu{width:96px;height:96px;border-radius:48px}}.c-circle-menu__items{display:block;list-style:none;position:absolute;z-index:2;margin:0;padding:0}.c-circle-menu__item{display:block;position:absolute;top:0;left:0;width:48px;height:48px;border-radius:24px;opacity:0;transition:transform, opacity;transition-duration:0.3s, 0.3s;transition-timing-function:cubic-bezier(0.35, -0.59, 0.47, 0.97)}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu__item{width:96px;height:96px;border-radius:48px}}.c-circle-menu__item:nth-child(1){transition-delay:.4s}.c-circle-menu__item:nth-child(2){transition-delay:.3s}.c-circle-menu__item:nth-child(3){transition-delay:.2s}.c-circle-menu__item:nth-child(4){transition-delay:.1s}.c-circle-menu__item:nth-child(5){transition-delay:0s}.c-circle-menu.is-active .c-circle-menu__item{transition-timing-function:cubic-bezier(0.35, 0.03, 0.47, 1.59)}.c-circle-menu.is-active .c-circle-menu__item:nth-child(1){transition-delay:0s;transform:translate(-144px, 0)}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu.is-active .c-circle-menu__item:nth-child(1){transform:translate(-288px, 0)}}.c-circle-menu.is-active .c-circle-menu__item:nth-child(2){transition-delay:.1s;transform:translate(-134px, -56px)}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu.is-active .c-circle-menu__item:nth-child(2){transform:translate(-267px, -111px)}}.c-circle-menu.is-active .c-circle-menu__item:nth-child(3){transition-delay:.2s;transform:translate(-102px, -102px)}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu.is-active .c-circle-menu__item:nth-child(3){transform:translate(-204px, -204px)}}.c-circle-menu.is-active .c-circle-menu__item:nth-child(4){transition-delay:.3s;transform:translate(-56px, -134px)}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu.is-active .c-circle-menu__item:nth-child(4){transform:translate(-111px, -267px)}}.c-circle-menu.is-active .c-circle-menu__item:nth-child(5){transition-delay:.4s;transform:translate(0, -144px)}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu.is-active .c-circle-menu__item:nth-child(5){transform:translate(0, -288px)}}.c-circle-menu.is-active .c-circle-menu__item{opacity:1}.c-circle-menu__link{display:block;width:100%;height:100%;border-radius:24px;box-shadow:inset 0 0 0 2px #fff}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu__link{border-radius:48px}}.c-circle-menu__link img{display:block;max-width:100%;height:auto}.c-circle-menu__link:hover{box-shadow:inset 0 0 0 2px #00978A}.c-circle-menu__toggle{display:block;position:absolute;z-index:100;margin:0;padding:0;width:48px;height:48px;background-color:#00978A;font:inherit;font-size:0;text-indent:-9999px;border-radius:24px;border:solid 2px #fff;transition:background 0.3s;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;box-shadow:none}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu__toggle{width:96px;height:96px;border-radius:48px}}.c-circle-menu__toggle:hover,.c-circle-menu__toggle:focus,.c-circle-menu__toggle.is-active{outline:none;background-color:#00312d}.c-circle-menu__toggle span,.c-circle-menu__toggle span::before,.c-circle-menu__toggle span::after{display:block;position:absolute;height:4px;background:#fff;border-radius:1px}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu__toggle span,.c-circle-menu__toggle span::before,.c-circle-menu__toggle span::after{height:8px;border-radius:2px}}.c-circle-menu__toggle span{top:20px;left:10px;right:10px;transition:background 0.3s}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu__toggle span{top:44px;left:20px;right:20px}}.c-circle-menu__toggle span::before,.c-circle-menu__toggle span::after{left:0;width:100%;content:"";transition-duration:0.3s, 0.3s;transition-delay:0.3s, 0s}.c-circle-menu__toggle span::before{top:-8px;transition-property:top, transform}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu__toggle span::before{top:-16px}}.c-circle-menu__toggle span::after{bottom:-8px;transition-property:bottom, transform}@media (min-width: 480px) and (min-height: 480px){.c-circle-menu__toggle span::after{bottom:-16px}}.c-circle-menu__toggle.is-active span{background:none}.c-circle-menu__toggle.is-active span::before{top:0;transform:rotate(45deg);transition-delay:0s, 0.3s}.c-circle-menu__toggle.is-active span::after{bottom:0;transform:rotate(-45deg);transition-delay:0s, 0.3s}.c-circle-menu__mask{position:fixed;top:0;left:0;z-index:1;visibility:hidden;opacity:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);transition:opacity 0.3s, visibility 0.3s}.c-circle-menu__mask.is-active{opacity:1;visibility:visible}
+@font-face {
+  font-family: "Scheherazade", "Traditional Arabic"; }
+.no-content-center {
+  text-align: center; }
+
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.spacer1 {
+  display: inline-block;
+  padding: 0 5px; }
+
+.fa-3 {
+  font-size: 4em; }
+
+.display-inline-block-xs {
+  margin: 10px 5px 10px 0; }
+
+.clearfix {
+  clear: both; }
+
+.wrap .alert {
+  width: 80.6%;
+  margin: 20px auto 5px;
+  transition: all 1s ease;
+  text-align: center;
+  position: relative;
+  z-index: 2; }
+
+.dropdown-backdrop {
+  position: static; }
+
+.wrap .steps_desc .alert {
+  width: 100%;
+  margin: 0 0 10px; }
+
+.modal.canvas-slid {
+  left: 0 !important;
+  right: 0 !important; }
+
+.center {
+  text-align: center; }
+
+.highlight {
+  background-color: #B0FF33;
+  color: #007763 !important;
+  font-weight: bold;
+  padding: 1px 4px; }
+
+.highlight-red {
+  color: #FF0037; }
+
+.highlight-orange {
+  color: #fdb300; }
+
+.highlight-green {
+  color: #00978A; }
+
+.highlight-blue {
+  color: #312994; }
+
+.highlight-gray {
+  color: #ffff00; }
+
+.tanwin1::before {
+  content: '\200D'; }
+
+.navi-up {
+  top: -60px; }
+
+.navbar-toggle {
+  display: block !important;
+  float: right !important; }
+
+.navbar-brand {
+  float: left !important; }
+  .navbar-brand h1 {
+    font-size: 23px !important;
+    margin: 0; }
+
+.qm-navbar {
+  background: #fff; }
+  .qm-navbar .qm-brand {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 195px;
+    height: 150px;
+    padding: 35px 0;
+    margin-bottom: 25px; }
+    .qm-navbar .qm-brand .qmc-logo {
+      display: inline-block;
+      margin-bottom: 10px;
+      width: 70px; }
+    .qm-navbar .qm-brand .qmc-title {
+      width: 150px; }
+  .qm-navbar .navbar-nav .navbar-form {
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none;
+    margin: 11px 0; }
+    .qm-navbar .navbar-nav .navbar-form .btn-search {
+      background-color: #20b2aa;
+      color: #fff; }
+  .qm-navbar .qm-cari-kata {
+    width: 100%;
+    float: none !important;
+    margin: 7.5px 0 15px !important; }
+
+.navmenu-header {
+  background: url("../images/MJcELpDoO7w.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 250px; }
+  .navmenu-header .navmenu-overlay {
+    background: rgba(0, 151, 138, 0.5);
+    height: 100%; }
+
+.navmenu-default .navmenu-nav > li {
+  border-bottom: solid 1px #efefef; }
+  .navmenu-default .navmenu-nav > li.active {
+    border-bottom: none; }
+
+.navmenu-default .navmenu-nav > li > a, .navbar-default .navbar-offcanvas .navmenu-nav > li > a {
+  color: #00978A;
+  font-size: 16px;
+  padding: 15px 30px; }
+
+.navmenu-default .navmenu-nav > .active > a, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a, .navmenu-default .navmenu-nav > .active > a:hover, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:hover, .navmenu-default .navmenu-nav > .active > a:focus, .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:focus {
+  color: #fff !important;
+  background: #20b2aa !important; }
+
+.navmenu-default, .navbar-default .navbar-offcanvas {
+  border: none !important; }
+
+.close-navi {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px; }
+
+.btn-green-small {
+  background-color: #00978A !important;
+  color: #fff !important;
+  border: solid 1px #007763 !important; }
+  .btn-green-small:hover, .btn-green-small:focus {
+    background: #00cab9 !important; }
+
+.btn-green-small-darker {
+  background-color: #25835B !important;
+  color: #fff !important; }
+
+.btn-breadcrumb {
+  /** The Spacing **/
+  /** Default button **/ }
+  .btn-breadcrumb .btn:not(:last-child):after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 10px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: 100%;
+    z-index: 3; }
+  .btn-breadcrumb .btn:not(:last-child):before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 10px solid #00978A;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 3; }
+  .btn-breadcrumb .btn {
+    padding: 6px 12px 6px 24px;
+    box-shadow: none; }
+  .btn-breadcrumb .btn:first-child {
+    padding: 6px 6px 6px 10px; }
+  .btn-breadcrumb .btn:last-child {
+    padding: 6px 18px 6px 24px; }
+  .btn-breadcrumb .btn.btn-default.selected:not(:last-child):after {
+    border-left: 10px solid #00978A; }
+  .btn-breadcrumb .btn.btn-default:not(:last-child):after {
+    border-left: 10px solid #fff; }
+  .btn-breadcrumb .btn.btn-default:not(:last-child):before {
+    border-left: 10px solid #00978A; }
+  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+    border-left: 10px solid #00978A; }
+  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+    border-left: 10px solid #fff; }
+
+.btn-green {
+  background-color: #00978A;
+  color: #fff;
+  font-size: 14px;
+  margin-left: 3px; }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .btn-green {
+      width: 100%;
+      display: block;
+      margin-left: 0; } }
+  .btn-green:hover, .btn-green:focus {
+    background-color: #007763; }
+
+.btn-search-surah,
+.btn-juz,
+.btn-bookmark {
+  margin-left: 10px;
+  border-width: 1px;
+  border-color: #00978A;
+  border-style: solid;
+  background-color: #00978A;
+  color: #fff;
+  background-image: none;
+  text-shadow: none; }
+  .btn-search-surah:hover, .btn-search-surah:focus, .btn-search-surah.selected,
+  .btn-juz:hover,
+  .btn-juz:focus,
+  .btn-juz.selected,
+  .btn-bookmark:hover,
+  .btn-bookmark:focus,
+  .btn-bookmark.selected {
+    background-color: #007763;
+    border: solid 1px #007763;
+    color: #fff; }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .btn-search-surah,
+    .btn-juz,
+    .btn-bookmark {
+      margin: 5px; } }
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .btn-juz,
+  .btn-bookmark {
+    float: left !important; } }
+
+.btn-setting {
+  margin-left: 10px;
+  border-width: 1px;
+  border-color: #00978A;
+  border-style: solid;
+  background-color: #00978A;
+  color: #fff;
+  background-image: none;
+  text-shadow: none; }
+  .btn-setting:hover, .btn-setting:focus, .btn-setting.selected {
+    background-color: #007763;
+    border: solid 1px #007763;
+    color: #fff; }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .btn-setting {
+      float: right !important;
+      width: 40px;
+      margin: 5px 0; } }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .btn-setting.btn-juz {
+      margin-left: 6px;
+      float: left !important; } }
+
+.vex.vex-theme-os .vex-dialog-button.vex-dialog-button-primary {
+  background: #00978A; }
+
+.modal {
+  text-align: center;
+  padding: 0 !important; }
+  .modal .modal-header {
+    background-color: transparent; }
+    .modal .modal-header h4 {
+      color: rgba(0, 151, 138, 0.8);
+      font-size: 20px;
+      text-transform: uppercase; }
+    .modal .modal-header .close {
+      color: rgba(0, 151, 138, 0.8);
+      opacity: .6; }
+      .modal .modal-header .close:hover, .modal .modal-header .close:focus {
+        opacity: 1; }
+  .modal .modal-body {
+    padding: 0; }
+    .modal .modal-body .btn-juz,
+    .modal .modal-body .btn-last-memoz {
+      display: none !important; }
+    .modal .modal-body .input-group {
+      float: none;
+      width: 101%; }
+    .modal .modal-body .btn-search,
+    .modal .modal-body .btn-cari-ayat {
+      border-width: 1px;
+      border-color: #00978A;
+      border-style: solid;
+      color: #fff;
+      background-image: none;
+      text-shadow: none;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 21px; }
+    .modal .modal-body .form-inline .form-group,
+    .modal .modal-body .form-inline .form-control {
+      width: 100%; }
+  .modal.content-mode .modal-header {
+    background-color: rgba(0, 151, 138, 0.8); }
+    .modal.content-mode .modal-header h4 {
+      color: #fff;
+      font-size: 20px;
+      text-transform: uppercase; }
+    .modal.content-mode .modal-header .close {
+      color: #fff;
+      opacity: .6; }
+      .modal.content-mode .modal-header .close:hover, .modal.content-mode .modal-header .close:focus {
+        opacity: 1; }
+  .modal.content-mode .modal-body a {
+    color: #00978A; }
+    .modal.content-mode .modal-body a:hover, .modal.content-mode .modal-body a:focus {
+      color: #007763; }
+  .modal.share-mode .modal-header {
+    background-color: rgba(0, 151, 138, 0.8); }
+    .modal.share-mode .modal-header h4 {
+      color: #fff;
+      font-size: 20px;
+      text-transform: uppercase; }
+    .modal.share-mode .modal-header .close {
+      color: #fff;
+      opacity: .6; }
+      .modal.share-mode .modal-header .close:hover, .modal.share-mode .modal-header .close:focus {
+        opacity: 1; }
+  .modal.share-mode .modal-body a {
+    width: 33.3%;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 10px;
+    color: #fff; }
+    @media (max-width: 439px) and (min-width: 320px) {
+      .modal.share-mode .modal-body a {
+        float: none;
+        width: 100%; } }
+    .modal.share-mode .modal-body a:before, .modal.share-mode .modal-body a:after {
+      position: absolute; }
+    .modal.share-mode .modal-body a:before {
+      top: 11px;
+      left: 65px; }
+    .modal.share-mode .modal-body a:after {
+      bottom: 15px;
+      left: 65px;
+      padding: 5px 8px;
+      border-radius: 7px; }
+    .modal.share-mode .modal-body a:hover, .modal.share-mode .modal-body a:focus {
+      opacity: .85; }
+  .modal.share-mode .modal-body a:nth-child(1) {
+    background-color: #3b5998; }
+    .modal.share-mode .modal-body a:nth-child(1):before {
+      content: "Facebook"; }
+    .modal.share-mode .modal-body a:nth-child(1):after {
+      content: "Share";
+      background-color: #2d4373; }
+  .modal.share-mode .modal-body a:nth-child(2) {
+    background-color: #55acee; }
+    .modal.share-mode .modal-body a:nth-child(2):before {
+      content: "Twitter"; }
+    .modal.share-mode .modal-body a:nth-child(2):after {
+      content: "Share";
+      background-color: #2795e9; }
+  .modal.share-mode .modal-body a:nth-child(3) {
+    background-color: #d34836; }
+    .modal.share-mode .modal-body a:nth-child(3):before {
+      content: "Google Plus"; }
+    .modal.share-mode .modal-body a:nth-child(3):after {
+      content: "Share";
+      background-color: #b03626; }
+  .modal.content-mode .modal-dialog {
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto; }
+  .modal .modal-dialog {
+    width: 500px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .modal .modal-dialog {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto; } }
+    .modal .modal-dialog .modal-content {
+      border-radius: 7px; }
+  .modal .modal-header {
+    border-bottom: none;
+    text-transform: capitalize;
+    text-align: center;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px; }
+  .modal .modal-footer {
+    border-top: none; }
+  .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px; }
+
+.modal.login-mode {
+  background: url("../images/vot1mpfUwZA.jpg") no-repeat center center;
+  width: 100%;
+  height: 100%; }
+  .modal.login-mode .modal-dialog {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    background-color: rgba(0, 151, 138, 0.7); }
+    .modal.login-mode .modal-dialog .modal-content {
+      background-color: transparent;
+      border: none;
+      box-shadow: none; }
+  .modal.login-mode .modal-header {
+    height: 50px; }
+    .modal.login-mode .modal-header .modal-title {
+      display: none; }
+    .modal.login-mode .modal-header .close {
+      color: #fff;
+      text-shadow: none; }
+  .modal.login-mode .modal-footer {
+    background-color: transparent;
+    color: #fff;
+    border-top: none !important;
+    margin-top: -13px; }
+
+.modal.register-mode .modal-dialog {
+  background: url("../images/cal1.png") no-repeat center center/cover; }
+  .modal.register-mode .modal-dialog .modal-content {
+    background-color: rgba(255, 255, 255, 0.9); }
+.modal.register-mode .modal-footer {
+  background: #00cab9;
+  color: #fff; }
+
+.filter .nav-tabs > li, .edit-profile-block .edit-profile-form .nav-tabs > li {
+  width: 33.333%; }
+.filter .nav-tabs > li > a, .edit-profile-block .edit-profile-form .nav-tabs > li > a {
+  margin-right: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  color: #adadad;
+  border: solid transparent;
+  border-width: 3px 0;
+  outline: 0 none;
+  font-weight: 600;
+  text-align: center; }
+.filter .nav-tabs > li.active > a, .edit-profile-block .edit-profile-form .nav-tabs > li.active > a,
+.filter .nav-tabs > li.active > a:focus,
+.edit-profile-block .edit-profile-form .nav-tabs > li.active > a:focus,
+.filter .nav-tabs > li.active > a:hover,
+.edit-profile-block .edit-profile-form .nav-tabs > li.active > a:hover {
+  color: #00978A;
+  border-bottom: solid 3px #00978A; }
+.filter .nav > li > a:focus, .edit-profile-block .edit-profile-form .nav > li > a:focus,
+.filter .nav > li > a:hover,
+.edit-profile-block .edit-profile-form .nav > li > a:hover {
+  background-color: transparent;
+  color: #00978A;
+  border: solid transparent;
+  border-width: 3px 0;
+  border-bottom: solid 3px #00978A;
+  border-radius: 0;
+  margin-bottom: 0; }
+
+.memoz-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 425px; }
+
+.memoz-loading {
+  padding: 40px 0;
+  display: block;
+  text-align: center;
+  width: 100%; }
+
+.memoz-list .memoz-item {
+  border-left: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  margin: 0;
+  padding: 0; }
+  .memoz-list .memoz-item:nth-child(even) {
+    background: #fcfcfc; }
+  .memoz-list .memoz-item p {
+    color: #aaa;
+    margin: 0; }
+  .memoz-list .memoz-item .memoz-body {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    flex-direction: column; }
+    .memoz-list .memoz-item .memoz-body .memoz-body-inner {
+      width: 100%;
+      display: flex;
+      align-items: center; }
+    .memoz-list .memoz-item .memoz-body .memoz-tr {
+      width: 20%; }
+      .memoz-list .memoz-item .memoz-body .memoz-tr .tr-days {
+        font-size: 30px;
+        font-weight: bold;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        width: 55px; }
+    .memoz-list .memoz-item .memoz-body .memoz-content {
+      width: 75%;
+      padding: 5px 10px; }
+    .memoz-list .memoz-item .memoz-body .memoz-link-surah {
+      display: inline-block;
+      margin-right: 5px;
+      font-weight: bold; }
+  .memoz-list .memoz-item .memoz-action {
+    width: 100%;
+    padding: 10px 0 5px;
+    margin-top: 5px;
+    text-align: center;
+    display: flex;
+    border-top: dashed 1px #ddd; }
+    .memoz-list .memoz-item .memoz-action a {
+      width: 33.33%;
+      font-size: 12px;
+      color: #aaa;
+      text-transform: uppercase; }
+
+.modal-contentbody {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 425px; }
+
+.modal-spacing {
+  padding: 20px; }
+  @media (min-width: 769px) {
+    .modal-spacing {
+      padding: 0; } }
+
+.container-segmented {
+  margin-bottom: 15px; }
+
+.login-brand {
+  width: 100%;
+  height: 140px;
+  margin: 0 auto 5px; }
+  .login-brand .qmc-logo {
+    display: block;
+    margin: 0 auto 10px;
+    width: 55px;
+    height: auto; }
+  .login-brand .qmc-title {
+    display: block;
+    width: 130px;
+    margin: auto; }
+
+ul.juz-list {
+  list-style: none;
+  padding: 10px 3px 0 10px; }
+
+.juz-list li {
+  float: left;
+  width: 31.3%;
+  margin-bottom: 10px;
+  background-color: rgba(112, 195, 147, 0.14);
+  padding: 5px;
+  margin-right: 7px;
+  text-align: center; }
+
+.juz-list li strong {
+  font-size: 24px; }
+
+.juz-list li a .juz-indo {
+  font-size: 12px; }
+
+.arabic.juz_head {
+  background-color: rgba(0, 151, 138, 0.28) !important;
+  border-bottom: 2px dashed rgba(57, 144, 94, 0.31); }
+
+.juz-indo-head {
+  color: #aaa; }
+
+.juz_head {
+  text-align: center;
+  background-color: #9FCFB3; }
+
+.input-group {
+  width: 100%; }
+  @media (max-width: 767px) and (min-width: 585px) {
+    .input-group {
+      width: 90%;
+      float: left;
+      margin-right: 20px; } }
+  @media (max-width: 584px) and (min-width: 481px) {
+    .input-group {
+      width: 85%;
+      float: left;
+      margin-right: 20px; } }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .input-group {
+      width: 80%;
+      float: left;
+      margin-right: 20px; } }
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .form-group {
+    margin-bottom: 0px; } }
+
+.form-horizontal .form-group {
+  margin: 0 -15px 7px; }
+  .form-horizontal .form-group .form-control {
+    border-radius: 6px;
+    height: auto;
+    padding: 12px; }
+
+.login_form {
+  width: 80%;
+  margin: 0 auto; }
+  .login_form .form-control {
+    border: solid 1px #fff;
+    border-bottom: dashed 1px #fff;
+    box-shadow: none;
+    margin-bottom: 5px;
+    border-radius: 6px !important; }
+    .login_form .form-control:focus {
+      border-bottom: solid 2px #00978A; }
+  .login_form .btn-masuk, .login_form .edit-profile-block .edit-profile-form .btn-kembali, .edit-profile-block .edit-profile-form .login_form .btn-kembali {
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    color: #00978A;
+    font-size: 20px;
+    background: #fff;
+    border: solid 1px #fff;
+    box-shadow: none !important; }
+    .login_form .btn-masuk:hover, .login_form .edit-profile-block .edit-profile-form .btn-kembali:hover, .edit-profile-block .edit-profile-form .login_form .btn-kembali:hover, .login_form .btn-masuk:focus, .login_form .edit-profile-block .edit-profile-form .btn-kembali:focus, .edit-profile-block .edit-profile-form .login_form .btn-kembali:focus, .login_form .btn-masuk.selected, .login_form .edit-profile-block .edit-profile-form .selected.btn-kembali, .edit-profile-block .edit-profile-form .login_form .selected.btn-kembali {
+      color: #cccc00; }
+  .login_form .btn-daftar, .login_form .edit-profile-block .edit-profile-form .btn-simpan, .edit-profile-block .edit-profile-form .login_form .btn-simpan,
+  .login_form .edit-profile-block .edit-profile-form .btn-upload-img,
+  .edit-profile-block .edit-profile-form .login_form .btn-upload-img {
+    color: #fff;
+    font-size: 16px;
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+    background: none;
+    width: 100%; }
+
+.register_form {
+  padding: 0 45px 45px;
+  margin: 20px auto 0;
+  background: transparent; }
+  .register_form .btn-group .btn {
+    width: 50%;
+    border-radius: 6px; }
+  .register_form .register-intro {
+    width: 45%;
+    height: 333px;
+    position: relative;
+    overflow: hidden; }
+    .register_form .register-intro .promo-txt {
+      padding: 10px;
+      position: relative;
+      z-index: 2;
+      height: 333px;
+      color: #fff;
+      padding: 10px 0;
+      font-size: 16px; }
+      .register_form .register-intro .promo-txt h3 {
+        text-align: center;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-size: 20px;
+        line-height: 28px; }
+      .register_form .register-intro .promo-txt p {
+        font-size: 17px;
+        line-height: 24px; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .register_form .register-intro .promo-txt {
+          height: auto; } }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .register_form .register-intro {
+        width: 100%;
+        float: none !important;
+        margin-bottom: 15px;
+        height: auto; } }
+  .register_form form {
+    width: 50%;
+    margin-top: 15px; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .register_form form {
+        width: 90%;
+        float: none !important;
+        margin: 0 auto; } }
+  .register_form .btn-daftar, .register_form .edit-profile-block .edit-profile-form .btn-simpan, .edit-profile-block .edit-profile-form .register_form .btn-simpan,
+  .register_form .edit-profile-block .edit-profile-form .btn-upload-img,
+  .edit-profile-block .edit-profile-form .register_form .btn-upload-img {
+    display: block;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    color: #00978A;
+    font-size: 20px;
+    background: #fff;
+    border: solid 1px #fff;
+    margin-bottom: 10px;
+    box-shadow: none !important; }
+    .register_form .btn-daftar:hover, .register_form .edit-profile-block .edit-profile-form .btn-simpan:hover, .edit-profile-block .edit-profile-form .register_form .btn-simpan:hover,
+    .register_form .edit-profile-block .edit-profile-form .btn-upload-img:hover,
+    .edit-profile-block .edit-profile-form .register_form .btn-upload-img:hover, .register_form .btn-daftar:focus, .register_form .edit-profile-block .edit-profile-form .btn-simpan:focus, .edit-profile-block .edit-profile-form .register_form .btn-simpan:focus,
+    .register_form .edit-profile-block .edit-profile-form .btn-upload-img:focus,
+    .edit-profile-block .edit-profile-form .register_form .btn-upload-img:focus, .register_form .btn-daftar.selected, .register_form .edit-profile-block .edit-profile-form .selected.btn-simpan, .edit-profile-block .edit-profile-form .register_form .selected.btn-simpan,
+    .register_form .edit-profile-block .edit-profile-form .selected.btn-upload-img,
+    .edit-profile-block .edit-profile-form .register_form .selected.btn-upload-img {
+      color: #cccc00; }
+  .register_form .btn-masuk, .register_form .edit-profile-block .edit-profile-form .btn-kembali, .edit-profile-block .edit-profile-form .register_form .btn-kembali {
+    color: #fff;
+    font-size: 16px;
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+    background: none;
+    width: 100%;
+    border: none; }
+
+.login-link,
+.forgot-pass-link {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #fff; }
+
+.register-block, .edit-profile-block {
+  background: url("../images/vot1mpfUwZA.jpg") no-repeat center center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: -15px;
+  position: relative; }
+  .register-block .register-backdrop, .edit-profile-block .register-backdrop, .edit-profile-block .edit-profile-backdrop {
+    background-color: rgba(0, 151, 138, 0.7);
+    width: 100%;
+    height: 100%;
+    margin: auto; }
+  .register-block .login-brand, .edit-profile-block .login-brand {
+    padding: 40px 0;
+    margin: 0 auto; }
+
+.edit-profile-block .edit-profile-form {
+  padding-top: 15px; }
+  .edit-profile-block .edit-profile-form .nav {
+    background: #fff; }
+  .edit-profile-block .edit-profile-form .form-heading {
+    color: #fff; }
+  .edit-profile-block .edit-profile-form .input-file {
+    color: #fff;
+    width: 80%;
+    text-align: center !important;
+    padding: 10px 25px;
+    display: block;
+    border: solid 1px #fff;
+    margin: 20px auto 0; }
+    .edit-profile-block .edit-profile-form .input-file:before {
+      color: #fff; }
+
+.quran-player {
+  margin: auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 99; }
+  @media (min-width: 1200px) {
+    .quran-player {
+      width: 80%; } }
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    .quran-player {
+      width: 90%; } }
+  @media (max-width: 1023px) and (min-width: 801px) {
+    .quran-player {
+      width: 95%; } }
+  @media (min-width: 768px) and (max-width: 800px) {
+    .quran-player {
+      width: 100%; } }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .quran-player {
+      width: 100% !important; } }
+
+.quran_player {
+  height: 50px;
+  background: transparent;
+  z-index: 99; }
+  @media (min-width: 1200px) {
+    .quran_player {
+      width: 100%; } }
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .quran_player {
+      width: 90%; } }
+  @media (max-width: 380px) and (min-width: 320px) {
+    .quran_player {
+      width: 320px; } }
+  @media (max-width: 1023px) and (min-width: 801px) {
+    .quran_player {
+      width: 95%; } }
+  @media (min-width: 768px) and (max-width: 800px) {
+    .quran_player {
+      width: 100%; } }
+  .quran_player .jp-video {
+    background: transparent;
+    margin: 0 auto; }
+    @media (min-width: 1200px) {
+      .quran_player .jp-video {
+        width: 100%; } }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+      .quran_player .jp-video {
+        width: 90%; } }
+    @media (max-width: 1023px) and (min-width: 801px) {
+      .quran_player .jp-video {
+        width: 95%; } }
+    @media (min-width: 768px) and (max-width: 800px) {
+      .quran_player .jp-video {
+        width: 100%; } }
+    @media (max-width: 380px) and (min-width: 320px) {
+      .quran_player .jp-video {
+        width: 320px; } }
+    @media (max-width: 767px) and (min-width: 381px) {
+      .quran_player .jp-video {
+        width: 100%; } }
+    .quran_player .jp-video .jp-progress {
+      height: 3px;
+      background-color: #7efff4 !important; }
+    .quran_player .jp-video .jp-current-time {
+      margin-left: 0; }
+    .quran_player .jp-video .jp-duration {
+      margin-right: 0; }
+  .quran_player .jp-controls-holder {
+    top: -12px;
+    left: -45px; }
+    @media (min-width: 1200px) {
+      .quran_player .jp-controls-holder {
+        width: 100% !important; } }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+      .quran_player .jp-controls-holder {
+        width: 90% !important; } }
+    @media (max-width: 1023px) and (min-width: 801px) {
+      .quran_player .jp-controls-holder {
+        width: 95% !important; } }
+    @media (min-width: 768px) and (max-width: 800px) {
+      .quran_player .jp-controls-holder {
+        width: 100% !important; } }
+    @media (max-width: 380px) and (min-width: 320px) {
+      .quran_player .jp-controls-holder {
+        width: 320px !important;
+        top: -12px;
+        left: 0; } }
+    @media (max-width: 767px) and (min-width: 381px) {
+      .quran_player .jp-controls-holder {
+        width: 100% !important; } }
+    @media (max-width: 767px) and (min-width: 270px) {
+      .quran_player .jp-controls-holder {
+        left: 0 !important;
+        width: 100% !important; } }
+  .quran_player .jp-audio,
+  .quran_player .jp-audio-stream,
+  .quran_player .jp-video {
+    border: none; }
+  @media (max-width: 767px) and (min-width: 270px) {
+    .quran_player .jp-video {
+      margin: 0;
+      width: 100%; } }
+  .quran_player .jp-video .jp-type-playlist .jp-controls {
+    margin: auto;
+    float: none; }
+    @media (max-width: 400px) and (min-width: 320px) {
+      .quran_player .jp-video .jp-type-playlist .jp-controls {
+        margin-left: 185px; } }
+    @media (max-width: 767px) and (min-width: 270px) {
+      .quran_player .jp-video .jp-type-playlist .jp-controls {
+        margin: auto; } }
+  .quran_player .jp-interface {
+    border: none !important;
+    background-color: transparent; }
+  .quran_player .jp-play-bar {
+    background: #00978A !important; }
+  @media (max-width: 767px) and (min-width: 270px) {
+    .quran_player .jp-volume-controls {
+      display: none; } }
+
+.quran_recorder {
+  margin: auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 99;
+  width: 100%;
+  border-top: 2px solid #cae6c0;
+  text-align: center;
+  padding: 10px 0px; }
+  .quran_recorder .action {
+    float: left; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .quran_recorder .action {
+        float: none;
+        width: 90%;
+        margin: 0 auto; } }
+  .quran_recorder .button {
+    box-shadow: none;
+    border: 0px;
+    background-color: transparent;
+    color: #000; }
+    .quran_recorder .button.disable {
+      opacity: 0.7; }
+    .quran_recorder .button.stop {
+      color: #FF0062; }
+  .quran_recorder .player {
+    float: right; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .quran_recorder .player {
+        float: none;
+        width: 90%;
+        margin: 0 auto; } }
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  outline: none;
+  font-size: 13px;
+  text-decoration: none !important;
+  text-align: center;
+  color: #fff;
+  background-color: #4D90FE;
+  background-image: linear-gradient(top, #4D90FE, #4787ED);
+  background-image: -ms-linear-gradient(top, #4D90FE, #4787ED);
+  background-image: -o-linear-gradient(top, #4D90FE, #4787ED);
+  background-image: linear-gradient(top, #4D90FE, #4787ED);
+  border: 1px solid #4787ED;
+  box-shadow: 0 1px 3px #BFBFBF; }
+
+a.button {
+  color: #fff; }
+
+.button:hover {
+  box-shadow: inset 0px 1px 1px #8C8C8C; }
+
+.quran_recorder_cont {
+  width: 80%; }
+
+.quran_recorder a.disable {
+  opacity: 0.2; }
+
+#level {
+  position: fixed;
+  top: 0px;
+  /* width: 100%; */
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  opacity: 0.9; }
+
+.fa-spin {
+  font-size: 15px; }
+
+.step-4 .ayat_arabic_memoz {
+  cursor: pointer; }
+
+.wrong {
+  color: #ff9100; }
+
+.blur-ayat.wrong {
+  color: transparent; }
+
+/* select2*/
+.select2-container--default .select2-selection--single {
+  height: 32px; }
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #999; }
+
+.filter .nav-tabs > li, .edit-profile-block .edit-profile-form .nav-tabs > li {
+  width: 50%; }
+
+.mushaf-hafalan .step-wrap .steps .btn {
+  width: 33.3333%; }
+
+ul.goal {
+  list-style-type: none;
+  padding: 10px; }
+
+ul.goal .progress {
+  margin-bottom: 10px; }
+
+ul.goal strong {
+  color: #323639; }
+
+.main-content-wrap .main-content {
+  padding: 0px !important; }
+
+.register_form {
+  margin-top: 0px; }
+
+.koreksi-desc {
+  padding: 0px 10px; }
+
+.koreksi-box .koreksi-avatar img {
+  width: 80%;
+  height: 80%; }
+
+#record, #stop, #play, #play_audio, #pause_audio {
+  font-size: 34px; }
+
+#save {
+  font-size: 24px; }
+
+.quran_recorder .disabled, #audio .disabled {
+  display: none; }
+
+#sec_counter {
+  border: 3px solid #f00;
+  border-radius: 35px;
+  padding: 0px;
+  color: red;
+  width: 160px;
+  font-size: 23px; }
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .c-circle-menu__item {
+    width: 36px !important;
+    height: 36px !important; } }
+@media (min-width: 768px) {
+  .c-circle-menu__item,
+  .c-circle-menu__toggle {
+    width: 48px !important;
+    height: 48px !important; } }
+.c-circle-menu__link {
+  background-color: #00b1a1;
+  position: relative; }
+  .c-circle-menu__link .menu-caption {
+    color: #fff !important;
+    font-size: 14px;
+    position: absolute; }
+
+.menu-icon {
+  background-color: #00978A; }
+  .menu-icon .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 20px;
+    color: #fff;
+    width: 32px;
+    height: 22px;
+    text-align: center; }
+
+.menu__link1 .menu-caption {
+  top: -20px;
+  left: -19px; }
+
+.menu__link2 .menu-caption {
+  top: -9px;
+  left: -25px; }
+
+.menu__link3 .menu-caption {
+  top: 1px;
+  left: -95px; }
+
+.menu__link4 .menu-caption {
+  top: 6px;
+  left: -54px; }
+
+.menu__link5 .menu-caption {
+  top: 9px;
+  left: -82px; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  user-select: text !important;
+  padding-top: 50px; }
+
+@font-face {
+  font-family: 'me_quran';
+  src: url(../fonts/me_quran.ttf); }
+body {
+  background: #fff;
+  font-family: "Fira Sans", sans-serif; }
+  @media (max-width: 659px) and (min-width: 320px) {
+    body {
+      padding-top: 0; } }
+
+a {
+  color: #00978A;
+  text-decoration: none; }
+  a:hover, a:focus, a:active {
+    outline: none 0;
+    text-decoration: underline; }
+  a:hover, a:focus {
+    text-decoration: none !important;
+    outline: 0 none;
+    cursor: pointer;
+    color: #007763; }
+
+ol,
+ul {
+  padding-left: 20px; }
+
+::-moz-selection {
+  background: #00978A !important;
+  color: #fff !important; }
+
+::-webkit-selection {
+  background: #00978A !important;
+  color: #fff !important; }
+
+::selection {
+  background: #00978A !important;
+  color: #fff !important; }
+
+.splash-body {
+  position: relative;
+  z-index: 1001;
+  background: #000;
+  transition: all 2s ease;
+  display: block;
+  width: 100%; }
+  .splash-body .splash-inner {
+    background: url("../images/Islamic-Art-and-Architecture-Building-05.jpg") no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    animation-delay: .5s;
+    display: block; }
+  .splash-body .splash {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 181, 120, 0.9);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
+    .splash-body .splash .holder {
+      position: relative;
+      top: 45%;
+      transform: translateY(-45%);
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      padding: 0; }
+  .splash-body .splash-text {
+    animation-delay: 4s; }
+    .splash-body .splash-text span {
+      display: block;
+      text-align: center;
+      padding: 40px;
+      vertical-align: middle; }
+    .splash-body .splash-text img {
+      padding-top: 60px;
+      display: inline-block; }
+  .splash-body .start {
+    width: 125px;
+    margin: 20px auto;
+    text-align: center;
+    animation-delay: 5s;
+    display: block;
+    padding: 13px 0;
+    background-color: #007763;
+    border: none;
+    color: #fff; }
+    .splash-body .start:hover, .splash-body .start:focus, .splash-body .start.selected {
+      color: #000;
+      background-color: #00cab9; }
+
+.arabic,
+.head_surah {
+  font-family: 'me_quran';
+  font-size: 33px;
+  word-spacing: 0px; }
+
+.arabic {
+  font-size: 23px;
+  word-spacing: 5px; }
+
+.navbar {
+  transition: top 0.2s ease-in-out;
+  margin-bottom: 0; }
+  .navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; }
+
+.navbar-default {
+  background-image: none;
+  background: #00978A;
+  border-radius: 0;
+  border: none;
+  z-index: 3; }
+  .navbar-default .navbar-toggle {
+    border-color: transparent; }
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #fff; }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+      background-color: #00978A; }
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    box-shadow: none;
+    border-color: transparent; }
+  .navbar-default .navbar-brand {
+    color: #fff;
+    text-shadow: none;
+    font-weight: 700;
+    transition: color 1s ease;
+    padding: 13px; }
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+      opacity: .7; }
+    .navbar-default .navbar-brand.title {
+      font-size: 23px; }
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
+    background-image: none; }
+  .navbar-default .navbar-nav > li > a {
+    color: #fff;
+    text-shadow: none; }
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    background-color: #007763;
+    color: #fff; }
+  @media (max-width: 767px) and (min-width: 320px) {
+    .navbar-default .navbar-nav {
+      margin: 0; } }
+
+#main-nav {
+  display: none; }
+
+.nav-top {
+  position: relative;
+  border-bottom: solid 1px #ddd;
+  padding: 10px 10px;
+  background-color: #f6f6f6;
+  z-index: 999; }
+  @media (max-width: 768px) and (min-width: 320px) {
+    .nav-top {
+      padding: 5px 10px; } }
+  .nav-top .btn-surah-trigger {
+    width: 100%;
+    background-color: #00978A;
+    color: #fff; }
+    .nav-top .btn-surah-trigger:hover, .nav-top .btn-surah-trigger:focus {
+      background-color: #007763; }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .nav-top #surah-collapse {
+      margin-top: 15px; } }
+  .nav-top .memoz_options {
+    position: absolute;
+    top: 11px;
+    right: 9px;
+    z-index: 5; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .nav-top .memoz_options {
+        top: 6px; } }
+    .nav-top .memoz_options .btn {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      text-shadow: none;
+      color: #999; }
+      .nav-top .memoz_options .btn:hover, .nav-top .memoz_options .btn:focus {
+        background-color: transparent;
+        color: #00978A; }
+    .nav-top .memoz_options .dropdown-menu {
+      padding: 10px 15px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .nav-top .memoz_options .dropdown-menu {
+          left: auto;
+          right: 0; } }
+      .nav-top .memoz_options .dropdown-menu li {
+        padding: 10px 0; }
+        .nav-top .memoz_options .dropdown-menu li.divider {
+          padding: 0; }
+
+input[type="number"] {
+  text-align: center; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .select-surah {
+    padding-top: 0; } }
+.select-surah .form-inline {
+  margin-bottom: 0; }
+  .select-surah .form-inline .form-group {
+    margin: 0 5px 0 0; }
+    .select-surah .form-inline .form-group .form-control.search_ayat {
+      width: 75px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .select-surah .form-inline .form-group .form-control.search_ayat {
+          width: 100%; } }
+    .select-surah .form-inline .form-group .input-group-addon {
+      border-left: none;
+      border-right: none; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .select-surah .form-inline .form-group {
+        margin-bottom: 10px; } }
+  .select-surah .form-inline .btn {
+    background-color: #00978A;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 3px; }
+    .select-surah .form-inline .btn span {
+      color: #fff;
+      padding-left: 10px; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .select-surah .form-inline .btn {
+        width: 100%;
+        display: block;
+        margin-left: 0; } }
+    .select-surah .form-inline .btn:hover, .select-surah .form-inline .btn:focus {
+      background-color: #007763; }
+  @media (min-width: 768px) and (max-width: 931px) {
+    .select-surah .form-inline select {
+      width: 150px; } }
+.select-surah .checkbox,
+.select-surah .form-control,
+.select-surah span {
+  color: #999; }
+@media (min-width: 320px) and (max-width: 767px) {
+  .select-surah .search-title {
+    margin-bottom: 10px;
+    display: block; } }
+.select-surah .search_ayat {
+  width: 67px;
+  text-align: center; }
+
+.surah-nav {
+  width: 100%;
+  margin: auto;
+  text-align: center; }
+  .surah-nav .input-group {
+    margin: auto; }
+    .surah-nav .input-group .btn {
+      background-color: #00978A;
+      border-color: #00978A;
+      color: #fff;
+      text-shadow: none; }
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: #00978A;
+  border-color: #00978A; }
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #bbb;
+  border: solid 1px #bbb;
+  background: transparent; }
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  background-color: #00978A;
+  border-color: #00978A;
+  color: #fff; }
+
+.pagination .page_free_input form {
+  margin: 0px; }
+.pagination .page_free_input a {
+  padding: 0px !important; }
+  .pagination .page_free_input a:hover, .pagination .page_free_input a:focus {
+    background-color: transparent; }
+.pagination .page_free_input .form-group {
+  height: 28px; }
+  .pagination .page_free_input .form-group .input-group-addon {
+    background-color: transparent;
+    border: none;
+    border-left: solid 1px #bbb;
+    height: 28px;
+    transition: background .5s ease; }
+    .pagination .page_free_input .form-group .input-group-addon:hover {
+      background: #00978A;
+      color: #fff; }
+  .pagination .page_free_input .form-group input {
+    border: 0px;
+    width: 50px;
+    text-align: center;
+    height: 26px;
+    border-radius: 0; }
+  .pagination .page_free_input .form-group button {
+    height: 0;
+    padding: 0px;
+    margin: -7px 0;
+    background-color: transparent;
+    border: none; }
+
+.surah-action {
+  text-align: right;
+  margin: 7px 0 0; }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .surah-action {
+      text-align: center;
+      float: none !important;
+      width: 100%; } }
+  .surah-action .auto-play {
+    margin-right: 10px;
+    color: #fff; }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .surah-action .auto-play {
+        text-align: center;
+        margin: 20px 0;
+        display: block; } }
+  .surah-action #playnow {
+    color: #999; }
+
+.body-memo .main-content-wrap,
+.body-mushaf .main-content-wrap {
+  padding-bottom: 120px; }
+
+.body-register .main-content-wrap,
+.dashboard .main-content-wrap {
+  padding-bottom: 0; }
+
+.main-content-wrap {
+  width: 100%;
+  margin: 0;
+  display: block;
+  position: relative;
+  min-height: 500px; }
+  @media (max-width: 768px) {
+    .main-content-wrap {
+      padding-bottom: 60px; } }
+  .main-content-wrap .main-content {
+    padding: 20px 0; }
+    .main-content-wrap .main-content .backdrop {
+      background: url(../images/Islamic-Art-and-Architecture-Building-05.jpg) no-repeat center center/cover;
+      width: 100%;
+      height: 400px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+      .main-content-wrap .main-content .backdrop .backdrop-inner {
+        background-color: rgba(0, 151, 138, 0.85);
+        width: 100%;
+        height: 100%; }
+    .main-content-wrap .main-content .single-column {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2; }
+      @media (min-width: 1200px) {
+        .main-content-wrap .main-content .single-column {
+          width: 80%; } }
+      @media (min-width: 1024px) and (max-width: 1200px) {
+        .main-content-wrap .main-content .single-column {
+          width: 90%; } }
+      @media (max-width: 1023px) and (min-width: 768px) {
+        .main-content-wrap .main-content .single-column {
+          width: 95%; } }
+      @media (min-width: 768px) and (max-width: 800px) {
+        .main-content-wrap .main-content .single-column {
+          width: 100%; } }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .main-content-wrap .main-content .single-column {
+          width: 100%; } }
+      .main-content-wrap .main-content .single-column .page-title {
+        position: relative; }
+        @media (max-width: 767px) and (min-width: 320px) {
+          .main-content-wrap .main-content .single-column .page-title h1 {
+            margin: 0 0 0 40px !important; } }
+        .main-content-wrap .main-content .single-column .page-title h2 {
+          margin: 0 0 20px;
+          color: #fff; }
+          @media (max-width: 767px) and (min-width: 480px) {
+            .main-content-wrap .main-content .single-column .page-title h2 {
+              text-align: center;
+              float: none !important;
+              width: 100%;
+              margin: 0 !important; } }
+          @media (max-width: 478px) and (min-width: 320px) {
+            .main-content-wrap .main-content .single-column .page-title h2 {
+              text-align: left; } }
+        .main-content-wrap .main-content .single-column .page-title .gp-link {
+          margin-top: -7px; }
+          @media (max-width: 767px) and (min-width: 320px) {
+            .main-content-wrap .main-content .single-column .page-title .gp-link {
+              position: absolute;
+              top: -5px;
+              right: 5px;
+              float: none !important;
+              width: auto; } }
+      @media (min-width: 1234px) {
+        .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
+          width: 73%;
+          float: left; } }
+      @media (min-width: 1201px) and (max-width: 1233px) {
+        .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
+          width: 75%;
+          float: left; } }
+      @media (min-width: 1098px) and (max-width: 1200px) {
+        .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
+          width: 73%;
+          float: left; } }
+      @media (min-width: 932px) and (max-width: 1097px) {
+        .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
+          width: 78%;
+          float: left; } }
+      @media (min-width: 768px) and (max-width: 931px) {
+        .main-content-wrap .main-content .single-column .nav-top #surah-collapse {
+          width: 82%;
+          float: left; } }
+
+.nav-top-collapse {
+  display: block;
+  height: auto !important;
+  overflow: visible !important;
+  padding-bottom: 0; }
+
+.toggle-player {
+  position: fixed;
+  bottom: -10px;
+  right: 0;
+  z-index: 999;
+  padding: 10px 0; }
+  .toggle-player .btn-toggle-player {
+    border: solid 1px #00978A;
+    color: #00978A;
+    text-align: center;
+    background: #fff;
+    border-radius: 0; }
+    .toggle-player .btn-toggle-player:hover, .toggle-player .btn-toggle-player:focus {
+      background-color: #00978A;
+      color: #333; }
+
+.detail_top {
+  text-align: center;
+  color: #1C9A71 !important;
+  background-color: #cafffa; }
+  .detail_top .btn {
+    margin: 0;
+    background-color: #00978A;
+    color: #fff;
+    border-left: solid 1px #00978A; }
+    .detail_top .btn:hover, .detail_top .btn:focus {
+      background-color: #00cab9;
+      color: #fff; }
+
+.no_ayat_arabic {
+  font-size: 20px; }
+
+.surah_title {
+  background-color: rgba(0, 151, 138, 0.15);
+  color: #20b2aa;
+  padding-bottom: 10px; }
+  .surah_title .surah_name,
+  .surah_title .head_surah {
+    text-align: center; }
+  .surah_title .surah_name {
+    margin-bottom: 10px; }
+    .surah_title .surah_name strong {
+      font-size: 16px; }
+
+.footer {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px; }
+  .footer ul {
+    list-style: none; }
+    .footer ul li {
+      display: inline-block;
+      margin-right: 10px; }
+      .footer ul li span {
+        color: #00645b; }
+      .footer ul li a {
+        color: #00978A; }
+        .footer ul li a:hover, .footer ul li a:focus {
+          color: #00cab9; }
+
+#preloader {
+  width: 100%;
+  height: 1700px;
+  z-index: 100000;
+  position: absolute;
+  top: -50px;
+  overflow: overlay;
+  background-color: rgba(0, 151, 138, 0.93);
+  text-align: center;
+  overflow: none; }
+  #preloader .loading {
+    font-size: 24px;
+    color: #fff;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    top: 50%; }
+
+body.canvas-slid #preloader,
+body.canvas-slid .loading {
+  left: -300px; }
+
+.loading.canvas-slid {
+  left: -600px; }
+
+.search-result .search-item p {
+  padding: 10px 20px;
+  margin: 0;
+  color: #a2a2a2; }
+.search-result .search-item .search-footer {
+  padding: 5px 20px;
+  background-color: #eee; }
+  .search-result .search-item .search-footer .fa,
+  .search-result .search-item .search-footer a {
+    color: #00978A; }
+
+.juz-list li {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 10px; }
+  .juz-list li a {
+    display: block; }
+    .juz-list li a .juz-arabic {
+      font-weight: bold; }
+    .juz-list li a .juz-indo {
+      display: block;
+      color: #aaa; }
+    .juz-list li a:hover, .juz-list li a:focus, .juz-list li a:hover .juz-indo, .juz-list li a:focus .juz-indo {
+      color: #00978A;
+      text-decoration: none; }
+
+.boxcontent {
+  padding: 35px; }
+
+.boxcontent-label {
+  margin-top: 0; }
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  outline: none 0; }
+
+.modal-open .modal {
+  display: block !important; }
+
+@media (min-width: 769px) and (max-width: 931px) {
+  .hide-on-smalldesktop {
+    display: none; } }
+
+@media (max-width: 767px) and (min-width: 270px) {
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0; } }
+
+.mushaf_header {
+  background-color: #efefef;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6px 0;
+  position: relative;
+  border-bottom: solid 1px #ddd; }
+  .mushaf_header .btn {
+    position: absolute;
+    top: 5px;
+    background: transparent;
+    color: #999;
+    text-shadow: none;
+    box-shadow: none;
+    border: solid 1px #ccc;
+    border-radius: 0; }
+    .mushaf_header .btn:hover, .mushaf_header .btn:focus {
+      background-color: #00978A;
+      color: #fff;
+      border: 1px solid transparent; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .mushaf_header .btn {
+        top: 5px; } }
+  .mushaf_header .btn:first-child {
+    left: 0;
+    border-left: none; }
+  .mushaf_header .btn:last-child {
+    right: 0;
+    border-right: none; }
+  .mushaf_header .mids {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .mushaf_header .mids {
+        width: 100%; } }
+    .mushaf_header .mids span {
+      border: solid 1px #ccc;
+      padding: 5px 25px;
+      display: inline-block;
+      color: #999;
+      margin: 0 -2px; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .mushaf_header .mids span {
+          padding: 5px 10px; } }
+
+.mushaf, .boxcontent {
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  right: 0; }
+  @media (max-width: 767px) and (min-width: 270px) {
+    .mushaf, .boxcontent {
+      box-shadow: none; } }
+  .mushaf .mushaf_display, .boxcontent .mushaf_display {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 100%; }
+    .mushaf .mushaf_display .btn-group, .boxcontent .mushaf_display .btn-group {
+      display: block;
+      width: 100.3%; }
+      .mushaf .mushaf_display .btn-group .btn, .boxcontent .mushaf_display .btn-group .btn {
+        border-color: #00978A;
+        color: #00978A;
+        width: 33.3%;
+        border-radius: 0;
+        border: none;
+        padding: 13px 0;
+        font-size: 16px; }
+        .mushaf .mushaf_display .btn-group .btn.active, .boxcontent .mushaf_display .btn-group .btn.active, .mushaf .mushaf_display .btn-group .btn:active, .boxcontent .mushaf_display .btn-group .btn:active {
+          background-color: #00978A;
+          border-color: #00978A;
+          color: #fff;
+          text-shadow: none;
+          background-image: none;
+          box-shadow: none; }
+        .mushaf .mushaf_display .btn-group .btn:hover, .boxcontent .mushaf_display .btn-group .btn:hover, .mushaf .mushaf_display .btn-group .btn:focus, .boxcontent .mushaf_display .btn-group .btn:focus {
+          background-color: #00978A;
+          color: #fff; }
+  .mushaf .ayat_section, .boxcontent .ayat_section {
+    border-bottom: dashed 1px #ddd;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease; }
+    @media (max-width: 767px) and (min-width: 320px) {
+      .mushaf .ayat_section, .boxcontent .ayat_section {
+        transition: height .35s ease; } }
+    .mushaf .ayat_section:last-child, .boxcontent .ayat_section:last-child {
+      border-bottom: none; }
+    .mushaf .ayat_section.playing.playing .arabic, .boxcontent .ayat_section.playing.playing .arabic {
+      background-color: #97fff6 !important;
+      color: #00312d; }
+    .mushaf .ayat_section.playing.playing .trans, .boxcontent .ayat_section.playing.playing .trans {
+      background-color: #b1fff8 !important;
+      color: #00312d; }
+    .mushaf .ayat_section.playing.playing .action-footer, .boxcontent .ayat_section.playing.playing .action-footer {
+      border-top: dashed 2px #00978A; }
+    .mushaf .ayat_section.playing.playing .action-footer, .boxcontent .ayat_section.playing.playing .action-footer, .mushaf .ayat_section.playing.playing .action-footer .btn, .boxcontent .ayat_section.playing.playing .action-footer .btn {
+      background-color: #b1fff8 !important;
+      color: #00312d;
+      border-left-color: #00978A; }
+    .mushaf .ayat_section .head_surah, .boxcontent .ayat_section .head_surah {
+      text-align: center;
+      padding-bottom: 10px; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .mushaf .ayat_section .head_surah, .boxcontent .ayat_section .head_surah {
+          font-size: 30px;
+          padding: 0px; } }
+    .mushaf .ayat_section .surah_name, .boxcontent .ayat_section .surah_name {
+      padding: 10px; }
+    .mushaf .ayat_section.playing, .boxcontent .ayat_section.playing {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-top: dashed 2px #00978A;
+      border-bottom: dashed 2px #00978A; }
+    .mushaf .ayat_section .arabic, .boxcontent .ayat_section .arabic {
+      text-align: right;
+      color: #0d4643;
+      width: 100%;
+      line-height: 65px;
+      -moz-animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      transition: all 1s ease;
+      background-color: #f6f6f6;
+      padding: 10px;
+      position: relative;
+      opacity: 1; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .mushaf .ayat_section .arabic, .boxcontent .ayat_section .arabic {
+          font-size: 33px;
+          padding: 20px 10px 20px 0;
+          transition: height .35s ease; } }
+      .mushaf .ayat_section .arabic .content_ayat, .boxcontent .ayat_section .arabic .content_ayat {
+        display: inline-block;
+        padding: 0 15px;
+        line-height: 50px;
+        direction: rtl; }
+      .mushaf .ayat_section .arabic .no_ayat_arabic, .boxcontent .ayat_section .arabic .no_ayat_arabic {
+        display: inline-block;
+        text-align: center;
+        font-family: "Lateef";
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+        letter-spacing: -2px;
+        position: relative;
+        border: solid 2px #2B4538;
+        border-radius: 100%;
+        padding: 0; }
+        .mushaf .ayat_section .arabic .no_ayat_arabic img, .boxcontent .ayat_section .arabic .no_ayat_arabic img {
+          position: absolute;
+          top: -9px;
+          left: -12px; }
+        .mushaf .ayat_section .arabic .no_ayat_arabic.visible-xs, .boxcontent .ayat_section .arabic .no_ayat_arabic.visible-xs {
+          display: inline; }
+      .mushaf .ayat_section .arabic .no_ayat_arabic_memoz, .boxcontent .ayat_section .arabic .no_ayat_arabic_memoz {
+        display: inline-block !important;
+        text-align: center;
+        width: 37px;
+        height: 46px;
+        font-size: 14px;
+        letter-spacing: -2;
+        position: relative;
+        margin-right: 10px; }
+        .mushaf .ayat_section .arabic .no_ayat_arabic_memoz img, .boxcontent .ayat_section .arabic .no_ayat_arabic_memoz img {
+          position: absolute;
+          top: 5px;
+          left: 2px; }
+        .mushaf .ayat_section .arabic .no_ayat_arabic_memoz.visible-xs, .boxcontent .ayat_section .arabic .no_ayat_arabic_memoz.visible-xs {
+          display: inline-block; }
+      .mushaf .ayat_section .arabic .ayat_arabic, .boxcontent .ayat_section .arabic .ayat_arabic {
+        padding-left: 10px; }
+      .mushaf .ayat_section .arabic .ayat_arabic_memoz, .boxcontent .ayat_section .arabic .ayat_arabic_memoz {
+        padding-left: 0; }
+      .mushaf .ayat_section .arabic .ayat_arabic_memoz:last-child, .boxcontent .ayat_section .arabic .ayat_arabic_memoz:last-child {
+        padding-left: 0px; }
+    .mushaf .ayat_section .trans, .boxcontent .ayat_section .trans {
+      text-align: left;
+      color: rgba(43, 69, 56, 0.7);
+      font-size: 16px;
+      width: 100%;
+      line-height: 24px;
+      -moz-animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      transition: all 1s ease;
+      background-color: #fefefe;
+      padding: 10px;
+      position: relative;
+      opacity: 1; }
+      @media (max-width: 767px) and (min-width: 320px) {
+        .mushaf .ayat_section .trans, .boxcontent .ayat_section .trans {
+          font-size: 15px;
+          padding: 20px 0px 20px 10px;
+          transition: height .35s ease; } }
+      .mushaf .ayat_section .trans .no_ayat, .boxcontent .ayat_section .trans .no_ayat,
+      .mushaf .ayat_section .trans .content_ayat,
+      .boxcontent .ayat_section .trans .content_ayat {
+        display: inline-block; }
+      .mushaf .ayat_section .trans .trans_content, .boxcontent .ayat_section .trans .trans_content {
+        padding: 0 15px; }
+    .mushaf .ayat_section .puff, .boxcontent .ayat_section .puff {
+      z-index: 1;
+      height: 0 !important;
+      padding: 0;
+      opacity: 0; }
+    .mushaf .ayat_section .go, .boxcontent .ayat_section .go {
+      height: 100%;
+      z-index: 2;
+      padding: 20px 10px 40px; }
+    .mushaf .ayat_section .action-footer, .boxcontent .ayat_section .action-footer {
+      position: relative;
+      width: 100%;
+      height: 35px;
+      z-index: 5;
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .mushaf .ayat_section .action-footer .btn, .boxcontent .ayat_section .action-footer .btn {
+        margin: 0;
+        background-color: #eee;
+        color: #aaa;
+        border-left: solid 1px #ddd;
+        border-radius: 0;
+        padding: 7px 20px; }
+        .mushaf .ayat_section .action-footer .btn:first-child, .boxcontent .ayat_section .action-footer .btn:first-child {
+          border-left: none; }
+        .mushaf .ayat_section .action-footer .btn:hover, .boxcontent .ayat_section .action-footer .btn:hover, .mushaf .ayat_section .action-footer .btn:focus, .boxcontent .ayat_section .action-footer .btn:focus {
+          background-color: #00978A;
+          color: #fff; }
+
+.mushaf_display a.selected,
+.steps a.selected {
+  font-weight: bold; }
+
+.pagination .page_free_input .form-group button {
+  margin: -11px 0 !important; }
+
+.surah-nav .pagination > li > a,
+.surah-nav .pagination > li > span {
+  /*padding: 4px 6px*/
+  padding: 5px 15px;
+  font-size: 16px;
+  border: none !important; }
+
+.surah-nav .pagination > li > a {
+  color: #00978A; }
+
+.surah-nav .pagination > li.active > a {
+  color: #fff;
+  border-radius: 8px; }
+
+.header_juz:hover,
+.header_page:hover {
+  background-color: #00978A;
+  cursor: pointer;
+  color: #fff !important;
+  border: 1px solid #00978A; }
+
+.muqodimah b {
+  font-size: 16px;
+  margin-bottom: 10px; }
+
+.mushaf-hafalan.mushaf .ayat_section .arabic .no_ayat_arabic, .mushaf-hafalan.boxcontent .ayat_section .arabic .no_ayat_arabic {
+  height: 59px !important; }
+
+.pagination .fa {
+  padding: 3px; }
+
+.arabic a {
+  text-decoration: none;
+  padding: 0 3px; }
+
+.main-content-wrap .main-content .single-column .page-title h1 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 30px; }
+
+.select2-container--default .select2-results > .select2-results__options {
+  max-height: 350px; }
+
+@media (max-width: 767px) and (min-width: 270px) {
+  .mushaf-hafalan .surah_title {
+    padding-top: 10px; } }
+
+@media (max-width: 767px) and (min-width: 270px) {
+  .arabic,
+  .head_surah {
+    font-family: "me_quran","Lateef", "Traditional Arabic";
+    padding-bottom: 0; } }
+
+@media (max-width: 767px) and (min-width: 270px) {
+  .select-surah .form-inline .btn,
+  .select-surah .form-inline .btn-last-memoz {
+    font-size: 22px !important; }
+
+  .select2-container {
+    width: 100% !important; }
+
+  .select2-results__option {
+    font-size: 18px; }
+
+  .select2-container--default .select2-selection--single {
+    height: 50px !important; }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #999;
+    line-height: 28px;
+    font-size: 20px;
+    padding: 9px; }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    padding: 23px 14px; }
+
+  .select-surah input, .select-surah select, .modal-body input, .modal-body select {
+    height: 50px;
+    font-size: 19px; }
+
+  .mushaf .ayat_section .arabic, .boxcontent .ayat_section .arabic {
+    font-size: 25px; }
+
+  .main-content-wrap .main-content .single-column .page-title h1.pull-left {
+    margin: -10px 10px 10px 10px !important; }
+
+  .mushaf .ayat_section .arabic, .boxcontent .ayat_section .arabic {
+    padding: 0 !important; }
+
+  .main-content-wrap .main-content .single-column .page-title h2 {
+    margin-left: 20px;
+    margin-bottom: 12px !important; }
+
+  .nav-top .memoz_options .btn {
+    position: relative;
+    left: -5px; }
+
+  .qm-navbar .navbar-nav form {
+    padding: 10px 26px; }
+
+  .juz-list li {
+    float: left;
+    width: 47.4% !important; }
+
+  .mushaf .ayat_section .trans, .boxcontent .ayat_section .trans {
+    padding-bottom: 4px;
+    padding-top: 4px; }
+
+  .main-content-wrap .main-content .single-column .page-title h2 {
+    margin-left: 9px; }
+
+  ul.navbar-nav li {
+    margin-left: 0; }
+
+  .navbar-nav .navbar-form .input-group {
+    float: none;
+    width: 95%;
+    margin: 0 auto; }
+
+  .navbar-collapse {
+    background-color: #00978A; }
+
+  .memoz-form {
+    width: 100%; }
+
+  .select-surah .search-title {
+    margin-bottom: 0;
+    font-size: 14pt; }
+
+  .btn-cari-ayat,
+  .btn-last-memoz {
+    margin-top: 7px;
+    display: inline-block !important; }
+
+  #qm-navbar-collapse {
+    margin: 7.5px -15px !important; }
+
+  .navbar-default .navbar-nav > li > a {
+    border-bottom: 1px solid #00978A; }
+
+  .paging-footer .input-group {
+    width: 100%;
+    display: inline; }
+
+  .paging-footer .input-group-addon {
+    width: 13px; } }
+.count-search {
+  display: block;
+  text-align: center;
+  margin: 10px auto 5px; }
+  .count-search .badge {
+    background-color: #B0FF33;
+    color: #007763; }
+
+.memoz_nav {
+  width: 98%;
+  margin: 0 auto 10px; }
+  @media (max-width: 480px) and (min-width: 320px) {
+    .memoz_nav {
+      width: 88%; } }
+  .memoz_nav .btn {
+    color: #00978A;
+    border: solid 1px #00978A;
+    display: inline-block;
+    width: 19.7%; }
+    .memoz_nav .btn:hover, .memoz_nav .btn:focus {
+      color: #fff;
+      background: #007763; }
+    @media (max-width: 1279px) and (min-width: 481px) {
+      .memoz_nav .btn {
+        width: 18.7%; } }
+    @media (max-width: 480px) and (min-width: 320px) {
+      .memoz_nav .btn {
+        width: auto;
+        padding: 4px 5px; } }
+
+.body-memo .nav-top .select-surah {
+  width: 100%; }
+
+body.body-memo .mushaf, body.body-memo .boxcontent {
+  padding-top: 1px; }
+
+.puzzle {
+  background-color: #DDD; }
+  .puzzle .content_ayat {
+    display: inline-block; }
+    .puzzle .content_ayat .arabic-puzzle {
+      float: left;
+      width: auto;
+      padding: 5px !important;
+      margin: 2px;
+      border: dotted 1px #333; }
+      .puzzle .content_ayat .arabic-puzzle:empty {
+        padding: 0 !important;
+        border: none; }
+
+.memoz_player {
+  padding: 5px 20px;
+  margin: 15px 0; }
+
+.steps_desc {
+  color: #999;
+  font-size: 16px;
+  padding: 0 10px; }
+
+.mushaf-hafalan .step-wrap {
+  width: 100%;
+  margin: 7px 0; }
+  .mushaf-hafalan .step-wrap .steps {
+    padding: 0 10px;
+    margin: 10px 0;
+    display: block; }
+    .mushaf-hafalan .step-wrap .steps .btn {
+      border-width: 1px;
+      border-color: #00978A;
+      border-style: solid;
+      background-color: transparent;
+      color: #00978A;
+      background-image: none;
+      text-shadow: none;
+      width: 20%; }
+      .mushaf-hafalan .step-wrap .steps .btn:hover, .mushaf-hafalan .step-wrap .steps .btn:focus, .mushaf-hafalan .step-wrap .steps .btn.selected {
+        border-width: 1px;
+        border-color: #00978A;
+        border-style: solid;
+        background-color: #00978A;
+        color: #fff;
+        background-image: none;
+        text-shadow: none; }
+
+.hafalan-actions {
+  margin: 7px 0; }
+
+.memoz-check-link {
+  color: #00978A;
+  text-align: center;
+  display: block; }
+
+.memoz-link-area {
+  display: inline-block;
+  font-size: 40px;
+  margin-bottom: -20px; }
+
+.memoz-status {
+  display: none;
+  visibility: hidden; }
+
+.puzzle {
+  padding: 0 25px; }
+
+.mushaf-hafalan.mushaf .puzzle .arabic-puzzle, .mushaf-hafalan.boxcontent .puzzle .arabic-puzzle {
+  font-family: "me_quran","Lateef", "Traditional Arabic";
+  padding: 0 2px 2px !important; }
+
+.mushaf-hafalan.mushaf .puzzle .arabic-puzzle:end-child, .mushaf-hafalan.boxcontent .puzzle .arabic-puzzle:end-child {
+  padding: 0 2px 2px 22px !important; }
+
+.puzzle .arabic-puzzle a {
+  background-color: #DDD;
+  text-decoration: none;
+  padding: 0 7px; }
+
+.memoz-filter ul li {
+  width: 33.3333% !important; }
+
+.memoz-options.open > .dropdown-menu {
+  width: 100%; }
+
+.memoz-options .dropdown-menu > li > a {
+  font-size: 16px; }
+
+.memoz-list .memoz-item .memoz-body {
+  cursor: pointer; }
+
+.memoz-list .memoz-item strong {
+  margin: 0px;
+  color: #70C393;
+  font-size: 14px; }
+
+.memoz-list .memoz-item .memoz-target {
+  color: #adadad;
+  font-size: 11px; }
+
+.blur-ayat,
+.blur-ayat .highlight-red, .blur-ayat .highlight-green, .blur-ayat .highlight-orange, .blur-ayat .highlight-blue {
+  color: transparent;
+  text-shadow: 0 0 17px rgba(0, 0, 0, 0.5); }
+
+.modal-body > form > a.btn-last-memoz {
+  display: none; }
+
+.form-inline a.btn-setting,
+.btn-last-memoz {
+  font-size: 14px !important; }
+
+.form-inline .btn.btn-setting span.hidden-xs,
+.btn-last-memoz {
+  padding-left: 0 !important; }
+
+.btn-last-memoz {
+  padding-left: 5px !important; }
+
+.puzzle_q {
+  visibility: hidden; }
+
+.puzzle_border {
+  border: 1px dotted #333; }
+
+.puzzle_no_border {
+  border: 0 !important; }
+
+.puzzle .ayat_arabic_memoz {
+  visibility: show !important; }
+
+.puzzle {
+  font-size: 23px; }
+
+.segmented-control {
+  position: relative;
+  display: inline-block;
+  border: 1px solid currentColor;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  overflow: hidden;
+  margin: .8em auto;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-transition-duration: .8s;
+  -o-transition-duration: .8s;
+  -webkit-transition-duration: .8s;
+  transition-duration: .8s;
+  -moz-transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -o-transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -webkit-transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -webkit-tap-highlight-color: transparent; }
+
+.segmented-control > input {
+  position: absolute;
+  left: -10000px;
+  opacity: 0; }
+
+.segmented-control > input[type='checkbox'] ~ label {
+  -moz-transition-duration: 0;
+  -o-transition-duration: 0;
+  -webkit-transition-duration: 0;
+  transition-duration: 0; }
+
+.segmented-control > input[type='checkbox'] ~ label:before {
+  opacity: 0; }
+
+.segmented-control > input:disabled:nth-child(1) ~ label:nth-of-type(1) {
+  opacity: .3;
+  cursor: not-allowed; }
+
+.segmented-control > input:nth-child(1):checked ~ label:nth-of-type(1):after,
+.segmented-control > input:nth-child(1):checked ~ label:nth-of-type(1):before {
+  opacity: 1; }
+
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(1) ~ label:before {
+  left: 0; }
+
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:before {
+  left: 0; }
+
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before {
+  left: 0; }
+
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(1):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
+  left: 0; }
+
+.segmented-control > input:disabled:nth-child(2) ~ label:nth-of-type(2) {
+  opacity: .3;
+  cursor: not-allowed; }
+
+.segmented-control > input:nth-child(2):checked ~ label:nth-of-type(2):after,
+.segmented-control > input:nth-child(2):checked ~ label:nth-of-type(2):before {
+  opacity: 1; }
+
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2):after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2):before,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(2) ~ label:before {
+  left: 50%; }
+
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before {
+  left: 33.33333%; }
+
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(2):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
+  left: 25%; }
+
+.segmented-control > input:disabled:nth-child(3) ~ label:nth-of-type(3) {
+  opacity: .3;
+  cursor: not-allowed; }
+
+.segmented-control > input:nth-child(3):checked ~ label:nth-of-type(3):after,
+.segmented-control > input:nth-child(3):checked ~ label:nth-of-type(3):before {
+  opacity: 1; }
+
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(3) ~ label:before {
+  left: 66.66667%; }
+
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(3):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
+  left: 50%; }
+
+.segmented-control > input:disabled:nth-child(4) ~ label:nth-of-type(4) {
+  opacity: .3;
+  cursor: not-allowed; }
+
+.segmented-control > input:nth-child(4):checked ~ label:nth-of-type(4):after,
+.segmented-control > input:nth-child(4):checked ~ label:nth-of-type(4):before {
+  opacity: 1; }
+
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > input:nth-child(4):checked ~ label:first-of-type:nth-last-of-type(4) ~ label:before {
+  left: 75%; }
+
+.segmented-control > label {
+  display: inline-block;
+  padding: 0 .71em;
+  cursor: pointer;
+  float: left;
+  line-height: 3em;
+  font-style: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  -moz-transition-property: none;
+  -o-transition-property: none;
+  -webkit-transition-property: none;
+  transition-property: none;
+  -moz-transition-duration: inherit;
+  -o-transition-duration: inherit;
+  -webkit-transition-duration: inherit;
+  transition-duration: inherit;
+  -moz-transition-timing-function: inherit;
+  -o-transition-timing-function: inherit;
+  -webkit-transition-timing-function: inherit;
+  transition-timing-function: inherit; }
+
+.segmented-control > label:before,
+.segmented-control > label:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; }
+
+.segmented-control > label:after {
+  color: #fff;
+  content: attr(data-value);
+  text-align: center;
+  padding: inherit;
+  z-index: 10;
+  font-style: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+  opacity: 0;
+  -moz-transition-property: opacity, left;
+  -o-transition-property: opacity, left;
+  -webkit-transition-property: opacity, left;
+  transition-property: opacity, left;
+  -moz-transition-duration: inherit;
+  -o-transition-duration: inherit;
+  -webkit-transition-duration: inherit;
+  transition-duration: inherit;
+  -moz-transition-timing-function: inherit;
+  -o-transition-timing-function: inherit;
+  -webkit-transition-timing-function: inherit;
+  transition-timing-function: inherit; }
+
+.segmented-control > label:after,
+.segmented-control > label {
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.segmented-control > label:before {
+  content: '';
+  color: inherit;
+  background: currentColor;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -webkit-transition-property: left;
+  transition-property: left;
+  -moz-transition-duration: inherit;
+  -o-transition-duration: inherit;
+  -webkit-transition-duration: inherit;
+  transition-duration: inherit;
+  -moz-transition-timing-function: inherit;
+  -o-transition-timing-function: inherit;
+  -webkit-transition-timing-function: inherit;
+  transition-timing-function: inherit; }
+
+.segmented-control > label:first-of-type:nth-last-of-type(1),
+.segmented-control > label:first-of-type:nth-last-of-type(1):after,
+.segmented-control > label:first-of-type:nth-last-of-type(1):before,
+.segmented-control > label:first-of-type:nth-last-of-type(1) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(1) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(1) ~ label:before {
+  width: 100%; }
+
+.segmented-control > label:first-of-type:nth-last-of-type(2),
+.segmented-control > label:first-of-type:nth-last-of-type(2):after,
+.segmented-control > label:first-of-type:nth-last-of-type(2):before,
+.segmented-control > label:first-of-type:nth-last-of-type(2) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(2) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(2) ~ label:before {
+  width: 50%; }
+
+.segmented-control > label:first-of-type:nth-last-of-type(3),
+.segmented-control > label:first-of-type:nth-last-of-type(3):after,
+.segmented-control > label:first-of-type:nth-last-of-type(3):before,
+.segmented-control > label:first-of-type:nth-last-of-type(3) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(3) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(3) ~ label:before {
+  width: 33.33333%; }
+
+.segmented-control > label:first-of-type:nth-last-of-type(4),
+.segmented-control > label:first-of-type:nth-last-of-type(4):after,
+.segmented-control > label:first-of-type:nth-last-of-type(4):before,
+.segmented-control > label:first-of-type:nth-last-of-type(4) ~ label,
+.segmented-control > label:first-of-type:nth-last-of-type(4) ~ label:after,
+.segmented-control > label:first-of-type:nth-last-of-type(4) ~ label:before {
+  width: 25%; }
+
+.segmented-control.italic,
+.segmented-control .italic {
+  font-style: italic; }
+
+.segmented-control.bold,
+.segmented-control .bold {
+  font-weight: 700; }
+
+.segmented-control.underline,
+.segmented-control .underline {
+  text-decoration: underline; }
+
+.segmented-control.line-through,
+.segmented-control .line-through {
+  text-decoration: line-through; }
+
+.memorized {
+  opacity: 0.15; }
+
+.container-segmented h4 {
+  margin: 0;
+  font-size: 14px; }
+
+.memoz-message.alert-warning {
+  text-align: left; }
+
+.pause-marks {
+  position: relative;
+  top: 8px; }
+
+.btn-bookmark {
+  margin-right: 5px; }
+
+.memoz_nav .btn.active {
+  color: #fff;
+  background: #00978A; }
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .select-surah {
+    padding: 7px 0 !important; } }
+@media (max-width: 480px) and (min-width: 320px) {
+  .select-surah .form-inline .btn-cari-ayat {
+    width: 32.33% !important;
+    font-size: 12px !important;
+    padding: 10px 7px !important;
+    margin-top: 7px !important; } }
+
+.dashboard-wrap
+.boxcontent {
+  padding: 0; }
+
+.dash-profile-detail-wrap {
+  background: url("../images/OGeyUVT_p3U.jpg") no-repeat center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover; }
+
+.dash-profile-detail {
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding: 20px 0px; }
+  .dash-profile-detail .dash-profile-img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 15px; }
+    .dash-profile-detail .dash-profile-img img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+  .dash-profile-detail .dash-profile-name {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 18px; }
+    .dash-profile-detail .dash-profile-name .fa {
+      position: relative;
+      color: #001815;
+      font-size: 25px; }
+      .dash-profile-detail .dash-profile-name .fa span {
+        position: absolute;
+        text-align: center;
+        color: #fff;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 15px;
+        width: 10px;
+        height: 17px;
+        font-weight: bold; }
+  .dash-profile-detail .btn-trigger-dashboard {
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+    border-radius: 100%;
+    border: solid 1px #fff;
+    background: #ff8d35;
+    color: #fff;
+    z-index: 99;
+    font-size: 16px; }
+  .dash-profile-detail .qm-badge {
+    display: none; }
+
+.tabbed-nav {
+  width: 100%;
+  background: #00645b;
+  padding: 15px 0; }
+  .tabbed-nav .tabbed-nav-list {
+    padding-left: 10px; }
+    .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item {
+      display: inline-block;
+      line-height: 40px;
+      width: 32.3%;
+      margin: 0;
+      padding: 0; }
+      .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item i {
+        display: block;
+        text-align: center;
+        font-size: 45px; }
+      .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(-n+3) {
+        border-bottom: solid 1px rgba(255, 255, 255, 0.6); }
+      .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(-n+5) {
+        border-right: solid 1px rgba(255, 255, 255, 0.6); }
+      .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(3) {
+        border-right: none; }
+      .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(2), .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(3), .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(5), .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(6) {
+        margin-left: -3px; }
+      .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item:nth-child(n+4) {
+        padding-top: 10px; }
+      .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link {
+        color: #fff;
+        padding: 7px 5px;
+        text-align: center;
+        display: block;
+        font-size: 13px; }
+        .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:active, .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:hover, .tabbed-nav .tabbed-nav-list .tabbed-nav-list-item .tabbed-nav-link:focus {
+          color: #00978A; }
+
+.timeline-koreksi .boxcontent-label {
+  text-align: center; }
+
+.correction-list
+.correction-list-item {
+  border-bottom: solid 1px #eee; }
+  .correction-list
+  .correction-list-item:nth-child(even) {
+    background-color: #fafafa; }
+  .correction-list
+  .correction-list-item:last-child {
+    border-bottom: none; }
+
+.koreksi-box {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  padding: 17px; }
+  .koreksi-box .koreksi-avatar {
+    width: 75px;
+    height: 75px;
+    position: relative;
+    overflow: hidden; }
+    .koreksi-box .koreksi-avatar img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+  .koreksi-box .koreksi-desc {
+    width: 80%; }
+    .koreksi-box .koreksi-desc .username {
+      font-size: 18px;
+      display: block;
+      color: #00978A;
+      font-weight: bold; }
+    .koreksi-box .koreksi-desc .ayat-target {
+      display: inline-block; }
+      .koreksi-box .koreksi-desc .ayat-target .ayat-target-link {
+        font-size: 17px; }
+    .koreksi-box .koreksi-desc .jumlah-koreksi {
+      color: #999999; }
+    .koreksi-box .koreksi-desc .koreksi-action {
+      padding: 7px 0 0; }
+      .koreksi-box .koreksi-desc .koreksi-action .koreksi-action-link {
+        display: inline-block;
+        text-align: center;
+        padding: 7px 15px;
+        background-color: #fff;
+        border: solid 1px #00978A;
+        margin-right: 7px;
+        border-radius: 4px; }
+
+.tab-pane .btn-green {
+  border-radius: 0; }
+
+/* -----------------------------------------------------------------------------
+
+  Circle Menu Component
+
+----------------------------------------------------------------------------- */
+/**
+ * This is the actual menu component. It consists of a menu element with an
+ * unordered list inside, and also a button to toggle the actual menu.
+ * It's fixed to the bottom-right of the screen, and each of the items are
+ * positioned absolutely inside the parent menu tag. The default set up above is
+ * 5 menu items. Because all the transforms and such are calculated wrt
+ * this number, you'll need to edit it accordingly depending on how many items
+ * you decide to put in the markup.
+ *
+ * Example markup:
+ *
+ * <menu class="c-circle-menu">
+ *   <ul class="c-circle-menu__items">
+ *     <li class="c-circle-menu__item">
+ *       <a class="c-circle-menu__link"></a>
+ *     </li>
+ *     <li class="c-circle-menu__item">
+ *       <a class="c-circle-menu__link"></a>
+ *     </li>
+ *     ...
+ *   </ul>
+ * </menu>
+ */
+.c-circle-menu {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px; }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu {
+      width: 96px;
+      height: 96px;
+      border-radius: 48px; } }
+
+.c-circle-menu__items {
+  display: block;
+  list-style: none;
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  padding: 0; }
+
+.c-circle-menu__item {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: transform, opacity;
+  transition-duration: 0.3s, 0.3s;
+  transition-timing-function: cubic-bezier(0.35, -0.59, 0.47, 0.97); }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu__item {
+      width: 96px;
+      height: 96px;
+      border-radius: 48px; } }
+
+/**
+ * Transisition delays at the default state.
+ */
+.c-circle-menu__item:nth-child(1) {
+  transition-delay: 0.4s; }
+
+.c-circle-menu__item:nth-child(2) {
+  transition-delay: 0.3s; }
+
+.c-circle-menu__item:nth-child(3) {
+  transition-delay: 0.2s; }
+
+.c-circle-menu__item:nth-child(4) {
+  transition-delay: 0.1s; }
+
+.c-circle-menu__item:nth-child(5) {
+  transition-delay: 0s; }
+
+/**
+ * We're using the .is-active class, which is added to the menu via JavaScript.
+ * Once the menu is active, the items inherit the properties below. We will
+ * manually write out the transform properties for first and last items, as we
+ * already know their position. For all items in between though, we'll use some
+ * polar-to-cartesian math and some Sass functions to get the positioning.
+ */
+.c-circle-menu.is-active .c-circle-menu__item {
+  transition-timing-function: cubic-bezier(0.35, 0.03, 0.47, 1.59); }
+
+.c-circle-menu.is-active .c-circle-menu__item:nth-child(1) {
+  transition-delay: 0s;
+  transform: translate(-144px, 0); }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu.is-active .c-circle-menu__item:nth-child(1) {
+      transform: translate(-288px, 0); } }
+
+.c-circle-menu.is-active .c-circle-menu__item:nth-child(2) {
+  transition-delay: 0.1s;
+  transform: translate(-134px, -56px); }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu.is-active .c-circle-menu__item:nth-child(2) {
+      transform: translate(-267px, -111px); } }
+
+.c-circle-menu.is-active .c-circle-menu__item:nth-child(3) {
+  transition-delay: 0.2s;
+  transform: translate(-102px, -102px); }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu.is-active .c-circle-menu__item:nth-child(3) {
+      transform: translate(-204px, -204px); } }
+
+.c-circle-menu.is-active .c-circle-menu__item:nth-child(4) {
+  transition-delay: 0.3s;
+  transform: translate(-56px, -134px); }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu.is-active .c-circle-menu__item:nth-child(4) {
+      transform: translate(-111px, -267px); } }
+
+.c-circle-menu.is-active .c-circle-menu__item:nth-child(5) {
+  transition-delay: 0.4s;
+  transform: translate(0, -144px); }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu.is-active .c-circle-menu__item:nth-child(5) {
+      transform: translate(0, -288px); } }
+
+/**
+ * Apart from the transform properties, we'll also make sure the items get
+ * the correct opacity.
+ */
+.c-circle-menu.is-active .c-circle-menu__item {
+  opacity: 1; }
+
+/**
+ * Let's style the links now. This is just boilerplate stuff, and of course,
+ * you'll probably want to change up the icons to match your needs. In any case,
+ * we'll do it here for the sake of completion.
+ */
+.c-circle-menu__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  box-shadow: inset 0 0 0 2px #fff; }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu__link {
+      border-radius: 48px; } }
+
+.c-circle-menu__link img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+.c-circle-menu__link:hover {
+  box-shadow: inset 0 0 0 2px #00978A; }
+
+/* -----------------------------------------------------------------------------
+
+  The Toggle Component
+
+----------------------------------------------------------------------------- */
+/**
+ * The toggle is a button element, and as such requires some resets that are
+ * unique to buttons. This button also inherits some funky stuff from my
+ * CSS animating hamburger menu icons demo, which can be found at this url:
+ * https://github.com/callmenick/Animating-Hamburger-Icons
+ */
+.c-circle-menu__toggle {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  background-color: #00978A;
+  font: inherit;
+  font-size: 0;
+  text-indent: -9999px;
+  border-radius: 24px;
+  border: solid 2px #fff;
+  transition: background 0.3s;
+  /* reset some browser defaults */
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none; }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu__toggle {
+      width: 96px;
+      height: 96px;
+      border-radius: 48px; } }
+
+.c-circle-menu__toggle:hover,
+.c-circle-menu__toggle:focus,
+.c-circle-menu__toggle.is-active {
+  outline: none;
+  background-color: #00312d; }
+
+.c-circle-menu__toggle span,
+.c-circle-menu__toggle span::before,
+.c-circle-menu__toggle span::after {
+  display: block;
+  position: absolute;
+  height: 4px;
+  background: #fff;
+  border-radius: 1px; }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu__toggle span,
+    .c-circle-menu__toggle span::before,
+    .c-circle-menu__toggle span::after {
+      height: 8px;
+      border-radius: 2px; } }
+
+.c-circle-menu__toggle span {
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  transition: background 0.3s; }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu__toggle span {
+      top: 44px;
+      left: 20px;
+      right: 20px; } }
+
+.c-circle-menu__toggle span::before,
+.c-circle-menu__toggle span::after {
+  left: 0;
+  width: 100%;
+  content: "";
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s; }
+
+.c-circle-menu__toggle span::before {
+  top: -8px;
+  transition-property: top, transform; }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu__toggle span::before {
+      top: -16px; } }
+
+.c-circle-menu__toggle span::after {
+  bottom: -8px;
+  transition-property: bottom, transform; }
+  @media (min-width: 480px) and (min-height: 480px) {
+    .c-circle-menu__toggle span::after {
+      bottom: -16px; } }
+
+/* button active state */
+.c-circle-menu__toggle.is-active span {
+  background: none; }
+
+.c-circle-menu__toggle.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+  transition-delay: 0s, 0.3s; }
+
+.c-circle-menu__toggle.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition-delay: 0s, 0.3s; }
+
+/* -----------------------------------------------------------------------------
+
+  The Mask Component
+
+----------------------------------------------------------------------------- */
+/**
+ * Here's the mask component, which actually gets created and inserted to the
+ * DOM via JavaScript. It simply acts as an overlay to draw attention to the
+ * menu when it is active. It also uses the .is-acvite state class.
+ */
+.c-circle-menu__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s, visibility 0.3s; }
+
+.c-circle-menu__mask.is-active {
+  opacity: 1;
+  visibility: visible; }
+
 /*# sourceMappingURL=style.min.css.map */

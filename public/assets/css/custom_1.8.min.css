@@ -54,20 +54,3 @@ button.navbar-toggle.search{
 #preloader{
   height: 5000px !important;
 }
-
-.dzikir-loading {
-    text-align: center;
-}
-
-.dzikir {
-    font-size: 46px;
-    font-family: "Scheherazade";
-    color: #2a5b56;
-}
-
-.recommendation-action a {
-  font-size: 60px;
-  position: relative;
-  right: 10px;
-  color: white;
-}

@@ -25,7 +25,7 @@
 
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
-						<div class="ads-middle" style="background-color: #54b7ac;">
+						<div class="ads-middle">
 							@if(session('sess_id'))
 							<div class="dropdown">
 								<button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;min-width: 300px;background: none;border: 0px;font-weight: bold;">
@@ -111,94 +111,9 @@
 					</div>
 			  	</div>
 				  <!-- /dash-profile -->
-				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-					<a target="_blank" href="https://play.google.com/store/apps/details?id=com.muamalah.daily&hl=en"><div class="" style="background: #2b6888;/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;/* background-image: url(&quot;http://md.quranmemo.id/public/assets/images/qmc-logo.png&quot;); */width: 97%;height: 75px;background-size: 14%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;background-position: 96% -14%;" target="_blank">
-						<div style="
-    float: left;
-    width: 71%;
-    color: #FFF;
-    padding: 7px;
-"><span style="
-    /* font-family: 'Fira+Sans'; */
-    text-shadow: 1px 1px 4px #353535;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    ">Muamalah Daily</span><span style="
-    font-size: 12px;
-"><br>Download app fiqh muamalah sehari-hari dikelola oleh Ustadz DR. Oni Sahroni, MA. </span></div>
-<div style="
-    position: absolute;
-    right: -19px;
-"><a href="https://play.google.com/store/apps/details?id=com.muamalah.daily&hl=en" target="_blank" style="
-    font-size: 23px;
-    color: #fff;
-    /* border: 1px solid; */
-    /* border-radius: 27px; */
-    padding: 2px;
-    padding-right: 27px;
-    /* text-align: center; */
-" class="btn"><img src="https://www.freepnglogos.com/uploads/google-play-png-logo/google-play-icon-png-logo--14.png" style="
-    width: 31px;
-">
-<img src="http://md.quranmemo.id/public/assets/images/qmc-logo.png" style="width: 70px;"></a></div>
 
-</div></a>
 
-					<div class="" style="background: rgb(0,0,0);/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;background-image: url(&quot;http://community.quranmemo.com/public/assets/images/winingcup.png&quot;);width: 97%;height: 99px;background-size: 44%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;" target="_blank">
-						<div style="
-    float: right;
-    width: 268px;
-    color: #FFF;
-    padding: 8px;
-"><span style="font-family: 'Fira+Sans';
-    text-shadow: 1px 1px 1px #e3b955;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;">Mau buku Islami tiap bulan?</span><span style="
-    font-size: 12px;
-"><br>Syaratnya setorkan hafalanmu disini!</span><button onclick="location.href='{{url('profile/top_user')}}'" class="" style="
-    border-radius: 22px;
-    color: #95750c;
-    background-color: #ffffffd1;
-    padding: 7px;
-    width: 70%;
-    font-weight: 700;
-    border-color: #ffffff00;
-">Lihat Leaderboard</button></div>
 
-					</div>
-				  <div class="ads-middle" style="height: 110px;background:#00978a;border-radius: 10px 10px 0px 0px;">
-				  	<!--strong>Hafalan pilihan</strong-->
-				  	<div id="recommendation-memoz">
-					    <ul>
-					    	<?php $recNo = 0?>
-					    	@foreach($listRecommendation as $recommendation)
-					    		<?php $recNo++;?>
-						      <li class="{{count($listRecommendation)==$recNo?'last':''}} dragend-page">
-						      	<div class="recommendation">
-							    	<div class="recommendation-header"><strong>{{$recommendation->surah}} : {{$recommendation->ayat_start==$recommendation->ayat_end?$recommendation->ayat_start:$recommendation->ayat_start.' - '.$recommendation->ayat_end}}</strong>
-							    	</div>
-							    	<div class="recommendation-body">
-							    		{{$recommendation->note}}
-							    	</div>
-							    </div>
-						    	<div class="recommendation-action">
-						    		<a href="{{url('memoz/surah/'.$recommendation->surah_start.'/'.$recommendation->ayat_start.'-'.$recommendation->ayat_end)}}" onclick="fbq('track', 'clickMemozRecommendation');"><i class="fa fa-arrow-circle-right"></i> </a>
-						    	</div>
-						      </li>
-
-					    	@endforeach
-					    </ul>
-				  		<!--ul class="nav">
-				  			<?php $recNo = 0;?>
-				  			@foreach($listRecommendation as $recommendation)
-				  			<?php $recNo++;?>
-						    <li data-page="{{$recNo}}" class="active">{{$recNo}}</li>
-						    @endforeach
-					  	</ul-->
-					  </div>
-				  </div>
 						<span class="clear"></span>
 				  <div class="timeline-koreksi filter">
 				  		<ul class="nav nav-tabs" role="tablist">

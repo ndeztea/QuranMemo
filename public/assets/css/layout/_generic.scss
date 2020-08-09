@@ -146,19 +146,9 @@ ul {
 	}
 }
 
-a.navbar-brand.nav-back {
-    font-size: 31px;
-    position: relative;
-    top: 3px;
-}
-
-.stats-number {
-    font-size: 45px;
-}
-
 .navbar-default {
 	background-image: none;
-	background: $color_1_8_2;
+	background: $main-color;
 	border-radius: 0;
 	border: none;
 	z-index: 3;
@@ -182,15 +172,14 @@ a.navbar-brand.nav-back {
 		text-shadow: none;
 		font-weight: 700;
 		transition: color 1s ease;
-        padding: 13px;
-        &.title {
-            font-size: 23px;
-            padding-left: 13px;
-        }
+		padding: 13px;
 		&:hover,
 		&:focus {
 			opacity: .7;
 			// color: darken($main-color-hover,5%);
+		}
+		&.title{
+			font-size: 23px;
 		}
 	}
 	.navbar-nav {
@@ -682,32 +671,21 @@ input[type="number"] {
 
 #preloader {
 	width: 100%;
-	height: 5000px !important;
+	height: 1700px;
 	z-index: 100000;
 	position: absolute;
 	top:-50px;
 	overflow: overlay;
-	background-color:rgba(222,243,241,.95);
+	background-color: rgba($main-color, .93);
 	text-align: center;
-	overflow: hidden;
+	overflow: none;
 	.loading {
 		font-size: 24px;
 		color: $white;
 		position: fixed;
 		text-align: center;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .dzikir-loading {
-            text-align: center;
-            .dzikir {
-                font-size: 46px;
-                font-family: "Scheherazade";
-                color: #2a5b56;
-            }
-        }
+		width: 100%;
+		top: 50%
 	}
 }
 
@@ -798,88 +776,4 @@ body.canvas-slid{
         padding-right: 0;
         padding-left: 0
 	}
-}
-
-.tanwin1:nth-letter(1){
-    position: relative;
-    top:-15px;
-    left: 2px;
-}
-.tanwin2:nth-letter(1){
-    position: relative;
-    top:1px;
-    left: 2px;
-}
-.ads-middle{
-    font-size: 14px;
-    background-color: #333333;
-    color: #FFF;
-    padding: 10px 0px;
-    text-align: center;
-    img{
-        width: 40px;
-        float: left;
-        margin-left:10px;
-    }
-}
-
-.no_ayat_arabic{
-    background: url('../../images/ayah_sign.png');
-    border: 0px !important;
-    background-repeat: no-repeat;
-    background-size: 42px 41px;
-    background-position-y: 4px;
-    background-position-x: 2px;
-}
-.recommendation{
-    float:left;
-    min-width: 200px;
-    width: 75%;
-    .recommendation-header,
-    .recommendation-body{
-        text-align: left;
-    }
-    .recommendation-action{
-        text-align: right;
-        padding-right:30px;
-        font-size:50px;
-    }
-}
-
-#recommendation-memoz {
-  bottom: 50px;
-  right: 50px;
-  padding: 18px;
-  color: #fff;
-  border-radius: 3px;
-  font-size: 15px;
-}
-
-li.dragend-page{
-    max-height: 200px;
-}
-
-li.dragend-page.last{
-    display: none !important;
-}
-
-.top_user img{
-    width: 50px;
-}
-.list_top_user{
-    .no_top_user{
-        font-size: 32px;
-    }
-    .border_points{
-        padding: 10px 28px;
-        background-color: #ddefd4;
-    }
-}
-
-.choose-type li{
-    padding: 10px;
-    font-size: 19px;
-}
-.modal-spacing ul.choose-class li {
-    width: 50%;
 }
