@@ -37,7 +37,7 @@
 							</div>
 							<div class="dash-profile-desc">
 								<h4 class="dash-profile-name">{{!empty($detailProfile)?$detailProfile->name:'Tamu'}}</h4>
-								<h2 class='label label-danger'>Kelas : {{$subClassDetail->class}}</h2>
+								<h2 class='label label-danger'>Kelas : {{$classDetail->class}} @if (!empty($subClassDetail)) {{$subClassDetail->class}} @endif</h2>
 							</div>
 						</div>
 						<!--/dash-profile-detail-->
@@ -49,7 +49,7 @@
 					<button class="btn btn-green" style="
 		    border-radius: 0;
 		    font-size: 21px;
-		" onclick=" QuranJS.callModal('mytodo/stars/{{$idUserChecklist}}') "><i class="fa fa fa-star" ></i> Checklist saya</button>
+		" onclick=" QuranJS.callModal('mytodo/stars/{{$idUser}}') "><i class="fa fa fa-star" ></i> Checklist saya</button>
 				<div class="filter">
 					<ul class="nav nav-tabs" role="tablist">
 						<li role="presentation" class="active"  style="width: 50%"><a href="#wajib" role="tab" data-toggle="tab">Wajib</a></li>

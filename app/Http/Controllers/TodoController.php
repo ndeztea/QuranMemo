@@ -14,7 +14,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Crypt;
 use Illuminate\Support\Facades\Hash;
-//use Ixudra\Curl\Facades\Curl;
+use Ixudra\Curl\Facades\Curl;
 use File;
 
 use Carbon\Carbon;
@@ -25,7 +25,7 @@ class TodoController extends Controller
 {
     var $date;
     var $date_formatted;
-    #var $location = 'pekanbaru';
+    var $location = 'pekanbaru';
     var $sholatTime;
     var $arrWaktu = array('Tepat waktu','+30 Menit');
     var $subDays = 0;
@@ -74,14 +74,14 @@ class TodoController extends Controller
         $this->idUser = empty($idUser)?session('sess_id'):$idUser;
         $this->idClass = session('sess_id_class');
         $this->role = session('sess_role');
-        $this->city = session('sess_city');
 
         $this->subDays = empty($subDays)?0:$subDays;
+
         $this->date_formatted = \Carbon\Carbon::now()->subDays($this->subDays)->format('l, d F Y');
         $this->date = \Carbon\Carbon::now()->subDays($this->subDays)->format('Y-m-d');
 
         $SholatModel = new Sholat();
-        $this->sholatTime = $SholatModel->getDetail($this->city, $this->date);
+        $this->sholatTime = $SholatModel->getDetail($this->location, $this->date);
         if($this->sholatTime==false){
           /*$response = Curl::to('http://muslimsalat.com/'.$this->city.'/daily.json?key=d6062423a1d68dc9b9560c021572fac5&jsoncallback=?')
                   ->get();
@@ -92,6 +92,7 @@ class TodoController extends Controller
 
           $c = curl_init();
           //curl_setopt($c, CURLOPT_URL, 'http://muslimsalat.com/'.$this->city.'/daily.json?key=d6062423a1d68dc9b9560c021572fac5&jsoncallback=?');
+          $this->city = 'pekanbaru';
           curl_setopt($c, CURLOPT_URL, 'https://api.pray.zone/v2/times/day.json?city='.$this->city.'&date='.$this->date);
           curl_setopt($c, CURLOPT_HEADER, 0);
           curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
@@ -141,11 +142,10 @@ class TodoController extends Controller
         }
 
         $TodoModel = new Todo();
-        $listTodosOne = $TodoModel->getList(1,1,'');
-        $listTodosTwo = $TodoModel->getList(2,1,session('sess_id_sub_class'));
+        $listTodosOne = $TodoModel->getList(1);
+        $listTodosTwo = $TodoModel->getList(2);
 
-
-        $data['header_top_title'] = 'Ibadah Harian';
+        $data['header_top_title'] = 'Laporan Ibadah';
 
         $dataList = $TodoModel->getData($this->idUser,$this->date);
         $data['dataList'] = $dataList;
@@ -161,24 +161,19 @@ class TodoController extends Controller
 
         $UsersModel = new Users();
         $data['detailProfile'] = $UsersModel->getDetail($this->idUser);
-        $data['idUser'] = $idUser;
-        $data['idUserChecklist'] = $this->idUser;
         if(!empty($data['detailProfile'])){
             $data['detailProfile'] = $data['detailProfile'][0];
         }
 
         if(!empty($this->idClass)){
             $classDetail = $UsersModel->getClassDetail($data['detailProfile']->id_class);
-            $subClassDetail = $UsersModel->getClassDetail($data['detailProfile']->id_sub_class);
             $data['classDetail'] = $classDetail;
-            $data['subClassDetail'] = $subClassDetail;
         }
 
         return view('todo.todo_list',$data);
     }
 
     public function summary(){
-
       $UsersModel = new Users();
       $data['detailProfile'] = $UsersModel->getDetail($this->idUser);
       if(!empty($data['detailProfile'])){
@@ -190,8 +185,8 @@ class TodoController extends Controller
 
 
       $TodoModel = new Todo();
-      $listTodosOne = $TodoModel->getList(1,1,'');
-      $listTodosTwo = $TodoModel->getList(2,1,session('sess_id_sub_class'));
+      $listTodosOne = $TodoModel->getList(1);
+      $listTodosTwo = $TodoModel->getList(2);
       /*echo $this->idClass;
       print_r($classDetail);*/
       // count siswa
@@ -251,17 +246,14 @@ class TodoController extends Controller
       $dataHTML['arrWaktu'] = $this->arrWaktu;
       $dataHTML['date'] = $date;
       $dataHTML['modal_title'] = 'Laporan '.$detailTodo->todo;
-      /*if(session('sess_role')==0){
+      if(session('sess_role')==0 || session('sess_role')==4){
         $dataHTML['modal_body'] = view('todo.form_wajib',$dataHTML)->render();;
-        $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" onclick="submitTodo()"><i class="fa fa-cog fa-spin fa-3x fa-fw label-todo-loading " style="display: none;"></i>Laporkan</button> <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
+        $dataHTML['modal_footer'] = '<!--button class="btn btn-green-small info" onclick="submitTodo()"><i class="fa fa-cog fa-spin fa-3x fa-fw label-todo-loading " style="display: none;"></i>Laporkan</button--> <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
       }else{
         $dataHTML['modal_body'] = 'Tidak bisa diubah, hanya bisa oleh siswa';
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
 
-      }*/
-      $dataHTML['modal_body'] = view('todo.form_wajib',$dataHTML)->render();;
-      $dataHTML['modal_footer'] = '<button class="btn btn-green-small info" onclick="submitTodo()" style="width: 75%;"><i class="fa fa-cog fa-spin fa-3x fa-fw label-todo-loading " style="display: none;"></i>Simpan</button> <button class="btn btn-green-small info" data-dismiss="modal">Tutup</button>';
-
+      }
 
       return response()->json($dataHTML);
     }
@@ -271,6 +263,7 @@ class TodoController extends Controller
       $data['id_todo'] = $request->input('id_todo');
       $data['done'] = $request->input('done');
       $data['date'] = $request->input('date');
+      $data['parent_approve'] = $request->input('parent_approve');
 
       // set $params
       $params = array();
@@ -296,6 +289,7 @@ class TodoController extends Controller
       $data['masjid'] = @$dataParam['masjid'];
       $data['note'] = @$dataParam['note'];
       $data['waktu'] = @$dataParam['waktu'];
+      $data['parent_approve'] = $data['parent_approve'];
       return response()->json($data);
     }
 
@@ -307,6 +301,7 @@ class TodoController extends Controller
     }
 
     public function summary_stars(Request $request){
+
       $idUser = $request->segment(3);
 
       $TodoModel = new Todo();
@@ -347,8 +342,8 @@ class TodoController extends Controller
 
 
       $TodoModel = new Todo();
-      $listTodosOne = $TodoModel->getList(1,1,'');
-      $listTodosTwo = $TodoModel->getList(2,1,session('sess_id_sub_class'));
+      $listTodosOne = $TodoModel->getList(1);
+      $listTodosTwo = $TodoModel->getList(2);
       /*echo $this->idClass;
       print_r($classDetail);*/
       // count siswa
@@ -409,6 +404,16 @@ class TodoController extends Controller
       $data['date_start'] = $date_start;
       $data['date_end'] = $date_end;
 
+      // count approval
+      /*$data['listApprove'] = array('Belum di cek','Sesuai','Tidak Sesuai');
+      $data['listCountApproval'] = $TodoModel->getCountApproval($this->idUser,$date_start,$date_end);
+      $totalDataApproval = 0;
+      foreach ($data['listCountApproval'] as $countApproval) {
+        $totalDataApproval += $countApproval->count;
+      }
+      $data['totalDataApproval'] = $totalDataApproval;*/
+
+      //print_r($data['listCountApproval']);
       return view('todo.todo_range',$data);
     }
 

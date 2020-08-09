@@ -28,7 +28,7 @@
 					<br class="clearfix"/>
 				</div>
 
-				<div class="dash-profile">
+				<div class="dash-profile" style="background:linear-gradient(#6db9b0, #fff);">
 
 			  		<div class="dash-profile-detail-wrap">
 					  	<div class="dash-profile-detail">
@@ -37,7 +37,7 @@
 							</div>
 							<div class="dash-profile-desc">
 								<h4 class="dash-profile-name">{{!empty($detailProfile)?$detailProfile->name:'Tamu'}}</h4>
-								<h2 class="label label-success timer">{{empty($classDetail)?'Belum masuk kelas':$classDetail->class}}</h2>
+								<h2 class='label label-danger'>Kelas : {{$classDetail->class}} @if (!empty($subClassDetail)) {{$subClassDetail->class}} @endif</h2>
 							</div>
 						</div>
 						<!--/dash-profile-detail-->

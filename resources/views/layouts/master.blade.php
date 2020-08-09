@@ -228,6 +228,10 @@
                     @if(session('sess_role')==1 || session('sess_role')==2)
                     <li class="{{Request::segment(2)=='correction_ihsan'?'active':''}}"><a href="{{url('memoz/correction_ihsan')}}"><i class="mdi mdi-arrow-up-box"></i> Koreksi Ihsan</a></li>
                     @endif
+                    @if(session('sess_role')==1 || session('sess_role')==2)
+                    <li class="{{Request::segment(1)=='profile' && Request::segment(2)=='list'?'active':''}}">
+                        <a href="<?php echo url('profile/list')?>"><i class="mdi mdi-file-document" ></i> Laporan</a>
+                    @endif
                     <!--li><a href="{{url('profile/top_user')}}" class="{{Request::segment(2)=='top_user'?'active':''" onclick="fbq('track', 'clickTopSantri');"><i class="mdi mdi-account-network"></i> Top Santri</a></li>
                     <li><a href="javascript:;" onclick="QuranJS.callModal('buku')" onclick="fbq('track', 'clickFAQ')"><i class="mdi mdi-book-open"></i> Gratis Buku <label class="label label-danger">New</label></a> </li>
 
