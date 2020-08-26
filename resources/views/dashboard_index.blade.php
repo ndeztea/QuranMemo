@@ -145,7 +145,7 @@
 
 </div></a>
 
-					<div class="" style="background: rgb(0,0,0);/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;background-image: url(&quot;http://community.quranmemo.com/public/assets/images/winingcup.png&quot;);width: 97%;height: 99px;background-size: 44%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;" target="_blank">
+					<!--div class="" style="background: rgb(0,0,0);/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;background-image: url(&quot;http://community.quranmemo.com/public/assets/images/winingcup.png&quot;);width: 97%;height: 99px;background-size: 44%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;" target="_blank">
 						<div style="
     float: right;
     width: 268px;
@@ -167,7 +167,7 @@
     border-color: #ffffff00;
 ">Lihat Leaderboard</button></div>
 
-					</div>
+</div-->
 				  <div class="ads-middle" style="height: 110px;background:#00978a;border-radius: 10px 10px 0px 0px;">
 				  	<!--strong>Hafalan pilihan</strong-->
 				  	<div id="recommendation-memoz">
