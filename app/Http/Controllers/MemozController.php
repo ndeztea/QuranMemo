@@ -204,7 +204,7 @@ class MemozController extends Controller
         if($surah_start && !empty($ayat_start) && !empty($ayat_end)){
             #checking line
             $countLine = countLine($surah_start,$ayat_start,$ayat_end);
-            if ($countLine>=3){
+            if ($countLine>=2){
                 setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
                 return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end);
             }else{
@@ -214,7 +214,7 @@ class MemozController extends Controller
         }elseif($surah_start && !empty($ayat_start)){
             #checking line
             $countLine = countLine($surah_start,$ayat_start,$ayat_start);
-            if ($countLine>=3){
+            if ($countLine>=2){
                 setcookie('coo_last_memoz',url('memoz/surah/'.$surah_start.'/'.$ayat_start.'-'.$ayat_end));
                 return redirect('memoz/surah/'.$surah_start.'/'.$ayat_start);
             }else{
@@ -584,7 +584,8 @@ class MemozController extends Controller
         $id = $request->input('id');
         $MemoModel = new Memo();
         $memoDetail = $MemoModel->getDetail($id);
-
+        $saveAudio = false;
+        $dataRecord['record'] = '';
         $uniqfile = uniqid('rec_');
 
         $userRecFolder = public_path('recorded').'/'.session('sess_id');

@@ -96,17 +96,21 @@ class DashboardController extends Controller
 
         if(session('sess_id')){
             // save for temp action
+            $UsersModel = new Users;
+            $classDetail = $UsersModel->getClassDetail($id_class);
             if(!empty($lock_key)){
-              $UsersModel = new Users;
-              $classDetail = $UsersModel->getClassDetail($id_class);
               if($lock_key!=$classDetail->lock_key){
-                return redirect('dashboard')->with('messageError', 'Ganti halaqah gagal! Password halaqah salah.');
+                return redirect('dashboard')->with('messageError', 'Ganti kelas gagal, cek kembali passwordnya.');
               }
             }
+            // access based on class
+            $request->session()->put('sess_role_access', $classDetail->role_access);
+
             $sess_role = session('sess_role');
             $sess_id_class = session('sess_id_class');
             // set session
             $request->session()->put('sess_id_class', $id_class);
+
 
 
             $dataUser['id'] = session('sess_id');
