@@ -21,8 +21,13 @@ class Subscription
     {
         $sess_id_user = $request->session()->get('sess_id');
         $sess_role = $request->session()->get('sess_role');
+        $sess_role_access = $request->session()->get('sess_role_access');
         $UsersModel = new Users;
         $level = $UsersModel->checkLevel($sess_id_user);
+
+        if($sess_role_access>=1){
+          $level = $sess_role_access;
+        }
 
         // check URL access
         $url1 = $request->segment(1);

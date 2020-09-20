@@ -202,7 +202,7 @@ class Users extends Model
                 ->select('*')
                 ->where('active',1)
                 ->where('id_parent_class',0)
-                ->orderBy('class','asc')
+                ->orderBy('id','asc')
                 ->get();
 
         return $classes;
@@ -241,6 +241,12 @@ class Users extends Model
     }
 
     public function checkLevel($id_user){
+        // level based on class
+        $sess_role_access = session('sess_role_access');
+        if($sess_role_access>=1){
+          $level = $sess_role_access;
+          return $level;
+        }
         $now = (string) Carbon::now();
 
         $level = DB::table('user_subscriptions')
