@@ -4,19 +4,32 @@
 	    <div class="panel-heading" role="tab" id="headingGratis">
 	      <h4 class="panel-title">
 	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#levelGratis" aria-expanded="true" aria-controls="levelGratis">
+	          Kelas Tahfidz
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="levelGratis" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body">
+	        <p>
+								Kamu punya cita-cita hafal Al Qur'an 30 juz? Yuk menghafal bersama Kelas Tahfidz by Kelas Hijrah dan nikmati seluruh fitur di aplikasi keren ini GRATIS.
+					</p>
+	      </div>
+	    </div>
+	  </div>
+		<div class="panel panel-default iman">
+	    <div class="panel-heading" role="tab" id="headingHijrah">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelHijrah" aria-expanded="false" aria-controls="levelIman">
 	          Kelas Hijrah
 	        </a>
 	      </h4>
 	    </div>
-	    <div id="levelGratis" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+	    <div id="levelHijrah" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 	      <div class="panel-body">
-	        <ul>
-	        	<li><i class="fa fa-check-square"></i> 1x Simpan rekaman</li>
-			 			<li><i class="fa fa-check-square"></i> 3x Simpan hafalan</li>
-			 			<li><i class="fa fa-check-square"></i> Tafsir hanya juz 30 saja</li>
-			 			<li><i class="fa fa-check-square"></i> Menghafal hanya juz 30 dan Al-fatihah</li>
-			 			<li><i class="fa fa-check-square"></i> Muratal hanya Syeh Al-Afasy</li>
-	        </ul>
+					<p>Kelas Hijrah adalah pembelajaran selama 1 bulan dengan 12 x pertemuan, 12 Challange dan 8 target positif. Materi pembelajaran di kelas hijrah yaitu hijrah, keluarga dan fikih.</p>
+					<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
+
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelashijrah/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
 	      </div>
 	    </div>
 	  </div>
@@ -25,22 +38,16 @@
 	    <div class="panel-heading" role="tab" id="headingIslam">
 	      <h4 class="panel-title">
 	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIslam" aria-expanded="true" aria-controls="levelIslam">
-	          Kelas Tahsin  (Infak Rp. 10.000/bulan) *
+	          Kelas Tahsin
 	        </a>
 	      </h4>
 	    </div>
-	    <div id="levelIslam" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	    <div id="levelIslam" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 	      <div class="panel-body">
-					<ul>
-						<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
-						<li><i class="fa fa-check-square"></i> Akses Quiz tak terbatas</li>
-							<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
-							<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
-							<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
-							<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Muratal MurQ) **</li>
-							<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
-					</ul>
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285793686897" target="_blank" onclick="fbq('track', 'clickGratis');">Kontak kami <br><i style="font-size: 14px" class="fa fa fa-whatsapp"> </i> 085793686897</a>
+					<p>Kelas Tahsin adalah pembelajaran untuk memperbaiki bacaan Al Qur'an selama 1 bulan dengan 4x pertemuan, 12x challange dan 15 materi. Pembelajaran di kelas tahsin full materi dan praktek.</p>
+					<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
+
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelas-tahsin/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
 	      </div>
 	    </div>
 	  </div>
@@ -48,22 +55,16 @@
 	    <div class="panel-heading" role="tab" id="headingIman">
 	      <h4 class="panel-title">
 	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIman" aria-expanded="false" aria-controls="levelIman">
-	          Kelas Bahasa Arab (Infak Rp. 20.000/bulan) *
+	          Kelas Bahasa Arab
 	        </a>
 	      </h4>
 	    </div>
 	    <div id="levelIman" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 	      <div class="panel-body">
-					<ul>
-						<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
-						<li><i class="fa fa-check-square"></i> Akses Quiz tak terbatas</li>
-							<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
-							<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
-							<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
-							<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Muratal MurQ) **</li>
-							<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
-					</ul>
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285793686897" target="_blank" onclick="fbq('track', 'clickGratis');">Kontak kami <br><i style="font-size: 14px" class="fa fa fa-whatsapp"> </i> 085793686897</a>
+					<p>Kelas Bahasa Arab adalah pembelajaran untuk memahami bahasa arab sehingga kita mahir dan terbiasa karena pembelajaran ini full praktek. Kelas ini 1 bulan dengan 6 materi dalam 4 pertemuan, 12 hari praktek.</p>
+					<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
+
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelas-bahasa-arab/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
 	      </div>
 	    </div>
 	  </div>
@@ -71,23 +72,16 @@
 	    <div class="panel-heading" role="tab" id="headingIhsan">
 	      <h4 class="panel-title">
 	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelIhsan" aria-expanded="false" aria-controls="levelIhsan">
-	          Paket Parenting Muslim (Infak Rp. 50.000/bulan) *
+	          Paket Parenting Muslim
 	        </a>
 
 	      </h4>
 	    </div>
 	    <div id="levelIhsan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 	      <div class="panel-body">
-					<ul>
-						<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
-						<li><i class="fa fa-check-square"></i> Akses Quiz tak terbatas</li>
-							<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
-							<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
-							<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
-							<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Muratal MurQ) **</li>
-							<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
-					</ul>
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285793686897" target="_blank" onclick="fbq('track', 'clickGratis');">Kontak kami <br><i style="font-size: 14px" class="fa fa fa-whatsapp"> </i> 085793686897</a>
+					<p>Kelas Parenting Muslim adalah pembelajaran mengenai pendidikan anak dan kerumahtanggaan khusus untuk ibu-ibu muslimah. Kelas ini akan mendorong kita menjadi seorang ibu dan istri yang menjadikan rumah sebagai surga bagi anak dan suami. Kelas ini 1 bulan dengan 4 materi, 4x sesi sharing, 4x challange.</p>
+						<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/parenting/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
 	      </div>
 	    </div>
 	  </div>
@@ -95,23 +89,16 @@
 	    <div class="panel-heading" role="tab" id="headingIhsan" style="border-bottom:2px solid #fedfff !important">
 	      <h4 class="panel-title">
 	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#levelPranikah" aria-expanded="false" aria-controls="levelIhsan">
-	          Paket Parenting Pranikah (Infak Rp. 50.000/bulan) *
+	          Paket Parenting Pranikah
 	        </a>
 
 	      </h4>
 	    </div>
 	    <div id="levelPranikah" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 	      <div class="panel-body">
-					<ul>
-						<li><i class="fa fa-check-square"></i> Simpan hafalan tak terbatas</li>
-						<li><i class="fa fa-check-square"></i> Akses Quiz tak terbatas</li>
-							<li><i class="fa fa-check-square"></i> Semua muratal termasuk Warsh</li>
-							<li><i class="fa fa-check-square"></i> Tafsir semua juz</li>
-							<li><i class="fa fa-check-square"></i> Menghafal semua juz</li>
-							<li><i class="fa fa-check-square"></i> Gratis akses Konten Belajar Al-Quran  (Makroj dan Muratal MurQ) **</li>
-							<li><i class="fa fa-check-square"></i> Simpan rekaman tak terbatas</li>
-					</ul>
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://api.whatsapp.com/send?phone=6285793686897" target="_blank" onclick="fbq('track', 'clickGratis');">Kontak kami <br><i style="font-size: 14px" class="fa fa fa-whatsapp"> </i> 085793686897</a>
+					<p>Kelas Pranikah Muslim merupakan pembelajaran untuk persiapan menikah bagi singelillah agar pernikahan menjadi jalan menuju surga. Kelas ini 1 bulan dengan 4 materi, 4x sesi sharing, 4x challange.
+</p>
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/pranikah/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR WAITING LIST <br> (Pendaftaran 6-30 September 2020)</a>
 	      </div>
 	    </div>
 	  </div>

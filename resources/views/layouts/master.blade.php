@@ -140,7 +140,7 @@
         }
 
         .no_ayat_arabic{
-            background: url('http://alazharsyifabudi-pku2.sch.id/qm/public/assets/images/ayah_sign.png');
+            background: url('https://kelashijrah.quranmemo.com/public/assets/images/ayah_sign.png');
             border: 0px !important;
             background-repeat: no-repeat;
             background-size: 42px 41px;
