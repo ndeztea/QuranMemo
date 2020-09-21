@@ -131,6 +131,40 @@
           fbq('track', '{{$header_title}}');
         </script>
         @endif
+
+        <style>
+          .hadits-today{
+            background: linear-gradient(135deg, rgb(112 101 179) 0%, rgb(119 67 67) 100%, rgba(255,199,0,1) 100%);
+            border-radius: 10px;
+            margin: 3px 9px;
+            text-align: left;
+            padding: 10px;
+          }
+          .hadits-today strong{
+            color: #eaeaea;
+          }
+          .hadits-today a{
+            color: #ff6767;
+          }
+          .hadits-arabic{
+            font-size: 16px;
+            font-family: "me_quran","Lateef", "Traditional Arabic";
+            line-height: 30px;
+          }
+        </style>
+        <script>
+          function showHadits(showFull){
+
+            if (showFull=='full'){
+              $('.hadits-simple').hide()
+              $('.hadits-full').fadeIn()
+            }else{
+              $('.hadits-full').hide()
+              $('.hadits-simple').fadeIn()
+            }
+          }
+
+        </script>
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif" style="overflow:hidden">
 
@@ -535,6 +569,15 @@
                   @endif
                 @endif
            }
+        });
+
+        $.getJSON('{{url('dashboard/random_hadits')}}',{},function(response){
+          if(response.code==200){
+            $('.hadits-simple').html(response.simple);
+            $('.hadits-full').html(response.full);
+          }else{
+            $('.hadits-simple').html('Data hadist tidak ditemukan.');
+          }
         });
 
         @if(Request::get('action')=='berlangganan')
