@@ -42,6 +42,12 @@
 							<strong>{{!empty($classDetail)?$classDetail->class:'Belum ada kelas'}}</strong>
 							@endif
 						</div>
+						<div class="ads-middle hadits-today" style="background-color: #764a58;">
+							<p><strong>Hadits Pilihan:</strong>
+								<span class="hadits-simple"> <i class="fa fa-cog fa-spin fa-3x fa-fw label-status-loading "></i> Loading ... <!--a onclick="showHadits('full')">[Baca lebih lanjut <i class="mdi mdi-chevron-double-down"></i>]</a--></span>
+								<span class="hadits-full" style="display:none"></span>
+							</p>
+						</div>
 			  		<div class="dash-profile-detail-wrap">
 					  	<div class="dash-profile-detail">
 							<div class="dash-profile-img img-circle">
