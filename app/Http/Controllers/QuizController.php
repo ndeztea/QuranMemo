@@ -72,7 +72,7 @@ class QuizController extends Controller
             $sess_answer = $request->session()->get('sess_answer');
             $ency_answer = md5($answer);
             if($ency_answer==$correct_answer){
-                $data['messageSuccess'] = 'Alhamdulillah, jawaban antum benar';
+                $data['messageSuccess'] = '<div class="quiz-message"><p>Alhamdulillah </p><br><i class="fa fa-check-circle quiz-correct"></i><br><strong class="text-correct">BENAR</strong></div>';
                 $points = 4;
                 addPoints(session('sess_id'),'quiz.correct',$points);
 
@@ -80,7 +80,7 @@ class QuizController extends Controller
                 $right_answer = $right_answer + 1;
                 $request->session()->put('sess_right_answer',$right_answer);
             }else{
-                $data['messageSuccess'] = 'Afwan, jawaban antum salah';
+                $data['messageSuccess'] = '<div class="quiz-message"><p>Subhanallah </p><br><i class="fa fa-times-circle quiz-false"></i><br><strong class="text-false">SALAH</strong></div>';
                 $points = -2;
                 addPoints(session('sess_id'),'quiz.wrong',$points);
                 $right_answer = $request->session()->get('sess_right_answer');
@@ -115,7 +115,9 @@ class QuizController extends Controller
             $request->session()->forget('sess_answer');
             $request->session()->forget('sess_quiz_total_points');
             $request->session()->forget('sess_right_answer');
-            return redirect('dashboard')->with('messageSuccess', $data['messageSuccess'].'. Semua soal sudah dijawab. Total points yang didapat adalah : '.$new_points.' ('.$right_answer.'/'.$this->total_questions.')');
+            $messageFinish = $data['messageSuccess'];
+            $messageFinish .= '<div class="quiz-points"><div class="total-points">'.$new_points.'</div><br><div class="text-points">Points</div><small>Benar '.$right_answer.' dari '.$this->total_questions.' pertanyaan </small></div><br>';
+            return redirect('dashboard')->with('messageSuccess', $messageFinish);
         }
 
         #get random surah to be quiz-ed

@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Libraries;
 
 use DB;
@@ -7,10 +7,10 @@ use App\Quiz;
 use App\Quran;
 
 
-class QuizLib 
+class QuizLib
 {
 	public $types;
-	
+
 	public function getQuestions($surah, $type='next'){
 		$QuranModel = new Quran();
 		$ayats = $QuranModel->getAyatSurah($surah);
@@ -25,8 +25,11 @@ class QuizLib
 	    }else{
 	    	$qIndex = rand($countAyat + $offset,$countAyat);
 	    }
-	    
+
 	    // get questions
+			if(empty($ayats[$qIndex])){
+				$ayats[$qIndex] = 1;
+			}
 	    $return['question'] = $ayats[$qIndex];
 	    $return['question_offset'] = $offset;
 
