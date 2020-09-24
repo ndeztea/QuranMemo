@@ -66,6 +66,7 @@
         <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/circle.css')}}">
 
         <!-- <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}"> -->
@@ -150,6 +151,9 @@
             font-size: 16px;
             font-family: "me_quran","Lateef", "Traditional Arabic";
             line-height: 30px;
+          }
+          .score{
+            text-align: center;
           }
         </style>
         <script>
