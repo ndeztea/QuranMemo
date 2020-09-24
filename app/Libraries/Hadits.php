@@ -12,11 +12,11 @@ class Hadits
   public function __construct(){
     $this->list_riwayat[] = array('muslim','HR Muslim',4930);
     //$this->list_riwayat[] = array('abu-daud','HR Abu Dawud',4419);
-    $this->list_riwayat[] = array('ahmad','HR Ahmad',4305);
+    //$this->list_riwayat[] = array('ahmad','HR Ahmad',4305);
     $this->list_riwayat[] = array('bukhari','HR Bukhari',6638);
     //$this->list_riwayat[] = array('darimi','HR Darimi',2949);
     //$this->list_riwayat[] = array('ibnu-majah',4285);
-    $this->list_riwayat[] = array('tirmidzi','HR Tirmidzi',3625);
+    //$this->list_riwayat[] = array('tirmidzi','HR Tirmidzi',3625);
   }
 
   public function getRandomHadits(){
@@ -39,7 +39,7 @@ class Hadits
       return $data;
     }
 
-    return $end_point_response->code;
+    return false;
   }
 
   private function callEndPoint($endpoint){
