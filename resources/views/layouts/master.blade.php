@@ -66,7 +66,6 @@
         <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/responsive-media.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom.min.css')}}">
-        <link rel="stylesheet" href="{{url('assets/css/circle.css')}}">
 
         <!-- <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}"> -->
@@ -132,6 +131,47 @@
           fbq('track', '{{$header_title}}');
         </script>
         @endif
+        <style>
+          .quiz-message {
+            text-align: center;
+          }
+          .quiz-message p{
+            font-size: 20px;
+          }
+          i.fa.fa-check-circle.quiz-correct {
+            color: #128212;
+            font-size: 184px;
+          }
+          i.fa.fa-times-circle.quiz-false {
+              font-size: 184px;
+              color: #d24545;
+          }
+          .text-correct{
+            font-size: 33px;
+            color: #128212;
+            text-shadow: 1px 1px 1px black;
+          }
+          .text-false{
+            font-size: 33px;
+            color: #d24545;
+            text-shadow: 1px 1px 1px black;
+          }
+
+          .quiz-points{
+            border: 3px dashed #ff9128;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+          }
+          .quiz-points .total-points{
+            font-size: 47px;
+            font-weight: 700;
+            text-shadow: 2px 5px 6px #f9db7e;
+          }
+          .quiz-points .text-points{
+            font-size: 20px;
+          }
+        </style>
 
         <style>
           .hadits-today{
@@ -152,10 +192,8 @@
             font-family: "me_quran","Lateef", "Traditional Arabic";
             line-height: 30px;
           }
-          .score{
-            text-align: center;
-          }
         </style>
+
         <script>
           function showHadits(showFull){
 

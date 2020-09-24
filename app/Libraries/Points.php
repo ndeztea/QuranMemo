@@ -35,7 +35,7 @@ class Points
 				"read.quran"	=> 1,
 
 				"quiz.correct"	=> 4,
-				"quiz.wrong"	=> -2,
+				"quiz.wrong"	=> 0,
 				"read.dzikir"=> 2,
 			);
 	}
