@@ -24,7 +24,7 @@ Route::get('dzikir', 'DzikirController@index');
 Route::get('todo','TodoController@index');
 Route::get('todo/{subDays}','TodoController@index');
 Route::get('dashboard/random_hadits','DashboardController@randomHadits');
-Route::get('memoz/compare','MemozController@compareQuran');
+Route::get('memoz/compare','MemozController@score');
 
 
 Route::get('mushaf/generate', 'MushafController@generate');

@@ -72,6 +72,7 @@
         <link rel="stylesheet" href="{{url('assets/css/custom_1.9.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/todo.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/circle.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
 
@@ -191,6 +192,22 @@
             font-size: 16px;
             font-family: "me_quran","Lateef", "Traditional Arabic";
             line-height: 30px;
+          }
+
+          .score{
+            text-align: center;
+          }
+          .c100{
+            background-color: #ff0000 !important;
+          }
+          .orange span{
+            color: #dd9d21 !important;
+          }
+          .green span{
+            color: #dd9d21 !important;
+          }
+          .default span{
+            color: #307bbb !important;
           }
         </style>
 
@@ -607,7 +624,7 @@
                     }
                 ?>
                   @if(session('sess_role')!=1)
-                  vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}{{$approvalLink}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
+                  vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' orderan </strong> yang belum diproses. <br><br> <a href="{{url('subscription/listing')}}{{$approvalLink}}" class="btn btn-primary">Lihat Daftar Order</a></p>' });
                   @endif
                 @endif
            }
