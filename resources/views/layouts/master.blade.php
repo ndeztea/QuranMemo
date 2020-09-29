@@ -289,6 +289,7 @@
                     </li>
                     <li class="{{Request::segment(1)=='subscription'?'active':''}}"><a href="javascript:void(0)" onclick="fbq('track', 'clickBerlangganan');QuranJS.callModal('subscription')" id="cart"><i class="mdi mdi-cart"></i> Program Kelas <label class="label label-danger" display="none" id="cartCounter" style="display: none">0</label></a> </li>
                     @if(session('sess_role')==1 || session('sess_role')==2)
+                    <li class="{{Request::segment(2)=='list'?'active':''}}"><a href="{{url('profile/list')}}"><i class="mdi mdi-account"></i> Daftar Santri</a></li>
                     <li class="{{Request::segment(2)=='correction_ihsan'?'active':''}}"><a href="{{url('memoz/correction_ihsan')}}"><i class="mdi mdi-arrow-up-box"></i> Koreksi Ihsan</a></li>
                     @endif
 

@@ -29,7 +29,7 @@
 					<p>Kelas Hijrah adalah pembelajaran selama 1 bulan dengan 12 x pertemuan, 12 Challange dan 8 target positif. Materi pembelajaran di kelas hijrah yaitu hijrah, keluarga dan fikih.</p>
 					<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
 
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelashijrah/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelashijrah/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG</a>
 	      </div>
 	    </div>
 	  </div>
@@ -47,7 +47,7 @@
 					<p>Kelas Tahsin adalah pembelajaran untuk memperbaiki bacaan Al Qur'an selama 1 bulan dengan 4x pertemuan, 12x challange dan 15 materi. Pembelajaran di kelas tahsin full materi dan praktek.</p>
 					<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
 
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelas-tahsin/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelas-tahsin/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG</a>
 	      </div>
 	    </div>
 	  </div>
@@ -64,7 +64,7 @@
 					<p>Kelas Bahasa Arab adalah pembelajaran untuk memahami bahasa arab sehingga kita mahir dan terbiasa karena pembelajaran ini full praktek. Kelas ini 1 bulan dengan 6 materi dalam 4 pertemuan, 12 hari praktek.</p>
 					<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
 
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelas-bahasa-arab/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/kelas-bahasa-arab/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG</a>
 	      </div>
 	    </div>
 	  </div>
@@ -81,7 +81,7 @@
 	      <div class="panel-body">
 					<p>Kelas Parenting Muslim adalah pembelajaran mengenai pendidikan anak dan kerumahtanggaan khusus untuk ibu-ibu muslimah. Kelas ini akan mendorong kita menjadi seorang ibu dan istri yang menjadikan rumah sebagai surga bagi anak dan suami. Kelas ini 1 bulan dengan 4 materi, 4x sesi sharing, 4x challange.</p>
 						<p>Free Kelas Tahfidz, akses full aplikasi kelas hijrah untuk meningkatkan hafalan dan amalan yaumiyah.</p>
-					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/parenting/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG <br> (Pendaftaran 23 agustus-12 September 2020)</a>
+					<a class="btn btn-green" style="width: 100%;margin-bottom: 3px" href="https://www.kelashijrah.com/parenting/" target="_blank" onclick="fbq('track', 'clickGratis');"><i style="font-size: 14px" class="fa fa fa-edit"> </i> DAFTAR SEKARANG</a>
 	      </div>
 	    </div>
 	  </div>

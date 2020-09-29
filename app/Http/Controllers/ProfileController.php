@@ -143,12 +143,13 @@ class ProfileController extends Controller
 
     public function listing(Request $request){
 
-        $data['header_top_title'] = $data['header_title'] = 'Daftar Siswa';
+        $data['header_top_title'] = $data['header_title'] = 'Daftar Santri';
         $data['body_class'] = 'body-editprofile';
 
         $UsersModel = new Users;
         $id_class = session('sess_id_class');
-        $id_sub_class = empty($request->input('id_sub_class'))?session('sess_id_sub_class'):$request->input('id_sub_class');
+        //$id_sub_class = empty($request->input('id_sub_class'))?session('sess_id_sub_class'):$request->input('id_sub_class');
+        $id_class = empty($request->input('id_class'))?session('sess_id_class'):$request->input('id_class');
         $keyword = $request->input('keyword');
         $gender = $request->input('gender','');
         // show all
@@ -161,8 +162,8 @@ class ProfileController extends Controller
         $countUsers = 0;
         if($id_class){
 
-            $listUsers = $UsersModel->getListFromSubClass($id_sub_class,$gender,$keyword,$page);
-            $countUsers = $UsersModel->getCountFromSubClass($id_sub_class,$gender,$keyword);
+            $listUsers = $UsersModel->getList($id_class,$gender,$keyword,$page);
+            $countUsers = $UsersModel->getCountList($id_class,$gender,$keyword);
             $classDetail = $UsersModel->getClassDetail($id_class);
 
             if(is_int($countUsers)){
@@ -174,7 +175,9 @@ class ProfileController extends Controller
 
         $rolesManual = array('Adab','Ahlak','LA','Keaktifan','Lainnya');
         //die($id_sub_class);
-        $data['detailSubClass'] = $UsersModel->getClassDetail($id_sub_class);
+        //$data['detailSubClass'] = $UsersModel->getClassDetail($id_sub_class);
+        $data['detailSubClass'] = $UsersModel->getClassDetail($id_class);
+        $data['listClasses'] = $UsersModel->getClass();
         $data['no'] = (($page-1)*10)+1;
         $data['id_class'] = $id_class;
         $data['keyword'] = $keyword;

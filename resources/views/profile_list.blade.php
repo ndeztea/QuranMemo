@@ -22,8 +22,8 @@
 							    <span class="caret"></span>
 							  </button>
 							  <ul class="dropdown-menu choose-class" aria-labelledby="dropdownMenu2" style="width:100%;min-width: 300px">
-							  	@foreach($listSubClasses as $class)
-							    <li><a href="{{url('profile/list?id_sub_class='.$class->id)}}">{{$class->class}}</a></li>
+							  	@foreach($listClasses as $class)
+							    <li><a href="{{url('profile/list?id_class='.$class->id)}}">{{$class->class}}</a></li>
 							    @endforeach
 							  </ul>
 							</div>
@@ -50,13 +50,12 @@
 										<!--input type="text" class="form-control" name="date"  readonly="readonly" id="date"  placeholder="Tanggal"/>
 										<br-->
 										<form method="post" action="{{url('profile/list?id_sub_class='.$id_class)}}">
-								      <input type="text" name="keyword" style="width:80%" class="form-control" value="{{$keyword}}" placeholder="{{$detailSubClass->class}} : Cari nama...">
+								      <input type="text" name="keyword" style="width:80%" class="form-control" value="{{$keyword}}" placeholder="Cari nama...">
 								      <span class="input-group-btn">
 								        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
 							      		</span>
 							      	</form>
 							    </div><!-- /input-group -->
-							    <br><br>
 
 							  </div>
 							  <script type="text/javascript">
