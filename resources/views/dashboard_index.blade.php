@@ -51,7 +51,7 @@
 								<h4 class="dash-profile-name">{{session('sess_name')?session('sess_name'):'Tamu'}}</h4>
 								@foreach($listSubscriptions as $subscription)
 								<?php $daysLeft = Carbon::now()->diffInDays(Carbon::createFromTimeStamp(strtotime($subscription->expired_date)),false)?>
-								<span class='label label-primary'>Paket {{ucfirst($level[$subscription->level])}} ( {{$daysLeft}} hari )</span>
+								<span class='label label-primary'><!--Paket {{ucfirst($level[$subscription->level])}}--> Santri Aktif ( {{$daysLeft}} hari )</span>
 								@endforeach
 								@if(session('sess_id_class') && !empty($subClassDetail))
 								<h2 class='label label-danger'>Kelas : {{$subClassDetail->class}}</h2>
