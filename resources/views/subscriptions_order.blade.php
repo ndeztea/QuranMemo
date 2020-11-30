@@ -53,7 +53,12 @@
 						<br>
 						<div class="order-detail">
 							<p>Transfer melalui :
-							<div class="rekening"> Rekening BNI <br>0247451146 <br>an <br>AIF SAIFUL MARUF</div>
+							<div class="rekening">
+								BNI <br>0247451146 <br>a.n <br>AIF SAIFUL MARUF<hr/>
+								Mandiri <br> 1340016411083<br>a.n <br>AIF SAIFUL MARUF<hr/>
+								BRI <br> 040501035944502<br>a.n <br>AIF SAIFUL MARUF<hr/>
+								BCA<br>7772154570<br>a.n <br>AIF SAIFUL MARUF<hr/>
+							</div>
 						</div>
 						<br>
 						<div class="order-detail" style="background-color: #ffd381;border: 1px solid #dea433;">

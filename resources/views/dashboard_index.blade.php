@@ -19,9 +19,6 @@
 			<!--div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
 				<label class="label label-danger">Promo</label><a href="https://api.whatsapp.com/send?phone=6285956331813" target="_blank"> Akses semua konten gratis <label class="label label-danger">Promo</label><br> <span style="font-size: 17px"><strong>Japri via WA  <i style="font-size: 14px" class="fa fa fa-whatsapp"></i> 085956331813</strong></span></a>
 			</div-->
-			<!--div class="ads-middle" style="background: #ffffff;color: #000;" target="_blank">
-				<a href="javascript:QuranJS.callModal('promo')"> Mau 1 Bundle pahala ?<br> ~ T-Shirt Dakwah+Berinfak+Menghafal Al-Qu'ran ~ <br><label class="label label-danger">Promo</label><strong> Mau? Klik Disini</strong> <label class="label label-danger">Promo</label></a>
-			</div-->
 
 			  <div id="content" class="boxcontent">
 			  	<div class="dash-profile">
@@ -112,8 +109,12 @@
 			  	</div>
 				  <!-- /dash-profile -->
 
-
-
+					<div class="ads-middle" style="background: #ffffff;color: #000;" >
+						<a  href="https://arrayahstore.com/chat/wa-aplikasi/" target="_blank">
+							<img src="{{url('assets/images/gabung.png')}}" style="width: 91%;clear: both;float: none;"/>
+						</a>
+					</div>
+					<br>
 						<span class="clear"></span>
 				  <div class="timeline-koreksi filter">
 				  		<ul class="nav nav-tabs" role="tablist">
@@ -186,7 +187,9 @@
 					&bullet;
 					<i class="mdi mdi-book-open-variant"></i> {{empty($row->visitor)?0:$row->visitor}}</span>
 												<div class="koreksi-action">
-													<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickKoreksi');">Koreksi</a>
+													@if(session('sess_role')==1 || session('sess_role')==2)
+														<a  href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}" class="koreksi-action-link" onclick="fbq('track', 'clickKoreksi');">Koreksi</a>
+													@endif
 													<a  href="{{url('memoz/surah/'.$row->surah_start.'/'.$ayat_target)}}" class="koreksi-action-link" onclick="fbq('track', 'clickHafalkan');">Hafalkan</a>
 												</div>
 											</div>

@@ -641,7 +641,7 @@ $(document).ready(function(){
 			@endif
 		}else{
 			// record from ustadz correction
-			window.parent.postMessage("audioUstadz|{{$memoDetail->id}}", "*");
+			//window.parent.postMessage("audioUstadz|{{$memoDetail->id}}", "*");
 		}
 
 
@@ -690,6 +690,10 @@ $(document).ready(function(){
 		window.attachEvent("onmessage", getResponse);
 	}
 </script>
+<form  enctype="multipart/form-data" id="upload-form-ustadz" method="post" action="{{url('memoz/uploadRecordedUstadz')}}">
+				<input type="file" name="file" id="record_file_ustdz" onchange="$('#upload-form').submit()" style="display:none">
+				<input type="hidden" name="id" value="{{$memoDetail->id}}"/>
+			</form>
 <script type="text/javascript" src="{{url('assets/js/recorder.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/Fr.voice.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/record.js')}}"></script>

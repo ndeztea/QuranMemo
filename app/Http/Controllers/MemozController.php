@@ -734,6 +734,29 @@ class MemozController extends Controller
 
     }
 
+    public function uploadRecordedUstadz(Request $request){
+        $idMemo = $request->request('id');
+
+        $MemoModel = new Memo;
+        $fileName = $idMemo.'_'.session('sess_id').'_correction.mp3';
+
+        $recordFolder = 'record_ustadz';
+
+        $dataRecord[$recordFolder] = $recordFolder."/".$fileName;
+        $path = $request->file('file')->move(public_path($recordFolder.'/'), $fileName);
+
+
+        if(File::exists(public_path($recordFolder.'/'.$fileName))){
+            echo 'correction_file';
+        }else{
+            echo 'no';
+        }
+
+        //$output = ob_get_clean();
+        //file_put_contents($file, $output);
+
+    }
+
     /**
     * for showing the correction form
     *
