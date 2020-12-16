@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<div class="order-detail center">
-		Tahfidz Online<br>
+		Tahfiz Online<br>
 		<img src="{{url('assets/images/partners/to.png')}}" style="width: 200px">
 	</div>
 	<div class="order-detail center">
@@ -32,7 +32,7 @@
 		<img src="{{url('assets/images/partners/mim.png')}}" style="width: 200px">
 	</div>
 	<div class="order-detail center">
-		Rumah Tahfidz Amanah Quran <br>
+		Rumah Tahfiz Amanah Quran <br>
 		<img src="{{url('assets/images/partners/aqur.png')}}" style="width: 200px">
 	</div>
 	<div class="order-detail center">

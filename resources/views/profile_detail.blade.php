@@ -70,7 +70,7 @@
 					</div>
 			  	</div>
 				  <!-- /dash-profile -->
-				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="http://localhost/QuranMemo/public/assets/images/FahimQuran.png">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
+				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="http://localhost/QuranMemo/public/assets/images/FahimQuran.png">Donasi Pembangunan Pasantren Tahfiz <br>FahimQuran Plus</div-->
 
 
 						<span class="clear"></span>

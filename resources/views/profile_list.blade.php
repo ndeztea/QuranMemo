@@ -90,7 +90,7 @@
 								    	@foreach($listUsers as $user)
 								    	<tr>
 									    	<td style="{!!$user->role==2?'background: #f1ffd2':''!!}">
-													<a href="javascript:vex.dialog.alert({ unsafeMessage: '<a href=\'{{url('profile/detail/'.$user->id)}}\' class=\'btn btn-green\'>Laporan Tahfidz</a> <br><a href=\'{{url('todo/0/'.$user->id)}}\' class=\'btn btn-green\'>Laporan Amalan</a>'})">{{$a++}}. {{$user->name}} {!!$user->role==2?'<sup class="label label-primary">Wali Kelas</sup>':''!!}<br> <sup> {{$user->last_login}}</sup>
+													<a href="javascript:vex.dialog.alert({ unsafeMessage: '<a href=\'{{url('profile/detail/'.$user->id)}}\' class=\'btn btn-green\'>Laporan Tahfiz</a> <br><a href=\'{{url('todo/0/'.$user->id)}}\' class=\'btn btn-green\'>Laporan Amalan</a>'})">{{$a++}}. {{$user->name}} {!!$user->role==2?'<sup class="label label-primary">Wali Kelas</sup>':''!!}<br> <sup> {{$user->last_login}}</sup>
 													</a> <sup>{{$user->email}}</sup>
 													<br>
 													<a href="{{url('profile/resetPassword/'.$user->id)}}">Reset Password</a> | <a href="{{url('profile/edit/'.$user->id)}}">Edit User</a> | <a href="{{url('profile/delete/'.$user->id)}}">Delete User</a>

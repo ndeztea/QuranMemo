@@ -11,7 +11,7 @@ YUK NGAFAL QUR’AN TANPA MONDOK BERSAMA TAHFIDZ ONLINE...
 Daftar dan Langsung Tes ❗❗
 </p>
 <p> 
-Santri akan ngafal dengan menggunakan <strong>#AplikasiTahfidzOnline </strong>
+Santri akan ngafal dengan menggunakan <strong>#AplikasiTahfizOnline </strong>
 Selain ngafal, kalian juga bisa : <br>
 - Benerin bacaan, <br>
 - Tadabbur Al Qur'an, <br>
@@ -38,8 +38,8 @@ Syaratnya :
 3. Format daftar dan Tes : TO 19 - Nama - Domisili - Pilihan Juz (30 atau 1)
 <br>
 
-4. Me-like fanpage Tahfidz Online : <a href="https://www.facebook.com/RumahBerkahFoundation" target="_blank">www.facebook.com/RumahBerkahFoundation</a>
-dan  Mem-follow Instagram Tahfidz Online : <a href="https://www.instagram.com/tahfidz_online" target="_blank">www.instagram.com/tahfidz_online</a>
+4. Me-like fanpage Tahfiz Online : <a href="https://www.facebook.com/RumahBerkahFoundation" target="_blank">www.facebook.com/RumahBerkahFoundation</a>
+dan  Mem-follow Instagram Tahfiz Online : <a href="https://www.instagram.com/tahfidz_online" target="_blank">www.instagram.com/tahfidz_online</a>
 <br>
 </p>
 <p>
@@ -66,7 +66,7 @@ Setelah dinyatakan lulus, silakan ikuti alur berikut :
 2. register via Appstahfidzonline <br>
 3. Request jadi santri dan Infaq 50k (Sebagai bentuk komitmen dan pengembangan aplikasi) <br>
 4. Konfirmasi via <a href="https://api.whatsapp.com/send?phone=6289638571389">WA 089638571389</a> <br>
-5. Masuk ke Halaqah dan bebas akses ke Aplikasi Tahfidz Online<br>
+5. Masuk ke Halaqah dan bebas akses ke Aplikasi Tahfiz Online<br>
 </p>
 <p>
 خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ “Sebaik-baik kalian adalah orang yang mempelajari al Qur’an dan mengajarkannya”.
