@@ -35,7 +35,7 @@
 										</a>
 
 											<span class="ayat-target">
-												<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
+												<a class="ayat-target-link" href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a>
 											</span>
 											<br>
 											<span class="jumlah-koreksi">{{Carbon::createFromTimeStamp((strtotime($row->updated_at)))->diffForHumans()}} &bullet; <i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}}

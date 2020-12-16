@@ -19,7 +19,7 @@
 					@endif
 				</span>
 				<span class="ayat-target">
-					<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a> <sup class='label label-primary'><i class="mdi mdi-library"></i> {{$row->id}}</sup>
+					<a class="ayat-target-link" href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a> <sup class='label label-primary'><i class="mdi mdi-library"></i> {{$row->id}}</sup>
 					<br>
 					<span class="jumlah-koreksi"></span>
 				</span>
