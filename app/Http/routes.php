@@ -84,6 +84,11 @@ Route::post('register/process', 'RegisterController@process');
 Route::get('dashboard','DashboardController@index');
 Route::get('profile/top_user', 'ProfileController@top_user');
 
+Route::get('quran/mapping', 'QuranController@qmap');
+Route::get('quran/doa', 'QuranController@doa');
+
+
+
 //auth pages
 Route::group(['middleware' => 'auth'], function () {
   Route::get('profile/detail/{id_user}', 'ProfileController@detail');
