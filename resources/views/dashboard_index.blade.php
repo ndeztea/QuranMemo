@@ -102,6 +102,10 @@
 									<a class="tabbed-nav-link" href="{{url('dzikir')}}"><i class="mdi mdi-clock"></i> Al-Matsurats
 									<sup class="text-white label label-danger">New</sup>
 								</a-->
+								<li class="tabbed-nav-list-item">
+									<a class="tabbed-nav-link" href="{{url('quran/mapping')}}"><i class="mdi mdi-map"></i> Quran Mapping
+									<sup class="text-white label label-danger">New</sup>
+								</a>
 								@if((session('sess_role')==1 || session('sess_role')==2) && (session('sess_id_sub_class')))
                   <li class="tabbed-nav-list-item" style="background-color:#ffdbdb;color:#000">
                       <a style="color:#000"  class="tabbed-nav-link" href="<?php echo url('profile/list')?>"><i class="mdi mdi-file-document" ></i> Laporan</a>
@@ -174,37 +178,7 @@
 ">Lihat Leaderboard</button></div>
 
 </div-->
-				  <div class="ads-middle" style="height: 110px;background:#00978a;border-radius: 10px 10px 0px 0px;">
-				  	<!--strong>Hafalan pilihan</strong-->
-				  	<div id="recommendation-memoz">
-					    <ul>
-					    	<?php $recNo = 0?>
-					    	@foreach($listRecommendation as $recommendation)
-					    		<?php $recNo++;?>
-						      <li class="{{count($listRecommendation)==$recNo?'last':''}} dragend-page">
-						      	<div class="recommendation">
-							    	<div class="recommendation-header"><strong>{{$recommendation->surah}} : {{$recommendation->ayat_start==$recommendation->ayat_end?$recommendation->ayat_start:$recommendation->ayat_start.' - '.$recommendation->ayat_end}}</strong>
-							    	</div>
-							    	<div class="recommendation-body">
-							    		{{$recommendation->note}}
-							    	</div>
-							    </div>
-						    	<div class="recommendation-action">
-						    		<a href="{{url('memoz/surah/'.$recommendation->surah_start.'/'.$recommendation->ayat_start.'-'.$recommendation->ayat_end)}}" onclick="fbq('track', 'clickMemozRecommendation');"><i class="fa fa-arrow-circle-right"></i> </a>
-						    	</div>
-						      </li>
 
-					    	@endforeach
-					    </ul>
-				  		<!--ul class="nav">
-				  			<?php $recNo = 0;?>
-				  			@foreach($listRecommendation as $recommendation)
-				  			<?php $recNo++;?>
-						    <li data-page="{{$recNo}}" class="active">{{$recNo}}</li>
-						    @endforeach
-					  	</ul-->
-					  </div>
-				  </div>
 						<span class="clear"></span>
 				  <div class="timeline-koreksi filter">
 				  		<ul class="nav nav-tabs" role="tablist">
@@ -228,7 +202,7 @@
 											<div class="koreksi-desc">
 												<span class="username"><a href="{{url('profile/detail/'.$row->id_user)}}">{{$row->name}}  <sup class="badge">{{getAge($row)}}</sup></a></span>
 												<span class="ayat-target">
-													<a class="ayat-target-link" href="{{url('memoz/correction/'.$row->surah_start.'/'.$ayat_target.'/'.$row->id)}}">{{$row->surah}} : {{$ayat_target}}</a>
+													<a class="ayat-target-link" href="javascript:void(0)">{{$row->surah}} : {{$ayat_target}}</a>
 													<!--span class="spacer1">&bullet;</span>
 													<span class="jumlah-koreksi"><i class="fa fa-commenting"></i> {{empty($row->count_correction)?0:$row->count_correction}} koreksi</span-->
 												</span>
