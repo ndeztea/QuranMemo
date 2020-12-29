@@ -76,7 +76,7 @@ class DashboardController extends Controller
          }
          $data['needCorrections'] = $listCorrections;
 
-         $data['listRecommendation'] = $MemoModel->getMemoRecommendation();
+         
 
          $objPoints = new Points();
          $total_points = $objPoints->totalPoints(session('sess_id'),'all');
