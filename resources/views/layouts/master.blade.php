@@ -69,7 +69,7 @@
 
         <!-- <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}"> -->
-        <link rel="stylesheet" href="{{url('assets/css/custom_1.9.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom_2.0.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/todo.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/circle.css')}}">
