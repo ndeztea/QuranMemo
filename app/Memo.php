@@ -329,6 +329,7 @@ class Memo extends Model
                 ->select('mtr.*','s.name_indonesia as surah')
                 ->join('surah as s','s.id','=','mtr.surah_start')
                 ->where('is_active','=',1)
+                ->where('mtr.type','=','doa')
                 ->orderBy(DB::raw('RAND()'))
                 ->get();
 

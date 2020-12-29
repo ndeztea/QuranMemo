@@ -25,7 +25,7 @@ class Quran extends Model
 
     /**
     * get ayat on the page
-    * 
+    *
     * @param $page INT
     */
     public function getAyat($page){
@@ -58,7 +58,7 @@ class Quran extends Model
                             $subQuery->where('surah','<=',$surah_end)
                                         ->where('ayat','<=',$ayat_end);
                             });*/
-        }       
+        }
 
         return $ayats->get();
     }
@@ -83,7 +83,7 @@ class Quran extends Model
         $ayats = DB::table('quran as qar')
                 ->join('surah as s', 's.id', '=', 'qar.surah')
                 ->select('qar.surah','qar.surah_name','qar.text_english','qar.text_indo','qar.text_arabic as text','qar.ayat','qar.surah','qar.page','s.ayat as count_ayat','s.type','s.order','qar.juz','qar.juz_header');
-        
+
         $ayats->where('qar.surah','=',$id_surah)
                 ->where('qar.ayat','=',$ayat);
 
@@ -92,7 +92,7 @@ class Quran extends Model
 
     /**
     * get surah list
-    * 
+    *
     */
     public function getSurah($id_surah=0){
         $surah = DB::table('surah')
@@ -113,7 +113,7 @@ class Quran extends Model
     */
     public function searchKeyword($keyword,$surah='',$page=1){
         $skip = $page==1?0:($page - 1) *10;
-        
+
         $ayats = DB::table('quran')->select('surah','surah_name','text_indo','text_arabic','ayat','page')
                 ->where('text_indo','LIKE','%'.$keyword.'%');
         if(!empty($surah)){
@@ -123,7 +123,7 @@ class Quran extends Model
         $ayats->skip($skip)->take(10);
 
         return $ayats->get();
-    } 
+    }
 
     /**
     * count keyword
@@ -136,10 +136,10 @@ class Quran extends Model
         if(!empty($surah)){
             $ayats->where('surah','=',$surah);
         }
-        
+
 
         return $ayats->count();
-    }  
+    }
 
     /**
     * list surah depend the keyword
@@ -151,11 +151,11 @@ class Quran extends Model
         $surahs->orderBy('surah','asc')->groupBy('surah');
 
         return $surahs->get();
-    }  
+    }
 
     /**
     * get surah page
-    * 
+    *
     */
     public function getSurahPage($surah){
         $page = DB::table('quran')
@@ -221,5 +221,16 @@ class Quran extends Model
                  ->where('id_ayat','<=',$ayat_end);
         }
         return count($line->get());
+    }
+
+    public function getQuranMapping($type){
+        $memoList = DB::table('memo_target_recommendation as mtr')
+                ->select('mtr.*','s.name_indonesia as surah')
+                ->join('surah as s','s.id','=','mtr.surah_start')
+                ->where('is_active','=',1)
+                ->where('mtr.type','=',$type)
+                ->get();
+
+        return $memoList;
     }
 }
