@@ -56,6 +56,7 @@ Route::get('notes/', 'NotesController@index');
 Route::get('bookmarks/', 'BookmarksController@index');
 
 Route::get('contact', 'ContentController@contact');
+Route::get('voucher', 'ContentController@voucher');
 Route::get('about', 'ContentController@about');
 Route::get('donasi', 'ContentController@donasi');
 Route::get('buku', 'ContentController@buku');
