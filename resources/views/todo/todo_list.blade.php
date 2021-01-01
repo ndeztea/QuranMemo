@@ -37,7 +37,9 @@
 							</div>
 							<div class="dash-profile-desc">
 								<h4 class="dash-profile-name">{{!empty($detailProfile)?$detailProfile->name:'Tamu'}}</h4>
+								@if (isset($subClassDetail->class))
 								<h2 class='label label-danger'>Kelas : {{$subClassDetail->class}}</h2>
+								@endif
 							</div>
 						</div>
 						<!--/dash-profile-detail-->
