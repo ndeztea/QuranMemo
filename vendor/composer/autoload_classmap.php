@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\NotesController' => $baseDir . '/app/Http/Controllers/NotesController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Http\\Controllers\\QuizController' => $baseDir . '/app/Http/Controllers/QuizController.php',
+    'App\\Http\\Controllers\\QuranController' => $baseDir . '/app/Http/Controllers/QuranController.php',
     'App\\Http\\Controllers\\RegisterController' => $baseDir . '/app/Http/Controllers/RegisterController.php',
     'App\\Http\\Controllers\\SubscriptionsController' => $baseDir . '/app/Http/Controllers/SubscriptionsController.php',
     'App\\Http\\Controllers\\TodoController' => $baseDir . '/app/Http/Controllers/TodoController.php',

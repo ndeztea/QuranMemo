@@ -314,6 +314,7 @@ class ComposerStaticInite3c8b0f18ea94829e0286def0336ec8c
         'App\\Http\\Controllers\\NotesController' => __DIR__ . '/../..' . '/app/Http/Controllers/NotesController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\QuizController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuizController.php',
+        'App\\Http\\Controllers\\QuranController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuranController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Controllers\\SubscriptionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubscriptionsController.php',
         'App\\Http\\Controllers\\TodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TodoController.php',
