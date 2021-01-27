@@ -78,6 +78,21 @@
 						</div>
 						<!--/dash-profile-detail-->
 					</div>
+					<?php
+					$date = strtotime("12-04-2021");
+					$remaining = $date - time();
+					$days_remaining = floor($remaining / 86400);
+					?>
+					<div class="" style="background: #1c263b;border-radius: 0px 14px 0px 14px;margin: 4px auto;background-image: url('{{url('assets/images/ramadhan.png')}}');width: 97%;height: 75px;background-size: 21%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;background-position: 5% 41%;padding-left: 94px;"><a href="{{url('memoz')}}">
+						<div style="float: left;width: 97%;color: #FFF;padding: 7px;"><span style="text-shadow: 0px 2px 9px #7e652f;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;">
+							{{$days_remaining}} Hari Menuju Ramadhan
+						</span>
+						<span style="font-size: 12px;color: #FFF;"><br>Sudah ada hafalan yang bertambah? atau perlu murja'ah? Yuk menghafal lagi sekarang.</span></div></a>
+					</div>
 					<!--/dash-profile-detail-wrap -->
 					<div class="collapse in" id="dashboard-items">
 						<div class="tabbed-nav">
@@ -122,21 +137,7 @@
 			  	</div>
 				  <!-- /dash-profile -->
 				  <!--div class="ads-middle" onclick="fbq('track', 'clickDonasiFahimQuran');QuranJS.callModal('donasi')"><img src="{{url('assets/images/FahimQuran.png')}}">Donasi Pembangunan Pasantren Tahfidz <br>FahimQuran Plus</div-->
-					<?php
-					$date = strtotime("12-04-2021");
-					$remaining = $date - time();
-					$days_remaining = floor($remaining / 86400);
-					?>
-					<div class="" style="background: #1c263b;border-radius: 14px 0px 14px 0px;margin: 4px auto;background-image: url('https://lh3.googleusercontent.com/proxy/pynNQBrtF7QGlX2k_nCsaYQwnyzX2yKdi0R2uNIppfzGPQLJ6PpgWz7ix_o-aTqdmOyVqVDlERdnSEPX3c1vxYo5d9JU8DGUKPYZE-f66Hgqr33ZZK7cWw');width: 97%;height: 75px;background-size: 21%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;background-position: 5% 41%;padding-left: 94px;"><a href="{{url('memoz')}}">
-						<div style="float: left;width: 97%;color: #FFF;padding: 7px;"><span style="text-shadow: 0px 2px 9px #7e652f;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: #ffffff;">
-							{{$days_remaining}} Hari Menuju Ramadhan
-						</span>
-						<span style="font-size: 12px;color: #FFF;"><br>Sudah ada hafalan yang bertambah? atau perlu murja'ah? Yuk menghafal lagi sekarang.</span></div></a>
-					</div>
+
 	<a href="https://play.google.com/store/apps/details?id=com.muamalah.daily&hl=en"><div class="" style="background: #2b6888;/* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, rgba(255,199,0,1) 100%); */border-radius: 14px 0px 14px 0px;margin: 4px auto;/* background-image: url(&quot;http://md.quranmemo.id/public/assets/images/qmc-logo.png&quot;); */width: 97%;height: 75px;background-size: 14%;background-repeat-x: no-repeat;background-repeat-y: no-repeat;background-position: 96% -14%;" target="_blank">
 						<div style="
     float: left;
