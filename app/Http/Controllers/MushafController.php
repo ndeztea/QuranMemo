@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Quran;
 use App\Users;
+use App\Libraries\Tafsir;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests;
@@ -536,10 +537,10 @@ class MushafController extends Controller
         return redirect('mushaf');
     }
 
-    public function tafsir(Request $request,$surah, $ayat){
+    public function tafsir(Request $request,$surah_id, $ayat){
         $QuranModel = new Quran;
-        $tafsir = $QuranModel->getTafsir($surah,$ayat);
-        $surah = $QuranModel->getSurah($surah);
+        $tafsir = $QuranModel->getTafsir($surah_id,$ayat);
+        $surah = $QuranModel->getSurah($surah_id);
         $data['tafsir'] = $tafsir;
         $data['tafsir_header'] = $surah[0]->surah_name.' : '.$ayat;
 
@@ -553,12 +554,21 @@ class MushafController extends Controller
             return json_encode($output);
         }
 
-        $dataHTML['modal_title'] = 'Tafsir';
+
+        $objTafsir = new Tafsir();
+        $dataTafsir = $objTafsir->getTafsir($surah_id,$ayat);
+        if($dataTafsir!=false){
+          $data['tafsir_depag'] = $dataTafsir['tafsir'];
+        }else{
+          $data['tafsir_depag'] = 'Data tidak tersedia';
+        }
+
+        $dataHTML['tafsir'] = $dataTafsir;
+
+        $dataHTML['modal_title'] = 'Tafsir '.$surah[0]->surah_name.' : '.$ayat;
         $dataHTML['modal_body'] = view('mushaf_tafsir',$data)->render();
         $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
 
         return response()->json($dataHTML);
-
     }
-
 }

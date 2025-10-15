@@ -152,7 +152,7 @@ class SubscriptionsController extends Controller
        $detail->level = array_keys($this->level, $detail->level)[0];
 
        $data['detail'] = $detail;
-       return view('subscriptions_order',$data);
+       return view('subscriptions_order2',$data);
     }
 
     public function approve(Request $request){

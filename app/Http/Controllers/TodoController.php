@@ -120,18 +120,21 @@ class TodoController extends Controller
           $data['maghrib'] = date('H:i',strtotime($objResponse->items[0]->maghrib));
           $data['isya'] = date('H:i',strtotime($objResponse->items[0]->isha));*/
 
-          $data['subuh'] = $objResponse->results->datetime[0]->times->Imsak;
-          $data['dzuhur'] = $objResponse->results->datetime[0]->times->Dhuhr;
-          $data['ashar'] = $objResponse->results->datetime[0]->times->Asr;
-          $data['maghrib'] = $objResponse->results->datetime[0]->times->Maghrib;
-          $data['isya'] = $objResponse->results->datetime[0]->times->Isha;
+          $data['subuh'] = @$objResponse->results->datetime[0]->times->Imsak;
+          $data['dzuhur'] = @$objResponse->results->datetime[0]->times->Dhuhr;
+          $data['ashar'] = @$objResponse->results->datetime[0]->times->Asr;
+          $data['maghrib'] = @$objResponse->results->datetime[0]->times->Maghrib;
+          $data['isya'] = @$objResponse->results->datetime[0]->times->Isha;
           //die();
+          if(@$objResponse->results->datetime[0]->times->Imsak){
+            $data['date'] = $this->date;
+            $data['location'] = $this->city;
+            $SholatModel->store($data);
 
-          $data['date'] = $this->date;
-          $data['location'] = $this->city;
-          $SholatModel->store($data);
+            $this->sholatTime = $SholatModel->getDetail($this->city, $this->date);
+          }
 
-          $this->sholatTime = $SholatModel->getDetail($this->city, $this->date);
+
         }
         $this->sholatTime = (array) $this->sholatTime;
         $this->sholatTime =  array_values($this->sholatTime);

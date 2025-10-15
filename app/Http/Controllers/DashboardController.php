@@ -10,6 +10,7 @@ use App\Memo;
 use App\MemoCorrection;
 use App\Subscriptions;
 use App\Libraries\Points;
+use App\Libraries\Hadits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
@@ -31,7 +32,6 @@ class DashboardController extends Controller
      public function index(Request $request)
      {
          Carbon::setLocale('id');
-
          $data['header_top_title'] = $data['header_title'] = 'Dashboard';
 
          $starting = $request->input('starting');
@@ -76,7 +76,7 @@ class DashboardController extends Controller
          }
          $data['needCorrections'] = $listCorrections;
 
-         $data['listRecommendation'] = $MemoModel->getMemoRecommendation();
+         
 
          $objPoints = new Points();
          $total_points = $objPoints->totalPoints(session('sess_id'),'all');
@@ -84,9 +84,7 @@ class DashboardController extends Controller
          if(session('sess_id_sub_class')){
            $data['subClassDetail'] = $UsersModel->getClassDetail( session('sess_id_sub_class'));
          }
-
-
-          return view('dashboard_index',$data);
+        return view('dashboard_index',$data);
      }
 
 
@@ -134,6 +132,16 @@ class DashboardController extends Controller
 
     }
 
+    public function randomHadits(){
+      $objHadits = new Hadits();
+      $dataHadits = $objHadits->getRandomHadits();
+
+      $dataHTML['code'] = $dataHadits['code'];
+      $dataHTML['simple'] = $dataHadits['simple'].' <a onclick="showHadits(\'full\')">[Lebih lanjut <i class="mdi mdi-chevron-double-down"></i>]</a> ';
+      $dataHTML['full'] = '<br><br><span class="hadits-arabic">'.$dataHadits['full_arab'].'</span><br><br>'.$dataHadits['full_text'].'( '.$dataHadits['book_info'].' )  <a onclick="showHadits(\'simple\')">[Lebih ringkas <i class="mdi mdi-chevron-double-up"></i>]</a> ';
+
+      return response()->json($dataHTML);
+    }
 
 
 }

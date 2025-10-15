@@ -23,7 +23,8 @@ Route::get('home', 'HomeController@index');
 Route::get('dzikir', 'DzikirController@index');
 Route::get('todo','TodoController@index');
 Route::get('todo/{subDays}','TodoController@index');
-
+Route::get('dashboard/random_hadits','DashboardController@randomHadits');
+Route::get('memoz/compare','MemozController@score');
 
 
 Route::get('mushaf/generate', 'MushafController@generate');
@@ -55,6 +56,7 @@ Route::get('notes/', 'NotesController@index');
 Route::get('bookmarks/', 'BookmarksController@index');
 
 Route::get('contact', 'ContentController@contact');
+Route::get('voucher', 'ContentController@voucher');
 Route::get('about', 'ContentController@about');
 Route::get('donasi', 'ContentController@donasi');
 Route::get('buku', 'ContentController@buku');
@@ -82,6 +84,11 @@ Route::post('register/process', 'RegisterController@process');
 
 Route::get('dashboard','DashboardController@index');
 Route::get('profile/top_user', 'ProfileController@top_user');
+
+Route::get('quran/mapping', 'QuranController@qmap');
+Route::get('quran/doa', 'QuranController@doa');
+
+
 
 //auth pages
 Route::group(['middleware' => 'auth'], function () {

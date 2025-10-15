@@ -9,6 +9,8 @@ use App\Users;
 use App\Memo;
 use App\MemoCorrection;
 use App\Subscriptions;
+use App\Libraries\CompareQuran;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
@@ -903,6 +905,21 @@ class MemozController extends Controller
       $data['needCorrections'] = $listCorrections;
 
       return view('memoz_correction',$data);
+    }
+
+    public function score(){
+      //$objCompareQuran = new CompareQuran();
+      //$objCompareQuran->generate();
+
+      $data['percent'] =  '50';
+      $data['target'] =  'Surah Al-Baqarah : 20-25';
+
+      $dataHTML['modal_class'] = '';
+      $dataHTML['modal_title'] = 'Score Hafalan';
+      $dataHTML['modal_body'] = view('memoz_score',$data)->render();
+      $dataHTML['modal_footer'] = '<button class="btn btn-green-small" data-dismiss="modal">Tutup</button>';
+
+      return response()->json($dataHTML);
     }
 
 

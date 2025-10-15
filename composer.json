@@ -10,7 +10,9 @@
         "linkthrow/ffmpeg": "dev-master",
         "intervention/image": "^2.3",
         "nesbot/carbon": "~1.18",
-        "ixudra/curl": "^6.19"
+        "ixudra/curl": "^6.19",
+        "google/cloud-speech": "^1.3",
+        "google/cloud-text-to-speech": "^1.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

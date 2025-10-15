@@ -69,9 +69,10 @@
 
         <!-- <link rel="stylesheet" href="{{url('assets/css/custom_1.7.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/custom_1.8.min.css')}}"> -->
-        <link rel="stylesheet" href="{{url('assets/css/custom_1.9.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/custom_2.0.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/todo.min.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/vendors/bootstrap-datepicker.min.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/circle.css')}}">
 
         <!--script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.6.8.min.js"></script-->
 
@@ -131,6 +132,98 @@
           fbq('track', '{{$header_title}}');
         </script>
         @endif
+        <style>
+          .quiz-message {
+            text-align: center;
+          }
+          .quiz-message p{
+            font-size: 20px;
+          }
+          i.fa.fa-check-circle.quiz-correct {
+            color: #128212;
+            font-size: 184px;
+          }
+          i.fa.fa-times-circle.quiz-false {
+              font-size: 184px;
+              color: #d24545;
+          }
+          .text-correct{
+            font-size: 33px;
+            color: #128212;
+            text-shadow: 1px 1px 1px black;
+          }
+          .text-false{
+            font-size: 33px;
+            color: #d24545;
+            text-shadow: 1px 1px 1px black;
+          }
+
+          .quiz-points{
+            border: 3px dashed #ff9128;
+            margin: 20px;
+            padding: 16px;
+            text-align: center;
+          }
+          .quiz-points .total-points{
+            font-size: 47px;
+            font-weight: 700;
+            text-shadow: 2px 5px 6px #f9db7e;
+          }
+          .quiz-points .text-points{
+            font-size: 20px;
+          }
+        </style>
+
+        <style>
+          .hadits-today{
+            background: linear-gradient(135deg, rgb(112 101 179) 0%, rgb(119 67 67) 100%, rgba(255,199,0,1) 100%);
+            border-radius: 10px;
+            margin: 3px 9px;
+            text-align: left;
+            padding: 10px;
+          }
+          .hadits-today strong{
+            color: #eaeaea;
+          }
+          .hadits-today a{
+            color: #ff6767;
+          }
+          .hadits-arabic{
+            font-size: 16px;
+            font-family: "me_quran","Lateef", "Traditional Arabic";
+            line-height: 30px;
+          }
+
+          .score{
+            text-align: center;
+          }
+          .c100{
+            background-color: #ff0000 !important;
+          }
+          .orange span{
+            color: #dd9d21 !important;
+          }
+          .green span{
+            color: #dd9d21 !important;
+          }
+          .default span{
+            color: #307bbb !important;
+          }
+        </style>
+
+        <script>
+          function showHadits(showFull){
+
+            if (showFull=='full'){
+              $('.hadits-simple').hide()
+              $('.hadits-full').fadeIn()
+            }else{
+              $('.hadits-full').hide()
+              $('.hadits-simple').fadeIn()
+            }
+          }
+
+        </script>
     </head>
     <body class="@if(isset($body_class)) {{$body_class}} @endif" style="overflow:hidden">
 
@@ -531,10 +624,19 @@
                     }
                 ?>
                   @if(session('sess_role')!=1)
-                  vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' tagihan </strong> berlangganan QuranMemo, silahkan <a href="{{url('subscription/listing')}}{{$approvalLink}}">klik disni</a> untuk melanjutkan pembayaran atau membatalkan tagihan</p>Syukron' });
+                  vex.dialog.alert({ unsafeMessage: 'Bismillah, <br> <p>Anda punya <strong>'+response.counter+' orderan </strong> yang belum diproses. <br><br> <a href="{{url('subscription/listing')}}{{$approvalLink}}" class="btn btn-primary">Lihat Daftar Order</a></p>' });
                   @endif
                 @endif
            }
+        });
+
+        $.getJSON('{{url('dashboard/random_hadits')}}',{},function(response){
+          if(response.code==200){
+            $('.hadits-simple').html(response.simple);
+            $('.hadits-full').html(response.full);
+          }else{
+            $('.hadits-simple').html('Data hadist tidak ditemukan.');
+          }
         });
 
         @if(Request::get('action')=='berlangganan')
@@ -553,6 +655,62 @@
         $( ".jp-video-play-icon" ).click(function() {
           location.reload();
         });
+
+        document.getElementById("copyButton").addEventListener("click", function() {
+    copyToClipboard(document.getElementById("copyTarget"));
+});
+
+  function copyToClipboard(elem) {
+  	  // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+          // can just use the original source element for the selection and copy
+          target = elem;
+          origSelectionStart = elem.selectionStart;
+          origSelectionEnd = elem.selectionEnd;
+      } else {
+          // must use a temporary form element for the selection and copy
+          target = document.getElementById(targetId);
+          if (!target) {
+              var target = document.createElement("textarea");
+              target.style.position = "absolute";
+              target.style.left = "-9999px";
+              target.style.top = "0";
+              target.id = targetId;
+              document.body.appendChild(target);
+          }
+          target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+      	  succeed = document.execCommand("copy");
+      } catch(e) {
+          succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+          currentFocus.focus();
+      }
+
+      if (isInput) {
+          // restore prior selection
+          elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+          // clear temporary content
+          target.textContent = "";
+      }
+
+      vex.dialog.alert('URL sudah di copy');
+      return succeed;
+  }
 
         </script>
     @include('layouts.analytics')

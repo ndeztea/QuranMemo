@@ -75,12 +75,16 @@
 			              	<li><a  href="javascript:;" onclick="fbq('track', 'clickBelumHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','0','Target hafalan ini belum hafal?')"><i class="mdi mdi-lightbulb-outline"></i> Belum hafal</a>
 			              	</li>
 			              	@if(!empty($memoDetail->record))
+												<li><a  href="javascript:;" onclick="QuranJS.callModal('memoz/compare')"><i class="mdi mdi-checkbox-marked"></i> Cek hafalan <sup style="color:red">Beta</sup></a></li>
 												@if ($countNeedCorrection >= 3)
 													<li><a  href="javascript:;" onclick="vex.dialog.alert('Masih ada hafalan yang belum selesai dikoreksi, selesaikan dulu hafalan sebelumnya!')"><i class="mdi mdi-send"></i> Setorkan hafalan</a></li>
 												@else
 			              			<li><a  href="javascript:;" onclick="fbq('track', 'clickButuhKoreksi');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','2','Pastikan kualitas rekaman bagus untuk memudahkan asatidz kami mengkoreksi hafalanmu, setor hafalan sekarang?')"><i class="mdi mdi-send"></i> Setorkan hafalan</a></li>
 												@endif
-			              	@endif
+											@else
+												<li><a  href="javascript:;" onclick="vex.dialog.alert('Rekam dulu target hafalan sebelum dicek hafalan secara otomatis.')"><i class="mdi mdi-checkbox-marked"></i> Cek hafalan <sup style="color:red">Beta</sup></a></li>
+												<li><a  href="javascript:;" onclick="vex.dialog.alert('Rekam dulu target hafalan sebelum disetorkan.')"><i class="mdi mdi-send"></i> Setorkan hafalan</a></li>
+											@endif
 			              	<li><a  href="javascript:;" onclick="fbq('track', 'clickSudahHafal');QuranJS.updateStatusMemoz('{{$memoDetail->id}}','1','Target hafalan ini sudah hafal?')"><i class="mdi mdi-lightbulb-on "></i> Sudah hafal</a>
 			              	</li>
 			              </ul>
